@@ -14,9 +14,11 @@ class NutritionCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet weak var progressView: ProgressView!
 	
 	func configure(data: Measurement) {
-		guard let secondValue = data.secondValue else { return }
+		guard let secondValue = data.secondValue,
+			let progress = data.progress else { return }
 		let endValue = "\(data.firstValue)/\(secondValue) \(data.unit)"
-		progressView.setProgress(startValue: data.name, endValue: endValue, progress: .random(in: 0...1))
+			
+		progressView.setProgress(startValue: data.name, endValue: endValue, progress: progress)
 		progressView.setBottomLabels(hidden: true)
 	}
 }

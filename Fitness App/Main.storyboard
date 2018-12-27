@@ -159,12 +159,6 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHM-ZR-1Eb">
-                                                    <rect key="frame" x="151" y="4" width="73" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsg-1Z-Zk7">
                                                     <rect key="frame" x="350" y="3" width="15" height="15"/>
                                                     <constraints>
@@ -187,10 +181,24 @@
                                                         <action selector="prevMonth:" destination="KKj-2y-oQV" eventType="touchUpInside" id="gOX-Xh-gYM"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nC-gm-Tcz">
+                                                    <rect key="frame" x="151" y="4" width="73" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="lA1-ax-l1f"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <state key="normal" title="Month year">
+                                                        <color key="titleColor" red="0.27450980392156865" green="0.5607843137254902" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="toggleSize:" destination="KKj-2y-oQV" eventType="touchUpInside" id="7sb-fc-C7R"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SM1-w6-CKU" firstAttribute="leading" secondItem="RtE-6w-Ln0" secondAttribute="leading" constant="15" id="0pO-iT-vKq"/>
                                                 <constraint firstItem="UDZ-wj-bHn" firstAttribute="leading" secondItem="RtE-6w-Ln0" secondAttribute="leading" constant="10" id="17H-WF-l7u"/>
+                                                <constraint firstItem="SM1-w6-CKU" firstAttribute="top" secondItem="4nC-gm-Tcz" secondAttribute="bottom" constant="6" id="68R-st-gcF"/>
                                                 <constraint firstAttribute="trailing" secondItem="s9h-2I-3e8" secondAttribute="trailing" id="6Ib-WZ-xZb"/>
                                                 <constraint firstItem="eCT-xr-ewT" firstAttribute="bottom" secondItem="s9h-2I-3e8" secondAttribute="bottom" id="D13-sC-8yf"/>
                                                 <constraint firstItem="UDZ-wj-bHn" firstAttribute="top" secondItem="RtE-6w-Ln0" secondAttribute="top" constant="3" id="IAN-Fk-IsW"/>
@@ -199,19 +207,18 @@
                                                 <constraint firstItem="s9h-2I-3e8" firstAttribute="leading" secondItem="RtE-6w-Ln0" secondAttribute="leading" id="Kah-uL-exv"/>
                                                 <constraint firstItem="eCT-xr-ewT" firstAttribute="leading" secondItem="s9h-2I-3e8" secondAttribute="leading" id="Kew-wr-c7I"/>
                                                 <constraint firstItem="s9h-2I-3e8" firstAttribute="top" secondItem="SM1-w6-CKU" secondAttribute="bottom" constant="4" id="LhQ-k6-ZM1"/>
+                                                <constraint firstItem="4nC-gm-Tcz" firstAttribute="top" secondItem="RtE-6w-Ln0" secondAttribute="top" constant="4" id="ROO-rj-Zef"/>
                                                 <constraint firstAttribute="trailing" secondItem="SM1-w6-CKU" secondAttribute="trailing" constant="15" id="bBK-JQ-8KQ"/>
+                                                <constraint firstItem="4nC-gm-Tcz" firstAttribute="centerX" secondItem="RtE-6w-Ln0" secondAttribute="centerX" id="bZc-p4-2qb"/>
                                                 <constraint firstAttribute="trailing" secondItem="Gsg-1Z-Zk7" secondAttribute="trailing" constant="10" id="i5r-fq-cLs"/>
-                                                <constraint firstItem="rHM-ZR-1Eb" firstAttribute="top" secondItem="RtE-6w-Ln0" secondAttribute="top" constant="4" id="iGF-jx-cuu"/>
-                                                <constraint firstItem="rHM-ZR-1Eb" firstAttribute="centerX" secondItem="RtE-6w-Ln0" secondAttribute="centerX" id="mZj-9D-MIV"/>
                                                 <constraint firstItem="eCT-xr-ewT" firstAttribute="width" secondItem="s9h-2I-3e8" secondAttribute="width" id="tXJ-G4-jJD"/>
-                                                <constraint firstItem="SM1-w6-CKU" firstAttribute="top" secondItem="rHM-ZR-1Eb" secondAttribute="bottom" constant="6" id="z5T-iA-hgR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="DU2-2o-thE" id="50q-rD-dwA"/>
                                             <outlet property="roundedView" destination="s9h-2I-3e8" id="wuw-mf-prM"/>
                                             <outlet property="shadowView" destination="eCT-xr-ewT" id="dJi-cm-N29"/>
-                                            <outlet property="titleLabel" destination="rHM-ZR-1Eb" id="v0w-uS-d14"/>
+                                            <outlet property="titleButton" destination="4nC-gm-Tcz" id="Cpb-gG-XBr"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultSectionHeader" id="MEm-17-NHz" customClass="DefaultSectionHeader" customModule="Fitness_App" customModuleProvider="target">
@@ -383,7 +390,6 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCirle" value="YES"/>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
@@ -395,7 +401,6 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCirle" value="YES"/>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
@@ -407,7 +412,6 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCirle" value="YES"/>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
@@ -419,7 +423,6 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCirle" value="YES"/>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
@@ -598,7 +601,6 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCirle" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="12"/>

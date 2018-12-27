@@ -18,6 +18,10 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We will use your health information to better track Prancercise workouts.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We will use your health information to better track Prancercise workouts.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

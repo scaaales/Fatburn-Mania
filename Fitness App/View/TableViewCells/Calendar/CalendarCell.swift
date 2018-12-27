@@ -12,8 +12,12 @@ import JTAppleCalendar
 class CalendarCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var shadowView: UIView!
 	@IBOutlet private weak var roundedView: UIView!
-	@IBOutlet private weak var titleLabel: UILabel!
-	@IBOutlet private weak var collectionView: JTAppleCalendarView!
+	@IBOutlet private weak var titleButton: UIButton!
+	@IBOutlet private weak var collectionView: JTAppleCalendarView! {
+		didSet {
+		
+		}
+	}
 	
 	private let formatter = DateFormatter()
 
@@ -25,7 +29,9 @@ class CalendarCell: UITableViewCell, ConfigurableCell {
 		collectionView.visibleDates { [weak self] visibleDate in
 			self?.setupViewsOfCalendar(from: visibleDate)
 		}
-		collectionView.scrollToDate(Date(), triggerScrollToDateDelegate: true, animateScroll: false)
+		collectionView.scrollToDate(Date(), triggerScrollToDateDelegate: true, animateScroll: false) { [weak self] in
+			self?.collectionView.selectDates([Date()])
+		}
 		
 		makeRounded(view: roundedView, masksToBounds: true)
 		makeRounded(view: shadowView, masksToBounds: false)
@@ -37,7 +43,7 @@ class CalendarCell: UITableViewCell, ConfigurableCell {
 		
 		formatter.dateFormat = "MMMM yyyy"
 		let monthWithYear = formatter.string(from: date)
-		titleLabel.text = monthWithYear
+		titleButton.setTitle(monthWithYear, for: .normal)
 	}
 	
 	private func makeRounded(view: UIView, masksToBounds: Bool) {
@@ -51,6 +57,10 @@ class CalendarCell: UITableViewCell, ConfigurableCell {
 		shadowView.layer.shadowOffset = CGSize(width: 0, height: 2)
 		shadowView.layer.shadowOpacity = 0.5
 		shadowView.layer.shadowRadius = 6
+	}
+	
+	@IBAction func toggleSize(_ sender: Any) {
+		
 	}
 	
 	@IBAction func prevMonth(_ sender: Any) {

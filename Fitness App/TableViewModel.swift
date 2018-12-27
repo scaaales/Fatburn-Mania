@@ -15,7 +15,7 @@ typealias TrainingDayCellConfigurator = TableCellConfigurator<TrainingDayCell, T
 
 typealias StepCellConfigurator = TableCellConfigurator<StepCell, Steps>
 
-typealias WaterCellConfigurator = TableCellConfigurator<WaterCell, Water>
+typealias WaterCellConfigurator = TableCellConfigurator<WaterCell, Measurement>
 
 typealias NutritionCellConfigurator = TableCellConfigurator<NutritionCell, Measurement>
 
@@ -38,74 +38,149 @@ class TableViewModel {
 		}
 	}
 	
+	var trainingDay: TrainingDay?
+	var steps: Steps?
+	var water: Measurement?
+	var calories: Measurement?
+	var proteins: Measurement?
+	var fats: Measurement?
+	var carbohydrates: Measurement?
+	
+	init(trainingDay: TrainingDay? = nil,
+		 steps: Steps? = nil,
+		 water: Measurement? = nil,
+		 calories: Measurement? = nil,
+		 proteins: Measurement? = nil,
+		 fats: Measurement? = nil,
+		 carbohydrates: Measurement? = nil) {
+		self.trainingDay = trainingDay
+		self.steps = steps
+		self.water = water
+		self.calories = calories
+		self.proteins = proteins
+		self.fats = fats
+		self.carbohydrates = carbohydrates
+	}
+	
 	var sections: [Section] {
-		let calendarSection = Section(header: nil,
-								   items: [CalendarCellConfigurator()],
-								   footer: nil)
+		let calendarSection = getCalendarSection()
 		
-		let trainingDaySection = Section(header: DefaultSectionHeaderConfigurator(item: "Training day"),
-									items: [TrainingDayCellConfigurator(item: TrainingDay(time: "02 36",
-																						  calories: "-- --",
-																						  coins: "-- --"))],
-									footer: nil)
+		let trainingDaySection = getTrainingDaySection()
 		
-		let stepsSection = Section(header: DefaultSectionHeaderConfigurator(item: "Steps"),
-								   items: [StepCellConfigurator(item: Steps(current: 2672,
-																			goal: 5000))],
-								   footer: nil)
+		let stepsSection = getStepsSection()
 		
-		let waterSection = Section(header: DefaultSectionHeaderConfigurator(item: "Water"),
-									items: [WaterCellConfigurator(item: Water(result: "0",
-																			  goal: "2 pt"))],
-									footer: nil)
+		let waterSection = getWaterSection()
 		
-		let nutritionSection = Section(header: DefaultSectionHeaderConfigurator(item: "Nutrition"),
-									   items: [
-										NutritionCellConfigurator(item: Measurement(name: "Calories",
-																					firstValue: 0,
-																					secondValue: 1980,
-																					unit: "kcal")),
-										NutritionCellConfigurator(item: Measurement(name: "Proteins",
-																					firstValue: 0,
-																					secondValue: 148,
-																					unit: "oz")),
-										NutritionCellConfigurator(item: Measurement(name: "Fats",
-																					firstValue: 0,
-																					secondValue: 44,
-																					unit: "oz")),
-										NutritionCellConfigurator(item: Measurement(name: "Carbohydrates",
-																					firstValue: 0,
-																					secondValue: 247,
-																					unit: "oz"))
-			],
-									   footer: nil)
+		let nutritionSection = getNutritionSection()
 		
-		let bodyMeasurementsSection = Section(header: BodyMeasurementHeaderConfigurator(item: MeasurementPeriod(startDate: "12.10.2018 17:35", endDate: "18.10.2018 17:35")),
-											  items: [
-												BodyMeasurementCellConfigurator(item: Measurement(name: "Chest",
-																								  firstValue: 100,
-																								  secondValue: nil,
-																								  unit: "см")),
-												BodyMeasurementCellConfigurator(item: Measurement(name: "Waist",
-																								  firstValue: 60,
-																								  secondValue: nil,
-																								  unit: "см")),
-												BodyMeasurementCellConfigurator(item: Measurement(name: "Thighs",
-																								  firstValue: 90,
-																								  secondValue: nil,
-																								  unit: "см")),
-												BodyMeasurementCellConfigurator(item: Measurement(name: "Hip",
-																								  firstValue: 25,
-																								  secondValue: nil,
-																								  unit: "см")),
-												BodyMeasurementCellConfigurator(item: Measurement(name: "Weight",
-																								  firstValue: 60,
-																								  secondValue: nil,
-																								  unit: "кг"))
-												],
-											  footer: BodyMeasurementFooterConfigurator())
+		let bodyMeasurementsSection = getBodyMeasurementsSection()
 		
 		return [calendarSection, trainingDaySection, stepsSection, waterSection, nutritionSection, bodyMeasurementsSection]
+	}
+	
+	private func getCalendarSection() -> Section {
+		let result = Section(header: nil,
+							 items: [CalendarCellConfigurator()],
+							 footer: nil)
+		
+		return result
+	}
+	
+	private func getTrainingDaySection() -> Section {
+		let trainingDay = self.trainingDay ?? TrainingDay(time: "02 36",
+														  calories: "-- --",
+														  coins: "-- --")
+		
+		let result = Section(header: DefaultSectionHeaderConfigurator(item: "Training day"),
+							 items: [TrainingDayCellConfigurator(item: trainingDay)],
+							 footer: nil)
+		
+		return result
+	}
+	
+	private func getStepsSection() -> Section {
+		let steps = self.steps ?? Steps(current: 2672, goal: 8000)
+		
+		let result = Section(header: DefaultSectionHeaderConfigurator(item: "Steps"),
+							 items: [StepCellConfigurator(item: steps)],
+							 footer: nil)
+		
+		return result
+	}
+	
+	private func getWaterSection() -> Section {
+		let water = self.water ?? Measurement(name: "",
+											  firstValue: 500,
+											  secondValue: 2000,
+											  unit: "ml")
+		
+		let result = Section(header: DefaultSectionHeaderConfigurator(item: "Water"),
+							 items: [WaterCellConfigurator(item: water)],
+							 footer: nil)
+		
+		return result
+	}
+	
+	private func getNutritionSection() -> Section {
+		let calories = self.calories ?? Measurement(name: "Calories",
+													firstValue: 0,
+													secondValue: 1980,
+													unit: "kcal")
+		
+		let proteins = self.proteins ?? Measurement(name: "Proteins",
+													firstValue: 0,
+													secondValue: 148,
+													unit: "oz")
+		
+		let fats = self.fats ?? Measurement(name: "Fats",
+											firstValue: 0,
+											secondValue: 44,
+											unit: "oz")
+		
+		let carbohydrates = self.carbohydrates ?? Measurement(name: "Carbohydrates",
+															  firstValue: 0,
+															  secondValue: 247,
+															  unit: "oz")
+		
+		let result = Section(header: DefaultSectionHeaderConfigurator(item: "Nutrition"),
+				items: [
+					NutritionCellConfigurator(item: calories),
+					NutritionCellConfigurator(item: proteins),
+					NutritionCellConfigurator(item: fats),
+					NutritionCellConfigurator(item: carbohydrates)
+			],
+				footer: nil)
+		
+		return result
+	}
+	
+	private func getBodyMeasurementsSection() -> Section {
+		let result = Section(header: BodyMeasurementHeaderConfigurator(item: MeasurementPeriod(startDate: "12.10.2018 17:35", endDate: Date.todayWithCurrentTime)),
+							 items: [
+								BodyMeasurementCellConfigurator(item: Measurement(name: "Chest",
+																				  firstValue: 100,
+																				  secondValue: nil,
+																				  unit: "см")),
+								BodyMeasurementCellConfigurator(item: Measurement(name: "Waist",
+																				  firstValue: 60,
+																				  secondValue: nil,
+																				  unit: "см")),
+								BodyMeasurementCellConfigurator(item: Measurement(name: "Thighs",
+																				  firstValue: 90,
+																				  secondValue: nil,
+																				  unit: "см")),
+								BodyMeasurementCellConfigurator(item: Measurement(name: "Hip",
+																				  firstValue: 25,
+																				  secondValue: nil,
+																				  unit: "см")),
+								BodyMeasurementCellConfigurator(item: Measurement(name: "Weight",
+																				  firstValue: 60,
+																				  secondValue: nil,
+																				  unit: "кг"))
+			],
+							 footer: BodyMeasurementFooterConfigurator())
+		
+		return result
 	}
 
 }

@@ -18,6 +18,51 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		setupTableView()
 		setupNavigationBar()
+		healthKitTest()
+	}
+	
+	private func healthKitTest() {
+		HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
+			if !authorized {
+				let baseMessage = "HealthKit Authorization Failed"
+				if let error = error {
+					print("\(baseMessage). Reason: \(error.localizedDescription)")
+				} else {
+					print(baseMessage)
+				}
+			}
+		}
+		
+		ProfileDataStore.getTodaySteps { [weak self] value in
+			self?.tableViewModel.steps = value
+		}
+		
+		ProfileDataStore.getTodayCalories { [weak self] value in
+			self?.tableViewModel.calories = value
+		}
+		
+		ProfileDataStore.getTodayProteins { [weak self] value in
+			self?.tableViewModel.proteins = value
+		}
+		
+		ProfileDataStore.getTodayFats { [weak self] value in
+			self?.tableViewModel.fats = value
+		}
+		
+		ProfileDataStore.getTodayCarbohydrates { [weak self] value in
+			self?.tableViewModel.carbohydrates = value
+		}
+		
+		ProfileDataStore.getWaist { value in
+			let name = "waist"
+			if let value = value {
+				print("\(name) = \(value)")
+			}
+		}
+		
+		ProfileDataStore.getTodayWater { [weak self] value in
+			self?.tableViewModel.water = value
+		}
 	}
 	
 	private func setupNavigationBar() {

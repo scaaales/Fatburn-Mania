@@ -13,4 +13,12 @@ struct Measurement {
 	var firstValue: Int
 	var secondValue: Int?
 	var unit: String
+	
+	var progress: Float? {
+		if let secondValue = secondValue {
+			return Float(firstValue)/Float(secondValue)
+		} else {
+			return nil
+		}
+	}
 }

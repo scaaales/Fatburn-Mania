@@ -16,7 +16,6 @@
 		B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1821D3E7CD00F99F91 /* Measurement.swift */; };
 		B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1921D3E7CD00F99F91 /* Steps.swift */; };
 		B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */; };
-		B3254F3F21D3E7CE00F99F91 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1B21D3E7CD00F99F91 /* Water.swift */; };
 		B3254F4021D3E7CE00F99F91 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1C21D3E7CD00F99F91 /* TableViewModel.swift */; };
 		B3254F4121D3E7CE00F99F91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1D21D3E7CE00F99F91 /* ViewController.swift */; };
 		B3254F4221D3E7CE00F99F91 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2121D3E7CE00F99F91 /* CalendarCell.swift */; };
@@ -35,6 +34,10 @@
 		B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F3421D3E7CE00F99F91 /* ProgressView.swift */; };
 		B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3254F3521D3E7CE00F99F91 /* ProgressView.xib */; };
 		B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */; };
+		B369573521D4E30C00735555 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B369573421D4E30C00735555 /* HealthKit.framework */; };
+		B369573721D4E40500735555 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573621D4E40500735555 /* HealthKitSetupAssistant.swift */; };
+		B369573921D4ECF100735555 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573821D4ECF100735555 /* ProfileDataStore.swift */; };
+		B369573C21D514DF00735555 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573B21D514DF00735555 /* Date+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,12 +48,10 @@
 		B3254F1121D3E7CD00F99F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3254F1321D3E7CD00F99F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		B3254F1421D3E7CD00F99F91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B3254F1621D3E7CD00F99F91 /* 4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 4.swift; sourceTree = "<group>"; };
 		B3254F1721D3E7CD00F99F91 /* TrainingDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingDay.swift; sourceTree = "<group>"; };
 		B3254F1821D3E7CD00F99F91 /* Measurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		B3254F1921D3E7CD00F99F91 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 		B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementPeriod.swift; sourceTree = "<group>"; };
-		B3254F1B21D3E7CD00F99F91 /* Water.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		B3254F1C21D3E7CD00F99F91 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		B3254F1D21D3E7CE00F99F91 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3254F2121D3E7CE00F99F91 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
@@ -69,6 +70,11 @@
 		B3254F3421D3E7CE00F99F91 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		B3254F3521D3E7CE00F99F91 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
+		B369573321D4E30C00735555 /* Fitness App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fitness App.entitlements"; sourceTree = "<group>"; };
+		B369573421D4E30C00735555 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B369573621D4E40500735555 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		B369573821D4ECF100735555 /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
+		B369573B21D514DF00735555 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				587D721C381EB937FDF7138F /* Pods_Fitness_App.framework in Frameworks */,
+				B369573521D4E30C00735555 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +95,7 @@
 		67BF1919409EE05C6FE054C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B369573421D4E30C00735555 /* HealthKit.framework */,
 				F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */,
 			);
 			name = Frameworks;
@@ -123,9 +131,13 @@
 		B3254DCD21D3DD5C00F99F91 /* Fitness App */ = {
 			isa = PBXGroup;
 			children = (
+				B369573321D4E30C00735555 /* Fitness App.entitlements */,
 				B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */,
 				B3254F1D21D3E7CE00F99F91 /* ViewController.swift */,
 				B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */,
+				B369573821D4ECF100735555 /* ProfileDataStore.swift */,
+				B369573A21D514CA00735555 /* Extenstions */,
+				B369573621D4E40500735555 /* HealthKitSetupAssistant.swift */,
 				B3254F1521D3E7CD00F99F91 /* Model */,
 				B3254F1C21D3E7CD00F99F91 /* TableViewModel.swift */,
 				B3254F1E21D3E7CE00F99F91 /* View */,
@@ -140,12 +152,10 @@
 		B3254F1521D3E7CD00F99F91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B3254F1621D3E7CD00F99F91 /* 4.swift */,
 				B3254F1721D3E7CD00F99F91 /* TrainingDay.swift */,
 				B3254F1821D3E7CD00F99F91 /* Measurement.swift */,
 				B3254F1921D3E7CD00F99F91 /* Steps.swift */,
 				B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */,
-				B3254F1B21D3E7CD00F99F91 /* Water.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +246,14 @@
 			path = ProgressView;
 			sourceTree = "<group>";
 		};
+		B369573A21D514CA00735555 /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				B369573B21D514DF00735555 /* Date+extension.swift */,
+			);
+			path = Extenstions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,6 +288,11 @@
 				TargetAttributes = {
 					B3254DCA21D3DD5C00F99F91 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -357,15 +380,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3254F3F21D3E7CE00F99F91 /* Water.swift in Sources */,
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
 				B3254F4E21D3E7CE00F99F91 /* RoundButton.swift in Sources */,
 				B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */,
 				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
 				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
+				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
 				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
+				B369573721D4E40500735555 /* HealthKitSetupAssistant.swift in Sources */,
 				B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */,
 				B3254F4121D3E7CE00F99F91 /* ViewController.swift in Sources */,
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
@@ -377,6 +401,7 @@
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
 				B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */,
 				B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */,
+				B369573921D4ECF100735555 /* ProfileDataStore.swift in Sources */,
 				B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
 				B3254F4221D3E7CE00F99F91 /* CalendarCell.swift in Sources */,
@@ -526,6 +551,7 @@
 			baseConfigurationReference = 43A06619D7EF96D10B324FEB /* Pods-Fitness App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Fitness App/Fitness App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8N949X2SJZ;
 				INFOPLIST_FILE = "Fitness App/Info.plist";
@@ -546,6 +572,7 @@
 			baseConfigurationReference = E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Fitness App/Fitness App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8N949X2SJZ;
 				INFOPLIST_FILE = "Fitness App/Info.plist";
