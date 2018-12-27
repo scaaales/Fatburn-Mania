@@ -12,7 +12,6 @@
 		B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */; };
 		B3254F3821D3E7CE00F99F91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1221D3E7CD00F99F91 /* Main.storyboard */; };
 		B3254F3921D3E7CE00F99F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1421D3E7CD00F99F91 /* Assets.xcassets */; };
-		B3254F3A21D3E7CE00F99F91 /* 4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1621D3E7CD00F99F91 /* 4.swift */; };
 		B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1721D3E7CD00F99F91 /* TrainingDay.swift */; };
 		B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1821D3E7CD00F99F91 /* Measurement.swift */; };
 		B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1921D3E7CD00F99F91 /* Steps.swift */; };
@@ -358,7 +357,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3254F3A21D3E7CE00F99F91 /* 4.swift in Sources */,
 				B3254F3F21D3E7CE00F99F91 /* Water.swift in Sources */,
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
