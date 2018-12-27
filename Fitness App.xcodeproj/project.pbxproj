@@ -7,21 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		587D721C381EB937FDF7138F /* Pods_Fitness_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */; };
 		B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */; };
-		B3254DD121D3DD5C00F99F91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DD021D3DD5C00F99F91 /* ViewController.swift */; };
-		B3254DD421D3DD5C00F99F91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254DD221D3DD5C00F99F91 /* Main.storyboard */; };
-		B3254DD621D3DD6800F99F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3254DD521D3DD6800F99F91 /* Assets.xcassets */; };
-		B3254DD921D3DD6800F99F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254DD721D3DD6800F99F91 /* LaunchScreen.storyboard */; };
+		B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */; };
+		B3254F3821D3E7CE00F99F91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1221D3E7CD00F99F91 /* Main.storyboard */; };
+		B3254F3921D3E7CE00F99F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1421D3E7CD00F99F91 /* Assets.xcassets */; };
+		B3254F3A21D3E7CE00F99F91 /* 4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1621D3E7CD00F99F91 /* 4.swift */; };
+		B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1721D3E7CD00F99F91 /* TrainingDay.swift */; };
+		B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1821D3E7CD00F99F91 /* Measurement.swift */; };
+		B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1921D3E7CD00F99F91 /* Steps.swift */; };
+		B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */; };
+		B3254F3F21D3E7CE00F99F91 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1B21D3E7CD00F99F91 /* Water.swift */; };
+		B3254F4021D3E7CE00F99F91 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1C21D3E7CD00F99F91 /* TableViewModel.swift */; };
+		B3254F4121D3E7CE00F99F91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1D21D3E7CE00F99F91 /* ViewController.swift */; };
+		B3254F4221D3E7CE00F99F91 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2121D3E7CE00F99F91 /* CalendarCell.swift */; };
+		B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2221D3E7CE00F99F91 /* CalendarDateCell.swift */; };
+		B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2321D3E7CE00F99F91 /* IdentifierProtocol.swift */; };
+		B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2521D3E7CE00F99F91 /* WaterCell.swift */; };
+		B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2721D3E7CE00F99F91 /* TrainingDayCell.swift */; };
+		B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2821D3E7CE00F99F91 /* DefaultSectionHeader.swift */; };
+		B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2A21D3E7CE00F99F91 /* BodyMeasurementHeader.swift */; };
+		B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2B21D3E7CE00F99F91 /* BodyMeasurementCell.swift */; };
+		B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2C21D3E7CE00F99F91 /* BodyMeasurementFooter.swift */; };
+		B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2E21D3E7CE00F99F91 /* StepCell.swift */; };
+		B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2F21D3E7CE00F99F91 /* ConfigurableCell.swift */; };
+		B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F3121D3E7CE00F99F91 /* NutritionCell.swift */; };
+		B3254F4E21D3E7CE00F99F91 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F3221D3E7CE00F99F91 /* RoundButton.swift */; };
+		B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F3421D3E7CE00F99F91 /* ProgressView.swift */; };
+		B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3254F3521D3E7CE00F99F91 /* ProgressView.xib */; };
+		B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43A06619D7EF96D10B324FEB /* Pods-Fitness App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.debug.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.debug.xcconfig"; sourceTree = "<group>"; };
 		B3254DCB21D3DD5C00F99F91 /* Fitness App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3254DD021D3DD5C00F99F91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B3254DD321D3DD5C00F99F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B3254DD521D3DD6800F99F91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B3254DD821D3DD6800F99F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3254DDA21D3DD6800F99F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3254F1121D3E7CD00F99F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B3254F1321D3E7CD00F99F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		B3254F1421D3E7CD00F99F91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3254F1621D3E7CD00F99F91 /* 4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 4.swift; sourceTree = "<group>"; };
+		B3254F1721D3E7CD00F99F91 /* TrainingDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingDay.swift; sourceTree = "<group>"; };
+		B3254F1821D3E7CD00F99F91 /* Measurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		B3254F1921D3E7CD00F99F91 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
+		B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementPeriod.swift; sourceTree = "<group>"; };
+		B3254F1B21D3E7CD00F99F91 /* Water.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
+		B3254F1C21D3E7CD00F99F91 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		B3254F1D21D3E7CE00F99F91 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B3254F2121D3E7CE00F99F91 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		B3254F2221D3E7CE00F99F91 /* CalendarDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateCell.swift; sourceTree = "<group>"; };
+		B3254F2321D3E7CE00F99F91 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
+		B3254F2521D3E7CE00F99F91 /* WaterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterCell.swift; sourceTree = "<group>"; };
+		B3254F2721D3E7CE00F99F91 /* TrainingDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingDayCell.swift; sourceTree = "<group>"; };
+		B3254F2821D3E7CE00F99F91 /* DefaultSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSectionHeader.swift; sourceTree = "<group>"; };
+		B3254F2A21D3E7CE00F99F91 /* BodyMeasurementHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyMeasurementHeader.swift; sourceTree = "<group>"; };
+		B3254F2B21D3E7CE00F99F91 /* BodyMeasurementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyMeasurementCell.swift; sourceTree = "<group>"; };
+		B3254F2C21D3E7CE00F99F91 /* BodyMeasurementFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyMeasurementFooter.swift; sourceTree = "<group>"; };
+		B3254F2E21D3E7CE00F99F91 /* StepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
+		B3254F2F21D3E7CE00F99F91 /* ConfigurableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		B3254F3121D3E7CE00F99F91 /* NutritionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionCell.swift; sourceTree = "<group>"; };
+		B3254F3221D3E7CE00F99F91 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		B3254F3421D3E7CE00F99F91 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		B3254F3521D3E7CE00F99F91 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
+		B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
+		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
+		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +79,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587D721C381EB937FDF7138F /* Pods_Fitness_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67BF1919409EE05C6FE054C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A6A09A353CA8126EAE4A353 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43A06619D7EF96D10B324FEB /* Pods-Fitness App.debug.xcconfig */,
+				E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B3254DC221D3DD5C00F99F91 = {
 			isa = PBXGroup;
 			children = (
 				B3254DCD21D3DD5C00F99F91 /* Fitness App */,
 				B3254DCC21D3DD5C00F99F91 /* Products */,
+				6A6A09A353CA8126EAE4A353 /* Pods */,
+				67BF1919409EE05C6FE054C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +125,116 @@
 			isa = PBXGroup;
 			children = (
 				B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */,
-				B3254DD021D3DD5C00F99F91 /* ViewController.swift */,
-				B3254DD221D3DD5C00F99F91 /* Main.storyboard */,
-				B3254DD521D3DD6800F99F91 /* Assets.xcassets */,
-				B3254DD721D3DD6800F99F91 /* LaunchScreen.storyboard */,
+				B3254F1D21D3E7CE00F99F91 /* ViewController.swift */,
+				B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */,
+				B3254F1521D3E7CD00F99F91 /* Model */,
+				B3254F1C21D3E7CD00F99F91 /* TableViewModel.swift */,
+				B3254F1E21D3E7CE00F99F91 /* View */,
+				B3254F1421D3E7CD00F99F91 /* Assets.xcassets */,
+				B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */,
+				B3254F1221D3E7CD00F99F91 /* Main.storyboard */,
 				B3254DDA21D3DD6800F99F91 /* Info.plist */,
 			);
 			path = "Fitness App";
+			sourceTree = "<group>";
+		};
+		B3254F1521D3E7CD00F99F91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F1621D3E7CD00F99F91 /* 4.swift */,
+				B3254F1721D3E7CD00F99F91 /* TrainingDay.swift */,
+				B3254F1821D3E7CD00F99F91 /* Measurement.swift */,
+				B3254F1921D3E7CD00F99F91 /* Steps.swift */,
+				B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */,
+				B3254F1B21D3E7CD00F99F91 /* Water.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3254F1E21D3E7CE00F99F91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F1F21D3E7CE00F99F91 /* TableViewCells */,
+				B3254F3221D3E7CE00F99F91 /* RoundButton.swift */,
+				B3254F3321D3E7CE00F99F91 /* ProgressView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3254F1F21D3E7CE00F99F91 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F2021D3E7CE00F99F91 /* Calendar */,
+				B3254F2321D3E7CE00F99F91 /* IdentifierProtocol.swift */,
+				B3254F2421D3E7CE00F99F91 /* Water */,
+				B3254F2621D3E7CE00F99F91 /* Training day */,
+				B3254F2821D3E7CE00F99F91 /* DefaultSectionHeader.swift */,
+				B3254F2921D3E7CE00F99F91 /* Body Measurements */,
+				B3254F2D21D3E7CE00F99F91 /* Steps */,
+				B3254F2F21D3E7CE00F99F91 /* ConfigurableCell.swift */,
+				B3254F3021D3E7CE00F99F91 /* Nutrition */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		B3254F2021D3E7CE00F99F91 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F2121D3E7CE00F99F91 /* CalendarCell.swift */,
+				B3254F2221D3E7CE00F99F91 /* CalendarDateCell.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		B3254F2421D3E7CE00F99F91 /* Water */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F2521D3E7CE00F99F91 /* WaterCell.swift */,
+			);
+			path = Water;
+			sourceTree = "<group>";
+		};
+		B3254F2621D3E7CE00F99F91 /* Training day */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F2721D3E7CE00F99F91 /* TrainingDayCell.swift */,
+			);
+			path = "Training day";
+			sourceTree = "<group>";
+		};
+		B3254F2921D3E7CE00F99F91 /* Body Measurements */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F2A21D3E7CE00F99F91 /* BodyMeasurementHeader.swift */,
+				B3254F2B21D3E7CE00F99F91 /* BodyMeasurementCell.swift */,
+				B3254F2C21D3E7CE00F99F91 /* BodyMeasurementFooter.swift */,
+			);
+			path = "Body Measurements";
+			sourceTree = "<group>";
+		};
+		B3254F2D21D3E7CE00F99F91 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F2E21D3E7CE00F99F91 /* StepCell.swift */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
+		B3254F3021D3E7CE00F99F91 /* Nutrition */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F3121D3E7CE00F99F91 /* NutritionCell.swift */,
+			);
+			path = Nutrition;
+			sourceTree = "<group>";
+		};
+		B3254F3321D3E7CE00F99F91 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F3421D3E7CE00F99F91 /* ProgressView.swift */,
+				B3254F3521D3E7CE00F99F91 /* ProgressView.xib */,
+			);
+			path = ProgressView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3254DDD21D3DD6800F99F91 /* Build configuration list for PBXNativeTarget "Fitness App" */;
 			buildPhases = (
+				8566D1772618E66FD0880DF2 /* [CP] Check Pods Manifest.lock */,
 				B3254DC721D3DD5C00F99F91 /* Sources */,
 				B3254DC821D3DD5C00F99F91 /* Frameworks */,
 				B3254DC921D3DD5C00F99F91 /* Resources */,
+				1F5F1426750B9D58945BDF22 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,41 +297,111 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3254DD921D3DD6800F99F91 /* LaunchScreen.storyboard in Resources */,
-				B3254DD621D3DD6800F99F91 /* Assets.xcassets in Resources */,
-				B3254DD421D3DD5C00F99F91 /* Main.storyboard in Resources */,
+				B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */,
+				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
+				B3254F3921D3E7CE00F99F91 /* Assets.xcassets in Resources */,
+				B3254F3821D3E7CE00F99F91 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F5F1426750B9D58945BDF22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitness App/Pods-Fitness App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitness App/Pods-Fitness App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8566D1772618E66FD0880DF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fitness App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B3254DC721D3DD5C00F99F91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3254DD121D3DD5C00F99F91 /* ViewController.swift in Sources */,
+				B3254F3A21D3E7CE00F99F91 /* 4.swift in Sources */,
+				B3254F3F21D3E7CE00F99F91 /* Water.swift in Sources */,
+				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
+				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
+				B3254F4E21D3E7CE00F99F91 /* RoundButton.swift in Sources */,
+				B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */,
+				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
+				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
+				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
+				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
+				B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */,
+				B3254F4121D3E7CE00F99F91 /* ViewController.swift in Sources */,
+				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
+				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
+				B3254F4021D3E7CE00F99F91 /* TableViewModel.swift in Sources */,
+				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
+				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
+				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
+				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
 				B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */,
+				B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */,
+				B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */,
+				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
+				B3254F4221D3E7CE00F99F91 /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B3254DD221D3DD5C00F99F91 /* Main.storyboard */ = {
+		B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B3254DD321D3DD5C00F99F91 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B3254DD721D3DD6800F99F91 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3254DD821D3DD6800F99F91 /* Base */,
+				B3254F1121D3E7CD00F99F91 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B3254F1221D3E7CD00F99F91 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3254F1321D3E7CD00F99F91 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -280,11 +525,13 @@
 		};
 		B3254DDE21D3DD6800F99F91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43A06619D7EF96D10B324FEB /* Pods-Fitness App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8N949X2SJZ;
 				INFOPLIST_FILE = "Fitness App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,11 +545,13 @@
 		};
 		B3254DDF21D3DD6800F99F91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8N949X2SJZ;
 				INFOPLIST_FILE = "Fitness App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
