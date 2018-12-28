@@ -68,27 +68,16 @@ class ViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		
-		tableView.estimatedSectionHeaderHeight = 2
+		tableView.estimatedSectionHeaderHeight = 1
 		tableView.sectionHeaderHeight = UITableView.automaticDimension
 		
-		tableView.estimatedRowHeight = 2
+		tableView.estimatedRowHeight = 1
 		tableView.rowHeight = UITableView.automaticDimension
 		
-		tableView.estimatedSectionFooterHeight = 2
+		tableView.estimatedSectionFooterHeight = 1
 		tableView.sectionFooterHeight = UITableView.automaticDimension
 		
 		tableView.backgroundColor = .white
-	}
-
-	@IBAction func toggleCalendar(_ sender: Any) {
-		switch calendarView.state {
-		case .open:
-			calendarView.closeAnimated()
-		case .closed:
-			calendarView.openAnimated()
-		case .animating:
-			return
-		}
 	}
 }
 
@@ -136,3 +125,14 @@ extension ViewController: UITableViewDelegate {
 	
 }
 
+// MARK: - Scroll view delegate
+extension ViewController {
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		let contentOffsetY = scrollView.contentOffset.y
+		if contentOffsetY > 10 {
+			calendarView.closeAnimated()
+		} else {
+			calendarView.openAnimated()
+		}
+	}
+}

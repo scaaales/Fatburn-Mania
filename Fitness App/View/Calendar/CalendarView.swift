@@ -10,31 +10,16 @@ import UIKit
 import JTAppleCalendar
 
 class CalendarView: UIView {
-	enum State {
-		case open
-		case closed
-		case animating
-	}
 	
 	@IBOutlet private weak var shadowView: UIView!
 	@IBOutlet private weak var roundedView: UIView!
-	@IBOutlet private weak var titleButton: UIButton!
+	@IBOutlet private weak var titleLabel: UILabel!
 	@IBOutlet private weak var collectionView: JTAppleCalendarView!
 	
 	@IBOutlet private weak var collectionViewHeight: NSLayoutConstraint!
 	@IBOutlet private weak var collectionViewBottom: NSLayoutConstraint!
 	
 	private let formatter = DateFormatter()
-
-	private(set) var state = State.open {
-		didSet {
-			if state == .animating {
-				collectionView.isScrollEnabled = false
-			} else {
-				collectionView.isScrollEnabled = true
-			}
-		}
-	}
 	
 	func configure() {
 		setupCollectionView()
@@ -62,11 +47,7 @@ class CalendarView: UIView {
 		
 		formatter.dateFormat = "MMMM yyyy"
 		let monthWithYear = formatter.string(from: date)
-		UIView.performWithoutAnimation {
-			self.titleButton.setTitle(monthWithYear, for: .normal)
-			self.titleButton.layoutIfNeeded()
-			
-		}
+		self.titleLabel.text = monthWithYear
 	}
 	
 	func closeAnimated() {
@@ -75,12 +56,8 @@ class CalendarView: UIView {
 		collectionViewBottom.isActive = false
 		collectionViewHeight.isActive = true
 		
-		state = .animating
-		
-		UIView.animate(withDuration: 1, animations: {
+		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
-		}) { _ in
-			self.state = .closed
 		}
 	}
 	
@@ -88,13 +65,8 @@ class CalendarView: UIView {
 		collectionViewHeight.isActive = false
 		collectionViewBottom.isActive = true
 		
-		state = .animating
-		collectionView.isScrollEnabled = false
-		
-		UIView.animate(withDuration: 1, animations: {
+		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
-		}) { _ in
-			self.state = .open
 		}
 	}
 	
@@ -143,7 +115,7 @@ extension CalendarView: JTAppleCalendarViewDelegate {
 	func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
 		guard let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: CalendarDateCell.reuseId, for: indexPath) as? CalendarDateCell else { fatalError() }
 		if cellState.dateBelongsTo == .thisMonth {
-			cell.configure(text: cellState.text, isSelected: false, hasIvent: false)
+			cell.configure(text: cellState.text, isSelected: cellState.isSelected, hasIvent: false)
 		} else {
 			cell.configureEmpty()
 		}

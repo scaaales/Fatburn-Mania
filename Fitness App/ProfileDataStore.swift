@@ -56,7 +56,7 @@ class ProfileDataStore {
 							unit: .literUnit(with: .milli)) { result in
 			if let result = result {
 				let firstValue = Int(result)
-				let water = Measurement.init(name: "", firstValue: firstValue, secondValue: 2000, unit: "ml")
+				let water = Measurement(name: "", firstValue: firstValue, secondValue: 2, unit: "pt")
 				completion(water)
 			} else {
 				completion(nil)

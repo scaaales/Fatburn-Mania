@@ -34,6 +34,7 @@
 		B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F3421D3E7CE00F99F91 /* ProgressView.swift */; };
 		B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3254F3521D3E7CE00F99F91 /* ProgressView.xib */; };
 		B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */; };
+		B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BF21421D67C040019489A /* PlaceholderCell.swift */; };
 		B369573521D4E30C00735555 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B369573421D4E30C00735555 /* HealthKit.framework */; };
 		B369573721D4E40500735555 /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573621D4E40500735555 /* HealthKitSetupAssistant.swift */; };
 		B369573921D4ECF100735555 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573821D4ECF100735555 /* ProfileDataStore.swift */; };
@@ -70,6 +71,7 @@
 		B3254F3421D3E7CE00F99F91 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		B3254F3521D3E7CE00F99F91 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
+		B32BF21421D67C040019489A /* PlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderCell.swift; sourceTree = "<group>"; };
 		B369573321D4E30C00735555 /* Fitness App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fitness App.entitlements"; sourceTree = "<group>"; };
 		B369573421D4E30C00735555 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B369573621D4E40500735555 /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				B3254F2421D3E7CE00F99F91 /* Water */,
 				B3254F2621D3E7CE00F99F91 /* Training day */,
 				B3254F2821D3E7CE00F99F91 /* DefaultSectionHeader.swift */,
+				B32BF21421D67C040019489A /* PlaceholderCell.swift */,
 				B3254F2921D3E7CE00F99F91 /* Body Measurements */,
 				B3254F2D21D3E7CE00F99F91 /* Steps */,
 				B3254F2F21D3E7CE00F99F91 /* ConfigurableCell.swift */,
@@ -395,6 +398,7 @@
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* TableViewModel.swift in Sources */,
+				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,

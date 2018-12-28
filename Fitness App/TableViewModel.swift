@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias PlaceholderCellConfigurator = TableCellConfigurator<PlaceholderCell, Void>
+
 typealias DefaultSectionHeaderConfigurator = TableCellConfigurator<DefaultSectionHeader, String>
 typealias TrainingDayCellConfigurator = TableCellConfigurator<TrainingDayCell, TrainingDay>
 
@@ -61,17 +63,25 @@ class TableViewModel {
 	}
 	
 	var sections: [Section] {
+		let placeholderSection = getPlaceholderSection()
 		let trainingDaySection = getTrainingDaySection()
 		let stepsSection = getStepsSection()
 		let waterSection = getWaterSection()
 		let nutritionSection = getNutritionSection()
 		let bodyMeasurementsSection = getBodyMeasurementsSection()
 		
-		return [trainingDaySection, stepsSection, waterSection, nutritionSection, bodyMeasurementsSection]
+		return [placeholderSection, trainingDaySection, stepsSection, waterSection, nutritionSection, bodyMeasurementsSection]
+	}
+	
+	private func getPlaceholderSection() -> Section {
+		let result = Section(header: nil,
+							 items: [PlaceholderCellConfigurator()],
+							 footer: nil)
+		return result
 	}
 	
 	private func getTrainingDaySection() -> Section {
-		let trainingDay = self.trainingDay ?? TrainingDay(time: "02 36",
+		let trainingDay = self.trainingDay ?? TrainingDay(time: "-- --",
 														  calories: "-- --",
 														  coins: "-- --")
 		
@@ -83,7 +93,7 @@ class TableViewModel {
 	}
 	
 	private func getStepsSection() -> Section {
-		let steps = self.steps ?? Steps(current: 2672, goal: 8000)
+		let steps = self.steps ?? Steps(current: 0, goal: 8000)
 		
 		let result = Section(header: DefaultSectionHeaderConfigurator(item: "Steps"),
 							 items: [StepCellConfigurator(item: steps)],
@@ -94,9 +104,9 @@ class TableViewModel {
 	
 	private func getWaterSection() -> Section {
 		let water = self.water ?? Measurement(name: "",
-											  firstValue: 500,
-											  secondValue: 2000,
-											  unit: "ml")
+											  firstValue: 0,
+											  secondValue: 2,
+											  unit: "pt")
 		
 		let result = Section(header: DefaultSectionHeaderConfigurator(item: "Water"),
 							 items: [WaterCellConfigurator(item: water)],
