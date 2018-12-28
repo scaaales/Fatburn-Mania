@@ -18,7 +18,7 @@
 		B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */; };
 		B3254F4021D3E7CE00F99F91 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1C21D3E7CD00F99F91 /* TableViewModel.swift */; };
 		B3254F4121D3E7CE00F99F91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1D21D3E7CE00F99F91 /* ViewController.swift */; };
-		B3254F4221D3E7CE00F99F91 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2121D3E7CE00F99F91 /* CalendarCell.swift */; };
+		B3254F4221D3E7CE00F99F91 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2121D3E7CE00F99F91 /* CalendarView.swift */; };
 		B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2221D3E7CE00F99F91 /* CalendarDateCell.swift */; };
 		B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2321D3E7CE00F99F91 /* IdentifierProtocol.swift */; };
 		B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F2521D3E7CE00F99F91 /* WaterCell.swift */; };
@@ -54,7 +54,7 @@
 		B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementPeriod.swift; sourceTree = "<group>"; };
 		B3254F1C21D3E7CD00F99F91 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		B3254F1D21D3E7CE00F99F91 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B3254F2121D3E7CE00F99F91 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		B3254F2121D3E7CE00F99F91 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		B3254F2221D3E7CE00F99F91 /* CalendarDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateCell.swift; sourceTree = "<group>"; };
 		B3254F2321D3E7CE00F99F91 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
 		B3254F2521D3E7CE00F99F91 /* WaterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterCell.swift; sourceTree = "<group>"; };
@@ -163,6 +163,7 @@
 		B3254F1E21D3E7CE00F99F91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B3254F2021D3E7CE00F99F91 /* Calendar */,
 				B3254F1F21D3E7CE00F99F91 /* TableViewCells */,
 				B3254F3221D3E7CE00F99F91 /* RoundButton.swift */,
 				B3254F3321D3E7CE00F99F91 /* ProgressView */,
@@ -173,7 +174,6 @@
 		B3254F1F21D3E7CE00F99F91 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				B3254F2021D3E7CE00F99F91 /* Calendar */,
 				B3254F2321D3E7CE00F99F91 /* IdentifierProtocol.swift */,
 				B3254F2421D3E7CE00F99F91 /* Water */,
 				B3254F2621D3E7CE00F99F91 /* Training day */,
@@ -189,7 +189,7 @@
 		B3254F2021D3E7CE00F99F91 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				B3254F2121D3E7CE00F99F91 /* CalendarCell.swift */,
+				B3254F2121D3E7CE00F99F91 /* CalendarView.swift */,
 				B3254F2221D3E7CE00F99F91 /* CalendarDateCell.swift */,
 			);
 			path = Calendar;
@@ -404,7 +404,7 @@
 				B369573921D4ECF100735555 /* ProfileDataStore.swift in Sources */,
 				B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
-				B3254F4221D3E7CE00F99F91 /* CalendarCell.swift in Sources */,
+				B3254F4221D3E7CE00F99F91 /* CalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

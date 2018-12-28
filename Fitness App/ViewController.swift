@@ -12,10 +12,12 @@ class ViewController: UIViewController {
 	
 	let tableViewModel = TableViewModel()
 
+	@IBOutlet private weak var calendarView: CalendarView!
 	@IBOutlet private weak var tableView: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		calendarView.configure()
 		setupTableView()
 		setupNavigationBar()
 		healthKitTest()
@@ -33,35 +35,28 @@ class ViewController: UIViewController {
 			}
 		}
 		
-		ProfileDataStore.getTodaySteps { [weak self] value in
-			self?.tableViewModel.steps = value
+		ProfileDataStore.getTodaySteps { value in
+			self.tableViewModel.steps = value
 		}
 		
-		ProfileDataStore.getTodayCalories { [weak self] value in
-			self?.tableViewModel.calories = value
+		ProfileDataStore.getTodayCalories { value in
+			self.tableViewModel.calories = value
 		}
 		
-		ProfileDataStore.getTodayProteins { [weak self] value in
-			self?.tableViewModel.proteins = value
+		ProfileDataStore.getTodayProteins { value in
+			self.tableViewModel.proteins = value
 		}
 		
-		ProfileDataStore.getTodayFats { [weak self] value in
-			self?.tableViewModel.fats = value
+		ProfileDataStore.getTodayFats { value in
+			self.tableViewModel.fats = value
 		}
 		
-		ProfileDataStore.getTodayCarbohydrates { [weak self] value in
-			self?.tableViewModel.carbohydrates = value
+		ProfileDataStore.getTodayCarbohydrates { value in
+			self.tableViewModel.carbohydrates = value
 		}
 		
-		ProfileDataStore.getWaist { value in
-			let name = "waist"
-			if let value = value {
-				print("\(name) = \(value)")
-			}
-		}
-		
-		ProfileDataStore.getTodayWater { [weak self] value in
-			self?.tableViewModel.water = value
+		ProfileDataStore.getTodayWater { value in
+			self.tableViewModel.water = value
 		}
 	}
 	
@@ -85,6 +80,16 @@ class ViewController: UIViewController {
 		tableView.backgroundColor = .white
 	}
 
+	@IBAction func toggleCalendar(_ sender: Any) {
+		switch calendarView.state {
+		case .open:
+			calendarView.closeAnimated()
+		case .closed:
+			calendarView.openAnimated()
+		case .animating:
+			return
+		}
+	}
 }
 
 extension ViewController: UITableViewDataSource {

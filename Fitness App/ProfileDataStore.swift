@@ -116,33 +116,4 @@ class ProfileDataStore {
 		}
 	}
 	
-	class func getWaist(completion: @escaping (Measurement?) -> Void) {
-		if #available(iOS 11.0, *) {
-			let now = Date()
-			let startOfDay = Calendar.current.startOfDay(for: now)
-			let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
-			
-			let type = HKQuantityType.quantityType(forIdentifier: .waistCircumference)!
-			
-			let query = HKSampleQuery(sampleType: type, predicate: predicate, limit: 1, sortDescriptors: nil) { (query, samples, error) in
-				if let error = error {
-					print(error)
-					completion(nil)
-				}
-				
-				guard let match = samples?.first as? HKQuantitySample else { return }
-				
-				let foundMatch = match.quantity.doubleValue(for: .meterUnit(with: .centi))
-				
-				let currentValue = Int(foundMatch)
-				
-				let waist = Measurement(name: "Waist", firstValue: currentValue, secondValue: nil, unit: "см")
-				completion(waist)
-			}
-			
-			healthStore.execute(query)
-		} else {
-			completion(nil)
-		}
-	}
 }

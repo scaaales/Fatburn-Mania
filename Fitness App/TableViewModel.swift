@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias CalendarCellConfigurator = TableCellConfigurator<CalendarCell, Void>
-
 typealias DefaultSectionHeaderConfigurator = TableCellConfigurator<DefaultSectionHeader, String>
 typealias TrainingDayCellConfigurator = TableCellConfigurator<TrainingDayCell, TrainingDay>
 
@@ -63,27 +61,13 @@ class TableViewModel {
 	}
 	
 	var sections: [Section] {
-		let calendarSection = getCalendarSection()
-		
 		let trainingDaySection = getTrainingDaySection()
-		
 		let stepsSection = getStepsSection()
-		
 		let waterSection = getWaterSection()
-		
 		let nutritionSection = getNutritionSection()
-		
 		let bodyMeasurementsSection = getBodyMeasurementsSection()
 		
-		return [calendarSection, trainingDaySection, stepsSection, waterSection, nutritionSection, bodyMeasurementsSection]
-	}
-	
-	private func getCalendarSection() -> Section {
-		let result = Section(header: nil,
-							 items: [CalendarCellConfigurator()],
-							 footer: nil)
-		
-		return result
+		return [trainingDaySection, stepsSection, waterSection, nutritionSection, bodyMeasurementsSection]
 	}
 	
 	private func getTrainingDaySection() -> Section {
