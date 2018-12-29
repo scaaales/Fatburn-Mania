@@ -17,10 +17,10 @@ class DiaryViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		calendarView.configure()
+		calendarView.configure(calendarViewDateDelegate: self)
 		setupTableView()
 		setupNavigationBar()
-		presenter.getHealthInfo()
+		presenter.getInitialHealthInfo()
 	}
 	
 	private func setupNavigationBar() {
@@ -99,5 +99,11 @@ extension DiaryViewController {
 		} else {
 			calendarView.openAnimated()
 		}
+	}
+}
+
+extension DiaryViewController: CalendarViewDateDelegate {
+	func didSelectDate(_ date: Date) {
+		presenter.getHealthInfo(on: date)
 	}
 }

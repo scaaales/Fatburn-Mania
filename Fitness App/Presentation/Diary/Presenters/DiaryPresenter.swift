@@ -19,8 +19,12 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		viewModel = TableViewModel()
 	}
 	
-	func getHealthInfo() {
+	func getInitialHealthInfo() {
 		view.hideTableView()
+		getHealthInfo(on: .init())
+	}
+	
+	func getHealthInfo(on date: Date) {
 		view.showLoader()
 		
 		HealthKitService.authorizeHealthKit { (authorized, error) in
@@ -34,43 +38,43 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 			}
 		}
 		
-		getAllParameters { [weak self] in
+		getAllFields(on: date) { [weak self] in
 			self?.view.showTableView()
 			self?.view.hideLoader()
 			self?.view.update()
 		}
 	}
 	
-	private func getAllParameters(completion: @escaping () -> Void) {
+	private func getAllFields(on date: Date, completion: @escaping () -> Void) {
 		let dispatchGroup = DispatchGroup()
 		
 		addTo(dispatchGroup: dispatchGroup,
-			  execute: HealthKitService.getTodaySteps) { [weak self] steps in
+			  execute: HealthKitService.getSteps, date: date) { [weak self] steps in
 				self?.viewModel.steps = steps
 		}
 		
 		addTo(dispatchGroup: dispatchGroup,
-			  execute: HealthKitService.getTodayCalories) { [weak self] calories in
+			  execute: HealthKitService.getCalories, date: date) { [weak self] calories in
 				self?.viewModel.calories = calories
 		}
 		
 		addTo(dispatchGroup: dispatchGroup,
-			  execute: HealthKitService.getTodayProteins) { [weak self] proteins in
+			  execute: HealthKitService.getProteins, date: date) { [weak self] proteins in
 				self?.viewModel.proteins = proteins
 		}
 		
 		addTo(dispatchGroup: dispatchGroup,
-			  execute: HealthKitService.getTodayFats) { [weak self] fats in
+			  execute: HealthKitService.getFats, date: date) { [weak self] fats in
 				self?.viewModel.fats = fats
 		}
 		
 		addTo(dispatchGroup: dispatchGroup,
-			  execute: HealthKitService.getTodayCarbohydrates) { [weak self] carbohydrates in
+			  execute: HealthKitService.getCarbohydrates, date: date) { [weak self] carbohydrates in
 				self?.viewModel.carbohydrates = carbohydrates
 		}
 		
 		addTo(dispatchGroup: dispatchGroup,
-			  execute: HealthKitService.getTodayWater) { [weak self] water in
+			  execute: HealthKitService.getWater, date: date) { [weak self] water in
 				self?.viewModel.water = water
 		}
 		
@@ -78,10 +82,11 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	}
 	
 	private func addTo<T>(dispatchGroup: DispatchGroup,
-						  execute: (@escaping (T?) -> Void) -> Void,
+						  execute: (Date ,@escaping (T?) -> Void) -> Void,
+						  date: Date,
 						  completion: @escaping (T?) -> Void) {
 		dispatchGroup.enter()
-		execute { t in
+		execute(date) { t in
 			completion(t)
 			dispatchGroup.leave()
 		}

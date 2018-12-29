@@ -50,8 +50,9 @@ class HealthKitService {
 		
 	}
 	
-	class func getTodaySteps(completion: @escaping (Steps?) -> Void) {
-		getPropertyValueFor(quantityIdentifier: .stepCount) { result in
+	class func getSteps(on date: Date, completion: @escaping (Steps?) -> Void) {
+		getPropertyValueFor(quantityIdentifier: .stepCount,
+							date: date) { result in
 			if let result = result {
 				let steps = Steps(current: Int(result), goal: 8000)
 				completion(steps)
@@ -61,9 +62,10 @@ class HealthKitService {
 		}
 	}
 	
-	class func getTodayWater(completion: @escaping (Measurement?) -> Void) {
+	class func getWater(on date: Date, completion: @escaping (Measurement?) -> Void) {
 		getPropertyValueFor(quantityIdentifier: .dietaryWater,
-							unit: .literUnit(with: .milli)) { result in
+							date: date,
+							unit: HKUnit.pintUS()) { result in
 								if let result = result {
 									let firstValue = Int(result)
 									let water = Measurement(name: "", firstValue: firstValue, secondValue: 2, unit: "pt")
@@ -74,8 +76,9 @@ class HealthKitService {
 		}
 	}
 	
-	class func getTodayCalories(completion: @escaping (Measurement?) -> Void) {
+	class func getCalories(on date: Date, completion: @escaping (Measurement?) -> Void) {
 		getPropertyValueFor(quantityIdentifier: .dietaryEnergyConsumed,
+							date: date,
 							unit: .kilocalorie()) { result in
 								if let result = result {
 									let currentValue = Int(result)
@@ -87,8 +90,9 @@ class HealthKitService {
 		}
 	}
 	
-	class func getTodayProteins(completion: @escaping (Measurement?) -> Void) {
+	class func getProteins(on date: Date, completion: @escaping (Measurement?) -> Void) {
 		getPropertyValueFor(quantityIdentifier: .dietaryProtein,
+							date: date,
 							unit: .gram()) { result in
 								if let result = result {
 									let currentValue = Int(result)
@@ -100,8 +104,9 @@ class HealthKitService {
 		}
 	}
 	
-	class func getTodayFats(completion: @escaping (Measurement?) -> Void) {
+	class func getFats(on date: Date, completion: @escaping (Measurement?) -> Void) {
 		getPropertyValueFor(quantityIdentifier: .dietaryFatTotal,
+							date: date,
 							unit: .gram()) { result in
 								if let result = result {
 									let currentValue = Int(result)
@@ -113,8 +118,9 @@ class HealthKitService {
 		}
 	}
 	
-	class func getTodayCarbohydrates(completion: @escaping (Measurement?) -> Void) {
+	class func getCarbohydrates(on date: Date, completion: @escaping (Measurement?) -> Void) {
 		getPropertyValueFor(quantityIdentifier: .dietaryCarbohydrates,
+							date: date,
 							unit: .gram()) { result in
 								if let result = result {
 									let currentValue = Int(result)
@@ -130,6 +136,7 @@ class HealthKitService {
 private extension HealthKitService {
 	class func getPropertyValueFor(quantityIdentifier: HKQuantityTypeIdentifier,
 										   options: HKStatisticsOptions = .cumulativeSum,
+										   date: Date,
 										   unit: HKUnit = .count(),
 										   completion: @escaping (Double?) -> Void) {
 		guard let quantityType = HKQuantityType.quantityType(forIdentifier: quantityIdentifier) else {
@@ -137,9 +144,9 @@ private extension HealthKitService {
 			return
 		}
 		
-		let now = Date()
-		let startOfDay = Calendar.current.startOfDay(for: now)
-		let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+		let predicate = HKQuery.predicateForSamples(withStart: date.startOfDay,
+													end: date.endOfDay,
+													options: .strictStartDate)
 		
 		let query = HKStatisticsQuery(quantityType: quantityType, quantitySamplePredicate: predicate, options: options) { _, result, error in
 			if let error = error {

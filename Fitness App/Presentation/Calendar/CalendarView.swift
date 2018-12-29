@@ -9,6 +9,10 @@
 import UIKit
 import JTAppleCalendar
 
+protocol CalendarViewDateDelegate: class {
+	func didSelectDate(_ date: Date)
+}
+
 class CalendarView: UIView {
 	
 	@IBOutlet private weak var shadowView: UIView!
@@ -21,7 +25,10 @@ class CalendarView: UIView {
 	
 	private let formatter = DateFormatter()
 	
-	func configure() {
+	private var delegate: CalendarViewDateDelegate?
+	
+	func configure(calendarViewDateDelegate: CalendarViewDateDelegate?) {
+		delegate = calendarViewDateDelegate
 		setupCollectionView()
 		makeRounded(view: roundedView, masksToBounds: true)
 		makeRounded(view: shadowView, masksToBounds: false)
@@ -137,6 +144,7 @@ extension CalendarView: JTAppleCalendarViewDelegate {
 	func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
 		guard let cell = cell as? CalendarDateCell else { return }
 		cell.set(selected: true)
+		delegate?.didSelectDate(date)
 	}
 	
 	func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
