@@ -56,8 +56,19 @@ class CalendarView: UIView {
 		collectionViewBottom.isActive = false
 		collectionViewHeight.isActive = true
 		
+		var newCollectionViewYoffset: CGFloat?
+		
+		if let selectedDate = collectionView.selectedDates.first,
+			let selectedCellRow = collectionView.cellStatus(for: selectedDate)?.row(),
+			let cellHeight = collectionView.visibleCells.first?.bounds.height {
+			newCollectionViewYoffset = (cellHeight)*CGFloat(selectedCellRow)
+		}
+		
 		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
+			if let newOriginY = newCollectionViewYoffset {
+				self.collectionView.bounds.origin.y = newOriginY
+			}
 		}
 	}
 	
@@ -67,6 +78,7 @@ class CalendarView: UIView {
 		
 		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
+			self.collectionView.bounds.origin.y = 0
 		}
 	}
 	
@@ -109,7 +121,6 @@ extension CalendarView: JTAppleCalendarViewDataSource {
 
 extension CalendarView: JTAppleCalendarViewDelegate {
 	func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-
 	}
 	
 	func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
