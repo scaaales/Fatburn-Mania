@@ -11,7 +11,7 @@
 		B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */; };
 		B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */; };
 		B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */; };
-		B3254F3821D3E7CE00F99F91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1221D3E7CD00F99F91 /* Main.storyboard */; };
+		B3254F3821D3E7CE00F99F91 /* DiaryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */; };
 		B3254F3921D3E7CE00F99F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1421D3E7CD00F99F91 /* Assets.xcassets */; };
 		B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1721D3E7CD00F99F91 /* TrainingDay.swift */; };
 		B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F1821D3E7CD00F99F91 /* Measurement.swift */; };
@@ -39,6 +39,13 @@
 		B369573521D4E30C00735555 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B369573421D4E30C00735555 /* HealthKit.framework */; };
 		B369573721D4E40500735555 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573621D4E40500735555 /* HealthKitService.swift */; };
 		B369573C21D514DF00735555 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573B21D514DF00735555 /* Date+extension.swift */; };
+		B36B2F6221DE0F8A00C5D07B /* LoginStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36B2F6121DE0F8A00C5D07B /* LoginStack.storyboard */; };
+		B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F6921DE113C00C5D07B /* LoginSplashInitializer.swift */; };
+		B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F6B21DE11DA00C5D07B /* LoginSplashViewController.swift */; };
+		B36B2F6E21DE123000C5D07B /* LoginSplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F6D21DE123000C5D07B /* LoginSplashPresenter.swift */; };
+		B36B2F7121DE126000C5D07B /* LoginSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F7021DE126000C5D07B /* LoginSplashView.swift */; };
+		B36B2F7421DE148600C5D07B /* String+constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F7321DE148600C5D07B /* String+constants.swift */; };
+		B36B2F7721DE15DE00C5D07B /* UIStoryboard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F7621DE15DE00C5D07B /* UIStoryboard+extension.swift */; };
 		B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1721D7A2BF008A5D5A /* PresenterProtocol.swift */; };
 		B3753C1B21D7A2C0008A5D5A /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1821D7A2BF008A5D5A /* Configurator.swift */; };
 		B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1921D7A2C0008A5D5A /* ViewProtocol.swift */; };
@@ -56,7 +63,7 @@
 		B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3254DDA21D3DD6800F99F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3254F1121D3E7CD00F99F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B3254F1321D3E7CD00F99F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		B3254F1321D3E7CD00F99F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DiaryTab.storyboard; sourceTree = "<group>"; };
 		B3254F1421D3E7CD00F99F91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3254F1721D3E7CD00F99F91 /* TrainingDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingDay.swift; sourceTree = "<group>"; };
 		B3254F1821D3E7CD00F99F91 /* Measurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
@@ -85,6 +92,13 @@
 		B369573421D4E30C00735555 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B369573621D4E40500735555 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		B369573B21D514DF00735555 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
+		B36B2F6121DE0F8A00C5D07B /* LoginStack.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStack.storyboard; sourceTree = "<group>"; };
+		B36B2F6921DE113C00C5D07B /* LoginSplashInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSplashInitializer.swift; sourceTree = "<group>"; };
+		B36B2F6B21DE11DA00C5D07B /* LoginSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSplashViewController.swift; sourceTree = "<group>"; };
+		B36B2F6D21DE123000C5D07B /* LoginSplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSplashPresenter.swift; sourceTree = "<group>"; };
+		B36B2F7021DE126000C5D07B /* LoginSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSplashView.swift; sourceTree = "<group>"; };
+		B36B2F7321DE148600C5D07B /* String+constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+constants.swift"; sourceTree = "<group>"; };
+		B36B2F7621DE15DE00C5D07B /* UIStoryboard+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+extension.swift"; sourceTree = "<group>"; };
 		B3753C1721D7A2BF008A5D5A /* PresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
 		B3753C1821D7A2BF008A5D5A /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		B3753C1921D7A2C0008A5D5A /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
@@ -128,12 +142,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B30A0DFA21D78C910075D871 /* Presenters */ = {
+		B30A0DFA21D78C910075D871 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				B3753C1F21D7A3B4008A5D5A /* DiaryPresenter.swift */,
 			);
-			path = Presenters;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		B30A0DFB21D78D4E0075D871 /* Views */ = {
@@ -281,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */,
-				B3254F1221D3E7CD00F99F91 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -309,15 +322,62 @@
 			children = (
 				B369573B21D514DF00735555 /* Date+extension.swift */,
 				B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */,
+				B36B2F7321DE148600C5D07B /* String+constants.swift */,
+				B36B2F7621DE15DE00C5D07B /* UIStoryboard+extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B36B2F6021DE0EB700C5D07B /* LoginStack */ = {
+			isa = PBXGroup;
+			children = (
+				B36B2F6121DE0F8A00C5D07B /* LoginStack.storyboard */,
+				B36B2F6621DE0FFB00C5D07B /* LoginSplash */,
+			);
+			path = LoginStack;
+			sourceTree = "<group>";
+		};
+		B36B2F6521DE0FD400C5D07B /* DiaryTab */ = {
+			isa = PBXGroup;
+			children = (
+				B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */,
+				B3753C1D21D7A38D008A5D5A /* Diary */,
+			);
+			path = DiaryTab;
+			sourceTree = "<group>";
+		};
+		B36B2F6621DE0FFB00C5D07B /* LoginSplash */ = {
+			isa = PBXGroup;
+			children = (
+				B36B2F6721DE109900C5D07B /* Presenter */,
+				B36B2F6821DE10BE00C5D07B /* Views */,
+				B36B2F6921DE113C00C5D07B /* LoginSplashInitializer.swift */,
+			);
+			path = LoginSplash;
+			sourceTree = "<group>";
+		};
+		B36B2F6721DE109900C5D07B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B36B2F6D21DE123000C5D07B /* LoginSplashPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B36B2F6821DE10BE00C5D07B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B36B2F6B21DE11DA00C5D07B /* LoginSplashViewController.swift */,
+				B36B2F7021DE126000C5D07B /* LoginSplashView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B3753C1521D7A1C3008A5D5A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B3753C1D21D7A38D008A5D5A /* Diary */,
-				B3254F2021D3E7CE00F99F91 /* Calendar */,
+				B36B2F6521DE0FD400C5D07B /* DiaryTab */,
+				B36B2F6021DE0EB700C5D07B /* LoginStack */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -340,7 +400,7 @@
 		B3753C1D21D7A38D008A5D5A /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				B30A0DFA21D78C910075D871 /* Presenters */,
+				B30A0DFA21D78C910075D871 /* Presenter */,
 				B30A0DFB21D78D4E0075D871 /* Views */,
 				B3753C2421D7A6E4008A5D5A /* DiaryInitializer.swift */,
 			);
@@ -350,6 +410,7 @@
 		B3753C2121D7A405008A5D5A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B3254F2021D3E7CE00F99F91 /* Calendar */,
 				B34306B521D7939D0033EA69 /* Protocols */,
 				B3753C2921D7C449008A5D5A /* BluredLoader */,
 				B3254F3321D3E7CE00F99F91 /* ProgressView */,
@@ -438,7 +499,8 @@
 				B3753C2B21D7C473008A5D5A /* BlurredLoader.xib in Resources */,
 				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
 				B3254F3921D3E7CE00F99F91 /* Assets.xcassets in Resources */,
-				B3254F3821D3E7CE00F99F91 /* Main.storyboard in Resources */,
+				B3254F3821D3E7CE00F99F91 /* DiaryTab.storyboard in Resources */,
+				B36B2F6221DE0F8A00C5D07B /* LoginStack.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,17 +559,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */,
+				B36B2F6E21DE123000C5D07B /* LoginSplashPresenter.swift in Sources */,
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
+				B36B2F7421DE148600C5D07B /* String+constants.swift in Sources */,
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B3753C2021D7A3B4008A5D5A /* DiaryPresenter.swift in Sources */,
 				B3254F4E21D3E7CE00F99F91 /* RoundButton.swift in Sources */,
+				B36B2F7121DE126000C5D07B /* LoginSplashView.swift in Sources */,
 				B3753C1B21D7A2C0008A5D5A /* Configurator.swift in Sources */,
 				B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */,
 				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
 				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
 				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
+				B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */,
 				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
 				B369573721D4E40500735555 /* HealthKitService.swift in Sources */,
@@ -515,12 +581,14 @@
 				B3753C2521D7A6E4008A5D5A /* DiaryInitializer.swift in Sources */,
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
+				B36B2F7721DE15DE00C5D07B /* UIStoryboard+extension.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* TableViewModel.swift in Sources */,
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
+				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
 				B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */,
@@ -543,12 +611,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		B3254F1221D3E7CD00F99F91 /* Main.storyboard */ = {
+		B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B3254F1321D3E7CD00F99F91 /* Base */,
 			);
-			name = Main.storyboard;
+			name = DiaryTab.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

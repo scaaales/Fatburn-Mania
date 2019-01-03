@@ -21,6 +21,7 @@ class DiaryViewController: UIViewController {
 		setupTableView()
 		setupNavigationBar()
 		presenter.getInitialHealthInfo()
+		UserDefaults.standard.set(false, forKey: .userDefaultKeyIsLogginedIn)
 	}
 	
 	private func setupNavigationBar() {
