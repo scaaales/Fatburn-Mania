@@ -46,6 +46,11 @@
 		B36B2F7121DE126000C5D07B /* LoginSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F7021DE126000C5D07B /* LoginSplashView.swift */; };
 		B36B2F7421DE148600C5D07B /* String+constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F7321DE148600C5D07B /* String+constants.swift */; };
 		B36B2F7721DE15DE00C5D07B /* UIStoryboard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F7621DE15DE00C5D07B /* UIStoryboard+extension.swift */; };
+		B36B2F7D21DE24B200C5D07B /* SignInInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F7C21DE24B200C5D07B /* SignInInitializer.swift */; };
+		B36B2F7F21DE251E00C5D07B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F7E21DE251E00C5D07B /* SignInViewController.swift */; };
+		B36B2F8121DE252B00C5D07B /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F8021DE252B00C5D07B /* SignInPresenter.swift */; };
+		B36B2F8321DE256000C5D07B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F8221DE256000C5D07B /* SignInView.swift */; };
+		B36B2F8521DE347400C5D07B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F8421DE347400C5D07B /* NavigationController.swift */; };
 		B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1721D7A2BF008A5D5A /* PresenterProtocol.swift */; };
 		B3753C1B21D7A2C0008A5D5A /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1821D7A2BF008A5D5A /* Configurator.swift */; };
 		B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1921D7A2C0008A5D5A /* ViewProtocol.swift */; };
@@ -99,6 +104,11 @@
 		B36B2F7021DE126000C5D07B /* LoginSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSplashView.swift; sourceTree = "<group>"; };
 		B36B2F7321DE148600C5D07B /* String+constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+constants.swift"; sourceTree = "<group>"; };
 		B36B2F7621DE15DE00C5D07B /* UIStoryboard+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+extension.swift"; sourceTree = "<group>"; };
+		B36B2F7C21DE24B200C5D07B /* SignInInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInitializer.swift; sourceTree = "<group>"; };
+		B36B2F7E21DE251E00C5D07B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B36B2F8021DE252B00C5D07B /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		B36B2F8221DE256000C5D07B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B36B2F8421DE347400C5D07B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		B3753C1721D7A2BF008A5D5A /* PresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
 		B3753C1821D7A2BF008A5D5A /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		B3753C1921D7A2C0008A5D5A /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
@@ -333,6 +343,8 @@
 			children = (
 				B36B2F6121DE0F8A00C5D07B /* LoginStack.storyboard */,
 				B36B2F6621DE0FFB00C5D07B /* LoginSplash */,
+				B36B2F7921DE244100C5D07B /* Sign In */,
+				B36B2F7821DE243400C5D07B /* Login */,
 			);
 			path = LoginStack;
 			sourceTree = "<group>";
@@ -367,8 +379,42 @@
 		B36B2F6821DE10BE00C5D07B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B36B2F6B21DE11DA00C5D07B /* LoginSplashViewController.swift */,
 				B36B2F7021DE126000C5D07B /* LoginSplashView.swift */,
+				B36B2F6B21DE11DA00C5D07B /* LoginSplashViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B36B2F7821DE243400C5D07B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B36B2F7921DE244100C5D07B /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				B36B2F7A21DE247F00C5D07B /* Presenter */,
+				B36B2F7B21DE248300C5D07B /* Views */,
+				B36B2F7C21DE24B200C5D07B /* SignInInitializer.swift */,
+			);
+			path = "Sign In";
+			sourceTree = "<group>";
+		};
+		B36B2F7A21DE247F00C5D07B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B36B2F8021DE252B00C5D07B /* SignInPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B36B2F7B21DE248300C5D07B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B36B2F8221DE256000C5D07B /* SignInView.swift */,
+				B36B2F7E21DE251E00C5D07B /* SignInViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -416,6 +462,7 @@
 				B3254F3321D3E7CE00F99F91 /* ProgressView */,
 				B3254F2821D3E7CE00F99F91 /* DefaultSectionHeader.swift */,
 				B32BF21421D67C040019489A /* PlaceholderCell.swift */,
+				B36B2F8421DE347400C5D07B /* NavigationController.swift */,
 				B3254F3221D3E7CE00F99F91 /* RoundButton.swift */,
 			);
 			path = Views;
@@ -564,6 +611,7 @@
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
 				B36B2F7421DE148600C5D07B /* String+constants.swift in Sources */,
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
+				B36B2F7D21DE24B200C5D07B /* SignInInitializer.swift in Sources */,
 				B3753C2021D7A3B4008A5D5A /* DiaryPresenter.swift in Sources */,
 				B3254F4E21D3E7CE00F99F91 /* RoundButton.swift in Sources */,
 				B36B2F7121DE126000C5D07B /* LoginSplashView.swift in Sources */,
@@ -582,6 +630,7 @@
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
 				B36B2F7721DE15DE00C5D07B /* UIStoryboard+extension.swift in Sources */,
+				B36B2F8321DE256000C5D07B /* SignInView.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* TableViewModel.swift in Sources */,
@@ -589,10 +638,13 @@
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,
+				B36B2F8521DE347400C5D07B /* NavigationController.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
 				B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */,
 				B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */,
+				B36B2F7F21DE251E00C5D07B /* SignInViewController.swift in Sources */,
+				B36B2F8121DE252B00C5D07B /* SignInPresenter.swift in Sources */,
 				B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
 				B3753C2321D7A4A0008A5D5A /* DiaryView.swift in Sources */,
@@ -626,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -687,6 +740,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

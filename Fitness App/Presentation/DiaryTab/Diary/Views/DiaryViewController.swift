@@ -19,13 +19,8 @@ class DiaryViewController: UIViewController {
 		super.viewDidLoad()
 		calendarView.configure(calendarViewDateDelegate: self)
 		setupTableView()
-		setupNavigationBar()
 		presenter.getInitialHealthInfo()
 		UserDefaults.standard.set(false, forKey: .userDefaultKeyIsLogginedIn)
-	}
-	
-	private func setupNavigationBar() {
-		navigationController?.navigationBar.shadowImage = UIImage()
 	}
 
 	private func setupTableView() {
