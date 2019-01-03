@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="1023.2" y="112.89355322338831"/>
         </scene>
-        <!--Login-->
+        <!--View Controller-->
         <scene sceneID="nJH-78-v3Y">
             <objects>
-                <viewController title="Login" id="wKC-LK-cVZ" sceneMemberID="viewController">
+                <viewController title="Login" id="wKC-LK-cVZ" customClass="LoginViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5m5-2o-e80">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,6 +141,11 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DId-5Z-ze9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="GP5-fV-Dbq" customClass="LoginInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="wKC-LK-cVZ" id="mVM-fy-Pet"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1876" y="484"/>
         </scene>
