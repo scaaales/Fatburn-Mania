@@ -3,7 +3,7 @@
 //  Fitness App
 //
 //  Created by scales on 12/28/18.
-//  Copyright © 2018 kpi. All rights reserved.
+//  Copyright © 2018 Ridex. All rights reserved.
 //
 
 import UIKit
