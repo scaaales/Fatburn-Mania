@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlurredLoader" customModule="Fitness_App" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="QsG-9h-RaF" id="EOr-DZ-DUx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5J-fk-gIY">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MSo-DM-Iwk">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QsG-9h-RaF">
+                    <rect key="frame" x="31.5" y="31.5" width="37" height="37"/>
+                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="P5J-fk-gIY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0xk-IQ-QCk"/>
+                <constraint firstItem="QsG-9h-RaF" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8Iy-YE-U97"/>
+                <constraint firstItem="QsG-9h-RaF" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Iof-4j-wxG"/>
+                <constraint firstItem="P5J-fk-gIY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Rrw-TM-Tlj"/>
+                <constraint firstItem="P5J-fk-gIY" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="YJp-w6-FEr"/>
+                <constraint firstItem="P5J-fk-gIY" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="j7j-1o-hZP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-62.399999999999999" y="-56.671664167916049"/>
+        </view>
+    </objects>
+</document>
