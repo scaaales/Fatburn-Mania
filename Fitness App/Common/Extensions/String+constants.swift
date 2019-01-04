@@ -8,7 +8,15 @@
 
 import Foundation
 
+// MARK: - UserDefault
 extension String {
 	static var userDefaultKeyIsLogginedIn: String { return "isLogginedIn" }
 	
+}
+
+// MARK: - Text Constants
+extension String {
+	static var wrongPasswordConstant: String { return "Wrong password" }
+	static var wrongEmailConstant: String { return "Wrong E-mail" }
+	static var forgotPasswordConstant: String { return "Forgot your password?" }
 }

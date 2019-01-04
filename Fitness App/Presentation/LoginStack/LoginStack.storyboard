@@ -136,9 +136,140 @@
                     <view key="view" contentMode="scaleToFill" id="5m5-2o-e80">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="VML-we-4tA">
+                                <rect key="frame" x="20" y="164" width="335" height="156.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FK8-6c-GCX" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="28"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUZ-uC-MNN">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="rzu-zf-Kfs"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toY-m5-Z9L">
+                                                <rect key="frame" x="0.0" y="27" width="335" height="1"/>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="hc6-wi-nKj"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="hUZ-uC-MNN" firstAttribute="top" secondItem="FK8-6c-GCX" secondAttribute="top" id="4rh-y2-goe"/>
+                                            <constraint firstItem="toY-m5-Z9L" firstAttribute="width" secondItem="hUZ-uC-MNN" secondAttribute="width" id="CHf-ey-x59"/>
+                                            <constraint firstAttribute="bottom" secondItem="toY-m5-Z9L" secondAttribute="bottom" id="CIk-md-gZ5"/>
+                                            <constraint firstItem="hUZ-uC-MNN" firstAttribute="leading" secondItem="FK8-6c-GCX" secondAttribute="leading" id="IM3-ce-p5A"/>
+                                            <constraint firstItem="toY-m5-Z9L" firstAttribute="leading" secondItem="hUZ-uC-MNN" secondAttribute="leading" id="O8I-gr-5Tn"/>
+                                            <constraint firstItem="toY-m5-Z9L" firstAttribute="top" secondItem="hUZ-uC-MNN" secondAttribute="bottom" constant="7" id="oa9-Mz-ZHf"/>
+                                            <constraint firstAttribute="trailing" secondItem="hUZ-uC-MNN" secondAttribute="trailing" id="t7I-HH-hwf"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="line" destination="toY-m5-Z9L" id="tjq-la-MLv"/>
+                                            <outlet property="textField" destination="hUZ-uC-MNN" id="WV7-Zc-6EZ"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixf-5d-lZA" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="58" width="335" height="28"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vme-Lt-ipl">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="NQ5-wG-4Tz"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adp-2f-5hc">
+                                                <rect key="frame" x="0.0" y="27" width="335" height="1"/>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="iX9-Qs-dG9"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="adp-2f-5hc" firstAttribute="top" secondItem="vme-Lt-ipl" secondAttribute="bottom" constant="7" id="3R8-1C-HyQ"/>
+                                            <constraint firstItem="adp-2f-5hc" firstAttribute="width" secondItem="vme-Lt-ipl" secondAttribute="width" id="DaG-CO-qt3"/>
+                                            <constraint firstItem="vme-Lt-ipl" firstAttribute="leading" secondItem="Ixf-5d-lZA" secondAttribute="leading" id="Dc4-cf-XQb"/>
+                                            <constraint firstAttribute="trailing" secondItem="vme-Lt-ipl" secondAttribute="trailing" id="LvY-i8-tn0"/>
+                                            <constraint firstAttribute="bottom" secondItem="adp-2f-5hc" secondAttribute="bottom" id="TWo-hM-kE4"/>
+                                            <constraint firstItem="vme-Lt-ipl" firstAttribute="top" secondItem="Ixf-5d-lZA" secondAttribute="top" id="eWM-Ef-ZjT"/>
+                                            <constraint firstItem="adp-2f-5hc" firstAttribute="leading" secondItem="vme-Lt-ipl" secondAttribute="leading" id="odU-mP-8sk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="line" destination="adp-2f-5hc" id="311-7k-g1P"/>
+                                            <outlet property="textField" destination="vme-Lt-ipl" id="9lD-wK-kWD"/>
+                                        </connections>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T0x-ce-STk">
+                                        <rect key="frame" x="0.0" y="116" width="335" height="40.5"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment>
+                                                    <string key="content">By logging in you accept Privacy Policy and
+</string>
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" metaFont="cellTitle"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Fatburnmania Terms of Use">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" metaFont="cellTitle"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nT-Mz-OIS" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="20" y="571" width="335" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="YdV-PX-FMm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <state key="normal" title="login">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginTapped:" destination="wKC-LK-cVZ" eventType="touchUpInside" id="8PM-wb-7nE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KaO-jb-N8d" firstAttribute="trailing" secondItem="6nT-Mz-OIS" secondAttribute="trailing" constant="20" id="DJR-n4-XVQ"/>
+                            <constraint firstItem="VML-we-4tA" firstAttribute="top" secondItem="KaO-jb-N8d" secondAttribute="top" constant="100" id="MJe-Qq-jZg"/>
+                            <constraint firstItem="KaO-jb-N8d" firstAttribute="bottom" secondItem="6nT-Mz-OIS" secondAttribute="bottom" constant="60" id="hxA-lV-Oig"/>
+                            <constraint firstItem="VML-we-4tA" firstAttribute="leading" secondItem="KaO-jb-N8d" secondAttribute="leading" constant="20" id="jEp-Ok-4OG"/>
+                            <constraint firstItem="KaO-jb-N8d" firstAttribute="trailing" secondItem="VML-we-4tA" secondAttribute="trailing" constant="20" id="l1Q-mM-D57"/>
+                            <constraint firstItem="6nT-Mz-OIS" firstAttribute="leading" secondItem="KaO-jb-N8d" secondAttribute="leading" constant="20" id="lAU-ff-IdO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KaO-jb-N8d"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="FK8-6c-GCX" id="W68-7b-fuU"/>
+                        <outlet property="passwordTextField" destination="Ixf-5d-lZA" id="aJg-pI-2Qk"/>
+                        <outlet property="resetPasswordButton" destination="T0x-ce-STk" id="AbZ-sg-Sca"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DId-5Z-ze9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="GP5-fV-Dbq" customClass="LoginInitializer" customModule="Fitness_App" customModuleProvider="target">
@@ -158,9 +289,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EHS-aC-CAi">
-                                <rect key="frame" x="20" y="214.5" width="335" height="202"/>
+                                <rect key="frame" x="20" y="164" width="335" height="202"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl0-ck-w6a">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl0-ck-w6a" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="28"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-h3-i0B">
@@ -190,8 +321,12 @@
                                             <constraint firstAttribute="trailing" secondItem="ia5-h3-i0B" secondAttribute="trailing" id="mZ9-gs-EU3"/>
                                             <constraint firstItem="GBN-FX-Vq8" firstAttribute="top" secondItem="ia5-h3-i0B" secondAttribute="bottom" constant="7" id="oSI-hp-ng9"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="line" destination="GBN-FX-Vq8" id="H60-47-WhJ"/>
+                                            <outlet property="textField" destination="ia5-h3-i0B" id="PCm-6L-AkT"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MI2-Rn-Ma5">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MI2-Rn-Ma5" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="58" width="335" height="28"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7n3-m4-gGF">
@@ -218,8 +353,12 @@
                                             <constraint firstItem="7n3-m4-gGF" firstAttribute="top" secondItem="MI2-Rn-Ma5" secondAttribute="top" id="v3f-YW-d5V"/>
                                             <constraint firstItem="7n3-m4-gGF" firstAttribute="leading" secondItem="MI2-Rn-Ma5" secondAttribute="leading" id="yi9-Na-cWr"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="line" destination="CNk-kT-Env" id="aph-yF-fSK"/>
+                                            <outlet property="textField" destination="7n3-m4-gGF" id="ySp-B6-awr"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Op-Ny-2Cc">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Op-Ny-2Cc" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="335" height="28"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwL-M5-lH7">
@@ -246,8 +385,12 @@
                                             <constraint firstAttribute="bottom" secondItem="mZK-br-QCp" secondAttribute="bottom" id="kpD-09-tca"/>
                                             <constraint firstItem="mZK-br-QCp" firstAttribute="width" secondItem="vwL-M5-lH7" secondAttribute="width" id="lXA-Ha-zu9"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="line" destination="mZK-br-QCp" id="ZhX-sS-NJF"/>
+                                            <outlet property="textField" destination="vwL-M5-lH7" id="Xtb-aV-fGY"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-U8-TKY">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-U8-TKY" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="174" width="335" height="28"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="AVH-mc-3dR">
@@ -274,6 +417,10 @@
                                             <constraint firstItem="sgR-BN-D2V" firstAttribute="width" secondItem="AVH-mc-3dR" secondAttribute="width" id="eeM-ec-YDw"/>
                                             <constraint firstItem="AVH-mc-3dR" firstAttribute="leading" secondItem="8mf-U8-TKY" secondAttribute="leading" id="mOz-LJ-pu5"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="line" destination="sgR-BN-D2V" id="ebE-gu-tjm"/>
+                                            <outlet property="textField" destination="AVH-mc-3dR" id="TLY-QZ-JV0"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -300,7 +447,7 @@
                             <constraint firstItem="pKv-aI-cG3" firstAttribute="leading" secondItem="3g2-eO-ACd" secondAttribute="leading" constant="20" id="4xX-6u-7fb"/>
                             <constraint firstItem="EHS-aC-CAi" firstAttribute="leading" secondItem="3g2-eO-ACd" secondAttribute="leading" constant="20" id="PHH-pY-yAG"/>
                             <constraint firstItem="3g2-eO-ACd" firstAttribute="bottom" secondItem="pKv-aI-cG3" secondAttribute="bottom" constant="60" id="Toh-9Z-uyD"/>
-                            <constraint firstItem="EHS-aC-CAi" firstAttribute="centerY" secondItem="3g2-eO-ACd" secondAttribute="centerY" constant="-50" id="mlp-ka-zxL"/>
+                            <constraint firstItem="EHS-aC-CAi" firstAttribute="top" secondItem="3g2-eO-ACd" secondAttribute="top" constant="100" id="kga-o2-QH4"/>
                             <constraint firstItem="3g2-eO-ACd" firstAttribute="trailing" secondItem="pKv-aI-cG3" secondAttribute="trailing" constant="20" id="zku-Zc-Otl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3g2-eO-ACd"/>

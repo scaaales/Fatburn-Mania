@@ -36,6 +36,10 @@
 		B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3254F3521D3E7CE00F99F91 /* ProgressView.xib */; };
 		B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */; };
 		B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BF21421D67C040019489A /* PlaceholderCell.swift */; };
+		B33394C021DF655F00D6013F /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394BF21DF655F00D6013F /* UIViewController+extension.swift */; };
+		B33394C321DF6DB900D6013F /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394C221DF6DB900D6013F /* LineTextField.swift */; };
+		B33394C721DF721900D6013F /* UIColor+hextInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394C621DF721900D6013F /* UIColor+hextInit.swift */; };
+		B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394C921DF735F00D6013F /* UIColor+appColors.swift */; };
 		B369573521D4E30C00735555 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B369573421D4E30C00735555 /* HealthKit.framework */; };
 		B369573721D4E40500735555 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573621D4E40500735555 /* HealthKitService.swift */; };
 		B369573C21D514DF00735555 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573B21D514DF00735555 /* Date+extension.swift */; };
@@ -97,6 +101,10 @@
 		B3254F3521D3E7CE00F99F91 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		B32BF21421D67C040019489A /* PlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderCell.swift; sourceTree = "<group>"; };
+		B33394BF21DF655F00D6013F /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		B33394C221DF6DB900D6013F /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		B33394C621DF721900D6013F /* UIColor+hextInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hextInit.swift"; sourceTree = "<group>"; };
+		B33394C921DF735F00D6013F /* UIColor+appColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+appColors.swift"; sourceTree = "<group>"; };
 		B369573321D4E30C00735555 /* Fitness App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fitness App.entitlements"; sourceTree = "<group>"; };
 		B369573421D4E30C00735555 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B369573621D4E40500735555 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
@@ -309,6 +317,23 @@
 			path = ProgressView;
 			sourceTree = "<group>";
 		};
+		B33394C121DF6D9700D6013F /* LineTextField */ = {
+			isa = PBXGroup;
+			children = (
+				B33394C221DF6DB900D6013F /* LineTextField.swift */,
+			);
+			path = LineTextField;
+			sourceTree = "<group>";
+		};
+		B33394C821DF734200D6013F /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				B33394C621DF721900D6013F /* UIColor+hextInit.swift */,
+				B33394C921DF735F00D6013F /* UIColor+appColors.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		B34306B321D793110033EA69 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +367,8 @@
 				B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */,
 				B36B2F7321DE148600C5D07B /* String+constants.swift */,
 				B36B2F7621DE15DE00C5D07B /* UIStoryboard+extension.swift */,
+				B33394BF21DF655F00D6013F /* UIViewController+extension.swift */,
+				B33394C821DF734200D6013F /* UIColor */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,8 +494,9 @@
 		B3753C2121D7A405008A5D5A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3254F2021D3E7CE00F99F91 /* Calendar */,
 				B34306B521D7939D0033EA69 /* Protocols */,
+				B33394C121DF6D9700D6013F /* LineTextField */,
+				B3254F2021D3E7CE00F99F91 /* Calendar */,
 				B3753C2921D7C449008A5D5A /* BluredLoader */,
 				B3254F3321D3E7CE00F99F91 /* ProgressView */,
 				B3254F2821D3E7CE00F99F91 /* DefaultSectionHeader.swift */,
@@ -639,6 +667,7 @@
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
 				B37CBA1921DE64C000834A98 /* LoginView.swift in Sources */,
 				B36B2F7421DE148600C5D07B /* String+constants.swift in Sources */,
+				B33394C721DF721900D6013F /* UIColor+hextInit.swift in Sources */,
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B36B2F7D21DE24B200C5D07B /* SignInInitializer.swift in Sources */,
 				B3753C2021D7A3B4008A5D5A /* DiaryPresenter.swift in Sources */,
@@ -648,6 +677,7 @@
 				B37CBA2321DE680900834A98 /* LoginViewController.swift in Sources */,
 				B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */,
 				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
+				B33394C321DF6DB900D6013F /* LineTextField.swift in Sources */,
 				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
 				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
@@ -663,10 +693,12 @@
 				B37CBA1721DE649500834A98 /* LoginInitializer.swift in Sources */,
 				B36B2F8321DE256000C5D07B /* SignInView.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
+				B33394C021DF655F00D6013F /* UIViewController+extension.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* TableViewModel.swift in Sources */,
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
+				B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,
 				B36B2F8521DE347400C5D07B /* NavigationController.swift in Sources */,

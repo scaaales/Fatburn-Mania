@@ -18,14 +18,27 @@ class BlurredLoader: UIView {
 		xibSetup()
 	}
 	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		xibSetup()
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	private func addCornerRadius() {
+		contentView.layer.cornerRadius = 15
+		contentView.clipsToBounds = true
+	}
+	
 	private func xibSetup() {
 		guard let view = loadViewFromNib() else { return }
 		view.frame = bounds
 		view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		addSubview(view)
 		contentView = view
-		view.layer.cornerRadius = 15
-		view.clipsToBounds = true
+		addCornerRadius()
 	}
 	
 	private func loadViewFromNib() -> UIView? {
@@ -42,5 +55,15 @@ class BlurredLoader: UIView {
 	func stopAnimating() {
 		activityIndicator.stopAnimating()
 		isHidden = true
+	}
+	
+	func centerInto(view: UIView) {
+		translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			centerYAnchor.constraint(equalTo: view.centerYAnchor),
+			heightAnchor.constraint(equalToConstant: 100),
+			widthAnchor.constraint(equalToConstant: 100)
+			])
 	}
 }

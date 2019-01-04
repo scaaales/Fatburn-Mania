@@ -9,5 +9,10 @@
 import Foundation
 
 protocol LoginView: View {
-	
+	func disableUserInteraction()
+	func enableUserInteraction()
+	func showLoader()
+	func hideLoader()
+	func presentTutorialScreen()
+	func showError()
 }
