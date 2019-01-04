@@ -40,10 +40,12 @@
 		B33394C321DF6DB900D6013F /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394C221DF6DB900D6013F /* LineTextField.swift */; };
 		B33394C721DF721900D6013F /* UIColor+hextInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394C621DF721900D6013F /* UIColor+hextInit.swift */; };
 		B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394C921DF735F00D6013F /* UIColor+appColors.swift */; };
+		B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394CE21DF827F00D6013F /* TutorialViewController.swift */; };
+		B33394D121DF915F00D6013F /* LoginStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33394D021DF915F00D6013F /* LoginStack.storyboard */; };
+		B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394D221DFA9D300D6013F /* TutorialCell.swift */; };
 		B369573521D4E30C00735555 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B369573421D4E30C00735555 /* HealthKit.framework */; };
 		B369573721D4E40500735555 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573621D4E40500735555 /* HealthKitService.swift */; };
 		B369573C21D514DF00735555 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573B21D514DF00735555 /* Date+extension.swift */; };
-		B36B2F6221DE0F8A00C5D07B /* LoginStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36B2F6121DE0F8A00C5D07B /* LoginStack.storyboard */; };
 		B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F6921DE113C00C5D07B /* LoginSplashInitializer.swift */; };
 		B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F6B21DE11DA00C5D07B /* LoginSplashViewController.swift */; };
 		B36B2F6E21DE123000C5D07B /* LoginSplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F6D21DE123000C5D07B /* LoginSplashPresenter.swift */; };
@@ -105,11 +107,13 @@
 		B33394C221DF6DB900D6013F /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		B33394C621DF721900D6013F /* UIColor+hextInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hextInit.swift"; sourceTree = "<group>"; };
 		B33394C921DF735F00D6013F /* UIColor+appColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+appColors.swift"; sourceTree = "<group>"; };
+		B33394CE21DF827F00D6013F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		B33394D021DF915F00D6013F /* LoginStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStack.storyboard; sourceTree = "<group>"; };
+		B33394D221DFA9D300D6013F /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
 		B369573321D4E30C00735555 /* Fitness App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fitness App.entitlements"; sourceTree = "<group>"; };
 		B369573421D4E30C00735555 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B369573621D4E40500735555 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		B369573B21D514DF00735555 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
-		B36B2F6121DE0F8A00C5D07B /* LoginStack.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStack.storyboard; sourceTree = "<group>"; };
 		B36B2F6921DE113C00C5D07B /* LoginSplashInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSplashInitializer.swift; sourceTree = "<group>"; };
 		B36B2F6B21DE11DA00C5D07B /* LoginSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSplashViewController.swift; sourceTree = "<group>"; };
 		B36B2F6D21DE123000C5D07B /* LoginSplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSplashPresenter.swift; sourceTree = "<group>"; };
@@ -334,6 +338,23 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
+		B33394CB21DF824200D6013F /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				B33394CC21DF825700D6013F /* View */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		B33394CC21DF825700D6013F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B33394CE21DF827F00D6013F /* TutorialViewController.swift */,
+				B33394D221DFA9D300D6013F /* TutorialCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B34306B321D793110033EA69 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,10 +397,11 @@
 		B36B2F6021DE0EB700C5D07B /* LoginStack */ = {
 			isa = PBXGroup;
 			children = (
-				B36B2F6121DE0F8A00C5D07B /* LoginStack.storyboard */,
+				B33394D021DF915F00D6013F /* LoginStack.storyboard */,
 				B36B2F6621DE0FFB00C5D07B /* LoginSplash */,
-				B36B2F7921DE244100C5D07B /* Sign In */,
+				B36B2F7921DE244100C5D07B /* SignIn */,
 				B36B2F7821DE243400C5D07B /* Login */,
+				B33394CB21DF824200D6013F /* Tutorial */,
 			);
 			path = LoginStack;
 			sourceTree = "<group>";
@@ -430,14 +452,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		B36B2F7921DE244100C5D07B /* Sign In */ = {
+		B36B2F7921DE244100C5D07B /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
 				B36B2F7A21DE247F00C5D07B /* Presenter */,
 				B36B2F7B21DE248300C5D07B /* Views */,
 				B36B2F7C21DE24B200C5D07B /* SignInInitializer.swift */,
 			);
-			path = "Sign In";
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		B36B2F7A21DE247F00C5D07B /* Presenter */ = {
@@ -603,7 +625,7 @@
 				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
 				B3254F3921D3E7CE00F99F91 /* Assets.xcassets in Resources */,
 				B3254F3821D3E7CE00F99F91 /* DiaryTab.storyboard in Resources */,
-				B36B2F6221DE0F8A00C5D07B /* LoginStack.storyboard in Resources */,
+				B33394D121DF915F00D6013F /* LoginStack.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */,
+				B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */,
 				B36B2F6E21DE123000C5D07B /* LoginSplashPresenter.swift in Sources */,
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
@@ -702,6 +725,7 @@
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,
 				B36B2F8521DE347400C5D07B /* NavigationController.swift in Sources */,
+				B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */,
 				B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,

@@ -65,7 +65,7 @@ extension DiaryViewController: DiaryView {
 extension DiaryViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		if let item = presenter.viewModel.headerFor(index: section),
-			let header = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId) {
+			let header = tableView.dequeueReusableCell(withIdentifier: item.reuseId) {
 			item.configure(cell: header)
 			
 			return header.contentView
@@ -76,7 +76,7 @@ extension DiaryViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 		if let item = presenter.viewModel.footerFor(index: section),
-			let footer = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId) {
+			let footer = tableView.dequeueReusableCell(withIdentifier: item.reuseId) {
 			item.configure(cell: footer)
 			
 			return footer.contentView

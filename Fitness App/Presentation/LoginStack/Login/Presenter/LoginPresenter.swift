@@ -26,7 +26,8 @@ class LoginPresenter<V: LoginView>: Presenter {
 		view.showLoader()
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
 			self.view.hideLoader()
-			if email == "sergey.kletsov@outlook.com" && password == "1234qwer" {
+			if email == "q" && password == "q" {
+				UserDefaults.standard.set(true, forKey: .userDefaultsKeyIsTutorialShown)
 				self.view.presentTutorialScreen()
 			} else {
 				self.view.enableUserInteraction()

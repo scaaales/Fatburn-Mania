@@ -11,7 +11,12 @@ import Foundation
 // MARK: - UserDefault
 extension String {
 	static var userDefaultKeyIsLogginedIn: String { return "isLogginedIn" }
-	
+	static var userDefaultsKeyIsTutorialShown: String { return "isTutorialShown" }
+}
+
+// MARK: - SegueIdentifiers
+extension String {
+	static var presentTutorialSegueIdentifier: String { return "presentTutorial" }
 }
 
 // MARK: - Text Constants
@@ -20,3 +25,4 @@ extension String {
 	static var wrongEmailConstant: String { return "Wrong E-mail" }
 	static var forgotPasswordConstant: String { return "Forgot your password?" }
 }
+

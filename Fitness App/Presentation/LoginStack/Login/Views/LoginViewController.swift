@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
 	@IBOutlet private weak var passwordTextField: LineTextField!
 	@IBOutlet private weak var resetPasswordButton: UIButton!
 	
-	lazy var loader: BlurredLoader = {
+	lazy private var loader: BlurredLoader = {
 		let loader = BlurredLoader()
 		view.addSubview(loader)
 		loader.centerInto(view: view)
@@ -29,12 +29,24 @@ class LoginViewController: UIViewController {
 		passwordTextField.setDelegate(self)
 	}
 	
-	@IBAction func loginTapped(_ sender: UIButton) {
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		emailTextField.activateTextField()
+	}
+	
+	@IBAction func login(_ sender: Any) {
 		let email = emailTextField.text == .wrongEmailConstant ? nil : emailTextField.text
 		let password = passwordTextField.text == .wrongPasswordConstant ? nil : passwordTextField.text
 		
 		presenter.loginUser(withEmail: email,
 							password: password)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == String.presentTutorialSegueIdentifier,
+			let tutorialViewController = segue.destination as? TutorialViewController {
+			tutorialViewController.parrentNavigationController = navigationController
+		}
 	}
 	
 }
@@ -57,7 +69,7 @@ extension LoginViewController: LoginView {
 	}
 	
 	func presentTutorialScreen() {
-		print("presenting tutorial")
+		performSegue(withIdentifier: .presentTutorialSegueIdentifier, sender: nil)
 	}
 	
 	func showError() {
@@ -94,4 +106,16 @@ extension LoginViewController: UITextFieldDelegate {
 			break
 		}
 	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		if textField.tag == 100 {
+			passwordTextField.activateTextField()
+			return false
+		} else {
+			login(textField)
+			return true
+		}
+	}
+	
 }

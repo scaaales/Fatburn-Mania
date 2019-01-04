@@ -143,14 +143,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FK8-6c-GCX" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="28"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUZ-uC-MNN">
+                                            <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUZ-uC-MNN">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="rzu-zf-Kfs"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toY-m5-Z9L">
                                                 <rect key="frame" x="0.0" y="27" width="335" height="1"/>
@@ -178,14 +178,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixf-5d-lZA" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="58" width="335" height="28"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vme-Lt-ipl">
+                                            <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vme-Lt-ipl">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="NQ5-wG-4Tz"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adp-2f-5hc">
                                                 <rect key="frame" x="0.0" y="27" width="335" height="1"/>
@@ -250,7 +250,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginTapped:" destination="wKC-LK-cVZ" eventType="touchUpInside" id="8PM-wb-7nE"/>
+                                    <action selector="login:" destination="wKC-LK-cVZ" eventType="touchUpInside" id="bi8-3F-7f0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -269,6 +269,7 @@
                         <outlet property="emailTextField" destination="FK8-6c-GCX" id="W68-7b-fuU"/>
                         <outlet property="passwordTextField" destination="Ixf-5d-lZA" id="aJg-pI-2Qk"/>
                         <outlet property="resetPasswordButton" destination="T0x-ce-STk" id="AbZ-sg-Sca"/>
+                        <segue destination="liC-9p-VRH" kind="presentation" identifier="presentTutorial" id="Twx-mj-uZy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DId-5Z-ze9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,6 +280,119 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="1876" y="484"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="kUe-zc-cEK">
+            <objects>
+                <viewController id="liC-9p-VRH" customClass="TutorialViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ea2-Vl-Wcs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="VOi-G0-LpZ">
+                                <rect key="frame" x="160" y="586.5" width="55" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="HCk-4a-EvG"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE8-KV-Db5">
+                                <rect key="frame" x="20" y="582" width="20" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KDo-J9-JZN"/>
+                                    <constraint firstAttribute="width" constant="20" id="hwy-Ad-C6I"/>
+                                </constraints>
+                                <state key="normal" image="backBig"/>
+                                <connections>
+                                    <action selector="prev:" destination="liC-9p-VRH" eventType="touchUpInside" id="pT9-nu-K7j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cH7-MZ-WKi">
+                                <rect key="frame" x="335" y="582" width="20" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="XQD-DQ-QeF"/>
+                                    <constraint firstAttribute="height" constant="30" id="oad-ju-e0D"/>
+                                </constraints>
+                                <state key="normal" image="nextBig"/>
+                                <connections>
+                                    <action selector="next:" destination="liC-9p-VRH" eventType="touchUpInside" id="LtW-eF-cP2"/>
+                                </connections>
+                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MD5-og-au6">
+                                <rect key="frame" x="20" y="50" width="335" height="506"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qUe-vZ-vxV">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="506"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qUe-vZ-vxV" secondAttribute="height" multiplier="335:506" id="MmC-On-btx"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="X1z-xa-bJ7">
+                                            <size key="itemSize" width="344" height="510"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TutorialCell" id="86P-pE-T9I" customClass="TutorialCell" customModule="Fitness_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-2" width="344" height="510"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="344" height="510"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorial2" translatesAutoresizingMaskIntoConstraints="NO" id="Ibv-ly-7YA">
+                                                            <rect key="frame" x="0.0" y="0.0" width="344" height="510"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Ibv-ly-7YA" secondAttribute="bottom" id="0z7-24-8AN"/>
+                                                    <constraint firstItem="Ibv-ly-7YA" firstAttribute="leading" secondItem="86P-pE-T9I" secondAttribute="leading" id="EnH-zf-Ej0"/>
+                                                    <constraint firstItem="Ibv-ly-7YA" firstAttribute="top" secondItem="86P-pE-T9I" secondAttribute="top" id="ZYX-k8-iw0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ibv-ly-7YA" secondAttribute="trailing" id="xVp-2z-SNl"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="tutorialImageView" destination="Ibv-ly-7YA" id="uIr-zz-iRQ"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qUe-vZ-vxV" secondAttribute="bottom" id="JzB-uW-BRG"/>
+                                    <constraint firstItem="qUe-vZ-vxV" firstAttribute="top" secondItem="MD5-og-au6" secondAttribute="top" id="V6f-fB-UsG"/>
+                                    <constraint firstAttribute="trailing" secondItem="qUe-vZ-vxV" secondAttribute="trailing" id="VCy-u0-e2D"/>
+                                    <constraint firstItem="qUe-vZ-vxV" firstAttribute="leading" secondItem="MD5-og-au6" secondAttribute="leading" id="XtH-BE-taw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xpA-bg-yvK" firstAttribute="bottom" secondItem="VOi-G0-LpZ" secondAttribute="bottom" constant="60" id="4vb-7l-sNF"/>
+                            <constraint firstItem="VOi-G0-LpZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MD5-og-au6" secondAttribute="bottom" constant="30" id="4xc-js-hQK"/>
+                            <constraint firstItem="MD5-og-au6" firstAttribute="top" secondItem="xpA-bg-yvK" secondAttribute="top" constant="30" id="Dzb-Tc-I6n"/>
+                            <constraint firstItem="cH7-MZ-WKi" firstAttribute="centerY" secondItem="VOi-G0-LpZ" secondAttribute="centerY" id="MA9-lm-BrW"/>
+                            <constraint firstItem="MD5-og-au6" firstAttribute="leading" secondItem="xpA-bg-yvK" secondAttribute="leading" constant="20" id="Nx2-m6-cbp"/>
+                            <constraint firstItem="sE8-KV-Db5" firstAttribute="leading" secondItem="xpA-bg-yvK" secondAttribute="leading" constant="20" id="SJr-5A-axG"/>
+                            <constraint firstItem="sE8-KV-Db5" firstAttribute="centerY" secondItem="VOi-G0-LpZ" secondAttribute="centerY" id="SOw-VH-xod"/>
+                            <constraint firstItem="xpA-bg-yvK" firstAttribute="trailing" secondItem="cH7-MZ-WKi" secondAttribute="trailing" constant="20" id="SYa-0H-Jr1"/>
+                            <constraint firstItem="xpA-bg-yvK" firstAttribute="trailing" secondItem="MD5-og-au6" secondAttribute="trailing" constant="20" id="mIu-kF-Lqg"/>
+                            <constraint firstItem="VOi-G0-LpZ" firstAttribute="centerX" secondItem="xpA-bg-yvK" secondAttribute="centerX" id="xN0-Dt-k4F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xpA-bg-yvK"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="qUe-vZ-vxV" id="OOW-ay-raZ"/>
+                        <outlet property="pageControl" destination="VOi-G0-LpZ" id="WuG-j4-Kya"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vkr-6K-ZHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2852" y="864.91754122938539"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="O3b-FM-RlH">
@@ -294,14 +408,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl0-ck-w6a" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="28"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-h3-i0B">
+                                            <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-h3-i0B">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="8V2-JF-gLT"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBN-FX-Vq8">
                                                 <rect key="frame" x="0.0" y="27" width="335" height="1"/>
@@ -329,11 +443,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MI2-Rn-Ma5" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="58" width="335" height="28"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7n3-m4-gGF">
+                                            <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7n3-m4-gGF">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNk-kT-Env">
                                                 <rect key="frame" x="0.0" y="27" width="335" height="1"/>
@@ -361,11 +475,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Op-Ny-2Cc" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="335" height="28"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwL-M5-lH7">
+                                            <textField opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwL-M5-lH7">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZK-br-QCp">
                                                 <rect key="frame" x="0.0" y="27" width="335" height="1"/>
@@ -393,11 +507,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-U8-TKY" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="174" width="335" height="28"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="AVH-mc-3dR">
+                                            <textField opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="AVH-mc-3dR">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="new-password"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgR-BN-D2V">
                                                 <rect key="frame" x="0.0" y="27" width="335" height="1"/>
@@ -452,6 +566,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3g2-eO-ACd"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="MI2-Rn-Ma5" id="7XF-ev-6Y8"/>
+                        <outlet property="nameTextField" destination="fl0-ck-w6a" id="v97-m8-ptb"/>
+                        <outlet property="passwordTextField" destination="8mf-U8-TKY" id="Pun-dR-pCg"/>
+                        <outlet property="phoneTextField" destination="3Op-Ny-2Cc" id="Co6-mo-KRa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4M0-4Z-3pJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="PSh-R2-1V5" customClass="SignInInitializer" customModule="Fitness_App" customModuleProvider="target">
@@ -482,8 +602,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backBig" width="13" height="21"/>
         <image name="facebook_logo" width="26" height="26"/>
         <image name="fbm_logo_gray" width="275" height="85"/>
         <image name="instagram_logo" width="26" height="26"/>
+        <image name="nextBig" width="13" height="21"/>
+        <image name="tutorial2" width="335" height="506"/>
     </resources>
 </document>

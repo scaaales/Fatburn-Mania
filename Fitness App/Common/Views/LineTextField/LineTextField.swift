@@ -34,4 +34,8 @@ class LineTextField: UIView {
 		textField.isSecureTextEntry = isSecure
 	}
 	
+	func activateTextField() {
+		textField.becomeFirstResponder()
+	}
+	
 }

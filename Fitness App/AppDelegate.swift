@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		var initialStoryboard: UIStoryboard
 		if UserDefaults.standard.bool(forKey: .userDefaultKeyIsLogginedIn) {
+			#warning("change to DiaryTab after backend login integrated")
 			initialStoryboard = .loginStack
 		} else {
 			initialStoryboard = .loginStack
