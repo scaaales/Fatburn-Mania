@@ -62,14 +62,9 @@ class TutorialViewController: UIViewController {
 
 extension TutorialViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let item: UIImage
-		if let image = UIImage(named: "tutorial\(indexPath.row + 1)") {
-			item = image
-		} else {
-			item = UIImage()
-		}
+		let item = UIImage(named: "tutorial\(indexPath.row + 1)")
 		
-		let cellConfigurator: CellsConfigurator<TutorialCell, UIImage>  = CellsConfigurator(item: item)
+		let cellConfigurator: CellsConfigurator<TutorialCell, UIImage>  = .init(item: item)
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellConfigurator.reuseId, for: indexPath)
 		cellConfigurator.configure(cell: cell)
 		

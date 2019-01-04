@@ -15,7 +15,6 @@ class TutorialCell: UICollectionViewCell, ConfigurableCell {
 	
 	func configure(data: UIImage) {
 		tutorialImageView.image = data
-		tutorialImageView.backgroundColor = .green
 		tutorialImageView.layer.cornerRadius = 16
 		tutorialImageView.layer.masksToBounds = true
 	}
