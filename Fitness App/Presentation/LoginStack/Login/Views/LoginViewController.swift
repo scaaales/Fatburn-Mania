@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
 	@IBOutlet private weak var passwordTextField: LineTextField!
 	@IBOutlet private weak var resetPasswordButton: UIButton!
 	
+	var shouldShowKeyboard = true
+	
 	lazy private var loader: BlurredLoader = {
 		let loader = BlurredLoader()
 		view.addSubview(loader)
@@ -31,7 +33,9 @@ class LoginViewController: UIViewController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		emailTextField.activateTextField()
+		if shouldShowKeyboard {
+			emailTextField.activateTextField()
+		}
 	}
 	
 	@IBAction func login(_ sender: Any) {
@@ -45,7 +49,7 @@ class LoginViewController: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == String.presentTutorialSegueIdentifier,
 			let tutorialViewController = segue.destination as? TutorialViewController {
-			tutorialViewController.parrentNavigationController = navigationController
+			tutorialViewController.parrentController = self
 		}
 	}
 	
@@ -69,6 +73,7 @@ extension LoginViewController: LoginView {
 	}
 	
 	func presentTutorialScreen() {
+		view.endEditing(true)
 		performSegue(withIdentifier: .presentTutorialSegueIdentifier, sender: nil)
 	}
 	
