@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="O8j-aA-cMa">
-                                <rect key="frame" x="0.0" y="287" width="375" height="1149"/>
+                                <rect key="frame" x="0.0" y="287" width="375" height="1100"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -647,7 +647,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbG-nw-gsZ" customClass="BlurredLoader" customModule="Fitness_App" customModuleProvider="target">
-                                <rect key="frame" x="137.5" y="811.5" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="787" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="9du-4j-SzF"/>
@@ -698,7 +698,11 @@
         <scene sceneID="Vfy-Go-72n">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Om5-9M-gle" customClass="NavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="bullets" selectedImage="bullets_selected" id="G5v-WN-MdC">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6DL-NW-rVf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -717,6 +721,8 @@
     <resources>
         <image name="back" width="6" height="10"/>
         <image name="bodyImage" width="226" height="371"/>
+        <image name="bullets" width="20" height="23"/>
+        <image name="bullets_selected" width="20" height="23"/>
         <image name="calendar" width="19" height="21"/>
         <image name="clock" width="37" height="37"/>
         <image name="coins" width="28" height="36"/>

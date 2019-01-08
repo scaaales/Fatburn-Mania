@@ -13,14 +13,19 @@
         <scene sceneID="coV-XX-7Wx">
             <objects>
                 <tabBarController id="ymS-w3-5uf" customClass="TabBarViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V4x-82-jUs">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="V4x-82-jUs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.99207013845443726" green="0.99221223592758179" blue="0.99203914403915405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3uO-Dc-yWc" kind="relationship" relationship="viewControllers" id="iIs-OB-qeK"/>
                         <segue destination="WYX-bo-9kX" kind="presentation" identifier="presentLogin" animates="NO" id="AOg-cD-YZs"/>
+                        <segue destination="h8h-Zj-t2u" kind="relationship" relationship="viewControllers" id="IAR-HN-Kjj"/>
+                        <segue destination="3uO-Dc-yWc" kind="relationship" relationship="viewControllers" id="sXu-Xb-8nk"/>
+                        <segue destination="Run-uR-56w" kind="relationship" relationship="viewControllers" id="Pju-G4-x0N"/>
+                        <segue destination="SmK-DE-W7X" kind="relationship" relationship="viewControllers" id="hec-2T-BiE"/>
+                        <segue destination="fFP-6Y-mfT" kind="relationship" relationship="viewControllers" id="0af-Tb-rae"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3D-e5-Bro" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,11 +48,59 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C93-Vp-5aw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2150" y="278"/>
+            <point key="canvasLocation" x="-1816" y="278"/>
+        </scene>
+        <!--ProfileTab-->
+        <scene sceneID="7j6-kk-lUO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileTab" id="h8h-Zj-t2u" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="user" selectedImage="user_selected" id="s51-24-jqI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3U-ui-Uiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2110" y="278"/>
+        </scene>
+        <!--WorkoutTab-->
+        <scene sceneID="bA6-q0-efK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WorkoutTab" id="Run-uR-56w" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="dumbbell" selectedImage="dumbbell_selected" id="LNk-9i-gIL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXB-C0-S2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1444" y="278"/>
+        </scene>
+        <!--WorkoutOfTheDayTab-->
+        <scene sceneID="X9H-iF-Bcq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WorkoutOfTheDayTab" id="fFP-6Y-mfT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="skipping_rope" selectedImage="skipping_rope_selected" id="cPY-pq-YfO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kWA-f8-zGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-830" y="278"/>
+        </scene>
+        <!--FeedTab-->
+        <scene sceneID="mkO-Oa-dHQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FeedTab" id="SmK-DE-W7X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="map_pin" selectedImage="map_pin_selected" id="eO5-q5-xoq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fj5-3V-DYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1127" y="278"/>
         </scene>
     </scenes>
     <resources>
         <image name="bullets" width="20" height="23"/>
         <image name="bullets_selected" width="20" height="23"/>
+        <image name="dumbbell" width="24" height="24"/>
+        <image name="dumbbell_selected" width="24" height="24"/>
+        <image name="map_pin" width="23" height="23"/>
+        <image name="map_pin_selected" width="23" height="23"/>
+        <image name="skipping_rope" width="19" height="23"/>
+        <image name="skipping_rope_selected" width="19" height="23"/>
+        <image name="user" width="23" height="23"/>
+        <image name="user_selected" width="23" height="23"/>
     </resources>
 </document>
