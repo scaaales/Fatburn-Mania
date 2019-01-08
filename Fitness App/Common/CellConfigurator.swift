@@ -9,12 +9,13 @@
 import UIKit
 
 protocol CellConfigurator {
-	static var reuseId: String { get }
+	var reuseId: String { get }
 	func configure(cell: UITableViewCell)
+	func configure(cell: UICollectionViewCell)
 }
 
-class TableCellConfigurator<CellType: ConfigurableCell, DataType>: CellConfigurator where CellType.DataType == DataType, CellType: UITableViewCell {
-	static var reuseId: String { return String(describing: CellType.self) }
+class CellsConfigurator<CellType: ConfigurableCell, DataType>: CellConfigurator where CellType.DataType == DataType {
+	var reuseId: String { return String(describing: CellType.self) }
 	
 	let item: DataType?
 	
@@ -29,4 +30,14 @@ class TableCellConfigurator<CellType: ConfigurableCell, DataType>: CellConfigura
 			(cell as? CellType)?.configure()
 		}
 	}
+	
+	func configure(cell: UICollectionViewCell) {
+		if let item = item {
+			(cell as? CellType)?.configure(data: item)
+		} else {
+			(cell as? CellType)?.configure()
+		}
+	}
 }
+
+

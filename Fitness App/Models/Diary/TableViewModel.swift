@@ -8,20 +8,20 @@
 
 import UIKit
 
-typealias PlaceholderCellConfigurator = TableCellConfigurator<PlaceholderCell, Void>
+typealias PlaceholderCellConfigurator = CellsConfigurator<PlaceholderCell, Void>
 
-typealias DefaultSectionHeaderConfigurator = TableCellConfigurator<DefaultSectionHeader, String>
-typealias TrainingDayCellConfigurator = TableCellConfigurator<TrainingDayCell, TrainingDay>
+typealias DefaultSectionHeaderConfigurator = CellsConfigurator<DefaultSectionHeader, String>
+typealias TrainingDayCellConfigurator = CellsConfigurator<TrainingDayCell, TrainingDay>
 
-typealias StepCellConfigurator = TableCellConfigurator<StepCell, Steps>
+typealias StepCellConfigurator = CellsConfigurator<StepCell, Steps>
 
-typealias WaterCellConfigurator = TableCellConfigurator<WaterCell, Measurement>
+typealias WaterCellConfigurator = CellsConfigurator<WaterCell, Measurement>
 
-typealias NutritionCellConfigurator = TableCellConfigurator<NutritionCell, Measurement>
+typealias NutritionCellConfigurator = CellsConfigurator<NutritionCell, Measurement>
 
-typealias BodyMeasurementHeaderConfigurator = TableCellConfigurator<BodyMeasurementHeader, MeasurementPeriod>
-typealias BodyMeasurementCellConfigurator = TableCellConfigurator<BodyMeasurementCell, Measurement>
-typealias BodyMeasurementFooterConfigurator = TableCellConfigurator<BodyMeasurementFooter, Void>
+typealias BodyMeasurementHeaderConfigurator = CellsConfigurator<BodyMeasurementHeader, MeasurementPeriod>
+typealias BodyMeasurementCellConfigurator = CellsConfigurator<BodyMeasurementCell, Measurement>
+typealias BodyMeasurementFooterConfigurator = CellsConfigurator<BodyMeasurementFooter, Void>
 
 
 class TableViewModel: NSObject {
@@ -200,7 +200,7 @@ extension TableViewModel: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let item = sections[indexPath.section].items[indexPath.row]
 		
-		let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId, for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: item.reuseId, for: indexPath)
 		item.configure(cell: cell)
 		
 		return cell
