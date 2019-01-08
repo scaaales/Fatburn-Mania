@@ -231,6 +231,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="5xF-yP-eiA" kind="show" id="A2W-sX-OiZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -392,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkr-6K-ZHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2852" y="864.91754122938539"/>
+            <point key="canvasLocation" x="2852" y="860"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="O3b-FM-RlH">
@@ -581,6 +584,108 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="1876" y="-311"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YEq-Dz-u4J">
+            <objects>
+                <viewController title="Login" id="5xF-yP-eiA" customClass="ResetPasswordViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XJY-Ot-Hb3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29h-2e-jHI" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="20" y="164" width="335" height="28"/>
+                                <subviews>
+                                    <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrB-nR-Zs3">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="VWo-8P-uSE"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L97-4u-P7S">
+                                        <rect key="frame" x="0.0" y="27" width="335" height="1"/>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="ey4-0C-d6e"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="L97-4u-P7S" firstAttribute="leading" secondItem="MrB-nR-Zs3" secondAttribute="leading" id="1ie-1P-0ni"/>
+                                    <constraint firstItem="MrB-nR-Zs3" firstAttribute="leading" secondItem="29h-2e-jHI" secondAttribute="leading" id="2PI-hZ-cOM"/>
+                                    <constraint firstItem="L97-4u-P7S" firstAttribute="top" secondItem="MrB-nR-Zs3" secondAttribute="bottom" constant="7" id="4J8-Tc-tPq"/>
+                                    <constraint firstItem="L97-4u-P7S" firstAttribute="width" secondItem="MrB-nR-Zs3" secondAttribute="width" id="9bB-Bi-m6O"/>
+                                    <constraint firstAttribute="bottom" secondItem="L97-4u-P7S" secondAttribute="bottom" id="VUh-5M-Zyi"/>
+                                    <constraint firstItem="MrB-nR-Zs3" firstAttribute="top" secondItem="29h-2e-jHI" secondAttribute="top" id="edv-st-xZO"/>
+                                    <constraint firstAttribute="trailing" secondItem="MrB-nR-Zs3" secondAttribute="trailing" id="qnX-0w-Len"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="line" destination="L97-4u-P7S" id="Vog-ig-zki"/>
+                                    <outlet property="textField" destination="MrB-nR-Zs3" id="N6a-mM-FwM"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send you an email with instructions on how to reset your password." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDv-LW-cxl">
+                                <rect key="frame" x="66" y="224" width="243" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtB-l8-N5y" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="20" y="571" width="335" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="1BM-L8-y2x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="login:" destination="wKC-LK-cVZ" eventType="touchUpInside" id="znf-2c-tVS"/>
+                                    <action selector="sendButtonTapped:" destination="5xF-yP-eiA" eventType="touchUpInside" id="pLn-95-hSo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JW9-pe-V4Y" firstAttribute="trailing" secondItem="29h-2e-jHI" secondAttribute="trailing" constant="20" id="1pR-X5-pCh"/>
+                            <constraint firstItem="KDv-LW-cxl" firstAttribute="leading" secondItem="JW9-pe-V4Y" secondAttribute="leading" priority="750" constant="20" id="6kf-ZC-Qzj"/>
+                            <constraint firstItem="29h-2e-jHI" firstAttribute="trailing" secondItem="KDv-LW-cxl" secondAttribute="trailing" constant="46" id="K9q-zS-ML8"/>
+                            <constraint firstItem="JW9-pe-V4Y" firstAttribute="bottom" secondItem="dtB-l8-N5y" secondAttribute="bottom" constant="60" id="Kos-86-bKe"/>
+                            <constraint firstItem="JW9-pe-V4Y" firstAttribute="trailing" secondItem="dtB-l8-N5y" secondAttribute="trailing" constant="20" id="O4g-l4-dQ5"/>
+                            <constraint firstAttribute="trailing" secondItem="KDv-LW-cxl" secondAttribute="trailing" priority="750" constant="20" id="Pk4-uo-YJq"/>
+                            <constraint firstItem="KDv-LW-cxl" firstAttribute="top" secondItem="29h-2e-jHI" secondAttribute="bottom" constant="32" id="Tn0-J0-GtY"/>
+                            <constraint firstItem="29h-2e-jHI" firstAttribute="top" secondItem="JW9-pe-V4Y" secondAttribute="top" constant="100" id="eb9-vi-Jrs"/>
+                            <constraint firstItem="dtB-l8-N5y" firstAttribute="leading" secondItem="XJY-Ot-Hb3" secondAttribute="leading" constant="20" id="f4U-cE-OyZ"/>
+                            <constraint firstItem="KDv-LW-cxl" firstAttribute="leading" secondItem="29h-2e-jHI" secondAttribute="leading" constant="46" id="hhp-rm-wd2"/>
+                            <constraint firstItem="29h-2e-jHI" firstAttribute="leading" secondItem="JW9-pe-V4Y" secondAttribute="leading" constant="20" id="obV-5M-lLn"/>
+                            <constraint firstItem="KDv-LW-cxl" firstAttribute="top" secondItem="JW9-pe-V4Y" secondAttribute="top" priority="750" constant="100" id="z4I-tl-oXf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JW9-pe-V4Y"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="KDv-LW-cxl" id="ruL-Fm-vfR"/>
+                        <outlet property="emailTextField" destination="29h-2e-jHI" id="mLx-OJ-jC4"/>
+                        <outlet property="sendButton" destination="dtB-l8-N5y" id="j7N-uc-rBS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDV-Ox-k7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="wh9-5D-NkU" customClass="ResetPassrodInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="5xF-yP-eiA" id="oT9-nA-jyh"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2852" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c4P-cB-NkF">

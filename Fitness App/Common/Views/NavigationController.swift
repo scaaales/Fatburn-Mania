@@ -13,6 +13,7 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupAppearance()
+		delegate = self
     }
 	
 	private func setupAppearance() {
@@ -33,4 +34,10 @@ class NavigationController: UINavigationController {
 		navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 	}
 
+}
+
+extension NavigationController: UINavigationControllerDelegate {
+	func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+		setupBackButton()
+	}
 }

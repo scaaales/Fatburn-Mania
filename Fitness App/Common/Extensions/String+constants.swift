@@ -24,5 +24,7 @@ extension String {
 	static var wrongPasswordConstant: String { return "Wrong password" }
 	static var wrongEmailConstant: String { return "Wrong E-mail" }
 	static var forgotPasswordConstant: String { return "Forgot your password?" }
+	static var emailWasSentConstant: String { return "E-mail with instructions on how to reset your password was sent" }
+	static var closeConstant: String { return "Close" }
 }
 
