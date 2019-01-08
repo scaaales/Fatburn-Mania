@@ -73,6 +73,12 @@
 		B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */; };
 		B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D221E4BE9F0071994A /* ResetPasswordView.swift */; };
 		B39301D621E4BF0B0071994A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D521E4BF0B0071994A /* ResetPasswordViewController.swift */; };
+		B39301D921E4DE770071994A /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301D821E4DE770071994A /* MainTabBar.storyboard */; };
+		B39301DB21E4E8630071994A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301DA21E4E8630071994A /* TabBarViewController.swift */; };
+		B39301DE21E4FA360071994A /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301DD21E4FA360071994A /* ProfileTab.storyboard */; };
+		B39301E121E4FA720071994A /* WorkoutTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301E021E4FA720071994A /* WorkoutTab.storyboard */; };
+		B39301E521E4FAAC0071994A /* FeedTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301E421E4FAAC0071994A /* FeedTab.storyboard */; };
+		B39301E821E4FAC80071994A /* WorkoutOfTheDayTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301E721E4FAC80071994A /* WorkoutOfTheDayTab.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +151,12 @@
 		B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		B39301D221E4BE9F0071994A /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		B39301D521E4BF0B0071994A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		B39301D821E4DE770071994A /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		B39301DA21E4E8630071994A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		B39301DD21E4FA360071994A /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
+		B39301E021E4FA720071994A /* WorkoutTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkoutTab.storyboard; sourceTree = "<group>"; };
+		B39301E421E4FAAC0071994A /* FeedTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedTab.storyboard; sourceTree = "<group>"; };
+		B39301E721E4FAC80071994A /* WorkoutOfTheDayTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkoutOfTheDayTab.storyboard; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -491,8 +503,13 @@
 		B3753C1521D7A1C3008A5D5A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B36B2F6521DE0FD400C5D07B /* DiaryTab */,
 				B36B2F6021DE0EB700C5D07B /* LoginStack */,
+				B39301D721E4DE560071994A /* MainTabBar */,
+				B39301DC21E4FA000071994A /* ProfileTab */,
+				B36B2F6521DE0FD400C5D07B /* DiaryTab */,
+				B39301DF21E4FA5F0071994A /* WorkoutTab */,
+				B39301E221E4FA7F0071994A /* FeedTab */,
+				B39301E321E4FA9A0071994A /* WorkoutOfTheDayTab */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -594,6 +611,47 @@
 			path = ../ResetPassword/Views;
 			sourceTree = "<group>";
 		};
+		B39301D721E4DE560071994A /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B39301D821E4DE770071994A /* MainTabBar.storyboard */,
+				B39301DA21E4E8630071994A /* TabBarViewController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		B39301DC21E4FA000071994A /* ProfileTab */ = {
+			isa = PBXGroup;
+			children = (
+				B39301DD21E4FA360071994A /* ProfileTab.storyboard */,
+			);
+			path = ProfileTab;
+			sourceTree = "<group>";
+		};
+		B39301DF21E4FA5F0071994A /* WorkoutTab */ = {
+			isa = PBXGroup;
+			children = (
+				B39301E021E4FA720071994A /* WorkoutTab.storyboard */,
+			);
+			path = WorkoutTab;
+			sourceTree = "<group>";
+		};
+		B39301E221E4FA7F0071994A /* FeedTab */ = {
+			isa = PBXGroup;
+			children = (
+				B39301E421E4FAAC0071994A /* FeedTab.storyboard */,
+			);
+			path = FeedTab;
+			sourceTree = "<group>";
+		};
+		B39301E321E4FA9A0071994A /* WorkoutOfTheDayTab */ = {
+			isa = PBXGroup;
+			children = (
+				B39301E721E4FAC80071994A /* WorkoutOfTheDayTab.storyboard */,
+			);
+			path = WorkoutOfTheDayTab;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -662,8 +720,13 @@
 				B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */,
 				B3753C2B21D7C473008A5D5A /* BlurredLoader.xib in Resources */,
 				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
+				B39301D921E4DE770071994A /* MainTabBar.storyboard in Resources */,
+				B39301E121E4FA720071994A /* WorkoutTab.storyboard in Resources */,
+				B39301E821E4FAC80071994A /* WorkoutOfTheDayTab.storyboard in Resources */,
+				B39301DE21E4FA360071994A /* ProfileTab.storyboard in Resources */,
 				B3254F3921D3E7CE00F99F91 /* Assets.xcassets in Resources */,
 				B3254F3821D3E7CE00F99F91 /* DiaryTab.storyboard in Resources */,
+				B39301E521E4FAAC0071994A /* FeedTab.storyboard in Resources */,
 				B33394D121DF915F00D6013F /* LoginStack.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +812,7 @@
 				B369573721D4E40500735555 /* HealthKitService.swift in Sources */,
 				B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */,
 				B3753C2521D7A6E4008A5D5A /* DiaryInitializer.swift in Sources */,
+				B39301DB21E4E8630071994A /* TabBarViewController.swift in Sources */,
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
 				B36B2F7721DE15DE00C5D07B /* UIStoryboard+extension.swift in Sources */,

@@ -13,7 +13,7 @@ class TutorialViewController: UIViewController {
 	@IBOutlet private weak var collectionView: UICollectionView!
 	@IBOutlet private weak var pageControl: UIPageControl!
 	
-	var parrentNavigationController: UINavigationController?
+	var parrentController: UIViewController?
 	
 	private var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
 	
@@ -52,10 +52,8 @@ class TutorialViewController: UIViewController {
 	}
 	
 	private func showMainScreen() {
-		guard let navigationController = UIStoryboard.diaryTab.instantiateInitialViewController() as? NavigationController,
-			let diaryVC = navigationController.viewControllers.first else { return }
-		parrentNavigationController?.setViewControllers([diaryVC], animated: false)
-		dismiss(animated: true)
+		(parrentController as? LoginViewController)?.shouldShowKeyboard = false
+		presentingViewController?.presentingViewController?.dismiss(animated: true)
 	}
 	
 }
