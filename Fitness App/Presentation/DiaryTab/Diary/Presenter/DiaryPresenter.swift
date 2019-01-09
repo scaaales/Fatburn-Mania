@@ -12,11 +12,11 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
-	private(set) var viewModel: TableViewModel!
+	private(set) var viewModel: DiaryTableViewModel
 	
 	required init(view: View) {
 		self.view = view
-		viewModel = TableViewModel()
+		viewModel = DiaryTableViewModel()
 	}
 	
 	func getInitialHealthInfo() {

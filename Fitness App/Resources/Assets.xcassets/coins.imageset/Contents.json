@@ -1,17 +1,18 @@
 {
   "images" : [
     {
+      "filename" : "coins.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "coins@2x.png",
       "idiom" : "universal",
-      "filename" : "two_stacks_of_coins.png",
       "scale" : "2x"
     },
     {
+      "filename" : "coins@3x.png",
       "idiom" : "universal",
-      "filename" : "two_stacks_of_coins-1.png",
       "scale" : "3x"
     }
   ],

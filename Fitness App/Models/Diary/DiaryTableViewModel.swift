@@ -1,5 +1,5 @@
 //
-//  TableViewModel.swift
+//  DiaryTableViewModel.swift
 //  Fitness App
 //
 //  Created by scales on 12/16/18.
@@ -24,7 +24,7 @@ typealias BodyMeasurementCellConfigurator = CellsConfigurator<BodyMeasurementCel
 typealias BodyMeasurementFooterConfigurator = CellsConfigurator<BodyMeasurementFooter, Void>
 
 
-class TableViewModel: NSObject {
+class DiaryTableViewModel: NSObject {
 	
 	class Section {
 		let header: CellConfigurator?
@@ -46,6 +46,17 @@ class TableViewModel: NSObject {
 	var fats: Measurement?
 	var carbohydrates: Measurement?
 	
+	private var sections: [Section] {
+		let placeholderSection = getPlaceholderSection()
+		let trainingDaySection = getTrainingDaySection()
+		let stepsSection = getStepsSection()
+		let waterSection = getWaterSection()
+		let nutritionSection = getNutritionSection()
+		let bodyMeasurementsSection = getBodyMeasurementsSection()
+		
+		return [placeholderSection, trainingDaySection, stepsSection, waterSection, nutritionSection, bodyMeasurementsSection]
+	}
+	
 	init(trainingDay: TrainingDay? = nil,
 		 steps: Steps? = nil,
 		 water: Measurement? = nil,
@@ -60,17 +71,6 @@ class TableViewModel: NSObject {
 		self.proteins = proteins
 		self.fats = fats
 		self.carbohydrates = carbohydrates
-	}
-	
-	private var sections: [Section] {
-		let placeholderSection = getPlaceholderSection()
-		let trainingDaySection = getTrainingDaySection()
-		let stepsSection = getStepsSection()
-		let waterSection = getWaterSection()
-		let nutritionSection = getNutritionSection()
-		let bodyMeasurementsSection = getBodyMeasurementsSection()
-		
-		return [placeholderSection, trainingDaySection, stepsSection, waterSection, nutritionSection, bodyMeasurementsSection]
 	}
 	
 	private func getPlaceholderSection() -> Section {
@@ -187,7 +187,7 @@ class TableViewModel: NSObject {
 
 }
 
-extension TableViewModel: UITableViewDataSource {
+extension DiaryTableViewModel: UITableViewDataSource {
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return sections.count
 	}
