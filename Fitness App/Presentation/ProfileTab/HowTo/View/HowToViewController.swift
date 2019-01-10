@@ -26,16 +26,20 @@ class HowToViewController: UIViewController {
 		HowToTextCellConfigurator(item: String.loremIpsumConstant)
 	]
 	
-    override func viewDidLoad() {
+	override func viewDidLoad() {
         super.viewDidLoad()
+		setupTableView()
+    }
+	
+	private func setupTableView() {
+		tableView.dataSource = self
+		tableView.delegate = self
+		
 		tableView.estimatedRowHeight = 1
 		tableView.rowHeight = UITableView.automaticDimension
 		
 		tableView.backgroundColor = .white
-		
-		tableView.dataSource = self
-		tableView.delegate = self
-    }
+	}
 
 }
 

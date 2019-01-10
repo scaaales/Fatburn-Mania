@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="elA-a4-c4R">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wne-yz-8Y4">
+            <objects>
+                <viewController title="Video library" id="elA-a4-c4R" customClass="VideoLibraryViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ASq-ja-MON">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Qe-WX-esG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="3Tl-6b-Otr">
+                                    <size key="itemSize" width="149" height="121"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoLibraryCell" id="xWB-5a-69q" customClass="VideoLibraryCell" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="149" height="121"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="149" height="121"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-fs-gLE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="99.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="dc6-fs-gLE" secondAttribute="height" multiplier="3:2" id="8we-Hc-oYg"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR8-kH-0rP">
+                                                    <rect key="frame" x="0.0" y="107" width="149" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="BWL-sa-hgn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dc6-fs-gLE" secondAttribute="trailing" id="8RL-fz-2tE"/>
+                                            <constraint firstItem="dc6-fs-gLE" firstAttribute="top" secondItem="xWB-5a-69q" secondAttribute="top" id="CMK-SJ-Mae"/>
+                                            <constraint firstAttribute="trailing" secondItem="aR8-kH-0rP" secondAttribute="trailing" id="Ofd-43-gNY"/>
+                                            <constraint firstAttribute="bottom" secondItem="aR8-kH-0rP" secondAttribute="bottom" id="b7w-TP-782"/>
+                                            <constraint firstItem="aR8-kH-0rP" firstAttribute="leading" secondItem="xWB-5a-69q" secondAttribute="leading" id="drx-JG-tGF"/>
+                                            <constraint firstItem="dc6-fs-gLE" firstAttribute="leading" secondItem="xWB-5a-69q" secondAttribute="leading" id="ghB-Cm-BZe"/>
+                                            <constraint firstItem="aR8-kH-0rP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dc6-fs-gLE" secondAttribute="bottom" constant="7" id="q4x-VC-Jfs"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="dc6-fs-gLE" id="NbB-pT-d8f"/>
+                                            <outlet property="title" destination="aR8-kH-0rP" id="oKN-1p-neg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Qe-WX-esG" firstAttribute="leading" secondItem="uQD-wK-ygn" secondAttribute="leading" id="DyE-J2-bsg"/>
+                            <constraint firstItem="uQD-wK-ygn" firstAttribute="trailing" secondItem="1Qe-WX-esG" secondAttribute="trailing" id="fms-o2-aG4"/>
+                            <constraint firstItem="1Qe-WX-esG" firstAttribute="top" secondItem="uQD-wK-ygn" secondAttribute="top" id="kQn-fD-d5h"/>
+                            <constraint firstItem="uQD-wK-ygn" firstAttribute="bottom" secondItem="1Qe-WX-esG" secondAttribute="bottom" id="xBx-rS-qx6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uQD-wK-ygn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Video library" id="QBN-Zl-L9e"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="1Qe-WX-esG" id="mka-ZN-1i1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gTu-wl-r5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="h7I-h9-Vtr" customClass="VideoLibraryInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="elA-a4-c4R" id="b0O-8N-Edw"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="343.19999999999999" y="-287.40629685157421"/>
+        </scene>
+    </scenes>
+</document>

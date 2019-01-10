@@ -97,6 +97,12 @@
 		B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328821E765070038ACB9 /* HowToViewController.swift */; };
 		B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328B21E765BC0038ACB9 /* HowToImageCell.swift */; };
 		B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328D21E766540038ACB9 /* HowToTextCell.swift */; };
+		B3F7329121E77E7C0038ACB9 /* VideoLibraryStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F7329021E77E7C0038ACB9 /* VideoLibraryStack.storyboard */; };
+		B3F7329721E781190038ACB9 /* VideoLibraryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329321E781190038ACB9 /* VideoLibraryPresenter.swift */; };
+		B3F7329821E781190038ACB9 /* VideoLibraryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329421E781190038ACB9 /* VideoLibraryInitializer.swift */; };
+		B3F7329921E781190038ACB9 /* VideoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329521E781190038ACB9 /* VideoLibraryViewController.swift */; };
+		B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329621E781190038ACB9 /* VideoLibraryView.swift */; };
+		B3F7329E21E7851F0038ACB9 /* VideoLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329D21E7851F0038ACB9 /* VideoLibraryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +199,12 @@
 		B3F7328821E765070038ACB9 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
 		B3F7328B21E765BC0038ACB9 /* HowToImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToImageCell.swift; sourceTree = "<group>"; };
 		B3F7328D21E766540038ACB9 /* HowToTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToTextCell.swift; sourceTree = "<group>"; };
+		B3F7329021E77E7C0038ACB9 /* VideoLibraryStack.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoLibraryStack.storyboard; sourceTree = "<group>"; };
+		B3F7329321E781190038ACB9 /* VideoLibraryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryPresenter.swift; sourceTree = "<group>"; };
+		B3F7329421E781190038ACB9 /* VideoLibraryInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryInitializer.swift; sourceTree = "<group>"; };
+		B3F7329521E781190038ACB9 /* VideoLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryViewController.swift; sourceTree = "<group>"; };
+		B3F7329621E781190038ACB9 /* VideoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryView.swift; sourceTree = "<group>"; };
+		B3F7329D21E7851F0038ACB9 /* VideoLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryCell.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -664,6 +676,7 @@
 				B39D475621E5FC1600D5C050 /* Profile */,
 				B3F7328421E75E970038ACB9 /* FAQ */,
 				B3F7328721E764EC0038ACB9 /* HowTo */,
+				B3F7328F21E77E560038ACB9 /* VideoLibraryStack */,
 			);
 			path = ProfileTab;
 			sourceTree = "<group>";
@@ -738,7 +751,7 @@
 		B3F7328421E75E970038ACB9 /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
-				B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */,
+				B3F732A021E786950038ACB9 /* View */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -746,8 +759,7 @@
 		B3F7328721E764EC0038ACB9 /* HowTo */ = {
 			isa = PBXGroup;
 			children = (
-				B3F7328A21E765280038ACB9 /* TableViewCells */,
-				B3F7328821E765070038ACB9 /* HowToViewController.swift */,
+				B3F732A121E786A00038ACB9 /* View */,
 			);
 			path = HowTo;
 			sourceTree = "<group>";
@@ -759,6 +771,60 @@
 				B3F7328D21E766540038ACB9 /* HowToTextCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		B3F7328F21E77E560038ACB9 /* VideoLibraryStack */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7329021E77E7C0038ACB9 /* VideoLibraryStack.storyboard */,
+				B3F7329221E781010038ACB9 /* VideoLibrary */,
+			);
+			path = VideoLibraryStack;
+			sourceTree = "<group>";
+		};
+		B3F7329221E781010038ACB9 /* VideoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7329B21E781200038ACB9 /* Presenter */,
+				B3F7329C21E7812A0038ACB9 /* Views */,
+				B3F7329421E781190038ACB9 /* VideoLibraryInitializer.swift */,
+			);
+			path = VideoLibrary;
+			sourceTree = "<group>";
+		};
+		B3F7329B21E781200038ACB9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7329321E781190038ACB9 /* VideoLibraryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B3F7329C21E7812A0038ACB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7329621E781190038ACB9 /* VideoLibraryView.swift */,
+				B3F7329521E781190038ACB9 /* VideoLibraryViewController.swift */,
+				B3F7329D21E7851F0038ACB9 /* VideoLibraryCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3F732A021E786950038ACB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3F732A121E786A00038ACB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7328A21E765280038ACB9 /* TableViewCells */,
+				B3F7328821E765070038ACB9 /* HowToViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -826,6 +892,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F7329121E77E7C0038ACB9 /* VideoLibraryStack.storyboard in Resources */,
 				B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */,
 				B3753C2B21D7C473008A5D5A /* BlurredLoader.xib in Resources */,
 				B39D477321E6107500D5C050 /* Assets.xcassets in Resources */,
@@ -899,8 +966,10 @@
 				B36B2F6E21DE123000C5D07B /* LoginSplashPresenter.swift in Sources */,
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B39D477121E60B4700D5C050 /* User.swift in Sources */,
+				B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
 				B37CBA1921DE64C000834A98 /* LoginView.swift in Sources */,
+				B3F7329821E781190038ACB9 /* VideoLibraryInitializer.swift in Sources */,
 				B36B2F7421DE148600C5D07B /* String+constants.swift in Sources */,
 				B33394C721DF721900D6013F /* UIColor+hextInit.swift in Sources */,
 				B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */,
@@ -917,7 +986,9 @@
 				B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */,
 				B39D475A21E5FC6E00D5C050 /* ProfileInitializer.swift in Sources */,
 				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
+				B3F7329E21E7851F0038ACB9 /* VideoLibraryCell.swift in Sources */,
 				B39D475E21E5FCA300D5C050 /* ProfileView.swift in Sources */,
+				B3F7329921E781190038ACB9 /* VideoLibraryViewController.swift in Sources */,
 				B33394C321DF6DB900D6013F /* LineTextField.swift in Sources */,
 				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
 				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
@@ -926,6 +997,7 @@
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
 				B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */,
 				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
+				B3F7329721E781190038ACB9 /* VideoLibraryPresenter.swift in Sources */,
 				B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */,
 				B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */,
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,

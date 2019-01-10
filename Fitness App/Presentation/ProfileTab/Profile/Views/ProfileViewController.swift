@@ -51,7 +51,7 @@ extension ProfileViewController: UITableViewDelegate {
 		case "Store":
 			print("need to show Store screen")
 		case "Video library":
-			print("need to show Video library screen")
+			performSegue(withIdentifier: .showVideoLibrarySegueIdentifier, sender: nil)
 		case "How to use the application":
 			performSegue(withIdentifier: .showHowToSegueIdentifier, sender: nil)
 		case "FAQ":
