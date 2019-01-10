@@ -419,6 +419,7 @@
                     <connections>
                         <outlet property="tableView" destination="Yd2-uC-62G" id="rbR-J6-Joe"/>
                         <segue destination="b4p-Bx-7sI" kind="show" identifier="showFAQ" id="OQv-BY-PfW"/>
+                        <segue destination="4js-Yt-XUB" kind="show" identifier="showHowTo" id="tA9-a7-29S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qc4-49-9kj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -438,7 +439,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uja-dh-PkT">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uja-dh-PkT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <mutableString key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
@@ -469,6 +470,89 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIe-VN-Kjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="996" y="906"/>
+        </scene>
+        <!--How to use the application-->
+        <scene sceneID="Bt3-I5-h2L">
+            <objects>
+                <viewController title="How to use the application" hidesBottomBarWhenPushed="YES" id="4js-Yt-XUB" customClass="HowToViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xGn-bL-YxL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="vaM-Vk-xWj">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HowToImageCell" rowHeight="213" id="YQX-MD-dnb" customClass="HowToImageCell" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="213"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQX-MD-dnb" id="gG2-PO-2yC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorialPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="9nJ-kF-rfd">
+                                                    <rect key="frame" x="20" y="0.0" width="335" height="193"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="193" id="Pyi-3Q-keA"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9nJ-kF-rfd" firstAttribute="top" secondItem="gG2-PO-2yC" secondAttribute="top" id="ATe-94-AX6"/>
+                                                <constraint firstAttribute="trailing" secondItem="9nJ-kF-rfd" secondAttribute="trailing" constant="20" id="dnt-vf-Uin"/>
+                                                <constraint firstItem="9nJ-kF-rfd" firstAttribute="leading" secondItem="gG2-PO-2yC" secondAttribute="leading" constant="20" id="ghX-CI-dlz"/>
+                                                <constraint firstAttribute="bottom" secondItem="9nJ-kF-rfd" secondAttribute="bottom" constant="20" id="pxn-5p-XXw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tutorialImage" destination="9nJ-kF-rfd" id="ifs-Yx-S6O"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HowToTextCell" rowHeight="100" id="xzK-uj-RXY" customClass="HowToTextCell" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="268.5" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xzK-uj-RXY" id="hxu-Ga-OwY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZhU-4V-0tE">
+                                                    <rect key="frame" x="20" y="0.0" width="335" height="80"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZhU-4V-0tE" firstAttribute="leading" secondItem="hxu-Ga-OwY" secondAttribute="leading" constant="20" id="7Ms-hG-Uy7"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZhU-4V-0tE" secondAttribute="bottom" constant="20" id="jZm-6A-mfC"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZhU-4V-0tE" secondAttribute="trailing" constant="20" id="nGq-m4-YvQ"/>
+                                                <constraint firstItem="ZhU-4V-0tE" firstAttribute="top" secondItem="hxu-Ga-OwY" secondAttribute="top" id="qWK-Ha-KQq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tutorialText" destination="ZhU-4V-0tE" id="phg-1w-n2E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vaM-Vk-xWj" firstAttribute="top" secondItem="DOM-Yk-kgM" secondAttribute="top" id="3Xi-WR-7l0"/>
+                            <constraint firstItem="DOM-Yk-kgM" firstAttribute="bottom" secondItem="vaM-Vk-xWj" secondAttribute="bottom" id="VGw-au-9TO"/>
+                            <constraint firstItem="DOM-Yk-kgM" firstAttribute="trailing" secondItem="vaM-Vk-xWj" secondAttribute="trailing" id="tLV-kr-wkc"/>
+                            <constraint firstItem="vaM-Vk-xWj" firstAttribute="leading" secondItem="DOM-Yk-kgM" secondAttribute="leading" id="ySx-Q0-nhr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DOM-Yk-kgM"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="vaM-Vk-xWj" id="6gs-L1-QO5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Icc-9O-ngV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1911" y="905"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="7bQ-BA-QSW">
@@ -501,6 +585,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
         <image name="nextBigBlack" width="13" height="21"/>
         <image name="photoCamera" width="29.5" height="23.5"/>
         <image name="stopwatch" width="30.5" height="30.5"/>
+        <image name="tutorialPlaceholder" width="335" height="193"/>
         <image name="user" width="22.5" height="22.5"/>
         <image name="user_selected" width="22.5" height="22.5"/>
     </resources>

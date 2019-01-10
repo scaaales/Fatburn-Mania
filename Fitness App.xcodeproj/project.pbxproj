@@ -94,6 +94,9 @@
 		B39D478B21E65E8600D5C050 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478A21E65E8600D5C050 /* ProfileButton.swift */; };
 		B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7327F21E754840038ACB9 /* MainNavigationController.swift */; };
 		B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */; };
+		B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328821E765070038ACB9 /* HowToViewController.swift */; };
+		B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328B21E765BC0038ACB9 /* HowToImageCell.swift */; };
+		B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328D21E766540038ACB9 /* HowToTextCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +190,9 @@
 		B39D478A21E65E8600D5C050 /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		B3F7327F21E754840038ACB9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		B3F7328821E765070038ACB9 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
+		B3F7328B21E765BC0038ACB9 /* HowToImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToImageCell.swift; sourceTree = "<group>"; };
+		B3F7328D21E766540038ACB9 /* HowToTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToTextCell.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -657,6 +663,7 @@
 				B39301DD21E4FA360071994A /* ProfileTab.storyboard */,
 				B39D475621E5FC1600D5C050 /* Profile */,
 				B3F7328421E75E970038ACB9 /* FAQ */,
+				B3F7328721E764EC0038ACB9 /* HowTo */,
 			);
 			path = ProfileTab;
 			sourceTree = "<group>";
@@ -734,6 +741,24 @@
 				B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */,
 			);
 			path = FAQ;
+			sourceTree = "<group>";
+		};
+		B3F7328721E764EC0038ACB9 /* HowTo */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7328A21E765280038ACB9 /* TableViewCells */,
+				B3F7328821E765070038ACB9 /* HowToViewController.swift */,
+			);
+			path = HowTo;
+			sourceTree = "<group>";
+		};
+		B3F7328A21E765280038ACB9 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7328B21E765BC0038ACB9 /* HowToImageCell.swift */,
+				B3F7328D21E766540038ACB9 /* HowToTextCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -878,6 +903,7 @@
 				B37CBA1921DE64C000834A98 /* LoginView.swift in Sources */,
 				B36B2F7421DE148600C5D07B /* String+constants.swift in Sources */,
 				B33394C721DF721900D6013F /* UIColor+hextInit.swift in Sources */,
+				B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */,
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */,
 				B36B2F7D21DE24B200C5D07B /* SignInInitializer.swift in Sources */,
@@ -904,6 +930,7 @@
 				B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */,
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
 				B369573721D4E40500735555 /* HealthKitService.swift in Sources */,
+				B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */,
 				B39D477821E6288D00D5C050 /* ProfileHeaderCell.swift in Sources */,
 				B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */,
 				B3753C2521D7A6E4008A5D5A /* DiaryInitializer.swift in Sources */,
@@ -924,6 +951,7 @@
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* DiaryTableViewModel.swift in Sources */,
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
+				B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */,
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
 				B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
