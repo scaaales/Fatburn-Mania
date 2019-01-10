@@ -81,13 +81,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bullets" width="20" height="23"/>
-        <image name="bullets_selected" width="20" height="23"/>
-        <image name="dumbbell" width="24" height="24"/>
-        <image name="dumbbell_selected" width="24" height="24"/>
-        <image name="skipping_rope" width="19" height="23"/>
-        <image name="skipping_rope_selected" width="19" height="23"/>
-        <image name="user" width="23" height="23"/>
-        <image name="user_selected" width="23" height="23"/>
+        <image name="bullets" width="20" height="22.5"/>
+        <image name="bullets_selected" width="20" height="22.5"/>
+        <image name="dumbbell" width="23.5" height="23.5"/>
+        <image name="dumbbell_selected" width="23.5" height="23.5"/>
+        <image name="skipping_rope" width="18.5" height="23"/>
+        <image name="skipping_rope_selected" width="18.5" height="23"/>
+        <image name="user" width="22.5" height="22.5"/>
+        <image name="user_selected" width="22.5" height="22.5"/>
     </resources>
 </document>

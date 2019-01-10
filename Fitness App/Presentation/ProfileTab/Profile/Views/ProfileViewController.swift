@@ -44,6 +44,21 @@ extension ProfileViewController: ProfileView {
 extension ProfileViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: false)
+		let title = presenter.getCellTitleFor(indexPath: indexPath)
+		switch title {
+		case "Coins":
+			print("need to show Coins screen")
+		case "Store":
+			print("need to show Store screen")
+		case "Video library":
+			print("need to show Video library screen")
+		case "How to use the application":
+			print("need to show How to use the application screen")
+		case "FAQ":
+			performSegue(withIdentifier: .showFAQSegueIdentifier, sender: nil)
+		default:
+			break
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

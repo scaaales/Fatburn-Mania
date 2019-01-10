@@ -93,6 +93,7 @@
 		B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */; };
 		B39D478B21E65E8600D5C050 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478A21E65E8600D5C050 /* ProfileButton.swift */; };
 		B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7327F21E754840038ACB9 /* MainNavigationController.swift */; };
+		B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +186,7 @@
 		B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithSeperator.swift; sourceTree = "<group>"; };
 		B39D478A21E65E8600D5C050 /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		B3F7327F21E754840038ACB9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -654,6 +656,7 @@
 			children = (
 				B39301DD21E4FA360071994A /* ProfileTab.storyboard */,
 				B39D475621E5FC1600D5C050 /* Profile */,
+				B3F7328421E75E970038ACB9 /* FAQ */,
 			);
 			path = ProfileTab;
 			sourceTree = "<group>";
@@ -723,6 +726,14 @@
 				B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		B3F7328421E75E970038ACB9 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */,
+			);
+			path = FAQ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -890,6 +901,7 @@
 				B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */,
 				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
 				B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */,
+				B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */,
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
 				B369573721D4E40500735555 /* HealthKitService.swift in Sources */,
 				B39D477821E6288D00D5C050 /* ProfileHeaderCell.swift in Sources */,

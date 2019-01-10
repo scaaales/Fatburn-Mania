@@ -66,6 +66,13 @@ class ProfileTableViewModel: NSObject {
 		]
 	}
 	
+	func getCellTitleFor(at row: Int) -> String? {
+		if let buttonArrowConfigurator = rows[row] as? UserButtonArrowConfigurator {
+			return buttonArrowConfigurator.item?.text
+		}
+		return nil
+	}
+	
 }
 
 extension ProfileTableViewModel: UITableViewDataSource {

@@ -38,4 +38,8 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 		
 		view.update()
 	}
+	
+	func getCellTitleFor(indexPath: IndexPath) -> String? {
+		return viewModel.getCellTitleFor(at: indexPath.row)
+	}
 }
