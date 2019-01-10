@@ -64,6 +64,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="dc6-fs-gLE" id="NbB-pT-d8f"/>
                                             <outlet property="title" destination="aR8-kH-0rP" id="oKN-1p-neg"/>
+                                            <segue destination="X73-vi-yPk" kind="show" id="S7x-CE-SPv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -92,6 +93,41 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="343.19999999999999" y="-287.40629685157421"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RUr-Fr-6Zs">
+            <objects>
+                <viewController id="X73-vi-yPk" customClass="CourseVideosViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4i8-PL-ttL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-6W-guO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dFJ-6W-guO" firstAttribute="trailing" secondItem="Hg0-Qf-ets" secondAttribute="trailing" id="Ie8-Gh-FN1"/>
+                            <constraint firstItem="dFJ-6W-guO" firstAttribute="leading" secondItem="Hg0-Qf-ets" secondAttribute="leading" id="lTv-f1-wI7"/>
+                            <constraint firstItem="dFJ-6W-guO" firstAttribute="bottom" secondItem="Hg0-Qf-ets" secondAttribute="bottom" id="y0e-OV-ss0"/>
+                            <constraint firstItem="dFJ-6W-guO" firstAttribute="top" secondItem="Hg0-Qf-ets" secondAttribute="top" id="zos-qs-41L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hg0-Qf-ets"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dFJ-6W-guO" id="47Q-pQ-1yf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4r-CM-Wvp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="BQd-Uc-vxV" customClass="CourseVideosInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="X73-vi-yPk" id="0wn-Sl-vf3"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1205.5999999999999" y="-287.40629685157421"/>
         </scene>
     </scenes>
 </document>

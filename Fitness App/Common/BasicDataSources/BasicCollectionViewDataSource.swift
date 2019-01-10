@@ -30,5 +30,9 @@ class BasicCollectionViewDataSource<CellType: UICollectionViewCell, DataType>: N
 		
 		return cell
 	}
+	
+	func getItemAtIndex(_ index: Int) -> DataType {
+		return items[index]
+	}
 }
 

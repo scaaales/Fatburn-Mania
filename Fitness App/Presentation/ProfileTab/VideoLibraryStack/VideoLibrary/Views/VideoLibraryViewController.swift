@@ -15,12 +15,14 @@ class VideoLibraryViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupCollectionView()
 		presenter.getVideos()
 	}
 	
-	func setupCollectionView() {
-		collectionView.delegate = self
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let courseVideosVC = segue.destination as? CourseVideosViewController {
+			guard let selectedRow = collectionView.indexPathsForSelectedItems?.first?.row else { return }
+			courseVideosVC.title = presenter.getTitleAtIndex(selectedRow)
+		}
 	}
 	
 }
@@ -32,12 +34,6 @@ extension VideoLibraryViewController: VideoLibraryView {
 	
 	func setCollectionViewDataSource(_ dataSource: UICollectionViewDataSource) {
 		collectionView.dataSource = dataSource
-	}
-}
-
-extension VideoLibraryViewController: UICollectionViewDelegate {
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		print(indexPath.row)
 	}
 }
 

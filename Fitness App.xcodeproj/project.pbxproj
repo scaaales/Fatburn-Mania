@@ -105,6 +105,10 @@
 		B3F7329E21E7851F0038ACB9 /* VideoLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329D21E7851F0038ACB9 /* VideoLibraryCell.swift */; };
 		B3F732AC21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732AB21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift */; };
 		B3F732AF21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732AE21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift */; };
+		B3F732B521E7A8B30038ACB9 /* CourseVideosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732B121E7A8B30038ACB9 /* CourseVideosPresenter.swift */; };
+		B3F732B621E7A8B30038ACB9 /* CourseVideosInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732B221E7A8B30038ACB9 /* CourseVideosInitializer.swift */; };
+		B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732B321E7A8B30038ACB9 /* CourseVideosViewController.swift */; };
+		B3F732B821E7A8B30038ACB9 /* CourseVideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732B421E7A8B30038ACB9 /* CourseVideosView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +213,10 @@
 		B3F7329D21E7851F0038ACB9 /* VideoLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryCell.swift; sourceTree = "<group>"; };
 		B3F732AB21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		B3F732AE21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryCollectionViewModel.swift; sourceTree = "<group>"; };
+		B3F732B121E7A8B30038ACB9 /* CourseVideosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosPresenter.swift; sourceTree = "<group>"; };
+		B3F732B221E7A8B30038ACB9 /* CourseVideosInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosInitializer.swift; sourceTree = "<group>"; };
+		B3F732B321E7A8B30038ACB9 /* CourseVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosViewController.swift; sourceTree = "<group>"; };
+		B3F732B421E7A8B30038ACB9 /* CourseVideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosView.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -784,6 +792,7 @@
 			children = (
 				B3F7329021E77E7C0038ACB9 /* VideoLibraryStack.storyboard */,
 				B3F7329221E781010038ACB9 /* VideoLibrary */,
+				B3F732B021E7A7F80038ACB9 /* CourseVideos */,
 			);
 			path = VideoLibraryStack;
 			sourceTree = "<group>";
@@ -847,6 +856,33 @@
 				B3F732AE21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift */,
 			);
 			path = VideoLibrary;
+			sourceTree = "<group>";
+		};
+		B3F732B021E7A7F80038ACB9 /* CourseVideos */ = {
+			isa = PBXGroup;
+			children = (
+				B3F732BA21E7A8C40038ACB9 /* Presenter */,
+				B3F732B921E7A8C00038ACB9 /* Views */,
+				B3F732B221E7A8B30038ACB9 /* CourseVideosInitializer.swift */,
+			);
+			path = CourseVideos;
+			sourceTree = "<group>";
+		};
+		B3F732B921E7A8C00038ACB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3F732B421E7A8B30038ACB9 /* CourseVideosView.swift */,
+				B3F732B321E7A8B30038ACB9 /* CourseVideosViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3F732BA21E7A8C40038ACB9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3F732B121E7A8B30038ACB9 /* CourseVideosPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -984,15 +1020,18 @@
 			files = (
 				B39D477521E6258900D5C050 /* ProfileTableViewModel.swift in Sources */,
 				B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */,
+				B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */,
 				B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */,
 				B36B2F6E21DE123000C5D07B /* LoginSplashPresenter.swift in Sources */,
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B39D477121E60B4700D5C050 /* User.swift in Sources */,
 				B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
+				B3F732B621E7A8B30038ACB9 /* CourseVideosInitializer.swift in Sources */,
 				B37CBA1921DE64C000834A98 /* LoginView.swift in Sources */,
 				B3F7329821E781190038ACB9 /* VideoLibraryInitializer.swift in Sources */,
 				B36B2F7421DE148600C5D07B /* String+constants.swift in Sources */,
+				B3F732B521E7A8B30038ACB9 /* CourseVideosPresenter.swift in Sources */,
 				B33394C721DF721900D6013F /* UIColor+hextInit.swift in Sources */,
 				B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */,
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
@@ -1002,6 +1041,7 @@
 				B3753C2021D7A3B4008A5D5A /* DiaryPresenter.swift in Sources */,
 				B3254F4E21D3E7CE00F99F91 /* RoundButton.swift in Sources */,
 				B39D478B21E65E8600D5C050 /* ProfileButton.swift in Sources */,
+				B3F732B821E7A8B30038ACB9 /* CourseVideosView.swift in Sources */,
 				B39D477C21E6296F00D5C050 /* BalanceCell.swift in Sources */,
 				B36B2F7121DE126000C5D07B /* LoginSplashView.swift in Sources */,
 				B3753C1B21D7A2C0008A5D5A /* Configurator.swift in Sources */,

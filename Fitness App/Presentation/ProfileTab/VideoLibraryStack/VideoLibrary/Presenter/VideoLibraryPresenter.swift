@@ -23,5 +23,9 @@ class VideoLibraryPresenter<V: VideoLibraryView>: Presenter {
 		view.setCollectionViewDataSource(viewModel.dataSource)
 		view.update()
 	}
+	
+	func getTitleAtIndex(_ index: Int) -> String {
+		return viewModel.getTitleAtIndex(index)
+	}
 }
 

@@ -22,4 +22,8 @@ class VideoLibraryCollectionViewModel {
 		
 		dataSource = .init(items: resultItems)
 	}
+	
+	func getTitleAtIndex(_ index: Int) -> String {
+		return dataSource.getItemAtIndex(index).title
+	}
 }

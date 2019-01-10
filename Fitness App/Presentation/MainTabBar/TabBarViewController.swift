@@ -36,10 +36,10 @@ class TabBarViewController: UITabBarController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		if isFirstLoad {
-			isFirstLoad = false
-			performSegue(withIdentifier: .presentLoginSegueIdentifier, sender: nil)
-		}
+//		if isFirstLoad {
+//			isFirstLoad = false
+//			performSegue(withIdentifier: .presentLoginSegueIdentifier, sender: nil)
+//		}
 	}
 	
 	private func setupShadow() {
