@@ -76,7 +76,6 @@
 		B39301DB21E4E8630071994A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301DA21E4E8630071994A /* TabBarViewController.swift */; };
 		B39301DE21E4FA360071994A /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301DD21E4FA360071994A /* ProfileTab.storyboard */; };
 		B39301E121E4FA720071994A /* WorkoutTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301E021E4FA720071994A /* WorkoutTab.storyboard */; };
-		B39301E521E4FAAC0071994A /* FeedTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301E421E4FAAC0071994A /* FeedTab.storyboard */; };
 		B39301E821E4FAC80071994A /* WorkoutOfTheDayTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301E721E4FAC80071994A /* WorkoutOfTheDayTab.storyboard */; };
 		B39D475A21E5FC6E00D5C050 /* ProfileInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D475921E5FC6E00D5C050 /* ProfileInitializer.swift */; };
 		B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D475B21E5FC9200D5C050 /* ProfileViewController.swift */; };
@@ -168,7 +167,6 @@
 		B39301DA21E4E8630071994A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B39301DD21E4FA360071994A /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
 		B39301E021E4FA720071994A /* WorkoutTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkoutTab.storyboard; sourceTree = "<group>"; };
-		B39301E421E4FAAC0071994A /* FeedTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedTab.storyboard; sourceTree = "<group>"; };
 		B39301E721E4FAC80071994A /* WorkoutOfTheDayTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkoutOfTheDayTab.storyboard; sourceTree = "<group>"; };
 		B39D475921E5FC6E00D5C050 /* ProfileInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInitializer.swift; sourceTree = "<group>"; };
 		B39D475B21E5FC9200D5C050 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -537,7 +535,6 @@
 				B39301DC21E4FA000071994A /* ProfileTab */,
 				B36B2F6521DE0FD400C5D07B /* DiaryTab */,
 				B39301DF21E4FA5F0071994A /* WorkoutTab */,
-				B39301E221E4FA7F0071994A /* FeedTab */,
 				B39301E321E4FA9A0071994A /* WorkoutOfTheDayTab */,
 			);
 			path = Presentation;
@@ -665,14 +662,6 @@
 				B39301E021E4FA720071994A /* WorkoutTab.storyboard */,
 			);
 			path = WorkoutTab;
-			sourceTree = "<group>";
-		};
-		B39301E221E4FA7F0071994A /* FeedTab */ = {
-			isa = PBXGroup;
-			children = (
-				B39301E421E4FAAC0071994A /* FeedTab.storyboard */,
-			);
-			path = FeedTab;
 			sourceTree = "<group>";
 		};
 		B39301E321E4FA9A0071994A /* WorkoutOfTheDayTab */ = {
@@ -808,7 +797,6 @@
 				B39301E821E4FAC80071994A /* WorkoutOfTheDayTab.storyboard in Resources */,
 				B39301DE21E4FA360071994A /* ProfileTab.storyboard in Resources */,
 				B3254F3821D3E7CE00F99F91 /* DiaryTab.storyboard in Resources */,
-				B39301E521E4FAAC0071994A /* FeedTab.storyboard in Resources */,
 				B33394D121DF915F00D6013F /* LoginStack.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -256,7 +256,8 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anj-xr-Fef">
                                                             <rect key="frame" x="288" y="0.0" width="57" height="57"/>
-                                                            <state key="normal" title="Button" image="roundBack"/>
+                                                            <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
+                                                            <state key="normal" image="roundBack"/>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -721,12 +722,12 @@
     <resources>
         <image name="back" width="6" height="10"/>
         <image name="bodyImage" width="226" height="371"/>
-        <image name="bullets" width="20" height="23"/>
-        <image name="bullets_selected" width="20" height="23"/>
+        <image name="bullets" width="20" height="22.5"/>
+        <image name="bullets_selected" width="20" height="22.5"/>
         <image name="calendar" width="19" height="21"/>
-        <image name="clock" width="37" height="37"/>
-        <image name="coins" width="28" height="36"/>
-        <image name="lightning" width="26" height="37"/>
+        <image name="clock" width="36.5" height="36.5"/>
+        <image name="coins" width="21.5" height="28"/>
+        <image name="lightning" width="25.5" height="36.5"/>
         <image name="next" width="6" height="10"/>
         <image name="notification" width="18" height="21"/>
         <image name="roundBack" width="59" height="59"/>

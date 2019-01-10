@@ -24,7 +24,6 @@
                         <segue destination="h8h-Zj-t2u" kind="relationship" relationship="viewControllers" id="IAR-HN-Kjj"/>
                         <segue destination="3uO-Dc-yWc" kind="relationship" relationship="viewControllers" id="sXu-Xb-8nk"/>
                         <segue destination="Run-uR-56w" kind="relationship" relationship="viewControllers" id="Pju-G4-x0N"/>
-                        <segue destination="SmK-DE-W7X" kind="relationship" relationship="viewControllers" id="hec-2T-BiE"/>
                         <segue destination="fFP-6Y-mfT" kind="relationship" relationship="viewControllers" id="0af-Tb-rae"/>
                     </connections>
                 </tabBarController>
@@ -48,7 +47,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C93-Vp-5aw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1816" y="278"/>
+            <point key="canvasLocation" x="-1582" y="278"/>
         </scene>
         <!--ProfileTab-->
         <scene sceneID="7j6-kk-lUO">
@@ -58,7 +57,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3U-ui-Uiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2110" y="278"/>
+            <point key="canvasLocation" x="-1846" y="278"/>
         </scene>
         <!--WorkoutTab-->
         <scene sceneID="bA6-q0-efK">
@@ -68,7 +67,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXB-C0-S2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1444" y="278"/>
+            <point key="canvasLocation" x="-1318" y="278"/>
         </scene>
         <!--WorkoutOfTheDayTab-->
         <scene sceneID="X9H-iF-Bcq">
@@ -78,17 +77,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWA-f8-zGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-830" y="278"/>
-        </scene>
-        <!--FeedTab-->
-        <scene sceneID="mkO-Oa-dHQ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="FeedTab" id="SmK-DE-W7X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="map_pin" selectedImage="map_pin_selected" id="eO5-q5-xoq"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fj5-3V-DYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1127" y="278"/>
+            <point key="canvasLocation" x="-1047" y="278"/>
         </scene>
     </scenes>
     <resources>
@@ -96,8 +85,6 @@
         <image name="bullets_selected" width="20" height="23"/>
         <image name="dumbbell" width="24" height="24"/>
         <image name="dumbbell_selected" width="24" height="24"/>
-        <image name="map_pin" width="23" height="23"/>
-        <image name="map_pin_selected" width="23" height="23"/>
         <image name="skipping_rope" width="19" height="23"/>
         <image name="skipping_rope_selected" width="19" height="23"/>
         <image name="user" width="23" height="23"/>
