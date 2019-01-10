@@ -12,30 +12,16 @@ class VideoLibraryPresenter<V: VideoLibraryView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
-	let test = Test()
+	private var viewModel: VideoLibraryCollectionViewModel!
 	
 	required init(view: View) {
 		self.view = view
 	}
 	
 	func getVideos() {
-		view.setCollectionViewDataSource(test)
+		viewModel = .init()
+		view.setCollectionViewDataSource(viewModel.dataSource)
 		view.update()
 	}
 }
 
-class Test: NSObject, UICollectionViewDataSource {
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 10
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let item = CellsConfigurator<VideoLibraryCell, (image: UIImage, title: String)>(item: (image: #imageLiteral(resourceName: "videoLibraryTest"), title: "Спасатели жирабу"))
-		
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item.reuseId, for: indexPath)
-		
-		item.configure(cell: cell)
-		
-		return cell
-	}
-}

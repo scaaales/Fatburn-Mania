@@ -103,6 +103,8 @@
 		B3F7329921E781190038ACB9 /* VideoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329521E781190038ACB9 /* VideoLibraryViewController.swift */; };
 		B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329621E781190038ACB9 /* VideoLibraryView.swift */; };
 		B3F7329E21E7851F0038ACB9 /* VideoLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329D21E7851F0038ACB9 /* VideoLibraryCell.swift */; };
+		B3F732AC21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732AB21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift */; };
+		B3F732AF21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732AE21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +207,8 @@
 		B3F7329521E781190038ACB9 /* VideoLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryViewController.swift; sourceTree = "<group>"; };
 		B3F7329621E781190038ACB9 /* VideoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryView.swift; sourceTree = "<group>"; };
 		B3F7329D21E7851F0038ACB9 /* VideoLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryCell.swift; sourceTree = "<group>"; };
+		B3F732AB21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		B3F732AE21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryCollectionViewModel.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -261,6 +265,7 @@
 		B30A0DFD21D78DA10075D871 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B3F732AD21E7A2230038ACB9 /* VideoLibrary */,
 				B39D476F21E60B2E00D5C050 /* User */,
 				B3254F1521D3E7CD00F99F91 /* Diary */,
 			);
@@ -569,6 +574,7 @@
 				B34306B321D793110033EA69 /* Storyboards */,
 				B30A0E0021D78E480075D871 /* Services */,
 				B369573A21D514CA00735555 /* Extensions */,
+				B3F732A921E7A0240038ACB9 /* BasicDataSources */,
 				B3254F3621D3E7CE00F99F91 /* CellConfigurator.swift */,
 				B3753C1821D7A2BF008A5D5A /* Configurator.swift */,
 				B3753C1721D7A2BF008A5D5A /* PresenterProtocol.swift */,
@@ -827,6 +833,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B3F732A921E7A0240038ACB9 /* BasicDataSources */ = {
+			isa = PBXGroup;
+			children = (
+				B3F732AB21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift */,
+			);
+			path = BasicDataSources;
+			sourceTree = "<group>";
+		};
+		B3F732AD21E7A2230038ACB9 /* VideoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				B3F732AE21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift */,
+			);
+			path = VideoLibrary;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -976,6 +998,7 @@
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */,
 				B36B2F7D21DE24B200C5D07B /* SignInInitializer.swift in Sources */,
+				B3F732AF21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift in Sources */,
 				B3753C2021D7A3B4008A5D5A /* DiaryPresenter.swift in Sources */,
 				B3254F4E21D3E7CE00F99F91 /* RoundButton.swift in Sources */,
 				B39D478B21E65E8600D5C050 /* ProfileButton.swift in Sources */,
@@ -1010,6 +1033,7 @@
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
 				B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */,
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
+				B3F732AC21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift in Sources */,
 				B39D477A21E628F800D5C050 /* ProfileButtonsCell.swift in Sources */,
 				B36B2F7721DE15DE00C5D07B /* UIStoryboard+extension.swift in Sources */,
 				B37CBA1721DE649500834A98 /* LoginInitializer.swift in Sources */,

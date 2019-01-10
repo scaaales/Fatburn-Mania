@@ -13,17 +13,27 @@ class TutorialViewController: UIViewController {
 	@IBOutlet private weak var collectionView: UICollectionView!
 	@IBOutlet private weak var pageControl: UIPageControl!
 	
-	var parrentController: UIViewController?
+	private var dataSource: BasicCollectionViewDataSource<TutorialCell, UIImage>!
 	
-	private var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+	var parrentController: UIViewController?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupCollectionView()
     }
 	
+	private func setupDataSource() {
+		var items = [UIImage]()
+		for page in 1...pageControl.numberOfPages {
+			items.append(UIImage(named: "tutorial\(page)")!)
+		}
+		
+		dataSource = .init(items: items)
+	}
+	
 	private func setupCollectionView() {
-		collectionView.dataSource = self
+		setupDataSource()
+		collectionView.dataSource = dataSource
 		collectionView.delegate = self
 		
 		collectionView.superview?.layer.cornerRadius = 16
@@ -58,26 +68,6 @@ class TutorialViewController: UIViewController {
 	
 }
 
-extension TutorialViewController: UICollectionViewDataSource {
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let item = UIImage(named: "tutorial\(indexPath.row + 1)")
-		
-		let cellConfigurator: CellsConfigurator<TutorialCell, UIImage>  = .init(item: item)
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellConfigurator.reuseId, for: indexPath)
-		cellConfigurator.configure(cell: cell)
-		
-		return cell
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return pageControl.numberOfPages
-	}
-}
-
-extension TutorialViewController: UICollectionViewDelegate {
-	
-	
-}
 
 extension TutorialViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
