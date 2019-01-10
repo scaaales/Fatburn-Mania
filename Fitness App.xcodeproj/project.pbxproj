@@ -55,7 +55,7 @@
 		B36B2F7F21DE251E00C5D07B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F7E21DE251E00C5D07B /* SignInViewController.swift */; };
 		B36B2F8121DE252B00C5D07B /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F8021DE252B00C5D07B /* SignInPresenter.swift */; };
 		B36B2F8321DE256000C5D07B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F8221DE256000C5D07B /* SignInView.swift */; };
-		B36B2F8521DE347400C5D07B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F8421DE347400C5D07B /* NavigationController.swift */; };
+		B36B2F8521DE347400C5D07B /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36B2F8421DE347400C5D07B /* LoginNavigationController.swift */; };
 		B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1721D7A2BF008A5D5A /* PresenterProtocol.swift */; };
 		B3753C1B21D7A2C0008A5D5A /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1821D7A2BF008A5D5A /* Configurator.swift */; };
 		B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1921D7A2C0008A5D5A /* ViewProtocol.swift */; };
@@ -92,6 +92,7 @@
 		B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */; };
 		B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */; };
 		B39D478B21E65E8600D5C050 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478A21E65E8600D5C050 /* ProfileButton.swift */; };
+		B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7327F21E754840038ACB9 /* MainNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,7 +147,7 @@
 		B36B2F7E21DE251E00C5D07B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		B36B2F8021DE252B00C5D07B /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		B36B2F8221DE256000C5D07B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		B36B2F8421DE347400C5D07B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		B36B2F8421DE347400C5D07B /* LoginNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
 		B3753C1721D7A2BF008A5D5A /* PresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
 		B3753C1821D7A2BF008A5D5A /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		B3753C1921D7A2C0008A5D5A /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
@@ -183,6 +184,7 @@
 		B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButtonArrowCell.swift; sourceTree = "<group>"; };
 		B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithSeperator.swift; sourceTree = "<group>"; };
 		B39D478A21E65E8600D5C050 /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
+		B3F7327F21E754840038ACB9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -575,7 +577,8 @@
 				B3254F3321D3E7CE00F99F91 /* ProgressView */,
 				B3254F2821D3E7CE00F99F91 /* DefaultSectionHeader.swift */,
 				B32BF21421D67C040019489A /* PlaceholderCell.swift */,
-				B36B2F8421DE347400C5D07B /* NavigationController.swift */,
+				B36B2F8421DE347400C5D07B /* LoginNavigationController.swift */,
+				B3F7327F21E754840038ACB9 /* MainNavigationController.swift */,
 				B3254F3221D3E7CE00F99F91 /* RoundButton.swift */,
 				B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */,
 			);
@@ -615,8 +618,7 @@
 				B39301CC21E4BBD10071994A /* Views */,
 				B39301CD21E4BD5A0071994A /* ResetPassrodInitializer.swift */,
 			);
-			name = ResetPassword;
-			path = "New Group";
+			path = ResetPassword;
 			sourceTree = "<group>";
 		};
 		B39301CB21E4BBC90071994A /* Presenter */ = {
@@ -887,6 +889,7 @@
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
 				B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */,
 				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
+				B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */,
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
 				B369573721D4E40500735555 /* HealthKitService.swift in Sources */,
 				B39D477821E6288D00D5C050 /* ProfileHeaderCell.swift in Sources */,
@@ -913,7 +916,7 @@
 				B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,
-				B36B2F8521DE347400C5D07B /* NavigationController.swift in Sources */,
+				B36B2F8521DE347400C5D07B /* LoginNavigationController.swift in Sources */,
 				B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */,
 				B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */,
 				B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */,

@@ -687,10 +687,10 @@
             </objects>
             <point key="canvasLocation" x="2852" y="113"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Login Navigation Controller-->
         <scene sceneID="c4P-cB-NkF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vVA-S5-A95" customClass="NavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vVA-S5-A95" customClass="LoginNavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xty-pl-838">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -709,7 +709,7 @@
     <resources>
         <image name="backBig" width="13" height="21"/>
         <image name="facebook_logo" width="26" height="26"/>
-        <image name="fbm_logo_gray" width="275" height="85"/>
+        <image name="fbm_logo_gray" width="275" height="84.5"/>
         <image name="instagram_logo" width="26" height="26"/>
         <image name="nextBig" width="13" height="21"/>
         <image name="tutorial2" width="335" height="506"/>

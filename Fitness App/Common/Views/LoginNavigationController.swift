@@ -1,5 +1,5 @@
 //
-//  NavigationController.swift
+//  LoginNavigationController.swift
 //  Fitness App
 //
 //  Created by scales on 1/3/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavigationController: UINavigationController {
+class LoginNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class NavigationController: UINavigationController {
 
 }
 
-extension NavigationController: UINavigationControllerDelegate {
+extension LoginNavigationController: UINavigationControllerDelegate {
 	func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
 		setupBackButton()
 	}

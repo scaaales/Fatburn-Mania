@@ -429,10 +429,10 @@
             </objects>
             <point key="canvasLocation" x="996" y="73.313343328335833"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="7bQ-BA-QSW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgW-6r-xO8" customClass="NavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgW-6r-xO8" customClass="MainNavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="user" selectedImage="user_selected" id="yTn-fG-c3e">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
@@ -460,7 +460,7 @@
         <image name="nextBigBlack" width="13" height="21"/>
         <image name="photoCamera" width="29.5" height="23.5"/>
         <image name="stopwatch" width="30.5" height="30.5"/>
-        <image name="user" width="23" height="23"/>
-        <image name="user_selected" width="23" height="23"/>
+        <image name="user" width="22.5" height="22.5"/>
+        <image name="user_selected" width="22.5" height="22.5"/>
     </resources>
 </document>
