@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="1180" y="-230.73463268365819"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="jJ0-xY-7Q9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LfJ-4Y-SRG" customClass="NavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LfJ-4Y-SRG" customClass="MainNavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="dumbbell" selectedImage="dumbbell_selected" id="B0d-hA-Ndv">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
@@ -50,7 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dumbbell" width="24" height="24"/>
-        <image name="dumbbell_selected" width="24" height="24"/>
+        <image name="dumbbell" width="23.5" height="23.5"/>
+        <image name="dumbbell_selected" width="23.5" height="23.5"/>
     </resources>
 </document>

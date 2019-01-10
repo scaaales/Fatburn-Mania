@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="1352.8" y="-254.12293853073464"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="14a-I8-eGu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aVT-os-vne" customClass="NavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aVT-os-vne" customClass="MainNavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="skipping_rope" selectedImage="skipping_rope_selected" id="HB0-67-fBX">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
@@ -50,7 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="skipping_rope" width="19" height="23"/>
-        <image name="skipping_rope_selected" width="19" height="23"/>
+        <image name="skipping_rope" width="18.5" height="23"/>
+        <image name="skipping_rope_selected" width="18.5" height="23"/>
     </resources>
 </document>

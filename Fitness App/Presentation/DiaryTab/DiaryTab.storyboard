@@ -256,7 +256,8 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anj-xr-Fef">
                                                             <rect key="frame" x="288" y="0.0" width="57" height="57"/>
-                                                            <state key="normal" title="Button" image="roundBack"/>
+                                                            <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
+                                                            <state key="normal" image="roundBack"/>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -671,12 +672,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Diary" id="kKT-jS-5bl">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="calendar" id="FEx-ST-gmw"/>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="notification" id="WWn-Mx-hGB">
-                                <color key="tintColor" red="0.61955201625823975" green="0.61964356899261475" blue="0.61953204870223999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="shoppingCart" id="pby-Oq-33G"/>
-                        </rightBarButtonItems>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
@@ -694,10 +689,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.13343328335833"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="Vfy-Go-72n">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Om5-9M-gle" customClass="NavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Om5-9M-gle" customClass="MainNavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="bullets" selectedImage="bullets_selected" id="G5v-WN-MdC">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
@@ -721,15 +716,13 @@
     <resources>
         <image name="back" width="6" height="10"/>
         <image name="bodyImage" width="226" height="371"/>
-        <image name="bullets" width="20" height="23"/>
-        <image name="bullets_selected" width="20" height="23"/>
+        <image name="bullets" width="20" height="22.5"/>
+        <image name="bullets_selected" width="20" height="22.5"/>
         <image name="calendar" width="19" height="21"/>
-        <image name="clock" width="37" height="37"/>
-        <image name="coins" width="28" height="36"/>
-        <image name="lightning" width="26" height="37"/>
+        <image name="clock" width="36.5" height="36.5"/>
+        <image name="coins" width="21.5" height="28"/>
+        <image name="lightning" width="25.5" height="36.5"/>
         <image name="next" width="6" height="10"/>
-        <image name="notification" width="18" height="21"/>
         <image name="roundBack" width="59" height="59"/>
-        <image name="shoppingCart" width="23" height="21"/>
     </resources>
 </document>
