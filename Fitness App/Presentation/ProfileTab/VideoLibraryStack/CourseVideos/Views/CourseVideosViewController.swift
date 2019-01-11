@@ -24,6 +24,12 @@ class CourseVideosViewController: UIViewController {
 		tableView.backgroundColor = .white
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let videoDetailVC = segue.destination as? VideoDetailsViewController {
+			videoDetailVC.title = title
+		}
+	}
+	
 }
 
 extension CourseVideosViewController: UITableViewDelegate {
@@ -33,6 +39,10 @@ extension CourseVideosViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return 10
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 }
 

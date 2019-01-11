@@ -102,12 +102,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-6W-guO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-6W-guO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseVideoCell" id="BzO-QR-mm9" customClass="CourseVideoCell" customModule="Fitness_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BzO-QR-mm9" id="Ndv-X3-rvx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -149,6 +149,7 @@
                                         <connections>
                                             <outlet property="courseImageView" destination="7zR-6W-uP3" id="tyZ-cV-ckc"/>
                                             <outlet property="courseTitleSubtitleLabel" destination="yML-pB-D6D" id="NAD-ZV-bs8"/>
+                                            <segue destination="ccO-uT-AvF" kind="show" id="kgY-VV-75Z"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -175,6 +176,83 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="1205.5999999999999" y="-287.40629685157421"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nTT-8h-MLe">
+            <objects>
+                <viewController id="ccO-uT-AvF" customClass="VideoDetailsViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="100-XW-FVg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQZ-cy-K7h">
+                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VQZ-cy-K7h" secondAttribute="height" multiplier="16:9" id="98o-C6-IpO"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maP-lG-Wis">
+                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
+                                <state key="normal" image="playIcon"/>
+                                <connections>
+                                    <action selector="playPause:" destination="ccO-uT-AvF" eventType="touchUpInside" id="X3G-61-U6K"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVh-D6-KSP">
+                                <rect key="frame" x="20" y="295" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-RB-LRB">
+                                <rect key="frame" x="20" y="336" width="335" height="311"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                        <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xjx-Ea-rgV" firstAttribute="bottom" secondItem="CbI-RB-LRB" secondAttribute="bottom" constant="20" id="0oX-1f-xRr"/>
+                            <constraint firstAttribute="trailing" secondItem="VQZ-cy-K7h" secondAttribute="trailing" id="2Ka-Ep-l9k"/>
+                            <constraint firstItem="VQZ-cy-K7h" firstAttribute="top" secondItem="xjx-Ea-rgV" secondAttribute="top" id="4jP-fc-Osz"/>
+                            <constraint firstItem="fVh-D6-KSP" firstAttribute="top" secondItem="VQZ-cy-K7h" secondAttribute="bottom" constant="20" id="6ZQ-hV-mlZ"/>
+                            <constraint firstItem="CbI-RB-LRB" firstAttribute="leading" secondItem="xjx-Ea-rgV" secondAttribute="leading" constant="20" id="Ejq-hd-mJe"/>
+                            <constraint firstItem="fVh-D6-KSP" firstAttribute="leading" secondItem="xjx-Ea-rgV" secondAttribute="leading" constant="20" id="Vn8-b7-c05"/>
+                            <constraint firstItem="xjx-Ea-rgV" firstAttribute="trailing" secondItem="CbI-RB-LRB" secondAttribute="trailing" constant="20" id="X3a-C6-iZo"/>
+                            <constraint firstItem="maP-lG-Wis" firstAttribute="leading" secondItem="xjx-Ea-rgV" secondAttribute="leading" id="aAq-uo-x1A"/>
+                            <constraint firstItem="maP-lG-Wis" firstAttribute="width" secondItem="VQZ-cy-K7h" secondAttribute="width" id="b8A-Mh-0ZT"/>
+                            <constraint firstItem="CbI-RB-LRB" firstAttribute="top" secondItem="fVh-D6-KSP" secondAttribute="bottom" constant="20" id="eao-fL-VEl"/>
+                            <constraint firstItem="VQZ-cy-K7h" firstAttribute="leading" secondItem="xjx-Ea-rgV" secondAttribute="leading" id="jZ7-yJ-Usi"/>
+                            <constraint firstItem="maP-lG-Wis" firstAttribute="height" secondItem="VQZ-cy-K7h" secondAttribute="height" id="maI-f8-xne"/>
+                            <constraint firstItem="maP-lG-Wis" firstAttribute="top" secondItem="xjx-Ea-rgV" secondAttribute="top" id="p7F-fp-mBw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xjx-Ea-rgV"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="CbI-RB-LRB" id="xTp-44-Bcy"/>
+                        <outlet property="playButton" destination="maP-lG-Wis" id="Box-LM-jOo"/>
+                        <outlet property="videoContainter" destination="VQZ-cy-K7h" id="5sl-Nd-vyF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vEo-su-FvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Qc6-Pp-LcI" customClass="VideoDetailsInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="ccO-uT-AvF" id="UeK-6v-kIc"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2048.8000000000002" y="-287.40629685157421"/>
         </scene>
     </scenes>
     <resources>

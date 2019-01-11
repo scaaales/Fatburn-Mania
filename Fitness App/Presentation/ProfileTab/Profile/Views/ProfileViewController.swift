@@ -43,7 +43,7 @@ extension ProfileViewController: ProfileView {
 
 extension ProfileViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		tableView.deselectRow(at: indexPath, animated: false)
+		tableView.deselectRow(at: indexPath, animated: true)
 		let title = presenter.getCellTitleFor(indexPath: indexPath)
 		switch title {
 		case "Coins":

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		587D721C381EB937FDF7138F /* Pods_Fitness_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */; };
+		B3033D3121E8DF5B0058626D /* VideoDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D2D21E8DF5B0058626D /* VideoDetailsPresenter.swift */; };
+		B3033D3221E8DF5B0058626D /* VideoDetailsInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D2E21E8DF5B0058626D /* VideoDetailsInitializer.swift */; };
+		B3033D3321E8DF5B0058626D /* VideoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D2F21E8DF5B0058626D /* VideoDetailsViewController.swift */; };
+		B3033D3421E8DF5B0058626D /* VideoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D3021E8DF5B0058626D /* VideoDetailsView.swift */; };
 		B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */; };
 		B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */; };
 		B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */; };
@@ -116,6 +120,10 @@
 
 /* Begin PBXFileReference section */
 		43A06619D7EF96D10B324FEB /* Pods-Fitness App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.debug.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.debug.xcconfig"; sourceTree = "<group>"; };
+		B3033D2D21E8DF5B0058626D /* VideoDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsPresenter.swift; sourceTree = "<group>"; };
+		B3033D2E21E8DF5B0058626D /* VideoDetailsInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsInitializer.swift; sourceTree = "<group>"; };
+		B3033D2F21E8DF5B0058626D /* VideoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsViewController.swift; sourceTree = "<group>"; };
+		B3033D3021E8DF5B0058626D /* VideoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsView.swift; sourceTree = "<group>"; };
 		B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+extension.swift"; sourceTree = "<group>"; };
 		B3254DCB21D3DD5C00F99F91 /* Fitness App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -256,6 +264,33 @@
 				E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B3033D2C21E8DF3A0058626D /* VideoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B3033D3621E9059A0058626D /* Presenter */,
+				B3033D3521E905840058626D /* Views */,
+				B3033D2E21E8DF5B0058626D /* VideoDetailsInitializer.swift */,
+			);
+			path = VideoDetails;
+			sourceTree = "<group>";
+		};
+		B3033D3521E905840058626D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3033D3021E8DF5B0058626D /* VideoDetailsView.swift */,
+				B3033D2F21E8DF5B0058626D /* VideoDetailsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3033D3621E9059A0058626D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3033D2D21E8DF5B0058626D /* VideoDetailsPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		B30A0DFA21D78C910075D871 /* Presenter */ = {
@@ -799,6 +834,7 @@
 				B3F7329021E77E7C0038ACB9 /* VideoLibraryStack.storyboard */,
 				B3F7329221E781010038ACB9 /* VideoLibrary */,
 				B3F732B021E7A7F80038ACB9 /* CourseVideos */,
+				B3033D2C21E8DF3A0058626D /* VideoDetails */,
 			);
 			path = VideoLibraryStack;
 			sourceTree = "<group>";
@@ -1036,6 +1072,7 @@
 				B39D477121E60B4700D5C050 /* User.swift in Sources */,
 				B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
+				B3033D3421E8DF5B0058626D /* VideoDetailsView.swift in Sources */,
 				B3F732B621E7A8B30038ACB9 /* CourseVideosInitializer.swift in Sources */,
 				B37CBA1921DE64C000834A98 /* LoginView.swift in Sources */,
 				B3F7329821E781190038ACB9 /* VideoLibraryInitializer.swift in Sources */,
@@ -1066,6 +1103,7 @@
 				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
 				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
 				B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */,
+				B3033D3121E8DF5B0058626D /* VideoDetailsPresenter.swift in Sources */,
 				B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
 				B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */,
@@ -1112,9 +1150,11 @@
 				B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */,
 				B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */,
 				B36B2F7F21DE251E00C5D07B /* SignInViewController.swift in Sources */,
+				B3033D3321E8DF5B0058626D /* VideoDetailsViewController.swift in Sources */,
 				B36B2F8121DE252B00C5D07B /* SignInPresenter.swift in Sources */,
 				B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */,
 				B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */,
+				B3033D3221E8DF5B0058626D /* VideoDetailsInitializer.swift in Sources */,
 				B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
 				B3753C2321D7A4A0008A5D5A /* DiaryView.swift in Sources */,
