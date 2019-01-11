@@ -12,8 +12,15 @@ class CourseVideosPresenter<V: CourseVideosView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
+	private var viewModel: CourseVideosTableViewModel!
 	
 	required init(view: View) {
 		self.view = view
+	}
+	
+	func getVideos() {
+		viewModel = .init()
+		view.setTableViewDataSource(viewModel.dataSource)
+		view.update()
 	}
 }

@@ -18,7 +18,7 @@ class VideoLibraryPresenter<V: VideoLibraryView>: Presenter {
 		self.view = view
 	}
 	
-	func getVideos() {
+	func getCourses() {
 		viewModel = .init()
 		view.setCollectionViewDataSource(viewModel.dataSource)
 		view.update()

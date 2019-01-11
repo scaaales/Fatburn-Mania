@@ -15,7 +15,7 @@ class VideoLibraryViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		presenter.getVideos()
+		presenter.getCourses()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

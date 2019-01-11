@@ -15,13 +15,35 @@ class CourseVideosViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		// Do any additional setup after loading the view.
+		setupTableView()
+		presenter.getVideos()
+	}
+	
+	private func setupTableView() {
+		tableView.delegate = self
+		tableView.backgroundColor = .white
 	}
 	
 }
 
-extension CourseVideosViewController: CourseVideosView {
+extension CourseVideosViewController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 10
+	}
 	
+	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 10
+	}
+}
+
+extension CourseVideosViewController: CourseVideosView {
+	func update() {
+		tableView.reloadData()
+	}
+	
+	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
+		tableView.dataSource = dataSource
+	}
 }
 
 

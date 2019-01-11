@@ -92,6 +92,9 @@
 		B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */; };
 		B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */; };
 		B39D478B21E65E8600D5C050 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478A21E65E8600D5C050 /* ProfileButton.swift */; };
+		B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */; };
+		B3B8D3B421E8B56000397AAB /* BasicTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B321E8B56000397AAB /* BasicTableViewDataSource.swift */; };
+		B3B8D3B621E8B62800397AAB /* CourseVideosTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B521E8B62800397AAB /* CourseVideosTableViewModel.swift */; };
 		B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7327F21E754840038ACB9 /* MainNavigationController.swift */; };
 		B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */; };
 		B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328821E765070038ACB9 /* HowToViewController.swift */; };
@@ -200,6 +203,9 @@
 		B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButtonArrowCell.swift; sourceTree = "<group>"; };
 		B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithSeperator.swift; sourceTree = "<group>"; };
 		B39D478A21E65E8600D5C050 /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
+		B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideoCell.swift; sourceTree = "<group>"; };
+		B3B8D3B321E8B56000397AAB /* BasicTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewDataSource.swift; sourceTree = "<group>"; };
+		B3B8D3B521E8B62800397AAB /* CourseVideosTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosTableViewModel.swift; sourceTree = "<group>"; };
 		B3F7327F21E754840038ACB9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		B3F7328821E765070038ACB9 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
@@ -846,6 +852,7 @@
 			isa = PBXGroup;
 			children = (
 				B3F732AB21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift */,
+				B3B8D3B321E8B56000397AAB /* BasicTableViewDataSource.swift */,
 			);
 			path = BasicDataSources;
 			sourceTree = "<group>";
@@ -854,6 +861,7 @@
 			isa = PBXGroup;
 			children = (
 				B3F732AE21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift */,
+				B3B8D3B521E8B62800397AAB /* CourseVideosTableViewModel.swift */,
 			);
 			path = VideoLibrary;
 			sourceTree = "<group>";
@@ -873,6 +881,7 @@
 			children = (
 				B3F732B421E7A8B30038ACB9 /* CourseVideosView.swift */,
 				B3F732B321E7A8B30038ACB9 /* CourseVideosViewController.swift */,
+				B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1036,6 +1045,7 @@
 				B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */,
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */,
+				B3B8D3B421E8B56000397AAB /* BasicTableViewDataSource.swift in Sources */,
 				B36B2F7D21DE24B200C5D07B /* SignInInitializer.swift in Sources */,
 				B3F732AF21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift in Sources */,
 				B3753C2021D7A3B4008A5D5A /* DiaryPresenter.swift in Sources */,
@@ -1089,6 +1099,7 @@
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
 				B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */,
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
+				B3B8D3B621E8B62800397AAB /* CourseVideosTableViewModel.swift in Sources */,
 				B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,
@@ -1102,6 +1113,7 @@
 				B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */,
 				B36B2F7F21DE251E00C5D07B /* SignInViewController.swift in Sources */,
 				B36B2F8121DE252B00C5D07B /* SignInPresenter.swift in Sources */,
+				B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */,
 				B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */,
 				B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,

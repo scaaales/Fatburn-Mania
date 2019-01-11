@@ -102,9 +102,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-6W-guO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-6W-guO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseVideoCell" id="BzO-QR-mm9" customClass="CourseVideoCell" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BzO-QR-mm9" id="Ndv-X3-rvx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zR-6W-uP3">
+                                                    <rect key="frame" x="25" y="10" width="148" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="148" id="Oxy-I2-i9M"/>
+                                                        <constraint firstAttribute="height" constant="100" id="RR4-mU-Oh5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bGY-Zb-GiL">
+                                                    <rect key="frame" x="85" y="47.5" width="28" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="28" id="gZh-Tz-TI6"/>
+                                                        <constraint firstAttribute="height" constant="25" id="xDi-LV-aVx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yML-pB-D6D">
+                                                    <rect key="frame" x="183" y="10" width="41.5" height="41"/>
+                                                    <string key="text">Label
+123</string>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bGY-Zb-GiL" firstAttribute="centerY" secondItem="7zR-6W-uP3" secondAttribute="centerY" id="AUN-gu-tam"/>
+                                                <constraint firstItem="7zR-6W-uP3" firstAttribute="top" secondItem="Ndv-X3-rvx" secondAttribute="top" constant="10" id="PHD-gM-EZl"/>
+                                                <constraint firstItem="bGY-Zb-GiL" firstAttribute="centerX" secondItem="7zR-6W-uP3" secondAttribute="centerX" id="eDO-VI-So5"/>
+                                                <constraint firstItem="yML-pB-D6D" firstAttribute="top" secondItem="7zR-6W-uP3" secondAttribute="top" id="gjd-qH-N2Y"/>
+                                                <constraint firstAttribute="bottom" secondItem="7zR-6W-uP3" secondAttribute="bottom" constant="10" id="mej-ey-LZS"/>
+                                                <constraint firstItem="7zR-6W-uP3" firstAttribute="leading" secondItem="Ndv-X3-rvx" secondAttribute="leading" constant="25" id="rZF-Lw-tiG"/>
+                                                <constraint firstItem="yML-pB-D6D" firstAttribute="leading" secondItem="7zR-6W-uP3" secondAttribute="trailing" constant="10" id="s9j-Bc-xaG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseImageView" destination="7zR-6W-uP3" id="tyZ-cV-ckc"/>
+                                            <outlet property="courseTitleSubtitleLabel" destination="yML-pB-D6D" id="NAD-ZV-bs8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -130,4 +177,7 @@
             <point key="canvasLocation" x="1205.5999999999999" y="-287.40629685157421"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="playIcon" width="25.5" height="28"/>
+    </resources>
 </document>
