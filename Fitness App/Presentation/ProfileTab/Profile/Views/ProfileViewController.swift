@@ -43,7 +43,7 @@ extension ProfileViewController: ProfileView {
 
 extension ProfileViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		tableView.deselectRow(at: indexPath, animated: false)
+		tableView.deselectRow(at: indexPath, animated: true)
 		let title = presenter.getCellTitleFor(indexPath: indexPath)
 		switch title {
 		case "Coins":
@@ -51,7 +51,7 @@ extension ProfileViewController: UITableViewDelegate {
 		case "Store":
 			print("need to show Store screen")
 		case "Video library":
-			print("need to show Video library screen")
+			performSegue(withIdentifier: .showVideoLibrarySegueIdentifier, sender: nil)
 		case "How to use the application":
 			performSegue(withIdentifier: .showHowToSegueIdentifier, sender: nil)
 		case "FAQ":

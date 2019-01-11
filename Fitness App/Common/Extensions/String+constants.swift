@@ -19,7 +19,8 @@ extension String {
 	static var presentTutorialSegueIdentifier: String { return "presentTutorial" }
 	static var presentLoginSegueIdentifier: String { return "presentLogin" }
 	static var showFAQSegueIdentifier: String { return "showFAQ" }
-	static var showHowToSegueIdentifier: String { return "showHowTo" } 
+	static var showHowToSegueIdentifier: String { return "showHowTo" }
+	static var showVideoLibrarySegueIdentifier: String { return "showVideoLibrary" }
 }
 
 // MARK: - Text Constants
