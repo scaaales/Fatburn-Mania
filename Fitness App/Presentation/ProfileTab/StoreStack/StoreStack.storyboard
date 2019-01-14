@@ -63,6 +63,9 @@
                                                             <real key="value" value="12"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="vrT-oU-V7F" kind="show" id="nOX-nl-49m"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFc-fJ-4h7">
                                                     <rect key="frame" x="20" y="398.5" width="335" height="29"/>
@@ -122,6 +125,119 @@ Description</string>
                 </customObject>
             </objects>
             <point key="canvasLocation" x="-180" y="163.26836581709148"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1bR-2s-tyC">
+            <objects>
+                <viewController title="Store" id="vrT-oU-V7F" customClass="ProductDetailViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2vQ-BE-5aG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-iM-VtF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iw-eG-oS7">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mpn-Wa-aTx">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="mpn-Wa-aTx" secondAttribute="height" multiplier="1:1" id="Cn8-Bb-bm5"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJq-NF-UO4">
+                                                <rect key="frame" x="20" y="398" width="106.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVW-5W-PLp">
+                                                <rect key="frame" x="20" y="441" width="65" height="29"/>
+                                                <string key="text">Product
+Description</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOc-qI-qzt">
+                                                <rect key="frame" x="20" y="508" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPn-wr-iWr" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                                <rect key="frame" x="229" y="505.5" width="126" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="126" id="TZh-Yl-6b1"/>
+                                                    <constraint firstAttribute="height" constant="29" id="hdI-E2-07d"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <state key="normal" title="Buy">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buyTapped:" destination="vrT-oU-V7F" eventType="touchUpInside" id="wWc-sp-b1d"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="mpn-Wa-aTx" secondAttribute="trailing" id="CSd-VD-Eqa"/>
+                                            <constraint firstItem="cVW-5W-PLp" firstAttribute="leading" secondItem="CJq-NF-UO4" secondAttribute="leading" id="JoK-I3-FNU"/>
+                                            <constraint firstItem="CJq-NF-UO4" firstAttribute="leading" secondItem="2iw-eG-oS7" secondAttribute="leading" constant="20" id="LMh-Lh-Fpj"/>
+                                            <constraint firstItem="cVW-5W-PLp" firstAttribute="top" secondItem="CJq-NF-UO4" secondAttribute="bottom" constant="22" id="ONY-ks-qPl"/>
+                                            <constraint firstItem="CJq-NF-UO4" firstAttribute="top" secondItem="mpn-Wa-aTx" secondAttribute="bottom" constant="23" id="WC2-Rn-nEJ"/>
+                                            <constraint firstItem="ZOc-qI-qzt" firstAttribute="firstBaseline" secondItem="dPn-wr-iWr" secondAttribute="firstBaseline" id="ZOy-ah-P6b"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dPn-wr-iWr" secondAttribute="bottom" constant="10" id="hiH-7k-jNw"/>
+                                            <constraint firstItem="mpn-Wa-aTx" firstAttribute="top" secondItem="2iw-eG-oS7" secondAttribute="top" id="j4S-q9-fZt"/>
+                                            <constraint firstItem="ZOc-qI-qzt" firstAttribute="leading" secondItem="cVW-5W-PLp" secondAttribute="leading" id="oc7-og-32u"/>
+                                            <constraint firstItem="mpn-Wa-aTx" firstAttribute="leading" secondItem="2iw-eG-oS7" secondAttribute="leading" id="x2l-nb-j9V"/>
+                                            <constraint firstItem="ZOc-qI-qzt" firstAttribute="top" secondItem="cVW-5W-PLp" secondAttribute="bottom" constant="38" id="yQe-iw-CAi"/>
+                                            <constraint firstAttribute="trailing" secondItem="dPn-wr-iWr" secondAttribute="trailing" constant="20" id="z7W-6W-iPg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2iw-eG-oS7" secondAttribute="bottom" id="7O0-I6-eJj"/>
+                                    <constraint firstAttribute="trailing" secondItem="2iw-eG-oS7" secondAttribute="trailing" id="HIB-b5-weq"/>
+                                    <constraint firstItem="2iw-eG-oS7" firstAttribute="leading" secondItem="Sjn-iM-VtF" secondAttribute="leading" id="PJR-S8-2JH"/>
+                                    <constraint firstItem="2iw-eG-oS7" firstAttribute="top" secondItem="Sjn-iM-VtF" secondAttribute="top" id="dSn-Fg-IUF"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sjn-iM-VtF" firstAttribute="top" secondItem="2vQ-BE-5aG" secondAttribute="top" id="D3E-bH-L0h"/>
+                            <constraint firstItem="Sjn-iM-VtF" firstAttribute="leading" secondItem="2vQ-BE-5aG" secondAttribute="leading" id="Niv-vA-w8n"/>
+                            <constraint firstItem="v7Q-qF-vdf" firstAttribute="bottom" secondItem="Sjn-iM-VtF" secondAttribute="bottom" id="PW7-Wc-tAN"/>
+                            <constraint firstItem="2iw-eG-oS7" firstAttribute="height" secondItem="2vQ-BE-5aG" secondAttribute="height" priority="250" id="e7A-FS-VyO"/>
+                            <constraint firstAttribute="trailing" secondItem="Sjn-iM-VtF" secondAttribute="trailing" id="qll-hp-6kA"/>
+                            <constraint firstItem="2iw-eG-oS7" firstAttribute="width" secondItem="2vQ-BE-5aG" secondAttribute="width" id="xpv-ah-qES"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v7Q-qF-vdf"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="cVW-5W-PLp" id="dFC-nC-ZY7"/>
+                        <outlet property="priceLabel" destination="ZOc-qI-qzt" id="JHP-Tn-62B"/>
+                        <outlet property="productImageView" destination="mpn-Wa-aTx" id="nbb-uO-Qnh"/>
+                        <outlet property="titleLabel" destination="CJq-NF-UO4" id="UDZ-BV-an2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVn-LH-p2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Gg5-55-i5l" customClass="ProductDetailInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="vrT-oU-V7F" id="Lqs-hM-Ctn"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="654" y="163"/>
         </scene>
     </scenes>
 </document>

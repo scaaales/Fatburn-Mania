@@ -24,6 +24,13 @@ class StoreViewController: UIViewController {
 		tableView.backgroundColor = .white
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let productDetailsVC = segue.destination as? ProductDetailViewController,
+			let button = sender as? UIButton {
+			let product = presenter.getProduct(at: button.tag)
+			productDetailsVC.presenter.product = product
+		}
+	}
 	
 }
 

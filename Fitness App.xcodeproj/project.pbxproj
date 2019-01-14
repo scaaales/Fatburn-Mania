@@ -24,6 +24,10 @@
 		B30E9F8021EC9701006F33CE /* UIView+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F7F21EC9701006F33CE /* UIView+cornerRadius.swift */; };
 		B30E9F8221EC9BE2006F33CE /* UITableView+resizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8121EC9BE2006F33CE /* UITableView+resizable.swift */; };
 		B30E9F8421EC9D3E006F33CE /* StoreProductsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8321EC9D3E006F33CE /* StoreProductsTableViewModel.swift */; };
+		B30E9F8A21ECBEF5006F33CE /* ProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8621ECBEF5006F33CE /* ProductDetailPresenter.swift */; };
+		B30E9F8B21ECBEF5006F33CE /* ProductDetailInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8721ECBEF5006F33CE /* ProductDetailInitializer.swift */; };
+		B30E9F8C21ECBEF5006F33CE /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8821ECBEF5006F33CE /* ProductDetailViewController.swift */; };
+		B30E9F8D21ECBEF5006F33CE /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8921ECBEF5006F33CE /* ProductDetailView.swift */; };
 		B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */; };
 		B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */; };
 		B3254F3821D3E7CE00F99F91 /* DiaryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */; };
@@ -147,6 +151,10 @@
 		B30E9F7F21EC9701006F33CE /* UIView+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+cornerRadius.swift"; sourceTree = "<group>"; };
 		B30E9F8121EC9BE2006F33CE /* UITableView+resizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+resizable.swift"; sourceTree = "<group>"; };
 		B30E9F8321EC9D3E006F33CE /* StoreProductsTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductsTableViewModel.swift; sourceTree = "<group>"; };
+		B30E9F8621ECBEF5006F33CE /* ProductDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenter.swift; sourceTree = "<group>"; };
+		B30E9F8721ECBEF5006F33CE /* ProductDetailInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailInitializer.swift; sourceTree = "<group>"; };
+		B30E9F8821ECBEF5006F33CE /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		B30E9F8921ECBEF5006F33CE /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		B3254DCB21D3DD5C00F99F91 /* Fitness App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3254DDA21D3DD6800F99F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -385,6 +393,7 @@
 			children = (
 				B30E9F7421EC8DA5006F33CE /* StoreStack.storyboard */,
 				B30E9F6821EC8CF7006F33CE /* Store */,
+				B30E9F8521ECBEDC006F33CE /* ProductDetail */,
 			);
 			path = StoreStack;
 			sourceTree = "<group>";
@@ -396,6 +405,33 @@
 				B30E9F8321EC9D3E006F33CE /* StoreProductsTableViewModel.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		B30E9F8521ECBEDC006F33CE /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F8F21ECC148006F33CE /* Presenter */,
+				B30E9F8E21ECC13E006F33CE /* Views */,
+				B30E9F8721ECBEF5006F33CE /* ProductDetailInitializer.swift */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		B30E9F8E21ECC13E006F33CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F8921ECBEF5006F33CE /* ProductDetailView.swift */,
+				B30E9F8821ECBEF5006F33CE /* ProductDetailViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B30E9F8F21ECC148006F33CE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F8621ECBEF5006F33CE /* ProductDetailPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		B3254DC221D3DD5C00F99F91 = {
@@ -1154,6 +1190,7 @@
 				B3F7329821E781190038ACB9 /* VideoLibraryInitializer.swift in Sources */,
 				B36B2F7421DE148600C5D07B /* String+constants.swift in Sources */,
 				B3F732B521E7A8B30038ACB9 /* CourseVideosPresenter.swift in Sources */,
+				B30E9F8C21ECBEF5006F33CE /* ProductDetailViewController.swift in Sources */,
 				B33394C721DF721900D6013F /* UIColor+hextInit.swift in Sources */,
 				B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */,
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
@@ -1182,6 +1219,7 @@
 				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
 				B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */,
 				B3033D3121E8DF5B0058626D /* VideoDetailsPresenter.swift in Sources */,
+				B30E9F8B21ECBEF5006F33CE /* ProductDetailInitializer.swift in Sources */,
 				B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
 				B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */,
@@ -1228,6 +1266,7 @@
 				B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */,
 				B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
+				B30E9F8A21ECBEF5006F33CE /* ProductDetailPresenter.swift in Sources */,
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
 				B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */,
 				B30E9F6D21EC8D23006F33CE /* StorePresenter.swift in Sources */,
@@ -1235,6 +1274,7 @@
 				B36B2F7F21DE251E00C5D07B /* SignInViewController.swift in Sources */,
 				B3033D3321E8DF5B0058626D /* VideoDetailsViewController.swift in Sources */,
 				B36B2F8121DE252B00C5D07B /* SignInPresenter.swift in Sources */,
+				B30E9F8D21ECBEF5006F33CE /* ProductDetailView.swift in Sources */,
 				B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */,
 				B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */,
 				B3033D3221E8DF5B0058626D /* VideoDetailsInitializer.swift in Sources */,

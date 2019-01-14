@@ -34,4 +34,8 @@ class StoreProductsTableViewModel {
 		dataSource = .init(items: resultItems)
 	}
 	
+	func getProduct(at index: Int) -> Product {
+		return dataSource.getItemAtIndex(index).product
+	}
+	
 }

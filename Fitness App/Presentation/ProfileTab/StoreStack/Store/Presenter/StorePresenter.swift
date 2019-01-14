@@ -23,4 +23,8 @@ class StorePresenter<V: StoreView>: Presenter {
 		view.setTableViewDataSource(viewModel.dataSource)
 		view.update()
 	}
+	
+	func getProduct(at index: Int) -> Product {
+		return viewModel.getProduct(at: index)
+	}
 }
