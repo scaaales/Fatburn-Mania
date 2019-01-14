@@ -29,7 +29,7 @@ class CellWithSeperator: UITableViewCell {
 			seperator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 			seperator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
 			seperator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-			seperator.heightAnchor.constraint(equalToConstant: 1)
+			seperator.heightAnchor.constraint(equalToConstant: 1.5)
 			])
 	}
 }

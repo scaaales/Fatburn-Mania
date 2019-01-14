@@ -22,6 +22,7 @@ extension String {
 	static var showHowToSegueIdentifier: String { return "showHowTo" }
 	static var showVideoLibrarySegueIdentifier: String { return "showVideoLibrary" }
 	static var showStoreSegueIdentifier: String { return "showStore" }
+	static var showCoinsHistorySegueIdentifier: String { return "showCoinsHistory" }
 }
 
 // MARK: - Text Constants

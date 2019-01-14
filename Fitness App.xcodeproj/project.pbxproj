@@ -28,6 +28,14 @@
 		B30E9F8B21ECBEF5006F33CE /* ProductDetailInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8721ECBEF5006F33CE /* ProductDetailInitializer.swift */; };
 		B30E9F8C21ECBEF5006F33CE /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8821ECBEF5006F33CE /* ProductDetailViewController.swift */; };
 		B30E9F8D21ECBEF5006F33CE /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8921ECBEF5006F33CE /* ProductDetailView.swift */; };
+		B30E9F9621ECD6D6006F33CE /* CoinsHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F9221ECD6D6006F33CE /* CoinsHistoryPresenter.swift */; };
+		B30E9F9721ECD6D6006F33CE /* CoinsHistoryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F9321ECD6D6006F33CE /* CoinsHistoryInitializer.swift */; };
+		B30E9F9821ECD6D6006F33CE /* CoinsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F9421ECD6D6006F33CE /* CoinsHistoryViewController.swift */; };
+		B30E9F9921ECD6D6006F33CE /* CoinsHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F9521ECD6D6006F33CE /* CoinsHistoryView.swift */; };
+		B30E9F9D21ECD9CB006F33CE /* CoinsHistoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F9C21ECD9CB006F33CE /* CoinsHistoryHeader.swift */; };
+		B30E9F9F21ECDAC4006F33CE /* CoinsHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F9E21ECDAC4006F33CE /* CoinsHistoryCell.swift */; };
+		B30E9FA221ECDB1B006F33CE /* CoinsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9FA121ECDB1B006F33CE /* CoinsHistory.swift */; };
+		B30E9FA521ECE290006F33CE /* CoinsHistoryTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9FA421ECE290006F33CE /* CoinsHistoryTableViewModel.swift */; };
 		B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */; };
 		B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */; };
 		B3254F3821D3E7CE00F99F91 /* DiaryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */; };
@@ -155,6 +163,14 @@
 		B30E9F8721ECBEF5006F33CE /* ProductDetailInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailInitializer.swift; sourceTree = "<group>"; };
 		B30E9F8821ECBEF5006F33CE /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		B30E9F8921ECBEF5006F33CE /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		B30E9F9221ECD6D6006F33CE /* CoinsHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryPresenter.swift; sourceTree = "<group>"; };
+		B30E9F9321ECD6D6006F33CE /* CoinsHistoryInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryInitializer.swift; sourceTree = "<group>"; };
+		B30E9F9421ECD6D6006F33CE /* CoinsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryViewController.swift; sourceTree = "<group>"; };
+		B30E9F9521ECD6D6006F33CE /* CoinsHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryView.swift; sourceTree = "<group>"; };
+		B30E9F9C21ECD9CB006F33CE /* CoinsHistoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryHeader.swift; sourceTree = "<group>"; };
+		B30E9F9E21ECDAC4006F33CE /* CoinsHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryCell.swift; sourceTree = "<group>"; };
+		B30E9FA121ECDB1B006F33CE /* CoinsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistory.swift; sourceTree = "<group>"; };
+		B30E9FA421ECE290006F33CE /* CoinsHistoryTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryTableViewModel.swift; sourceTree = "<group>"; };
 		B3254DCB21D3DD5C00F99F91 /* Fitness App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3254DDA21D3DD6800F99F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -344,6 +360,7 @@
 		B30A0DFD21D78DA10075D871 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B30E9FA021ECDAFA006F33CE /* CoinsHistory */,
 				B30E9F7821EC9365006F33CE /* Store */,
 				B3F732AD21E7A2230038ACB9 /* VideoLibrary */,
 				B39D476F21E60B2E00D5C050 /* User */,
@@ -432,6 +449,52 @@
 				B30E9F8621ECBEF5006F33CE /* ProductDetailPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B30E9F9121ECD6B3006F33CE /* CoinsHistory */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9FA621ECE2F5006F33CE /* Presenter */,
+				B30E9F9A21ECD6FA006F33CE /* View */,
+				B30E9F9321ECD6D6006F33CE /* CoinsHistoryInitializer.swift */,
+			);
+			path = CoinsHistory;
+			sourceTree = "<group>";
+		};
+		B30E9F9A21ECD6FA006F33CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F9B21ECD841006F33CE /* TableViewCells */,
+				B30E9F9521ECD6D6006F33CE /* CoinsHistoryView.swift */,
+				B30E9F9421ECD6D6006F33CE /* CoinsHistoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B30E9F9B21ECD841006F33CE /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F9C21ECD9CB006F33CE /* CoinsHistoryHeader.swift */,
+				B30E9F9E21ECDAC4006F33CE /* CoinsHistoryCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		B30E9FA021ECDAFA006F33CE /* CoinsHistory */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9FA121ECDB1B006F33CE /* CoinsHistory.swift */,
+				B30E9FA421ECE290006F33CE /* CoinsHistoryTableViewModel.swift */,
+			);
+			path = CoinsHistory;
+			sourceTree = "<group>";
+		};
+		B30E9FA621ECE2F5006F33CE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F9221ECD6D6006F33CE /* CoinsHistoryPresenter.swift */,
+			);
+			name = Presenter;
 			sourceTree = "<group>";
 		};
 		B3254DC221D3DD5C00F99F91 = {
@@ -837,6 +900,7 @@
 			children = (
 				B39301DD21E4FA360071994A /* ProfileTab.storyboard */,
 				B39D475621E5FC1600D5C050 /* Profile */,
+				B30E9F9121ECD6B3006F33CE /* CoinsHistory */,
 				B30E9F7321EC8D87006F33CE /* StoreStack */,
 				B3F7328F21E77E560038ACB9 /* VideoLibraryStack */,
 				B3F7328721E764EC0038ACB9 /* HowTo */,
@@ -1173,6 +1237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30E9FA521ECE290006F33CE /* CoinsHistoryTableViewModel.swift in Sources */,
 				B39D477521E6258900D5C050 /* ProfileTableViewModel.swift in Sources */,
 				B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */,
 				B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */,
@@ -1196,9 +1261,11 @@
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */,
 				B3B8D3B421E8B56000397AAB /* BasicTableViewDataSource.swift in Sources */,
+				B30E9F9F21ECDAC4006F33CE /* CoinsHistoryCell.swift in Sources */,
 				B30E9F8221EC9BE2006F33CE /* UITableView+resizable.swift in Sources */,
 				B36B2F7D21DE24B200C5D07B /* SignInInitializer.swift in Sources */,
 				B3F732AF21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift in Sources */,
+				B30E9F9721ECD6D6006F33CE /* CoinsHistoryInitializer.swift in Sources */,
 				B3753C2021D7A3B4008A5D5A /* DiaryPresenter.swift in Sources */,
 				B3254F4E21D3E7CE00F99F91 /* RoundButton.swift in Sources */,
 				B39D478B21E65E8600D5C050 /* ProfileButton.swift in Sources */,
@@ -1222,6 +1289,7 @@
 				B30E9F8B21ECBEF5006F33CE /* ProductDetailInitializer.swift in Sources */,
 				B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
+				B30E9F9921ECD6D6006F33CE /* CoinsHistoryView.swift in Sources */,
 				B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */,
 				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
 				B3F7329721E781190038ACB9 /* VideoLibraryPresenter.swift in Sources */,
@@ -1235,6 +1303,7 @@
 				B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */,
 				B3753C2521D7A6E4008A5D5A /* DiaryInitializer.swift in Sources */,
 				B39301DB21E4E8630071994A /* TabBarViewController.swift in Sources */,
+				B30E9F9821ECD6D6006F33CE /* CoinsHistoryViewController.swift in Sources */,
 				B30E9F7721EC934C006F33CE /* StoreItemCell.swift in Sources */,
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
 				B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */,
@@ -1257,6 +1326,7 @@
 				B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */,
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
 				B3B8D3B621E8B62800397AAB /* CourseVideosTableViewModel.swift in Sources */,
+				B30E9F9D21ECD9CB006F33CE /* CoinsHistoryHeader.swift in Sources */,
 				B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,
@@ -1281,6 +1351,8 @@
 				B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
 				B3753C2321D7A4A0008A5D5A /* DiaryView.swift in Sources */,
+				B30E9F9621ECD6D6006F33CE /* CoinsHistoryPresenter.swift in Sources */,
+				B30E9FA221ECDB1B006F33CE /* CoinsHistory.swift in Sources */,
 				B30E9F6E21EC8D23006F33CE /* StoreInitializer.swift in Sources */,
 				B3254F4221D3E7CE00F99F91 /* CalendarView.swift in Sources */,
 			);

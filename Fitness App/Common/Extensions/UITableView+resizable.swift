@@ -9,14 +9,20 @@
 import UIKit
 
 extension UITableView {
-	func makeResizable() {
-		estimatedSectionHeaderHeight = 1
-		sectionHeaderHeight = UITableView.automaticDimension
+	func makeResizable(header: Bool = true, cell: Bool = true, footer: Bool = true) {
+		if header {
+			estimatedSectionHeaderHeight = .leastNormalMagnitude
+			sectionHeaderHeight = UITableView.automaticDimension
+		}
 		
-		estimatedRowHeight = 1
-		rowHeight = UITableView.automaticDimension
+		if cell {
+			estimatedRowHeight = 1
+			rowHeight = UITableView.automaticDimension
+		}
 		
-		estimatedSectionFooterHeight = 1
-		sectionFooterHeight = UITableView.automaticDimension
+		if footer {
+			estimatedSectionFooterHeight = 1
+			sectionFooterHeight = UITableView.automaticDimension
+		}
 	}
 }
