@@ -17,8 +17,7 @@ class CourseVideoCell: UITableViewCell, ConfigurableCell {
 	func configure(data: DataType) {
 		courseImageView.image = data.image
 		courseTitleSubtitleLabel.text = data.title + "\n" + data.subtitle
-		courseImageView.layer.cornerRadius = 16
-		courseImageView.layer.masksToBounds = true
+		courseImageView.makeCornerRadius(16)
 	}
 
 }

@@ -28,18 +28,13 @@ class BlurredLoader: UIView {
 		xibSetup()
 	}
 	
-	private func addCornerRadius() {
-		contentView.layer.cornerRadius = 15
-		contentView.clipsToBounds = true
-	}
-	
 	private func xibSetup() {
 		guard let view = loadViewFromNib() else { return }
 		view.frame = bounds
 		view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		addSubview(view)
 		contentView = view
-		addCornerRadius()
+		contentView.makeCornerRadius(16)
 	}
 	
 	private func loadViewFromNib() -> UIView? {

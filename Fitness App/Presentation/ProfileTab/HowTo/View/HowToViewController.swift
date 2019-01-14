@@ -35,8 +35,7 @@ class HowToViewController: UIViewController {
 		tableView.dataSource = self
 		tableView.delegate = self
 		
-		tableView.estimatedRowHeight = 1
-		tableView.rowHeight = UITableView.automaticDimension
+		tableView.makeResizable()
 		
 		tableView.backgroundColor = .white
 	}

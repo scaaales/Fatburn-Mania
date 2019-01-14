@@ -13,6 +13,17 @@
 		B3033D3321E8DF5B0058626D /* VideoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D2F21E8DF5B0058626D /* VideoDetailsViewController.swift */; };
 		B3033D3421E8DF5B0058626D /* VideoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D3021E8DF5B0058626D /* VideoDetailsView.swift */; };
 		B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */; };
+		B30E9F6D21EC8D23006F33CE /* StorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6921EC8D23006F33CE /* StorePresenter.swift */; };
+		B30E9F6E21EC8D23006F33CE /* StoreInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6A21EC8D23006F33CE /* StoreInitializer.swift */; };
+		B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6B21EC8D23006F33CE /* StoreViewController.swift */; };
+		B30E9F7021EC8D23006F33CE /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6C21EC8D23006F33CE /* StoreView.swift */; };
+		B30E9F7521EC8DA5006F33CE /* StoreStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30E9F7421EC8DA5006F33CE /* StoreStack.storyboard */; };
+		B30E9F7721EC934C006F33CE /* StoreItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F7621EC934C006F33CE /* StoreItemCell.swift */; };
+		B30E9F7A21EC9376006F33CE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F7921EC9376006F33CE /* Product.swift */; };
+		B30E9F7D21EC95BD006F33CE /* Integer+formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F7C21EC95BD006F33CE /* Integer+formatted.swift */; };
+		B30E9F8021EC9701006F33CE /* UIView+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F7F21EC9701006F33CE /* UIView+cornerRadius.swift */; };
+		B30E9F8221EC9BE2006F33CE /* UITableView+resizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8121EC9BE2006F33CE /* UITableView+resizable.swift */; };
+		B30E9F8421EC9D3E006F33CE /* StoreProductsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F8321EC9D3E006F33CE /* StoreProductsTableViewModel.swift */; };
 		B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */; };
 		B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */; };
 		B3254F3821D3E7CE00F99F91 /* DiaryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */; };
@@ -125,6 +136,17 @@
 		B3033D2F21E8DF5B0058626D /* VideoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsViewController.swift; sourceTree = "<group>"; };
 		B3033D3021E8DF5B0058626D /* VideoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsView.swift; sourceTree = "<group>"; };
 		B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+extension.swift"; sourceTree = "<group>"; };
+		B30E9F6921EC8D23006F33CE /* StorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePresenter.swift; sourceTree = "<group>"; };
+		B30E9F6A21EC8D23006F33CE /* StoreInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInitializer.swift; sourceTree = "<group>"; };
+		B30E9F6B21EC8D23006F33CE /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		B30E9F6C21EC8D23006F33CE /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		B30E9F7421EC8DA5006F33CE /* StoreStack.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreStack.storyboard; sourceTree = "<group>"; };
+		B30E9F7621EC934C006F33CE /* StoreItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemCell.swift; sourceTree = "<group>"; };
+		B30E9F7921EC9376006F33CE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		B30E9F7C21EC95BD006F33CE /* Integer+formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Integer+formatted.swift"; sourceTree = "<group>"; };
+		B30E9F7F21EC9701006F33CE /* UIView+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+cornerRadius.swift"; sourceTree = "<group>"; };
+		B30E9F8121EC9BE2006F33CE /* UITableView+resizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+resizable.swift"; sourceTree = "<group>"; };
+		B30E9F8321EC9D3E006F33CE /* StoreProductsTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductsTableViewModel.swift; sourceTree = "<group>"; };
 		B3254DCB21D3DD5C00F99F91 /* Fitness App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3254DDA21D3DD6800F99F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -314,6 +336,7 @@
 		B30A0DFD21D78DA10075D871 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B30E9F7821EC9365006F33CE /* Store */,
 				B3F732AD21E7A2230038ACB9 /* VideoLibrary */,
 				B39D476F21E60B2E00D5C050 /* User */,
 				B3254F1521D3E7CD00F99F91 /* Diary */,
@@ -327,6 +350,52 @@
 				B369573621D4E40500735555 /* HealthKitService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B30E9F6821EC8CF7006F33CE /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F7221EC8D45006F33CE /* Presenter */,
+				B30E9F7121EC8D3F006F33CE /* Views */,
+				B30E9F6A21EC8D23006F33CE /* StoreInitializer.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		B30E9F7121EC8D3F006F33CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F6C21EC8D23006F33CE /* StoreView.swift */,
+				B30E9F6B21EC8D23006F33CE /* StoreViewController.swift */,
+				B30E9F7621EC934C006F33CE /* StoreItemCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B30E9F7221EC8D45006F33CE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F6921EC8D23006F33CE /* StorePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B30E9F7321EC8D87006F33CE /* StoreStack */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F7421EC8DA5006F33CE /* StoreStack.storyboard */,
+				B30E9F6821EC8CF7006F33CE /* Store */,
+			);
+			path = StoreStack;
+			sourceTree = "<group>";
+		};
+		B30E9F7821EC9365006F33CE /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B30E9F7921EC9376006F33CE /* Product.swift */,
+				B30E9F8321EC9D3E006F33CE /* StoreProductsTableViewModel.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		B3254DC221D3DD5C00F99F91 = {
@@ -507,12 +576,15 @@
 		B369573A21D514CA00735555 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B33394C821DF734200D6013F /* UIColor */,
 				B369573B21D514DF00735555 /* Date+extension.swift */,
 				B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */,
 				B36B2F7321DE148600C5D07B /* String+constants.swift */,
 				B36B2F7621DE15DE00C5D07B /* UIStoryboard+extension.swift */,
 				B33394BF21DF655F00D6013F /* UIViewController+extension.swift */,
-				B33394C821DF734200D6013F /* UIColor */,
+				B30E9F8121EC9BE2006F33CE /* UITableView+resizable.swift */,
+				B30E9F7F21EC9701006F33CE /* UIView+cornerRadius.swift */,
+				B30E9F7C21EC95BD006F33CE /* Integer+formatted.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -729,9 +801,10 @@
 			children = (
 				B39301DD21E4FA360071994A /* ProfileTab.storyboard */,
 				B39D475621E5FC1600D5C050 /* Profile */,
-				B3F7328421E75E970038ACB9 /* FAQ */,
-				B3F7328721E764EC0038ACB9 /* HowTo */,
+				B30E9F7321EC8D87006F33CE /* StoreStack */,
 				B3F7328F21E77E560038ACB9 /* VideoLibraryStack */,
+				B3F7328721E764EC0038ACB9 /* HowTo */,
+				B3F7328421E75E970038ACB9 /* FAQ */,
 			);
 			path = ProfileTab;
 			sourceTree = "<group>";
@@ -998,6 +1071,7 @@
 				B3F7329121E77E7C0038ACB9 /* VideoLibraryStack.storyboard in Resources */,
 				B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */,
 				B3753C2B21D7C473008A5D5A /* BlurredLoader.xib in Resources */,
+				B30E9F7521EC8DA5006F33CE /* StoreStack.storyboard in Resources */,
 				B39D477321E6107500D5C050 /* Assets.xcassets in Resources */,
 				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
 				B39301D921E4DE770071994A /* MainTabBar.storyboard in Resources */,
@@ -1068,6 +1142,8 @@
 				B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */,
 				B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */,
 				B36B2F6E21DE123000C5D07B /* LoginSplashPresenter.swift in Sources */,
+				B30E9F8421EC9D3E006F33CE /* StoreProductsTableViewModel.swift in Sources */,
+				B30E9F7A21EC9376006F33CE /* Product.swift in Sources */,
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B39D477121E60B4700D5C050 /* User.swift in Sources */,
 				B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */,
@@ -1083,6 +1159,7 @@
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */,
 				B3B8D3B421E8B56000397AAB /* BasicTableViewDataSource.swift in Sources */,
+				B30E9F8221EC9BE2006F33CE /* UITableView+resizable.swift in Sources */,
 				B36B2F7D21DE24B200C5D07B /* SignInInitializer.swift in Sources */,
 				B3F732AF21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift in Sources */,
 				B3753C2021D7A3B4008A5D5A /* DiaryPresenter.swift in Sources */,
@@ -1101,6 +1178,7 @@
 				B3F7329921E781190038ACB9 /* VideoLibraryViewController.swift in Sources */,
 				B33394C321DF6DB900D6013F /* LineTextField.swift in Sources */,
 				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
+				B30E9F7021EC8D23006F33CE /* StoreView.swift in Sources */,
 				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
 				B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */,
 				B3033D3121E8DF5B0058626D /* VideoDetailsPresenter.swift in Sources */,
@@ -1110,6 +1188,7 @@
 				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
 				B3F7329721E781190038ACB9 /* VideoLibraryPresenter.swift in Sources */,
 				B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */,
+				B30E9F8021EC9701006F33CE /* UIView+cornerRadius.swift in Sources */,
 				B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */,
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
 				B369573721D4E40500735555 /* HealthKitService.swift in Sources */,
@@ -1118,6 +1197,7 @@
 				B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */,
 				B3753C2521D7A6E4008A5D5A /* DiaryInitializer.swift in Sources */,
 				B39301DB21E4E8630071994A /* TabBarViewController.swift in Sources */,
+				B30E9F7721EC934C006F33CE /* StoreItemCell.swift in Sources */,
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
 				B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */,
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
@@ -1131,6 +1211,7 @@
 				B39D477E21E62A5C00D5C050 /* ProgressCell.swift in Sources */,
 				B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
+				B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */,
 				B33394C021DF655F00D6013F /* UIViewController+extension.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* DiaryTableViewModel.swift in Sources */,
@@ -1142,12 +1223,14 @@
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,
 				B36B2F8521DE347400C5D07B /* LoginNavigationController.swift in Sources */,
+				B30E9F7D21EC95BD006F33CE /* Integer+formatted.swift in Sources */,
 				B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */,
 				B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */,
 				B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
 				B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */,
+				B30E9F6D21EC8D23006F33CE /* StorePresenter.swift in Sources */,
 				B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */,
 				B36B2F7F21DE251E00C5D07B /* SignInViewController.swift in Sources */,
 				B3033D3321E8DF5B0058626D /* VideoDetailsViewController.swift in Sources */,
@@ -1158,6 +1241,7 @@
 				B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
 				B3753C2321D7A4A0008A5D5A /* DiaryView.swift in Sources */,
+				B30E9F6E21EC8D23006F33CE /* StoreInitializer.swift in Sources */,
 				B3254F4221D3E7CE00F99F91 /* CalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

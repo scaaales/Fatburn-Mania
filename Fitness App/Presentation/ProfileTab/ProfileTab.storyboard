@@ -421,6 +421,7 @@
                         <segue destination="b4p-Bx-7sI" kind="show" identifier="showFAQ" id="OQv-BY-PfW"/>
                         <segue destination="4js-Yt-XUB" kind="show" identifier="showHowTo" id="tA9-a7-29S"/>
                         <segue destination="6FQ-g8-poW" kind="show" identifier="showVideoLibrary" id="yDr-Yo-tKY"/>
+                        <segue destination="uA9-Dx-i8A" kind="show" identifier="showStore" id="HuG-P8-2Py"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qc4-49-9kj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -471,6 +472,14 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIe-VN-Kjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="996" y="906"/>
+        </scene>
+        <!--StoreStack-->
+        <scene sceneID="HrC-gR-Tav">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoreStack" id="uA9-Dx-i8A" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBO-ow-7wi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926" y="200"/>
         </scene>
         <!--VideoLibraryStack-->
         <scene sceneID="1WW-jt-tvB">

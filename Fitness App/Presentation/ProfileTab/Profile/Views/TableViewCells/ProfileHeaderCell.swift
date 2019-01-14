@@ -16,8 +16,7 @@ class ProfileHeaderCell: CellWithSeperator, ConfigurableCell {
 	
 	func configure(data: DataType) {
 		avatarImageView.image = data.image
-		avatarImageView.layer.cornerRadius = avatarImageView.bounds.height / 2
-		avatarImageView.layer.masksToBounds = true
+		avatarImageView.makeCornerRadius(avatarImageView.bounds.height / 2)
 		
 		nameLabel.text = data.name
 	}

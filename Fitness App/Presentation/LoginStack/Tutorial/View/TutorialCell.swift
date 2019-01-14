@@ -15,8 +15,7 @@ class TutorialCell: UICollectionViewCell, ConfigurableCell {
 	
 	func configure(data: UIImage) {
 		tutorialImageView.image = data
-		tutorialImageView.layer.cornerRadius = 16
-		tutorialImageView.layer.masksToBounds = true
+		tutorialImageView.makeCornerRadius(16)
 	}
 	
 }
