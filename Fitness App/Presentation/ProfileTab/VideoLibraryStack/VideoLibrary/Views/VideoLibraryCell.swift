@@ -17,7 +17,6 @@ class VideoLibraryCell: UICollectionViewCell, ConfigurableCell {
 	func configure(data: DataType) {
 		imageView.image = data.image
 		title.text = data.title
-		imageView.layer.cornerRadius = 16
-		imageView.layer.masksToBounds = true
+		imageView.makeCornerRadius(16)
 	}
 }

@@ -27,14 +27,7 @@ class DiaryViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = presenter.viewModel
 		
-		tableView.estimatedSectionHeaderHeight = 1
-		tableView.sectionHeaderHeight = UITableView.automaticDimension
-		
-		tableView.estimatedRowHeight = 1
-		tableView.rowHeight = UITableView.automaticDimension
-		
-		tableView.estimatedSectionFooterHeight = 1
-		tableView.sectionFooterHeight = UITableView.automaticDimension
+		tableView.makeResizable()
 		
 		tableView.backgroundColor = .white
 	}

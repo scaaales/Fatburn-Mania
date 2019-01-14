@@ -36,8 +36,7 @@ class TutorialViewController: UIViewController {
 		collectionView.dataSource = dataSource
 		collectionView.delegate = self
 		
-		collectionView.superview?.layer.cornerRadius = 16
-		collectionView.superview?.layer.masksToBounds = true
+		collectionView.superview?.makeCornerRadius(16)
 		
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(next(_:)))
 		collectionView.addGestureRecognizer(tapGesture)

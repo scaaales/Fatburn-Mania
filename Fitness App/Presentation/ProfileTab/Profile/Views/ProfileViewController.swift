@@ -23,8 +23,7 @@ class ProfileViewController: UIViewController {
 	private func setupTableView() {
 		tableView.delegate = self
 		
-		tableView.estimatedRowHeight = 1
-		tableView.rowHeight = UITableView.automaticDimension
+		tableView.makeResizable()
 		
 		tableView.backgroundColor = .white
 	}
@@ -49,7 +48,7 @@ extension ProfileViewController: UITableViewDelegate {
 		case "Coins":
 			print("need to show Coins screen")
 		case "Store":
-			print("need to show Store screen")
+			performSegue(withIdentifier: .showStoreSegueIdentifier, sender: nil)
 		case "Video library":
 			performSegue(withIdentifier: .showVideoLibrarySegueIdentifier, sender: nil)
 		case "How to use the application":

@@ -29,10 +29,7 @@ class ProgressView: UIView {
 		if isProgressRoudned { return }
 		isProgressRoudned = true
 		
-		progressView.subviews.forEach { subview in
-			subview.layer.masksToBounds = true
-			subview.layer.cornerRadius = subview.bounds.height / 2
-		}
+		progressView.subviews.forEach { $0.makeCornerRadius($0.bounds.height / 2) }
 	}
 	
 	private func xibSetup() {
