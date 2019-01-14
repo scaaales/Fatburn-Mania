@@ -23,7 +23,10 @@ class MainNavigationController: LoginNavigationController {
 	}
 	
 	@objc private func presentShop() {
-		
+		guard let storeVC = UIStoryboard.storeStack.instantiateInitialViewController() as? StoreViewController else { return }
+		storeVC.isPresentedModal = true
+		let navigationController = LoginNavigationController(rootViewController: storeVC)
+		self.present(navigationController, animated: true)
 	}
 	
 	@objc private func presentNotifications() {

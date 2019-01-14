@@ -12,16 +12,28 @@ class StoreViewController: UIViewController {
 	var presenter: StorePresenter<StoreViewController>!
 	
 	@IBOutlet private weak var tableView: UITableView!
+	var isPresentedModal = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupTableView()
 		presenter.getProducts()
+		if isPresentedModal {
+			setupBackButton()
+		}
+	}
+	
+	private func setupBackButton() {
+		navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(hide))
 	}
 	
 	private func setupTableView() {
 		tableView.makeResizable()
 		tableView.backgroundColor = .white
+	}
+	
+	@objc private func hide() {
+		parent?.dismiss(animated: true)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
