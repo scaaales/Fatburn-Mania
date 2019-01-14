@@ -10,18 +10,26 @@ import UIKit
 
 class BasicTableViewDataSource<CellType: UITableViewCell, DataType>: NSObject, UITableViewDataSource where CellType: ConfigurableCell, CellType.DataType == DataType {
 	
-	private let items: [DataType]
+	private let sections: [[DataType]]
 	
-	init(items: [DataType]) {
-		self.items = items
+	convenience init(items: [DataType]) {
+		self.init(sections: [items])
+	}
+	
+	init(sections: [[DataType]]) {
+		self.sections = sections
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return items.count
+		return sections[section].count
+	}
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return sections.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let item = items[indexPath.row]
+		let item = sections[indexPath.section][indexPath.row]
 		let configurator = CellsConfigurator<CellType, DataType>(item: item)
 		
 		let cell = tableView.dequeueReusableCell(withIdentifier: configurator.reuseId, for: indexPath)
@@ -31,7 +39,7 @@ class BasicTableViewDataSource<CellType: UITableViewCell, DataType>: NSObject, U
 		return cell
 	}
 	
-	func getItemAtIndex(_ index: Int) -> DataType {
-		return items[index]
+	func getItemAtIndex(_ index: Int, in section: Int = 0) -> DataType {
+		return sections[section][index]
 	}
 }

@@ -239,7 +239,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BalanceCell" rowHeight="60" id="6zm-wh-U9S" customClass="BalanceCell" customModule="Fitness_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BalanceCell" rowHeight="60" id="6zm-wh-U9S" customClass="BalanceCell" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="231.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6zm-wh-U9S" id="bL3-LG-Zz7">
@@ -325,7 +325,7 @@
                                             <outletCollection property="images" destination="JDx-8u-JK3" collectionClass="NSMutableArray" id="mQY-Kd-oBE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserDataCell" rowHeight="58" id="437-dj-NWA" customClass="UserDataCell" customModule="Fitness_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserDataCell" rowHeight="58" id="437-dj-NWA" customClass="UserDataCell" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="355.5" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="437-dj-NWA" id="RIG-Zw-qcJ">
@@ -422,6 +422,7 @@
                         <segue destination="4js-Yt-XUB" kind="show" identifier="showHowTo" id="tA9-a7-29S"/>
                         <segue destination="6FQ-g8-poW" kind="show" identifier="showVideoLibrary" id="yDr-Yo-tKY"/>
                         <segue destination="uA9-Dx-i8A" kind="show" identifier="showStore" id="HuG-P8-2Py"/>
+                        <segue destination="Tim-oJ-iNx" kind="show" identifier="showCoinsHistory" id="diz-Si-LS4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qc4-49-9kj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -473,13 +474,123 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
             </objects>
             <point key="canvasLocation" x="996" y="906"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Dww-ep-4AL">
+            <objects>
+                <viewController title="Coins" id="Tim-oJ-iNx" customClass="CoinsHistoryViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1qi-qC-Ccc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LpV-OU-htI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoinsHistoryHeader" rowHeight="50" id="Jnn-Zx-QwX" customClass="CoinsHistoryHeader" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jnn-Zx-QwX" id="OSh-mm-Sp8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INY-IZ-0cY">
+                                                    <rect key="frame" x="20" y="13" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="INY-IZ-0cY" firstAttribute="top" secondItem="OSh-mm-Sp8" secondAttribute="top" constant="13" id="8Ms-ZK-3Kp"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="INY-IZ-0cY" secondAttribute="bottom" constant="10" id="KEh-Ah-c3W"/>
+                                                <constraint firstItem="INY-IZ-0cY" firstAttribute="leading" secondItem="OSh-mm-Sp8" secondAttribute="leading" constant="20" id="xLv-M3-BvX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="INY-IZ-0cY" id="Dhr-oW-Cc0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoinsHistoryCell" rowHeight="61" id="kR4-Yu-wcZ" customClass="CoinsHistoryCell" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kR4-Yu-wcZ" id="c60-Si-iuV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxb-gx-R0m">
+                                                    <rect key="frame" x="20" y="13" width="44.5" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="cji-0M-wV9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tju-Py-z6w">
+                                                    <rect key="frame" x="310.5" y="11" width="44.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.10444467514753342" green="0.35674238204956055" blue="0.76424044370651245" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ha-yJ-PaI">
+                                                    <rect key="frame" x="20" y="39" width="31" height="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="G10-2l-xpo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7ha-yJ-PaI" firstAttribute="leading" secondItem="Vxb-gx-R0m" secondAttribute="leading" id="6ar-r4-RlR"/>
+                                                <constraint firstItem="7ha-yJ-PaI" firstAttribute="top" secondItem="Vxb-gx-R0m" secondAttribute="bottom" constant="9" id="DZt-Pc-NBm"/>
+                                                <constraint firstItem="Tju-Py-z6w" firstAttribute="centerY" secondItem="Vxb-gx-R0m" secondAttribute="centerY" id="P8f-z5-ilp"/>
+                                                <constraint firstAttribute="trailing" secondItem="Tju-Py-z6w" secondAttribute="trailing" constant="20" id="VIu-UT-bOm"/>
+                                                <constraint firstAttribute="bottom" secondItem="7ha-yJ-PaI" secondAttribute="bottom" constant="10" id="dMm-oA-Hg0"/>
+                                                <constraint firstItem="Vxb-gx-R0m" firstAttribute="top" secondItem="c60-Si-iuV" secondAttribute="top" constant="13" id="fJD-FC-WaD"/>
+                                                <constraint firstItem="Vxb-gx-R0m" firstAttribute="leading" secondItem="c60-Si-iuV" secondAttribute="leading" constant="20" id="xlp-L6-ZAI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="7ha-yJ-PaI" id="xEQ-sx-ylI"/>
+                                            <outlet property="nameLabel" destination="Vxb-gx-R0m" id="ZBL-xp-8Zy"/>
+                                            <outlet property="numberLabel" destination="Tju-Py-z6w" id="8xH-dn-nBM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mrx-X9-D0H" firstAttribute="bottom" secondItem="LpV-OU-htI" secondAttribute="bottom" id="GKH-AJ-EUL"/>
+                            <constraint firstItem="LpV-OU-htI" firstAttribute="leading" secondItem="Mrx-X9-D0H" secondAttribute="leading" id="Qel-aa-pwt"/>
+                            <constraint firstItem="Mrx-X9-D0H" firstAttribute="trailing" secondItem="LpV-OU-htI" secondAttribute="trailing" id="T3O-Vo-VFe"/>
+                            <constraint firstItem="LpV-OU-htI" firstAttribute="top" secondItem="Mrx-X9-D0H" secondAttribute="top" id="W3Z-Jd-ipm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mrx-X9-D0H"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="LpV-OU-htI" id="EM7-g4-zB4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VBZ-nA-eUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="e0H-AI-GhF" customClass="CoinsHistoryInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Tim-oJ-iNx" id="adf-uY-YG0"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2724" y="361"/>
+        </scene>
         <!--StoreStack-->
         <scene sceneID="HrC-gR-Tav">
             <objects>
                 <viewControllerPlaceholder storyboardName="StoreStack" id="uA9-Dx-i8A" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBO-ow-7wi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="200"/>
+            <point key="canvasLocation" x="1909" y="313"/>
         </scene>
         <!--VideoLibraryStack-->
         <scene sceneID="1WW-jt-tvB">

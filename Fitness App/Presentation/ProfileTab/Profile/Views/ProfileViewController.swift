@@ -46,7 +46,7 @@ extension ProfileViewController: UITableViewDelegate {
 		let title = presenter.getCellTitleFor(indexPath: indexPath)
 		switch title {
 		case "Coins":
-			print("need to show Coins screen")
+			performSegue(withIdentifier: .showCoinsHistorySegueIdentifier, sender: nil)
 		case "Store":
 			performSegue(withIdentifier: .showStoreSegueIdentifier, sender: nil)
 		case "Video library":
