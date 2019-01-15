@@ -8,23 +8,23 @@
 
 import UIKit
 
-typealias PlaceholderCellConfigurator = CellsConfigurator<PlaceholderCell, Void>
-
-typealias DefaultSectionHeaderConfigurator = CellsConfigurator<DefaultSectionHeader, String>
-typealias TrainingDayCellConfigurator = CellsConfigurator<TrainingDayCell, TrainingDay>
-
-typealias StepCellConfigurator = CellsConfigurator<StepCell, Steps>
-
-typealias WaterCellConfigurator = CellsConfigurator<WaterCell, Measurement>
-
-typealias NutritionCellConfigurator = CellsConfigurator<NutritionCell, Measurement>
-
-typealias BodyMeasurementHeaderConfigurator = CellsConfigurator<BodyMeasurementHeader, MeasurementPeriod>
-typealias BodyMeasurementCellConfigurator = CellsConfigurator<BodyMeasurementCell, Measurement>
-typealias BodyMeasurementFooterConfigurator = CellsConfigurator<BodyMeasurementFooter, Void>
-
 
 class DiaryTableViewModel: NSObject {
+	
+	private typealias PlaceholderCellConfigurator = CellsConfigurator<PlaceholderCell, Void>
+	
+	private typealias DefaultSectionHeaderConfigurator = CellsConfigurator<DefaultSectionHeader, String>
+	private typealias TrainingDayCellConfigurator = CellsConfigurator<TrainingDayCell, TrainingDay>
+	
+	private typealias StepCellConfigurator = CellsConfigurator<StepCell, Steps>
+	
+	private typealias WaterCellConfigurator = CellsConfigurator<WaterCell, Measurement>
+	
+	private typealias NutritionCellConfigurator = CellsConfigurator<NutritionCell, Measurement>
+	
+	private typealias BodyMeasurementHeaderConfigurator = CellsConfigurator<BodyMeasurementHeader, MeasurementPeriod>
+	private typealias BodyMeasurementCellConfigurator = CellsConfigurator<BodyMeasurementCell, Measurement>
+	private typealias BodyMeasurementFooterConfigurator = CellsConfigurator<BodyMeasurementFooter, Void>
 	
 	class Section {
 		let header: CellConfigurator?

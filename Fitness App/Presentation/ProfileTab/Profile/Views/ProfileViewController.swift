@@ -27,6 +27,12 @@ class ProfileViewController: UIViewController {
 		
 		tableView.backgroundColor = .white
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let editProfileVC = segue.destination as? EditProfileViewController {
+			editProfileVC.presenter.user = presenter.user
+		}
+	}
 
 }
 

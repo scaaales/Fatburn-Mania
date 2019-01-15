@@ -14,13 +14,24 @@ struct User {
 		case femele = "Female"
 	}
 	
-	let name: String
-	let gender: Gender
-	let age: UInt8
-	let email: String
-	let phoneNumber: String
-	let avatar: UIImage
-	let instagramName: String
-	let location: String
+	var firstName: String
+	var lastName: String
+	var fullName: String {
+		return "\(firstName) \(lastName)"
+	}
+	var gender: Gender
+	var dateOfBirth: Date
+	var age: Int {
+		let nowDate = Date()
+		let calendar = Calendar.current
+		
+		let ageComponents = calendar.dateComponents([.year], from: dateOfBirth, to: nowDate)
+		return ageComponents.year!
+	}
+	var email: String
+	var phoneNumber: String
+	var avatar: UIImage
+	var instagramName: String
+	var location: String
 	let balance: UInt
 }
