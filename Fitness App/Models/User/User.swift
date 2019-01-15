@@ -19,7 +19,10 @@ struct User {
 	var fullName: String {
 		return "\(firstName) \(lastName)"
 	}
+	
+	var nickname: String
 	var gender: Gender
+	
 	var dateOfBirth: Date
 	var age: Int {
 		let nowDate = Date()
@@ -28,10 +31,22 @@ struct User {
 		let ageComponents = calendar.dateComponents([.year], from: dateOfBirth, to: nowDate)
 		return ageComponents.year!
 	}
+	var dateOfBirthFormatted: String {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "dd MMMM yyyy"
+		
+		return formatter.string(from: dateOfBirth)
+	}
+	
 	var email: String
 	var phoneNumber: String
 	var avatar: UIImage
 	var instagramName: String
-	var location: String
+	
+	var country: String
+	var city: String
+	var location: String {
+		return "\(city), \(country)"
+	}
 	let balance: UInt
 }

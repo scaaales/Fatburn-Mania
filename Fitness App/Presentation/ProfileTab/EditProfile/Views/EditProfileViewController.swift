@@ -13,6 +13,7 @@ class EditProfileViewController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		hideKeyboardWhenTappedAround()
 		presenter.getUser()
 		tableView.backgroundColor = .white
 	}
@@ -34,6 +35,7 @@ extension EditProfileViewController: EditProfileView {
 extension EditProfileViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		if textField.tag == 110 {
+			view.endEditing(true)
 			return true
 		} else {
 			tableView.viewWithTag(textField.tag + 1)?.becomeFirstResponder()

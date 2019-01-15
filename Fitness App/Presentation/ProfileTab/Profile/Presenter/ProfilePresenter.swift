@@ -24,13 +24,15 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 		self.view = view
 		user = User(firstName: "Sergey",
 					lastName: "Kletsov",
+					nickname: "scales",
 					gender: .male,
 					dateOfBirth: .getDate(from: "1995 10 22"),
 					email: "sergey.kletsov@outlook.com",
 					phoneNumber: "+3 (8097) 419-64-16",
 					avatar: #imageLiteral(resourceName: "user_test"),
 					instagramName: "scaaales",
-					location: "Kiev, Ukraine",
+					country: "Ukraine",
+					city: "Kiev",
 					balance: 2310)
 	}
 	

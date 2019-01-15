@@ -497,11 +497,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="editable text" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-Sv-lSU">
-                                            <rect key="frame" x="205" y="9" width="150" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="MPl-FN-Kjk"/>
-                                            </constraints>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="editable text" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-Sv-lSU">
+                                            <rect key="frame" x="67" y="9" width="288" height="21"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -512,7 +509,7 @@
                                         <constraint firstAttribute="bottom" secondItem="BKr-Dp-YtS" secondAttribute="bottom" constant="8" id="Dks-Kr-Iyh"/>
                                         <constraint firstAttribute="trailing" secondItem="3cS-Sv-lSU" secondAttribute="trailing" constant="20" id="MwM-fb-hJf"/>
                                         <constraint firstItem="BKr-Dp-YtS" firstAttribute="leading" secondItem="vLe-sL-InG" secondAttribute="leading" constant="20" id="T4h-jx-OXt"/>
-                                        <constraint firstItem="3cS-Sv-lSU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BKr-Dp-YtS" secondAttribute="trailing" constant="5" id="tJO-Va-dj3"/>
+                                        <constraint firstItem="3cS-Sv-lSU" firstAttribute="leading" secondItem="BKr-Dp-YtS" secondAttribute="trailing" constant="5" id="tJO-Va-dj3"/>
                                         <constraint firstItem="BKr-Dp-YtS" firstAttribute="top" secondItem="vLe-sL-InG" secondAttribute="top" constant="9.5" id="yWz-Ov-UST"/>
                                     </constraints>
                                 </tableViewCellContentView>

@@ -21,11 +21,11 @@ extension Date {
 	}
 	
 	static var todayWithCurrentTime: String {
-		let dateFortammet = DateFormatter()
+		let dateFormattet = DateFormatter()
 		
-		dateFortammet.dateFormat = "dd.MM.yyyy HH:mm"
+		dateFormattet.dateFormat = "dd.MM.yyyy HH:mm"
 		
-		return dateFortammet.string(from: Date())
+		return dateFormattet.string(from: Date())
 	}
 	
 	var month: Int {

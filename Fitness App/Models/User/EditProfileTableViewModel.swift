@@ -23,15 +23,15 @@ class EditProfileTableViewModel: NSObject {
 	}
 	
 	private func getFirstRows(from user: User, textFieldDelegate: UITextFieldDelegate) -> [CellConfigurator] {
-		let items: [EditProfileDataCell.DataType] = [(fieldName: "First name", value: "Sergey", textType: .givenName, delegate: textFieldDelegate, tag: 100),
-					 (fieldName: "Second name", value: "Kletsov", textType: .familyName, delegate: textFieldDelegate, tag: 101),
-					 (fieldName: "Nickname", value: "scales", textType: .nickname, delegate: textFieldDelegate, tag: 102),
-					 (fieldName: "Instagram profile", value: "scaaales", textType: nil, delegate: textFieldDelegate, tag: 103),
-					 (fieldName: "Country", value: "Ukraine", textType: .countryName, delegate: textFieldDelegate, tag: 104),
-					 (fieldName: "City", value: "Kiev", textType: .addressCity, delegate: textFieldDelegate, tag: 105),
+		let items: [EditProfileDataCell.DataType] = [(fieldName: "First name", value: user.firstName, textType: .givenName, delegate: textFieldDelegate, tag: 100),
+					 (fieldName: "Second name", value: user.lastName, textType: .familyName, delegate: textFieldDelegate, tag: 101),
+					 (fieldName: "Nickname", value: user.nickname, textType: .nickname, delegate: textFieldDelegate, tag: 102),
+					 (fieldName: "Instagram profile", value: user.instagramName, textType: nil, delegate: textFieldDelegate, tag: 103),
+					 (fieldName: "Country", value: user.country, textType: .countryName, delegate: textFieldDelegate, tag: 104),
+					 (fieldName: "City", value: user.city, textType: .addressCity, delegate: textFieldDelegate, tag: 105),
 					 (fieldName: "Your ID", value: "65571", textType: nil, delegate: textFieldDelegate, tag: 106),
 					 (fieldName: "Password to vote", value: "asd71623bhas", textType: nil, delegate: textFieldDelegate, tag: 107),
-					 (fieldName: "Date of Birth", value: "22 октября 1995", textType: nil, delegate: textFieldDelegate, tag: 108)]
+					 (fieldName: "Date of Birth", value: user.dateOfBirthFormatted, textType: nil, delegate: textFieldDelegate, tag: 108)]
 		return items.map { EditProfileDataCellConfigurator(item: $0) }
 	}
 	
