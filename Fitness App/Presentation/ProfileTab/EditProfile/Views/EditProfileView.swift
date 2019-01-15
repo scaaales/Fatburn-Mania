@@ -11,4 +11,6 @@ import UIKit
 protocol EditProfileView: View, UITextFieldDelegate {
 	func update()
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource)
+	func getViewForDateInput() -> UIDatePicker
+	func getHelperViewForDateInput() -> UIView
 }

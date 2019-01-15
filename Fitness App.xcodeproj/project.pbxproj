@@ -129,6 +129,9 @@
 		B3DC1B6A21EDECD700883C0F /* EditProfileTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B6921EDECD700883C0F /* EditProfileTableViewModel.swift */; };
 		B3DC1B6C21EDF29A00883C0F /* RoundImageViewWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B6B21EDF29A00883C0F /* RoundImageViewWithShadow.swift */; };
 		B3DC1B6E21EDFD1900883C0F /* EditGenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B6D21EDFD1900883C0F /* EditGenderCell.swift */; };
+		B3DC1B7021EE1B1F00883C0F /* EditProfileCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B6F21EE1B1F00883C0F /* EditProfileCellType.swift */; };
+		B3DC1B7321EE291000883C0F /* TextViewHelperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DC1B7221EE291000883C0F /* TextViewHelperView.xib */; };
+		B3DC1B7521EE29CC00883C0F /* TextViewHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B7421EE29CC00883C0F /* TextViewHelperView.swift */; };
 		B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7327F21E754840038ACB9 /* MainNavigationController.swift */; };
 		B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */; };
 		B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328821E765070038ACB9 /* HowToViewController.swift */; };
@@ -274,6 +277,9 @@
 		B3DC1B6921EDECD700883C0F /* EditProfileTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewModel.swift; sourceTree = "<group>"; };
 		B3DC1B6B21EDF29A00883C0F /* RoundImageViewWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageViewWithShadow.swift; sourceTree = "<group>"; };
 		B3DC1B6D21EDFD1900883C0F /* EditGenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGenderCell.swift; sourceTree = "<group>"; };
+		B3DC1B6F21EE1B1F00883C0F /* EditProfileCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCellType.swift; sourceTree = "<group>"; };
+		B3DC1B7221EE291000883C0F /* TextViewHelperView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewHelperView.xib; sourceTree = "<group>"; };
+		B3DC1B7421EE29CC00883C0F /* TextViewHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewHelperView.swift; sourceTree = "<group>"; };
 		B3F7327F21E754840038ACB9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		B3F7328821E765070038ACB9 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
@@ -835,6 +841,7 @@
 				B3254F2021D3E7CE00F99F91 /* Calendar */,
 				B3753C2921D7C449008A5D5A /* BluredLoader */,
 				B3254F3321D3E7CE00F99F91 /* ProgressView */,
+				B3DC1B7121EE28E800883C0F /* TextViewHelperView */,
 				B3254F2821D3E7CE00F99F91 /* DefaultSectionHeader.swift */,
 				B32BF21421D67C040019489A /* PlaceholderCell.swift */,
 				B36B2F8421DE347400C5D07B /* LoginNavigationController.swift */,
@@ -973,6 +980,7 @@
 			isa = PBXGroup;
 			children = (
 				B39D477021E60B4700D5C050 /* User.swift */,
+				B3DC1B6F21EE1B1F00883C0F /* EditProfileCellType.swift */,
 				B39D477421E6258900D5C050 /* ProfileTableViewModel.swift */,
 				B3DC1B6921EDECD700883C0F /* EditProfileTableViewModel.swift */,
 			);
@@ -1027,6 +1035,15 @@
 				B3DC1B6D21EDFD1900883C0F /* EditGenderCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		B3DC1B7121EE28E800883C0F /* TextViewHelperView */ = {
+			isa = PBXGroup;
+			children = (
+				B3DC1B7421EE29CC00883C0F /* TextViewHelperView.swift */,
+				B3DC1B7221EE291000883C0F /* TextViewHelperView.xib */,
+			);
+			path = TextViewHelperView;
 			sourceTree = "<group>";
 		};
 		B3F7328421E75E970038ACB9 /* FAQ */ = {
@@ -1224,6 +1241,7 @@
 				B3F7329121E77E7C0038ACB9 /* VideoLibraryStack.storyboard in Resources */,
 				B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */,
 				B3753C2B21D7C473008A5D5A /* BlurredLoader.xib in Resources */,
+				B3DC1B7321EE291000883C0F /* TextViewHelperView.xib in Resources */,
 				B30E9F7521EC8DA5006F33CE /* StoreStack.storyboard in Resources */,
 				B39D477321E6107500D5C050 /* Assets.xcassets in Resources */,
 				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
@@ -1376,6 +1394,7 @@
 				B3DC1B6821EDDACD00883C0F /* EditProfileDataCell.swift in Sources */,
 				B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
+				B3DC1B7521EE29CC00883C0F /* TextViewHelperView.swift in Sources */,
 				B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */,
 				B33394C021DF655F00D6013F /* UIViewController+extension.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
@@ -1397,6 +1416,7 @@
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B30E9F8A21ECBEF5006F33CE /* ProductDetailPresenter.swift in Sources */,
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
+				B3DC1B7021EE1B1F00883C0F /* EditProfileCellType.swift in Sources */,
 				B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */,
 				B30E9F6D21EC8D23006F33CE /* StorePresenter.swift in Sources */,
 				B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */,
