@@ -8,21 +8,20 @@
 
 import UIKit
 
-typealias ProfileHeaderCellConfigurator = CellsConfigurator<ProfileHeaderCell, (image: UIImage, name: String)>
-typealias ProfileButtonsCellConfigurator = CellsConfigurator<ProfileButtonsCell, Void>
-typealias BalanceCellConfigurator = CellsConfigurator<BalanceCell, UInt>
-typealias ProgressCellConfigurator = CellsConfigurator<ProgressCell, [UIImage]>
-typealias UserDataCellConfigurator = CellsConfigurator<UserDataCell, (icon: UIImage, text: String)>
-typealias UserButtonArrowConfigurator = CellsConfigurator<UserButtonArrowCell, (icon: UIImage, text: String)>
-
 class ProfileTableViewModel: NSObject {
+	
+	private typealias ProfileHeaderCellConfigurator = CellsConfigurator<ProfileHeaderCell, (image: UIImage, name: String)>
+	private typealias ProfileButtonsCellConfigurator = CellsConfigurator<ProfileButtonsCell, Void>
+	private typealias BalanceCellConfigurator = CellsConfigurator<BalanceCell, UInt>
+	private typealias ProgressCellConfigurator = CellsConfigurator<ProgressCell, [UIImage]>
+	private typealias UserDataCellConfigurator = CellsConfigurator<UserDataCell, (icon: UIImage, text: String)>
+	private typealias UserButtonArrowConfigurator = CellsConfigurator<UserButtonArrowCell, (icon: UIImage, text: String)>
 	
 	private var rows: [CellConfigurator]
 	
-	init(user: User? = nil) {
+	init(user: User) {
 		rows = []
 		super.init()
-		guard let user = user else { return }
 		rows.append(getHeaderRow(from: user))
 		rows.append(getProfileButonsRow())
 		rows.append(getBalanceRow(from: user))
@@ -32,7 +31,7 @@ class ProfileTableViewModel: NSObject {
 	}
 	
 	private func getHeaderRow(from user: User) -> CellConfigurator {
-		return ProfileHeaderCellConfigurator(item: (user.avatar, user.name))
+		return ProfileHeaderCellConfigurator(item: (user.avatar, user.fullName))
 	}
 	
 	private func getProfileButonsRow() -> CellConfigurator {

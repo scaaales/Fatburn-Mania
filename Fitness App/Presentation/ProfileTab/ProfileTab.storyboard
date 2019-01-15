@@ -65,6 +65,7 @@
                                         <connections>
                                             <outlet property="avatarImageView" destination="9tg-bc-e0p" id="b5P-I8-ZxC"/>
                                             <outlet property="nameLabel" destination="5LS-hd-xq0" id="37J-em-KuH"/>
+                                            <segue destination="Azy-2C-2wp" kind="show" id="DMD-6r-ajJ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileButtonsCell" rowHeight="124" id="wD5-D3-vo1" customClass="ProfileButtonsCell" customModule="Fitness_App" customModuleProvider="target">
@@ -77,10 +78,10 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="GlZ-Ml-6v4">
                                                     <rect key="frame" x="20" y="18" width="335" height="87"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMV-8j-nhd" customClass="ProfileButton" customModule="Fitness_App" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMV-8j-nhd">
                                                             <rect key="frame" x="0.0" y="0.0" width="55" height="87"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoCamera" translatesAutoresizingMaskIntoConstraints="NO" id="JGg-Mi-w8F">
+                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoCamera" translatesAutoresizingMaskIntoConstraints="NO" id="JGg-Mi-w8F" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="55" id="lhT-ck-byw"/>
@@ -110,14 +111,11 @@
                                                                 <constraint firstAttribute="bottom" secondItem="CaQ-yI-Q0t" secondAttribute="bottom" id="oSw-xm-GKa"/>
                                                                 <constraint firstAttribute="trailing" secondItem="CaQ-yI-Q0t" secondAttribute="trailing" id="tLq-it-5b0"/>
                                                             </constraints>
-                                                            <connections>
-                                                                <outlet property="imageView" destination="JGg-Mi-w8F" id="d3f-xV-3Ob"/>
-                                                            </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVH-Sm-3zk" customClass="ProfileButton" customModule="Fitness_App" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVH-Sm-3zk">
                                                             <rect key="frame" x="92.5" y="0.0" width="57" height="87"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collage" translatesAutoresizingMaskIntoConstraints="NO" id="yNP-5f-fkQ">
+                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collage" translatesAutoresizingMaskIntoConstraints="NO" id="yNP-5f-fkQ" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="55" id="5Mk-2h-LeM"/>
@@ -147,14 +145,11 @@
                                                                 <constraint firstItem="yNP-5f-fkQ" firstAttribute="leading" secondItem="MVH-Sm-3zk" secondAttribute="leading" id="u5W-X9-ZI4"/>
                                                                 <constraint firstAttribute="bottom" secondItem="hdQ-Ha-u3p" secondAttribute="bottom" id="uS1-ox-HPs"/>
                                                             </constraints>
-                                                            <connections>
-                                                                <outlet property="imageView" destination="yNP-5f-fkQ" id="F2c-ap-qZQ"/>
-                                                            </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ox5-40-4NZ" customClass="ProfileButton" customModule="Fitness_App" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ox5-40-4NZ">
                                                             <rect key="frame" x="187.5" y="0.0" width="55" height="87"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch" translatesAutoresizingMaskIntoConstraints="NO" id="DG1-cT-unz">
+                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch" translatesAutoresizingMaskIntoConstraints="NO" id="DG1-cT-unz" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="55" id="cEJ-dy-ouR"/>
@@ -184,14 +179,11 @@
                                                                 <constraint firstAttribute="trailing" secondItem="WkL-Yp-3Zz" secondAttribute="trailing" id="RCb-zY-9zJ"/>
                                                                 <constraint firstAttribute="bottom" secondItem="lTl-id-NQG" secondAttribute="bottom" id="xBy-uG-12v"/>
                                                             </constraints>
-                                                            <connections>
-                                                                <outlet property="imageView" destination="DG1-cT-unz" id="bYR-UE-M1x"/>
-                                                            </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86b-jB-Ooc" customClass="ProfileButton" customModule="Fitness_App" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86b-jB-Ooc">
                                                             <rect key="frame" x="280" y="0.0" width="55" height="87"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicPlayer" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-Uc-Wfo">
+                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicPlayer" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-Uc-Wfo" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="55" id="dvs-kc-lDP"/>
@@ -221,9 +213,6 @@
                                                                 <constraint firstAttribute="trailing" secondItem="B57-As-32b" secondAttribute="trailing" id="lbT-ex-sx8"/>
                                                                 <constraint firstItem="B57-As-32b" firstAttribute="leading" secondItem="86b-jB-Ooc" secondAttribute="leading" id="rkI-06-eQn"/>
                                                             </constraints>
-                                                            <connections>
-                                                                <outlet property="imageView" destination="5Xs-Uc-Wfo" id="ONs-QL-Bdm"/>
-                                                            </connections>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
@@ -433,6 +422,147 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="996" y="73.313343328335833"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0Dr-Mo-1ac">
+            <objects>
+                <tableViewController title="Edit" hidesBottomBarWhenPushed="YES" id="Azy-2C-2wp" customClass="EditProfileViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="Jey-7u-yIO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="pga-Lh-isJ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudComputing" translatesAutoresizingMaskIntoConstraints="NO" id="xrf-WE-pAD" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
+                                    <rect key="frame" x="121.5" y="20" width="132" height="132"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="xrf-WE-pAD" secondAttribute="height" multiplier="1:1" id="caA-7f-L97"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRaidus">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="xrf-WE-pAD" firstAttribute="centerX" secondItem="pga-Lh-isJ" secondAttribute="centerX" id="fvT-x9-wuO"/>
+                                <constraint firstAttribute="bottom" secondItem="xrf-WE-pAD" secondAttribute="bottom" constant="12" id="kG6-ht-KRO"/>
+                                <constraint firstItem="xrf-WE-pAD" firstAttribute="top" secondItem="pga-Lh-isJ" secondAttribute="top" constant="20" id="kfZ-0e-awL"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="rb8-h2-hdc">
+                            <rect key="frame" x="0.0" y="320.5" width="375" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBZ-CU-zVm" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="30" width="335" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="yxh-LU-iTY"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <state key="normal" title="Save changes">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="VBZ-CU-zVm" secondAttribute="bottom" constant="20" id="8WS-yh-iJI"/>
+                                <constraint firstAttribute="trailing" secondItem="VBZ-CU-zVm" secondAttribute="trailing" constant="20" id="Vpp-MA-16A"/>
+                                <constraint firstItem="VBZ-CU-zVm" firstAttribute="top" secondItem="rb8-h2-hdc" secondAttribute="top" constant="30" id="hne-Ku-mSU"/>
+                                <constraint firstItem="VBZ-CU-zVm" firstAttribute="leading" secondItem="rb8-h2-hdc" secondAttribute="leading" constant="20" id="mXp-v7-Xgq"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditProfileDataCell" rowHeight="39" id="nvW-5H-Diu" customClass="EditProfileDataCell" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="219.5" width="375" height="39"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nvW-5H-Diu" id="vLe-sL-InG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKr-Dp-YtS">
+                                            <rect key="frame" x="20" y="9.5" width="42" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="editable text" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-Sv-lSU">
+                                            <rect key="frame" x="67" y="9" width="288" height="21"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3cS-Sv-lSU" firstAttribute="firstBaseline" secondItem="BKr-Dp-YtS" secondAttribute="firstBaseline" id="7fb-dZ-NzG"/>
+                                        <constraint firstAttribute="bottom" secondItem="BKr-Dp-YtS" secondAttribute="bottom" constant="8" id="Dks-Kr-Iyh"/>
+                                        <constraint firstAttribute="trailing" secondItem="3cS-Sv-lSU" secondAttribute="trailing" constant="20" id="MwM-fb-hJf"/>
+                                        <constraint firstItem="BKr-Dp-YtS" firstAttribute="leading" secondItem="vLe-sL-InG" secondAttribute="leading" constant="20" id="T4h-jx-OXt"/>
+                                        <constraint firstItem="3cS-Sv-lSU" firstAttribute="leading" secondItem="BKr-Dp-YtS" secondAttribute="trailing" constant="5" id="tJO-Va-dj3"/>
+                                        <constraint firstItem="BKr-Dp-YtS" firstAttribute="top" secondItem="vLe-sL-InG" secondAttribute="top" constant="9.5" id="yWz-Ov-UST"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="BKr-Dp-YtS" id="mph-lf-vEV"/>
+                                    <outlet property="valueTextField" destination="3cS-Sv-lSU" id="Gbw-Jp-08U"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditGenderCell" rowHeight="61" id="vJf-TC-YEC" customClass="EditGenderCell" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="258.5" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vJf-TC-YEC" id="7Fe-zQ-4Lp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y5y-yY-Ltb">
+                                            <rect key="frame" x="20" y="20" width="335" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="29" id="gr5-UJ-cex"/>
+                                            </constraints>
+                                            <segments>
+                                                <segment title="Female"/>
+                                                <segment title="Male"/>
+                                            </segments>
+                                            <color key="tintColor" red="0.27413889765739441" green="0.56233227252960205" blue="0.7996256947517395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="y5y-yY-Ltb" secondAttribute="bottom" constant="12" id="AMR-eh-02U"/>
+                                        <constraint firstAttribute="trailing" secondItem="y5y-yY-Ltb" secondAttribute="trailing" constant="20" id="bb9-oz-MDf"/>
+                                        <constraint firstItem="y5y-yY-Ltb" firstAttribute="top" secondItem="7Fe-zQ-4Lp" secondAttribute="top" constant="20" id="hTI-lj-MpF"/>
+                                        <constraint firstItem="y5y-yY-Ltb" firstAttribute="leading" secondItem="7Fe-zQ-4Lp" secondAttribute="leading" constant="20" id="yzy-ef-o9t"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="segmentedControl" destination="y5y-yY-Ltb" id="GRb-Hc-G2w"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Azy-2C-2wp" id="GDG-hN-v7b"/>
+                            <outlet property="delegate" destination="Azy-2C-2wp" id="lKp-Kq-I5g"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFI-wA-lDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="t2Q-jL-L3Q" customClass="EditProfileInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Azy-2C-2wp" id="4eq-Se-93W"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1968.8" y="-426.83658170914543"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="1L2-mu-cFr">
@@ -707,6 +837,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
         </scene>
     </scenes>
     <resources>
+        <image name="cloudComputing" width="60" height="51"/>
         <image name="coins" width="21.5" height="28"/>
         <image name="collage" width="29.5" height="29.5"/>
         <image name="musicPlayer" width="28.5" height="30.5"/>
