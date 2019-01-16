@@ -9,14 +9,19 @@
 import UIKit
 import AVFoundation
 
-class PhotoCapturingService {
+class PhotoCapturingService: NSObject {
 
 	private var captureSession: AVCaptureSession
+	private var photoOutput: AVCapturePhotoOutput!
+	
 	private(set) var isConfigurated = false
 	private(set) var isAuthorized = false
 	
-	init() {
+	private var takePhotoCompletion: ((UIImage) -> Void)?
+	
+	override init() {
 		captureSession = .init()
+		super.init()
 	}
 	
 	func authorizate(completion: @escaping (_ success: Bool) -> Void) {
@@ -51,7 +56,7 @@ class PhotoCapturingService {
 			else { fatalError() }
 		captureSession.addInput(videoDeviceInput)
 		
-		let photoOutput = AVCapturePhotoOutput()
+		photoOutput = AVCapturePhotoOutput()
 		guard captureSession.canAddOutput(photoOutput) else { fatalError() }
 		captureSession.sessionPreset = .photo
 		captureSession.addOutput(photoOutput)
@@ -77,4 +82,43 @@ class PhotoCapturingService {
 		}
 	}
 	
+	func takePhoto(previewSize: CGSize, completion: @escaping (UIImage) -> Void) {
+		self.takePhotoCompletion = completion
+		
+		let settings = AVCapturePhotoSettings()
+		
+		let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
+		let previewFormat = [
+			kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
+			kCVPixelBufferWidthKey as String: previewSize.width,
+			kCVPixelBufferHeightKey as String: previewSize.height
+			] as [String : Any]
+		settings.previewPhotoFormat = previewFormat
+		
+		photoOutput.capturePhoto(with: settings, delegate: self)
+	}
+	
+}
+
+extension PhotoCapturingService: AVCapturePhotoCaptureDelegate {
+	func photoOutput(_ captureOutput: AVCapturePhotoOutput,
+					 didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
+					 previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
+					 resolvedSettings: AVCaptureResolvedPhotoSettings,
+					 bracketSettings: AVCaptureBracketedStillImageSettings?,
+					 error: Error?) {
+		if let error = error {
+			print("Capture failed: \(error.localizedDescription)")
+		}
+		
+		if let sampleBuffer = photoSampleBuffer,
+			let previewBuffer = previewPhotoSampleBuffer,
+			let dataImage =  AVCapturePhotoOutput
+				.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer),
+			let dataProvider = CGDataProvider(data: dataImage as CFData),
+			let cgImageRef = CGImage(jpegDataProviderSource: dataProvider, decode: nil, shouldInterpolate: true, intent: .defaultIntent) {
+			let image = UIImage(cgImage: cgImageRef, scale: 1, orientation: .right)
+			takePhotoCompletion?(image)
+		}
+	}
 }

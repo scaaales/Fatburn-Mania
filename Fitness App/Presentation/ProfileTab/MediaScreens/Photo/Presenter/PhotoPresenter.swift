@@ -43,4 +43,10 @@ class PhotoPresenter<V: PhotoView>: Presenter {
 	func stopCamera() {
 		photoCapturingService.endCapturing()
 	}
+	
+	func takePhoto() {
+		photoCapturingService.takePhoto(previewSize: view.imageSize) { [weak self] image in
+			self?.view.setPreviewImage(image)
+		}
+	}
 }

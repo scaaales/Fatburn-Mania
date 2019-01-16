@@ -14,6 +14,7 @@ class PhotoViewController: UIViewController {
 	
 	@IBOutlet private weak var photoPreviewView: PhotoPreviewView!
 	@IBOutlet private weak var takePhotoButton: UIButton!
+	@IBOutlet private weak var photoPreviewImageView: UIImageView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -26,7 +27,7 @@ class PhotoViewController: UIViewController {
 	}
 	
 	@IBAction private func takePhotoTapped(_ sender: Any) {
-		
+		presenter.takePhoto()
 	}
 	
 }
@@ -34,6 +35,14 @@ class PhotoViewController: UIViewController {
 extension PhotoViewController: PhotoView {
 	var videoPreviewLayer: AVCaptureVideoPreviewLayer {
 		return photoPreviewView.videoPreviewLayer
+	}
+	
+	var imageSize: CGSize {
+		return photoPreviewView.bounds.size
+	}
+	
+	func setPreviewImage(_ image: UIImage) {
+		photoPreviewImageView.image = image
 	}
 	
 }
