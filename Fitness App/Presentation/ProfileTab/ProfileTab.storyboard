@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--MediaScreens-->
+        <scene sceneID="F7d-yr-aYp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MediaScreens" id="zEr-W5-2d2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J2U-2i-ZMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926" y="-628"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="Tle-d9-a6H">
             <objects>
@@ -68,7 +76,7 @@
                                             <segue destination="Azy-2C-2wp" kind="show" id="DMD-6r-ajJ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileButtonsCell" rowHeight="124" id="wD5-D3-vo1" customClass="ProfileButtonsCell" customModule="Fitness_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileButtonsCell" rowHeight="124" id="wD5-D3-vo1" customClass="ProfileButtonsCell" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="107.5" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wD5-D3-vo1" id="S7A-jL-AiG">
@@ -81,101 +89,94 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMV-8j-nhd">
                                                             <rect key="frame" x="0.0" y="0.0" width="55" height="87"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoCamera" translatesAutoresizingMaskIntoConstraints="NO" id="JGg-Mi-w8F" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-yI-Q0t" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="55" id="lhT-ck-byw"/>
-                                                                        <constraint firstAttribute="width" constant="55" id="mN6-W5-Dsi"/>
+                                                                        <constraint firstAttribute="height" constant="55" id="83d-1e-4KV"/>
+                                                                        <constraint firstAttribute="width" constant="55" id="Aw8-Nj-bGn"/>
                                                                     </constraints>
-                                                                </imageView>
+                                                                    <state key="normal" image="photoCamera"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <segue destination="zEr-W5-2d2" kind="show" id="aUV-6X-RND"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ly-It-rlX">
                                                                     <rect key="frame" x="0.0" y="66.5" width="55" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-yI-Q0t">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="87"/>
-                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="JGg-Mi-w8F" firstAttribute="leading" secondItem="YMV-8j-nhd" secondAttribute="leading" id="9id-vW-4g7"/>
                                                                 <constraint firstItem="CaQ-yI-Q0t" firstAttribute="top" secondItem="YMV-8j-nhd" secondAttribute="top" id="N4a-2S-aIY"/>
                                                                 <constraint firstItem="8Ly-It-rlX" firstAttribute="leading" secondItem="YMV-8j-nhd" secondAttribute="leading" id="ROr-ha-JCb"/>
                                                                 <constraint firstAttribute="bottom" secondItem="8Ly-It-rlX" secondAttribute="bottom" id="VG2-Lu-WfW"/>
                                                                 <constraint firstAttribute="trailing" secondItem="8Ly-It-rlX" secondAttribute="trailing" id="cTQ-fC-sBG"/>
-                                                                <constraint firstItem="JGg-Mi-w8F" firstAttribute="top" secondItem="YMV-8j-nhd" secondAttribute="top" id="d4G-mM-n6i"/>
                                                                 <constraint firstItem="CaQ-yI-Q0t" firstAttribute="leading" secondItem="YMV-8j-nhd" secondAttribute="leading" id="dWw-YG-oJk"/>
-                                                                <constraint firstAttribute="trailing" secondItem="JGg-Mi-w8F" secondAttribute="trailing" id="jNK-rv-aJs"/>
-                                                                <constraint firstAttribute="bottom" secondItem="CaQ-yI-Q0t" secondAttribute="bottom" id="oSw-xm-GKa"/>
                                                                 <constraint firstAttribute="trailing" secondItem="CaQ-yI-Q0t" secondAttribute="trailing" id="tLq-it-5b0"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVH-Sm-3zk">
                                                             <rect key="frame" x="92.5" y="0.0" width="57" height="87"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collage" translatesAutoresizingMaskIntoConstraints="NO" id="yNP-5f-fkQ" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="55" id="5Mk-2h-LeM"/>
-                                                                        <constraint firstAttribute="width" constant="55" id="Yuc-AU-0Si"/>
-                                                                    </constraints>
-                                                                </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Collage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdQ-Ha-u3p">
                                                                     <rect key="frame" x="0.0" y="66.5" width="57" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxG-Ey-yv9">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="87"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxG-Ey-yv9" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="55"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="55" id="Ya8-4I-93L"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="collage"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="OxG-Ey-yv9" secondAttribute="bottom" id="5ML-ME-ihr"/>
-                                                                <constraint firstAttribute="trailing" secondItem="yNP-5f-fkQ" secondAttribute="trailing" priority="750" id="6kO-F6-uUd"/>
                                                                 <constraint firstItem="hdQ-Ha-u3p" firstAttribute="leading" secondItem="MVH-Sm-3zk" secondAttribute="leading" id="88v-oF-wBK"/>
                                                                 <constraint firstItem="OxG-Ey-yv9" firstAttribute="top" secondItem="MVH-Sm-3zk" secondAttribute="top" id="CE7-sf-Rnv"/>
                                                                 <constraint firstAttribute="trailing" secondItem="OxG-Ey-yv9" secondAttribute="trailing" id="IWW-lk-RzR"/>
                                                                 <constraint firstAttribute="trailing" secondItem="hdQ-Ha-u3p" secondAttribute="trailing" id="eUr-C3-K1b"/>
                                                                 <constraint firstItem="OxG-Ey-yv9" firstAttribute="leading" secondItem="MVH-Sm-3zk" secondAttribute="leading" id="j70-aH-KBu"/>
-                                                                <constraint firstItem="yNP-5f-fkQ" firstAttribute="top" secondItem="MVH-Sm-3zk" secondAttribute="top" id="mC6-AY-QI5"/>
-                                                                <constraint firstItem="yNP-5f-fkQ" firstAttribute="leading" secondItem="MVH-Sm-3zk" secondAttribute="leading" id="u5W-X9-ZI4"/>
                                                                 <constraint firstAttribute="bottom" secondItem="hdQ-Ha-u3p" secondAttribute="bottom" id="uS1-ox-HPs"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ox5-40-4NZ">
                                                             <rect key="frame" x="187.5" y="0.0" width="55" height="87"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch" translatesAutoresizingMaskIntoConstraints="NO" id="DG1-cT-unz" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="55" id="cEJ-dy-ouR"/>
-                                                                        <constraint firstAttribute="width" constant="55" id="fhf-h5-ivX"/>
-                                                                    </constraints>
-                                                                </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTl-id-NQG">
                                                                     <rect key="frame" x="0.0" y="66.5" width="55" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkL-Yp-3Zz">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="87"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkL-Yp-3Zz" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="55" id="Az8-D4-rp0"/>
+                                                                        <constraint firstAttribute="height" constant="55" id="CpN-Sb-pxO"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="stopwatch"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="DG1-cT-unz" firstAttribute="top" secondItem="Ox5-40-4NZ" secondAttribute="top" id="4BT-fn-u12"/>
                                                                 <constraint firstItem="WkL-Yp-3Zz" firstAttribute="leading" secondItem="Ox5-40-4NZ" secondAttribute="leading" id="5sa-bf-JS5"/>
-                                                                <constraint firstAttribute="bottom" secondItem="WkL-Yp-3Zz" secondAttribute="bottom" id="93r-F8-FBR"/>
-                                                                <constraint firstItem="DG1-cT-unz" firstAttribute="leading" secondItem="Ox5-40-4NZ" secondAttribute="leading" id="Azi-vS-Pbz"/>
                                                                 <constraint firstItem="WkL-Yp-3Zz" firstAttribute="top" secondItem="Ox5-40-4NZ" secondAttribute="top" id="BFS-PD-zvD"/>
                                                                 <constraint firstAttribute="trailing" secondItem="lTl-id-NQG" secondAttribute="trailing" id="CGG-7a-cMI"/>
                                                                 <constraint firstItem="lTl-id-NQG" firstAttribute="leading" secondItem="Ox5-40-4NZ" secondAttribute="leading" id="Lzh-qG-cxc"/>
-                                                                <constraint firstAttribute="trailing" secondItem="DG1-cT-unz" secondAttribute="trailing" id="Pfl-f2-OV2"/>
                                                                 <constraint firstAttribute="trailing" secondItem="WkL-Yp-3Zz" secondAttribute="trailing" id="RCb-zY-9zJ"/>
                                                                 <constraint firstAttribute="bottom" secondItem="lTl-id-NQG" secondAttribute="bottom" id="xBy-uG-12v"/>
                                                             </constraints>
@@ -183,33 +184,30 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86b-jB-Ooc">
                                                             <rect key="frame" x="280" y="0.0" width="55" height="87"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicPlayer" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-Uc-Wfo" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="55" id="dvs-kc-lDP"/>
-                                                                        <constraint firstAttribute="width" constant="55" id="w3p-Wj-aoG"/>
-                                                                    </constraints>
-                                                                </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YS3-XU-Rtc">
                                                                     <rect key="frame" x="0.0" y="66.5" width="55" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B57-As-32b">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="87"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B57-As-32b" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="55" id="JNN-6L-4gW"/>
+                                                                        <constraint firstAttribute="width" constant="55" id="UxX-0l-lYo"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="musicPlayer"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="B57-As-32b" firstAttribute="top" secondItem="86b-jB-Ooc" secondAttribute="top" id="3ZK-oW-xpk"/>
-                                                                <constraint firstAttribute="trailing" secondItem="5Xs-Uc-Wfo" secondAttribute="trailing" id="62O-6z-cdt"/>
-                                                                <constraint firstAttribute="bottom" secondItem="B57-As-32b" secondAttribute="bottom" id="7tl-lm-aMa"/>
                                                                 <constraint firstAttribute="bottom" secondItem="YS3-XU-Rtc" secondAttribute="bottom" id="CwE-Uj-PMJ"/>
-                                                                <constraint firstItem="5Xs-Uc-Wfo" firstAttribute="leading" secondItem="86b-jB-Ooc" secondAttribute="leading" id="Q0v-1b-ARS"/>
                                                                 <constraint firstItem="YS3-XU-Rtc" firstAttribute="leading" secondItem="86b-jB-Ooc" secondAttribute="leading" id="Zr4-j6-0Kr"/>
                                                                 <constraint firstAttribute="trailing" secondItem="YS3-XU-Rtc" secondAttribute="trailing" id="cli-kq-iqN"/>
-                                                                <constraint firstItem="5Xs-Uc-Wfo" firstAttribute="top" secondItem="86b-jB-Ooc" secondAttribute="top" id="ihD-GG-nnA"/>
                                                                 <constraint firstAttribute="trailing" secondItem="B57-As-32b" secondAttribute="trailing" id="lbT-ex-sx8"/>
                                                                 <constraint firstItem="B57-As-32b" firstAttribute="leading" secondItem="86b-jB-Ooc" secondAttribute="leading" id="rkI-06-eQn"/>
                                                             </constraints>
@@ -562,7 +560,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1968.8" y="-426.83658170914543"/>
+            <point key="canvasLocation" x="2724" y="-340"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="1L2-mu-cFr">
@@ -720,7 +718,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                 <viewControllerPlaceholder storyboardName="StoreStack" id="uA9-Dx-i8A" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBO-ow-7wi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="313"/>
+            <point key="canvasLocation" x="1909" y="336"/>
         </scene>
         <!--VideoLibraryStack-->
         <scene sceneID="1WW-jt-tvB">
@@ -728,7 +726,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                 <viewControllerPlaceholder storyboardName="VideoLibraryStack" id="6FQ-g8-poW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8I-GR-XKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="361"/>
+            <point key="canvasLocation" x="1910" y="384"/>
         </scene>
         <!--How to use the application-->
         <scene sceneID="Bt3-I5-h2L">

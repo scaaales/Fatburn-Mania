@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Need to access your camera to capture a picture&apos;s and create collage&apos;s</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Need to access your photo library to save photo&apos;s and collage&apos;s</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
