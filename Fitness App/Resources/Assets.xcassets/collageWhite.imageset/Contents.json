@@ -3,17 +3,17 @@
     {
       "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "collage.png"
+      "filename" : "collageWhite.png"
     },
     {
       "scale" : "2x",
       "idiom" : "universal",
-      "filename" : "collage@2x.png"
+      "filename" : "collageWhite@2x.png"
     },
     {
       "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "collage@3x.png"
+      "filename" : "collageWhite@3x.png"
     }
   ],
   "info" : {

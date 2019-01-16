@@ -149,6 +149,13 @@
 		B3F732B621E7A8B30038ACB9 /* CourseVideosInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732B221E7A8B30038ACB9 /* CourseVideosInitializer.swift */; };
 		B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732B321E7A8B30038ACB9 /* CourseVideosViewController.swift */; };
 		B3F732B821E7A8B30038ACB9 /* CourseVideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F732B421E7A8B30038ACB9 /* CourseVideosView.swift */; };
+		B3FBA15E21EF33F600B88AA3 /* MediaScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FBA15D21EF33F600B88AA3 /* MediaScreens.storyboard */; };
+		B3FBA16421EF343800B88AA3 /* PhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16021EF343800B88AA3 /* PhotoPresenter.swift */; };
+		B3FBA16521EF343800B88AA3 /* PhotoInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16121EF343800B88AA3 /* PhotoInitializer.swift */; };
+		B3FBA16621EF343800B88AA3 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16221EF343800B88AA3 /* PhotoViewController.swift */; };
+		B3FBA16721EF343800B88AA3 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16321EF343800B88AA3 /* PhotoView.swift */; };
+		B3FBA16B21EF3B4200B88AA3 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16A21EF3B4200B88AA3 /* PhotoPreviewView.swift */; };
+		B3FBA16D21EF493400B88AA3 /* PhotoCapturingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -297,6 +304,13 @@
 		B3F732B221E7A8B30038ACB9 /* CourseVideosInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosInitializer.swift; sourceTree = "<group>"; };
 		B3F732B321E7A8B30038ACB9 /* CourseVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosViewController.swift; sourceTree = "<group>"; };
 		B3F732B421E7A8B30038ACB9 /* CourseVideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosView.swift; sourceTree = "<group>"; };
+		B3FBA15D21EF33F600B88AA3 /* MediaScreens.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MediaScreens.storyboard; sourceTree = "<group>"; };
+		B3FBA16021EF343800B88AA3 /* PhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPresenter.swift; sourceTree = "<group>"; };
+		B3FBA16121EF343800B88AA3 /* PhotoInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInitializer.swift; sourceTree = "<group>"; };
+		B3FBA16221EF343800B88AA3 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		B3FBA16321EF343800B88AA3 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		B3FBA16A21EF3B4200B88AA3 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
+		B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCapturingService.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -393,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				B369573621D4E40500735555 /* HealthKitService.swift */,
+				B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -922,6 +937,7 @@
 			children = (
 				B39301DD21E4FA360071994A /* ProfileTab.storyboard */,
 				B39D475621E5FC1600D5C050 /* Profile */,
+				B3FBA15C21EF337C00B88AA3 /* MediaScreens */,
 				B3DC1B5921EDD69200883C0F /* EditProfile */,
 				B30E9F9121ECD6B3006F33CE /* CoinsHistory */,
 				B30E9F7321EC8D87006F33CE /* StoreStack */,
@@ -1173,6 +1189,43 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		B3FBA15C21EF337C00B88AA3 /* MediaScreens */ = {
+			isa = PBXGroup;
+			children = (
+				B3FBA15D21EF33F600B88AA3 /* MediaScreens.storyboard */,
+				B3FBA15F21EF340D00B88AA3 /* Photo */,
+			);
+			path = MediaScreens;
+			sourceTree = "<group>";
+		};
+		B3FBA15F21EF340D00B88AA3 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				B3FBA16921EF344300B88AA3 /* Presenter */,
+				B3FBA16821EF343F00B88AA3 /* Views */,
+				B3FBA16121EF343800B88AA3 /* PhotoInitializer.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		B3FBA16821EF343F00B88AA3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3FBA16321EF343800B88AA3 /* PhotoView.swift */,
+				B3FBA16221EF343800B88AA3 /* PhotoViewController.swift */,
+				B3FBA16A21EF3B4200B88AA3 /* PhotoPreviewView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3FBA16921EF344300B88AA3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3FBA16021EF343800B88AA3 /* PhotoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1245,6 +1298,7 @@
 				B30E9F7521EC8DA5006F33CE /* StoreStack.storyboard in Resources */,
 				B39D477321E6107500D5C050 /* Assets.xcassets in Resources */,
 				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
+				B3FBA15E21EF33F600B88AA3 /* MediaScreens.storyboard in Resources */,
 				B39301D921E4DE770071994A /* MainTabBar.storyboard in Resources */,
 				B39301E121E4FA720071994A /* WorkoutTab.storyboard in Resources */,
 				B39301E821E4FAC80071994A /* WorkoutOfTheDayTab.storyboard in Resources */,
@@ -1357,12 +1411,15 @@
 				B30E9F7021EC8D23006F33CE /* StoreView.swift in Sources */,
 				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
 				B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */,
+				B3FBA16421EF343800B88AA3 /* PhotoPresenter.swift in Sources */,
 				B3033D3121E8DF5B0058626D /* VideoDetailsPresenter.swift in Sources */,
 				B30E9F8B21ECBEF5006F33CE /* ProductDetailInitializer.swift in Sources */,
+				B3FBA16B21EF3B4200B88AA3 /* PhotoPreviewView.swift in Sources */,
 				B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
 				B3DC1B6C21EDF29A00883C0F /* RoundImageViewWithShadow.swift in Sources */,
 				B30E9F9921ECD6D6006F33CE /* CoinsHistoryView.swift in Sources */,
+				B3FBA16D21EF493400B88AA3 /* PhotoCapturingService.swift in Sources */,
 				B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */,
 				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
 				B3F7329721E781190038ACB9 /* VideoLibraryPresenter.swift in Sources */,
@@ -1409,7 +1466,9 @@
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,
 				B36B2F8521DE347400C5D07B /* LoginNavigationController.swift in Sources */,
+				B3FBA16521EF343800B88AA3 /* PhotoInitializer.swift in Sources */,
 				B30E9F7D21EC95BD006F33CE /* Integer+formatted.swift in Sources */,
+				B3FBA16721EF343800B88AA3 /* PhotoView.swift in Sources */,
 				B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */,
 				B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */,
 				B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */,
@@ -1435,6 +1494,7 @@
 				B30E9FA221ECDB1B006F33CE /* CoinsHistory.swift in Sources */,
 				B30E9F6E21EC8D23006F33CE /* StoreInitializer.swift in Sources */,
 				B3254F4221D3E7CE00F99F91 /* CalendarView.swift in Sources */,
+				B3FBA16621EF343800B88AA3 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

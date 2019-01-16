@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l90-Fa-Jxu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="BcR-i3-xUZ">
+            <objects>
+                <viewController title="Photo" hidesBottomBarWhenPushed="YES" id="l90-Fa-Jxu" customClass="PhotoViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ep-nh-8RP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGT-DC-54W" customClass="PhotoPreviewView" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="561"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pl9-gi-mtV">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
+                                        <color key="tintColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoGuides" translatesAutoresizingMaskIntoConstraints="NO" id="mc5-KI-Yg3">
+                                        <rect key="frame" x="0.0" y="243.5" width="375" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="mc5-KI-Yg3" secondAttribute="height" multiplier="125:28" id="5SZ-07-035"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pl9-gi-mtV" firstAttribute="leading" secondItem="bGT-DC-54W" secondAttribute="leading" id="6mc-xZ-CpD"/>
+                                    <constraint firstAttribute="trailing" secondItem="pl9-gi-mtV" secondAttribute="trailing" id="BIM-Qu-fyj"/>
+                                    <constraint firstItem="mc5-KI-Yg3" firstAttribute="leading" secondItem="bGT-DC-54W" secondAttribute="leading" id="Ee0-9d-tn1"/>
+                                    <constraint firstItem="mc5-KI-Yg3" firstAttribute="centerY" secondItem="bGT-DC-54W" secondAttribute="centerY" constant="5" id="OkY-6S-27e"/>
+                                    <constraint firstItem="pl9-gi-mtV" firstAttribute="top" secondItem="bGT-DC-54W" secondAttribute="top" id="emg-5Q-MM0"/>
+                                    <constraint firstAttribute="bottom" secondItem="pl9-gi-mtV" secondAttribute="bottom" id="s2B-m2-Mip"/>
+                                    <constraint firstAttribute="trailing" secondItem="mc5-KI-Yg3" secondAttribute="trailing" id="yEK-Kr-M7i"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUv-r6-Hub">
+                                <rect key="frame" x="30" y="633" width="26" height="26"/>
+                                <state key="normal" image="collageWhite"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHM-6O-TFY">
+                                <rect key="frame" x="174.5" y="633" width="26" height="26"/>
+                                <state key="normal" image="makePhoto"/>
+                                <connections>
+                                    <action selector="takePhotoTapped:" destination="l90-Fa-Jxu" eventType="touchUpInside" id="0YA-fG-tnf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cp-7l-tgr">
+                                <rect key="frame" x="319" y="633" width="26" height="26"/>
+                                <state key="normal" image="timerButtonSmall"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18429642915725708" green="0.1843235194683075" blue="0.18428719043731689" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="m9c-Xk-6HD" firstAttribute="bottom" secondItem="PUv-r6-Hub" secondAttribute="bottom" constant="8" id="Dt6-cn-k7F"/>
+                            <constraint firstItem="m9c-Xk-6HD" firstAttribute="bottom" secondItem="bGT-DC-54W" secondAttribute="bottom" constant="42" id="GIq-fB-bfI"/>
+                            <constraint firstItem="m9c-Xk-6HD" firstAttribute="bottom" secondItem="7Cp-7l-tgr" secondAttribute="bottom" constant="8" id="K0w-jL-8f0"/>
+                            <constraint firstItem="7Cp-7l-tgr" firstAttribute="top" secondItem="bGT-DC-54W" secondAttribute="bottom" constant="8" id="Sml-pC-sjI"/>
+                            <constraint firstItem="bGT-DC-54W" firstAttribute="top" secondItem="m9c-Xk-6HD" secondAttribute="top" id="TYZ-eH-qts"/>
+                            <constraint firstItem="bGT-DC-54W" firstAttribute="leading" secondItem="m9c-Xk-6HD" secondAttribute="leading" id="Tcj-z0-Vva"/>
+                            <constraint firstItem="PUv-r6-Hub" firstAttribute="top" secondItem="bGT-DC-54W" secondAttribute="bottom" constant="8" id="agJ-fs-sHj"/>
+                            <constraint firstItem="RHM-6O-TFY" firstAttribute="top" secondItem="bGT-DC-54W" secondAttribute="bottom" constant="8" id="h6X-Ht-3Nf"/>
+                            <constraint firstItem="m9c-Xk-6HD" firstAttribute="trailing" secondItem="bGT-DC-54W" secondAttribute="trailing" id="krc-tT-HoH"/>
+                            <constraint firstItem="PUv-r6-Hub" firstAttribute="leading" secondItem="m9c-Xk-6HD" secondAttribute="leading" constant="30" id="l2p-C6-Hdy"/>
+                            <constraint firstItem="m9c-Xk-6HD" firstAttribute="trailing" secondItem="7Cp-7l-tgr" secondAttribute="trailing" constant="30" id="v1f-qb-8Tl"/>
+                            <constraint firstItem="m9c-Xk-6HD" firstAttribute="bottom" secondItem="RHM-6O-TFY" secondAttribute="bottom" constant="8" id="vaF-a6-ZWM"/>
+                            <constraint firstItem="RHM-6O-TFY" firstAttribute="centerX" secondItem="m9c-Xk-6HD" secondAttribute="centerX" id="yKJ-uC-3z2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m9c-Xk-6HD"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="photoPreviewImageView" destination="pl9-gi-mtV" id="qey-OS-ZiX"/>
+                        <outlet property="photoPreviewView" destination="bGT-DC-54W" id="ood-Rh-b42"/>
+                        <outlet property="takePhotoButton" destination="RHM-6O-TFY" id="M6w-9i-d6e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O1M-YD-uHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="t5J-4y-Fb8" customClass="PhotoInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="l90-Fa-Jxu" id="wL1-U7-QQq"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-359.19999999999999" y="-89.505247376311857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="collageWhite" width="26" height="26"/>
+        <image name="makePhoto" width="26" height="26"/>
+        <image name="photoGuides" width="376" height="85"/>
+        <image name="timerButtonSmall" width="26" height="26"/>
+    </resources>
+</document>
