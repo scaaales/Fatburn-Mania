@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="BcR-i3-xUZ">
             <objects>
-                <viewController title="Photo" hidesBottomBarWhenPushed="YES" id="l90-Fa-Jxu" customClass="PhotoViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PhotoViewController" hidesBottomBarWhenPushed="YES" id="l90-Fa-Jxu" customClass="PhotoViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ep-nh-8RP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +92,69 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="-359.19999999999999" y="-89.505247376311857"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OeM-Tt-eXA">
+            <objects>
+                <viewController storyboardIdentifier="CollageViewController" title="Collage" hidesBottomBarWhenPushed="YES" id="Jbt-zZ-HR4" customClass="CollageViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dCz-nM-q1J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="u9v-wH-DQ9"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHS-po-ASL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="hUs-wT-hhY" customClass="CollageInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Jbt-zZ-HR4" id="ryN-QP-t2C"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="506" y="-90"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3Te-HL-wwX">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" title="Timer" hidesBottomBarWhenPushed="YES" id="QOH-kH-2Qg" customClass="TimerViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hIU-9c-rIc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Z0d-Az-SBe"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPo-6G-KhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="L2I-So-dBZ" customClass="TimerInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="QOH-kH-2Qg" id="1ID-7F-c4M"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1447" y="-90"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZWd-eR-wtP">
+            <objects>
+                <viewController storyboardIdentifier="MusicPlayerViewController" title="Player" id="aQk-0B-Wyy" customClass="MusicPlayerViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="teJ-L3-wHH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rfc-xD-wTF"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DS3-aM-GgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="xvp-bQ-QDY" customClass="MusicPlayerInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="aQk-0B-Wyy" id="Mzh-TF-3xJ"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2345" y="-90"/>
         </scene>
     </scenes>
     <resources>
