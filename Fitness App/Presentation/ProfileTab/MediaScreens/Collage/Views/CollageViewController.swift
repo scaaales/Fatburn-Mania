@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Photos
 
 class CollageViewController: UIViewController {
 	var presenter: CollagePresenter<CollageViewController>!
@@ -16,6 +15,7 @@ class CollageViewController: UIViewController {
 	@IBOutlet private weak var rightImageView: UIImageView!
 	@IBOutlet private weak var addLeftImageButton: UIButton!
 	@IBOutlet private weak var addRightImageButton: UIButton!
+	@IBOutlet private weak var saveButton: UIButton!
 	
 	@IBOutlet private weak var leftScrollView: UIScrollView!
 	@IBOutlet private weak var leftImageViewBottomConstraint: NSLayoutConstraint!
@@ -28,6 +28,8 @@ class CollageViewController: UIViewController {
 	@IBOutlet private weak var rightImageViewLeadingConstraint: NSLayoutConstraint!
 	@IBOutlet private weak var rightImageViewTopConstraint: NSLayoutConstraint!
 	@IBOutlet private weak var rightImageViewTrailingConstraint: NSLayoutConstraint!
+	
+	@IBOutlet weak var collageViewContainerStackView: UIStackView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -75,12 +77,12 @@ class CollageViewController: UIViewController {
 	private func updateMinZoomScaleForSize(_ size: CGSize,
 										   imageView: UIImageView,
 										   scrollView: UIScrollView) {
-		let widthScale = size.width / imageView.bounds.width
-		let heightScale = size.height / imageView.bounds.height
-		let minScale = min(widthScale, heightScale)
+		let widthScale = (size.width - 2) / imageView.bounds.width
+		let heightScale = (size.height - 2) / imageView.bounds.height
+		let minScale = max(widthScale, heightScale)
 		
 		scrollView.minimumZoomScale = minScale
-		scrollView.maximumZoomScale = 2
+		scrollView.maximumZoomScale = minScale * 2
 		scrollView.zoomScale = minScale
 	}
 	
@@ -121,6 +123,18 @@ extension CollageViewController: CollageView {
 		return self
 	}
 	
+	var collageViewContainer: UIView {
+		return collageViewContainerStackView
+	}
+	
+	var collageViewSize: CGSize {
+		return CGSize(width: collageViewContainerStackView.bounds.width,
+					  height: collageViewContainerStackView.bounds.height - collageViewYOffset * 2)
+	}
+	
+	var collageViewYOffset: CGFloat {
+		return leftScrollView.superview!.frame.minY
+	}
 	
 	func hideAddLeftPartButton() {
 		addLeftImageButton.isHidden = true
@@ -146,6 +160,17 @@ extension CollageViewController: CollageView {
 		present(alertController, animated: true)
 	}
 	
+	func presentPhotoSharing(_ image: UIImage) {
+		let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+		activityViewController.popoverPresentationController?.sourceView = saveButton
+		activityViewController.completionWithItemsHandler = { [weak self] _, completed, _, _ in
+			if completed {
+				self?.presenter.collageSaved()
+			}
+		}
+		present(activityViewController, animated: true)
+	}
+	
 	func closeItself() {
 		navigationController?.popViewController(animated: true)
 	}
@@ -169,3 +194,4 @@ extension CollageViewController: UIScrollViewDelegate {
 	}
 	
 }
+

@@ -282,6 +282,7 @@
                     <connections>
                         <outlet property="addLeftImageButton" destination="ybv-gC-V3C" id="V5v-Oo-MEv"/>
                         <outlet property="addRightImageButton" destination="QwJ-jp-4Dv" id="bef-Xh-Krb"/>
+                        <outlet property="collageViewContainerStackView" destination="qPE-u8-9JQ" id="F5L-Hm-7CG"/>
                         <outlet property="leftImageView" destination="MKb-xN-Eaw" id="sHZ-fT-6g2"/>
                         <outlet property="leftImageViewBottomConstraint" destination="iG4-Qe-v2N" id="xrO-ts-rmz"/>
                         <outlet property="leftImageViewLeadingConstraint" destination="4jP-GP-0Ux" id="CTz-wp-7cA"/>
@@ -294,6 +295,7 @@
                         <outlet property="rightImageViewTopConstraint" destination="iFb-N8-P7G" id="gXO-7G-2uy"/>
                         <outlet property="rightImageViewTrailingConstraint" destination="VPf-hr-Km6" id="8eO-uE-dwl"/>
                         <outlet property="rightScrollView" destination="MCX-mr-Tnu" id="0jX-Xr-eQM"/>
+                        <outlet property="saveButton" destination="bOM-lR-Uce" id="dfU-ha-TG9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JHS-po-ASL" userLabel="First Responder" sceneMemberID="firstResponder"/>

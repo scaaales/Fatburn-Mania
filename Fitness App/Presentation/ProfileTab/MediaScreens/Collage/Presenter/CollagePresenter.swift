@@ -43,12 +43,18 @@ class CollagePresenter<V: CollageView>: Presenter {
 	}
 	
 	func saveImages(leftImage: UIImage?, rightImage: UIImage?) {
-		if let leftImage = leftImage, let rightImage = rightImage {
-			// some saving logic
-			view.closeItself()
+		if !(leftImage == nil || rightImage == nil) {
+			let image = ImageCreator.createImage(with: view.collageViewSize,
+									 from: view.collageViewContainer,
+									 offsetY: view.collageViewYOffset)
+			view.presentPhotoSharing(image)
 		} else {
 			view.presentErrorSaving()
 		}
+	}
+	
+	func collageSaved() {
+		view.closeItself()
 	}
 	
 	private func authorizeIfNeeded(successCompletion: @escaping () -> Void) {
