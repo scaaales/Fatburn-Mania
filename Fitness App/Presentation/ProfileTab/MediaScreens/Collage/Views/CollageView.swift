@@ -15,4 +15,6 @@ protocol CollageView: View {
 	func hideAddRightPartButton()
 	func setImageForLeftPart(_ image: UIImage)
 	func setImageForRightPart(_ image: UIImage)
+	func presentErrorSaving()
+	func closeItself()
 }
