@@ -22,7 +22,7 @@ class PhotoPresenter<V: PhotoView>: Presenter {
 	
 	func startCamera() {
 		if !photoCapturingService.isAuthorized {
-			photoCapturingService.authorizate { [weak self] success in
+			photoCapturingService.authorize { [weak self] success in
 				if success {
 					DispatchQueue.main.async {
 						self?.setupAndStartCamera()

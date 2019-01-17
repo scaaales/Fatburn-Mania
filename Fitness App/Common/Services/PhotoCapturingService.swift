@@ -24,7 +24,7 @@ class PhotoCapturingService: NSObject {
 		super.init()
 	}
 	
-	func authorizate(completion: @escaping (_ success: Bool) -> Void) {
+	func authorize(completion: @escaping (_ success: Bool) -> Void) {
 		switch AVCaptureDevice.authorizationStatus(for: .video) {
 		case .authorized: // The user has previously granted access to the camera.
 			isAuthorized = true

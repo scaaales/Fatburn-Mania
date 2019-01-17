@@ -17,9 +17,6 @@ class CollageViewController: UIViewController {
 	@IBOutlet private weak var addLeftImageButton: UIButton!
 	@IBOutlet private weak var addRightImageButton: UIButton!
 	
-	private var selectedImageViewToAdd: UIImageView?
-	private var selectedButtonToAddImage: UIButton?
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		leftImageView.layer.masksToBounds = true
@@ -27,13 +24,11 @@ class CollageViewController: UIViewController {
 	}
 	
 	@IBAction private func addLeftImageTapped() {
-		selectedButtonToAddImage = addLeftImageButton
-		loadPhotoInto(into: leftImageView)
+		presenter.getImageForLeftPart()
 	}
 	
 	@IBAction private func addRightImageTapped() {
-		selectedButtonToAddImage = addRightImageButton
-		loadPhotoInto(into: rightImageView)
+		presenter.getImageForRightPart()
 	}
 	
 	@IBAction private func rotateLeftImageLeftTapped() {
@@ -66,50 +61,27 @@ class CollageViewController: UIViewController {
 	
 }
 
-private extension CollageViewController {
-	func loadPhotoInto(into imageView: UIImageView) {
-		let available = UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
-		guard available else { return }
-		selectedImageViewToAdd = imageView
-		
-		let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
-		switch photoAuthorizationStatus {
-		case .authorized:
-			presentImagePicker()
-		case .notDetermined:
-			PHPhotoLibrary.requestAuthorization { [weak self] newStatus in
-				if newStatus == .authorized {
-					self?.presentImagePicker()
-				} else {
-					print(newStatus)
-				}
-			}
-		default:
-			print(photoAuthorizationStatus)
-		}
-		
-		
+extension CollageViewController: CollageView {
+	var viewControllerToPresentPicker: UIViewController {
+		return self
 	}
 	
-	func presentImagePicker() {
-		let imagePickerController = UIImagePickerController()
-		imagePickerController.sourceType = .photoLibrary
-		imagePickerController.delegate = self
-		present(imagePickerController, animated: true)
+	
+	func hideAddLeftPartButton() {
+		addLeftImageButton.isHidden = true
 	}
-}
-
-extension CollageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-	@objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-		if let image = info[.originalImage] as? UIImage {
-			selectedImageViewToAdd?.image = image
-			selectedButtonToAddImage?.isHidden = true
-		}
-		dismiss(animated: true)
+	
+	func hideAddRightPartButton() {
+		addRightImageButton.isHidden = true
 	}
-}
-
-extension CollageViewController: CollageView {
+	
+	func setImageForLeftPart(_ image: UIImage) {
+		leftImageView.image = image
+	}
+	
+	func setImageForRightPart(_ image: UIImage) {
+		rightImageView.image = image
+	}
 	
 }
 

@@ -99,6 +99,7 @@
 		B37CBA1921DE64C000834A98 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CBA1821DE64C000834A98 /* LoginView.swift */; };
 		B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CBA1A21DE64DC00834A98 /* LoginPresenter.swift */; };
 		B37CBA2321DE680900834A98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CBA2221DE680900834A98 /* LoginViewController.swift */; };
+		B3839C5F21F0827600BD27E0 /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */; };
 		B39301CE21E4BD5A0071994A /* ResetPassrodInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301CD21E4BD5A0071994A /* ResetPassrodInitializer.swift */; };
 		B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */; };
 		B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D221E4BE9F0071994A /* ResetPasswordView.swift */; };
@@ -266,6 +267,7 @@
 		B37CBA1821DE64C000834A98 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B37CBA1A21DE64DC00834A98 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		B37CBA2221DE680900834A98 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Fitness App/Presentation/LoginStack/Login/Views/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
 		B39301CD21E4BD5A0071994A /* ResetPassrodInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResetPassrodInitializer.swift; path = ../ResetPassword/ResetPassrodInitializer.swift; sourceTree = "<group>"; };
 		B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		B39301D221E4BE9F0071994A /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 			children = (
 				B369573621D4E40500735555 /* HealthKitService.swift */,
 				B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */,
+				B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1590,6 +1593,7 @@
 				B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B30E9F8A21ECBEF5006F33CE /* ProductDetailPresenter.swift in Sources */,
+				B3839C5F21F0827600BD27E0 /* PhotoLibraryService.swift in Sources */,
 				B3D737E421EF772E00DDF602 /* TimerPresenter.swift in Sources */,
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
 				B3DC1B7021EE1B1F00883C0F /* EditProfileCellType.swift in Sources */,
