@@ -16,7 +16,31 @@
                 <viewControllerPlaceholder storyboardName="MediaScreens" id="zEr-W5-2d2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2U-2i-ZMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="-628"/>
+            <point key="canvasLocation" x="1894" y="-568"/>
+        </scene>
+        <!--CollageViewController-->
+        <scene sceneID="xpg-vd-izt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MediaScreens" referencedIdentifier="CollageViewController" id="IGV-nC-LeY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYI-Ma-Arn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1934" y="-504"/>
+        </scene>
+        <!--TimerViewController-->
+        <scene sceneID="wgu-St-twC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MediaScreens" referencedIdentifier="TimerViewController" id="DgA-jg-thh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ryo-34-3sF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926" y="-436"/>
+        </scene>
+        <!--MusicPlayerViewController-->
+        <scene sceneID="yIe-dL-zCu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MediaScreens" referencedIdentifier="MusicPlayerViewController" id="Nxw-NI-Hsa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1PZ-dl-TP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957" y="-377"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Tle-d9-a6H">
@@ -138,6 +162,9 @@
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <segue destination="IGV-nC-LeY" kind="show" id="43Q-sX-IjB"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -169,6 +196,9 @@
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <segue destination="DgA-jg-thh" kind="show" id="GGB-0N-xDK"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -200,6 +230,9 @@
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <segue destination="Nxw-NI-Hsa" kind="show" id="0qR-Bv-gIc"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -718,7 +751,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                 <viewControllerPlaceholder storyboardName="StoreStack" id="uA9-Dx-i8A" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBO-ow-7wi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="336"/>
+            <point key="canvasLocation" x="1880" y="337"/>
         </scene>
         <!--VideoLibraryStack-->
         <scene sceneID="1WW-jt-tvB">
@@ -726,7 +759,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                 <viewControllerPlaceholder storyboardName="VideoLibraryStack" id="6FQ-g8-poW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8I-GR-XKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="384"/>
+            <point key="canvasLocation" x="1916" y="382"/>
         </scene>
         <!--How to use the application-->
         <scene sceneID="Bt3-I5-h2L">

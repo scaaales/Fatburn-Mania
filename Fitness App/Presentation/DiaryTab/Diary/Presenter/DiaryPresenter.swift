@@ -27,7 +27,7 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	func getHealthInfo(on date: Date) {
 		view.showLoader()
 		
-		HealthKitService.authorizeHealthKit { (authorized, error) in
+		HealthKitService.authorizeHealthKit { [weak self] (authorized, error) in
 			if !authorized {
 				let baseMessage = "HealthKit Authorization Failed"
 				if let error = error {
@@ -35,14 +35,15 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 				} else {
 					print(baseMessage)
 				}
+			} else {
+				self?.getAllFields(on: date) {
+					self?.view.showTableView()
+					self?.view.hideLoader()
+					self?.view.update()
+				}
 			}
 		}
 		
-		getAllFields(on: date) { [weak self] in
-			self?.view.showTableView()
-			self?.view.hideLoader()
-			self?.view.update()
-		}
 	}
 	
 	private func getAllFields(on date: Date, completion: @escaping () -> Void) {

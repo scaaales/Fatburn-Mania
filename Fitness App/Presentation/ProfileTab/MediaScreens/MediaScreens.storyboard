@@ -7,13 +7,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="BcR-i3-xUZ">
             <objects>
-                <viewController title="Photo" hidesBottomBarWhenPushed="YES" id="l90-Fa-Jxu" customClass="PhotoViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" title="Photo" hidesBottomBarWhenPushed="YES" id="l90-Fa-Jxu" customClass="PhotoViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ep-nh-8RP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,11 +94,269 @@
             </objects>
             <point key="canvasLocation" x="-359.19999999999999" y="-89.505247376311857"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="OeM-Tt-eXA">
+            <objects>
+                <viewController storyboardIdentifier="CollageViewController" title="Collage" hidesBottomBarWhenPushed="YES" id="Jbt-zZ-HR4" customClass="CollageViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dCz-nM-q1J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOM-lR-Uce" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="20" y="601" width="335" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Pc0-2L-jRa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <state key="normal" title="Save changes">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveTapped" destination="Jbt-zZ-HR4" eventType="touchUpInside" id="aI9-Vz-9os"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qPE-u8-9JQ">
+                                <rect key="frame" x="0.0" y="149" width="375" height="422"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3i-sI-NBW">
+                                        <rect key="frame" x="0.0" y="29.5" width="187.5" height="363"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqL-5j-nKw">
+                                                <rect key="frame" x="1" y="1" width="185.5" height="361"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MKb-xN-Eaw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185.5" height="361"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="MKb-xN-Eaw" secondAttribute="trailing" id="27v-LP-vbC"/>
+                                                    <constraint firstItem="MKb-xN-Eaw" firstAttribute="leading" secondItem="AqL-5j-nKw" secondAttribute="leading" id="4jP-GP-0Ux"/>
+                                                    <constraint firstItem="MKb-xN-Eaw" firstAttribute="top" secondItem="AqL-5j-nKw" secondAttribute="top" id="5RO-eC-8Y4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="MKb-xN-Eaw" secondAttribute="bottom" id="iG4-Qe-v2N"/>
+                                                </constraints>
+                                            </scrollView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-gC-V3C">
+                                                <rect key="frame" x="64" y="156" width="60" height="51"/>
+                                                <state key="normal" image="cloudComputing"/>
+                                                <connections>
+                                                    <action selector="addLeftImageTapped" destination="Jbt-zZ-HR4" eventType="touchUpInside" id="nzr-TE-brW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96071070432662964" green="0.96082574129104614" blue="0.96067160367965698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ybv-gC-V3C" firstAttribute="centerX" secondItem="G3i-sI-NBW" secondAttribute="centerX" id="3SR-lq-AYN"/>
+                                            <constraint firstItem="AqL-5j-nKw" firstAttribute="leading" secondItem="G3i-sI-NBW" secondAttribute="leading" constant="1" id="6XQ-19-OCQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="AqL-5j-nKw" secondAttribute="bottom" constant="1" id="G5J-GD-ELa"/>
+                                            <constraint firstItem="MKb-xN-Eaw" firstAttribute="height" secondItem="G3i-sI-NBW" secondAttribute="height" priority="250" constant="-2" id="PGs-kc-Rba"/>
+                                            <constraint firstItem="AqL-5j-nKw" firstAttribute="top" secondItem="G3i-sI-NBW" secondAttribute="top" constant="1" id="V4y-q5-Z8W"/>
+                                            <constraint firstAttribute="trailing" secondItem="AqL-5j-nKw" secondAttribute="trailing" constant="1" id="ZVi-0T-bee"/>
+                                            <constraint firstItem="MKb-xN-Eaw" firstAttribute="width" secondItem="G3i-sI-NBW" secondAttribute="width" priority="250" constant="-2" id="fhq-EB-9fk"/>
+                                            <constraint firstAttribute="height" constant="363" id="iXR-ve-sig"/>
+                                            <constraint firstItem="ybv-gC-V3C" firstAttribute="centerY" secondItem="G3i-sI-NBW" secondAttribute="centerY" id="x1h-Lp-Bq6"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILl-WD-rBE">
+                                        <rect key="frame" x="187.5" y="29.5" width="187.5" height="363"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCX-mr-Tnu">
+                                                <rect key="frame" x="1" y="1" width="185.5" height="361"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hli-b6-YaQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185.5" height="361"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Hli-b6-YaQ" secondAttribute="bottom" id="2Ay-sh-LVH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Hli-b6-YaQ" secondAttribute="trailing" id="VPf-hr-Km6"/>
+                                                    <constraint firstItem="Hli-b6-YaQ" firstAttribute="leading" secondItem="MCX-mr-Tnu" secondAttribute="leading" id="goI-vC-8gS"/>
+                                                    <constraint firstItem="Hli-b6-YaQ" firstAttribute="top" secondItem="MCX-mr-Tnu" secondAttribute="top" id="iFb-N8-P7G"/>
+                                                </constraints>
+                                            </scrollView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwJ-jp-4Dv">
+                                                <rect key="frame" x="64" y="156" width="60" height="51"/>
+                                                <state key="normal" image="cloudComputing"/>
+                                                <connections>
+                                                    <action selector="addRightImageTapped" destination="Jbt-zZ-HR4" eventType="touchUpInside" id="nNX-Dg-cP7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96071070432662964" green="0.96082574129104614" blue="0.96067160367965698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Hli-b6-YaQ" firstAttribute="width" secondItem="ILl-WD-rBE" secondAttribute="width" priority="250" constant="-2" id="8Yo-Eu-S77"/>
+                                            <constraint firstAttribute="trailing" secondItem="MCX-mr-Tnu" secondAttribute="trailing" constant="1" id="GEt-oO-o5j"/>
+                                            <constraint firstItem="Hli-b6-YaQ" firstAttribute="height" secondItem="ILl-WD-rBE" secondAttribute="height" priority="250" constant="-2" id="RCc-A2-tpj"/>
+                                            <constraint firstItem="MCX-mr-Tnu" firstAttribute="leading" secondItem="ILl-WD-rBE" secondAttribute="leading" constant="1" id="ZSm-3W-qay"/>
+                                            <constraint firstItem="QwJ-jp-4Dv" firstAttribute="centerY" secondItem="ILl-WD-rBE" secondAttribute="centerY" id="aVT-D7-M71"/>
+                                            <constraint firstItem="QwJ-jp-4Dv" firstAttribute="centerX" secondItem="ILl-WD-rBE" secondAttribute="centerX" id="mvU-2i-EIg"/>
+                                            <constraint firstItem="MCX-mr-Tnu" firstAttribute="top" secondItem="ILl-WD-rBE" secondAttribute="top" constant="1" id="uW5-2E-SA0"/>
+                                            <constraint firstAttribute="bottom" secondItem="MCX-mr-Tnu" secondAttribute="bottom" constant="1" id="zvy-kK-geh"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ILl-WD-rBE" firstAttribute="width" secondItem="G3i-sI-NBW" secondAttribute="width" id="gZ8-zP-rBt"/>
+                                    <constraint firstItem="G3i-sI-NBW" firstAttribute="height" secondItem="ILl-WD-rBE" secondAttribute="height" id="uxe-Rx-RdG"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="z0J-Dz-dJA">
+                                <rect key="frame" x="30" y="84" width="315" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWK-VV-ZON" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="9dI-g3-xwQ"/>
+                                            <constraint firstAttribute="width" constant="35" id="Wp9-Jb-e6L"/>
+                                        </constraints>
+                                        <state key="normal" image="rotateRight"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="rotateLeftImageRightTapped" destination="Jbt-zZ-HR4" eventType="touchUpInside" id="QLe-x1-4fY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kc-7K-U1d" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="93.5" y="0.0" width="35" height="35"/>
+                                        <state key="normal" image="rotateLeft"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="rotateLeftImageLeftTapped" destination="Jbt-zZ-HR4" eventType="touchUpInside" id="sPP-dD-6X4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Haa-eb-A75" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="186.5" y="0.0" width="35" height="35"/>
+                                        <state key="normal" image="rotateRight"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="rotateRightImageRightTapped" destination="Jbt-zZ-HR4" eventType="touchUpInside" id="wI5-wW-qxN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mz-4Z-PuB" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="280" y="0.0" width="35" height="35"/>
+                                        <state key="normal" image="rotateLeft"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="rotateRightImageLeftTapped" destination="Jbt-zZ-HR4" eventType="touchUpInside" id="qEA-vB-kcC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Haa-eb-A75" firstAttribute="width" secondItem="1Kc-7K-U1d" secondAttribute="width" id="6bH-rK-bgb"/>
+                                    <constraint firstItem="3mz-4Z-PuB" firstAttribute="width" secondItem="Haa-eb-A75" secondAttribute="width" id="IM1-UV-peB"/>
+                                    <constraint firstItem="1Kc-7K-U1d" firstAttribute="width" secondItem="cWK-VV-ZON" secondAttribute="width" id="xaL-xt-xxY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u9v-wH-DQ9" firstAttribute="trailing" secondItem="bOM-lR-Uce" secondAttribute="trailing" constant="20" id="5bm-sN-C9f"/>
+                            <constraint firstItem="u9v-wH-DQ9" firstAttribute="bottom" secondItem="bOM-lR-Uce" secondAttribute="bottom" constant="30" id="AXy-7z-Mlh"/>
+                            <constraint firstItem="G3i-sI-NBW" firstAttribute="width" secondItem="dCz-nM-q1J" secondAttribute="width" multiplier="0.5" id="Chj-zm-GWI"/>
+                            <constraint firstItem="bOM-lR-Uce" firstAttribute="top" secondItem="qPE-u8-9JQ" secondAttribute="bottom" constant="30" id="Gka-tI-PPM"/>
+                            <constraint firstItem="z0J-Dz-dJA" firstAttribute="top" secondItem="u9v-wH-DQ9" secondAttribute="top" constant="20" id="Jnn-ad-vI5"/>
+                            <constraint firstItem="bOM-lR-Uce" firstAttribute="leading" secondItem="u9v-wH-DQ9" secondAttribute="leading" constant="20" id="iRc-5u-d0v"/>
+                            <constraint firstItem="qPE-u8-9JQ" firstAttribute="top" secondItem="z0J-Dz-dJA" secondAttribute="bottom" constant="30" id="jnW-P0-GJG"/>
+                            <constraint firstItem="qPE-u8-9JQ" firstAttribute="leading" secondItem="u9v-wH-DQ9" secondAttribute="leading" id="u4B-di-8iH"/>
+                            <constraint firstAttribute="trailing" secondItem="qPE-u8-9JQ" secondAttribute="trailing" id="y2o-B1-P65"/>
+                            <constraint firstItem="z0J-Dz-dJA" firstAttribute="leading" secondItem="u9v-wH-DQ9" secondAttribute="leading" constant="30" id="yb7-41-Ikk"/>
+                            <constraint firstItem="u9v-wH-DQ9" firstAttribute="trailing" secondItem="z0J-Dz-dJA" secondAttribute="trailing" constant="30" id="yhL-wN-X1s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u9v-wH-DQ9"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="addLeftImageButton" destination="ybv-gC-V3C" id="V5v-Oo-MEv"/>
+                        <outlet property="addRightImageButton" destination="QwJ-jp-4Dv" id="bef-Xh-Krb"/>
+                        <outlet property="collageViewContainerStackView" destination="qPE-u8-9JQ" id="F5L-Hm-7CG"/>
+                        <outlet property="leftImageView" destination="MKb-xN-Eaw" id="sHZ-fT-6g2"/>
+                        <outlet property="leftImageViewBottomConstraint" destination="iG4-Qe-v2N" id="xrO-ts-rmz"/>
+                        <outlet property="leftImageViewLeadingConstraint" destination="4jP-GP-0Ux" id="CTz-wp-7cA"/>
+                        <outlet property="leftImageViewTopConstraint" destination="5RO-eC-8Y4" id="2f9-se-eIh"/>
+                        <outlet property="leftImageViewTrailingConstraint" destination="27v-LP-vbC" id="x27-1P-2HB"/>
+                        <outlet property="leftScrollView" destination="AqL-5j-nKw" id="KC5-9l-fPF"/>
+                        <outlet property="rightImageView" destination="Hli-b6-YaQ" id="aDJ-SR-hWa"/>
+                        <outlet property="rightImageViewBottomConstraint" destination="2Ay-sh-LVH" id="HCP-rs-NZi"/>
+                        <outlet property="rightImageViewLeadingConstraint" destination="goI-vC-8gS" id="t6J-Ts-FrW"/>
+                        <outlet property="rightImageViewTopConstraint" destination="iFb-N8-P7G" id="gXO-7G-2uy"/>
+                        <outlet property="rightImageViewTrailingConstraint" destination="VPf-hr-Km6" id="8eO-uE-dwl"/>
+                        <outlet property="rightScrollView" destination="MCX-mr-Tnu" id="0jX-Xr-eQM"/>
+                        <outlet property="saveButton" destination="bOM-lR-Uce" id="dfU-ha-TG9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHS-po-ASL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="hUs-wT-hhY" customClass="CollageInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Jbt-zZ-HR4" id="ryN-QP-t2C"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="504.80000000000001" y="-90.404797601199405"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3Te-HL-wwX">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" title="Timer" hidesBottomBarWhenPushed="YES" id="QOH-kH-2Qg" customClass="TimerViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hIU-9c-rIc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Z0d-Az-SBe"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPo-6G-KhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="L2I-So-dBZ" customClass="TimerInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="QOH-kH-2Qg" id="1ID-7F-c4M"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1447" y="-90"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZWd-eR-wtP">
+            <objects>
+                <viewController storyboardIdentifier="MusicPlayerViewController" title="Player" id="aQk-0B-Wyy" customClass="MusicPlayerViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="teJ-L3-wHH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rfc-xD-wTF"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DS3-aM-GgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="xvp-bQ-QDY" customClass="MusicPlayerInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="aQk-0B-Wyy" id="Mzh-TF-3xJ"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2345" y="-90"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cloudComputing" width="60" height="51"/>
         <image name="collageWhite" width="26" height="26"/>
         <image name="makePhoto" width="26" height="26"/>
         <image name="photoGuides" width="376" height="85"/>
+        <image name="rotateLeft" width="22" height="20.5"/>
+        <image name="rotateRight" width="22" height="20.5"/>
         <image name="timerButtonSmall" width="26" height="26"/>
     </resources>
 </document>
