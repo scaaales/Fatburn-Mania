@@ -73,6 +73,7 @@
 		B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394CE21DF827F00D6013F /* TutorialViewController.swift */; };
 		B33394D121DF915F00D6013F /* LoginStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33394D021DF915F00D6013F /* LoginStack.storyboard */; };
 		B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394D221DFA9D300D6013F /* TutorialCell.swift */; };
+		B35E620F21F1F651001CB678 /* UIImageView+rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */; };
 		B369573521D4E30C00735555 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B369573421D4E30C00735555 /* HealthKit.framework */; };
 		B369573721D4E40500735555 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573621D4E40500735555 /* HealthKitService.swift */; };
 		B369573C21D514DF00735555 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573B21D514DF00735555 /* Date+extension.swift */; };
@@ -241,6 +242,7 @@
 		B33394CE21DF827F00D6013F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		B33394D021DF915F00D6013F /* LoginStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStack.storyboard; sourceTree = "<group>"; };
 		B33394D221DFA9D300D6013F /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
+		B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+rotate.swift"; sourceTree = "<group>"; };
 		B369573321D4E30C00735555 /* Fitness App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fitness App.entitlements"; sourceTree = "<group>"; };
 		B369573421D4E30C00735555 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B369573621D4E40500735555 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
@@ -748,6 +750,7 @@
 				B33394BF21DF655F00D6013F /* UIViewController+extension.swift */,
 				B30E9F8121EC9BE2006F33CE /* UITableView+resizable.swift */,
 				B30E9F7F21EC9701006F33CE /* UIView+cornerRadius.swift */,
+				B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */,
 				B30E9F7C21EC95BD006F33CE /* Integer+formatted.swift */,
 			);
 			path = Extensions;
@@ -1573,6 +1576,7 @@
 				B3DC1B6821EDDACD00883C0F /* EditProfileDataCell.swift in Sources */,
 				B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
+				B35E620F21F1F651001CB678 /* UIImageView+rotate.swift in Sources */,
 				B3DC1B7521EE29CC00883C0F /* TextViewHelperView.swift in Sources */,
 				B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */,
 				B33394C021DF655F00D6013F /* UIViewController+extension.swift in Sources */,

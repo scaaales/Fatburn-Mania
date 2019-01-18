@@ -29,7 +29,10 @@ class CollageViewController: UIViewController {
 	@IBOutlet private weak var rightImageViewTopConstraint: NSLayoutConstraint!
 	@IBOutlet private weak var rightImageViewTrailingConstraint: NSLayoutConstraint!
 	
-	@IBOutlet weak var collageViewContainerStackView: UIStackView!
+	@IBOutlet private weak var collageViewContainerStackView: UIStackView!
+	
+	private var leftImageRotationAngle: CGFloat = 0
+	private var rightImageRotationAngle: CGFloat = 0
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -54,19 +57,27 @@ class CollageViewController: UIViewController {
 	}
 	
 	@IBAction private func rotateLeftImageLeftTapped() {
-		
+		guard leftImageView.image != nil else { return }
+		let rotationAngle = -CGFloat.pi / 2
+		rotate(imageView: leftImageView, by: rotationAngle, oldAngle: &leftImageRotationAngle)
 	}
 	
 	@IBAction private func rotateLeftImageRightTapped() {
-		
+		guard leftImageView.image != nil else { return }
+		let rotationAngle = CGFloat.pi / 2
+		rotate(imageView: leftImageView, by: rotationAngle, oldAngle: &leftImageRotationAngle)
 	}
 	
 	@IBAction private func rotateRightImageLeftTapped() {
-		
+		guard rightImageView.image != nil else { return }
+		let rotationAngle = -CGFloat.pi / 2
+		rotate(imageView: rightImageView, by: rotationAngle, oldAngle: &rightImageRotationAngle)
 	}
 	
 	@IBAction private func rotateRightImageRightTapped() {
-		
+		guard rightImageView.image != nil else { return }
+		let rotationAngle = CGFloat.pi / 2
+		rotate(imageView: rightImageView, by: rotationAngle, oldAngle: &rightImageRotationAngle)
 	}
 	
 	@IBAction private func saveTapped() {
@@ -114,6 +125,21 @@ class CollageViewController: UIViewController {
 		updateMinZoomScaleForSize(rightScrollViewContrainer.bounds.size,
 								  imageView: rightImageView,
 								  scrollView: rightScrollView)
+	}
+	
+	private func normalizeAngle(_ angle: inout CGFloat) {
+		if angle <= -CGFloat.pi * 2 {
+			angle += CGFloat.pi * 2
+		} else if angle >= CGFloat.pi * 2 {
+			angle -= CGFloat.pi * 2
+		}
+	}
+	
+	private func rotate(imageView: UIImageView, by angle: CGFloat, oldAngle: inout CGFloat) {
+		oldAngle += angle
+		normalizeAngle(&oldAngle)
+		imageView.rotateImageToAngle(angle: oldAngle)
+		imageView.bounds.size = imageView.image!.size
 	}
 	
 }
