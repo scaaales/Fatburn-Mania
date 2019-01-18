@@ -6,6 +6,12 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
+import UIKit
+
 protocol TimerView: View {
-	
+	func setTableViewDataSource(_ dataSource: UITableViewDataSource)
+	func addRowAtTheTop()
+	func setTotalTime(_ time: String)
+	func setLapTime(_ time: String)
+	func setLapNumber(_ number: Int)
 }

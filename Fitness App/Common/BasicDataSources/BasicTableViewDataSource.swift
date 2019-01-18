@@ -10,7 +10,7 @@ import UIKit
 
 class BasicTableViewDataSource<CellType: UITableViewCell, DataType>: NSObject, UITableViewDataSource where CellType: ConfigurableCell, CellType.DataType == DataType {
 	
-	private let sections: [[DataType]]
+	private var sections: [[DataType]]
 	
 	convenience init(items: [DataType]) {
 		self.init(sections: [items])
@@ -42,4 +42,9 @@ class BasicTableViewDataSource<CellType: UITableViewCell, DataType>: NSObject, U
 	func getItemAtIndex(_ index: Int, in section: Int = 0) -> DataType {
 		return sections[section][index]
 	}
+	
+	func addItem(_ item: DataType, at index: Int) {
+		sections[0].insert(item, at: index)
+	}
+	
 }

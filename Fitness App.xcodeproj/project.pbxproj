@@ -40,6 +40,8 @@
 		B30E9F9F21ECDAC4006F33CE /* CoinsHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F9E21ECDAC4006F33CE /* CoinsHistoryCell.swift */; };
 		B30E9FA221ECDB1B006F33CE /* CoinsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9FA121ECDB1B006F33CE /* CoinsHistory.swift */; };
 		B30E9FA521ECE290006F33CE /* CoinsHistoryTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9FA421ECE290006F33CE /* CoinsHistoryTableViewModel.swift */; };
+		B30F287A21F2342D000954DB /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F287921F2342D000954DB /* TimerService.swift */; };
+		B30F287C21F237DF000954DB /* TimeInterval+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F287B21F237DF000954DB /* TimeInterval+extension.swift */; };
 		B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */; };
 		B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1021D3E7CD00F99F91 /* LaunchScreen.storyboard */; };
 		B3254F3821D3E7CE00F99F91 /* DiaryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */; };
@@ -74,6 +76,8 @@
 		B33394D121DF915F00D6013F /* LoginStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33394D021DF915F00D6013F /* LoginStack.storyboard */; };
 		B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394D221DFA9D300D6013F /* TutorialCell.swift */; };
 		B35E620F21F1F651001CB678 /* UIImageView+rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */; };
+		B35E621121F21298001CB678 /* BottomRoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */; };
+		B35E621321F2231C001CB678 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E621221F2231C001CB678 /* TimerCell.swift */; };
 		B369573521D4E30C00735555 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B369573421D4E30C00735555 /* HealthKit.framework */; };
 		B369573721D4E40500735555 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573621D4E40500735555 /* HealthKitService.swift */; };
 		B369573C21D514DF00735555 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573B21D514DF00735555 /* Date+extension.swift */; };
@@ -207,6 +211,8 @@
 		B30E9F9E21ECDAC4006F33CE /* CoinsHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryCell.swift; sourceTree = "<group>"; };
 		B30E9FA121ECDB1B006F33CE /* CoinsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistory.swift; sourceTree = "<group>"; };
 		B30E9FA421ECE290006F33CE /* CoinsHistoryTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryTableViewModel.swift; sourceTree = "<group>"; };
+		B30F287921F2342D000954DB /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
+		B30F287B21F237DF000954DB /* TimeInterval+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+extension.swift"; sourceTree = "<group>"; };
 		B3254DCB21D3DD5C00F99F91 /* Fitness App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3254DDA21D3DD6800F99F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,6 +249,8 @@
 		B33394D021DF915F00D6013F /* LoginStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStack.storyboard; sourceTree = "<group>"; };
 		B33394D221DFA9D300D6013F /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
 		B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+rotate.swift"; sourceTree = "<group>"; };
+		B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRoundedShadowView.swift; sourceTree = "<group>"; };
+		B35E621221F2231C001CB678 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		B369573321D4E30C00735555 /* Fitness App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fitness App.entitlements"; sourceTree = "<group>"; };
 		B369573421D4E30C00735555 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B369573621D4E40500735555 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
@@ -440,6 +448,7 @@
 				B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */,
 				B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */,
 				B3839C6021F0DA6D00BD27E0 /* ImageCreator.swift */,
+				B30F287921F2342D000954DB /* TimerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -744,6 +753,7 @@
 			children = (
 				B33394C821DF734200D6013F /* UIColor */,
 				B369573B21D514DF00735555 /* Date+extension.swift */,
+				B30F287B21F237DF000954DB /* TimeInterval+extension.swift */,
 				B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */,
 				B36B2F7321DE148600C5D07B /* String+constants.swift */,
 				B36B2F7621DE15DE00C5D07B /* UIStoryboard+extension.swift */,
@@ -897,6 +907,7 @@
 				B3254F3221D3E7CE00F99F91 /* RoundButton.swift */,
 				B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */,
 				B3DC1B6B21EDF29A00883C0F /* RoundImageViewWithShadow.swift */,
+				B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1101,6 +1112,7 @@
 			children = (
 				B3D737E321EF772E00DDF602 /* TimerView.swift */,
 				B3D737E221EF772E00DDF602 /* TimerViewController.swift */,
+				B35E621221F2231C001CB678 /* TimerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1565,6 +1577,7 @@
 				B3D737E621EF772E00DDF602 /* TimerViewController.swift in Sources */,
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
 				B3F732AC21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift in Sources */,
+				B35E621121F21298001CB678 /* BottomRoundedShadowView.swift in Sources */,
 				B39D477A21E628F800D5C050 /* ProfileButtonsCell.swift in Sources */,
 				B36B2F7721DE15DE00C5D07B /* UIStoryboard+extension.swift in Sources */,
 				B37CBA1721DE649500834A98 /* LoginInitializer.swift in Sources */,
@@ -1577,10 +1590,12 @@
 				B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
 				B35E620F21F1F651001CB678 /* UIImageView+rotate.swift in Sources */,
+				B30F287C21F237DF000954DB /* TimeInterval+extension.swift in Sources */,
 				B3DC1B7521EE29CC00883C0F /* TextViewHelperView.swift in Sources */,
 				B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */,
 				B33394C021DF655F00D6013F /* UIViewController+extension.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
+				B30F287A21F2342D000954DB /* TimerService.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* DiaryTableViewModel.swift in Sources */,
 				B3DC1B6A21EDECD700883C0F /* EditProfileTableViewModel.swift in Sources */,
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
@@ -1597,6 +1612,7 @@
 				B3FBA16721EF343800B88AA3 /* PhotoView.swift in Sources */,
 				B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */,
 				B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */,
+				B35E621321F2231C001CB678 /* TimerCell.swift in Sources */,
 				B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B30E9F8A21ECBEF5006F33CE /* ProductDetailPresenter.swift in Sources */,
