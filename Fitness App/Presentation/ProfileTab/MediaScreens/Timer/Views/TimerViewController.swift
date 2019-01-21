@@ -16,6 +16,12 @@ class TimerViewController: UIViewController {
 	@IBOutlet private weak var lapTimeLabel: UILabel!
 	@IBOutlet private weak var tableView: UITableView!
 	
+	@IBOutlet private weak var restButton: UIButton!
+	@IBOutlet private weak var lapButton: UIButton!
+	@IBOutlet private weak var startButton: UIButton!
+	@IBOutlet private weak var continueButton: UIButton!
+	@IBOutlet private weak var resetButton: UIButton!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -75,6 +81,26 @@ extension TimerViewController: TimerView {
 		totalTimeLabel.text = .timerStartTime
 		lapTimeLabel.text = .timerStartTime
 		lapNumberLabel.text = "Lap time"
+	}
+	
+	func setRestButton(enabled: Bool) {
+		restButton.setEnabled(enabled)
+	}
+	
+	func setLapButton(enabled: Bool) {
+		lapButton.setEnabled(enabled)
+	}
+	
+	func setStartButton(enabled: Bool) {
+		startButton.setEnabled(enabled)
+	}
+	
+	func setContinueButton(enabled: Bool) {
+		continueButton.setEnabled(enabled)
+	}
+	
+	func setResetButton(enabled: Bool) {
+		resetButton.setEnabled(enabled)
 	}
 	
 }

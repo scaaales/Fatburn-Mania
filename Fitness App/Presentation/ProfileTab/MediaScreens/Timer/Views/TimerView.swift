@@ -15,4 +15,10 @@ protocol TimerView: View {
 	func setLapTime(_ time: String)
 	func setLapNumber(_ number: Int)
 	func setInitialViewState()
+	
+	func setRestButton(enabled: Bool)
+	func setLapButton(enabled: Bool)
+	func setStartButton(enabled: Bool)
+	func setContinueButton(enabled: Bool)
+	func setResetButton(enabled: Bool)
 }
