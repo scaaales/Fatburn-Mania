@@ -314,10 +314,218 @@
                     <view key="view" contentMode="scaleToFill" id="hIU-9c-rIc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aP5-rc-8Is" customClass="BottomRoundedShadowView" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="224"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxE-xf-l3g">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="JYR-dP-Oko"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
+                                        <color key="textColor" red="0.27413889765739441" green="0.56233227252960205" blue="0.7996256947517395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lap time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4P-y7-xci">
+                                        <rect key="frame" x="155" y="120" width="65.5" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="xm5-B7-jvD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV8-eF-n5l">
+                                        <rect key="frame" x="0.0" y="147" width="375" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="eho-4w-OID"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
+                                        <color key="textColor" red="0.27413889765739441" green="0.56233227252960205" blue="0.7996256947517395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUX-dr-hfs">
+                                        <rect key="frame" x="151" y="23" width="73.5" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="5XX-kH-WX2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wV8-eF-n5l" firstAttribute="top" secondItem="K4P-y7-xci" secondAttribute="bottom" constant="10" id="3s3-vp-XMA"/>
+                                    <constraint firstAttribute="trailing" secondItem="wV8-eF-n5l" secondAttribute="trailing" id="CLH-cg-ETj"/>
+                                    <constraint firstItem="wV8-eF-n5l" firstAttribute="centerX" secondItem="aP5-rc-8Is" secondAttribute="centerX" id="CNA-qb-fcC"/>
+                                    <constraint firstAttribute="height" constant="224" id="FaG-vb-kww"/>
+                                    <constraint firstItem="wV8-eF-n5l" firstAttribute="leading" secondItem="aP5-rc-8Is" secondAttribute="leading" id="I7d-DM-lid"/>
+                                    <constraint firstItem="zxE-xf-l3g" firstAttribute="leading" secondItem="aP5-rc-8Is" secondAttribute="leading" id="SY1-0U-KWn"/>
+                                    <constraint firstItem="K4P-y7-xci" firstAttribute="top" secondItem="zxE-xf-l3g" secondAttribute="bottom" constant="14" id="U0W-Kc-lb7"/>
+                                    <constraint firstItem="zxE-xf-l3g" firstAttribute="top" secondItem="MUX-dr-hfs" secondAttribute="bottom" constant="10" id="Wep-5U-wlm"/>
+                                    <constraint firstItem="MUX-dr-hfs" firstAttribute="centerX" secondItem="zxE-xf-l3g" secondAttribute="centerX" id="XzL-L8-MPb"/>
+                                    <constraint firstAttribute="trailing" secondItem="zxE-xf-l3g" secondAttribute="trailing" id="no5-Wj-bzu"/>
+                                    <constraint firstItem="K4P-y7-xci" firstAttribute="centerX" secondItem="wV8-eF-n5l" secondAttribute="centerX" id="pmv-fk-5VM"/>
+                                    <constraint firstItem="zxE-xf-l3g" firstAttribute="centerX" secondItem="K4P-y7-xci" secondAttribute="centerX" id="rae-Ve-0Sc"/>
+                                    <constraint firstAttribute="bottom" secondItem="wV8-eF-n5l" secondAttribute="bottom" constant="21" id="v5e-eb-Ynb"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYV-QI-3aN" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="60" y="318" width="73" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="RaD-12-WIr"/>
+                                    <constraint firstAttribute="height" constant="73" id="og4-0f-fns"/>
+                                </constraints>
+                                <state key="normal" title="Rest">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="restTapped" destination="QOH-kH-2Qg" eventType="touchUpInside" id="GeT-TH-N5P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvr-7n-OVB" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="242" y="318" width="73" height="73"/>
+                                <state key="normal" title="Lap">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="lapTapped" destination="QOH-kH-2Qg" eventType="touchUpInside" id="GTT-QD-S8T"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BrR-bk-crW">
+                                <rect key="frame" x="20" y="421" width="335" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nR-60-UUV" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="startTapped" destination="QOH-kH-2Qg" eventType="touchUpInside" id="Vx6-LZ-Twk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSw-97-J7q" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="115" y="0.0" width="105" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueTapped" destination="QOH-kH-2Qg" eventType="touchUpInside" id="d74-2u-EE3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtb-9H-vn0" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="230" y="0.0" width="105" height="27"/>
+                                        <color key="backgroundColor" red="0.96154898405075073" green="0.32230496406555176" blue="0.323261559009552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="resetTapped" destination="QOH-kH-2Qg" eventType="touchUpInside" id="w8X-LN-tgM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="38" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="xoi-Px-f3n">
+                                <rect key="frame" x="0.0" y="468" width="375" height="199"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimerCell" id="wWY-KA-aKq" customClass="TimerCell" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="38"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wWY-KA-aKq" id="P16-AW-jAj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYA-oa-HA9">
+                                                    <rect key="frame" x="20" y="9" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h5-NJ-TIC">
+                                                    <rect key="frame" x="313" y="9" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="2h5-NJ-TIC" secondAttribute="bottom" constant="8" id="6Ga-8M-22b"/>
+                                                <constraint firstAttribute="trailing" secondItem="2h5-NJ-TIC" secondAttribute="trailing" constant="20" id="P7n-pc-McR"/>
+                                                <constraint firstItem="iYA-oa-HA9" firstAttribute="leading" secondItem="P16-AW-jAj" secondAttribute="leading" constant="20" id="QUA-Pa-eGg"/>
+                                                <constraint firstAttribute="bottom" secondItem="iYA-oa-HA9" secondAttribute="bottom" constant="8" id="oAm-Yc-kVE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timeLabel" destination="2h5-NJ-TIC" id="sQ4-n9-Kz6"/>
+                                            <outlet property="titleTextLabel" destination="iYA-oa-HA9" id="sp8-G4-dKT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aP5-rc-8Is" firstAttribute="leading" secondItem="Z0d-Az-SBe" secondAttribute="leading" id="9VJ-Us-oSW"/>
+                            <constraint firstItem="xoi-Px-f3n" firstAttribute="top" secondItem="BrR-bk-crW" secondAttribute="bottom" constant="20" id="FjX-sy-cM2"/>
+                            <constraint firstItem="Cvr-7n-OVB" firstAttribute="width" secondItem="vYV-QI-3aN" secondAttribute="width" id="JsW-95-t7h"/>
+                            <constraint firstItem="BrR-bk-crW" firstAttribute="leading" secondItem="Z0d-Az-SBe" secondAttribute="leading" constant="20" id="NcW-IW-Puj"/>
+                            <constraint firstItem="Z0d-Az-SBe" firstAttribute="trailing" secondItem="aP5-rc-8Is" secondAttribute="trailing" id="OKi-Ug-8Jv"/>
+                            <constraint firstItem="BrR-bk-crW" firstAttribute="top" secondItem="vYV-QI-3aN" secondAttribute="bottom" constant="30" id="PxR-Oh-bhr"/>
+                            <constraint firstItem="Z0d-Az-SBe" firstAttribute="bottom" secondItem="xoi-Px-f3n" secondAttribute="bottom" id="QbV-ls-0Zt"/>
+                            <constraint firstItem="vYV-QI-3aN" firstAttribute="top" secondItem="aP5-rc-8Is" secondAttribute="bottom" constant="30" id="Ra0-Kh-tEZ"/>
+                            <constraint firstItem="aP5-rc-8Is" firstAttribute="top" secondItem="Z0d-Az-SBe" secondAttribute="top" id="b4L-CR-pYn"/>
+                            <constraint firstItem="Z0d-Az-SBe" firstAttribute="trailing" secondItem="xoi-Px-f3n" secondAttribute="trailing" id="b7s-8I-d6R"/>
+                            <constraint firstItem="Cvr-7n-OVB" firstAttribute="top" secondItem="aP5-rc-8Is" secondAttribute="bottom" constant="30" id="beV-KN-uu2"/>
+                            <constraint firstItem="Z0d-Az-SBe" firstAttribute="trailing" secondItem="Cvr-7n-OVB" secondAttribute="trailing" constant="60" id="c20-Xr-SZr"/>
+                            <constraint firstItem="Z0d-Az-SBe" firstAttribute="trailing" secondItem="BrR-bk-crW" secondAttribute="trailing" constant="20" id="de8-qm-hPK"/>
+                            <constraint firstItem="Cvr-7n-OVB" firstAttribute="height" secondItem="vYV-QI-3aN" secondAttribute="height" id="hH6-Zk-cq5"/>
+                            <constraint firstItem="vYV-QI-3aN" firstAttribute="leading" secondItem="Z0d-Az-SBe" secondAttribute="leading" constant="60" id="lZr-XU-Npd"/>
+                            <constraint firstItem="xoi-Px-f3n" firstAttribute="leading" secondItem="Z0d-Az-SBe" secondAttribute="leading" id="zlQ-w5-trD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Z0d-Az-SBe"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="continueButton" destination="WSw-97-J7q" id="n8T-C9-xv0"/>
+                        <outlet property="lapButton" destination="Cvr-7n-OVB" id="95u-5e-VaR"/>
+                        <outlet property="lapNumberLabel" destination="K4P-y7-xci" id="7PA-Cv-vej"/>
+                        <outlet property="lapTimeLabel" destination="wV8-eF-n5l" id="7Ni-Aw-Gix"/>
+                        <outlet property="resetButton" destination="Gtb-9H-vn0" id="GVk-Sj-lYy"/>
+                        <outlet property="restButton" destination="vYV-QI-3aN" id="z7L-SN-RcO"/>
+                        <outlet property="startButton" destination="0nR-60-UUV" id="WgV-ow-hha"/>
+                        <outlet property="tableView" destination="xoi-Px-f3n" id="jhh-5C-8cJ"/>
+                        <outlet property="totalTimeLabel" destination="zxE-xf-l3g" id="uMQ-HQ-dBh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPo-6G-KhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="L2I-So-dBZ" customClass="TimerInitializer" customModule="Fitness_App" customModuleProvider="target">
@@ -326,7 +534,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1447" y="-90"/>
+            <point key="canvasLocation" x="1445.5999999999999" y="-90.404797601199405"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZWd-eR-wtP">

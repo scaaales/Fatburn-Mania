@@ -23,7 +23,7 @@ class ProductDetailViewController: UIViewController {
 	}
 	
 	private func setupImageView() {
-		let path = UIBezierPath(roundedRect: productImageView.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 20, height: 20))
+		let path = UIBezierPath(roundedRect: productImageView.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 30, height: 30))
 		let newMaskLayer = CAShapeLayer()
 		newMaskLayer.path = path.cgPath
 		productImageView.layer.mask = newMaskLayer

@@ -22,4 +22,8 @@ extension UIColor {
 		return .init(with: "fafafa")
 	}
 	
+	static var darkBlueColor: UIColor {
+		return .init(with: "1A5AC0")
+	}
+	
 }
