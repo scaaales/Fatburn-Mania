@@ -12,8 +12,15 @@ class MusicPlayerPresenter<V: MusicPlayerView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
+	private var viewModel: SongsTableViewModel!
 	
 	required init(view: View) {
 		self.view = view
+	}
+	
+	func getSongs() {
+		viewModel = .init()
+		view.setTableViewDataSource(viewModel.dataSource)
+		view.update()
 	}
 }
