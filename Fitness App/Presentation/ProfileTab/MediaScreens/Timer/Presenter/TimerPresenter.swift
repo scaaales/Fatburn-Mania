@@ -26,10 +26,12 @@ class TimerPresenter<V: TimerView>: Presenter {
 	}
 	
 	func startTimer() {
-		dataSource = .init(items: [])
-		view.setTableViewDataSource(dataSource)
+		resetTimer()
 		timer = TimerService(updateHandler: { [weak self] timeInterval in
 			self?.view.setTotalTime(timeInterval.stringFromTimeInterval)
+			}, lapHandler: { [weak self] timeInterval in
+				self?.prevLapTimeString = timeInterval.stringFromTimeInterval
+				self?.view.setLapTime(timeInterval.stringFromTimeInterval)
 		})
 		startNewLap()
 	}
@@ -42,11 +44,33 @@ class TimerPresenter<V: TimerView>: Presenter {
 		view.addRowAtTheTop()
 	}
 	
-	private func startNewLap() {
-		timer.startNewLap { [weak self] timeInterval in
-			self?.prevLapTimeString = timeInterval.stringFromTimeInterval
-			self?.view.setLapTime(timeInterval.stringFromTimeInterval)
+	func restTimer() {
+		timer.pause()
+	}
+	
+	func continueTimer() {
+		if let lastRestTimeInterval = timer.resume() {
+			let item = (title: "Rest", time: lastRestTimeInterval.stringFromTimeInterval)
+			dataSource.addItem(item, at: 0)
+			view.addRowAtTheTop()
 		}
+		
+	}
+	
+	func resetTimer() {
+		timer?.invalidate()
+		timer = nil
+		setupDataSource()
+		view.setInitialViewState()
+	}
+	
+	private func setupDataSource() {
+		dataSource = .init(items: [])
+		view.setTableViewDataSource(dataSource)
+	}
+	
+	private func startNewLap() {
+		timer.startNewLap()
 		numberOfLaps += 1
 	}
 }

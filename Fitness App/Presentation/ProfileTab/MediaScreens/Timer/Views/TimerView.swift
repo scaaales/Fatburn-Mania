@@ -14,4 +14,5 @@ protocol TimerView: View {
 	func setTotalTime(_ time: String)
 	func setLapTime(_ time: String)
 	func setLapNumber(_ number: Int)
+	func setInitialViewState()
 }

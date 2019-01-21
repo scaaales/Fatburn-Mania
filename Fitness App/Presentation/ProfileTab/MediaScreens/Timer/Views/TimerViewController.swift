@@ -24,7 +24,7 @@ class TimerViewController: UIViewController {
 	}
 	
 	@IBAction private func restTapped() {
-		
+		presenter.restTimer()
 	}
 	
 	@IBAction private func lapTapped() {
@@ -36,11 +36,11 @@ class TimerViewController: UIViewController {
 	}
 	
 	@IBAction private func continueTapped() {
-		
+		presenter.continueTimer()
 	}
 	
 	@IBAction private func resetTapped() {
-		
+		presenter.resetTimer()
 	}
 	
 }
@@ -69,6 +69,12 @@ extension TimerViewController: TimerView {
 		let nsNumber = NSNumber(integerLiteral: number)
 		guard let formattedNumber = numberFormatter.string(from: nsNumber) else { return }
 		lapNumberLabel.text = "Lap time (\(formattedNumber) lap)"
+	}
+	
+	func setInitialViewState() {
+		totalTimeLabel.text = .timerStartTime
+		lapTimeLabel.text = .timerStartTime
+		lapNumberLabel.text = "Lap time"
 	}
 	
 }
