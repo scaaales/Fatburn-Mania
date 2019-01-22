@@ -156,6 +156,10 @@
 		B3DC1B7021EE1B1F00883C0F /* EditProfileCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B6F21EE1B1F00883C0F /* EditProfileCellType.swift */; };
 		B3DC1B7321EE291000883C0F /* TextViewHelperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DC1B7221EE291000883C0F /* TextViewHelperView.xib */; };
 		B3DC1B7521EE29CC00883C0F /* TextViewHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B7421EE29CC00883C0F /* TextViewHelperView.swift */; };
+		B3EFDF4821F76E7D00A8F61F /* MeasureHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4421F76E7D00A8F61F /* MeasureHistoryPresenter.swift */; };
+		B3EFDF4921F76E7D00A8F61F /* MeasureHistoryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */; };
+		B3EFDF4A21F76E7D00A8F61F /* MeasureHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */; };
+		B3EFDF4B21F76E7D00A8F61F /* MeasureHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4721F76E7D00A8F61F /* MeasureHistoryView.swift */; };
 		B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7327F21E754840038ACB9 /* MainNavigationController.swift */; };
 		B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */; };
 		B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328821E765070038ACB9 /* HowToViewController.swift */; };
@@ -335,6 +339,10 @@
 		B3DC1B6F21EE1B1F00883C0F /* EditProfileCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCellType.swift; sourceTree = "<group>"; };
 		B3DC1B7221EE291000883C0F /* TextViewHelperView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewHelperView.xib; sourceTree = "<group>"; };
 		B3DC1B7421EE29CC00883C0F /* TextViewHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewHelperView.swift; sourceTree = "<group>"; };
+		B3EFDF4421F76E7D00A8F61F /* MeasureHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryPresenter.swift; sourceTree = "<group>"; };
+		B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryInitializer.swift; sourceTree = "<group>"; };
+		B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryViewController.swift; sourceTree = "<group>"; };
+		B3EFDF4721F76E7D00A8F61F /* MeasureHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryView.swift; sourceTree = "<group>"; };
 		B3F7327F21E754840038ACB9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		B3F7328821E765070038ACB9 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
@@ -796,6 +804,7 @@
 			children = (
 				B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */,
 				B3753C1D21D7A38D008A5D5A /* Diary */,
+				B3EFDF4321F76E5900A8F61F /* MeasureHistory */,
 			);
 			path = DiaryTab;
 			sourceTree = "<group>";
@@ -1211,6 +1220,33 @@
 			path = TextViewHelperView;
 			sourceTree = "<group>";
 		};
+		B3EFDF4321F76E5900A8F61F /* MeasureHistory */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFDF4C21F76E9300A8F61F /* Presenter */,
+				B3EFDF4D21F76E9900A8F61F /* Views */,
+				B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */,
+			);
+			path = MeasureHistory;
+			sourceTree = "<group>";
+		};
+		B3EFDF4C21F76E9300A8F61F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFDF4421F76E7D00A8F61F /* MeasureHistoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B3EFDF4D21F76E9900A8F61F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFDF4721F76E7D00A8F61F /* MeasureHistoryView.swift */,
+				B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B3F7328421E75E970038ACB9 /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1557,6 +1593,7 @@
 				B3028ADA21EF78FC00515CD8 /* MusicPlayerView.swift in Sources */,
 				B37CBA2321DE680900834A98 /* LoginViewController.swift in Sources */,
 				B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */,
+				B3EFDF4921F76E7D00A8F61F /* MeasureHistoryInitializer.swift in Sources */,
 				B39D475A21E5FC6E00D5C050 /* ProfileInitializer.swift in Sources */,
 				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
 				B3F7329E21E7851F0038ACB9 /* VideoLibraryCell.swift in Sources */,
@@ -1565,6 +1602,7 @@
 				B3F7329921E781190038ACB9 /* VideoLibraryViewController.swift in Sources */,
 				B33394C321DF6DB900D6013F /* LineTextField.swift in Sources */,
 				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
+				B3EFDF4B21F76E7D00A8F61F /* MeasureHistoryView.swift in Sources */,
 				B30E9F7021EC8D23006F33CE /* StoreView.swift in Sources */,
 				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
 				B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */,
@@ -1640,6 +1678,8 @@
 				B3FBA16721EF343800B88AA3 /* PhotoView.swift in Sources */,
 				B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */,
 				B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */,
+				B3EFDF4821F76E7D00A8F61F /* MeasureHistoryPresenter.swift in Sources */,
+				B3EFDF4A21F76E7D00A8F61F /* MeasureHistoryViewController.swift in Sources */,
 				B35E621321F2231C001CB678 /* TimerCell.swift in Sources */,
 				B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
