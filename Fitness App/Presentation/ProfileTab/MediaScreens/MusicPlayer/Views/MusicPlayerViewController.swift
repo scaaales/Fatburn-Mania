@@ -13,6 +13,8 @@ class MusicPlayerViewController: UIViewController {
 	
 	@IBOutlet private weak var tableView: UITableView!
 	@IBOutlet private weak var volumeSlider: UISlider!
+	@IBOutlet private weak var currentSongLabel: UILabel!
+	@IBOutlet private weak var playPauseButton: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,6 +30,27 @@ class MusicPlayerViewController: UIViewController {
 		tableView.backgroundColor = .white
 	}
 	
+	@IBAction private func prevTapped() {
+		
+	}
+	
+	@IBAction private func currentSongPlayPauseTapped() {
+		
+	}
+	
+	@IBAction private func nextTapped() {
+		
+	}
+	
+	@IBAction private func volumeSliderValueChanged() {
+		
+	}
+	
+	@IBAction private func playPauseTappedOnSong(_ sender: UIButton) {
+		let row = sender.tag
+		presenter.playSong(at: row)
+	}
+	
 }
 
 extension MusicPlayerViewController: MusicPlayerView {
@@ -37,6 +60,10 @@ extension MusicPlayerViewController: MusicPlayerView {
 	
 	func update() {
 		tableView.reloadData()
+	}
+	
+	func setCurrentSong(_ song: Song) {
+		currentSongLabel.text = "\(song.name) - \(song.artist)"
 	}
 }
 

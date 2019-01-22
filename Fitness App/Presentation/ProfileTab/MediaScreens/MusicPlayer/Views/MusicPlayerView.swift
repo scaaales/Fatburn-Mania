@@ -11,4 +11,5 @@ import UIKit
 protocol MusicPlayerView: View {
 	func update()
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource)
+	func setCurrentSong(_ song: Song)
 }

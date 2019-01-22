@@ -23,4 +23,10 @@ class MusicPlayerPresenter<V: MusicPlayerView>: Presenter {
 		view.setTableViewDataSource(viewModel.dataSource)
 		view.update()
 	}
+	
+	func playSong(at row: Int) {
+		let song = viewModel.getSongAt(index: row)
+		// some playing logic
+		view.setCurrentSong(song)
+	}
 }

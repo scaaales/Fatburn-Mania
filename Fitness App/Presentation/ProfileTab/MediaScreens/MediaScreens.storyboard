@@ -584,6 +584,9 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="playPauseTappedOnSong:" destination="aQk-0B-Wyy" eventType="touchUpInside" id="qc9-h5-jkC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -601,6 +604,7 @@
                                             <outlet property="artistLabel" destination="Fye-8A-lo6" id="iP2-oa-kSS"/>
                                             <outlet property="durationLabel" destination="kX2-md-RB0" id="NZ0-ly-h0e"/>
                                             <outlet property="nameLabel" destination="mUb-GY-mAj" id="90w-ro-3bp"/>
+                                            <outlet property="playPauseButton" destination="0lW-nn-7um" id="itg-zh-mUM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -624,6 +628,9 @@
                                             <constraint firstAttribute="height" constant="16" id="ipE-9P-7yC"/>
                                         </constraints>
                                         <state key="normal" image="prevSongIcon"/>
+                                        <connections>
+                                            <action selector="prevTapped" destination="aQk-0B-Wyy" eventType="touchUpInside" id="sjn-3C-qFe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGO-SI-c0b">
                                         <rect key="frame" x="70" y="10" width="25" height="28"/>
@@ -632,6 +639,9 @@
                                             <constraint firstAttribute="width" constant="25" id="MEd-aP-i0O"/>
                                         </constraints>
                                         <state key="normal" image="playSongImageBlack"/>
+                                        <connections>
+                                            <action selector="currentSongPlayPauseTapped" destination="aQk-0B-Wyy" eventType="touchUpInside" id="j89-v0-LMQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtA-0I-mOo">
                                         <rect key="frame" x="120" y="16" width="25" height="16"/>
@@ -640,6 +650,9 @@
                                             <constraint firstAttribute="height" constant="16" id="cpg-q5-fRY"/>
                                         </constraints>
                                         <state key="normal" image="nextSongIcon"/>
+                                        <connections>
+                                            <action selector="nextTapped" destination="aQk-0B-Wyy" eventType="touchUpInside" id="w5C-Am-nRu"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dug-aq-Frs">
                                         <rect key="frame" x="173" y="15" width="182" height="21"/>
@@ -652,6 +665,9 @@
                                         <color key="minimumTrackTintColor" red="0.9882352941176471" green="0.32156862745098036" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="volumeSliderValueChanged" destination="aQk-0B-Wyy" eventType="valueChanged" id="5lt-i4-1eL"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -690,6 +706,8 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="currentSongLabel" destination="dug-aq-Frs" id="O69-y1-Vcf"/>
+                        <outlet property="playPauseButton" destination="WGO-SI-c0b" id="PJk-EZ-m14"/>
                         <outlet property="tableView" destination="Cae-6o-LML" id="cLO-Hu-8RF"/>
                         <outlet property="volumeSlider" destination="ADP-0F-mtK" id="Z4n-Cd-kKo"/>
                     </connections>
