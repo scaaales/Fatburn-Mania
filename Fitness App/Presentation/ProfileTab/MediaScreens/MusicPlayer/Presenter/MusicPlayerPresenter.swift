@@ -12,8 +12,21 @@ class MusicPlayerPresenter<V: MusicPlayerView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
+	private var viewModel: SongsTableViewModel!
 	
 	required init(view: View) {
 		self.view = view
+	}
+	
+	func getSongs() {
+		viewModel = .init()
+		view.setTableViewDataSource(viewModel.dataSource)
+		view.update()
+	}
+	
+	func playSong(at row: Int) {
+		let song = viewModel.getSongAt(index: row)
+		// some playing logic
+		view.setCurrentSong(song)
 	}
 }

@@ -65,7 +65,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tg-bc-e0p">
                                                     <rect key="frame" x="20" y="1.5" width="44" height="44"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="9tg-bc-e0p" secondAttribute="height" multiplier="1:1" id="8VJ-Od-Xat"/>
+                                                        <constraint firstAttribute="width" constant="44" id="Glz-a1-mSm"/>
                                                         <constraint firstAttribute="height" constant="44" id="xUY-WS-Lvh"/>
                                                     </constraints>
                                                 </imageView>
@@ -90,7 +90,7 @@
                                                 <constraint firstItem="5LS-hd-xq0" firstAttribute="leading" secondItem="9tg-bc-e0p" secondAttribute="trailing" constant="20" id="VLq-1D-WTh"/>
                                                 <constraint firstItem="GGN-Y9-1zg" firstAttribute="centerY" secondItem="5LS-hd-xq0" secondAttribute="centerY" id="bpc-7P-5M7"/>
                                                 <constraint firstItem="5LS-hd-xq0" firstAttribute="centerY" secondItem="9tg-bc-e0p" secondAttribute="centerY" id="jqc-bX-3Jz"/>
-                                                <constraint firstAttribute="bottom" secondItem="9tg-bc-e0p" secondAttribute="bottom" constant="7.5" id="kI6-sC-5mk"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9tg-bc-e0p" secondAttribute="bottom" constant="7.5" id="kI6-sC-5mk"/>
                                                 <constraint firstItem="9tg-bc-e0p" firstAttribute="top" secondItem="dyV-Hb-m7X" secondAttribute="top" constant="1" id="wOC-ja-bnU"/>
                                             </constraints>
                                         </tableViewCellContentView>
