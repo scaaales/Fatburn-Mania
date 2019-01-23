@@ -10,19 +10,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Workout-->
+        <!--View Controller-->
         <scene sceneID="Nol-sk-Tre">
             <objects>
-                <viewController id="v7l-e3-QV8" sceneMemberID="viewController">
+                <viewController id="v7l-e3-QV8" customClass="WorkoutViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9yL-d5-3fl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohy-bC-2gT" customClass="BottomRoundedShadowView" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adH-20-5J5" customClass="CustomSegmentedControl" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="8" width="339" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="adH-20-5J5" secondAttribute="bottom" constant="8" id="3nu-RH-TvR"/>
+                                    <constraint firstAttribute="trailing" secondItem="adH-20-5J5" secondAttribute="trailing" constant="18" id="Obm-bO-bBc"/>
+                                    <constraint firstItem="adH-20-5J5" firstAttribute="leading" secondItem="Ohy-bC-2gT" secondAttribute="leading" constant="18" id="Uhk-vn-ehy"/>
+                                    <constraint firstItem="adH-20-5J5" firstAttribute="top" secondItem="Ohy-bC-2gT" secondAttribute="top" constant="8" id="dfj-nA-wFH"/>
+                                    <constraint firstAttribute="height" constant="56" id="hpy-ov-SeQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="drx-mH-I6J" firstAttribute="trailing" secondItem="Ohy-bC-2gT" secondAttribute="trailing" id="H88-ft-e2g"/>
+                            <constraint firstItem="Ohy-bC-2gT" firstAttribute="leading" secondItem="drx-mH-I6J" secondAttribute="leading" id="ssT-Bw-YHN"/>
+                            <constraint firstItem="Ohy-bC-2gT" firstAttribute="top" secondItem="drx-mH-I6J" secondAttribute="top" id="xlP-Pv-Mvx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="drx-mH-I6J"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Workout" id="ID5-Od-6Ho"/>
+                    <navigationItem key="navigationItem" title="Workout" id="ID5-Od-6Ho">
+                        <barButtonItem key="leftBarButtonItem" title="Seasons" id="Jfj-ZS-eG2">
+                            <color key="tintColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="workoutSeasonsSegments" destination="adH-20-5J5" id="tFO-Gk-QpN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XwV-XY-mtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="LER-Hx-xDe" customClass="WorkoutInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="v7l-e3-QV8" id="eGf-c0-hYf"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1180" y="-230.73463268365819"/>
         </scene>

@@ -111,6 +111,11 @@
 		B37CBA2321DE680900834A98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CBA2221DE680900834A98 /* LoginViewController.swift */; };
 		B3839C5F21F0827600BD27E0 /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */; };
 		B3839C6121F0DA6D00BD27E0 /* ImageCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3839C6021F0DA6D00BD27E0 /* ImageCreator.swift */; };
+		B38F17A121F87BEC00B70DBE /* WorkoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F179D21F87BEC00B70DBE /* WorkoutPresenter.swift */; };
+		B38F17A221F87BEC00B70DBE /* WorkoutInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F179E21F87BEC00B70DBE /* WorkoutInitializer.swift */; };
+		B38F17A321F87BEC00B70DBE /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F179F21F87BEC00B70DBE /* WorkoutViewController.swift */; };
+		B38F17A421F87BEC00B70DBE /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17A021F87BEC00B70DBE /* WorkoutView.swift */; };
+		B38F17A821F8848700B70DBE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17A721F8848700B70DBE /* CustomSegmentedControl.swift */; };
 		B39301CE21E4BD5A0071994A /* ResetPassrodInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301CD21E4BD5A0071994A /* ResetPassrodInitializer.swift */; };
 		B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */; };
 		B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D221E4BE9F0071994A /* ResetPasswordView.swift */; };
@@ -296,6 +301,11 @@
 		B37CBA2221DE680900834A98 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Fitness App/Presentation/LoginStack/Login/Views/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
 		B3839C6021F0DA6D00BD27E0 /* ImageCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCreator.swift; sourceTree = "<group>"; };
+		B38F179D21F87BEC00B70DBE /* WorkoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPresenter.swift; sourceTree = "<group>"; };
+		B38F179E21F87BEC00B70DBE /* WorkoutInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInitializer.swift; sourceTree = "<group>"; };
+		B38F179F21F87BEC00B70DBE /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		B38F17A021F87BEC00B70DBE /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		B38F17A721F8848700B70DBE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B39301CD21E4BD5A0071994A /* ResetPassrodInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResetPassrodInitializer.swift; path = ../ResetPassword/ResetPassrodInitializer.swift; sourceTree = "<group>"; };
 		B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		B39301D221E4BE9F0071994A /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -973,6 +983,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B38F179C21F87B7A00B70DBE /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				B38F17A621F87C8F00B70DBE /* Presenter */,
+				B38F17A521F87C7F00B70DBE /* Views */,
+				B38F179E21F87BEC00B70DBE /* WorkoutInitializer.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		B38F17A521F87C7F00B70DBE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B38F17A021F87BEC00B70DBE /* WorkoutView.swift */,
+				B38F179F21F87BEC00B70DBE /* WorkoutViewController.swift */,
+				B38F17A721F8848700B70DBE /* CustomSegmentedControl.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B38F17A621F87C8F00B70DBE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B38F179D21F87BEC00B70DBE /* WorkoutPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		B39301CA21E4BBB40071994A /* ResetPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,6 +1069,7 @@
 			isa = PBXGroup;
 			children = (
 				B39301E021E4FA720071994A /* WorkoutTab.storyboard */,
+				B38F179C21F87B7A00B70DBE /* Workout */,
 			);
 			path = WorkoutTab;
 			sourceTree = "<group>";
@@ -1608,6 +1647,7 @@
 				B3D737E721EF772E00DDF602 /* TimerView.swift in Sources */,
 				B3F7329921E781190038ACB9 /* VideoLibraryViewController.swift in Sources */,
 				B33394C321DF6DB900D6013F /* LineTextField.swift in Sources */,
+				B38F17A221F87BEC00B70DBE /* WorkoutInitializer.swift in Sources */,
 				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
 				B3EFDF4B21F76E7D00A8F61F /* MeasureHistoryView.swift in Sources */,
 				B30E9F7021EC8D23006F33CE /* StoreView.swift in Sources */,
@@ -1674,8 +1714,10 @@
 				B3DC1B6A21EDECD700883C0F /* EditProfileTableViewModel.swift in Sources */,
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
 				B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */,
+				B38F17A821F8848700B70DBE /* CustomSegmentedControl.swift in Sources */,
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
 				B3B8D3B621E8B62800397AAB /* CourseVideosTableViewModel.swift in Sources */,
+				B38F17A121F87BEC00B70DBE /* WorkoutPresenter.swift in Sources */,
 				B30E9F9D21ECD9CB006F33CE /* CoinsHistoryHeader.swift in Sources */,
 				B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
@@ -1692,6 +1734,7 @@
 				B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B30E9F8A21ECBEF5006F33CE /* ProductDetailPresenter.swift in Sources */,
+				B38F17A321F87BEC00B70DBE /* WorkoutViewController.swift in Sources */,
 				B3839C5F21F0827600BD27E0 /* PhotoLibraryService.swift in Sources */,
 				B3D737E421EF772E00DDF602 /* TimerPresenter.swift in Sources */,
 				B3839C6121F0DA6D00BD27E0 /* ImageCreator.swift in Sources */,
@@ -1713,6 +1756,7 @@
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
 				B3028AD721EF78FC00515CD8 /* MusicPlayerPresenter.swift in Sources */,
 				B3753C2321D7A4A0008A5D5A /* DiaryView.swift in Sources */,
+				B38F17A421F87BEC00B70DBE /* WorkoutView.swift in Sources */,
 				B30E9F9621ECD6D6006F33CE /* CoinsHistoryPresenter.swift in Sources */,
 				B30E9FA221ECDB1B006F33CE /* CoinsHistory.swift in Sources */,
 				B30E9F6E21EC8D23006F33CE /* StoreInitializer.swift in Sources */,

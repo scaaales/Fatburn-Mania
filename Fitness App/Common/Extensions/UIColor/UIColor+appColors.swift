@@ -26,4 +26,8 @@ extension UIColor {
 		return .init(with: "1A5AC0")
 	}
 	
+	static var pinkColor: UIColor {
+		return .init(with: "E86FA7")
+	}
+	
 }
