@@ -27,7 +27,7 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 		
 		for season in testSeasons {
 			let testLessonYellow = Lesson(title: "Продолжаем готовиться к сезону", date: .getDate(from: "2018 10 18"), image: #imageLiteral(resourceName: "yellowFier"), season: Int(season)!)
-			let testLessonGreen = Lesson(title: "week 1 day 5", date: .getDate(from: "2018 10 18"), image: #imageLiteral(resourceName: "greenNewspapper"), season: Int(season)!)
+			let testLessonGreen = Lesson(title: "Week 1 day 5", date: .getDate(from: "2018 10 18"), image: #imageLiteral(resourceName: "greenNewspapper"), season: Int(season)!)
 			let numberOfRepeating = Int.random(in: 2...5)
 			for _ in 0...numberOfRepeating {
 				lessons.append(testLessonYellow)
@@ -49,4 +49,9 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 		
 		view.update()
 	}
+	
+	func getLessonAt(index: Int) -> Lesson {
+		return viewModel.getLessonAtIndex(index)
+	}
+	
 }

@@ -25,6 +25,10 @@
 		B30A181C21F8B68E00A39131 /* SeasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A181821F8B68E00A39131 /* SeasonsView.swift */; };
 		B30A182021F8B88A00A39131 /* SeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A181F21F8B88A00A39131 /* SeasonCell.swift */; };
 		B30A182221F8B8AF00A39131 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A182121F8B8AF00A39131 /* Season.swift */; };
+		B30A182821F8BC3000A39131 /* LessonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A182421F8BC3000A39131 /* LessonPresenter.swift */; };
+		B30A182921F8BC3000A39131 /* LessonInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A182521F8BC3000A39131 /* LessonInitializer.swift */; };
+		B30A182A21F8BC3000A39131 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A182621F8BC3000A39131 /* LessonViewController.swift */; };
+		B30A182B21F8BC3000A39131 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A182721F8BC3000A39131 /* LessonView.swift */; };
 		B30E9F6D21EC8D23006F33CE /* StorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6921EC8D23006F33CE /* StorePresenter.swift */; };
 		B30E9F6E21EC8D23006F33CE /* StoreInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6A21EC8D23006F33CE /* StoreInitializer.swift */; };
 		B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6B21EC8D23006F33CE /* StoreViewController.swift */; };
@@ -221,6 +225,10 @@
 		B30A181821F8B68E00A39131 /* SeasonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsView.swift; sourceTree = "<group>"; };
 		B30A181F21F8B88A00A39131 /* SeasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonCell.swift; sourceTree = "<group>"; };
 		B30A182121F8B8AF00A39131 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		B30A182421F8BC3000A39131 /* LessonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPresenter.swift; sourceTree = "<group>"; };
+		B30A182521F8BC3000A39131 /* LessonInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonInitializer.swift; sourceTree = "<group>"; };
+		B30A182621F8BC3000A39131 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		B30A182721F8BC3000A39131 /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 		B30E9F6921EC8D23006F33CE /* StorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePresenter.swift; sourceTree = "<group>"; };
 		B30E9F6A21EC8D23006F33CE /* StoreInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInitializer.swift; sourceTree = "<group>"; };
 		B30E9F6B21EC8D23006F33CE /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
@@ -530,6 +538,33 @@
 			isa = PBXGroup;
 			children = (
 				B30A181521F8B68E00A39131 /* SeasonsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B30A182321F8BC1000A39131 /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				B30A182D21F8BC9900A39131 /* Presenter */,
+				B30A182C21F8BC9100A39131 /* Views */,
+				B30A182521F8BC3000A39131 /* LessonInitializer.swift */,
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+		B30A182C21F8BC9100A39131 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B30A182721F8BC3000A39131 /* LessonView.swift */,
+				B30A182621F8BC3000A39131 /* LessonViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B30A182D21F8BC9900A39131 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B30A182421F8BC3000A39131 /* LessonPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1129,6 +1164,7 @@
 				B39301E021E4FA720071994A /* WorkoutTab.storyboard */,
 				B38F179C21F87B7A00B70DBE /* Workout */,
 				B30A181421F8B64A00A39131 /* Seasons */,
+				B30A182321F8BC1000A39131 /* Lesson */,
 			);
 			path = WorkoutTab;
 			sourceTree = "<group>";
@@ -1666,6 +1702,7 @@
 				B30E9F8421EC9D3E006F33CE /* StoreProductsTableViewModel.swift in Sources */,
 				B30E9F7A21EC9376006F33CE /* Product.swift in Sources */,
 				B3DC1B6E21EDFD1900883C0F /* EditGenderCell.swift in Sources */,
+				B30A182821F8BC3000A39131 /* LessonPresenter.swift in Sources */,
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B39D477121E60B4700D5C050 /* User.swift in Sources */,
 				B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */,
@@ -1730,6 +1767,7 @@
 				B36B2F6C21DE11DA00C5D07B /* LoginSplashViewController.swift in Sources */,
 				B3254F4621D3E7CE00F99F91 /* TrainingDayCell.swift in Sources */,
 				B3F7329721E781190038ACB9 /* VideoLibraryPresenter.swift in Sources */,
+				B30A182921F8BC3000A39131 /* LessonInitializer.swift in Sources */,
 				B306398B21F8A7F50089A5D4 /* WorkoutTableViewModel.swift in Sources */,
 				B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */,
 				B30E9F8021EC9701006F33CE /* UIView+cornerRadius.swift in Sources */,
@@ -1740,6 +1778,7 @@
 				B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */,
 				B39D477821E6288D00D5C050 /* ProfileHeaderCell.swift in Sources */,
 				B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */,
+				B30A182A21F8BC3000A39131 /* LessonViewController.swift in Sources */,
 				B3753C2521D7A6E4008A5D5A /* DiaryInitializer.swift in Sources */,
 				B3DC1B6521EDD6FF00883C0F /* EditProfileView.swift in Sources */,
 				B3D737DF21EF76FE00DDF602 /* CollageView.swift in Sources */,
@@ -1775,6 +1814,7 @@
 				B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */,
 				B33394C021DF655F00D6013F /* UIViewController+extension.swift in Sources */,
 				B36CD81621F5F7FD007D4BE6 /* MusicPlayerCell.swift in Sources */,
+				B30A182B21F8BC3000A39131 /* LessonView.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B38F17AD21F8A09E00B70DBE /* Lesson.swift in Sources */,
 				B30F287A21F2342D000954DB /* TimerService.swift in Sources */,

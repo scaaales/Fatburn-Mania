@@ -19,4 +19,8 @@ class WorkoutTableViewModel {
 	func replaceLessons(with newLessons: [Lesson]) {
 		dataSource.replaceItems(with: newLessons)
 	}
+	
+	func getLessonAtIndex(_ index: Int) -> Lesson {
+		return dataSource.getItemAtIndex(index)
+	}
 }

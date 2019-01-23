@@ -73,6 +73,7 @@
                                             <outlet property="lessonDateLabel" destination="ZqL-dB-MgZ" id="Sgh-2T-CrF"/>
                                             <outlet property="lessonImage" destination="mhK-a0-2F2" id="GE0-6m-S5C"/>
                                             <outlet property="lessonTitleLabel" destination="pC1-ME-1cX" id="wXI-8f-QoJ"/>
+                                            <segue destination="rPs-gX-ZT2" kind="show" id="Hgm-Uh-UhT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -128,6 +129,26 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="1180" y="-230.73463268365819"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2xm-d4-maU">
+            <objects>
+                <viewController id="rPs-gX-ZT2" customClass="LessonViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KBb-sr-fTK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TXX-Q1-nGR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRw-M6-cyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="67z-5x-yYy" customClass="LessonInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="rPs-gX-ZT2" id="OKu-GI-8Kj"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2260" y="-231"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SFG-xr-VGc">
