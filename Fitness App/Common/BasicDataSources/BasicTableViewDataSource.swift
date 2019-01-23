@@ -47,4 +47,8 @@ class BasicTableViewDataSource<CellType: UITableViewCell, DataType>: NSObject, U
 		sections[0].insert(item, at: index)
 	}
 	
+	func replaceItems(with newItems: [DataType]) {
+		sections = [newItems]
+	}
+	
 }

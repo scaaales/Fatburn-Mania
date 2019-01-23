@@ -10,19 +10,119 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Workout-->
+        <!--View Controller-->
         <scene sceneID="Nol-sk-Tre">
             <objects>
-                <viewController id="v7l-e3-QV8" sceneMemberID="viewController">
+                <viewController id="v7l-e3-QV8" customClass="WorkoutViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9yL-d5-3fl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="69" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Rsj-uu-Gnf">
+                                <rect key="frame" x="0.0" y="115" width="375" height="503"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WorkoutCell" id="L6t-LS-Mfx" customClass="WorkoutCell" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L6t-LS-Mfx" id="6hg-NW-orQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mhK-a0-2F2">
+                                                    <rect key="frame" x="20" y="9" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="F35-dq-dtt"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Uou-cU-RCi"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqL-dB-MgZ">
+                                                    <rect key="frame" x="80" y="43" width="35.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4tr-q4-cAt">
+                                                    <rect key="frame" x="80" y="68.5" width="275" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="TTM-FH-m2v"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC1-ME-1cX">
+                                                    <rect key="frame" x="80" y="9" width="44.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4tr-q4-cAt" firstAttribute="leading" secondItem="ZqL-dB-MgZ" secondAttribute="leading" id="3ah-eA-9B2"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mhK-a0-2F2" secondAttribute="bottom" constant="9" id="6aL-RI-GaO"/>
+                                                <constraint firstItem="pC1-ME-1cX" firstAttribute="leading" secondItem="mhK-a0-2F2" secondAttribute="trailing" constant="10" id="DRH-Yc-aH1"/>
+                                                <constraint firstItem="pC1-ME-1cX" firstAttribute="top" secondItem="mhK-a0-2F2" secondAttribute="top" id="JZb-XJ-AH2"/>
+                                                <constraint firstAttribute="bottom" secondItem="4tr-q4-cAt" secondAttribute="bottom" id="PPf-n0-XpG"/>
+                                                <constraint firstItem="ZqL-dB-MgZ" firstAttribute="bottom" secondItem="mhK-a0-2F2" secondAttribute="bottom" id="iX6-4R-hUD"/>
+                                                <constraint firstItem="ZqL-dB-MgZ" firstAttribute="leading" secondItem="pC1-ME-1cX" secondAttribute="leading" id="m3Z-Ra-0RL"/>
+                                                <constraint firstAttribute="trailing" secondItem="4tr-q4-cAt" secondAttribute="trailing" constant="20" id="oSd-fO-nxj"/>
+                                                <constraint firstItem="mhK-a0-2F2" firstAttribute="leading" secondItem="6hg-NW-orQ" secondAttribute="leading" constant="20" id="yD0-vy-WEN"/>
+                                                <constraint firstItem="mhK-a0-2F2" firstAttribute="top" secondItem="6hg-NW-orQ" secondAttribute="top" constant="9" id="yfK-Rd-Jfa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lessonDateLabel" destination="ZqL-dB-MgZ" id="Sgh-2T-CrF"/>
+                                            <outlet property="lessonImage" destination="mhK-a0-2F2" id="GE0-6m-S5C"/>
+                                            <outlet property="lessonTitleLabel" destination="pC1-ME-1cX" id="wXI-8f-QoJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohy-bC-2gT" customClass="BottomRoundedShadowView" customModule="Fitness_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adH-20-5J5" customClass="CustomSegmentedControl" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="8" width="339" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="adH-20-5J5" secondAttribute="bottom" constant="8" id="3nu-RH-TvR"/>
+                                    <constraint firstAttribute="trailing" secondItem="adH-20-5J5" secondAttribute="trailing" constant="18" id="Obm-bO-bBc"/>
+                                    <constraint firstItem="adH-20-5J5" firstAttribute="leading" secondItem="Ohy-bC-2gT" secondAttribute="leading" constant="18" id="Uhk-vn-ehy"/>
+                                    <constraint firstItem="adH-20-5J5" firstAttribute="top" secondItem="Ohy-bC-2gT" secondAttribute="top" constant="8" id="dfj-nA-wFH"/>
+                                    <constraint firstAttribute="height" constant="56" id="hpy-ov-SeQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="drx-mH-I6J" firstAttribute="trailing" secondItem="Ohy-bC-2gT" secondAttribute="trailing" id="H88-ft-e2g"/>
+                            <constraint firstItem="Rsj-uu-Gnf" firstAttribute="top" secondItem="Ohy-bC-2gT" secondAttribute="bottom" constant="-5" id="hNV-Hu-Mhv"/>
+                            <constraint firstItem="drx-mH-I6J" firstAttribute="bottom" secondItem="Rsj-uu-Gnf" secondAttribute="bottom" id="nr2-bB-8fN"/>
+                            <constraint firstItem="Ohy-bC-2gT" firstAttribute="leading" secondItem="drx-mH-I6J" secondAttribute="leading" id="ssT-Bw-YHN"/>
+                            <constraint firstItem="Rsj-uu-Gnf" firstAttribute="leading" secondItem="drx-mH-I6J" secondAttribute="leading" id="xEe-G5-u6w"/>
+                            <constraint firstItem="Ohy-bC-2gT" firstAttribute="top" secondItem="drx-mH-I6J" secondAttribute="top" id="xlP-Pv-Mvx"/>
+                            <constraint firstItem="drx-mH-I6J" firstAttribute="trailing" secondItem="Rsj-uu-Gnf" secondAttribute="trailing" id="yse-oU-bar"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="drx-mH-I6J"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Workout" id="ID5-Od-6Ho"/>
+                    <navigationItem key="navigationItem" title="Workout" id="ID5-Od-6Ho">
+                        <barButtonItem key="leftBarButtonItem" title="Seasons" id="Jfj-ZS-eG2">
+                            <color key="tintColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Rsj-uu-Gnf" id="eVR-8K-Q8B"/>
+                        <outlet property="workoutSeasonsSegments" destination="adH-20-5J5" id="tFO-Gk-QpN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XwV-XY-mtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="LER-Hx-xDe" customClass="WorkoutInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="v7l-e3-QV8" id="eGf-c0-hYf"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1180" y="-230.73463268365819"/>
         </scene>
