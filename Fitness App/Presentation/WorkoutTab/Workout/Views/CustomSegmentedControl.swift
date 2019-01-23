@@ -14,6 +14,8 @@ class CustomSegmentedControl: UIControl {
 	private var selector: UIView!
 	private var selectedSegmentIndex = 0
 	
+	private var onSelectAction: ((_ index: Int) -> Void)?
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		updateView()
@@ -30,6 +32,7 @@ class CustomSegmentedControl: UIControl {
 			button.backgroundColor = .clear
 			button.setTitle(buttonTitle, for: .normal)
 			button.titleLabel?.font = .systemFont(ofSize: 17, weight: .light)
+			button.setTitleColor(.black, for: .normal)
 			button.addTarget(self, action: #selector(buttonTapped(button:)), for: .touchUpInside)
 			
 			button.translatesAutoresizingMaskIntoConstraints = false
@@ -39,6 +42,10 @@ class CustomSegmentedControl: UIControl {
 			buttons.append(button)
 		}
 		updateView()
+	}
+	
+	func setOnSelectAction(action: @escaping (_ index: Int) -> Void) {
+		onSelectAction = action
 	}
 	
 	private func updateView() {
@@ -73,7 +80,9 @@ class CustomSegmentedControl: UIControl {
 			if btn == button {
 				selectedSegmentIndex = buttonIndex
 				
-				let  selectorStartXPosition = btn.frame.origin.x
+				onSelectAction?(buttonIndex)
+				
+				let selectorStartXPosition = btn.frame.origin.x
 				
 				UIView.animate(withDuration: 0.3) {
 					self.selector.frame.origin.x = selectorStartXPosition
