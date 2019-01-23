@@ -110,6 +110,9 @@
                     <navigationItem key="navigationItem" title="Workout" id="ID5-Od-6Ho">
                         <barButtonItem key="leftBarButtonItem" title="Seasons" id="Jfj-ZS-eG2">
                             <color key="tintColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Ebr-fU-Kdx" kind="show" id="fml-eG-CAL"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -125,6 +128,74 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="1180" y="-230.73463268365819"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SFG-xr-VGc">
+            <objects>
+                <viewController title="Seasons" id="Ebr-fU-Kdx" customClass="SeasonsViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0WO-mj-Mf5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="223" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H6h-MW-XJh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SeasonCell" id="gdT-kM-YAF" customClass="SeasonCell" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="223"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gdT-kM-YAF" id="Pvd-Fj-dVn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4qx-DJ-O7F">
+                                                    <rect key="frame" x="20" y="15" width="335" height="193"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzX-Jz-W9N">
+                                                    <rect key="frame" x="40" y="43" width="106.5" height="50.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4qx-DJ-O7F" firstAttribute="top" secondItem="Pvd-Fj-dVn" secondAttribute="top" constant="15" id="B29-XR-p4m"/>
+                                                <constraint firstItem="vzX-Jz-W9N" firstAttribute="top" secondItem="4qx-DJ-O7F" secondAttribute="top" constant="28" id="LjD-Qh-nyc"/>
+                                                <constraint firstItem="vzX-Jz-W9N" firstAttribute="leading" secondItem="4qx-DJ-O7F" secondAttribute="leading" constant="20" id="PUp-58-pmt"/>
+                                                <constraint firstAttribute="bottom" secondItem="4qx-DJ-O7F" secondAttribute="bottom" constant="15" id="hB3-FY-O7I"/>
+                                                <constraint firstAttribute="trailing" secondItem="4qx-DJ-O7F" secondAttribute="trailing" constant="20" id="hzN-cZ-Dcv"/>
+                                                <constraint firstItem="4qx-DJ-O7F" firstAttribute="leading" secondItem="Pvd-Fj-dVn" secondAttribute="leading" constant="20" id="niZ-hF-pRS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="seasonImage" destination="4qx-DJ-O7F" id="ql7-g9-93S"/>
+                                            <outlet property="seasonNameLabel" destination="vzX-Jz-W9N" id="juH-Yn-ffg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H6h-MW-XJh" firstAttribute="leading" secondItem="0WO-mj-Mf5" secondAttribute="leading" id="A4l-js-VbS"/>
+                            <constraint firstItem="meC-lh-Jdj" firstAttribute="bottom" secondItem="H6h-MW-XJh" secondAttribute="bottom" id="DKe-8C-euV"/>
+                            <constraint firstItem="H6h-MW-XJh" firstAttribute="top" secondItem="meC-lh-Jdj" secondAttribute="top" id="R4C-B3-SCH"/>
+                            <constraint firstItem="meC-lh-Jdj" firstAttribute="trailing" secondItem="H6h-MW-XJh" secondAttribute="trailing" id="vbR-fS-PKs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="meC-lh-Jdj"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="H6h-MW-XJh" id="bAJ-3v-5Sh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nm1-JT-i4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="sq5-rF-O4f" customClass="SeasonsInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Ebr-fU-Kdx" id="wdg-9g-jg9"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2260" y="-970"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="jJ0-xY-7Q9">

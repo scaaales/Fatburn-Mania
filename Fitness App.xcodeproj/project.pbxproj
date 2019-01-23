@@ -19,6 +19,12 @@
 		B306398B21F8A7F50089A5D4 /* WorkoutTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B306398A21F8A7F50089A5D4 /* WorkoutTableViewModel.swift */; };
 		B3090D6821F62E9C0021703B /* CenteredThumbSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3090D6721F62E9B0021703B /* CenteredThumbSlider.swift */; };
 		B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */; };
+		B30A181921F8B68E00A39131 /* SeasonsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A181521F8B68E00A39131 /* SeasonsPresenter.swift */; };
+		B30A181A21F8B68E00A39131 /* SeasonsInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A181621F8B68E00A39131 /* SeasonsInitializer.swift */; };
+		B30A181B21F8B68E00A39131 /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A181721F8B68E00A39131 /* SeasonsViewController.swift */; };
+		B30A181C21F8B68E00A39131 /* SeasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A181821F8B68E00A39131 /* SeasonsView.swift */; };
+		B30A182021F8B88A00A39131 /* SeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A181F21F8B88A00A39131 /* SeasonCell.swift */; };
+		B30A182221F8B8AF00A39131 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A182121F8B8AF00A39131 /* Season.swift */; };
 		B30E9F6D21EC8D23006F33CE /* StorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6921EC8D23006F33CE /* StorePresenter.swift */; };
 		B30E9F6E21EC8D23006F33CE /* StoreInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6A21EC8D23006F33CE /* StoreInitializer.swift */; };
 		B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9F6B21EC8D23006F33CE /* StoreViewController.swift */; };
@@ -209,6 +215,12 @@
 		B306398A21F8A7F50089A5D4 /* WorkoutTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewModel.swift; sourceTree = "<group>"; };
 		B3090D6721F62E9B0021703B /* CenteredThumbSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredThumbSlider.swift; sourceTree = "<group>"; };
 		B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+extension.swift"; sourceTree = "<group>"; };
+		B30A181521F8B68E00A39131 /* SeasonsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsPresenter.swift; sourceTree = "<group>"; };
+		B30A181621F8B68E00A39131 /* SeasonsInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsInitializer.swift; sourceTree = "<group>"; };
+		B30A181721F8B68E00A39131 /* SeasonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
+		B30A181821F8B68E00A39131 /* SeasonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsView.swift; sourceTree = "<group>"; };
+		B30A181F21F8B88A00A39131 /* SeasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonCell.swift; sourceTree = "<group>"; };
+		B30A182121F8B8AF00A39131 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		B30E9F6921EC8D23006F33CE /* StorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePresenter.swift; sourceTree = "<group>"; };
 		B30E9F6A21EC8D23006F33CE /* StoreInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInitializer.swift; sourceTree = "<group>"; };
 		B30E9F6B21EC8D23006F33CE /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
@@ -492,6 +504,34 @@
 				B30F287921F2342D000954DB /* TimerService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B30A181421F8B64A00A39131 /* Seasons */ = {
+			isa = PBXGroup;
+			children = (
+				B30A181E21F8B6A000A39131 /* Presenter */,
+				B30A181D21F8B69C00A39131 /* Views */,
+				B30A181621F8B68E00A39131 /* SeasonsInitializer.swift */,
+			);
+			path = Seasons;
+			sourceTree = "<group>";
+		};
+		B30A181D21F8B69C00A39131 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B30A181821F8B68E00A39131 /* SeasonsView.swift */,
+				B30A181721F8B68E00A39131 /* SeasonsViewController.swift */,
+				B30A181F21F8B88A00A39131 /* SeasonCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B30A181E21F8B6A000A39131 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B30A181521F8B68E00A39131 /* SeasonsPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		B30E9F6821EC8CF7006F33CE /* Store */ = {
@@ -1024,6 +1064,7 @@
 			children = (
 				B38F17AC21F8A09E00B70DBE /* Lesson.swift */,
 				B306398A21F8A7F50089A5D4 /* WorkoutTableViewModel.swift */,
+				B30A182121F8B8AF00A39131 /* Season.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -1087,6 +1128,7 @@
 			children = (
 				B39301E021E4FA720071994A /* WorkoutTab.storyboard */,
 				B38F179C21F87B7A00B70DBE /* Workout */,
+				B30A181421F8B64A00A39131 /* Seasons */,
 			);
 			path = WorkoutTab;
 			sourceTree = "<group>";
@@ -1616,6 +1658,7 @@
 				B39D477521E6258900D5C050 /* ProfileTableViewModel.swift in Sources */,
 				B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */,
 				B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */,
+				B30A182021F8B88A00A39131 /* SeasonCell.swift in Sources */,
 				B3D737DC21EF76FE00DDF602 /* CollagePresenter.swift in Sources */,
 				B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */,
 				B36B2F6E21DE123000C5D07B /* LoginSplashPresenter.swift in Sources */,
@@ -1636,11 +1679,13 @@
 				B30E9F8C21ECBEF5006F33CE /* ProductDetailViewController.swift in Sources */,
 				B33394C721DF721900D6013F /* UIColor+hextInit.swift in Sources */,
 				B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */,
+				B30A181C21F8B68E00A39131 /* SeasonsView.swift in Sources */,
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */,
 				B3E7578D21F779E1002B5AC7 /* MeasureHistory.swift in Sources */,
 				B3B8D3B421E8B56000397AAB /* BasicTableViewDataSource.swift in Sources */,
 				B3DC1B6221EDD6FF00883C0F /* EditProfilePresenter.swift in Sources */,
+				B30A182221F8B8AF00A39131 /* Season.swift in Sources */,
 				B30E9F9F21ECDAC4006F33CE /* CoinsHistoryCell.swift in Sources */,
 				B3D737DD21EF76FE00DDF602 /* CollageInitializer.swift in Sources */,
 				B30E9F8221EC9BE2006F33CE /* UITableView+resizable.swift in Sources */,
@@ -1701,6 +1746,7 @@
 				B39301DB21E4E8630071994A /* TabBarViewController.swift in Sources */,
 				B30E9F9821ECD6D6006F33CE /* CoinsHistoryViewController.swift in Sources */,
 				B36CD81921F5F96B007D4BE6 /* Song.swift in Sources */,
+				B30A181B21F8B68E00A39131 /* SeasonsViewController.swift in Sources */,
 				B30E9F7721EC934C006F33CE /* StoreItemCell.swift in Sources */,
 				B3D737DE21EF76FE00DDF602 /* CollageViewController.swift in Sources */,
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
@@ -1713,10 +1759,12 @@
 				B36B2F7721DE15DE00C5D07B /* UIStoryboard+extension.swift in Sources */,
 				B37CBA1721DE649500834A98 /* LoginInitializer.swift in Sources */,
 				B39301D621E4BF0B0071994A /* ResetPasswordViewController.swift in Sources */,
+				B30A181A21F8B68E00A39131 /* SeasonsInitializer.swift in Sources */,
 				B3DC1B6421EDD6FF00883C0F /* EditProfileViewController.swift in Sources */,
 				B36B2F8321DE256000C5D07B /* SignInView.swift in Sources */,
 				B39301CE21E4BD5A0071994A /* ResetPassrodInitializer.swift in Sources */,
 				B39D477E21E62A5C00D5C050 /* ProgressCell.swift in Sources */,
+				B30A181921F8B68E00A39131 /* SeasonsPresenter.swift in Sources */,
 				B36CD81421F5E6E0007D4BE6 /* UIButton+enabled.swift in Sources */,
 				B3DC1B6821EDDACD00883C0F /* EditProfileDataCell.swift in Sources */,
 				B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */,
