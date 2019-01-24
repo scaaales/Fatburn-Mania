@@ -13,7 +13,7 @@ class LessonPresenter<V: LessonView>: Presenter {
 	
 	weak var view: View!
 	private var lesson: Lesson!
-	private var dataSoruce: BasicTableViewDataSource<ExerciseCell, Exercise>!
+	private var viewModel: LessonsTableViewModel!
 	
 	required init(view: View) {
 		self.view = view
@@ -24,15 +24,16 @@ class LessonPresenter<V: LessonView>: Presenter {
 	}
 	
 	func getLesson() {
-		view.setTitle("Week 1 day 5")
-		view.setLessonName(lesson.title)
-		view.setDescription(lesson.description)
+		view.setTitle("Week 1 day 5",
+					  lessonName: lesson.title,
+					  description: lesson.description)
+		
 		let url = URL(string: "https://www.youtube.com/embed/\(lesson.videoID)?playsinline=1")!
 		let urlRequest = URLRequest(url: url)
 		view.loadVideoRequest(urlRequest)
 		
-		dataSoruce = .init(items: lesson.exercises)
-		view.setTableViewDataSource(dataSoruce)
+		viewModel = .init(exercises: lesson.exercises)
+		view.setTableViewDataSource(viewModel.dataSource)
 		view.update()
 	}
 }

@@ -25,19 +25,7 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 		
 		lessons.removeAll()
 		
-		let exrecises = [
-			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
-			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
-			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
-			Exercise(image: #imageLiteral(resourceName: "break"), name: "Отдых", duration: "00:30"),
-			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
-			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
-			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
-			Exercise(image: #imageLiteral(resourceName: "break"), name: "Отдых", duration: "00:30"),
-			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
-			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
-			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30")
-		]
+		let exrecises = Exercise.testExercises
 		
 		for season in testSeasons {
 			let testLessonYellow = Lesson(title: "Продолжаем готовиться к сезону",

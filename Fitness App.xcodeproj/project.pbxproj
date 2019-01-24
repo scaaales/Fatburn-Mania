@@ -177,6 +177,12 @@
 		B3DD924521F9EF380017E723 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD924421F9EF380017E723 /* ExerciseCell.swift */; };
 		B3DD924721F9EF780017E723 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD924621F9EF780017E723 /* Exercise.swift */; };
 		B3DD924921F9F2E00017E723 /* TableViewUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD924821F9F2E00017E723 /* TableViewUpdatable.swift */; };
+		B3DD925121FA01560017E723 /* WorkoutOfTheDayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD924D21FA01560017E723 /* WorkoutOfTheDayPresenter.swift */; };
+		B3DD925221FA01560017E723 /* WorkoutOfTheDayInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD924E21FA01560017E723 /* WorkoutOfTheDayInitializer.swift */; };
+		B3DD925321FA01560017E723 /* WorkoutOfTheDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD924F21FA01560017E723 /* WorkoutOfTheDayViewController.swift */; };
+		B3DD925421FA01560017E723 /* WorkoutOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD925021FA01560017E723 /* WorkoutOfTheDayView.swift */; };
+		B3DD925621FA03400017E723 /* LessonsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD925521FA03400017E723 /* LessonsTableViewModel.swift */; };
+		B3DD925921FA0EB40017E723 /* WorkoutOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD925821FA0EB40017E723 /* WorkoutOfTheDay.swift */; };
 		B3E7578B21F77950002B5AC7 /* MeasureHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7578A21F77950002B5AC7 /* MeasureHistoryCell.swift */; };
 		B3E7578D21F779E1002B5AC7 /* MeasureHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */; };
 		B3EFDF4821F76E7D00A8F61F /* MeasureHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4421F76E7D00A8F61F /* MeasureHistoryPresenter.swift */; };
@@ -383,6 +389,12 @@
 		B3DD924421F9EF380017E723 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		B3DD924621F9EF780017E723 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B3DD924821F9F2E00017E723 /* TableViewUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUpdatable.swift; sourceTree = "<group>"; };
+		B3DD924D21FA01560017E723 /* WorkoutOfTheDayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOfTheDayPresenter.swift; sourceTree = "<group>"; };
+		B3DD924E21FA01560017E723 /* WorkoutOfTheDayInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOfTheDayInitializer.swift; sourceTree = "<group>"; };
+		B3DD924F21FA01560017E723 /* WorkoutOfTheDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOfTheDayViewController.swift; sourceTree = "<group>"; };
+		B3DD925021FA01560017E723 /* WorkoutOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOfTheDayView.swift; sourceTree = "<group>"; };
+		B3DD925521FA03400017E723 /* LessonsTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsTableViewModel.swift; sourceTree = "<group>"; };
+		B3DD925821FA0EB40017E723 /* WorkoutOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOfTheDay.swift; sourceTree = "<group>"; };
 		B3E7578A21F77950002B5AC7 /* MeasureHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryCell.swift; sourceTree = "<group>"; };
 		B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistory.swift; sourceTree = "<group>"; };
 		B3EFDF4421F76E7D00A8F61F /* MeasureHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryPresenter.swift; sourceTree = "<group>"; };
@@ -503,7 +515,7 @@
 				B39D476F21E60B2E00D5C050 /* User */,
 				B3254F1521D3E7CD00F99F91 /* Diary */,
 				B38F17AB21F8A08700B70DBE /* Workout */,
-				B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */,
+				B3DD925721FA0E9C0017E723 /* WorkoutOfTheDay */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -735,6 +747,7 @@
 				B3254F1921D3E7CD00F99F91 /* Steps.swift */,
 				B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */,
 				B3254F1C21D3E7CD00F99F91 /* DiaryTableViewModel.swift */,
+				B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -1109,6 +1122,7 @@
 				B306398A21F8A7F50089A5D4 /* WorkoutTableViewModel.swift */,
 				B30A182121F8B8AF00A39131 /* Season.swift */,
 				B3DD924621F9EF780017E723 /* Exercise.swift */,
+				B3DD925521FA03400017E723 /* LessonsTableViewModel.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -1182,6 +1196,7 @@
 			isa = PBXGroup;
 			children = (
 				B39301E721E4FAC80071994A /* WorkoutOfTheDayTab.storyboard */,
+				B3DD924A21FA01270017E723 /* WorkoutOfTheDay */,
 			);
 			path = WorkoutOfTheDayTab;
 			sourceTree = "<group>";
@@ -1366,6 +1381,41 @@
 				B3DC1B7221EE291000883C0F /* TextViewHelperView.xib */,
 			);
 			path = TextViewHelperView;
+			sourceTree = "<group>";
+		};
+		B3DD924A21FA01270017E723 /* WorkoutOfTheDay */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD924C21FA01420017E723 /* Presenter */,
+				B3DD924B21FA013C0017E723 /* Views */,
+				B3DD924E21FA01560017E723 /* WorkoutOfTheDayInitializer.swift */,
+			);
+			path = WorkoutOfTheDay;
+			sourceTree = "<group>";
+		};
+		B3DD924B21FA013C0017E723 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD925021FA01560017E723 /* WorkoutOfTheDayView.swift */,
+				B3DD924F21FA01560017E723 /* WorkoutOfTheDayViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3DD924C21FA01420017E723 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD924D21FA01560017E723 /* WorkoutOfTheDayPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B3DD925721FA0E9C0017E723 /* WorkoutOfTheDay */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD925821FA0EB40017E723 /* WorkoutOfTheDay.swift */,
+			);
+			path = WorkoutOfTheDay;
 			sourceTree = "<group>";
 		};
 		B3EFDF4321F76E5900A8F61F /* MeasureHistory */ = {
@@ -1716,6 +1766,7 @@
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B39D477121E60B4700D5C050 /* User.swift in Sources */,
 				B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */,
+				B3DD925921FA0EB40017E723 /* WorkoutOfTheDay.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
 				B3033D3421E8DF5B0058626D /* VideoDetailsView.swift in Sources */,
 				B3F732B621E7A8B30038ACB9 /* CourseVideosInitializer.swift in Sources */,
@@ -1749,6 +1800,7 @@
 				B37CBA2321DE680900834A98 /* LoginViewController.swift in Sources */,
 				B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */,
 				B3EFDF4921F76E7D00A8F61F /* MeasureHistoryInitializer.swift in Sources */,
+				B3DD925221FA01560017E723 /* WorkoutOfTheDayInitializer.swift in Sources */,
 				B39D475A21E5FC6E00D5C050 /* ProfileInitializer.swift in Sources */,
 				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
 				B3F7329E21E7851F0038ACB9 /* VideoLibraryCell.swift in Sources */,
@@ -1766,6 +1818,7 @@
 				B3033D3121E8DF5B0058626D /* VideoDetailsPresenter.swift in Sources */,
 				B30E9F8B21ECBEF5006F33CE /* ProductDetailInitializer.swift in Sources */,
 				B36CD81B21F601F9007D4BE6 /* SongsTableViewModel.swift in Sources */,
+				B3DD925121FA01560017E723 /* WorkoutOfTheDayPresenter.swift in Sources */,
 				B3FBA16B21EF3B4200B88AA3 /* PhotoPreviewView.swift in Sources */,
 				B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
@@ -1822,13 +1875,16 @@
 				B35E620F21F1F651001CB678 /* UIImageView+rotate.swift in Sources */,
 				B30F287C21F237DF000954DB /* TimeInterval+extension.swift in Sources */,
 				B3DC1B7521EE29CC00883C0F /* TextViewHelperView.swift in Sources */,
+				B3DD925621FA03400017E723 /* LessonsTableViewModel.swift in Sources */,
 				B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */,
+				B3DD925421FA01560017E723 /* WorkoutOfTheDayView.swift in Sources */,
 				B33394C021DF655F00D6013F /* UIViewController+extension.swift in Sources */,
 				B36CD81621F5F7FD007D4BE6 /* MusicPlayerCell.swift in Sources */,
 				B30A182B21F8BC3000A39131 /* LessonView.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B38F17AD21F8A09E00B70DBE /* Lesson.swift in Sources */,
 				B30F287A21F2342D000954DB /* TimerService.swift in Sources */,
+				B3DD925321FA01560017E723 /* WorkoutOfTheDayViewController.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* DiaryTableViewModel.swift in Sources */,
 				B3DC1B6A21EDECD700883C0F /* EditProfileTableViewModel.swift in Sources */,
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,

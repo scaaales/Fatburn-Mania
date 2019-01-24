@@ -9,8 +9,8 @@
 import Foundation
 
 protocol LessonView: View, TableViewUpdatable {
-	func setTitle(_ title: String)
-	func setLessonName(_ name: String)
-	func setDescription(_ text: String)
+	func setTitle(_ title: String,
+				  lessonName: String,
+				  description: String)
 	func loadVideoRequest(_ urlRequest: URLRequest)
 }

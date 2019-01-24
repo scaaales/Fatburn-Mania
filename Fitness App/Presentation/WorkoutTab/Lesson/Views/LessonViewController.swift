@@ -27,7 +27,8 @@ class LessonViewController: UIViewController {
 		presenter.getLesson()
 	}
 	
-	override func viewDidLayoutSubviews() {
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
 		tableViewHeight.constant = tableView.contentSize.height
 	}
 	
@@ -52,16 +53,10 @@ class LessonViewController: UIViewController {
 }
 
 extension LessonViewController: LessonView {
-	func setTitle(_ title: String) {
+	func setTitle(_ title: String, lessonName: String, description: String) {
 		self.title = title
-	}
-	
-	func setLessonName(_ name: String) {
-		lessonNameLabel.text = name
-	}
-	
-	func setDescription(_ text: String) {
-		lessonDescriptionLabel.text = text
+		lessonNameLabel.text = lessonName
+		lessonDescriptionLabel.text = description
 	}
 	
 	func update() {

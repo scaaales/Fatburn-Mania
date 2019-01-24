@@ -190,10 +190,20 @@
                                                                     <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2op-LW-qIa">
+                                                                    <rect key="frame" x="80" y="57.5" width="275" height="0.5"/>
+                                                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="0.5" id="RdT-Ic-Rf1"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="CpN-DV-0IP" firstAttribute="centerY" secondItem="3vK-qO-vkn" secondAttribute="centerY" id="1dL-Ke-132"/>
                                                                 <constraint firstItem="y2h-Lg-tzI" firstAttribute="leading" secondItem="BBA-sY-eJy" secondAttribute="leading" constant="20" id="Bgw-W1-l6Y"/>
+                                                                <constraint firstItem="2op-LW-qIa" firstAttribute="leading" secondItem="3vK-qO-vkn" secondAttribute="leading" id="DV9-Kj-61P"/>
+                                                                <constraint firstAttribute="bottom" secondItem="2op-LW-qIa" secondAttribute="bottom" constant="10" id="DbD-1s-tWE"/>
+                                                                <constraint firstAttribute="trailing" secondItem="2op-LW-qIa" secondAttribute="trailing" constant="20" id="Eat-hA-Ne7"/>
                                                                 <constraint firstAttribute="trailing" secondItem="CpN-DV-0IP" secondAttribute="trailing" constant="13" id="X5W-su-5yb"/>
                                                                 <constraint firstItem="3vK-qO-vkn" firstAttribute="leading" secondItem="y2h-Lg-tzI" secondAttribute="trailing" constant="10" id="dZr-TA-Y4U"/>
                                                                 <constraint firstItem="3vK-qO-vkn" firstAttribute="top" secondItem="BBA-sY-eJy" secondAttribute="top" constant="2" id="oZN-6N-cYf"/>
@@ -209,13 +219,13 @@
                                                 </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digit of the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-sE-1jd">
-                                                <rect key="frame" x="20" y="560" width="121.5" height="21"/>
+                                                <rect key="frame" x="20" y="550" width="121.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <color key="textColor" red="0.047058823529411764" green="0.35686274509803922" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-dh-kLk" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="611" width="335" height="36"/>
+                                                <rect key="frame" x="20" y="601" width="335" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="5eI-PE-KK5"/>
                                                 </constraints>
@@ -257,7 +267,7 @@
                                             <constraint firstAttribute="trailing" secondItem="bLz-dr-G3y" secondAttribute="trailing" constant="20" id="brX-gz-c4E"/>
                                             <constraint firstAttribute="trailing" secondItem="Jc3-dh-kLk" secondAttribute="trailing" constant="20" id="cPy-53-hkb"/>
                                             <constraint firstAttribute="trailing" secondItem="Qko-lE-e9S" secondAttribute="trailing" id="cQc-dE-dIB"/>
-                                            <constraint firstItem="w0n-sE-1jd" firstAttribute="top" secondItem="Qko-lE-e9S" secondAttribute="bottom" constant="32" id="dZX-ga-ybi"/>
+                                            <constraint firstItem="w0n-sE-1jd" firstAttribute="top" secondItem="Qko-lE-e9S" secondAttribute="bottom" constant="22" id="dZX-ga-ybi"/>
                                             <constraint firstItem="bLz-dr-G3y" firstAttribute="top" secondItem="Na4-lI-3h5" secondAttribute="bottom" constant="20" id="g2c-am-mbS"/>
                                             <constraint firstItem="Qko-lE-e9S" firstAttribute="top" secondItem="bLz-dr-G3y" secondAttribute="bottom" constant="39" id="upw-ao-M28"/>
                                         </constraints>
