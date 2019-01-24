@@ -28,6 +28,16 @@ class WorkoutViewController: UIViewController {
 		tableView.delegate = self
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let lessonVC = segue.destination as? LessonViewController,
+			let selectedIndex = tableView.indexPathForSelectedRow {
+			tableView.deselectRow(at: selectedIndex, animated: true)
+			
+			let lesson = presenter.getLessonAt(index: selectedIndex.row)
+			lessonVC.presenter.setLesson(lesson)
+		}
+	}
+	
 }
 
 extension WorkoutViewController: WorkoutView {
