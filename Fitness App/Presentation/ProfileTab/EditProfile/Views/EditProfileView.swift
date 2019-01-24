@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol EditProfileView: View, UITextFieldDelegate {
-	func update()
-	func setTableViewDataSource(_ dataSource: UITableViewDataSource)
+protocol EditProfileView: View, UITextFieldDelegate, TableViewUpdatable {
 	func getViewForDateInput() -> UIDatePicker
 	func getHelperViewForDateInput() -> UIView
 }

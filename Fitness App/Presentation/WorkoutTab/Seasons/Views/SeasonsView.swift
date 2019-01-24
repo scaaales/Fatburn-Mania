@@ -6,9 +6,6 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-import UIKit
+protocol SeasonsView: View, TableViewUpdatable {
 
-protocol SeasonsView: View {
-	func update()
-	func setTableViewDataSource(_ dataSource: UITableViewDataSource)
 }

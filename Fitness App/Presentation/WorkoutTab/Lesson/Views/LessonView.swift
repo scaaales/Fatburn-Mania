@@ -6,6 +6,11 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-protocol LessonView: View {
-	
+import Foundation
+
+protocol LessonView: View, TableViewUpdatable {
+	func setTitle(_ title: String)
+	func setLessonName(_ name: String)
+	func setDescription(_ text: String)
+	func loadVideoRequest(_ urlRequest: URLRequest)
 }

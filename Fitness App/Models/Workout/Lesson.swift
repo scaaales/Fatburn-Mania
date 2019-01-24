@@ -13,4 +13,7 @@ struct Lesson {
 	let date: Date
 	let image: UIImage; #warning("change to type or something later")
 	let season: Int
+	let description: String
+	let exercises: [Exercise]
+	let videoID: String
 }

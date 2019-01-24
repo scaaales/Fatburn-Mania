@@ -25,9 +25,37 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 		
 		lessons.removeAll()
 		
+		let exrecises = [
+			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
+			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
+			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
+			Exercise(image: #imageLiteral(resourceName: "break"), name: "Отдых", duration: "00:30"),
+			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
+			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
+			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
+			Exercise(image: #imageLiteral(resourceName: "break"), name: "Отдых", duration: "00:30"),
+			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
+			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30"),
+			Exercise(image: .init(), name: "Джампинг джек", duration: "00:30")
+		]
+		
 		for season in testSeasons {
-			let testLessonYellow = Lesson(title: "Продолжаем готовиться к сезону", date: .getDate(from: "2018 10 18"), image: #imageLiteral(resourceName: "yellowFier"), season: Int(season)!)
-			let testLessonGreen = Lesson(title: "Week 1 day 5", date: .getDate(from: "2018 10 18"), image: #imageLiteral(resourceName: "greenNewspapper"), season: Int(season)!)
+			let testLessonYellow = Lesson(title: "Продолжаем готовиться к сезону",
+										  date: .getDate(from: "2018 10 18"),
+										  image: #imageLiteral(resourceName: "yellowFier"),
+										  season: Int(season)!,
+										  description: .loremIpsumConstant,
+										  exercises: exrecises,
+										  videoID: "HfeervqhY9Y")
+			
+			let testLessonGreen = Lesson(title: "Week 1 day 5",
+										 date: .getDate(from: "2018 10 18"),
+										 image: #imageLiteral(resourceName: "greenNewspapper"),
+										 season: Int(season)!,
+										 description: .loremIpsumConstant,
+										 exercises: exrecises,
+										 videoID: "HfeervqhY9Y")
+			
 			let numberOfRepeating = Int.random(in: 2...5)
 			for _ in 0...numberOfRepeating {
 				lessons.append(testLessonYellow)
