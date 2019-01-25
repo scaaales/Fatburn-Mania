@@ -35,9 +35,9 @@ class WorkoutOfTheDayViewController: UIViewController {
 }
 
 extension WorkoutOfTheDayViewController: WorkoutOfTheDayView {
-	func setLessonName(_ name: String, reward: Int, duration: Int, description: String) {
+	func setLessonName(_ name: String, reward: Int, duration: TimeInterval, description: String) {
 		nameLabel.text = name
-		rewardAndDurationLabel.text = "\(reward) coins - \(duration) minutes"
+		rewardAndDurationLabel.text = "\(reward) coins - \(duration.stringMinutesOnly) minutes"
 		descriptionLabel.text = description
 	}
 	

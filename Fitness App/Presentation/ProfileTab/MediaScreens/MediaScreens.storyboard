@@ -579,7 +579,7 @@
                                                         <constraint firstAttribute="width" constant="31" id="GXV-Tn-R1d"/>
                                                         <constraint firstAttribute="height" constant="31" id="MQD-8B-bw4"/>
                                                     </constraints>
-                                                    <inset key="imageEdgeInsets" minX="3" minY="1" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="imageEdgeInsets" minX="3" minY="0.0" maxX="1" maxY="0.0"/>
                                                     <state key="normal" image="playSongImageBlue"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>

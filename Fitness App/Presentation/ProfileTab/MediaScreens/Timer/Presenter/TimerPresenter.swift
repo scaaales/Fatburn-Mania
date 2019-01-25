@@ -35,10 +35,10 @@ class TimerPresenter<V: TimerView>: Presenter {
 		view.setResetButton(enabled: true)
 		
 		timer = TimerService(updateHandler: { [weak self] timeInterval in
-			self?.view.setTotalTime(timeInterval.stringFromTimeInterval)
+			self?.view.setTotalTime(timeInterval.stringFromTimeIntervalWithMilliseconds)
 			}, lapHandler: { [weak self] timeInterval in
-				self?.prevLapTimeString = timeInterval.stringFromTimeInterval
-				self?.view.setLapTime(timeInterval.stringFromTimeInterval)
+				self?.prevLapTimeString = timeInterval.stringFromTimeIntervalWithMilliseconds
+				self?.view.setLapTime(timeInterval.stringFromTimeIntervalWithMilliseconds)
 		})
 	}
 	
@@ -68,7 +68,7 @@ class TimerPresenter<V: TimerView>: Presenter {
 			view.setContinueButton(enabled: false)
 			view.setResetButton(enabled: true)
 			
-			let item = (title: "Rest", time: lastRestTimeInterval.stringFromTimeInterval)
+			let item = (title: "Rest", time: lastRestTimeInterval.stringFromTimeIntervalWithMilliseconds)
 			dataSource.addItem(item, at: 0)
 			view.addRowAtTheTop()
 		}

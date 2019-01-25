@@ -10,7 +10,7 @@ import Foundation
 
 extension TimeInterval {
 	
-	var stringFromTimeInterval: String {
+	var stringFromTimeIntervalWithMilliseconds: String {
 		let time = NSInteger(self)
 
 		let ms = Int((self.truncatingRemainder(dividingBy: 1)) * 100)
@@ -19,4 +19,20 @@ extension TimeInterval {
 		
 		return String(format: "%0.2d:%0.2d:%0.2d", minutes, seconds, ms)
 	}
+	
+	var stringFromTimeInterval: String {
+		let time = NSInteger(self)
+		
+		let seconds = time % 60
+		let minutes = (time / 60) % 60
+		
+		return String(format: "%0.2d:%0.2d", minutes, seconds)
+	}
+	
+	var stringMinutesOnly: String {
+		let minutes = (Int(self) / 60) % 60
+		
+		return String(minutes)
+	}
+
 }
