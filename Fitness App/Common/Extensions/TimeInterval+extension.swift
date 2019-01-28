@@ -34,5 +34,11 @@ extension TimeInterval {
 		
 		return String(minutes)
 	}
+	
+	var stringSecondsOnly: String {
+		let seconds = Int(self) % 60
+		
+		return String(seconds)
+	}
 
 }

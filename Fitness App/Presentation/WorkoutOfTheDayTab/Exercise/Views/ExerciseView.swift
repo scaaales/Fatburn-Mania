@@ -8,14 +8,21 @@
 
 import Foundation
 
+enum ExerciseState {
+	case initialCountdown, playing, paused, nextExerciseCountdown
+}
+
 protocol ExerciseView: View {
-	func setupForPausedState()
-	func setupForPlayingState()
+	var state: ExerciseState { get set }
+	
 	func setCurrentTime(_ currentTime: TimeInterval)
 	func setTotalTime(_ totalTime: TimeInterval)
 	func setPercentageProgress(_ percentage: Float)
 	func setExerciseTime(_ exerciseTime: TimeInterval)
 	func setExerciseName(_ exerciseName: String)
 	func setNextExerciseName(_ nextExerciseName: String?)
+	func setCountdownTime(_ countdownTime: TimeInterval)
+	
 	func setVideo()
+	func setBreakPicture() 
 }

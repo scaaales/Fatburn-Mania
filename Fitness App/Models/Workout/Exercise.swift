@@ -18,11 +18,11 @@ struct Exercise {
 			.init(image: .init(), name: "Джампинг джек", duration: 30),
 			.init(image: .init(), name: "Джампинг джек", duration: 30),
 			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: #imageLiteral(resourceName: "break"), name: "Отдых", duration: 30),
+			.init(image: #imageLiteral(resourceName: "break"), name: "Break", duration: 30),
 			.init(image: .init(), name: "Джампинг джек", duration: 30),
 			.init(image: .init(), name: "Джампинг джек", duration: 30),
 			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: #imageLiteral(resourceName: "break"), name: "Отдых", duration: 30),
+			.init(image: #imageLiteral(resourceName: "break"), name: "Break", duration: 30),
 			.init(image: .init(), name: "Джампинг джек", duration: 30),
 			.init(image: .init(), name: "Джампинг джек", duration: 30),
 			.init(image: .init(), name: "Джампинг джек", duration: 30)

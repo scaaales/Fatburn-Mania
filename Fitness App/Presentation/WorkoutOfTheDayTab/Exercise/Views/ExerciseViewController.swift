@@ -11,14 +11,36 @@ import UIKit
 class ExerciseViewController: UIViewController {
 	var presenter: ExercisePresenter<ExerciseViewController>!
 	
+	var state: ExerciseState = .initialCountdown {
+		didSet {
+			switch state {
+			case .initialCountdown:
+				updateForInitialCountdown()
+			case .playing:
+				updateForPlaying()
+			case .paused:
+				updateForPaused()
+			case .nextExerciseCountdown:
+				updateForExerciseCountdown()
+			}
+		}
+	}
+	
+	@IBOutlet private weak var initialCountdownLabel: UILabel!
+	
 	@IBOutlet private weak var progressView: UIProgressView!
 	@IBOutlet private weak var currentTimeLabel: UILabel!
 	@IBOutlet private weak var totalTimeLabel: UILabel!
 	
+	@IBOutlet private weak var nextExerciseTopLabel: UILabel!
+	@IBOutlet private weak var nextExerciseCountdownLabel: UILabel!
+	@IBOutlet private weak var nextExerciseHelperNameLabel: UILabel!
+	
 	@IBOutlet private weak var videoContainer: UIView!
+	@IBOutlet private weak var pausedLabel: UILabel!
+	@IBOutlet private weak var breakImageView: UIImageView!
 	@IBOutlet private weak var playPauseButton: UIButton!
 	
-	// hideable
 	@IBOutlet private weak var exerciseNameLabel: UILabel!
 	@IBOutlet private weak var exerciseTimeLabel: UILabel!
 	@IBOutlet private weak var nextExerciseNameLabel: UILabel!
@@ -26,9 +48,12 @@ class ExerciseViewController: UIViewController {
 	
 	@IBOutlet private weak var resetButton: UIButton!
 	
+	@IBOutlet private weak var topNextExerciseStackViewConstraing: NSLayoutConstraint!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		progressView.subviews.forEach { $0.makeCornerRadius($0.bounds.height / 2) }
+		videoContainer.makeCornerRadius(15)
 		presenter.getInitialExercise()
 	}
 	
@@ -44,32 +69,86 @@ class ExerciseViewController: UIViewController {
 		presenter.getNextExercise()
 	}
 	
-	private func setHideableViewsAlpha(_ alpha: CGFloat) {
-		exerciseNameLabel.alpha = alpha
-		exerciseTimeLabel.alpha = alpha
-		nextExerciseNameLabel.superview?.alpha = alpha
-		tapTwiseLabel.alpha = alpha
+	private func updateForInitialCountdown() {
+		view.subviews.forEach { subview in
+			if subview !== self.initialCountdownLabel {
+				subview.alpha = 0
+			}
+		}
+		navigationItem.hidesBackButton = true
 	}
 	
-}
-
-extension ExerciseViewController: ExerciseView {
-	func setupForPausedState() {
+	private func updateForPlaying() {
+		playPauseButton.setImage(#imageLiteral(resourceName: "pauseButton"), for: .normal)
+		playPauseButton.imageEdgeInsets.left = 0
+		
+		pausedLabel.text = "Imagine there is a video playing here"
+		pausedLabel.backgroundColor = .gray
+		
+		view.subviews.forEach { subview in
+			if subview !== self.initialCountdownLabel {
+				subview.alpha = 1
+			} else {
+				subview.alpha = 0
+			}
+		}
+		
+		exerciseNameLabel.alpha = 1
+		exerciseTimeLabel.alpha = 1
+		nextExerciseNameLabel.superview?.alpha = 1
+		tapTwiseLabel.alpha = 1
+		
+		exerciseNameLabel.isHidden = false
+		exerciseTimeLabel.isHidden = false
+		nextExerciseNameLabel.superview?.isHidden = false
+		tapTwiseLabel.isHidden = false
+		
+		nextExerciseHelperNameLabel.alpha = 0
+		nextExerciseTopLabel.isHidden = true
+		nextExerciseCountdownLabel.isHidden = true
+		playPauseButton.isHidden = false
+		
+		resetButton.isHidden = true
+		topNextExerciseStackViewConstraing.isActive = false
+		
+		navigationItem.hidesBackButton = false
+	}
+	
+	private func updateForPaused() {
 		playPauseButton.setImage(#imageLiteral(resourceName: "playButton"), for: .normal)
 		playPauseButton.imageEdgeInsets.left = 5
 		
-		setHideableViewsAlpha(0)
+		pausedLabel.text = "Paused"
+		pausedLabel.backgroundColor = .white
+		
+		exerciseNameLabel.alpha = 0
+		exerciseTimeLabel.alpha = 0
+		nextExerciseNameLabel.superview?.alpha = 0
+		tapTwiseLabel.alpha = 0
 		
 		resetButton.isHidden = false
 	}
 	
-	func setupForPlayingState() {
-		playPauseButton.setImage(#imageLiteral(resourceName: "pauseButton"), for: .normal)
-		playPauseButton.imageEdgeInsets.left = 0
+	private func updateForExerciseCountdown() {
+		exerciseNameLabel.isHidden = true
+		exerciseTimeLabel.isHidden = true
+		nextExerciseNameLabel.superview?.isHidden = true
+		tapTwiseLabel.isHidden = true
 		
-		setHideableViewsAlpha(1)
+		nextExerciseHelperNameLabel.alpha = 1
+		nextExerciseTopLabel.isHidden = false
+		nextExerciseCountdownLabel.isHidden = false
 		
-		resetButton.isHidden = true
+		playPauseButton.isHidden = true
+		topNextExerciseStackViewConstraing.isActive = true
+	}
+		
+}
+
+extension ExerciseViewController: ExerciseView {
+	func setCountdownTime(_ countdownTime: TimeInterval) {
+		initialCountdownLabel.text = countdownTime.stringSecondsOnly
+		nextExerciseCountdownLabel.text = countdownTime.stringSecondsOnly
 	}
 	
 	func setCurrentTime(_ currentTime: TimeInterval) {
@@ -94,25 +173,19 @@ extension ExerciseViewController: ExerciseView {
 	
 	func setNextExerciseName(_ nextExerciseName: String?) {
 		nextExerciseNameLabel.text = nextExerciseName ?? "-"
+		nextExerciseHelperNameLabel.text = nextExerciseName ?? "-"
 	}
 	
 	func setVideo() {
-		let label = UILabel()
-		label.text = "Imagine there is a video playing here"
-		label.numberOfLines = 0
-		label.font = .systemFont(ofSize: 35, weight: .bold)
-		label.textColor = .white
-		label.backgroundColor = .gray
-		label.textAlignment = .center
-		videoContainer.addSubview(label)
+		pausedLabel.text = "Imagine there is a video playing here"
+		pausedLabel.alpha = 1
+		breakImageView.alpha = 0
+		pausedLabel.backgroundColor = .gray
+	}
 		
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.leftAnchor.constraint(equalTo: videoContainer.leftAnchor).isActive = true
-		label.rightAnchor.constraint(equalTo: videoContainer.rightAnchor).isActive = true
-		label.topAnchor.constraint(equalTo: videoContainer.topAnchor).isActive = true
-		label.bottomAnchor.constraint(equalTo: videoContainer.bottomAnchor).isActive = true
-		
-		videoContainer.makeCornerRadius(15)
+	func setBreakPicture() {
+		pausedLabel.alpha = 0
+		breakImageView.alpha = 1
 	}
 	
 }

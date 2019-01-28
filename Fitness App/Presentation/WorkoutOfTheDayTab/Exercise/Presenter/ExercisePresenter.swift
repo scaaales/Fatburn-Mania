@@ -12,7 +12,6 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
-	private var isPaused = false
 	private var workoutOfTheDay: WorkoutOfTheDay!
 	private var exercises: [Exercise] {
 		return workoutOfTheDay.exercises
@@ -22,6 +21,11 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 	private var currentExerciseIndex: Int!
 	private var currentExerciseTimePassed: TimeInterval = 0
 	private var totalTimePassed: TimeInterval = 0
+	private var currentCountdown: TimeInterval = 3 {
+		didSet {
+			view.setCountdownTime(currentCountdown)
+		}
+	}
 	
 	required init(view: View) {
 		self.view = view
@@ -35,28 +39,53 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 								previewImage: #imageLiteral(resourceName: "workoutImage"),
 								sponsorImage: #imageLiteral(resourceName: "fatburnManiaLogo"),
 								exercises: exercises)
+		setupTimer()
 		currentExerciseIndex = 0
-		loadCurrentExercise()
-		view.setVideo()
+		view.state = .initialCountdown
+	}
+	
+	private func setupTimer() {
+		timer = Timer(timeInterval: 1, repeats: true, block: { [weak self] _ in
+			guard let self = self else { return }
+			switch self.view.state {
+			case .initialCountdown, .nextExerciseCountdown:
+				self.countdownSecondPassed()
+			case .playing:
+				self.workoutSecondPassed()
+			case .paused:
+				break
+			}
+		})
+		
+		RunLoop.current.add(timer, forMode: .common)
 	}
 	
 	func togglePaused() {
-		isPaused.toggle()
-		if isPaused {
-			view.setupForPausedState()
-		} else {
-			view.setupForPlayingState()
+		switch view.state {
+		case .playing:
+			view.state = .paused
+		case .paused:
+			view.state = .playing
+		default:
+			print("weard state \(view.state)")
 		}
 	}
 	
 	func getNextExercise() {
-		if isPaused { return }
+		if view.state != .playing { return }
 		let currentExerciseTimeRemaining = exercises[currentExerciseIndex].duration - currentExerciseTimePassed
 		totalTimePassed += currentExerciseTimeRemaining
-		timer.invalidate()
 		currentExerciseTimePassed = 0
 		currentExerciseIndex += 1
-		loadCurrentExercise()
+		
+		currentCountdown = 3
+		view.state = .nextExerciseCountdown
+		let nextExercise = exercises[safe: currentExerciseIndex + 1]
+		if nextExercise?.name == "Break" {
+			view.setBreakPicture()
+		} else {
+			view.setVideo()
+		}
 	}
 	
 	private func loadCurrentExercise() {
@@ -64,14 +93,14 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 			print("workout complete")
 			return
 		}
-		timer = Timer(timeInterval: 1, repeats: true, block: { [weak self] _ in
-			guard let self = self, !self.isPaused else { return }
-			self.workoutSecondPasses()
-		})
-		
-		RunLoop.current.add(timer, forMode: .common)
 		
 		let currentExercise = exercises[currentExerciseIndex]
+		
+		if currentExercise.name == "Break" {
+			view.setBreakPicture()
+		} else {
+			view.setVideo()
+		}
 		
 		view.setExerciseName(currentExercise.name)
 		view.setTotalTime(workoutOfTheDay.duration)
@@ -84,7 +113,7 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		view.setNextExerciseName(nextExercise?.name)
 	}
 	
-	private func workoutSecondPasses() {
+	private func workoutSecondPassed() {
 		let currentExercise = exercises[currentExerciseIndex]
 		currentExerciseTimePassed += 1
 		
@@ -101,6 +130,14 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		view.setPercentageProgress(percentage)
 		
 		view.setExerciseTime(currentExercise.duration - currentExerciseTimePassed)
+	}
+	
+	private func countdownSecondPassed() {
+		currentCountdown -= 1
+		if currentCountdown < 0 {
+			view.state = .playing
+			loadCurrentExercise()
+		}
 	}
 	
 	deinit {
