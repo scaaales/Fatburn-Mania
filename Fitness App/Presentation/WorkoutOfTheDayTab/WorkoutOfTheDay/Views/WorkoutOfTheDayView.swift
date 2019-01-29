@@ -11,7 +11,7 @@ import UIKit
 protocol WorkoutOfTheDayView: View, TableViewUpdatable {
 	func setLessonName(_ name: String,
 					   reward: Int,
-					   duration: Int,
+					   duration: TimeInterval,
 					   description: String)
 	func setLessonSponsorImage(_ sponsorImage: UIImage,
 							   previewImage: UIImage)

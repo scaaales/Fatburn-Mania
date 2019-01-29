@@ -13,6 +13,14 @@ class RoundButton: UIButton {
 	@IBInspectable var isCircle: Bool = true
 	@IBInspectable var cornerRadius: CGFloat = 0
 	
+	private var shadowView: UIView!
+	
+	override var isHidden: Bool {
+		didSet {
+			shadowView?.isHidden = isHidden
+		}
+	}
+	
 	private var shadowAdded = false
 
 	override func draw(_ rect: CGRect) {
@@ -23,7 +31,7 @@ class RoundButton: UIButton {
 		
 		let cornerRadius = isCircle ? bounds.height/2 : self.cornerRadius
 		
-		let shadowView = UIView(frame: self.frame)
+		shadowView = UIView(frame: self.frame)
 		shadowView.backgroundColor = .white
 		shadowView.layer.cornerRadius = cornerRadius
 		shadowView.layer.shadowColor = UIColor.black.cgColor
@@ -33,6 +41,8 @@ class RoundButton: UIButton {
 		shadowView.layer.shadowRadius = 4
 		shadowView.layer.masksToBounds = true
 		shadowView.clipsToBounds = false
+		
+		shadowView.isHidden = isHidden
 		
 		layer.cornerRadius = cornerRadius
 		layer.masksToBounds = true

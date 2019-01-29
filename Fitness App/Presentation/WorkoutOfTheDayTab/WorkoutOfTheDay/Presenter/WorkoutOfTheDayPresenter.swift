@@ -22,7 +22,6 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 		// api call to get workout of the day
 		let exercises = Exercise.testExercises
 		let workoutOfTheDay = WorkoutOfTheDay(name: "Сахарная вата",
-											  duration: 16,
 											  rewardCoins: 7,
 											  desritpion: .loremIpsumConstant,
 											  previewImage: #imageLiteral(resourceName: "workoutImage"),

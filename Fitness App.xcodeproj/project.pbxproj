@@ -138,6 +138,11 @@
 		B39301DE21E4FA360071994A /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301DD21E4FA360071994A /* ProfileTab.storyboard */; };
 		B39301E121E4FA720071994A /* WorkoutTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301E021E4FA720071994A /* WorkoutTab.storyboard */; };
 		B39301E821E4FAC80071994A /* WorkoutOfTheDayTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301E721E4FAC80071994A /* WorkoutOfTheDayTab.storyboard */; };
+		B39A6D1B21FB226600C5A06F /* ExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A6D1721FB226500C5A06F /* ExercisePresenter.swift */; };
+		B39A6D1C21FB226600C5A06F /* ExerciseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A6D1821FB226500C5A06F /* ExerciseInitializer.swift */; };
+		B39A6D1D21FB226600C5A06F /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A6D1921FB226500C5A06F /* ExerciseViewController.swift */; };
+		B39A6D1E21FB226600C5A06F /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A6D1A21FB226500C5A06F /* ExerciseView.swift */; };
+		B39A6D2221FB64B000C5A06F /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A6D2121FB64B000C5A06F /* Array+extension.swift */; };
 		B39D475A21E5FC6E00D5C050 /* ProfileInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D475921E5FC6E00D5C050 /* ProfileInitializer.swift */; };
 		B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D475B21E5FC9200D5C050 /* ProfileViewController.swift */; };
 		B39D475E21E5FCA300D5C050 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D475D21E5FCA300D5C050 /* ProfileView.swift */; };
@@ -350,6 +355,11 @@
 		B39301DD21E4FA360071994A /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
 		B39301E021E4FA720071994A /* WorkoutTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkoutTab.storyboard; sourceTree = "<group>"; };
 		B39301E721E4FAC80071994A /* WorkoutOfTheDayTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkoutOfTheDayTab.storyboard; sourceTree = "<group>"; };
+		B39A6D1721FB226500C5A06F /* ExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePresenter.swift; sourceTree = "<group>"; };
+		B39A6D1821FB226500C5A06F /* ExerciseInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInitializer.swift; sourceTree = "<group>"; };
+		B39A6D1921FB226500C5A06F /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		B39A6D1A21FB226500C5A06F /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		B39A6D2121FB64B000C5A06F /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		B39D475921E5FC6E00D5C050 /* ProfileInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInitializer.swift; sourceTree = "<group>"; };
 		B39D475B21E5FC9200D5C050 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B39D475D21E5FCA300D5C050 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -890,6 +900,7 @@
 			children = (
 				B33394C821DF734200D6013F /* UIColor */,
 				B369573B21D514DF00735555 /* Date+extension.swift */,
+				B39A6D2121FB64B000C5A06F /* Array+extension.swift */,
 				B30F287B21F237DF000954DB /* TimeInterval+extension.swift */,
 				B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */,
 				B36B2F7321DE148600C5D07B /* String+constants.swift */,
@@ -1197,8 +1208,36 @@
 			children = (
 				B39301E721E4FAC80071994A /* WorkoutOfTheDayTab.storyboard */,
 				B3DD924A21FA01270017E723 /* WorkoutOfTheDay */,
+				B39A6D1621FB21B600C5A06F /* Exercise */,
 			);
 			path = WorkoutOfTheDayTab;
+			sourceTree = "<group>";
+		};
+		B39A6D1621FB21B600C5A06F /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				B39A6D2021FB229500C5A06F /* Presenter */,
+				B39A6D1F21FB228E00C5A06F /* Views */,
+				B39A6D1821FB226500C5A06F /* ExerciseInitializer.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		B39A6D1F21FB228E00C5A06F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B39A6D1A21FB226500C5A06F /* ExerciseView.swift */,
+				B39A6D1921FB226500C5A06F /* ExerciseViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B39A6D2021FB229500C5A06F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B39A6D1721FB226500C5A06F /* ExercisePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		B39D475621E5FC1600D5C050 /* Profile */ = {
@@ -1785,8 +1824,10 @@
 				B3DC1B6221EDD6FF00883C0F /* EditProfilePresenter.swift in Sources */,
 				B30A182221F8B8AF00A39131 /* Season.swift in Sources */,
 				B30E9F9F21ECDAC4006F33CE /* CoinsHistoryCell.swift in Sources */,
+				B39A6D1E21FB226600C5A06F /* ExerciseView.swift in Sources */,
 				B3D737DD21EF76FE00DDF602 /* CollageInitializer.swift in Sources */,
 				B30E9F8221EC9BE2006F33CE /* UITableView+resizable.swift in Sources */,
+				B39A6D2221FB64B000C5A06F /* Array+extension.swift in Sources */,
 				B36B2F7D21DE24B200C5D07B /* SignInInitializer.swift in Sources */,
 				B3F732AF21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift in Sources */,
 				B30E9F9721ECD6D6006F33CE /* CoinsHistoryInitializer.swift in Sources */,
@@ -1797,9 +1838,11 @@
 				B36B2F7121DE126000C5D07B /* LoginSplashView.swift in Sources */,
 				B3753C1B21D7A2C0008A5D5A /* Configurator.swift in Sources */,
 				B3028ADA21EF78FC00515CD8 /* MusicPlayerView.swift in Sources */,
+				B39A6D1C21FB226600C5A06F /* ExerciseInitializer.swift in Sources */,
 				B37CBA2321DE680900834A98 /* LoginViewController.swift in Sources */,
 				B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */,
 				B3EFDF4921F76E7D00A8F61F /* MeasureHistoryInitializer.swift in Sources */,
+				B39A6D1D21FB226600C5A06F /* ExerciseViewController.swift in Sources */,
 				B3DD925221FA01560017E723 /* WorkoutOfTheDayInitializer.swift in Sources */,
 				B39D475A21E5FC6E00D5C050 /* ProfileInitializer.swift in Sources */,
 				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
@@ -1894,6 +1937,7 @@
 				B3B8D3B621E8B62800397AAB /* CourseVideosTableViewModel.swift in Sources */,
 				B38F17A121F87BEC00B70DBE /* WorkoutPresenter.swift in Sources */,
 				B30E9F9D21ECD9CB006F33CE /* CoinsHistoryHeader.swift in Sources */,
+				B39A6D1B21FB226600C5A06F /* ExercisePresenter.swift in Sources */,
 				B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
 				B36B2F6A21DE113C00C5D07B /* LoginSplashInitializer.swift in Sources */,

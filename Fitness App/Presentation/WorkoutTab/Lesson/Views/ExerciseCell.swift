@@ -18,7 +18,7 @@ class ExerciseCell: UITableViewCell, ConfigurableCell {
 	func configure(data: Exercise) {
 		exerciseImageView.image = data.image
 		nameLabel.text = data.name
-		durationLabel.text = data.duration
+		durationLabel.text = data.duration.stringFromTimeInterval
 	}
 
 }

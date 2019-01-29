@@ -10,7 +10,7 @@ import UIKit
 
 struct WorkoutOfTheDay {
 	let name: String
-	let duration: Int
+	var duration: TimeInterval { return exercises.totalDuration }
 	let rewardCoins: Int
 	let desritpion: String
 	let previewImage: UIImage
