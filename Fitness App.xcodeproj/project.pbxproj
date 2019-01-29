@@ -218,6 +218,7 @@
 		B3FBA16721EF343800B88AA3 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16321EF343800B88AA3 /* PhotoView.swift */; };
 		B3FBA16B21EF3B4200B88AA3 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16A21EF3B4200B88AA3 /* PhotoPreviewView.swift */; };
 		B3FBA16D21EF493400B88AA3 /* PhotoCapturingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */; };
+		B3FF223B2200660900D936A6 /* CoinsAddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF22372200660900D936A6 /* CoinsAddedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -435,6 +436,7 @@
 		B3FBA16321EF343800B88AA3 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		B3FBA16A21EF3B4200B88AA3 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
 		B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCapturingService.swift; sourceTree = "<group>"; };
+		B3FF22372200660900D936A6 /* CoinsAddedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsAddedViewController.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -854,18 +856,18 @@
 		B33394CB21DF824200D6013F /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				B33394CC21DF825700D6013F /* View */,
+				B33394CC21DF825700D6013F /* Views */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
-		B33394CC21DF825700D6013F /* View */ = {
+		B33394CC21DF825700D6013F /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				B33394CE21DF827F00D6013F /* TutorialViewController.swift */,
 				B33394D221DFA9D300D6013F /* TutorialCell.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B34306B321D793110033EA69 /* Storyboards */ = {
@@ -934,6 +936,7 @@
 				B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */,
 				B3753C1D21D7A38D008A5D5A /* Diary */,
 				B3EFDF4321F76E5900A8F61F /* MeasureHistory */,
+				B3FF2234220065DB00D936A6 /* CoinsAdded */,
 			);
 			path = DiaryTab;
 			sourceTree = "<group>";
@@ -1652,6 +1655,22 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		B3FF2234220065DB00D936A6 /* CoinsAdded */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF223D2200661700D936A6 /* Views */,
+			);
+			path = CoinsAdded;
+			sourceTree = "<group>";
+		};
+		B3FF223D2200661700D936A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF22372200660900D936A6 /* CoinsAddedViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1956,6 +1975,7 @@
 				B38F17A321F87BEC00B70DBE /* WorkoutViewController.swift in Sources */,
 				B3839C5F21F0827600BD27E0 /* PhotoLibraryService.swift in Sources */,
 				B3D737E421EF772E00DDF602 /* TimerPresenter.swift in Sources */,
+				B3FF223B2200660900D936A6 /* CoinsAddedViewController.swift in Sources */,
 				B3839C6121F0DA6D00BD27E0 /* ImageCreator.swift in Sources */,
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
 				B3DC1B7021EE1B1F00883C0F /* EditProfileCellType.swift in Sources */,
