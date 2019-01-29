@@ -32,21 +32,27 @@ extension Date {
 		return Calendar.current.component(.month, from: self)
 	}
 	
-	/// Get date object from string
-	///
-	/// - Parameter string: date string in format yyyy MM dd (example 2017 12 01)
-	/// - Returns: Date object
-	static func getDate(from string: String) -> Date {
-		let formatter = DateFormatter()
-		
-		formatter.dateFormat = "yyyy MM dd"
-		formatter.timeZone = Calendar.current.timeZone
-		
-		if let date = formatter.date(from: string) {
-			return date
-		} else {
-			fatalError()
-		}
+//	/// Get date object from string
+//	///
+//	/// - Parameter string: date string in format yyyy MM dd (example 2017 12 01)
+//	/// - Returns: Date object
+//	static func getDate(from string: String) -> Date {
+//		let formatter = DateFormatter()
+//
+//		formatter.dateFormat = "yyyy MM dd"
+//		formatter.timeZone = Calendar.current.timeZone
+//
+//		if let date = formatter.date(from: string) {
+//			return date
+//		} else {
+//			fatalError()
+//		}
+//	}
+	
+	init(day: Int, month: Int, year: Int) {
+		let calendar = Calendar.current
+		let dateComponents = DateComponents(calendar: calendar, year: year, month: month, day: day)
+		self = dateComponents.date!
 	}
 }
 

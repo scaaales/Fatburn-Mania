@@ -114,8 +114,8 @@ class CalendarView: UIView {
 
 extension CalendarView: JTAppleCalendarViewDataSource {
 	func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-		let startDate = Date.getDate(from: "2017 12 01")
-		let endDate = Date.getDate(from: "2019 12 31")
+		let startDate = Date(day: 01, month: 12, year: 2017)
+		let endDate = Date(day: 31, month: 12, year: 2019)
 		
 		let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate, numberOfRows: 6, calendar: Calendar.current, generateInDates: .forAllMonths, generateOutDates: .tillEndOfGrid, firstDayOfWeek: .sunday, hasStrictBoundaries: true)
 		return parameters

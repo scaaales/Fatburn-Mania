@@ -16,13 +16,13 @@ class CoinsHistoryTableViewModel {
 		if let items = items {
 			resultCoinsHistory = items
 		} else {
-			let octobersTestHistory = Array(repeating: CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .getDate(from: "2018 10 18")), count: 4)
-			let novembersTestHistory = Array(repeating: CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .getDate(from: "2018 11 18")), count: 4)
-			let desemberTestHistory = Array(repeating:  CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .getDate(from: "2018 12 18")), count: 4)
-			let januaryTestHistory = Array(repeating:  CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .getDate(from: "2019 01 10")), count: 2)
+			let octobersTestHistory = Array(repeating: CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .init(day: 18, month: 10, year: 2018)), count: 4)
+			let novembersTestHistory = Array(repeating: CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .init(day: 18, month: 11, year: 2018)), count: 4)
+			let desemberTestHistory = Array(repeating:  CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .init(day: 18, month: 12, year: 2018)), count: 4)
+			let januaryTestHistory = Array(repeating:  CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .init(day: 10, month: 1, year: 2019)), count: 2)
 			
-			let birthdayTestHistory = CoinsHistory(reasonAdded: "Birthday", numberOfCoinsAdded: 10, date: .getDate(from: "2018 10 22"))
-			let anotherTestHistory = CoinsHistory(reasonAdded: "Test", numberOfCoinsAdded: 15, date: .getDate(from: "2018 10 1"))
+			let birthdayTestHistory = CoinsHistory(reasonAdded: "Birthday", numberOfCoinsAdded: 10, date: .init(day: 22, month: 10, year: 2018))
+			let anotherTestHistory = CoinsHistory(reasonAdded: "Test", numberOfCoinsAdded: 15, date: .init(day: 1, month: 10, year: 2018))
 			
 			resultCoinsHistory = [anotherTestHistory]
 			resultCoinsHistory.append(contentsOf: octobersTestHistory)

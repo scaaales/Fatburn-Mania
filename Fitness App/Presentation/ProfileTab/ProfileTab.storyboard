@@ -55,28 +55,28 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileHeaderCell" rowHeight="52" id="cLK-2i-EKS" customClass="ProfileHeaderCell" customModule="Fitness_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="52"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileHeaderCell" rowHeight="60" id="cLK-2i-EKS" customClass="ProfileHeaderCell" customModule="Fitness_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cLK-2i-EKS" id="dyV-Hb-m7X">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cLK-2i-EKS" id="dyV-Hb-m7X">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tg-bc-e0p">
-                                                    <rect key="frame" x="20" y="1.5" width="44" height="44"/>
+                                                    <rect key="frame" x="20" y="8" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="Glz-a1-mSm"/>
                                                         <constraint firstAttribute="height" constant="44" id="xUY-WS-Lvh"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LS-hd-xq0">
-                                                    <rect key="frame" x="84" y="13" width="44.5" height="21"/>
+                                                    <rect key="frame" x="84" y="19.5" width="44.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextBig" translatesAutoresizingMaskIntoConstraints="NO" id="GGN-Y9-1zg">
-                                                    <rect key="frame" x="342" y="13" width="13" height="21"/>
+                                                    <rect key="frame" x="342" y="19.5" width="13" height="21"/>
                                                     <color key="tintColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="0AR-Hy-hm1"/>
@@ -91,7 +91,7 @@
                                                 <constraint firstItem="GGN-Y9-1zg" firstAttribute="centerY" secondItem="5LS-hd-xq0" secondAttribute="centerY" id="bpc-7P-5M7"/>
                                                 <constraint firstItem="5LS-hd-xq0" firstAttribute="centerY" secondItem="9tg-bc-e0p" secondAttribute="centerY" id="jqc-bX-3Jz"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9tg-bc-e0p" secondAttribute="bottom" constant="7.5" id="kI6-sC-5mk"/>
-                                                <constraint firstItem="9tg-bc-e0p" firstAttribute="top" secondItem="dyV-Hb-m7X" secondAttribute="top" constant="1" id="wOC-ja-bnU"/>
+                                                <constraint firstItem="9tg-bc-e0p" firstAttribute="top" secondItem="dyV-Hb-m7X" secondAttribute="top" constant="8" id="wOC-ja-bnU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -101,7 +101,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileButtonsCell" rowHeight="124" id="wD5-D3-vo1" customClass="ProfileButtonsCell" customModule="Fitness_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="107.5" width="375" height="124"/>
+                                        <rect key="frame" x="0.0" y="115.5" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wD5-D3-vo1" id="S7A-jL-AiG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
@@ -260,7 +260,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BalanceCell" rowHeight="60" id="6zm-wh-U9S" customClass="BalanceCell" customModule="Fitness_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="231.5" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="239.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6zm-wh-U9S" id="bL3-LG-Zz7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -302,7 +302,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProgressCell" rowHeight="64" id="C41-1F-wfb" customClass="ProgressCell" customModule="Fitness_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="291.5" width="375" height="64"/>
+                                        <rect key="frame" x="0.0" y="299.5" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C41-1F-wfb" id="RVe-EW-3Zd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
@@ -346,7 +346,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserDataCell" rowHeight="58" id="437-dj-NWA" customClass="UserDataCell" customModule="Fitness_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="355.5" width="375" height="58"/>
+                                        <rect key="frame" x="0.0" y="363.5" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="437-dj-NWA" id="RIG-Zw-qcJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
@@ -380,7 +380,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserButtonArrowCell" rowHeight="60" id="nHn-2R-9K0" customClass="UserButtonArrowCell" customModule="Fitness_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="413.5" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="421.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nHn-2R-9K0" id="aSd-Ow-dfq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
