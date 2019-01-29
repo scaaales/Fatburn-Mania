@@ -79,12 +79,7 @@ class ExerciseViewController: UIViewController {
 	}
 	
 	private func updateForPlaying() {
-		playPauseButton.setImage(#imageLiteral(resourceName: "pauseButton"), for: .normal)
-		playPauseButton.imageEdgeInsets.left = 0
-		
-		pausedLabel.text = "Imagine there is a video playing here"
-		pausedLabel.backgroundColor = .gray
-		
+		// from initial countdown
 		view.subviews.forEach { subview in
 			if subview !== self.initialCountdownLabel {
 				subview.alpha = 1
@@ -93,11 +88,23 @@ class ExerciseViewController: UIViewController {
 			}
 		}
 		
+		navigationItem.hidesBackButton = false
+		
+		// from paused
+		playPauseButton.setImage(#imageLiteral(resourceName: "pauseButton"), for: .normal)
+		playPauseButton.imageEdgeInsets.left = 0
+		
+		pausedLabel.text = "Imagine there is a video playing here"
+		pausedLabel.backgroundColor = .gray
+		
 		exerciseNameLabel.alpha = 1
 		exerciseTimeLabel.alpha = 1
 		nextExerciseNameLabel.superview?.alpha = 1
 		tapTwiseLabel.alpha = 1
 		
+		resetButton.isHidden = true
+		
+		// from countdown
 		exerciseNameLabel.isHidden = false
 		exerciseTimeLabel.isHidden = false
 		nextExerciseNameLabel.superview?.isHidden = false
@@ -108,10 +115,7 @@ class ExerciseViewController: UIViewController {
 		nextExerciseCountdownLabel.isHidden = true
 		playPauseButton.isHidden = false
 		
-		resetButton.isHidden = true
 		topNextExerciseStackViewConstraing.isActive = false
-		
-		navigationItem.hidesBackButton = false
 	}
 	
 	private func updateForPaused() {
@@ -178,14 +182,15 @@ extension ExerciseViewController: ExerciseView {
 	
 	func setVideo() {
 		pausedLabel.text = "Imagine there is a video playing here"
-		pausedLabel.alpha = 1
-		breakImageView.alpha = 0
+		pausedLabel.isHidden = false
 		pausedLabel.backgroundColor = .gray
+		
+		breakImageView.isHidden = true
 	}
 		
 	func setBreakPicture() {
-		pausedLabel.alpha = 0
-		breakImageView.alpha = 1
+		pausedLabel.isHidden = true
+		breakImageView.isHidden = false
 	}
 	
 }

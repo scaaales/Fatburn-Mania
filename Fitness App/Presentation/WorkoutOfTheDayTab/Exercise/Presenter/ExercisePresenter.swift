@@ -78,9 +78,12 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		currentExerciseTimePassed = 0
 		currentExerciseIndex += 1
 		
+		timer.invalidate()
+		setupTimer()
+		
 		currentCountdown = 3
 		view.state = .nextExerciseCountdown
-		let nextExercise = exercises[safe: currentExerciseIndex + 1]
+		let nextExercise = exercises[safe: currentExerciseIndex]
 		if nextExercise?.name == "Break" {
 			view.setBreakPicture()
 		} else {
