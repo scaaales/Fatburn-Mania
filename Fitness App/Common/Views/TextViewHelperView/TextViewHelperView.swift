@@ -53,8 +53,16 @@ class TextViewHelperView: UIView {
 		prevButton.isEnabled = false
 	}
 	
+	func enablePrevButton() {
+		prevButton.isEnabled = true
+	}
+	
 	func disableNextButton() {
 		nextButton.isEnabled = false
+	}
+	
+	func enableNextButton() {
+		nextButton.isEnabled = true
 	}
 	
 	private func loadViewFromNib() -> UIView? {

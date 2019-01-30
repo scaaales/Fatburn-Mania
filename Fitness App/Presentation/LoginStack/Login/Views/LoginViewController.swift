@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
 	@IBOutlet private weak var passwordTextField: LineTextField!
 	@IBOutlet private weak var resetPasswordButton: UIButton!
 	
+	private var textFieldAssistang: TextFieldAssistant!
+	
 	var shouldShowKeyboard = true
 	
 	lazy private var loader: BlurredLoader = {
@@ -27,8 +29,19 @@ class LoginViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		hideKeyboardWhenTappedAround()
+		setupTextFields()
+	}
+	
+	fileprivate func setupTextFields() {
+		textFieldAssistang = .init(view: view, firstResponderTag: 100, lastResponderTag: 101)
+		
 		emailTextField.setDelegate(self)
 		passwordTextField.setDelegate(self)
+		
+		let textViewHelperView = textFieldAssistang.textViewHelperView
+		
+		emailTextField.setInputAccessoryView(textViewHelperView)
+		passwordTextField.setInputAccessoryView(textViewHelperView)
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -102,6 +115,7 @@ extension LoginViewController: LoginView {
 
 extension LoginViewController: UITextFieldDelegate {
 	func textFieldDidBeginEditing(_ textField: UITextField) {
+		textFieldAssistang.currentResponderTag = textField.tag
 		switch textField.text {
 		case String.wrongPasswordConstant:
 			passwordTextField.setNormalState(isSecure: true)
@@ -115,7 +129,8 @@ extension LoginViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 		if textField.tag == 100 {
-			passwordTextField.activateTextField()
+			let nextResponderTag = textField.tag + 1
+			textFieldAssistang.currentResponderTag = nextResponderTag
 			return false
 		} else {
 			login(textField)

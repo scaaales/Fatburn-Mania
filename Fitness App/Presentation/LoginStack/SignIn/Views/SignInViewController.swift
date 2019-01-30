@@ -16,14 +16,28 @@ class SignInViewController: UIViewController {
 	@IBOutlet private weak var phoneTextField: LineTextField!
 	@IBOutlet private weak var passwordTextField: LineTextField!
 	
+	private var textFieldAssistang: TextFieldAssistant!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		hideKeyboardWhenTappedAround()
+		setupTextFields()
+	}
+	
+	private func setupTextFields() {
+		textFieldAssistang = .init(view: view, firstResponderTag: 100, lastResponderTag: 103)
 		
-		nameTextField.setDelegate(self)
-		emailTextField.setDelegate(self)
-		phoneTextField.setDelegate(self)
-		passwordTextField.setDelegate(self)
+		nameTextField.setDelegate(textFieldAssistang)
+		emailTextField.setDelegate(textFieldAssistang)
+		phoneTextField.setDelegate(textFieldAssistang)
+		passwordTextField.setDelegate(textFieldAssistang)
+	
+		let textViewHelperView = textFieldAssistang.textViewHelperView
+		
+		nameTextField.setInputAccessoryView(textViewHelperView)
+		emailTextField.setInputAccessoryView(textViewHelperView)
+		phoneTextField.setInputAccessoryView(textViewHelperView)
+		passwordTextField.setInputAccessoryView(textViewHelperView)
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -37,21 +51,3 @@ extension SignInViewController: SignInView {
 	
 }
 
-extension SignInViewController: UITextFieldDelegate {
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		textField.resignFirstResponder()
-		switch textField.tag {
-		case 100:
-			emailTextField.activateTextField()
-			return false
-		case 101:
-			phoneTextField.activateTextField()
-			return false
-		case 102:
-			passwordTextField.activateTextField()
-			return false
-		default:
-			return true
-		}
-	}
-}
