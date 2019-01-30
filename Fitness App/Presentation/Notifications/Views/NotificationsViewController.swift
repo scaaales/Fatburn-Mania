@@ -17,8 +17,14 @@ class NotificationsViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		navBar.shadowImage = UIImage()
-		tableView.delegate = self
+		setupTableView()
 		presenter.getNotifications()
+	}
+	
+	private func setupTableView() {
+		tableView.delegate = self
+		tableView.backgroundColor = .white
+		tableView.makeResizable(header: false, footer: false)
 	}
 	
 	@IBAction private func close() {
@@ -39,7 +45,13 @@ extension NotificationsViewController: NotificationsView {
 }
 
 extension NotificationsViewController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 20
+	}
 	
+	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 20
+	}
 }
 
 

@@ -11,8 +11,12 @@ import UIKit
 class NotificationCell: UITableViewCell, ConfigurableCell {
 	typealias DataType = Notification
 	
+	@IBOutlet private weak var notificationTextLabel: UILabel!
+	@IBOutlet private weak var timeAgoLabel: UILabel!
+	
 	func configure(data: Notification) {
-		
+		notificationTextLabel.text = data.text
+		timeAgoLabel.text = data.date?.timeAgoDisplay ?? "29 минут назад"
 	}
 
 }

@@ -29,7 +29,7 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 		
 		for season in testSeasons {
 			let testLessonYellow = Lesson(title: "Продолжаем готовиться к сезону",
-										  date: .getDate(from: "2018 10 18"),
+										  date: .init(day: 18, month: 10, year: 2018),
 										  image: #imageLiteral(resourceName: "yellowFier"),
 										  season: Int(season)!,
 										  description: .loremIpsumConstant,
@@ -37,7 +37,7 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 										  videoID: "HfeervqhY9Y")
 			
 			let testLessonGreen = Lesson(title: "Week 1 day 5",
-										 date: .getDate(from: "2018 10 18"),
+										 date: .init(day: 18, month: 10, year: 2018),
 										 image: #imageLiteral(resourceName: "greenNewspapper"),
 										 season: Int(season)!,
 										 description: .loremIpsumConstant,

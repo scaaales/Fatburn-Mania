@@ -19,7 +19,7 @@ class MeasureHistoryPresenter<V: MeasureHistoryView>: Presenter {
 	}
 	
 	func getHistory() {
-		let testMeasureHistory = MeasureHistory(date: .getDate(from: "2018 10 12"),
+		let testMeasureHistory = MeasureHistory(date: .init(day: 12, month: 10, year: 2018),
 												cheshMeasurement: 100,
 												waistMeasurement: 60,
 												thigsMeasurement: 90,
