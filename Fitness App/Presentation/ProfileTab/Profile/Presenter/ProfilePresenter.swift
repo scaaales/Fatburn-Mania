@@ -26,7 +26,7 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 					lastName: "Kletsov",
 					nickname: "scales",
 					gender: .male,
-					dateOfBirth: .getDate(from: "1995 10 22"),
+					dateOfBirth: .init(day: 22, month: 10, year: 1995),
 					email: "sergey.kletsov@outlook.com",
 					phoneNumber: "+3 (8097) 419-64-16",
 					avatar: #imageLiteral(resourceName: "user_test"),

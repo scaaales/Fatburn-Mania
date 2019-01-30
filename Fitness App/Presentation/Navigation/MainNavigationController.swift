@@ -30,7 +30,8 @@ class MainNavigationController: LoginNavigationController {
 	}
 	
 	@objc private func presentNotifications() {
-		
+		guard let notificationsVC = UIStoryboard.notifications.instantiateInitialViewController() else { return }
+		self.present(notificationsVC, animated: true)
 	}
 	
 }
