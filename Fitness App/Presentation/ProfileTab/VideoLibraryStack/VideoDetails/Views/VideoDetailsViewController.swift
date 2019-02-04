@@ -19,13 +19,22 @@ class VideoDetailsViewController: UIViewController {
 	private var player: AVPlayer!
 	
 	private var isPlaying = false
+	private var playerLayerCreated = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		let url = URL(string: "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8")!
 		player = AVPlayer(url: url)
-		setupPlayerLayer()
+		descriptionTextView.isScrollEnabled = false
 		descriptionTextView.text = .loremIpsumConstant
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		descriptionTextView.isScrollEnabled = true
+		if !playerLayerCreated {
+			setupPlayerLayer()
+		}
 	}
 	
 	private func setupPlayerLayer() {
@@ -38,6 +47,7 @@ class VideoDetailsViewController: UIViewController {
 		videoContainter.layer.mask = newMaskLayer
 		
 		videoContainter.layer.addSublayer(playerLayer)
+		playerLayerCreated = true
 	}
 	
 	@IBAction private func playPause(_ sender: Any) {
