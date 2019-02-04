@@ -194,7 +194,7 @@
 		B3DD925421FA01560017E723 /* WorkoutOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD925021FA01560017E723 /* WorkoutOfTheDayView.swift */; };
 		B3DD925621FA03400017E723 /* LessonsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD925521FA03400017E723 /* LessonsTableViewModel.swift */; };
 		B3DD925921FA0EB40017E723 /* WorkoutOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD925821FA0EB40017E723 /* WorkoutOfTheDay.swift */; };
-		B3E55C752200B6C60042F237 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E55C742200B6C60042F237 /* Notification.swift */; };
+		B3E55C752200B6C60042F237 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E55C742200B6C60042F237 /* PushNotification.swift */; };
 		B3E55C772200BC020042F237 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E55C762200BC020042F237 /* NotificationCell.swift */; };
 		B3E7578B21F77950002B5AC7 /* MeasureHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7578A21F77950002B5AC7 /* MeasureHistoryCell.swift */; };
 		B3E7578D21F779E1002B5AC7 /* MeasureHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */; };
@@ -420,7 +420,7 @@
 		B3DD925021FA01560017E723 /* WorkoutOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOfTheDayView.swift; sourceTree = "<group>"; };
 		B3DD925521FA03400017E723 /* LessonsTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsTableViewModel.swift; sourceTree = "<group>"; };
 		B3DD925821FA0EB40017E723 /* WorkoutOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOfTheDay.swift; sourceTree = "<group>"; };
-		B3E55C742200B6C60042F237 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		B3E55C742200B6C60042F237 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		B3E55C762200BC020042F237 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		B3E7578A21F77950002B5AC7 /* MeasureHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryCell.swift; sourceTree = "<group>"; };
 		B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistory.swift; sourceTree = "<group>"; };
@@ -1519,7 +1519,7 @@
 		B3E55C732200B5AD0042F237 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				B3E55C742200B6C60042F237 /* Notification.swift */,
+				B3E55C742200B6C60042F237 /* PushNotification.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -1874,7 +1874,7 @@
 			files = (
 				B30E9FA521ECE290006F33CE /* CoinsHistoryTableViewModel.swift in Sources */,
 				B39D477521E6258900D5C050 /* ProfileTableViewModel.swift in Sources */,
-				B3E55C752200B6C60042F237 /* Notification.swift in Sources */,
+				B3E55C752200B6C60042F237 /* PushNotification.swift in Sources */,
 				B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */,
 				B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */,
 				B30A182021F8B88A00A39131 /* SeasonCell.swift in Sources */,
