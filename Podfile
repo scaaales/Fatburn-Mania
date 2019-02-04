@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'Fitness App' do
   pod 'JTAppleCalendar', '~> 7.0'
+  pod 'IQKeyboardManagerSwift'
 end
