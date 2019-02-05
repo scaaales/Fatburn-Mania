@@ -10,17 +10,26 @@ import UIKit
 
 class BottomRoundedShadowView: UIView {
 	
+	private var isInitialized = false
+	private var borderView: UIView!
+	
 	override func awakeFromNib() {
-		super.awakeFromNib()
-		makeRoundedBottom()
-		addShadow()
+		borderView = UIView()
+		borderView.backgroundColor = backgroundColor
+		backgroundColor = .clear
+	}
+	
+	override func draw(_ rect: CGRect) {
+		super.draw(rect)
+		if !isInitialized {
+			makeRoundedBottom()
+			addShadow()
+			isInitialized = true
+		}
 	}
 	
 	private func makeRoundedBottom() {
-		let borderView = UIView()
 		borderView.frame = bounds
-		borderView.backgroundColor = backgroundColor
-		backgroundColor = .clear
 		
 		let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 30, height: 30))
 		let newMaskLayer = CAShapeLayer()

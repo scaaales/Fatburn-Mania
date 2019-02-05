@@ -49,7 +49,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultSectionHeader" rowHeight="51" id="MEm-17-NHz" customClass="DefaultSectionHeader" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="75.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MEm-17-NHz" id="zpJ-ly-FuF">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MEm-17-NHz" id="zpJ-ly-FuF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -64,7 +64,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="qaT-Ev-gnH" secondAttribute="bottom" constant="8" identifier="E7M-7Q-pmN" id="E7M-7Q-pmN"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qaT-Ev-gnH" secondAttribute="bottom" constant="8" identifier="E7M-7Q-pmN" id="E7M-7Q-pmN"/>
                                                 <constraint firstItem="qaT-Ev-gnH" firstAttribute="leading" secondItem="zpJ-ly-FuF" secondAttribute="leading" constant="20" identifier="Kby-ec-zUl" id="Kby-ec-zUl"/>
                                                 <constraint firstItem="qaT-Ev-gnH" firstAttribute="top" secondItem="zpJ-ly-FuF" secondAttribute="top" constant="8" identifier="M1V-As-aT4" id="M1V-As-aT4"/>
                                             </constraints>
@@ -365,7 +365,6 @@
                                             <constraints>
                                                 <constraint firstItem="JDs-gR-lg8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tsp-vm-BXA" secondAttribute="trailing" constant="10" id="2FV-ZH-bno"/>
                                                 <constraint firstItem="tsp-vm-BXA" firstAttribute="leading" secondItem="MAP-lO-EUg" secondAttribute="leading" constant="20" identifier="Jpl-eb-Ilf" id="Jpl-eb-Ilf"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0op-GP-fri" secondAttribute="bottom" constant="5" identifier="KY5-BG-AMI" id="KY5-BG-AMI"/>
                                                 <constraint firstItem="tsp-vm-BXA" firstAttribute="top" secondItem="MAP-lO-EUg" secondAttribute="top" constant="5" identifier="Lc4-Vh-kHk" id="Lc4-Vh-kHk"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3lu-Tq-lZO" secondAttribute="bottom" constant="5" identifier="YIR-Nm-B2b" id="YIR-Nm-B2b"/>
                                                 <constraint firstItem="3lu-Tq-lZO" firstAttribute="leading" secondItem="MAP-lO-EUg" secondAttribute="leading" constant="20" identifier="cNu-WP-N4Q" id="cNu-WP-N4Q"/>
