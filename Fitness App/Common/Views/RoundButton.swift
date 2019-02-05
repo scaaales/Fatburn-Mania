@@ -49,6 +49,12 @@ class RoundButton: UIButton {
 		
 		self.superview?.addSubview(shadowView)
 		self.superview?.bringSubviewToFront(self)
+		
+		shadowView.translatesAutoresizingMaskIntoConstraints = false
+		shadowView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+		shadowView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+		shadowView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+		shadowView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
 	}
 
 }

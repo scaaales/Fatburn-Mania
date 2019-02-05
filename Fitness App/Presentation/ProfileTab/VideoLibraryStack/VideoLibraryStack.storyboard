@@ -128,7 +128,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yML-pB-D6D">
-                                                    <rect key="frame" x="183" y="10" width="41.5" height="41"/>
+                                                    <rect key="frame" x="183" y="10" width="172" height="41"/>
                                                     <string key="text">Label
 123</string>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -137,6 +137,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yML-pB-D6D" secondAttribute="trailing" constant="20" id="32w-FX-fnT"/>
                                                 <constraint firstItem="bGY-Zb-GiL" firstAttribute="centerY" secondItem="7zR-6W-uP3" secondAttribute="centerY" id="AUN-gu-tam"/>
                                                 <constraint firstItem="7zR-6W-uP3" firstAttribute="top" secondItem="Ndv-X3-rvx" secondAttribute="top" constant="10" id="PHD-gM-EZl"/>
                                                 <constraint firstItem="bGY-Zb-GiL" firstAttribute="centerX" secondItem="7zR-6W-uP3" secondAttribute="centerX" id="eDO-VI-So5"/>

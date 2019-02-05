@@ -37,7 +37,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqL-dB-MgZ">
-                                                    <rect key="frame" x="80" y="43" width="35.5" height="16"/>
+                                                    <rect key="frame" x="80" y="43.5" width="35.5" height="16"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -49,8 +49,8 @@
                                                         <constraint firstAttribute="height" constant="0.5" id="TTM-FH-m2v"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC1-ME-1cX">
-                                                    <rect key="frame" x="80" y="9" width="44.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC1-ME-1cX">
+                                                    <rect key="frame" x="80" y="9" width="285" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -59,10 +59,12 @@
                                             <constraints>
                                                 <constraint firstItem="4tr-q4-cAt" firstAttribute="leading" secondItem="ZqL-dB-MgZ" secondAttribute="leading" id="3ah-eA-9B2"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mhK-a0-2F2" secondAttribute="bottom" constant="9" id="6aL-RI-GaO"/>
+                                                <constraint firstItem="4tr-q4-cAt" firstAttribute="top" secondItem="ZqL-dB-MgZ" secondAttribute="bottom" constant="9" id="A4m-Nw-h09"/>
                                                 <constraint firstItem="pC1-ME-1cX" firstAttribute="leading" secondItem="mhK-a0-2F2" secondAttribute="trailing" constant="10" id="DRH-Yc-aH1"/>
                                                 <constraint firstItem="pC1-ME-1cX" firstAttribute="top" secondItem="mhK-a0-2F2" secondAttribute="top" id="JZb-XJ-AH2"/>
+                                                <constraint firstAttribute="trailing" secondItem="pC1-ME-1cX" secondAttribute="trailing" constant="10" id="MVB-Fb-wVS"/>
                                                 <constraint firstAttribute="bottom" secondItem="4tr-q4-cAt" secondAttribute="bottom" id="PPf-n0-XpG"/>
-                                                <constraint firstItem="ZqL-dB-MgZ" firstAttribute="bottom" secondItem="mhK-a0-2F2" secondAttribute="bottom" id="iX6-4R-hUD"/>
+                                                <constraint firstItem="ZqL-dB-MgZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pC1-ME-1cX" secondAttribute="bottom" constant="5" id="at8-Sd-4dr"/>
                                                 <constraint firstItem="ZqL-dB-MgZ" firstAttribute="leading" secondItem="pC1-ME-1cX" secondAttribute="leading" id="m3Z-Ra-0RL"/>
                                                 <constraint firstAttribute="trailing" secondItem="4tr-q4-cAt" secondAttribute="trailing" constant="20" id="oSd-fO-nxj"/>
                                                 <constraint firstItem="mhK-a0-2F2" firstAttribute="leading" secondItem="6hg-NW-orQ" secondAttribute="leading" constant="20" id="yD0-vy-WEN"/>

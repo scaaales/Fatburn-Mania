@@ -1,5 +1,5 @@
 //
-//  Notification.swift
+//  PushNotification.swift
 //  Fitness App
 //
 //  Created by scales on 1/29/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Notification {
+struct PushNotification {
 	let text: String
 	let date: Date?
 }

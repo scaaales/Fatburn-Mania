@@ -38,4 +38,8 @@ class LineTextField: UIView {
 		textField.becomeFirstResponder()
 	}
 	
+	func setInputAccessoryView(_ view: UIView) {
+		textField.inputAccessoryView = view
+	}
+	
 }

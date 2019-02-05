@@ -15,6 +15,7 @@ class VideoLibraryViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		collectionView.delegate = self
 		presenter.getCourses()
 	}
 	

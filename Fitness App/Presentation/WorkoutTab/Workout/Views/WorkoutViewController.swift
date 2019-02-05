@@ -25,6 +25,7 @@ class WorkoutViewController: UIViewController {
 	
 	private func setupTableView() {
 		tableView.backgroundColor = .clear
+		tableView.makeResizable(cell: true)
 		tableView.delegate = self
 	}
 	

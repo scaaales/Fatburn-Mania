@@ -1,16 +1,20 @@
 PODS:
+  - IQKeyboardManagerSwift (6.2.0)
   - JTAppleCalendar (7.1.6)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift
   - JTAppleCalendar (~> 7.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - IQKeyboardManagerSwift
     - JTAppleCalendar
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   JTAppleCalendar: abb30678f42a4ef8a340a932b1dcb8c85a33dac2
 
-PODFILE CHECKSUM: 53807ecab989ec26704ab0c42c708e80fc9aad18
+PODFILE CHECKSUM: c7711d2a1697087925b92cb60cd7728436433bbc
 
 COCOAPODS: 1.6.0.beta.2
