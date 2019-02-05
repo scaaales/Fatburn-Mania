@@ -116,13 +116,10 @@ extension LoginViewController: LoginView {
 extension LoginViewController: UITextFieldDelegate {
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		textFieldAssistang.currentResponderTag = textField.tag
-		switch textField.text {
-		case String.wrongPasswordConstant:
-			passwordTextField.setNormalState(isSecure: true)
-		case String.wrongEmailConstant:
+		if emailTextField.isEqual(textField) {
 			emailTextField.setNormalState()
-		default:
-			break
+		} else {
+			passwordTextField.setNormalState(isSecure: true)
 		}
 	}
 	
