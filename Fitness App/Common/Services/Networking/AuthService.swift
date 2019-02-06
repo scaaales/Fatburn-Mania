@@ -10,21 +10,25 @@ import Moya
 
 enum AuthService {
 	case register(name: String, phone: String, email: String, password: String)
+	case login(email: String, password: String)
 }
 
 extension AuthService: TargetType {
 	var baseURL: URL { return URL(string: "https://fitness-backend.ridex.tech")! }
 	
 	var path: String {
+		let path = "/api/auth/"
 		switch self {
 		case .register:
-			return "/api/auth/register"
+			return path + "register"
+		case .login:
+			return path + "login"
 		}
 	}
 	
 	var method: Method {
 		switch self {
-		case .register: return .post
+		case .register, .login: return .post
 		}
 	}
 	
@@ -41,12 +45,16 @@ extension AuthService: TargetType {
 				"email": email,
 				"password": password
 				], encoding: JSONEncoding.default)
+		case let .login(email, password):
+			return .requestParameters(parameters: [
+				"email": email,
+				"password": password
+				], encoding: JSONEncoding.default)
 		}
 	}
 	
 	var headers: [String: String]? {
 		return ["Content-type": "application/json"]
 	}
-	
 	
 }

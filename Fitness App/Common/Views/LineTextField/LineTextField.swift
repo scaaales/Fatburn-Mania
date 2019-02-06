@@ -15,25 +15,26 @@ class LineTextField: UIView {
 	var text: String? {
 		return isNormalState ? textField.text : nil
 	}
-	private var isNormalState = true
+	private(set) var isNormalState = true
 	
 	func setDelegate(_ delegate: UITextFieldDelegate) {
 		textField.delegate = delegate
 	}
 	
-	func setErrorState(errorTitle: String) {
+	func setErrorState(errorTitle: String?, isSecure: Bool = false) {
 		textField.textColor = .redErrorColor
 		line.backgroundColor = .redErrorColor
-		textField.text = errorTitle
+		if let errorTitle = errorTitle {
+			textField.text = errorTitle
+			isNormalState = false
+		}
 		textField.isSecureTextEntry = false
-		isNormalState = false
+		textField.isSecureTextEntry = isSecure
 	}
 	
 	func setNormalState(isSecure: Bool = false) {
-		if isNormalState { return }
 		textField.textColor = .black
 		line.backgroundColor = .lightGrayColor
-		textField.text = ""
 		textField.isSecureTextEntry = isSecure
 		isNormalState = true
 	}
@@ -44,6 +45,10 @@ class LineTextField: UIView {
 	
 	func setInputAccessoryView(_ view: UIView) {
 		textField.inputAccessoryView = view
+	}
+	
+	func clearOnNextEditing(_ value: Bool) {
+		textField.clearsOnBeginEditing = value
 	}
 	
 	override func isEqual(_ object: Any?) -> Bool {

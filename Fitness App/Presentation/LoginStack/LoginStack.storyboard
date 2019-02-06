@@ -178,7 +178,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixf-5d-lZA" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="58" width="335" height="28"/>
                                         <subviews>
-                                            <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vme-Lt-ipl">
+                                            <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="vme-Lt-ipl">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="NQ5-wG-4Tz"/>

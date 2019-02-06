@@ -20,7 +20,7 @@ protocol SignInView: View {
 	func hideLoader()
 	
 	func showErrors(_ errors: [SignInError])
-	func showPopup(with text: String)
+	func showErrorPopup(with text: String)
 	func showSuccess(title: String, completion: @escaping () -> Void)
 	func pop() 
 }

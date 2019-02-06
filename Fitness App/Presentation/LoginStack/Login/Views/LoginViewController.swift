@@ -52,11 +52,9 @@ class LoginViewController: UIViewController {
 	}
 	
 	@IBAction func login(_ sender: Any) {
-		let email = emailTextField.text == .wrongEmailConstant ? nil : emailTextField.text
-		let password = passwordTextField.text == .wrongPasswordConstant ? nil : passwordTextField.text
-		
-		presenter.loginUser(withEmail: email,
-							password: password)
+		emailTextField.setNormalState()
+		passwordTextField.setNormalState(isSecure: true)
+		presenter.loginUser()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,6 +67,14 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginView {
+	var email: String {
+		return emailTextField.text ?? ""
+	}
+	
+	var password: String {
+		return passwordTextField.text ?? ""
+	}
+	
 	func disableUserInteraction() {
 		view.isUserInteractionEnabled = false
 	}
@@ -90,9 +96,12 @@ extension LoginViewController: LoginView {
 		performSegue(withIdentifier: .presentTutorialSegueIdentifier, sender: nil)
 	}
 	
-	func showError() {
-		passwordTextField.setErrorState(errorTitle: .wrongPasswordConstant)
-		emailTextField.setErrorState(errorTitle: .wrongEmailConstant)
+	func showWrongPassword() {
+		emailTextField.setErrorState(errorTitle: nil)
+		emailTextField.clearOnNextEditing(false)
+		
+		passwordTextField.setErrorState(errorTitle: nil, isSecure: true)
+		passwordTextField.clearOnNextEditing(true)
 		
 		let paragraph = NSMutableParagraphStyle()
 		paragraph.alignment = .center
@@ -110,6 +119,23 @@ extension LoginViewController: LoginView {
 		}
 	}
 	
+	func showErrors(_ errors: [LoginError]) {
+		if errors.contains(.invalidEmail) {
+			emailTextField.setErrorState(errorTitle: .wrongEmailConstant)
+			emailTextField.clearOnNextEditing(true)
+		}
+		if errors.contains(.invalidPassword) {
+			passwordTextField.setErrorState(errorTitle: .wrongPasswordConstant)
+			passwordTextField.clearOnNextEditing(true)
+		}
+	}
+	
+	func showErrorPopup(with text: String) {
+		let alertController = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+		alertController.addAction(.init(title: "Ok", style: .cancel))
+		
+		present(alertController, animated: true)
+	}
 	
 }
 
@@ -121,6 +147,7 @@ extension LoginViewController: UITextFieldDelegate {
 		} else {
 			passwordTextField.setNormalState(isSecure: true)
 		}
+		textField.clearsOnBeginEditing = false
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {

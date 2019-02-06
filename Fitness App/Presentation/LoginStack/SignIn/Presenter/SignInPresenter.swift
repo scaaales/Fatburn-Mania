@@ -38,7 +38,7 @@ class SignInPresenter<V: SignInView>: Presenter {
 					self.view.pop()
 				}
 			}) { errorText in
-				self.view.showPopup(with: errorText)
+				self.view.showErrorPopup(with: errorText)
 			}
 		}
 	}
