@@ -20,7 +20,7 @@ class DiaryViewController: UIViewController {
 		calendarView.configure(calendarViewDateDelegate: self)
 		setupTableView()
 		presenter.getInitialHealthInfo()
-		UserDefaults.standard.set(false, forKey: .userDefaultKeyIsLogginedIn)
+		UserDefaults.standard.set(false, forKey: .userDefaultsKeyIsLogginedIn)
 	}
 
 	private func setupTableView() {

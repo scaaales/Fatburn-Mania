@@ -101,7 +101,7 @@ extension LoginViewController: LoginView {
 		emailTextField.clearOnNextEditing(false)
 		
 		passwordTextField.setErrorState(errorTitle: nil, isSecure: true)
-		passwordTextField.clearOnNextEditing(true)
+		passwordTextField.clearOnNextEditing(false)
 		
 		let paragraph = NSMutableParagraphStyle()
 		paragraph.alignment = .center

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 enum LoginError: Error {
 	case invalidEmail
@@ -32,8 +33,14 @@ class LoginPresenter<V: LoginView>: Presenter {
 				self.view.enableUserInteraction()
 				self.view.hideLoader()
 			}, onSuccess: { token, expiresIn in
-				print(token)
-				print(expiresIn)
+				let keychain = KeychainSwift()
+				let tokenExpirationDate = Date().addingTimeInterval(Double(expiresIn))
+				
+				keychain.set(token, forKey: .keychainKeyAccessToken)
+				print(tokenExpirationDate)
+				UserDefaults.standard.set(tokenExpirationDate, forKey: .userDefaultsKeyAccessTokenExpirationDate)
+				
+				self.view.presentTutorialScreen()
 			}) { errorText in
 				self.view.showWrongPassword()
 				self.view.showErrorPopup(with: errorText)
