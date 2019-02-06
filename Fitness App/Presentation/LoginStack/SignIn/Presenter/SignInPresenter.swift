@@ -6,7 +6,7 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-import Moya
+import Foundation
 
 enum SignInError: Error {
 	case invalidName
@@ -25,45 +25,36 @@ class SignInPresenter<V: SignInView>: Presenter {
 	}
 	
 	func signIn() {
-		view.disableUserInteraction()
 		if let errors = getValidationErrors() {
-			view.enableUserInteraction()
 			view.showErrors(errors)
 		} else {
+			view.disableUserInteraction()
 			view.showLoader()
-			let provider = MoyaProvider<AuthService>()
-			provider.request(.register(name: view.name,
-									   phone: view.phone,
-									   email: view.email,
-									   password: view.password)) { [weak self] result in
-										self?.view.enableUserInteraction()
-										self?.view.hideLoader()
-										
-										switch result {
-										case let .success(moyaResponse):
-											if let jsonAny = try? moyaResponse.mapJSON(),
-												let json = jsonAny as? [String: Any] {
-												self?.handleJSON(json)
-											}
-										case let .failure(error):
-											self?.view.showPopup(with: error.localizedDescription)
-										}
+			FitnessApi.Auth.registerUserWith(name: view.name, phone: view.phone, email: view.email, password: view.password, onComplete: {
+				self.view.enableUserInteraction()
+				self.view.hideLoader()
+			}, onSuccess: {  successText in
+				self.view.showSuccess(title: successText) {
+					self.view.pop()
+				}
+			}) { errorText in
+				self.view.showPopup(with: errorText)
 			}
 		}
 	}
 	
 	private func getValidationErrors() -> [SignInError]? {
 		var errors = [SignInError]()
-		if view.name.isEmpty {
+		if view.name.isEmpty || view.name.count > 255 {
 			errors.append(.invalidName)
 		}
-		if view.email.isEmpty {
+		if !view.email.isValidEmail() {
 			errors.append(.invalidEmail)
 		}
 		if view.phone.isEmpty {
 			errors.append(.invalidPhone)
 		}
-		if view.password.isEmpty {
+		if view.password.count < 6 {
 			errors.append(.invalidPassword)
 		}
 		if errors.isEmpty {
@@ -73,21 +64,5 @@ class SignInPresenter<V: SignInView>: Presenter {
 		}
 	}
 	
-	private func handleJSON(_ json: [String: Any]) {
-		if let success = json["success"] as? Bool {
-			if success {
-				if let successText = json["message"] as? String {
-					view.showSuccess(title: successText) { [weak self] in
-						self?.view.pop()
-					}
-				}
-			} else {
-				if let error = json["error"] as? [String: [String]],
-					let errorMessages = error["email"] {
-					view.showPopup(with: errorMessages[0])
-				}
-			}
-		}
-	}
 	
 }

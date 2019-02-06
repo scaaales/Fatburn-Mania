@@ -94,6 +94,27 @@ extension SignInViewController: SignInView {
 			passwordTextField.setErrorState(errorTitle: "Invalid password")
 		}
 	}
+	
+	func showPopup(with text: String) {
+		let alertController = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+		alertController.addAction(.init(title: "Ok", style: .cancel))
+		
+		present(alertController, animated: true)
+	}
+	
+	func showSuccess(title: String, completion: @escaping () -> Void) {
+		let alertController = UIAlertController(title: nil, message: title, preferredStyle: .alert)
+		
+		present(alertController, animated: true)
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+			alertController.dismiss(animated: true, completion: completion)
+		})
+	}
+	
+	func pop() {
+		navigationController?.popViewController(animated: true)
+	}
 }
 
 extension SignInViewController: UITextFieldDelegate {
@@ -120,27 +141,6 @@ extension SignInViewController: UITextFieldDelegate {
 			presenter.signIn()
 			return true
 		}
-	}
-	
-	func showPopup(with text: String) {
-		let alertController = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
-		alertController.addAction(.init(title: "Ok", style: .cancel))
-		
-		present(alertController, animated: true)
-	}
-	
-	func showSuccess(title: String, completion: @escaping () -> Void) {
-		let alertController = UIAlertController(title: nil, message: title, preferredStyle: .alert)
-		
-		present(alertController, animated: true)
-		
-		DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-			alertController.dismiss(animated: true, completion: completion)
-		})
-	}
-	
-	func pop() {
-		navigationController?.popViewController(animated: true)
 	}
 	
 }
