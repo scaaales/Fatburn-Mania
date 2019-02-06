@@ -24,6 +24,10 @@ class LoginPresenter<V: LoginView>: Presenter {
 	}
 	
 	func loginUser() {
+		if view.email.isEmpty && view.password.isEmpty { #warning("just for tasting, remove later")
+			view.presentTutorialScreen()
+			return
+		}
 		if let errors = getValidationErrors() {
 			view.showErrors(errors)
 		} else {

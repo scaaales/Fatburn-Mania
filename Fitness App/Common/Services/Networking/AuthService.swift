@@ -11,6 +11,8 @@ import Moya
 enum AuthService {
 	case register(name: String, phone: String, email: String, password: String)
 	case login(email: String, password: String)
+	case logout(token: String)
+	case refresh(token: String)
 }
 
 extension AuthService: TargetType {
@@ -23,13 +25,15 @@ extension AuthService: TargetType {
 			return path + "register"
 		case .login:
 			return path + "login"
+		case .logout:
+			return path + "logout"
+		case .refresh:
+			return path + "refresh"
 		}
 	}
 	
 	var method: Method {
-		switch self {
-		case .register, .login: return .post
-		}
+		return .post
 	}
 	
 	var sampleData: Data {
@@ -50,11 +54,21 @@ extension AuthService: TargetType {
 				"email": email,
 				"password": password
 				], encoding: JSONEncoding.default)
+		case .logout, .refresh:
+			return .requestPlain
 		}
 	}
 	
 	var headers: [String: String]? {
-		return ["Content-type": "application/json"]
+		var header = ["Content-type": "application/json"]
+		switch self {
+		case .logout(let token),
+			 .refresh(let token):
+			header["Authorization"] = "Bearer \(token)"
+		default:
+			break
+		}
+		return header
 	}
 	
 }
