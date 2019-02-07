@@ -109,6 +109,8 @@
 		B36CD81621F5F7FD007D4BE6 /* MusicPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36CD81521F5F7FD007D4BE6 /* MusicPlayerCell.swift */; };
 		B36CD81921F5F96B007D4BE6 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36CD81821F5F96B007D4BE6 /* Song.swift */; };
 		B36CD81B21F601F9007D4BE6 /* SongsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36CD81A21F601F9007D4BE6 /* SongsTableViewModel.swift */; };
+		B3728924220AF6BF0061822E /* String+validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3728923220AF6BF0061822E /* String+validation.swift */; };
+		B3728926220AF7580061822E /* FitnessAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3728925220AF7580061822E /* FitnessAPI.swift */; };
 		B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1721D7A2BF008A5D5A /* PresenterProtocol.swift */; };
 		B3753C1B21D7A2C0008A5D5A /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1821D7A2BF008A5D5A /* Configurator.swift */; };
 		B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3753C1921D7A2C0008A5D5A /* ViewProtocol.swift */; };
@@ -158,6 +160,8 @@
 		B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D477F21E62AB000D5C050 /* UserDataCell.swift */; };
 		B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */; };
 		B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */; };
+		B3B361D82209C6BD002E006F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B361D72209C6BD002E006F /* AuthService.swift */; };
+		B3B361DA220A0007002E006F /* NetworkActivityPlugin+default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */; };
 		B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */; };
 		B3B8D3B421E8B56000397AAB /* BasicTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B321E8B56000397AAB /* BasicTableViewDataSource.swift */; };
 		B3B8D3B621E8B62800397AAB /* CourseVideosTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B521E8B62800397AAB /* CourseVideosTableViewModel.swift */; };
@@ -335,6 +339,8 @@
 		B36CD81521F5F7FD007D4BE6 /* MusicPlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerCell.swift; sourceTree = "<group>"; };
 		B36CD81821F5F96B007D4BE6 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		B36CD81A21F601F9007D4BE6 /* SongsTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewModel.swift; sourceTree = "<group>"; };
+		B3728923220AF6BF0061822E /* String+validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+validation.swift"; sourceTree = "<group>"; };
+		B3728925220AF7580061822E /* FitnessAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAPI.swift; sourceTree = "<group>"; };
 		B3753C1721D7A2BF008A5D5A /* PresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
 		B3753C1821D7A2BF008A5D5A /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		B3753C1921D7A2C0008A5D5A /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
@@ -384,6 +390,8 @@
 		B39D477F21E62AB000D5C050 /* UserDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCell.swift; sourceTree = "<group>"; };
 		B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButtonArrowCell.swift; sourceTree = "<group>"; };
 		B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithSeperator.swift; sourceTree = "<group>"; };
+		B3B361D72209C6BD002E006F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkActivityPlugin+default.swift"; sourceTree = "<group>"; };
 		B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideoCell.swift; sourceTree = "<group>"; };
 		B3B8D3B321E8B56000397AAB /* BasicTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewDataSource.swift; sourceTree = "<group>"; };
 		B3B8D3B521E8B62800397AAB /* CourseVideosTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosTableViewModel.swift; sourceTree = "<group>"; };
@@ -552,6 +560,7 @@
 		B30A0E0021D78E480075D871 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B3B361D62209C616002E006F /* Networking */,
 				B369573621D4E40500735555 /* HealthKitService.swift */,
 				B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */,
 				B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */,
@@ -920,10 +929,12 @@
 			children = (
 				B33394C821DF734200D6013F /* UIColor */,
 				B369573B21D514DF00735555 /* Date+extension.swift */,
+				B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */,
 				B39A6D2121FB64B000C5A06F /* Array+extension.swift */,
 				B30F287B21F237DF000954DB /* TimeInterval+extension.swift */,
 				B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */,
 				B36B2F7321DE148600C5D07B /* String+constants.swift */,
+				B3728923220AF6BF0061822E /* String+validation.swift */,
 				B36B2F7621DE15DE00C5D07B /* UIStoryboard+extension.swift */,
 				B33394BF21DF655F00D6013F /* UIViewController+extension.swift */,
 				B36CD81321F5E6E0007D4BE6 /* UIButton+enabled.swift */,
@@ -1311,6 +1322,15 @@
 				B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		B3B361D62209C616002E006F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B3728925220AF7580061822E /* FitnessAPI.swift */,
+				B3B361D72209C6BD002E006F /* AuthService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		B3D3F58F22008BAB0052976D /* Navigation */ = {
@@ -1830,15 +1850,23 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Fitness App/Pods-Fitness App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1973,6 +2001,7 @@
 				B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */,
 				B39D477821E6288D00D5C050 /* ProfileHeaderCell.swift in Sources */,
 				B323C04B220215C90059AFB9 /* TextFieldAssistant.swift in Sources */,
+				B3B361D82209C6BD002E006F /* AuthService.swift in Sources */,
 				B3254F4421D3E7CE00F99F91 /* IdentifierProtocol.swift in Sources */,
 				B30A182A21F8BC3000A39131 /* LessonViewController.swift in Sources */,
 				B3753C2521D7A6E4008A5D5A /* DiaryInitializer.swift in Sources */,
@@ -1988,6 +2017,7 @@
 				B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */,
 				B3D737E621EF772E00DDF602 /* TimerViewController.swift in Sources */,
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
+				B3728924220AF6BF0061822E /* String+validation.swift in Sources */,
 				B3F732AC21E7A05C0038ACB9 /* BasicCollectionViewDataSource.swift in Sources */,
 				B35E621121F21298001CB678 /* BottomRoundedShadowView.swift in Sources */,
 				B39D477A21E628F800D5C050 /* ProfileButtonsCell.swift in Sources */,
@@ -2027,6 +2057,7 @@
 				B3B8D3B621E8B62800397AAB /* CourseVideosTableViewModel.swift in Sources */,
 				B38F17A121F87BEC00B70DBE /* WorkoutPresenter.swift in Sources */,
 				B30E9F9D21ECD9CB006F33CE /* CoinsHistoryHeader.swift in Sources */,
+				B3B361DA220A0007002E006F /* NetworkActivityPlugin+default.swift in Sources */,
 				B39A6D1B21FB226600C5A06F /* ExercisePresenter.swift in Sources */,
 				B33394CA21DF735F00D6013F /* UIColor+appColors.swift in Sources */,
 				B3254F4A21D3E7CE00F99F91 /* BodyMeasurementFooter.swift in Sources */,
@@ -2041,6 +2072,7 @@
 				B3EFDF4821F76E7D00A8F61F /* MeasureHistoryPresenter.swift in Sources */,
 				B3EFDF4A21F76E7D00A8F61F /* MeasureHistoryViewController.swift in Sources */,
 				B35E621321F2231C001CB678 /* TimerCell.swift in Sources */,
+				B3728926220AF7580061822E /* FitnessAPI.swift in Sources */,
 				B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */,
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B30E9F8A21ECBEF5006F33CE /* ProductDetailPresenter.swift in Sources */,

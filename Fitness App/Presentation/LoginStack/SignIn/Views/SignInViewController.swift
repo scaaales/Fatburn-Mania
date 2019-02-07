@@ -18,20 +18,32 @@ class SignInViewController: UIViewController {
 	
 	private var textFieldAssistang: TextFieldAssistant!
 	
+	lazy private var loader: BlurredLoader = {
+		let loader = BlurredLoader()
+		view.addSubview(loader)
+		loader.centerInto(view: view)
+		return loader
+	}()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		hideKeyboardWhenTappedAround()
 		setupTextFields()
 	}
 	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		nameTextField.activateTextField()
+	}
+	
 	private func setupTextFields() {
 		textFieldAssistang = .init(view: view, firstResponderTag: 100, lastResponderTag: 103)
 		
-		nameTextField.setDelegate(textFieldAssistang)
-		emailTextField.setDelegate(textFieldAssistang)
-		phoneTextField.setDelegate(textFieldAssistang)
-		passwordTextField.setDelegate(textFieldAssistang)
-	
+		nameTextField.setDelegate(self)
+		emailTextField.setDelegate(self)
+		phoneTextField.setDelegate(self)
+		passwordTextField.setDelegate(self)
+		
 		let textViewHelperView = textFieldAssistang.textViewHelperView
 		
 		nameTextField.setInputAccessoryView(textViewHelperView)
@@ -40,14 +52,95 @@ class SignInViewController: UIViewController {
 		passwordTextField.setInputAccessoryView(textViewHelperView)
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		nameTextField.activateTextField()
+	@IBAction private func signInTapped() {
+		presenter.signIn()
 	}
 
 }
 
 extension SignInViewController: SignInView {
+	var name: String { return nameTextField.text ?? "" }
+	var email: String { return emailTextField.text ?? "" }
+	var phone: String { return phoneTextField.text ?? ""}
+	var password: String { return passwordTextField.text ?? "" }
 	
+	func disableUserInteraction() {
+		view.isUserInteractionEnabled = false
+	}
+	
+	func enableUserInteraction() {
+		view.isUserInteractionEnabled = true
+	}
+	
+	func showLoader() {
+		loader.startAnimating()
+	}
+	
+	func hideLoader() {
+		loader.stopAnimating()
+	}
+	
+	func showErrors(_ errors: [SignInError]) {
+		if errors.contains(.invalidName) {
+			nameTextField.setErrorState(errorTitle: "Invalid name")
+		}
+		if errors.contains(.invalidEmail) {
+			emailTextField.setErrorState(errorTitle: "Invalid email")
+		}
+		if errors.contains(.invalidPhone) {
+			phoneTextField.setErrorState(errorTitle: "Invalid phone")
+		}
+		if errors.contains(.invalidPassword) {
+			passwordTextField.setErrorState(errorTitle: "Invalid password")
+		}
+	}
+	
+	func showErrorPopup(with text: String) {
+		let alertController = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+		alertController.addAction(.init(title: "Ok", style: .cancel))
+		
+		present(alertController, animated: true)
+	}
+	
+	func showSuccess(title: String, completion: @escaping () -> Void) {
+		let alertController = UIAlertController(title: nil, message: title, preferredStyle: .alert)
+		
+		present(alertController, animated: true)
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+			alertController.dismiss(animated: true, completion: completion)
+		})
+	}
+	
+	func pop() {
+		navigationController?.popViewController(animated: true)
+	}
 }
 
+extension SignInViewController: UITextFieldDelegate {
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		textFieldAssistang.currentResponderTag = textField.tag
+		if nameTextField.isEqual(textField) {
+			nameTextField.setNormalState()
+		} else if emailTextField.isEqual(textField) {
+			emailTextField.setNormalState()
+		} else if phoneTextField.isEqual(textField) {
+			phoneTextField.setNormalState()
+		} else {
+			passwordTextField.setNormalState(isSecure: true)
+		}
+	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		if textField.tag == 100 {
+			let nextResponderTag = textField.tag + 1
+			textFieldAssistang.currentResponderTag = nextResponderTag
+			return false
+		} else {
+			presenter.signIn()
+			return true
+		}
+	}
+	
+}

@@ -10,8 +10,14 @@ import Foundation
 
 // MARK: - UserDefault
 extension String {
-	static var userDefaultKeyIsLogginedIn: String { return "isLogginedIn" }
+	static var userDefaultsKeyIsLogginedIn: String { return "isLogginedIn" }
 	static var userDefaultsKeyIsTutorialShown: String { return "isTutorialShown" }
+	static var userDefaultsKeyAccessTokenExpirationDate: String { return "accessTokenExpirationDate" }
+}
+
+// MARK: - Keychain
+extension String {
+	static var keychainKeyAccessToken: String { return "access_token" }
 }
 
 // MARK: - SegueIdentifiers

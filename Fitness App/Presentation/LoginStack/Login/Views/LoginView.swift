@@ -9,10 +9,16 @@
 import Foundation
 
 protocol LoginView: View {
+	var email: String { get }
+	var password: String { get }
+	
 	func disableUserInteraction()
 	func enableUserInteraction()
 	func showLoader()
 	func hideLoader()
+	
+	func showErrors(_ errors: [LoginError])
+	func showWrongPassword()
+	func showErrorPopup(with text: String)
 	func presentTutorialScreen()
-	func showError()
 }

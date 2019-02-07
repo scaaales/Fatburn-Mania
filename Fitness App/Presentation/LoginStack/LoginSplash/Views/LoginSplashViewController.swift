@@ -13,7 +13,7 @@ class LoginSplashViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		UserDefaults.standard.set(true, forKey: .userDefaultKeyIsLogginedIn)
+		UserDefaults.standard.set(true, forKey: .userDefaultsKeyIsLogginedIn)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {

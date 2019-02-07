@@ -7,6 +7,12 @@
 //
 
 import Foundation
+import KeychainSwift
+
+enum LoginError: Error {
+	case invalidEmail
+	case invalidPassword
+}
 
 class LoginPresenter<V: LoginView>: Presenter {
 	typealias View = V
@@ -17,21 +23,31 @@ class LoginPresenter<V: LoginView>: Presenter {
 		self.view = view
 	}
 	
-	func loginUser(withEmail email: String?, password: String?) {
-		guard isFieldsValid(email: email, password: password) else {
-			view.showError()
+	func loginUser() {
+		if view.email.isEmpty && view.password.isEmpty { #warning("just for tasting, remove later")
+			view.presentTutorialScreen()
 			return
 		}
-		view.disableUserInteraction()
-		view.showLoader()
-		DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-			self.view.hideLoader()
-			if email == "q" && password == "q" {
-				UserDefaults.standard.set(true, forKey: .userDefaultsKeyIsTutorialShown)
-				self.view.presentTutorialScreen()
-			} else {
+		if let errors = getValidationErrors() {
+			view.showErrors(errors)
+		} else {
+			view.disableUserInteraction()
+			view.showLoader()
+			FitnessApi.Auth.login(email: view.email, password: view.password, onComplete: {
 				self.view.enableUserInteraction()
-				self.view.showError()
+				self.view.hideLoader()
+			}, onSuccess: { token, expiresIn in
+				let keychain = KeychainSwift()
+				let tokenExpirationDate = Date().addingTimeInterval(Double(expiresIn))
+				
+				keychain.set(token, forKey: .keychainKeyAccessToken)
+				print(tokenExpirationDate)
+				UserDefaults.standard.set(tokenExpirationDate, forKey: .userDefaultsKeyAccessTokenExpirationDate)
+				
+				self.view.presentTutorialScreen()
+			}) { errorText in
+				self.view.showWrongPassword()
+				self.view.showErrorPopup(with: errorText)
 			}
 		}
 	}
@@ -41,6 +57,21 @@ class LoginPresenter<V: LoginView>: Presenter {
 			return !email.isEmpty && !password.isEmpty
 		} else {
 			return false
+		}
+	}
+	
+	func getValidationErrors() -> [LoginError]? {
+		var errors = [LoginError]()
+		if !view.email.isValidEmail() {
+			errors.append(.invalidEmail)
+		}
+		if view.password.count < 6 {
+			errors.append(.invalidPassword)
+		}
+		if errors.isEmpty {
+			return nil
+		} else {
+			return errors
 		}
 	}
 }
