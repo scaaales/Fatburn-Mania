@@ -16,6 +16,9 @@ class LineTextField: UIView {
 		return isNormalState ? textField.text : nil
 	}
 	private(set) var isNormalState = true
+	var isSecureText: Bool {
+		return textField.isSecureTextEntry
+	}
 	
 	func setDelegate(_ delegate: UITextFieldDelegate) {
 		textField.delegate = delegate

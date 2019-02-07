@@ -18,20 +18,27 @@ class ProfileViewController: UIViewController {
 
 		setupTableView()
         presenter.getUser()
+		addLogoutButton()
     }
 	
 	private func setupTableView() {
 		tableView.delegate = self
-		
 		tableView.makeResizable()
-		
 		tableView.backgroundColor = .white
+	}
+	
+	private func addLogoutButton() {
+		navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let editProfileVC = segue.destination as? EditProfileViewController {
 			editProfileVC.presenter.user = presenter.user
 		}
+	}
+	
+	@objc private func logoutTapped() {
+		presenter.logout()
 	}
 
 }
@@ -43,6 +50,12 @@ extension ProfileViewController: ProfileView {
 	
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
 		tableView.dataSource = dataSource
+	}
+	
+	func showLoginStack() {
+		guard let loginVC = UIStoryboard.loginStack.instantiateInitialViewController() else { return }
+		(tabBarController as? TabBarViewController)?.presentedNavigationController.setViewControllers([loginVC], animated: false)
+		dismiss(animated: true)
 	}
 }
 

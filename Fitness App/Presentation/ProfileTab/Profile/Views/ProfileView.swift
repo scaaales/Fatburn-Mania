@@ -7,5 +7,5 @@
 //
 
 protocol ProfileView: View, TableViewUpdatable {
-	
+	func showLoginStack()
 }

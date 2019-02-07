@@ -23,12 +23,13 @@ extension String {
 // MARK: - SegueIdentifiers
 extension String {
 	static var presentTutorialSegueIdentifier: String { return "presentTutorial" }
-	static var presentLoginSegueIdentifier: String { return "presentLogin" }
+	static var showLoginSegueIdentifier: String { return "showLogin" }
 	static var showFAQSegueIdentifier: String { return "showFAQ" }
 	static var showHowToSegueIdentifier: String { return "showHowTo" }
 	static var showVideoLibrarySegueIdentifier: String { return "showVideoLibrary" }
 	static var showStoreSegueIdentifier: String { return "showStore" }
 	static var showCoinsHistorySegueIdentifier: String { return "showCoinsHistory" }
+	static var presentMainTabBarSegueIdentifier: String { return "presentMainTabBar"}
 }
 
 // MARK: - Text Constants

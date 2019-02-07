@@ -53,7 +53,9 @@ class LoginViewController: UIViewController {
 	
 	@IBAction func login(_ sender: Any) {
 		emailTextField.setNormalState()
-		passwordTextField.setNormalState(isSecure: true)
+		if passwordTextField.isSecureText {
+			passwordTextField.setNormalState(isSecure: true)
+		}
 		presenter.loginUser()
 	}
 	

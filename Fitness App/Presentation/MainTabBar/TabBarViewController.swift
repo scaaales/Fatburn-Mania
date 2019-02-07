@@ -9,10 +9,8 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-
-	private var isFirstLoad = true
-	
 	private lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
+	var presentedNavigationController: UINavigationController!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +30,6 @@ class TabBarViewController: UITabBarController {
 		newFrame.origin.y = view.frame.size.height - newTabBarHeight
 		
 		tabBar.frame = newFrame
-	}
-	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		if isFirstLoad {
-			isFirstLoad = false
-			performSegue(withIdentifier: .presentLoginSegueIdentifier, sender: nil)
-		}
 	}
 	
 	private func setupShadow() {

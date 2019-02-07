@@ -25,6 +25,7 @@ class LoginPresenter<V: LoginView>: Presenter {
 	
 	func loginUser() {
 		if view.email.isEmpty && view.password.isEmpty { #warning("just for tasting, remove later")
+			UserDefaults.standard.set(true, forKey: .userDefaultsKeyIsLogginedIn)
 			view.presentTutorialScreen()
 			return
 		}
@@ -44,6 +45,7 @@ class LoginPresenter<V: LoginView>: Presenter {
 				print(tokenExpirationDate)
 				UserDefaults.standard.set(tokenExpirationDate, forKey: .userDefaultsKeyAccessTokenExpirationDate)
 				
+				UserDefaults.standard.set(true, forKey: .userDefaultsKeyIsLogginedIn)
 				self.view.presentTutorialScreen()
 			}) { errorText in
 				self.view.showWrongPassword()

@@ -136,7 +136,7 @@
 		B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */; };
 		B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D221E4BE9F0071994A /* ResetPasswordView.swift */; };
 		B39301D621E4BF0B0071994A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D521E4BF0B0071994A /* ResetPasswordViewController.swift */; };
-		B39301D921E4DE770071994A /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301D821E4DE770071994A /* MainTabBar.storyboard */; };
+		B39301D921E4DE770071994A /* LoadingSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301D821E4DE770071994A /* LoadingSplash.storyboard */; };
 		B39301DB21E4E8630071994A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301DA21E4E8630071994A /* TabBarViewController.swift */; };
 		B39301DE21E4FA360071994A /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301DD21E4FA360071994A /* ProfileTab.storyboard */; };
 		B39301E121E4FA720071994A /* WorkoutTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39301E021E4FA720071994A /* WorkoutTab.storyboard */; };
@@ -206,6 +206,10 @@
 		B3EFDF4921F76E7D00A8F61F /* MeasureHistoryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */; };
 		B3EFDF4A21F76E7D00A8F61F /* MeasureHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */; };
 		B3EFDF4B21F76E7D00A8F61F /* MeasureHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4721F76E7D00A8F61F /* MeasureHistoryView.swift */; };
+		B3F27A49220C3F2600E932DE /* LoadingSplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A45220C3F2600E932DE /* LoadingSplashPresenter.swift */; };
+		B3F27A4A220C3F2600E932DE /* LoadingSplashInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A46220C3F2600E932DE /* LoadingSplashInitializer.swift */; };
+		B3F27A4B220C3F2600E932DE /* LoadingSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A47220C3F2600E932DE /* LoadingSplashViewController.swift */; };
+		B3F27A4C220C3F2600E932DE /* LoadingSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A48220C3F2600E932DE /* LoadingSplashView.swift */; };
 		B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7327F21E754840038ACB9 /* MainNavigationController.swift */; };
 		B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */; };
 		B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328821E765070038ACB9 /* HowToViewController.swift */; };
@@ -366,7 +370,7 @@
 		B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		B39301D221E4BE9F0071994A /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		B39301D521E4BF0B0071994A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		B39301D821E4DE770071994A /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		B39301D821E4DE770071994A /* LoadingSplash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingSplash.storyboard; sourceTree = "<group>"; };
 		B39301DA21E4E8630071994A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B39301DD21E4FA360071994A /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
 		B39301E021E4FA720071994A /* WorkoutTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkoutTab.storyboard; sourceTree = "<group>"; };
@@ -436,6 +440,10 @@
 		B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryInitializer.swift; sourceTree = "<group>"; };
 		B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryViewController.swift; sourceTree = "<group>"; };
 		B3EFDF4721F76E7D00A8F61F /* MeasureHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryView.swift; sourceTree = "<group>"; };
+		B3F27A45220C3F2600E932DE /* LoadingSplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashPresenter.swift; sourceTree = "<group>"; };
+		B3F27A46220C3F2600E932DE /* LoadingSplashInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashInitializer.swift; sourceTree = "<group>"; };
+		B3F27A47220C3F2600E932DE /* LoadingSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashViewController.swift; sourceTree = "<group>"; };
+		B3F27A48220C3F2600E932DE /* LoadingSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashView.swift; sourceTree = "<group>"; };
 		B3F7327F21E754840038ACB9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		B3F7328821E765070038ACB9 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
@@ -1046,7 +1054,7 @@
 		B3753C1521D7A1C3008A5D5A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B3D3F59022008CC70052976D /* Notifications */,
+				B3F27A44220C3EE700E932DE /* LoadingSplash */,
 				B3D3F58F22008BAB0052976D /* Navigation */,
 				B36B2F6021DE0EB700C5D07B /* LoginStack */,
 				B39301D721E4DE560071994A /* MainTabBar */,
@@ -1054,6 +1062,7 @@
 				B36B2F6521DE0FD400C5D07B /* DiaryTab */,
 				B39301DF21E4FA5F0071994A /* WorkoutTab */,
 				B39301E321E4FA9A0071994A /* WorkoutOfTheDayTab */,
+				B3D3F59022008CC70052976D /* Notifications */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -1202,7 +1211,6 @@
 		B39301D721E4DE560071994A /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				B39301D821E4DE770071994A /* MainTabBar.storyboard */,
 				B39301DA21E4E8630071994A /* TabBarViewController.swift */,
 			);
 			path = MainTabBar;
@@ -1572,6 +1580,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B3F27A44220C3EE700E932DE /* LoadingSplash */ = {
+			isa = PBXGroup;
+			children = (
+				B39301D821E4DE770071994A /* LoadingSplash.storyboard */,
+				B3F27A4E220C3F4900E932DE /* Presenter */,
+				B3F27A4D220C3F4300E932DE /* Views */,
+				B3F27A46220C3F2600E932DE /* LoadingSplashInitializer.swift */,
+			);
+			path = LoadingSplash;
+			sourceTree = "<group>";
+		};
+		B3F27A4D220C3F4300E932DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3F27A48220C3F2600E932DE /* LoadingSplashView.swift */,
+				B3F27A47220C3F2600E932DE /* LoadingSplashViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3F27A4E220C3F4900E932DE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3F27A45220C3F2600E932DE /* LoadingSplashPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		B3F7328421E75E970038ACB9 /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1829,7 +1865,7 @@
 				B3D3F59A22008D210052976D /* Notifications.storyboard in Resources */,
 				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
 				B3FBA15E21EF33F600B88AA3 /* MediaScreens.storyboard in Resources */,
-				B39301D921E4DE770071994A /* MainTabBar.storyboard in Resources */,
+				B39301D921E4DE770071994A /* LoadingSplash.storyboard in Resources */,
 				B39301E121E4FA720071994A /* WorkoutTab.storyboard in Resources */,
 				B39301E821E4FAC80071994A /* WorkoutOfTheDayTab.storyboard in Resources */,
 				B39301DE21E4FA360071994A /* ProfileTab.storyboard in Resources */,
@@ -2037,7 +2073,9 @@
 				B35E620F21F1F651001CB678 /* UIImageView+rotate.swift in Sources */,
 				B30F287C21F237DF000954DB /* TimeInterval+extension.swift in Sources */,
 				B3DC1B7521EE29CC00883C0F /* TextViewHelperView.swift in Sources */,
+				B3F27A4C220C3F2600E932DE /* LoadingSplashView.swift in Sources */,
 				B3DD925621FA03400017E723 /* LessonsTableViewModel.swift in Sources */,
+				B3F27A4B220C3F2600E932DE /* LoadingSplashViewController.swift in Sources */,
 				B30E9F6F21EC8D23006F33CE /* StoreViewController.swift in Sources */,
 				B3DD925421FA01560017E723 /* WorkoutOfTheDayView.swift in Sources */,
 				B33394C021DF655F00D6013F /* UIViewController+extension.swift in Sources */,
@@ -2053,7 +2091,9 @@
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
 				B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */,
 				B38F17A821F8848700B70DBE /* CustomSegmentedControl.swift in Sources */,
+				B3F27A4A220C3F2600E932DE /* LoadingSplashInitializer.swift in Sources */,
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
+				B3F27A49220C3F2600E932DE /* LoadingSplashPresenter.swift in Sources */,
 				B3B8D3B621E8B62800397AAB /* CourseVideosTableViewModel.swift in Sources */,
 				B38F17A121F87BEC00B70DBE /* WorkoutPresenter.swift in Sources */,
 				B30E9F9D21ECD9CB006F33CE /* CoinsHistoryHeader.swift in Sources */,

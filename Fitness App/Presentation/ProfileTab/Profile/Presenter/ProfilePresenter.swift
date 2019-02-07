@@ -42,6 +42,11 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 		view.update()
 	}
 	
+	func logout() {
+		UserDefaults.standard.set(false, forKey: .userDefaultsKeyIsLogginedIn)
+		view.showLoginStack()
+	}
+	
 	func getCellTitleFor(indexPath: IndexPath) -> String? {
 		return viewModel.getCellTitleFor(at: indexPath.row)
 	}

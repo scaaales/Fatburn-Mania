@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVA-S5-A95">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zui-4Y-kxg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HKG-Hv-BK0">
-                                <rect key="frame" x="20" y="88" width="335" height="519"/>
+                                <rect key="frame" x="20" y="44" width="335" height="563"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fbm_logo_gray" translatesAutoresizingMaskIntoConstraints="NO" id="6bN-rb-4cs">
-                                        <rect key="frame" x="30" y="0.0" width="275" height="259"/>
+                                        <rect key="frame" x="30" y="0.0" width="275" height="303"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AHG-bx-Vte">
-                                        <rect key="frame" x="0.0" y="259" width="335" height="260"/>
+                                        <rect key="frame" x="0.0" y="303" width="335" height="260"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppI-jQ-Jfm" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="36"/>
@@ -138,7 +138,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="VML-we-4tA">
-                                <rect key="frame" x="20" y="164" width="335" height="156.5"/>
+                                <rect key="frame" x="20" y="120" width="335" height="156.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FK8-6c-GCX" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="28"/>
@@ -272,7 +272,7 @@
                         <outlet property="emailTextField" destination="FK8-6c-GCX" id="W68-7b-fuU"/>
                         <outlet property="passwordTextField" destination="Ixf-5d-lZA" id="aJg-pI-2Qk"/>
                         <outlet property="resetPasswordButton" destination="T0x-ce-STk" id="AbZ-sg-Sca"/>
-                        <segue destination="liC-9p-VRH" kind="presentation" identifier="presentTutorial" id="Twx-mj-uZy"/>
+                        <segue destination="liC-9p-VRH" kind="show" identifier="presentTutorial" id="Twx-mj-uZy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DId-5Z-ze9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -386,11 +386,20 @@
                     <connections>
                         <outlet property="collectionView" destination="qUe-vZ-vxV" id="OOW-ay-raZ"/>
                         <outlet property="pageControl" destination="VOi-G0-LpZ" id="WuG-j4-Kya"/>
+                        <segue destination="dsA-Uc-Xf6" kind="presentation" identifier="presentMainTabBar" id="UpR-15-bS8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkr-6K-ZHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2852" y="860"/>
+            <point key="canvasLocation" x="2852" y="859"/>
+        </scene>
+        <!--TabBarViewController-->
+        <scene sceneID="Umu-DR-qgw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoadingSplash" referencedIdentifier="TabBarViewController" id="dsA-Uc-Xf6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dic-Qs-T5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3521" y="859"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="O3b-FM-RlH">
@@ -401,7 +410,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EHS-aC-CAi">
-                                <rect key="frame" x="20" y="164" width="335" height="202"/>
+                                <rect key="frame" x="20" y="120" width="335" height="202"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl0-ck-w6a" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="28"/>
@@ -592,7 +601,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29h-2e-jHI" customClass="LineTextField" customModule="Fitness_App" customModuleProvider="target">
-                                <rect key="frame" x="20" y="164" width="335" height="28"/>
+                                <rect key="frame" x="20" y="120" width="335" height="28"/>
                                 <subviews>
                                     <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrB-nR-Zs3">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
@@ -627,7 +636,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send you an email with instructions on how to reset your password." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDv-LW-cxl">
-                                <rect key="frame" x="66" y="224" width="243" height="29"/>
+                                <rect key="frame" x="66" y="180" width="243" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -684,24 +693,6 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="2852" y="113"/>
-        </scene>
-        <!--Login Navigation Controller-->
-        <scene sceneID="c4P-cB-NkF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vVA-S5-A95" customClass="LoginNavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xty-pl-838">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zui-4Y-kxg" kind="relationship" relationship="rootViewController" id="r7M-Jb-csd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iPB-Sy-uNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="84" y="112.89355322338831"/>
         </scene>
     </scenes>
     <resources>

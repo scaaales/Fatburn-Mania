@@ -10,20 +10,20 @@ import UIKit
 
 class LoginSplashViewController: UIViewController {
 	var presenter: LoginSplashPresenter<LoginSplashViewController>!
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		UserDefaults.standard.set(true, forKey: .userDefaultsKeyIsLogginedIn)
+		title = " "
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		self.navigationController?.setNavigationBarHidden(true, animated: animated)
 		super.viewWillAppear(animated)
+		self.navigationController?.setNavigationBarHidden(true, animated: animated)
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
-		self.navigationController?.setNavigationBarHidden(false, animated: animated)
 		super.viewWillDisappear(animated)
+		self.navigationController?.setNavigationBarHidden(false, animated: animated)
 	}
 	
 }

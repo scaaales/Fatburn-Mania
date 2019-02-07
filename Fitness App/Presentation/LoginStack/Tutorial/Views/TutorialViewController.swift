@@ -22,6 +22,11 @@ class TutorialViewController: UIViewController {
 		setupCollectionView()
     }
 	
+	override func viewWillAppear(_ animated: Bool) {
+		self.navigationController?.setNavigationBarHidden(true, animated: animated)
+		super.viewWillAppear(animated)
+	}
+
 	private func setupDataSource() {
 		var items = [UIImage]()
 		for page in 1...pageControl.numberOfPages {
@@ -61,8 +66,14 @@ class TutorialViewController: UIViewController {
 	}
 	
 	private func showMainScreen() {
-		(parrentController as? LoginViewController)?.shouldShowKeyboard = false
-		presentingViewController?.presentingViewController?.dismiss(animated: true)
+		performSegue(withIdentifier: .presentMainTabBarSegueIdentifier, sender: nil)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let tabBarController = segue.destination as? TabBarViewController,
+			let navigationController = self.navigationController {
+			tabBarController.presentedNavigationController = navigationController
+		}
 	}
 	
 }
