@@ -18,6 +18,7 @@ class LoginPresenter<V: LoginView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
+	private let authAPI = FitnessApi.Auth()
 	
 	required init(view: View) {
 		self.view = view
@@ -25,7 +26,7 @@ class LoginPresenter<V: LoginView>: Presenter {
 	
 	func loginUser() {
 		if view.email.isEmpty && view.password.isEmpty { #warning("just for tasting, remove later")
-			view.presentTutorialScreen()
+			view.showTutorialScreen()
 			return
 		}
 		if let errors = getValidationErrors() {
@@ -33,21 +34,20 @@ class LoginPresenter<V: LoginView>: Presenter {
 		} else {
 			view.disableUserInteraction()
 			view.showLoader()
-			FitnessApi.Auth.login(email: view.email, password: view.password, onComplete: {
-				self.view.enableUserInteraction()
-				self.view.hideLoader()
-			}, onSuccess: { token, expiresIn in
+			authAPI.login(email: view.email, password: view.password, onComplete: { [weak self] in
+				self?.view.enableUserInteraction()
+				self?.view.hideLoader()
+			}, onSuccess: { [weak self] token, expiresIn in
 				let keychain = KeychainSwift()
 				let tokenExpirationDate = Date().addingTimeInterval(Double(expiresIn))
 				
 				keychain.set(token, forKey: .keychainKeyAccessToken)
-				print(tokenExpirationDate)
 				UserDefaults.standard.set(tokenExpirationDate, forKey: .userDefaultsKeyAccessTokenExpirationDate)
 				
-				self.view.presentTutorialScreen()
-			}) { errorText in
-				self.view.showWrongPassword()
-				self.view.showErrorPopup(with: errorText)
+				self?.view.showTutorialScreen()
+			}) { [weak self] errorText in
+				self?.view.showWrongPassword()
+				self?.view.showErrorPopup(with: errorText)
 			}
 		}
 	}

@@ -19,6 +19,7 @@ class SignInPresenter<V: SignInView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
+	private let authAPI = FitnessApi.Auth()
 	
 	required init(view: View) {
 		self.view = view
@@ -30,15 +31,15 @@ class SignInPresenter<V: SignInView>: Presenter {
 		} else {
 			view.disableUserInteraction()
 			view.showLoader()
-			FitnessApi.Auth.registerUserWith(name: view.name, phone: view.phone, email: view.email, password: view.password, onComplete: {
-				self.view.enableUserInteraction()
-				self.view.hideLoader()
-			}, onSuccess: {  successText in
-				self.view.showSuccess(title: successText) {
-					self.view.pop()
+			authAPI.registerUserWith(name: view.name, phone: view.phone, email: view.email, password: view.password, onComplete: { [weak self] in
+				self?.view.enableUserInteraction()
+				self?.view.hideLoader()
+			}, onSuccess: { [weak self] successText in
+				self?.view.showSuccess(title: successText) {
+					self?.view.pop()
 				}
-			}) { errorText in
-				self.view.showErrorPopup(with: errorText)
+			}) { [weak self] errorText in
+				self?.view.showErrorPopup(with: errorText)
 			}
 		}
 	}

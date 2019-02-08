@@ -13,19 +13,30 @@ class ProfileViewController: UIViewController {
 	
 	@IBOutlet private weak var tableView: UITableView!
 	
+	lazy private var loader: BlurredLoader = {
+		let loader = BlurredLoader()
+		view.addSubview(loader)
+		loader.centerInto(view: view)
+		return loader
+	}()
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
 		setupTableView()
         presenter.getUser()
+		addLogoutButton()
     }
 	
 	private func setupTableView() {
 		tableView.delegate = self
-		
 		tableView.makeResizable()
-		
 		tableView.backgroundColor = .white
+	}
+	
+	private func addLogoutButton() {
+		let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+		navigationItem.leftBarButtonItem = logoutButton
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,10 +44,47 @@ class ProfileViewController: UIViewController {
 			editProfileVC.presenter.user = presenter.user
 		}
 	}
+	
+	@objc private func logoutTapped() {
+		presenter.logout()
+	}
 
 }
 
 extension ProfileViewController: ProfileView {
+	func disableUserInteraction() {
+		view.isUserInteractionEnabled = false
+		navigationController?.navigationBar.isUserInteractionEnabled = false
+		tabBarController?.tabBar.isUserInteractionEnabled = false
+	}
+	
+	func enableUserInteraction() {
+		view.isUserInteractionEnabled = true
+		navigationController?.navigationBar.isUserInteractionEnabled = true
+		tabBarController?.tabBar.isUserInteractionEnabled = true
+	}
+	
+	func showLoader() {
+		loader.startAnimating()
+	}
+	
+	func hideLoader() {
+		loader.stopAnimating()
+	}
+	
+	func showLoginScreen() {
+		guard let loginVC = UIStoryboard.loginStack.instantiateInitialViewController() else { return }
+		(tabBarController as? TabBarViewController)?.presentedNavigationController.setViewControllers([loginVC], animated: false)
+		dismiss(animated: true)
+	}
+	
+	func showErrorPopup(with text: String) {
+		let alertController = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+		alertController.addAction(.init(title: "Ok", style: .cancel))
+		
+		present(alertController, animated: true)
+	}
+	
 	func update() {
 		tableView.reloadData()
 	}
@@ -44,6 +92,7 @@ extension ProfileViewController: ProfileView {
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
 		tableView.dataSource = dataSource
 	}
+	
 }
 
 extension ProfileViewController: UITableViewDelegate {

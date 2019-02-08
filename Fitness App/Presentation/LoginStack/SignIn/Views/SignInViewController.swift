@@ -36,6 +36,11 @@ class SignInViewController: UIViewController {
 		nameTextField.activateTextField()
 	}
 	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		view.endEditing(true)
+	}
+	
 	private func setupTextFields() {
 		textFieldAssistang = .init(view: view, firstResponderTag: 100, lastResponderTag: 103)
 		

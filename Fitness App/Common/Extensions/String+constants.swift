@@ -10,7 +10,6 @@ import Foundation
 
 // MARK: - UserDefault
 extension String {
-	static var userDefaultsKeyIsLogginedIn: String { return "isLogginedIn" }
 	static var userDefaultsKeyIsTutorialShown: String { return "isTutorialShown" }
 	static var userDefaultsKeyAccessTokenExpirationDate: String { return "accessTokenExpirationDate" }
 }
@@ -22,13 +21,14 @@ extension String {
 
 // MARK: - SegueIdentifiers
 extension String {
-	static var presentTutorialSegueIdentifier: String { return "presentTutorial" }
-	static var presentLoginSegueIdentifier: String { return "presentLogin" }
+	static var showTutorialSegueIdentifier: String { return "showTutorial" }
+	static var showLoginSegueIdentifier: String { return "showLogin" }
 	static var showFAQSegueIdentifier: String { return "showFAQ" }
 	static var showHowToSegueIdentifier: String { return "showHowTo" }
 	static var showVideoLibrarySegueIdentifier: String { return "showVideoLibrary" }
 	static var showStoreSegueIdentifier: String { return "showStore" }
 	static var showCoinsHistorySegueIdentifier: String { return "showCoinsHistory" }
+	static var presentMainTabBarSegueIdentifier: String { return "presentMainTabBar"}
 }
 
 // MARK: - Text Constants

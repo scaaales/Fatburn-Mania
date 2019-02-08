@@ -8,44 +8,44 @@
 
 import Moya
 import KeychainSwift
+import Result
 
 typealias JSON = [String: Any]
 
 enum FitnessApi {
-	enum Auth {
-		static private let provider = MoyaProvider<AuthService>(plugins: [NetworkActivityPlugin.default])
+	class Auth {
+		private let provider = MoyaProvider<AuthService>(plugins: [NetworkActivityPlugin.default])
+		
+		private var request: Cancellable?
 		
 		typealias OnErrorCompletion = (_ errorMessage: String) -> Void
 		
 		// register
 		typealias OnSuccessRegisterCompletion = (_ message: String) -> Void
 		
-		static func registerUserWith(name: String,
+		func registerUserWith(name: String,
 									 phone: String,
 									 email: String,
 									 password: String,
 									 onComplete: @escaping () -> Void,
 									 onSuccess: @escaping OnSuccessRegisterCompletion,
 									 onError: @escaping OnErrorCompletion) {
-			provider.request(.register(name: name,
-									   phone: phone,
-									   email: email,
-									   password: password)) { result in
-										onComplete()
-										switch result {
-										case let .success(moyaResponse):
-											if let jsonAny = try? moyaResponse.mapJSON(),
-												let json = jsonAny as? JSON {
-												handleRegisterJSON(json, onSuccess: onSuccess, onError: onError)
-											}
-										case let .failure(error):
-											onError(error.localizedDescription)
-										}
+			request = provider.request(.register(name: name,
+											  phone: phone,
+											  email: email,
+											  password: password)) { result in
+												onComplete()
+												self.handleResult(result,
+															 onSuccess: { json in
+																self.handleRegisterJSON(json, onSuccess: onSuccess, onError: onError)
+												}, onError: { error in
+													onError(error)
+												})
 			}
 			
 		}
 		
-		private static func handleRegisterJSON(_ json: JSON,
+		func handleRegisterJSON(_ json: JSON,
 											   onSuccess: @escaping OnSuccessRegisterCompletion,
 											   onError: @escaping OnErrorCompletion) {
 			if let success = json["success"] as? Bool {
@@ -65,28 +65,66 @@ enum FitnessApi {
 		// login
 		typealias OnSuccessLoginCompletion = (_ accessToker: String, _ expiresIn: Int) -> Void
 		
-		static func login(email: String,
+		func login(email: String,
 						  password: String,
 						  onComplete: @escaping () -> Void,
 						  onSuccess: @escaping OnSuccessLoginCompletion,
 						  onError: @escaping OnErrorCompletion) {
-			provider.request(.login(email: email, password: password)) { result in
+			request = provider.request(.login(email: email, password: password)) { result in
 				onComplete()
-				switch result {
-				case let .success(moyaResponse):
-					if let jsonAny = try? moyaResponse.mapJSON(),
-						let json = jsonAny as? JSON {
-						if let errorText = json["error"] as? String {
-							onError(errorText)
-						} else if let token = json["access_token"] as? String,
-							let expiresIn = json["expires_in"] as? Int {
-							onSuccess(token, expiresIn)
-						}
+				self.handleResult(result,
+							 onSuccess: { json in
+								if let errorText = json["error"] as? String {
+									onError(errorText)
+								} else if let token = json["access_token"] as? String,
+									let expiresIn = json["expires_in"] as? Int {
+									onSuccess(token, expiresIn)
+								}
+				}, onError: { error in
+					onError(error)
+				})
+			}
+		}
+		
+		// logout
+		func logout(token: String,
+						   onComplete: @escaping () -> Void,
+						   onSuccess: @escaping () -> Void,
+						   onError: @escaping OnErrorCompletion) {
+			request = provider.request(.logout(token: token)) { result in
+				onComplete()
+				self.handleResult(result, onSuccess: { _ in
+					onSuccess()
+				}, onError: { error in
+					onError(error)
+				})
+			}
+		}
+		
+		
+		private func handleResult(_ result: Result<Response, MoyaError>,
+										 onSuccess: (JSON) -> Void,
+										 onError: OnErrorCompletion) {
+			switch result {
+			case let .success(moyaResponse):
+				do {
+					_ = try moyaResponse.filterSuccessfulStatusCodes()
+					let jsonAny = try moyaResponse.mapJSON()
+					
+					if let json = jsonAny as? JSON {
+						onSuccess(json)
 					}
-				case let .failure(error):
+				} catch {
 					onError(error.localizedDescription)
 				}
+			case let .failure(error):
+				print(error)
+				onError(error.localizedDescription)
 			}
+		}
+		
+		deinit {
+			request?.cancel()
 		}
 	}
 	

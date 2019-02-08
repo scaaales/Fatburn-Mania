@@ -8,11 +8,7 @@
 
 import Foundation
 
-protocol ResetPasswordView: View {
-	func disableUserInteraction()
-	func enableUserInteraction()
-	func showLoader()
-	func hideLoader()
+protocol ResetPasswordView: View, NetworkingView {
 	func showSuccessSend()
 	func showError()
 }
