@@ -7,5 +7,9 @@
 //
 
 protocol LoadingSplashView: View {
-	
+	func showMainScreen()
+	func showLoginScreen()
+	func showLoader()
+	func hideLoader()
+	func showErrorPopup(with text: String, okHandler: @escaping () -> Void)
 }

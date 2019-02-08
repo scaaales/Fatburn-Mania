@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == String.presentTutorialSegueIdentifier,
+		if segue.identifier == String.showTutorialSegueIdentifier,
 			let tutorialViewController = segue.destination as? TutorialViewController {
 			tutorialViewController.parrentController = self
 		}
@@ -93,9 +93,9 @@ extension LoginViewController: LoginView {
 		loader.stopAnimating()
 	}
 	
-	func presentTutorialScreen() {
+	func showTutorialScreen() {
 		view.endEditing(true)
-		performSegue(withIdentifier: .presentTutorialSegueIdentifier, sender: nil)
+		performSegue(withIdentifier: .showTutorialSegueIdentifier, sender: nil)
 	}
 	
 	func showWrongPassword() {

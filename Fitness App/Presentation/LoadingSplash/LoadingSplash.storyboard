@@ -24,17 +24,23 @@
                                     <constraint firstAttribute="width" secondItem="99I-n4-BMA" secondAttribute="height" multiplier="55:17" id="hs8-Kp-9xP"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Y2A-Cu-fKp">
+                                <rect key="frame" x="177.5" y="458" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.27450980392156865" green="0.5607843137254902" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Y2A-Cu-fKp" firstAttribute="centerX" secondItem="0Pa-ao-96b" secondAttribute="centerX" id="3X2-5d-wvJ"/>
                             <constraint firstItem="99I-n4-BMA" firstAttribute="centerY" secondItem="0Pa-ao-96b" secondAttribute="centerY" id="8Lm-Dl-zNA"/>
                             <constraint firstItem="99I-n4-BMA" firstAttribute="leading" secondItem="0Pa-ao-96b" secondAttribute="leading" constant="50" id="9CR-y3-PYw"/>
+                            <constraint firstItem="Y2A-Cu-fKp" firstAttribute="top" secondItem="99I-n4-BMA" secondAttribute="bottom" constant="50" id="NvY-hr-hI6"/>
                             <constraint firstItem="99I-n4-BMA" firstAttribute="centerX" secondItem="0Pa-ao-96b" secondAttribute="centerX" id="vwm-V3-kjQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Pa-ao-96b"/>
                     </view>
                     <navigationItem key="navigationItem" id="ddE-oF-nry"/>
                     <connections>
+                        <outlet property="loader" destination="Y2A-Cu-fKp" id="8Mx-n0-EhO"/>
                         <segue destination="ymS-w3-5uf" kind="presentation" identifier="presentMainTabBar" id="6Tm-CK-kjC"/>
                         <segue destination="WYX-bo-9kX" kind="show" identifier="showLogin" id="bHR-9x-Jsw"/>
                     </connections>

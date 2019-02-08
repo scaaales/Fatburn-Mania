@@ -11,16 +11,16 @@ import UIKit
 class LoadingSplashViewController: UIViewController {
 	var presenter: LoadingSplashPresenter<LoadingSplashViewController>!
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-			self.performSegue(withIdentifier: .showLoginSegueIdentifier, sender: nil)
-		}
+	@IBOutlet private weak var loader: UIActivityIndicatorView!
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		presenter.decideRouting()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		self.navigationController?.setNavigationBarHidden(true, animated: animated)
 		super.viewWillAppear(animated)
+		self.navigationController?.setNavigationBarHidden(true, animated: animated)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,6 +33,29 @@ class LoadingSplashViewController: UIViewController {
 }
 
 extension LoadingSplashViewController: LoadingSplashView {
+	func showMainScreen() {
+		performSegue(withIdentifier: .presentMainTabBarSegueIdentifier, sender: nil)
+	}
+	
+	func showLoginScreen() {
+		performSegue(withIdentifier: .showLoginSegueIdentifier, sender: nil)
+	}
+	
+	func showLoader() {
+		loader.startAnimating()
+	}
+	
+	func hideLoader() {
+		loader.stopAnimating()
+	}
+	
+	func showErrorPopup(with text: String, okHandler: @escaping () -> Void) {
+		let alertController = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+		alertController.addAction(.init(title: "Ok", style: .cancel, handler: { _ in
+			okHandler()
+		}))
+		present(alertController, animated: true)
+	}
 	
 }
 

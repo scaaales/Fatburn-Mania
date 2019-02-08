@@ -8,6 +8,7 @@
 
 import Moya
 import KeychainSwift
+import Result
 
 typealias JSON = [String: Any]
 
@@ -32,15 +33,12 @@ enum FitnessApi {
 									   email: email,
 									   password: password)) { result in
 										onComplete()
-										switch result {
-										case let .success(moyaResponse):
-											if let jsonAny = try? moyaResponse.mapJSON(),
-												let json = jsonAny as? JSON {
-												handleRegisterJSON(json, onSuccess: onSuccess, onError: onError)
-											}
-										case let .failure(error):
-											onError(error.localizedDescription)
-										}
+										handleResult(result,
+													 onSuccess: { json in
+														handleRegisterJSON(json, onSuccess: onSuccess, onError: onError)
+										}, onError: { error in
+											onError(error)
+										})
 			}
 			
 		}
@@ -72,20 +70,46 @@ enum FitnessApi {
 						  onError: @escaping OnErrorCompletion) {
 			provider.request(.login(email: email, password: password)) { result in
 				onComplete()
-				switch result {
-				case let .success(moyaResponse):
-					if let jsonAny = try? moyaResponse.mapJSON(),
-						let json = jsonAny as? JSON {
-						if let errorText = json["error"] as? String {
-							onError(errorText)
-						} else if let token = json["access_token"] as? String,
-							let expiresIn = json["expires_in"] as? Int {
-							onSuccess(token, expiresIn)
-						}
-					}
-				case let .failure(error):
-					onError(error.localizedDescription)
+				handleResult(result,
+							 onSuccess: { json in
+								if let errorText = json["error"] as? String {
+									onError(errorText)
+								} else if let token = json["access_token"] as? String,
+									let expiresIn = json["expires_in"] as? Int {
+									onSuccess(token, expiresIn)
+								}
+				}, onError: { error in
+					onError(error)
+				})
+			}
+		}
+		
+		// logout
+		static func logout(token: String,
+						   onComplete: @escaping () -> Void,
+						   onError: @escaping OnErrorCompletion) {
+			provider.request(.logout(token: token)) { result in
+				handleResult(result, onSuccess: { _ in
+					onComplete()
+				}, onError: { error in
+					onError(error)
+				})
+			}
+		}
+						   
+		
+		static private func handleResult(_ result: Result<Response, MoyaError>,
+											 onSuccess: (JSON) -> Void,
+											 onError: OnErrorCompletion) {
+			switch result {
+			case let .success(moyaResponse):
+				if let jsonAny = try? moyaResponse.mapJSON(),
+					let json = jsonAny as? JSON {
+					onSuccess(json)
 				}
+			case let .failure(error):
+				print(error)
+				onError(error.localizedDescription)
 			}
 		}
 	}

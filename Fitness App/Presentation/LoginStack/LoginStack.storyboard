@@ -272,7 +272,7 @@
                         <outlet property="emailTextField" destination="FK8-6c-GCX" id="W68-7b-fuU"/>
                         <outlet property="passwordTextField" destination="Ixf-5d-lZA" id="aJg-pI-2Qk"/>
                         <outlet property="resetPasswordButton" destination="T0x-ce-STk" id="AbZ-sg-Sca"/>
-                        <segue destination="liC-9p-VRH" kind="show" identifier="presentTutorial" id="Twx-mj-uZy"/>
+                        <segue destination="liC-9p-VRH" kind="show" identifier="showTutorial" id="Twx-mj-uZy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DId-5Z-ze9" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -20,5 +20,5 @@ protocol LoginView: View {
 	func showErrors(_ errors: [LoginError])
 	func showWrongPassword()
 	func showErrorPopup(with text: String)
-	func presentTutorialScreen()
+	func showTutorialScreen()
 }

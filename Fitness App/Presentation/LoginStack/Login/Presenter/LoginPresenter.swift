@@ -25,8 +25,7 @@ class LoginPresenter<V: LoginView>: Presenter {
 	
 	func loginUser() {
 		if view.email.isEmpty && view.password.isEmpty { #warning("just for tasting, remove later")
-			UserDefaults.standard.set(true, forKey: .userDefaultsKeyIsLogginedIn)
-			view.presentTutorialScreen()
+			view.showTutorialScreen()
 			return
 		}
 		if let errors = getValidationErrors() {
@@ -42,11 +41,9 @@ class LoginPresenter<V: LoginView>: Presenter {
 				let tokenExpirationDate = Date().addingTimeInterval(Double(expiresIn))
 				
 				keychain.set(token, forKey: .keychainKeyAccessToken)
-				print(tokenExpirationDate)
 				UserDefaults.standard.set(tokenExpirationDate, forKey: .userDefaultsKeyAccessTokenExpirationDate)
 				
-				UserDefaults.standard.set(true, forKey: .userDefaultsKeyIsLogginedIn)
-				self.view.presentTutorialScreen()
+				self.view.showTutorialScreen()
 			}) { errorText in
 				self.view.showWrongPassword()
 				self.view.showErrorPopup(with: errorText)

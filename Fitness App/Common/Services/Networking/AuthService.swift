@@ -12,7 +12,6 @@ enum AuthService {
 	case register(name: String, phone: String, email: String, password: String)
 	case login(email: String, password: String)
 	case logout(token: String)
-	case refresh(token: String)
 }
 
 extension AuthService: TargetType {
@@ -27,8 +26,6 @@ extension AuthService: TargetType {
 			return path + "login"
 		case .logout:
 			return path + "logout"
-		case .refresh:
-			return path + "refresh"
 		}
 	}
 	
@@ -54,16 +51,16 @@ extension AuthService: TargetType {
 				"email": email,
 				"password": password
 				], encoding: JSONEncoding.default)
-		case .logout, .refresh:
+		case .logout:
 			return .requestPlain
 		}
 	}
 	
 	var headers: [String: String]? {
-		var header = ["Content-type": "application/json"]
+		var header = ["Content-type": "application/json",
+					  "Accept": "application/json"]
 		switch self {
-		case .logout(let token),
-			 .refresh(let token):
+		case .logout(let token):
 			header["Authorization"] = "Bearer \(token)"
 		default:
 			break

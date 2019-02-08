@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 class ProfilePresenter<V: ProfileView>: Presenter { 
 	typealias View = V
@@ -43,7 +44,9 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	}
 	
 	func logout() {
-		UserDefaults.standard.set(false, forKey: .userDefaultsKeyIsLogginedIn)
+		let keychain = KeychainSwift()
+		keychain.delete(.keychainKeyAccessToken)
+		UserDefaults.standard.removeObject(forKey: .userDefaultsKeyAccessTokenExpirationDate)
 		view.showLoginStack()
 	}
 	
