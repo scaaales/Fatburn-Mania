@@ -8,14 +8,9 @@
 
 import Foundation
 
-protocol LoginView: View {
+protocol LoginView: View, NetworkingView {
 	var email: String { get }
 	var password: String { get }
-	
-	func disableUserInteraction()
-	func enableUserInteraction()
-	func showLoader()
-	func hideLoader()
 	
 	func showErrors(_ errors: [LoginError])
 	func showWrongPassword()

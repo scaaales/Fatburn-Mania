@@ -8,16 +8,11 @@
 
 import Foundation
 
-protocol SignInView: View {
+protocol SignInView: View, NetworkingView {
 	var name: String { get }
 	var email: String { get }
 	var phone: String { get }
 	var password: String { get }
-	
-	func disableUserInteraction()
-	func enableUserInteraction()
-	func showLoader()
-	func hideLoader()
 	
 	func showErrors(_ errors: [SignInError])
 	func showErrorPopup(with text: String)

@@ -14,6 +14,7 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	
 	weak var view: View!
 	private var viewModel: ProfileTableViewModel!
+	private let authAPI = FitnessApi.Auth()
 	
 	var user: User {
 		didSet {
@@ -44,13 +45,29 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	}
 	
 	func logout() {
+		view.disableUserInteraction()
+		view.showLoader()
+		
 		let keychain = KeychainSwift()
-		keychain.delete(.keychainKeyAccessToken)
-		UserDefaults.standard.removeObject(forKey: .userDefaultsKeyAccessTokenExpirationDate)
-		view.showLoginStack()
+		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
+		
+		authAPI.logout(token: token,
+							   onComplete: { [weak self] in
+								self?.view.enableUserInteraction()
+								self?.view.hideLoader()
+		}, onSuccess: { [weak self] in
+			keychain.delete(.keychainKeyAccessToken)
+			UserDefaults.standard.removeObject(forKey: .userDefaultsKeyAccessTokenExpirationDate)
+			self?.view.showLoginScreen()
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
 	}
 	
 	func getCellTitleFor(indexPath: IndexPath) -> String? {
 		return viewModel.getCellTitleFor(at: indexPath.row)
 	}
+
 }
+
+

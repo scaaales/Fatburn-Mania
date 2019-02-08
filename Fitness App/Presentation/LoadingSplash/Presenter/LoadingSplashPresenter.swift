@@ -13,6 +13,9 @@ class LoadingSplashPresenter<V: LoadingSplashView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
+	private lazy var authAPI: FitnessApi.Auth = {
+		return .init()
+	}()
 	
 	required init(view: View) {
 		self.view = view
@@ -24,6 +27,8 @@ class LoadingSplashPresenter<V: LoadingSplashView>: Presenter {
 			if isTokenValid(token) {
 				view.showMainScreen()
 			} else {
+				keychain.delete(.keychainKeyAccessToken)
+				UserDefaults.standard.removeObject(forKey: .userDefaultsKeyAccessTokenExpirationDate)
 				logout(with: token)
 			}
 		} else {
@@ -47,21 +52,19 @@ class LoadingSplashPresenter<V: LoadingSplashView>: Presenter {
 	
 	private func logout(with token: String) {
 		view.showLoader()
-		FitnessApi.Auth.logout(token: token,
-							   onComplete: {
-								self.view.hideLoader()
-								let errorText = "Login session has expired. Please login again."
-								self.view.showErrorPopup(with: errorText, okHandler: { [weak self] in
-									self?.view.showLoginScreen()
-								})
-		}) { errorText in
-			self.view.showErrorPopup(with: errorText, okHandler: { [weak self] in
+		authAPI.logout(token: token,
+							   onComplete: { [weak self] in
+								self?.view.hideLoader()
+		}, onSuccess: { [weak self] in
+			let errorText = "Login session has expired. Please login again."
+			self?.view.showErrorPopup(with: errorText, okHandler: {
+				self?.view.showLoginScreen()
+			})
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText, okHandler: {
 				self?.view.showLoginScreen()
 			})
 		}
 	}
 	
-	private func updateToken(_ oldToken: String) {
-		view.showLoader()
-	}
 }

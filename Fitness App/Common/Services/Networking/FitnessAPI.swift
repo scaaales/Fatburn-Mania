@@ -13,37 +13,39 @@ import Result
 typealias JSON = [String: Any]
 
 enum FitnessApi {
-	enum Auth {
-		static private let provider = MoyaProvider<AuthService>(plugins: [NetworkActivityPlugin.default])
+	class Auth {
+		private let provider = MoyaProvider<AuthService>(plugins: [NetworkActivityPlugin.default])
+		
+		private var request: Cancellable?
 		
 		typealias OnErrorCompletion = (_ errorMessage: String) -> Void
 		
 		// register
 		typealias OnSuccessRegisterCompletion = (_ message: String) -> Void
 		
-		static func registerUserWith(name: String,
+		func registerUserWith(name: String,
 									 phone: String,
 									 email: String,
 									 password: String,
 									 onComplete: @escaping () -> Void,
 									 onSuccess: @escaping OnSuccessRegisterCompletion,
 									 onError: @escaping OnErrorCompletion) {
-			provider.request(.register(name: name,
-									   phone: phone,
-									   email: email,
-									   password: password)) { result in
-										onComplete()
-										handleResult(result,
-													 onSuccess: { json in
-														handleRegisterJSON(json, onSuccess: onSuccess, onError: onError)
-										}, onError: { error in
-											onError(error)
-										})
+			request = provider.request(.register(name: name,
+											  phone: phone,
+											  email: email,
+											  password: password)) { result in
+												onComplete()
+												self.handleResult(result,
+															 onSuccess: { json in
+																self.handleRegisterJSON(json, onSuccess: onSuccess, onError: onError)
+												}, onError: { error in
+													onError(error)
+												})
 			}
 			
 		}
 		
-		private static func handleRegisterJSON(_ json: JSON,
+		func handleRegisterJSON(_ json: JSON,
 											   onSuccess: @escaping OnSuccessRegisterCompletion,
 											   onError: @escaping OnErrorCompletion) {
 			if let success = json["success"] as? Bool {
@@ -63,14 +65,14 @@ enum FitnessApi {
 		// login
 		typealias OnSuccessLoginCompletion = (_ accessToker: String, _ expiresIn: Int) -> Void
 		
-		static func login(email: String,
+		func login(email: String,
 						  password: String,
 						  onComplete: @escaping () -> Void,
 						  onSuccess: @escaping OnSuccessLoginCompletion,
 						  onError: @escaping OnErrorCompletion) {
-			provider.request(.login(email: email, password: password)) { result in
+			request = provider.request(.login(email: email, password: password)) { result in
 				onComplete()
-				handleResult(result,
+				self.handleResult(result,
 							 onSuccess: { json in
 								if let errorText = json["error"] as? String {
 									onError(errorText)
@@ -85,32 +87,44 @@ enum FitnessApi {
 		}
 		
 		// logout
-		static func logout(token: String,
+		func logout(token: String,
 						   onComplete: @escaping () -> Void,
+						   onSuccess: @escaping () -> Void,
 						   onError: @escaping OnErrorCompletion) {
-			provider.request(.logout(token: token)) { result in
-				handleResult(result, onSuccess: { _ in
-					onComplete()
+			request = provider.request(.logout(token: token)) { result in
+				onComplete()
+				self.handleResult(result, onSuccess: { _ in
+					onSuccess()
 				}, onError: { error in
 					onError(error)
 				})
 			}
 		}
-						   
 		
-		static private func handleResult(_ result: Result<Response, MoyaError>,
-											 onSuccess: (JSON) -> Void,
-											 onError: OnErrorCompletion) {
+		
+		private func handleResult(_ result: Result<Response, MoyaError>,
+										 onSuccess: (JSON) -> Void,
+										 onError: OnErrorCompletion) {
 			switch result {
 			case let .success(moyaResponse):
-				if let jsonAny = try? moyaResponse.mapJSON(),
-					let json = jsonAny as? JSON {
-					onSuccess(json)
+				do {
+					_ = try moyaResponse.filterSuccessfulStatusCodes()
+					let jsonAny = try moyaResponse.mapJSON()
+					
+					if let json = jsonAny as? JSON {
+						onSuccess(json)
+					}
+				} catch {
+					onError(error.localizedDescription)
 				}
 			case let .failure(error):
 				print(error)
 				onError(error.localizedDescription)
 			}
+		}
+		
+		deinit {
+			request?.cancel()
 		}
 	}
 	
