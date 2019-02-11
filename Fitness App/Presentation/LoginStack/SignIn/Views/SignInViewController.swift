@@ -138,6 +138,7 @@ extension SignInViewController: UITextFieldDelegate {
 		} else {
 			passwordTextField.setNormalState(isSecure: true)
 		}
+		textField.clearsOnBeginEditing = false
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
