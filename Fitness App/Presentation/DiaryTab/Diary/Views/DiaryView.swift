@@ -9,7 +9,6 @@
 import UIKit
 
 protocol DiaryView: View {
-	func update()
 	func showLoader()
 	func hideLoader()
 	func showTableView()

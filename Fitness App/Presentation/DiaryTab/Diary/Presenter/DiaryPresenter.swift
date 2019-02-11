@@ -39,7 +39,6 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 				self?.getAllFields(on: date) {
 					self?.view.showTableView()
 					self?.view.hideLoader()
-					self?.view.update()
 				}
 			}
 		}

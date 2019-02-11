@@ -49,9 +49,6 @@ extension DiaryViewController: DiaryView {
 		tableView.isHidden = true
 	}
 	
-	func update() {
-		tableView.reloadData()
-	}
 }
 
 extension DiaryViewController: UITableViewDelegate {

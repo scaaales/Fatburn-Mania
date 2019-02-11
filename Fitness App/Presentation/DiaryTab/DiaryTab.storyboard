@@ -665,6 +665,7 @@
                                     <outlet property="collectionView" destination="DU2-2o-thE" id="Gpd-jf-VX8"/>
                                     <outlet property="collectionViewBottom" destination="ZRf-Cm-X7y" id="Mea-bP-R3a"/>
                                     <outlet property="collectionViewHeight" destination="iER-j2-H5d" id="wBq-wB-KWo"/>
+                                    <outlet property="collectionViewTopOffset" destination="xXm-57-dWy" id="xv5-fk-RLt"/>
                                     <outlet property="roundedView" destination="s9h-2I-3e8" id="56G-m4-5Is"/>
                                     <outlet property="shadowView" destination="eCT-xr-ewT" id="GHb-ur-nxC"/>
                                     <outlet property="titleLabel" destination="Ctg-gp-jG0" id="bts-QF-xKI"/>

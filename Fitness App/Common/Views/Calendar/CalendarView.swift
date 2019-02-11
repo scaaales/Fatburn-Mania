@@ -20,6 +20,7 @@ class CalendarView: UIView {
 	@IBOutlet private weak var titleLabel: UILabel!
 	@IBOutlet private weak var collectionView: JTAppleCalendarView!
 	
+	@IBOutlet private weak var collectionViewTopOffset: NSLayoutConstraint!
 	@IBOutlet private weak var collectionViewHeight: NSLayoutConstraint!
 	@IBOutlet private weak var collectionViewBottom: NSLayoutConstraint!
 	
@@ -71,21 +72,23 @@ class CalendarView: UIView {
 			newCollectionViewYoffset = (cellHeight)*CGFloat(selectedCellRow)
 		}
 		
+		if let newOriginY = newCollectionViewYoffset {
+			collectionViewTopOffset.constant = -newOriginY
+		}
+		
 		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
-			if let newOriginY = newCollectionViewYoffset {
-				self.collectionView.bounds.origin.y = newOriginY
-			}
 		}
 	}
 	
 	func openAnimated() {
 		collectionViewHeight.isActive = false
 		collectionViewBottom.isActive = true
-		
+
+		collectionViewTopOffset.constant = 0
 		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
-			self.collectionView.bounds.origin.y = 0
+//			self.collectionView.bounds.origin.y = 0
 		}
 	}
 	
