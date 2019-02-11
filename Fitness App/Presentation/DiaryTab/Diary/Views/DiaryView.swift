@@ -13,4 +13,5 @@ protocol DiaryView: View {
 	func hideLoader()
 	func showTableView()
 	func hideTableView()
+	func update()
 }

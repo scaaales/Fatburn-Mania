@@ -49,6 +49,15 @@ extension DiaryViewController: DiaryView {
 		tableView.isHidden = true
 	}
 	
+	func update() {
+		let contentOffset = tableView.contentOffset
+		tableView.reloadData()
+		tableView.layoutIfNeeded()
+		tableView.layer.removeAllAnimations()
+		tableView.setContentOffset(contentOffset, animated: false)
+
+	}
+	
 }
 
 extension DiaryViewController: UITableViewDelegate {

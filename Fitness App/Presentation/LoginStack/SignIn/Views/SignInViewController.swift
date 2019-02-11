@@ -88,15 +88,19 @@ extension SignInViewController: SignInView {
 	func showErrors(_ errors: [SignInError]) {
 		if errors.contains(.invalidName) {
 			nameTextField.setErrorState(errorTitle: "Invalid name")
+			nameTextField.clearOnNextEditing(true)
 		}
 		if errors.contains(.invalidEmail) {
 			emailTextField.setErrorState(errorTitle: "Invalid email")
+			emailTextField.clearOnNextEditing(true)
 		}
 		if errors.contains(.invalidPhone) {
 			phoneTextField.setErrorState(errorTitle: "Invalid phone")
+			phoneTextField.clearOnNextEditing(true)
 		}
 		if errors.contains(.invalidPassword) {
 			passwordTextField.setErrorState(errorTitle: "Invalid password")
+			passwordTextField.clearOnNextEditing(true)
 		}
 	}
 	
