@@ -8,10 +8,9 @@
 
 import UIKit
 
-protocol DiaryView: View {
+protocol DiaryView: View, TableViewUpdatable {
 	func showLoader()
 	func hideLoader()
 	func showTableView()
 	func hideTableView()
-	func update()
 }

@@ -27,6 +27,9 @@ class CalendarView: UIView {
 	private let formatter = DateFormatter()
 	
 	private var delegate: CalendarViewDateDelegate?
+	private var isClosed = false
+	private var selectedDateRow = 1
+	private var prevSelectedDate = Date()
 	
 	func configure(calendarViewDateDelegate: CalendarViewDateDelegate?) {
 		delegate = calendarViewDateDelegate
@@ -76,6 +79,7 @@ class CalendarView: UIView {
 			collectionViewTopOffset.constant = -newOriginY
 		}
 		
+		isClosed = true
 		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
 		}
@@ -86,9 +90,9 @@ class CalendarView: UIView {
 		collectionViewBottom.isActive = true
 
 		collectionViewTopOffset.constant = 0
+		isClosed = false
 		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
-//			self.collectionView.bounds.origin.y = 0
 		}
 	}
 	
@@ -143,12 +147,21 @@ extension CalendarView: JTAppleCalendarViewDelegate {
 	}
 	
 	func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+		if isClosed && cellState.row() != selectedDateRow {
+			calendar.selectDates([prevSelectedDate])
+			return
+		}
 		guard let cell = cell as? CalendarDateCell else { return }
 		cell.set(selected: true)
-		delegate?.didSelectDate(date)
+		if date != prevSelectedDate {
+			delegate?.didSelectDate(date)
+		}
+		selectedDateRow = cellState.row()
+		prevSelectedDate = date
 	}
 	
 	func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+		
 		guard let cell = cell as? CalendarDateCell else { return }
 		cell.set(selected: false)
 	}
