@@ -54,6 +54,9 @@
 		B30E9FA521ECE290006F33CE /* CoinsHistoryTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E9FA421ECE290006F33CE /* CoinsHistoryTableViewModel.swift */; };
 		B30F287A21F2342D000954DB /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F287921F2342D000954DB /* TimerService.swift */; };
 		B30F287C21F237DF000954DB /* TimeInterval+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F287B21F237DF000954DB /* TimeInterval+extension.swift */; };
+		B319153E22142C0200F019ED /* PushNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319153D22142C0200F019ED /* PushNotificationsService.swift */; };
+		B319154322143AEF00F019ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B319154222143AEE00F019ED /* Assets.xcassets */; };
+		B3191545221442AB00F019ED /* Notification+names.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3191544221442AB00F019ED /* Notification+names.swift */; };
 		B31D2151220DC92C00DEEE76 /* NetworkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31D2150220DC92C00DEEE76 /* NetworkingView.swift */; };
 		B323C04B220215C90059AFB9 /* TextFieldAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323C04A220215C90059AFB9 /* TextFieldAssistant.swift */; };
 		B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */; };
@@ -152,7 +155,6 @@
 		B39D475E21E5FCA300D5C050 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D475D21E5FCA300D5C050 /* ProfileView.swift */; };
 		B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D475F21E5FCC300D5C050 /* ProfilePresenter.swift */; };
 		B39D477121E60B4700D5C050 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D477021E60B4700D5C050 /* User.swift */; };
-		B39D477321E6107500D5C050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B39D477221E6107500D5C050 /* Assets.xcassets */; };
 		B39D477521E6258900D5C050 /* ProfileTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D477421E6258900D5C050 /* ProfileTableViewModel.swift */; };
 		B39D477821E6288D00D5C050 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D477721E6288D00D5C050 /* ProfileHeaderCell.swift */; };
 		B39D477A21E628F800D5C050 /* ProfileButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D477921E628F800D5C050 /* ProfileButtonsCell.swift */; };
@@ -286,6 +288,9 @@
 		B30E9FA421ECE290006F33CE /* CoinsHistoryTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHistoryTableViewModel.swift; sourceTree = "<group>"; };
 		B30F287921F2342D000954DB /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
 		B30F287B21F237DF000954DB /* TimeInterval+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+extension.swift"; sourceTree = "<group>"; };
+		B319153D22142C0200F019ED /* PushNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsService.swift; sourceTree = "<group>"; };
+		B319154222143AEE00F019ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3191544221442AB00F019ED /* Notification+names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+names.swift"; sourceTree = "<group>"; };
 		B31D2150220DC92C00DEEE76 /* NetworkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingView.swift; sourceTree = "<group>"; };
 		B323C04A220215C90059AFB9 /* TextFieldAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAssistant.swift; sourceTree = "<group>"; };
 		B3254DCB21D3DD5C00F99F91 /* Fitness App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -387,7 +392,6 @@
 		B39D475D21E5FCA300D5C050 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B39D475F21E5FCC300D5C050 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		B39D477021E60B4700D5C050 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		B39D477221E6107500D5C050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B39D477421E6258900D5C050 /* ProfileTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewModel.swift; sourceTree = "<group>"; };
 		B39D477721E6288D00D5C050 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		B39D477921E628F800D5C050 /* ProfileButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonsCell.swift; sourceTree = "<group>"; };
@@ -578,6 +582,7 @@
 				B3839C6021F0DA6D00BD27E0 /* ImageCreator.swift */,
 				B30F287921F2342D000954DB /* TimerService.swift */,
 				B323C04A220215C90059AFB9 /* TextFieldAssistant.swift */,
+				B319153D22142C0200F019ED /* PushNotificationsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -919,7 +924,7 @@
 		B34306B421D7932C0033EA69 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B39D477221E6107500D5C050 /* Assets.xcassets */,
+				B319154222143AEE00F019ED /* Assets.xcassets */,
 				B3254DDA21D3DD6800F99F91 /* Info.plist */,
 			);
 			path = Resources;
@@ -944,6 +949,7 @@
 				B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */,
 				B39A6D2121FB64B000C5A06F /* Array+extension.swift */,
 				B30F287B21F237DF000954DB /* TimeInterval+extension.swift */,
+				B3191544221442AB00F019ED /* Notification+names.swift */,
 				B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */,
 				B36B2F7321DE148600C5D07B /* String+constants.swift */,
 				B3728923220AF6BF0061822E /* String+validation.swift */,
@@ -1863,8 +1869,8 @@
 				B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */,
 				B3753C2B21D7C473008A5D5A /* BlurredLoader.xib in Resources */,
 				B3DC1B7321EE291000883C0F /* TextViewHelperView.xib in Resources */,
+				B319154322143AEF00F019ED /* Assets.xcassets in Resources */,
 				B30E9F7521EC8DA5006F33CE /* StoreStack.storyboard in Resources */,
-				B39D477321E6107500D5C050 /* Assets.xcassets in Resources */,
 				B3D3F59A22008D210052976D /* Notifications.storyboard in Resources */,
 				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
 				B3FBA15E21EF33F600B88AA3 /* MediaScreens.storyboard in Resources */,
@@ -1959,6 +1965,7 @@
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
 				B39D477121E60B4700D5C050 /* User.swift in Sources */,
 				B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */,
+				B319153E22142C0200F019ED /* PushNotificationsService.swift in Sources */,
 				B3DD925921FA0EB40017E723 /* WorkoutOfTheDay.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
 				B3033D3421E8DF5B0058626D /* VideoDetailsView.swift in Sources */,
@@ -2091,6 +2098,7 @@
 				B3DD925321FA01560017E723 /* WorkoutOfTheDayViewController.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* DiaryTableViewModel.swift in Sources */,
 				B3D3F59622008CFC0052976D /* NotificationsInitializer.swift in Sources */,
+				B3191545221442AB00F019ED /* Notification+names.swift in Sources */,
 				B3DC1B6A21EDECD700883C0F /* EditProfileTableViewModel.swift in Sources */,
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
 				B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */,

@@ -13,6 +13,7 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	var pushNotificationService: PushNotificationService!
 	
 	static var shared: AppDelegate {
 		return UIApplication.shared.delegate as! AppDelegate
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		IQKeyboardManager.shared.enabledDistanceHandlingClasses.append(SignInViewController.self)
+		
+		pushNotificationService = .init()
+		pushNotificationService.updateUnreadNotifications()
 		return true
 	}
 
