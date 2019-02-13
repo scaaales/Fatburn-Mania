@@ -24,7 +24,6 @@ class DiaryViewController: UIViewController {
 
 	private func setupTableView() {
 		tableView.delegate = self
-		tableView.dataSource = presenter.viewModel
 		
 		tableView.makeResizable()
 		
@@ -33,6 +32,19 @@ class DiaryViewController: UIViewController {
 }
 
 extension DiaryViewController: DiaryView {
+	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
+		tableView.dataSource = dataSource
+	}
+	
+	func update() {
+		let contentOffset = tableView.contentOffset
+		tableView.reloadData()
+		tableView.layoutIfNeeded()
+		tableView.layer.removeAllAnimations()
+		tableView.setContentOffset(contentOffset, animated: false)
+		
+	}
+	
 	func showLoader() {
 		blurredLoader.startAnimating()
 	}
@@ -49,32 +61,15 @@ extension DiaryViewController: DiaryView {
 		tableView.isHidden = true
 	}
 	
-	func update() {
-		tableView.reloadData()
-	}
 }
 
 extension DiaryViewController: UITableViewDelegate {
-	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		if let item = presenter.viewModel.headerFor(index: section),
-			let header = tableView.dequeueReusableCell(withIdentifier: item.reuseId) {
-			item.configure(cell: header)
-			
-			return header.contentView
-		}
-		
-		return nil
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return .leastNormalMagnitude
 	}
 	
-	func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-		if let item = presenter.viewModel.footerFor(index: section),
-			let footer = tableView.dequeueReusableCell(withIdentifier: item.reuseId) {
-			item.configure(cell: footer)
-			
-			return footer.contentView
-		}
-		
-		return nil
+	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return .leastNormalMagnitude
 	}
 }
 

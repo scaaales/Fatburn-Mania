@@ -545,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				B3254F1F21D3E7CE00F99F91 /* TableViewCells */,
+				B3254F2021D3E7CE00F99F91 /* Calendar */,
 				B3753C2221D7A4A0008A5D5A /* DiaryView.swift */,
 				B3254F1D21D3E7CE00F99F91 /* DiaryViewController.swift */,
 			);
@@ -1101,7 +1102,6 @@
 			children = (
 				B34306B521D7939D0033EA69 /* Protocols */,
 				B33394C121DF6D9700D6013F /* LineTextField */,
-				B3254F2021D3E7CE00F99F91 /* Calendar */,
 				B3753C2921D7C449008A5D5A /* BluredLoader */,
 				B3254F3321D3E7CE00F99F91 /* ProgressView */,
 				B3DC1B7121EE28E800883C0F /* TextViewHelperView */,

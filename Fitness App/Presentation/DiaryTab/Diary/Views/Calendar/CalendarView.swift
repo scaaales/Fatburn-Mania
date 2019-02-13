@@ -20,12 +20,16 @@ class CalendarView: UIView {
 	@IBOutlet private weak var titleLabel: UILabel!
 	@IBOutlet private weak var collectionView: JTAppleCalendarView!
 	
+	@IBOutlet private weak var collectionViewTopOffset: NSLayoutConstraint!
 	@IBOutlet private weak var collectionViewHeight: NSLayoutConstraint!
 	@IBOutlet private weak var collectionViewBottom: NSLayoutConstraint!
 	
 	private let formatter = DateFormatter()
 	
 	private var delegate: CalendarViewDateDelegate?
+	private var isClosed = false
+	private var selectedDateRow = 1
+	private var prevSelectedDate = Date()
 	
 	func configure(calendarViewDateDelegate: CalendarViewDateDelegate?) {
 		delegate = calendarViewDateDelegate
@@ -71,21 +75,24 @@ class CalendarView: UIView {
 			newCollectionViewYoffset = (cellHeight)*CGFloat(selectedCellRow)
 		}
 		
+		if let newOriginY = newCollectionViewYoffset {
+			collectionViewTopOffset.constant = -newOriginY
+		}
+		
+		isClosed = true
 		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
-			if let newOriginY = newCollectionViewYoffset {
-				self.collectionView.bounds.origin.y = newOriginY
-			}
 		}
 	}
 	
 	func openAnimated() {
 		collectionViewHeight.isActive = false
 		collectionViewBottom.isActive = true
-		
+
+		collectionViewTopOffset.constant = 0
+		isClosed = false
 		UIView.animate(withDuration: 0.2) {
 			self.superview?.layoutIfNeeded()
-			self.collectionView.bounds.origin.y = 0
 		}
 	}
 	
@@ -140,12 +147,21 @@ extension CalendarView: JTAppleCalendarViewDelegate {
 	}
 	
 	func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+		if isClosed && cellState.row() != selectedDateRow {
+			calendar.selectDates([prevSelectedDate])
+			return
+		}
 		guard let cell = cell as? CalendarDateCell else { return }
 		cell.set(selected: true)
-		delegate?.didSelectDate(date)
+		if date != prevSelectedDate {
+			delegate?.didSelectDate(date)
+		}
+		selectedDateRow = cellState.row()
+		prevSelectedDate = date
 	}
 	
 	func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+		
 		guard let cell = cell as? CalendarDateCell else { return }
 		cell.set(selected: false)
 	}

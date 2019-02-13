@@ -26,21 +26,21 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceholderCell" rowHeight="20" id="NCe-tE-zVc" customClass="PlaceholderCell" customModule="Fitness_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="20"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NCe-tE-zVc" id="JE0-zK-oEr">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NCe-tE-zVc" id="JE0-zK-oEr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwk-4L-iFL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1" height="1"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="NwD-f6-NZi"/>
+                                                        <constraint firstAttribute="height" constant="20" id="NwD-f6-NZi"/>
                                                         <constraint firstAttribute="width" constant="1" id="c92-3w-Jx2"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Uwk-4L-iFL" secondAttribute="bottom" id="3Rf-nJ-B5v"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Uwk-4L-iFL" secondAttribute="bottom" id="3Rf-nJ-B5v"/>
                                                 <constraint firstItem="Uwk-4L-iFL" firstAttribute="leading" secondItem="JE0-zK-oEr" secondAttribute="leading" id="BBa-VH-6fU"/>
                                                 <constraint firstItem="Uwk-4L-iFL" firstAttribute="top" secondItem="JE0-zK-oEr" secondAttribute="top" id="ONV-UM-25C"/>
                                             </constraints>
@@ -665,6 +665,7 @@
                                     <outlet property="collectionView" destination="DU2-2o-thE" id="Gpd-jf-VX8"/>
                                     <outlet property="collectionViewBottom" destination="ZRf-Cm-X7y" id="Mea-bP-R3a"/>
                                     <outlet property="collectionViewHeight" destination="iER-j2-H5d" id="wBq-wB-KWo"/>
+                                    <outlet property="collectionViewTopOffset" destination="xXm-57-dWy" id="xv5-fk-RLt"/>
                                     <outlet property="roundedView" destination="s9h-2I-3e8" id="56G-m4-5Is"/>
                                     <outlet property="shadowView" destination="eCT-xr-ewT" id="GHb-ur-nxC"/>
                                     <outlet property="titleLabel" destination="Ctg-gp-jG0" id="bts-QF-xKI"/>
