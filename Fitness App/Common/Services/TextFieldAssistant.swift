@@ -31,9 +31,9 @@ class TextFieldAssistant: NSObject {
 		}
 	}
 	
-	let textViewHelperView: TextViewHelperView
+	private let textViewHelperView: TextViewHelperView
 	
-	init(view: UIView, firstResponderTag: Int, lastResponderTag: Int) {
+	init(view: UIView, firstResponderTag: Int, lastResponderTag: Int, handleTextFieldDelegate: Bool = false) {
 		self.view = view
 		self.firstResponderTag = firstResponderTag
 		self.lastResponderTag = lastResponderTag
@@ -52,6 +52,15 @@ class TextFieldAssistant: NSObject {
 			}, doneHandler: { [weak self] in
 				self?.view.endEditing(true)
 		})
+		
+		for tag in firstResponderTag...lastResponderTag {
+			if let textField = view.viewWithTag(tag) as? UITextField {
+				textField.inputAccessoryView = textViewHelperView
+				if handleTextFieldDelegate {
+					textField.delegate = self
+				}
+			}
+		}
 	}
 	
 	private func makeFirstResponderView(with tag: Int) {

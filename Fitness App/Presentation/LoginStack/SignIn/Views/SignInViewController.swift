@@ -16,7 +16,7 @@ class SignInViewController: UIViewController {
 	@IBOutlet private weak var phoneTextField: LineTextField!
 	@IBOutlet private weak var passwordTextField: LineTextField!
 	
-	private var textFieldAssistang: TextFieldAssistant!
+	private var textFieldAssistant: TextFieldAssistant!
 	
 	lazy private var loader: BlurredLoader = {
 		let loader = BlurredLoader()
@@ -42,19 +42,12 @@ class SignInViewController: UIViewController {
 	}
 	
 	private func setupTextFields() {
-		textFieldAssistang = .init(view: view, firstResponderTag: 100, lastResponderTag: 103)
+		textFieldAssistant = .init(view: view, firstResponderTag: 100, lastResponderTag: 103)
 		
 		nameTextField.setDelegate(self)
 		emailTextField.setDelegate(self)
 		phoneTextField.setDelegate(self)
 		passwordTextField.setDelegate(self)
-		
-		let textViewHelperView = textFieldAssistang.textViewHelperView
-		
-		nameTextField.setInputAccessoryView(textViewHelperView)
-		emailTextField.setInputAccessoryView(textViewHelperView)
-		phoneTextField.setInputAccessoryView(textViewHelperView)
-		passwordTextField.setInputAccessoryView(textViewHelperView)
 	}
 	
 	@IBAction private func signInTapped() {
@@ -128,7 +121,7 @@ extension SignInViewController: SignInView {
 
 extension SignInViewController: UITextFieldDelegate {
 	func textFieldDidBeginEditing(_ textField: UITextField) {
-		textFieldAssistang.currentResponderTag = textField.tag
+		textFieldAssistant.currentResponderTag = textField.tag
 		if nameTextField.isEqual(textField) {
 			nameTextField.setNormalState()
 		} else if emailTextField.isEqual(textField) {
@@ -145,7 +138,7 @@ extension SignInViewController: UITextFieldDelegate {
 		textField.resignFirstResponder()
 		if textField.tag == 100 {
 			let nextResponderTag = textField.tag + 1
-			textFieldAssistang.currentResponderTag = nextResponderTag
+			textFieldAssistant.currentResponderTag = nextResponderTag
 			return false
 		} else {
 			presenter.signIn()

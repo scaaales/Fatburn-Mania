@@ -10,9 +10,5 @@ import Foundation
 
 struct MeasureHistory {
 	let date: Date
-	let cheshMeasurement: Int
-	let waistMeasurement: Int
-	let thigsMeasurement: Int
-	let hipMeasurement: Int
-	let waightMeasurement: Int
+	let measurements: Measurements
 }

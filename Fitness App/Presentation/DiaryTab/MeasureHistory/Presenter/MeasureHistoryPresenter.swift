@@ -19,12 +19,15 @@ class MeasureHistoryPresenter<V: MeasureHistoryView>: Presenter {
 	}
 	
 	func getHistory() {
-		let testMeasureHistory = MeasureHistory(date: .init(day: 12, month: 10, year: 2018),
-												cheshMeasurement: 100,
-												waistMeasurement: 60,
-												thigsMeasurement: 90,
-												hipMeasurement: 25,
-												waightMeasurement: 60)
+		let measurements = Measurements(chest: 100,
+										waist: 60,
+										thighs: 90,
+										hip: 25,
+										weight: 60)
+		let testMeasureHistory = MeasureHistory(date: .init(day: 12,
+															month: 10,
+															year: 2018),
+												measurements: measurements)
 		let testHistory = Array(repeating: testMeasureHistory, count: 3)
 		dataSource = .init(items: testHistory)
 		view.setTableViewDataSource(dataSource)

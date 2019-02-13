@@ -11,14 +11,14 @@ import UIKit
 class EditProfileViewController: UITableViewController {
 	var presenter: EditProfilePresenter<EditProfileViewController>!
 	
-	private var textFieldAssistang: TextFieldAssistant!
+	private var textFieldAssistant: TextFieldAssistant!
 	private let firstResponderTag = 100
 	private let lastResponderTag = 110
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		hideKeyboardWhenTappedAround()
-		textFieldAssistang = .init(view: view, firstResponderTag: firstResponderTag, lastResponderTag: lastResponderTag)
+		textFieldAssistant = .init(view: view, firstResponderTag: firstResponderTag, lastResponderTag: lastResponderTag)
 		presenter.getUser()
 		tableView.backgroundColor = .white
 	}
@@ -27,7 +27,7 @@ class EditProfileViewController: UITableViewController {
 
 extension EditProfileViewController: EditProfileView {
 	var textFieldDelegate: UITextFieldDelegate {
-		return textFieldAssistang
+		return textFieldAssistant
 	}
 	
 	func update() {
@@ -43,10 +43,6 @@ extension EditProfileViewController: EditProfileView {
 		datePicker.datePickerMode = .date
 		datePicker.setDate(presenter.getBirthdayDate(), animated: false)
 		return datePicker
-	}
-	
-	func getHelperViewForDateInput() -> UIView {
-		return textFieldAssistang.textViewHelperView
 	}
 }
 

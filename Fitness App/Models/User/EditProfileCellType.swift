@@ -15,5 +15,4 @@ struct EditProfileCellType {
 	weak var delegate: UITextFieldDelegate?
 	let tag: Int
 	let dateInputView: UIDatePicker?
-	let helperView: UIView?
 }
