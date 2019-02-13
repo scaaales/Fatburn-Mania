@@ -11,15 +11,15 @@ import UIKit
 extension UIColor {
 	
 	static var redErrorColor: UIColor {
-		return .init(with: "fc5252")
+		return .init(with: "FC5252")
 	}
 	
 	static var grayNormalColor: UIColor {
-		return .init(with: "9e9e9e")
+		return .init(with: "9E9E9E")
 	}
 	
 	static var lightGrayColor: UIColor {
-		return .init(with: "fafafa")
+		return .init(with: "FAFAFA")
 	}
 	
 	static var darkBlueColor: UIColor {
