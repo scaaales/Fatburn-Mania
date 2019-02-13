@@ -35,7 +35,7 @@ class MusicPlayerViewController: UIViewController {
 	}
 	
 	@IBAction private func currentSongPlayPauseTapped() {
-		
+		presenter.pauseResumeSong()
 	}
 	
 	@IBAction private func nextTapped() {
@@ -54,6 +54,14 @@ class MusicPlayerViewController: UIViewController {
 }
 
 extension MusicPlayerViewController: MusicPlayerView {
+	func setPauseImage() {
+		playPauseButton.setImage(#imageLiteral(resourceName: "pauseSongImageBlack"), for: .normal)
+	}
+	
+	func setPlayImage() {
+		playPauseButton.setImage(#imageLiteral(resourceName: "playSongImageBlack"), for: .normal)
+	}
+	
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
 		tableView.dataSource = dataSource
 	}
