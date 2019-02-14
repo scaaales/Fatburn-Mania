@@ -27,7 +27,7 @@ class PhotoPreviewViewController: UIViewController {
 		presenter.savePhoto()
 	}
 	
-	@IBAction private func cancelTapped() {
+	@IBAction func closeItself() {
 		dismiss(animated: true)
 	}
 	

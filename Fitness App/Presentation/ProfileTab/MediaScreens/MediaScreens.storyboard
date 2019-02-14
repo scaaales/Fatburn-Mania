@@ -105,7 +105,7 @@
                                 </constraints>
                                 <state key="normal" image="closeIconWhite"/>
                                 <connections>
-                                    <action selector="cancelTapped" destination="nfL-dx-hrF" eventType="touchUpInside" id="SoU-Uy-nSk"/>
+                                    <action selector="closeItself" destination="nfL-dx-hrF" eventType="touchUpInside" id="D2b-GQ-Yh5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K94-GY-PPw">

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Photos
 
 class PhotoPreviewPresenter<V: PhotoPreviewView>: Presenter {
 	typealias View = V
@@ -18,6 +19,15 @@ class PhotoPreviewPresenter<V: PhotoPreviewView>: Presenter {
 	}
 	
 	func savePhoto() {
-		
+		PHPhotoLibrary.shared().performChanges({ [weak self] in
+			guard let image = self?.view.photo else { return }
+			PHAssetChangeRequest.creationRequestForAsset(from: image)
+		}) { [weak self] success, error in
+			if success {
+				self?.view.closeItself()
+			} else if let error = error {
+				print(error)
+			}
+		}
 	}
 }
