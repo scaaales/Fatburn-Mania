@@ -97,13 +97,6 @@ extension SignInViewController: SignInView {
 		}
 	}
 	
-	func showErrorPopup(with text: String) {
-		let alertController = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
-		alertController.addAction(.init(title: "Ok", style: .cancel))
-		
-		present(alertController, animated: true)
-	}
-	
 	func showSuccess(title: String, completion: @escaping () -> Void) {
 		let alertController = UIAlertController(title: nil, message: title, preferredStyle: .alert)
 		

@@ -127,13 +127,6 @@ extension LoginViewController: LoginView {
 		}
 	}
 	
-	func showErrorPopup(with text: String) {
-		let alertController = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
-		alertController.addAction(.init(title: "Ok", style: .cancel))
-		
-		present(alertController, animated: true)
-	}
-	
 }
 
 extension LoginViewController: UITextFieldDelegate {

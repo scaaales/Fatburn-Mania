@@ -43,6 +43,10 @@ class BasicTableViewDataSource<CellType: UITableViewCell, DataType>: NSObject, U
 		return sections[section][index]
 	}
 	
+	func getItem(where condition: (DataType) -> Bool) -> DataType? {
+		return sections[0].first(where: condition)
+	}
+	
 	func addItem(_ item: DataType, at index: Int) {
 		sections[0].insert(item, at: index)
 	}

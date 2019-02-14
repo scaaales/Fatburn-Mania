@@ -15,7 +15,7 @@ enum AuthService {
 }
 
 extension AuthService: TargetType {
-	var baseURL: URL { return URL(string: "https://fitness-backend.ridex.tech")! }
+	var baseURL: URL { return .apiBaseURL }
 	
 	var path: String {
 		let path = "/api/auth/"
@@ -29,13 +29,9 @@ extension AuthService: TargetType {
 		}
 	}
 	
-	var method: Method {
-		return .post
-	}
+	var method: Method { return .post }
 	
-	var sampleData: Data {
-		return .init()
-	}
+	var sampleData: Data { return .init() }
 	
 	var task: Task {
 		switch self {
@@ -57,15 +53,15 @@ extension AuthService: TargetType {
 	}
 	
 	var headers: [String: String]? {
-		var header = ["Content-type": "application/json",
+		var headers = ["Content-type": "application/json",
 					  "Accept": "application/json"]
 		switch self {
 		case .logout(let token):
-			header["Authorization"] = "Bearer \(token)"
+			headers["Authorization"] = "Bearer \(token)"
 		default:
 			break
 		}
-		return header
+		return headers
 	}
 	
 }
