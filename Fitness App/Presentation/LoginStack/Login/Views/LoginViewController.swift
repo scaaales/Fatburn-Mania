@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
 	@IBOutlet private weak var passwordTextField: LineTextField!
 	@IBOutlet private weak var resetPasswordButton: UIButton!
 	
-	private var textFieldAssistang: TextFieldAssistant!
+	private var textFieldAssistant: TextFieldAssistant!
 	
 	var shouldShowKeyboard = true
 	
@@ -33,15 +33,10 @@ class LoginViewController: UIViewController {
 	}
 	
 	fileprivate func setupTextFields() {
-		textFieldAssistang = .init(view: view, firstResponderTag: 100, lastResponderTag: 101)
+		textFieldAssistant = .init(view: view, firstResponderTag: 100, lastResponderTag: 101)
 		
 		emailTextField.setDelegate(self)
 		passwordTextField.setDelegate(self)
-		
-		let textViewHelperView = textFieldAssistang.textViewHelperView
-		
-		emailTextField.setInputAccessoryView(textViewHelperView)
-		passwordTextField.setInputAccessoryView(textViewHelperView)
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -143,7 +138,7 @@ extension LoginViewController: LoginView {
 
 extension LoginViewController: UITextFieldDelegate {
 	func textFieldDidBeginEditing(_ textField: UITextField) {
-		textFieldAssistang.currentResponderTag = textField.tag
+		textFieldAssistant.currentResponderTag = textField.tag
 		if emailTextField.isEqual(textField) {
 			emailTextField.setNormalState()
 		} else {
@@ -156,7 +151,7 @@ extension LoginViewController: UITextFieldDelegate {
 		textField.resignFirstResponder()
 		if textField.tag == 100 {
 			let nextResponderTag = textField.tag + 1
-			textFieldAssistang.currentResponderTag = nextResponderTag
+			textFieldAssistant.currentResponderTag = nextResponderTag
 			return false
 		} else {
 			login(textField)

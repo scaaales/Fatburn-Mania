@@ -14,20 +14,20 @@ class MeasureHistoryCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var dateLabel: UILabel!
 	@IBOutlet private weak var chestValueLabel: UILabel!
 	@IBOutlet private weak var waistValueLabel: UILabel!
-	@IBOutlet private weak var thigsValueLabel: UILabel!
+	@IBOutlet private weak var thighsValueLabel: UILabel!
 	@IBOutlet private weak var hipValueLabel: UILabel!
-	@IBOutlet private weak var waightValueLabel: UILabel!
+	@IBOutlet private weak var weightValueLabel: UILabel!
 
 	func configure(data: MeasureHistory) {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd MMMM yyyy"
 		
 		dateLabel.text = dateFormatter.string(from: data.date).lowercased()
-		chestValueLabel.text = "\(data.cheshMeasurement)"
-		waistValueLabel.text = "\(data.waistMeasurement)"
-		thigsValueLabel.text = "\(data.thigsMeasurement)"
-		hipValueLabel.text = "\(data.hipMeasurement)"
-		waightValueLabel.text = "\(data.waightMeasurement)"
+		chestValueLabel.text = "\(data.measurements.chest)"
+		waistValueLabel.text = "\(data.measurements.waist)"
+		thighsValueLabel.text = "\(data.measurements.thighs)"
+		hipValueLabel.text = "\(data.measurements.hip)"
+		weightValueLabel.text = "\(data.measurements.weight)"
 	}
 	
 }

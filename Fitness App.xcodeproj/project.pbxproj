@@ -57,6 +57,15 @@
 		B319153E22142C0200F019ED /* PushNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319153D22142C0200F019ED /* PushNotificationsService.swift */; };
 		B319154322143AEF00F019ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B319154222143AEE00F019ED /* Assets.xcassets */; };
 		B3191545221442AB00F019ED /* Notification+names.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3191544221442AB00F019ED /* Notification+names.swift */; };
+		B319154B22146CF300F019ED /* AddNewMeasurementsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319154722146CF300F019ED /* AddNewMeasurementsPresenter.swift */; };
+		B319154C22146CF300F019ED /* AddNewMeasurementsInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319154822146CF300F019ED /* AddNewMeasurementsInitializer.swift */; };
+		B319154D22146CF300F019ED /* AddNewMeasurementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319154922146CF300F019ED /* AddNewMeasurementsViewController.swift */; };
+		B319154E22146CF300F019ED /* AddNewMeasurementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319154A22146CF300F019ED /* AddNewMeasurementsView.swift */; };
+		B319155222146EE400F019ED /* Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319155122146EE400F019ED /* Measurements.swift */; };
+		B31954A522156EC1005205D3 /* PhotoPreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31954A122156EC1005205D3 /* PhotoPreviewPresenter.swift */; };
+		B31954A622156EC1005205D3 /* PhotoPreviewInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31954A222156EC1005205D3 /* PhotoPreviewInitializer.swift */; };
+		B31954A722156EC1005205D3 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31954A322156EC1005205D3 /* PhotoPreviewViewController.swift */; };
+		B31954A822156EC1005205D3 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31954A422156EC1005205D3 /* PhotoPreviewView.swift */; };
 		B31D2151220DC92C00DEEE76 /* NetworkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31D2150220DC92C00DEEE76 /* NetworkingView.swift */; };
 		B323C04B220215C90059AFB9 /* TextFieldAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B323C04A220215C90059AFB9 /* TextFieldAssistant.swift */; };
 		B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3254DCE21D3DD5C00F99F91 /* AppDelegate.swift */; };
@@ -235,7 +244,7 @@
 		B3FBA16521EF343800B88AA3 /* PhotoInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16121EF343800B88AA3 /* PhotoInitializer.swift */; };
 		B3FBA16621EF343800B88AA3 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16221EF343800B88AA3 /* PhotoViewController.swift */; };
 		B3FBA16721EF343800B88AA3 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16321EF343800B88AA3 /* PhotoView.swift */; };
-		B3FBA16B21EF3B4200B88AA3 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16A21EF3B4200B88AA3 /* PhotoPreviewView.swift */; };
+		B3FBA16B21EF3B4200B88AA3 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16A21EF3B4200B88AA3 /* CameraView.swift */; };
 		B3FBA16D21EF493400B88AA3 /* PhotoCapturingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */; };
 		B3FF223B2200660900D936A6 /* CoinsAddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF22372200660900D936A6 /* CoinsAddedViewController.swift */; };
 /* End PBXBuildFile section */
@@ -291,6 +300,15 @@
 		B319153D22142C0200F019ED /* PushNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsService.swift; sourceTree = "<group>"; };
 		B319154222143AEE00F019ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3191544221442AB00F019ED /* Notification+names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+names.swift"; sourceTree = "<group>"; };
+		B319154722146CF300F019ED /* AddNewMeasurementsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMeasurementsPresenter.swift; sourceTree = "<group>"; };
+		B319154822146CF300F019ED /* AddNewMeasurementsInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMeasurementsInitializer.swift; sourceTree = "<group>"; };
+		B319154922146CF300F019ED /* AddNewMeasurementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMeasurementsViewController.swift; sourceTree = "<group>"; };
+		B319154A22146CF300F019ED /* AddNewMeasurementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMeasurementsView.swift; sourceTree = "<group>"; };
+		B319155122146EE400F019ED /* Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurements.swift; sourceTree = "<group>"; };
+		B31954A122156EC1005205D3 /* PhotoPreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewPresenter.swift; sourceTree = "<group>"; };
+		B31954A222156EC1005205D3 /* PhotoPreviewInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewInitializer.swift; sourceTree = "<group>"; };
+		B31954A322156EC1005205D3 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
+		B31954A422156EC1005205D3 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
 		B31D2150220DC92C00DEEE76 /* NetworkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingView.swift; sourceTree = "<group>"; };
 		B323C04A220215C90059AFB9 /* TextFieldAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAssistant.swift; sourceTree = "<group>"; };
 		B3254DCB21D3DD5C00F99F91 /* Fitness App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -472,7 +490,7 @@
 		B3FBA16121EF343800B88AA3 /* PhotoInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInitializer.swift; sourceTree = "<group>"; };
 		B3FBA16221EF343800B88AA3 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		B3FBA16321EF343800B88AA3 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
-		B3FBA16A21EF3B4200B88AA3 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
+		B3FBA16A21EF3B4200B88AA3 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCapturingService.swift; sourceTree = "<group>"; };
 		B3FF22372200660900D936A6 /* CoinsAddedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsAddedViewController.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
@@ -763,6 +781,60 @@
 			name = Presenter;
 			sourceTree = "<group>";
 		};
+		B319154622146CCF00F019ED /* AddNewMeasurements */ = {
+			isa = PBXGroup;
+			children = (
+				B319155022146D2400F019ED /* Presenter */,
+				B319154F22146D0F00F019ED /* Views */,
+				B319154822146CF300F019ED /* AddNewMeasurementsInitializer.swift */,
+			);
+			path = AddNewMeasurements;
+			sourceTree = "<group>";
+		};
+		B319154F22146D0F00F019ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B319154A22146CF300F019ED /* AddNewMeasurementsView.swift */,
+				B319154922146CF300F019ED /* AddNewMeasurementsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B319155022146D2400F019ED /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B319154722146CF300F019ED /* AddNewMeasurementsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B31954A022156E80005205D3 /* PhotoPreview */ = {
+			isa = PBXGroup;
+			children = (
+				B31954AA22156EDE005205D3 /* Presenter */,
+				B31954A922156ED9005205D3 /* Views */,
+				B31954A222156EC1005205D3 /* PhotoPreviewInitializer.swift */,
+			);
+			path = PhotoPreview;
+			sourceTree = "<group>";
+		};
+		B31954A922156ED9005205D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B31954A422156EC1005205D3 /* PhotoPreviewView.swift */,
+				B31954A322156EC1005205D3 /* PhotoPreviewViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B31954AA22156EDE005205D3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B31954A122156EC1005205D3 /* PhotoPreviewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		B3254DC221D3DD5C00F99F91 = {
 			isa = PBXGroup;
 			children = (
@@ -802,6 +874,7 @@
 				B3254F1921D3E7CD00F99F91 /* Steps.swift */,
 				B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */,
 				B3254F1C21D3E7CD00F99F91 /* DiaryTableViewModel.swift */,
+				B319155122146EE400F019ED /* Measurements.swift */,
 				B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */,
 			);
 			path = Diary;
@@ -983,6 +1056,7 @@
 				B3254F1221D3E7CD00F99F91 /* DiaryTab.storyboard */,
 				B3753C1D21D7A38D008A5D5A /* Diary */,
 				B3EFDF4321F76E5900A8F61F /* MeasureHistory */,
+				B319154622146CCF00F019ED /* AddNewMeasurements */,
 				B3FF2234220065DB00D936A6 /* CoinsAdded */,
 			);
 			path = DiaryTab;
@@ -1749,6 +1823,7 @@
 			children = (
 				B3FBA15D21EF33F600B88AA3 /* MediaScreens.storyboard */,
 				B3FBA15F21EF340D00B88AA3 /* Photo */,
+				B31954A022156E80005205D3 /* PhotoPreview */,
 				B3D737CF21EF765400DDF602 /* Collage */,
 				B3D737D021EF766B00DDF602 /* Timer */,
 				B3D737D121EF767100DDF602 /* MusicPlayer */,
@@ -1771,7 +1846,7 @@
 			children = (
 				B3FBA16321EF343800B88AA3 /* PhotoView.swift */,
 				B3FBA16221EF343800B88AA3 /* PhotoViewController.swift */,
-				B3FBA16A21EF3B4200B88AA3 /* PhotoPreviewView.swift */,
+				B3FBA16A21EF3B4200B88AA3 /* CameraView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1947,6 +2022,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B319154B22146CF300F019ED /* AddNewMeasurementsPresenter.swift in Sources */,
 				B30E9FA521ECE290006F33CE /* CoinsHistoryTableViewModel.swift in Sources */,
 				B39D477521E6258900D5C050 /* ProfileTableViewModel.swift in Sources */,
 				B3E55C752200B6C60042F237 /* PushNotification.swift in Sources */,
@@ -1954,6 +2030,7 @@
 				B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */,
 				B30A182021F8B88A00A39131 /* SeasonCell.swift in Sources */,
 				B3DD924721F9EF780017E723 /* Exercise.swift in Sources */,
+				B319154E22146CF300F019ED /* AddNewMeasurementsView.swift in Sources */,
 				B3D737DC21EF76FE00DDF602 /* CollagePresenter.swift in Sources */,
 				B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */,
 				B36B2F6E21DE123000C5D07B /* LoginSplashPresenter.swift in Sources */,
@@ -1963,6 +2040,7 @@
 				B3DC1B6E21EDFD1900883C0F /* EditGenderCell.swift in Sources */,
 				B30A182821F8BC3000A39131 /* LessonPresenter.swift in Sources */,
 				B3254F4B21D3E7CE00F99F91 /* StepCell.swift in Sources */,
+				B31954A722156EC1005205D3 /* PhotoPreviewViewController.swift in Sources */,
 				B39D477121E60B4700D5C050 /* User.swift in Sources */,
 				B3F7329A21E781190038ACB9 /* VideoLibraryView.swift in Sources */,
 				B319153E22142C0200F019ED /* PushNotificationsService.swift in Sources */,
@@ -2008,6 +2086,7 @@
 				B39A6D1D21FB226600C5A06F /* ExerciseViewController.swift in Sources */,
 				B3DD925221FA01560017E723 /* WorkoutOfTheDayInitializer.swift in Sources */,
 				B39D475A21E5FC6E00D5C050 /* ProfileInitializer.swift in Sources */,
+				B319154D22146CF300F019ED /* AddNewMeasurementsViewController.swift in Sources */,
 				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
 				B3F7329E21E7851F0038ACB9 /* VideoLibraryCell.swift in Sources */,
 				B39D475E21E5FCA300D5C050 /* ProfileView.swift in Sources */,
@@ -2025,7 +2104,7 @@
 				B30E9F8B21ECBEF5006F33CE /* ProductDetailInitializer.swift in Sources */,
 				B36CD81B21F601F9007D4BE6 /* SongsTableViewModel.swift in Sources */,
 				B3DD925121FA01560017E723 /* WorkoutOfTheDayPresenter.swift in Sources */,
-				B3FBA16B21EF3B4200B88AA3 /* PhotoPreviewView.swift in Sources */,
+				B3FBA16B21EF3B4200B88AA3 /* CameraView.swift in Sources */,
 				B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
 				B3DC1B6C21EDF29A00883C0F /* RoundImageViewWithShadow.swift in Sources */,
@@ -2040,11 +2119,13 @@
 				B306398B21F8A7F50089A5D4 /* WorkoutTableViewModel.swift in Sources */,
 				B3DD924921F9F2E00017E723 /* TableViewUpdatable.swift in Sources */,
 				B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */,
+				B319154C22146CF300F019ED /* AddNewMeasurementsInitializer.swift in Sources */,
 				B30E9F8021EC9701006F33CE /* UIView+cornerRadius.swift in Sources */,
 				B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */,
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
 				B369573721D4E40500735555 /* HealthKitService.swift in Sources */,
 				B3E7578B21F77950002B5AC7 /* MeasureHistoryCell.swift in Sources */,
+				B31954A822156EC1005205D3 /* PhotoPreviewView.swift in Sources */,
 				B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */,
 				B39D477821E6288D00D5C050 /* ProfileHeaderCell.swift in Sources */,
 				B323C04B220215C90059AFB9 /* TextFieldAssistant.swift in Sources */,
@@ -2094,6 +2175,7 @@
 				B30A182B21F8BC3000A39131 /* LessonView.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B38F17AD21F8A09E00B70DBE /* Lesson.swift in Sources */,
+				B319155222146EE400F019ED /* Measurements.swift in Sources */,
 				B30F287A21F2342D000954DB /* TimerService.swift in Sources */,
 				B3DD925321FA01560017E723 /* WorkoutOfTheDayViewController.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* DiaryTableViewModel.swift in Sources */,
@@ -2129,9 +2211,11 @@
 				B3254F4521D3E7CE00F99F91 /* WaterCell.swift in Sources */,
 				B30E9F8A21ECBEF5006F33CE /* ProductDetailPresenter.swift in Sources */,
 				B38F17A321F87BEC00B70DBE /* WorkoutViewController.swift in Sources */,
+				B31954A622156EC1005205D3 /* PhotoPreviewInitializer.swift in Sources */,
 				B3839C5F21F0827600BD27E0 /* PhotoLibraryService.swift in Sources */,
 				B3D737E421EF772E00DDF602 /* TimerPresenter.swift in Sources */,
 				B3FF223B2200660900D936A6 /* CoinsAddedViewController.swift in Sources */,
+				B31954A522156EC1005205D3 /* PhotoPreviewPresenter.swift in Sources */,
 				B3839C6121F0DA6D00BD27E0 /* ImageCreator.swift in Sources */,
 				B3254F3D21D3E7CE00F99F91 /* Steps.swift in Sources */,
 				B3DC1B7021EE1B1F00883C0F /* EditProfileCellType.swift in Sources */,

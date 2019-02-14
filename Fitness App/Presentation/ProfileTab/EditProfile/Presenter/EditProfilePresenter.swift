@@ -23,8 +23,7 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 	func getUser() {
 		viewModel = .init(user: user,
 						  textFieldDelegate: view.textFieldDelegate,
-						  datePickerView: view.getViewForDateInput(),
-						  helperView: view.getHelperViewForDateInput())
+						  datePickerView: view.getViewForDateInput())
 		view.setTableViewDataSource(viewModel)
 		view.update()
 	}

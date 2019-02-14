@@ -21,16 +21,19 @@ class PhotoPresenter<V: PhotoView>: Presenter {
 	}
 	
 	func startCamera() {
+		view.disableUserInteraction()
 		if !photoCapturingService.isAuthorized {
 			photoCapturingService.authorize { [weak self] success in
 				if success {
 					DispatchQueue.main.async {
 						self?.setupAndStartCamera()
 						self?.photoCapturingService.startCapturing()
+						self?.view.enableUserInteraction()
 					}
 				}
 			}
 		} else {
+			view.enableUserInteraction()
 			photoCapturingService.startCapturing()
 		}
 	}
@@ -45,8 +48,10 @@ class PhotoPresenter<V: PhotoView>: Presenter {
 	}
 	
 	func takePhoto() {
+		view.disableUserInteraction()
 		photoCapturingService.takePhoto(previewSize: view.imageSize) { [weak self] image in
-			self?.view.setPreviewImage(image)
+			self?.view.enableUserInteraction()
+			self?.view.showPreviewImage(image)
 		}
 	}
 }

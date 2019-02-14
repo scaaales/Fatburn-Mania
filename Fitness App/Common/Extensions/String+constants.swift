@@ -29,6 +29,8 @@ extension String {
 	static var showStoreSegueIdentifier: String { return "showStore" }
 	static var showCoinsHistorySegueIdentifier: String { return "showCoinsHistory" }
 	static var presentMainTabBarSegueIdentifier: String { return "presentMainTabBar"}
+	static var presentCoinsAddedSegueIdentifier: String { return "presentCoinsAdded" }
+	static var presentPhotoPreviewSegueIdentifier: String { return "presentPhotoPreview" }
 }
 
 // MARK: - Text Constants

@@ -9,4 +9,6 @@
 
 protocol MusicPlayerView: View, TableViewUpdatable {	
 	func setCurrentSong(_ song: Song)
+	func setPauseImage()
+	func setPlayImage()
 }

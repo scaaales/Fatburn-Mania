@@ -11,5 +11,7 @@ import AVKit
 protocol PhotoView: View {
 	var videoPreviewLayer: AVCaptureVideoPreviewLayer { get }
 	var imageSize: CGSize { get }
-	func setPreviewImage(_ image: UIImage)
+	func showPreviewImage(_ image: UIImage)
+	func disableUserInteraction()
+	func enableUserInteraction()
 }

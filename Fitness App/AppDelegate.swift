@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		IQKeyboardManager.shared.enabledDistanceHandlingClasses.append(SignInViewController.self)
 		
 		pushNotificationService = .init()
-		pushNotificationService.updateUnreadNotifications()
 		return true
 	}
 

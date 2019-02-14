@@ -13,6 +13,7 @@ class MusicPlayerPresenter<V: MusicPlayerView>: Presenter {
 	
 	weak var view: View!
 	private var viewModel: SongsTableViewModel!
+	private var isMusicPlaying = false
 	
 	required init(view: View) {
 		self.view = view
@@ -28,5 +29,16 @@ class MusicPlayerPresenter<V: MusicPlayerView>: Presenter {
 		let song = viewModel.getSongAt(index: row)
 		// some playing logic
 		view.setCurrentSong(song)
+		view.setPauseImage()
+		isMusicPlaying = true
+	}
+	
+	func pauseResumeSong() {
+		isMusicPlaying.toggle()
+		if isMusicPlaying {
+			view.setPauseImage()
+		} else {
+			view.setPlayImage()
+		}
 	}
 }

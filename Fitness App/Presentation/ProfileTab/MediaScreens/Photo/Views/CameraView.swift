@@ -9,12 +9,12 @@
 import UIKit
 import AVKit
 
-class PhotoPreviewView: UIView {
+class CameraView: UIView {
 
 	override class var layerClass: AnyClass {
 		return AVCaptureVideoPreviewLayer.self
 	}
-	
+
 	/// Convenience wrapper to get layer as its statically known type.
 	var videoPreviewLayer: AVCaptureVideoPreviewLayer {
 		let result = layer as! AVCaptureVideoPreviewLayer

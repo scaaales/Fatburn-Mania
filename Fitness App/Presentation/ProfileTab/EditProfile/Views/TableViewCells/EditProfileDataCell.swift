@@ -21,7 +21,6 @@ class EditProfileDataCell: CellWithSeperator, ConfigurableCell {
 		valueTextField.delegate = data.delegate
 		valueTextField.tag = data.tag
 		valueTextField.inputView = data.dateInputView
-		valueTextField.inputAccessoryView = data.helperView
 		if let datePicker = data.dateInputView {
 			datePicker.addTarget(self, action: #selector(dateSelected(datePicker:)), for: .valueChanged)
 		}
