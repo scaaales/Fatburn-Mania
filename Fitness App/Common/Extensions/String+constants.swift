@@ -30,6 +30,7 @@ extension String {
 	static var showCoinsHistorySegueIdentifier: String { return "showCoinsHistory" }
 	static var presentMainTabBarSegueIdentifier: String { return "presentMainTabBar"}
 	static var presentCoinsAddedSegueIdentifier: String { return "presentCoinsAdded" }
+	static var presentPhotoPreviewSegueIdentifier: String { return "presentPhotoPreview" }
 }
 
 // MARK: - Text Constants

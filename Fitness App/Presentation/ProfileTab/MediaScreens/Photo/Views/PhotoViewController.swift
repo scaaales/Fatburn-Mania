@@ -12,13 +12,23 @@ import AVKit
 class PhotoViewController: UIViewController {
 	var presenter: PhotoPresenter<PhotoViewController>!
 	
-	@IBOutlet private weak var photoPreviewView: PhotoPreviewView!
+	@IBOutlet private weak var cameraView: CameraView!
 	@IBOutlet private weak var takePhotoButton: UIButton!
-	@IBOutlet private weak var photoPreviewImageView: UIImageView!
+	
+	private var statusBarShouldBeHidden = false
+	
+	override var prefersStatusBarHidden: Bool {
+		return statusBarShouldBeHidden
+	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		presenter.startCamera()
+		
+		statusBarShouldBeHidden = false
+		UIView.animate(withDuration: 0.25) {
+			self.setNeedsStatusBarAppearanceUpdate()
+		}
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
@@ -30,21 +40,40 @@ class PhotoViewController: UIViewController {
 		presenter.takePhoto()
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let photoPreviewVC = segue.destination as? PhotoPreviewViewController,
+			let image = sender as? UIImage {
+			photoPreviewVC.photo = image
+		}
+	}
+	
 }
 
 extension PhotoViewController: PhotoView {
+	func disableUserInteraction() {
+		view.isUserInteractionEnabled = false
+	}
+	
+	func enableUserInteraction() {
+		view.isUserInteractionEnabled = true
+	}
+	
 	var videoPreviewLayer: AVCaptureVideoPreviewLayer {
-		return photoPreviewView.videoPreviewLayer
+		return cameraView.videoPreviewLayer
 	}
 	
 	var imageSize: CGSize {
-		return photoPreviewView.bounds.size
+		return cameraView.bounds.size
 	}
 	
-	func setPreviewImage(_ image: UIImage) {
-		photoPreviewImageView.image = image
+	func showPreviewImage(_ image: UIImage) {
+		statusBarShouldBeHidden = true
+		
+		UIView.animate(withDuration: 0.25) {
+			self.setNeedsStatusBarAppearanceUpdate()
+		}
+		performSegue(withIdentifier: .presentPhotoPreviewSegueIdentifier, sender: image)
 	}
-	
 }
 
 
