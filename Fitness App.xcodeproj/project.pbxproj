@@ -2395,14 +2395,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Fitness App/Fitness App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8N949X2SJZ;
+				DEVELOPMENT_TEAM = 96533UDF7H;
 				INFOPLIST_FILE = "$(SRCROOT)/Fitness App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "scales.Fitness-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ridex.fatburnmania;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2416,14 +2416,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Fitness App/Fitness App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8N949X2SJZ;
+				DEVELOPMENT_TEAM = 96533UDF7H;
 				INFOPLIST_FILE = "$(SRCROOT)/Fitness App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "scales.Fitness-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ridex.fatburnmania;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
