@@ -23,6 +23,6 @@ class ProductDetailPresenter<V: ProductDetailView>: Presenter {
 	}
 	
 	func buyProduct() {
-		print("attempting to buy \(product.name), that's cost \(product.price)")
+		print("attempting to buy \(product.title), that's cost \(product.price)")
 	}
 }

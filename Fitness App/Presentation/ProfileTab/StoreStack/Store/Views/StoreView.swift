@@ -6,6 +6,6 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-protocol StoreView: View, TableViewUpdatable {
+protocol StoreView: View, TableViewUpdatable, NetworkingView, ErrorShowable {
 	
 }

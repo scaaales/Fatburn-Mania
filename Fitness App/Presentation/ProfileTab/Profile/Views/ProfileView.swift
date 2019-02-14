@@ -6,7 +6,6 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-protocol ProfileView: View, TableViewUpdatable, NetworkingView {	
+protocol ProfileView: View, TableViewUpdatable, NetworkingView, ErrorShowable {	
 	func showLoginScreen()
-	func showErrorPopup(with text: String)
 }

@@ -37,10 +37,9 @@ class ProductDetailViewController: UIViewController {
 
 extension ProductDetailViewController: ProductDetailView {
 	func showProduct(_ product: Product) {
-		let descriptionTestText = Array(repeating: product.description, count: 7).joined(separator: "\n")
-		productImageView.image = product.picture
-		titleLabel.text = product.name
-		descriptionLabel.text = descriptionTestText
+		productImageView.setImageFrom(urlString: product.photoUrlString)
+		titleLabel.text = product.title
+		descriptionLabel.text = product.description
 		priceLabel.text = "\(product.price.formattedWithSeparator) c."
 	}
 }

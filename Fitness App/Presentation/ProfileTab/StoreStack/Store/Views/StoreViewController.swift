@@ -14,6 +14,13 @@ class StoreViewController: UIViewController {
 	@IBOutlet private weak var tableView: UITableView!
 	var isPresentedModal = false
 	
+	lazy private var loader: BlurredLoader = {
+		let loader = BlurredLoader()
+		view.addSubview(loader)
+		loader.centerInto(view: view)
+		return loader
+	}()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupTableView()
@@ -39,7 +46,7 @@ class StoreViewController: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let productDetailsVC = segue.destination as? ProductDetailViewController,
 			let button = sender as? UIButton {
-			let product = presenter.getProduct(at: button.tag)
+			let product = presenter.getProduct(with: button.tag)
 			productDetailsVC.presenter.product = product
 		}
 	}
@@ -47,6 +54,22 @@ class StoreViewController: UIViewController {
 }
 
 extension StoreViewController: StoreView {
+	func disableUserInteraction() {
+		view.isUserInteractionEnabled = false
+	}
+	
+	func enableUserInteraction() {
+		view.isUserInteractionEnabled = true
+	}
+	
+	func showLoader() {
+		loader.startAnimating()
+	}
+	
+	func hideLoader() {
+		loader.stopAnimating()
+	}
+	
 	func update() {
 		tableView.reloadData()
 	}

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AddNewMeasurementsView: View, NetworkingView {
+protocol AddNewMeasurementsView: View, NetworkingView, ErrorShowable {
 	var chest: String { get }
 	var waist: String { get }
 	var thighs: String { get }
@@ -18,6 +18,5 @@ protocol AddNewMeasurementsView: View, NetworkingView {
 	func setDate(_ date: Date)
 	func setDefaultMeasurements(_ measurements: Measurements)
 	func showCoinsAddedScreen(with coinsNumber: Int)
-	func showErrorPopup(with errorText: String)
 	func closeItself()
 }

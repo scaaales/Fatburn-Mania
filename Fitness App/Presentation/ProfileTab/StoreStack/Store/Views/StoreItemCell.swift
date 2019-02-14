@@ -9,7 +9,7 @@
 import UIKit
 
 class StoreItemCell: UITableViewCell, ConfigurableCell {
-	typealias DataType = (product: Product, row: Int)
+	typealias DataType = Product
 	
 	@IBOutlet private weak var productImageView: UIImageView!
 	@IBOutlet private weak var titleLabel: UILabel!
@@ -17,14 +17,13 @@ class StoreItemCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var priceLabel: UILabel!
 	@IBOutlet private weak var readMoreButton: UIButton!
 	
-	func configure(data: (product: Product, row: Int)) {
-		let product = data.product
-		productImageView.image = product.picture
-		titleLabel.text = product.name
-		descriptionLabel.text = product.description
-		priceLabel.text = "\(product.price.formattedWithSeparator) c."
+	func configure(data: Product) {
+		productImageView.setImageFrom(urlString: data.photoUrlString)
+		titleLabel.text = data.title
+		descriptionLabel.text = data.shortDescription
+		priceLabel.text = "\(data.price.formattedWithSeparator) c."
 		productImageView.makeCornerRadius(16)
-		readMoreButton.tag = data.row
+		readMoreButton.tag = data.id
 	}
 
 }

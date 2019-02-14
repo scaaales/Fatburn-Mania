@@ -7,24 +7,40 @@
 //
 
 import Foundation
+import KeychainSwift
 
 class StorePresenter<V: StoreView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
 	private var viewModel: StoreProductsTableViewModel!
+	private let storeApi = FitnessApi.Store()
 	
 	required init(view: View) {
 		self.view = view
 	}
 	
 	func getProducts() {
-		viewModel = .init()
-		view.setTableViewDataSource(viewModel.dataSource)
-		view.update()
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
+		
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		storeApi.getStoreItems(token: token, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: { [weak self] products in
+			guard let self = self else { return }
+			self.viewModel = StoreProductsTableViewModel(items: products)
+			self.view.setTableViewDataSource(self.viewModel.dataSource)
+			self.view.update()
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
 	}
 	
-	func getProduct(at index: Int) -> Product {
-		return viewModel.getProduct(at: index)
+	func getProduct(with id: Int) -> Product {
+		return viewModel.getProduct(with: id)
 	}
 }

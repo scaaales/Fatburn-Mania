@@ -8,14 +8,13 @@
 
 import Foundation
 
-protocol SignInView: View, NetworkingView {
+protocol SignInView: View, NetworkingView, ErrorShowable {
 	var name: String { get }
 	var email: String { get }
 	var phone: String { get }
 	var password: String { get }
 	
 	func showErrors(_ errors: [SignInError])
-	func showErrorPopup(with text: String)
 	func showSuccess(title: String, completion: @escaping () -> Void)
 	func pop() 
 }

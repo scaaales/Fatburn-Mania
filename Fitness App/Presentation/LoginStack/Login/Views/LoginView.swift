@@ -8,12 +8,11 @@
 
 import Foundation
 
-protocol LoginView: View, NetworkingView {
+protocol LoginView: View, NetworkingView, ErrorShowable {
 	var email: String { get }
 	var password: String { get }
 	
 	func showErrors(_ errors: [LoginError])
 	func showWrongPassword()
-	func showErrorPopup(with text: String)
 	func showTutorialScreen()
 }

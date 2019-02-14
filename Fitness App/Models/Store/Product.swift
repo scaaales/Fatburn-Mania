@@ -8,10 +8,17 @@
 
 import UIKit
 
-struct Product {
-	let name: String
+struct Product: Decodable {
+	let id: Int
+	let title: String
 	let description: String
-	let price: UInt
-	let picture: UIImage
-	#warning("change to imageURL or something else later")
+	let shortDescription: String
+	let price: Int
+	let photoUrlString: String
+	
+	enum CodingKeys: String, CodingKey {
+		case photoUrlString = "photo"
+		case shortDescription = "short_description"
+		case id, title, description, price
+	}
 }
