@@ -153,13 +153,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lesson description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLz-dr-G3y">
-                                                <rect key="frame" x="20" y="274.5" width="335" height="14.5"/>
+                                                <rect key="frame" x="20" y="344.5" width="335" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="68" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Qko-lE-e9S">
-                                                <rect key="frame" x="0.0" y="328" width="375" height="200"/>
+                                                <rect key="frame" x="0.0" y="398" width="375" height="200"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="TTQ-AY-12O"/>
@@ -221,13 +221,13 @@
                                                 </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digit of the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-sE-1jd">
-                                                <rect key="frame" x="20" y="550" width="121.5" height="21"/>
+                                                <rect key="frame" x="20" y="620" width="121.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <color key="textColor" red="0.047058823529411764" green="0.35686274509803922" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-dh-kLk" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="601" width="335" height="36"/>
+                                                <rect key="frame" x="20" y="671" width="335" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="5eI-PE-KK5"/>
                                                 </constraints>
@@ -252,16 +252,38 @@
                                                     <constraint firstAttribute="width" secondItem="Na4-lI-3h5" secondAttribute="height" multiplier="16:9" id="KC0-qJ-jZt"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdP-nk-dDT" customClass="RoundButton" customModule="Fitness_App" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="284.5" width="335" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="FcV-UB-OMa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="ENQ-1z-J7C" kind="show" id="1nX-5h-tER"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="xYk-cm-yU2" firstAttribute="leading" secondItem="9fY-DQ-cq2" secondAttribute="leading" constant="20" id="2jB-35-A4g"/>
+                                            <constraint firstAttribute="trailing" secondItem="wdP-nk-dDT" secondAttribute="trailing" constant="20" id="5Xs-cq-dPa"/>
                                             <constraint firstItem="bLz-dr-G3y" firstAttribute="leading" secondItem="9fY-DQ-cq2" secondAttribute="leading" constant="20" id="67W-tA-8cP"/>
                                             <constraint firstItem="w0n-sE-1jd" firstAttribute="leading" secondItem="9fY-DQ-cq2" secondAttribute="leading" constant="20" id="93U-Xt-73m"/>
                                             <constraint firstItem="Na4-lI-3h5" firstAttribute="leading" secondItem="9fY-DQ-cq2" secondAttribute="leading" constant="20" id="9Rr-aY-Gwl"/>
                                             <constraint firstItem="xYk-cm-yU2" firstAttribute="top" secondItem="9fY-DQ-cq2" secondAttribute="top" constant="25" id="9l2-ua-rz5"/>
+                                            <constraint firstItem="wdP-nk-dDT" firstAttribute="leading" secondItem="9fY-DQ-cq2" secondAttribute="leading" constant="20" id="HIk-4f-Gfb"/>
                                             <constraint firstAttribute="trailing" secondItem="Na4-lI-3h5" secondAttribute="trailing" constant="20" id="HwT-mc-vbh"/>
                                             <constraint firstItem="Jc3-dh-kLk" firstAttribute="top" secondItem="w0n-sE-1jd" secondAttribute="bottom" constant="30" id="Mhh-xA-H63"/>
+                                            <constraint firstItem="bLz-dr-G3y" firstAttribute="top" secondItem="wdP-nk-dDT" secondAttribute="bottom" constant="24" id="QaQ-Gh-fJ9"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jc3-dh-kLk" secondAttribute="bottom" constant="20" id="Qlt-wP-BhF"/>
                                             <constraint firstItem="Qko-lE-e9S" firstAttribute="leading" secondItem="9fY-DQ-cq2" secondAttribute="leading" id="VU7-6V-dYw"/>
                                             <constraint firstItem="Na4-lI-3h5" firstAttribute="top" secondItem="xYk-cm-yU2" secondAttribute="bottom" constant="20" id="X6n-CD-uyg"/>
@@ -270,7 +292,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Jc3-dh-kLk" secondAttribute="trailing" constant="20" id="cPy-53-hkb"/>
                                             <constraint firstAttribute="trailing" secondItem="Qko-lE-e9S" secondAttribute="trailing" id="cQc-dE-dIB"/>
                                             <constraint firstItem="w0n-sE-1jd" firstAttribute="top" secondItem="Qko-lE-e9S" secondAttribute="bottom" constant="22" id="dZX-ga-ybi"/>
-                                            <constraint firstItem="bLz-dr-G3y" firstAttribute="top" secondItem="Na4-lI-3h5" secondAttribute="bottom" constant="20" id="g2c-am-mbS"/>
+                                            <constraint firstItem="wdP-nk-dDT" firstAttribute="top" secondItem="Na4-lI-3h5" secondAttribute="bottom" constant="30" id="idX-2O-Lau"/>
                                             <constraint firstItem="Qko-lE-e9S" firstAttribute="top" secondItem="bLz-dr-G3y" secondAttribute="bottom" constant="39" id="upw-ao-M28"/>
                                         </constraints>
                                     </view>
@@ -312,13 +334,21 @@
             </objects>
             <point key="canvasLocation" x="2260" y="-171"/>
         </scene>
+        <!--ExerciseViewController-->
+        <scene sceneID="avH-V3-bbc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WorkoutOfTheDayTab" referencedIdentifier="ExerciseViewController" id="ENQ-1z-J7C" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GoS-iR-62x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3143" y="-264"/>
+        </scene>
         <!--PhotoViewController-->
         <scene sceneID="YJM-YJ-azf">
             <objects>
                 <viewControllerPlaceholder storyboardName="MediaScreens" referencedIdentifier="PhotoViewController" id="c91-MD-gN7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxB-QR-KdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3151" y="-172"/>
+            <point key="canvasLocation" x="3143" y="-102"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SFG-xr-VGc">
