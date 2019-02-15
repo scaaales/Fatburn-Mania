@@ -64,7 +64,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <segue destination="vrT-oU-V7F" kind="show" id="nOX-nl-49m"/>
+                                                        <action selector="readMoreTapped:" destination="faK-JV-xMQ" eventType="touchUpInside" id="QEc-nh-dQD"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFc-fJ-4h7">
@@ -115,6 +115,7 @@ Description</string>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="Sqc-F6-aga" id="7CJ-Bk-8dj"/>
+                        <segue destination="vrT-oU-V7F" kind="show" identifier="showProductDetails" id="Kgh-1p-czA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOY-gs-n5m" userLabel="First Responder" sceneMemberID="firstResponder"/>

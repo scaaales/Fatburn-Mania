@@ -13,6 +13,7 @@ class ProductDetailPresenter<V: ProductDetailView>: Presenter {
 	
 	weak var view: View!
 	var product: Product!
+	var storeApi: FitnessApi.Store!
 	
 	required init(view: View) {
 		self.view = view
@@ -23,6 +24,18 @@ class ProductDetailPresenter<V: ProductDetailView>: Presenter {
 	}
 	
 	func buyProduct() {
-		print("attempting to buy \(product.title), that's cost \(product.price)")
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		storeApi.butStoreItems(productId: product.id,
+							   onComplete: { [weak self] in
+								self?.view.enableUserInteraction()
+								self?.view.hideLoader()
+			}, onSuccess: { [weak self] in
+				guard let product = self?.product else { return }
+				self?.view.showPopup(with: nil, text: .successBoughtTextConst(name: product.title))
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
 	}
 }

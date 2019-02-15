@@ -10,21 +10,40 @@ import Moya
 
 enum StoreService {
 	case getStoreItems(token: String)
+	case buyStoreItems(token: String, productId: Int)
 }
 
 extension StoreService: TargetType {
 	var baseURL: URL { return .apiBaseURL }
 	
 	var path: String {
-		return "/api/store_items"
+		switch self {
+		case .getStoreItems:
+			return "/store_items"
+		case .buyStoreItems:
+			return "/user/buy_store_item"
+		}
 	}
 	
-	var method: Method { return .get }
+	var method: Method {
+		switch self {
+		case .getStoreItems:
+			return .get
+		case .buyStoreItems:
+			return .post
+		}
+	}
 	
 	var sampleData: Data { return .init() }
 	
 	var task: Task {
-		return .requestPlain
+		switch self {
+		case .getStoreItems:
+			return .requestPlain
+		case .buyStoreItems(_, let productId):
+			return .requestParameters(parameters: ["store_item_id": productId],
+									  encoding: JSONEncoding.default)
+		}
 	}
 	
 	var headers: [String : String]? {
@@ -32,7 +51,8 @@ extension StoreService: TargetType {
 					  "Accept": "application/json"]
 		
 		switch self {
-		case .getStoreItems(let token):
+		case .getStoreItems(let token),
+			 .buyStoreItems(let token, _):
 			headers["Authorization"] = "Bearer \(token)"
 		}
 		

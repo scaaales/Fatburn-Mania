@@ -11,6 +11,8 @@ import UIKit
 class StoreViewController: UIViewController {
 	var presenter: StorePresenter<StoreViewController>!
 	
+	private typealias SeguePassingData = (product: Product, storeApi: FitnessApi.Store)
+	
 	@IBOutlet private weak var tableView: UITableView!
 	var isPresentedModal = false
 	
@@ -43,11 +45,15 @@ class StoreViewController: UIViewController {
 		parent?.dismiss(animated: true)
 	}
 	
+	@IBAction private func readMoreTapped(_ button: UIButton) {
+		presenter.readMore(for: button.tag)
+	}
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let productDetailsVC = segue.destination as? ProductDetailViewController,
-			let button = sender as? UIButton {
-			let product = presenter.getProduct(with: button.tag)
-			productDetailsVC.presenter.product = product
+			let data = sender as? SeguePassingData {
+			productDetailsVC.presenter.product = data.product
+			productDetailsVC.presenter.storeApi = data.storeApi
 		}
 	}
 	
@@ -76,6 +82,11 @@ extension StoreViewController: StoreView {
 	
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
 		tableView.dataSource = dataSource
+	}
+	
+	func showDetailForProduct(_ product: Product, pass storeApi: FitnessApi.Store) {
+		performSegue(withIdentifier: .showProductDetailsSegueIdentifier,
+					 sender: (product: product, storeApi: storeApi))
 	}
 }
 
