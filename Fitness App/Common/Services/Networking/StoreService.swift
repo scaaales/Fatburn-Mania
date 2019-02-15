@@ -10,7 +10,7 @@ import Moya
 
 enum StoreService {
 	case getStoreItems(token: String)
-	case buyStoreItems(token: String, productId: Int)
+	case buyStoreItem(token: String, productId: Int)
 }
 
 extension StoreService: TargetType {
@@ -20,7 +20,7 @@ extension StoreService: TargetType {
 		switch self {
 		case .getStoreItems:
 			return "/store_items"
-		case .buyStoreItems:
+		case .buyStoreItem:
 			return "/user/buy_store_item"
 		}
 	}
@@ -29,7 +29,7 @@ extension StoreService: TargetType {
 		switch self {
 		case .getStoreItems:
 			return .get
-		case .buyStoreItems:
+		case .buyStoreItem:
 			return .post
 		}
 	}
@@ -40,7 +40,7 @@ extension StoreService: TargetType {
 		switch self {
 		case .getStoreItems:
 			return .requestPlain
-		case .buyStoreItems(_, let productId):
+		case .buyStoreItem(_, let productId):
 			return .requestParameters(parameters: ["store_item_id": productId],
 									  encoding: JSONEncoding.default)
 		}
@@ -52,7 +52,7 @@ extension StoreService: TargetType {
 		
 		switch self {
 		case .getStoreItems(let token),
-			 .buyStoreItems(let token, _):
+			 .buyStoreItem(let token, _):
 			headers["Authorization"] = "Bearer \(token)"
 		}
 		

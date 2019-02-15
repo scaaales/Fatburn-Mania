@@ -43,12 +43,12 @@ extension FitnessApi {
 			})
 		}
 		
-		func butStoreItems(productId: Int,
-						   onComplete: @escaping () -> Void,
-						   onSuccess: @escaping () -> Void,
-						   onError: @escaping OnErrorCompletion) {
-			request = provider.request(.buyStoreItems(token: token,
-													  productId: productId),
+		func butStoreItem(productId: Int,
+						  onComplete: @escaping () -> Void,
+						  onSuccess: @escaping () -> Void,
+						  onError: @escaping OnErrorCompletion) {
+			request = provider.request(.buyStoreItem(token: token,
+													 productId: productId),
 									   completion: { result in
 										onComplete()
 										handleResult(result, onSuccess: { json in

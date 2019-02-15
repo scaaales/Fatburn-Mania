@@ -8,4 +8,5 @@
 
 protocol ProductDetailView: View, NetworkingView, PopupShowable {
 	func showProduct(_ product: Product)
+	func showConfirmPopup(with text: String, okHandler: @escaping () -> Void)
 }

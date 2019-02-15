@@ -24,11 +24,17 @@ class ProductDetailPresenter<V: ProductDetailView>: Presenter {
 	}
 	
 	func buyProduct() {
+		view.showConfirmPopup(with: "Do you sure you want to buy \(product.title) thant costs \(product.price) coins?") { [weak self] in
+			self?.startBuyRequest()
+		}
+	}
+	
+	private func startBuyRequest() {
 		view.disableUserInteraction()
 		view.showLoader()
 		
-		storeApi.butStoreItems(productId: product.id,
-							   onComplete: { [weak self] in
+		storeApi.butStoreItem(productId: product.id,
+							  onComplete: { [weak self] in
 								self?.view.enableUserInteraction()
 								self?.view.hideLoader()
 			}, onSuccess: { [weak self] in

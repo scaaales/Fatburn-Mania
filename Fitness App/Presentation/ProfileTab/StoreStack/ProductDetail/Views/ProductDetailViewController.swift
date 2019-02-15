@@ -65,6 +65,15 @@ extension ProductDetailViewController: ProductDetailView {
 		descriptionLabel.text = product.description
 		priceLabel.text = "\(product.price.formattedWithSeparator) c."
 	}
+	
+	func showConfirmPopup(with text: String, okHandler: @escaping () -> Void) {
+		let alertController = UIAlertController(title: "Confirm purchase", message: text, preferredStyle: .alert)
+		alertController.addAction(.init(title: "Yes", style: .default, handler: { _ in
+			okHandler()
+		}))
+		alertController.addAction(.init(title: "No", style: .cancel))
+		present(alertController, animated: true)
+	}
 }
 
 
