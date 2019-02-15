@@ -14,4 +14,8 @@ protocol PhotoView: View {
 	func showPreviewImage(_ image: UIImage)
 	func disableUserInteraction()
 	func enableUserInteraction()
+	
+	func showTimer()
+	func hideTimer()
+	func setTimerRemainingTime(_ time: Int)
 }
