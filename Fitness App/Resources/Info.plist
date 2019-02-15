@@ -10,8 +10,6 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
@@ -19,17 +17,19 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>4</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Need to access your camera to capture a picture&apos;s and create collage&apos;s</string>
+	<string>Need to access your camera to capture a picture's and create collage's</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>We will use your health information to better track Prancercise workouts.</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>We will use your health information to better track Prancercise workouts.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Need to access your photo library to save photo&apos;s and collage&apos;s</string>
+	<string>Need to access your photo library to save photo's and collage's</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
