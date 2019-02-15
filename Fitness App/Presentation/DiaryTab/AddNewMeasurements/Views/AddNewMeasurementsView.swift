@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AddNewMeasurementsView: View, NetworkingView, ErrorShowable {
+protocol AddNewMeasurementsView: View, NetworkingView, PopupShowable {
 	var chest: String { get }
 	var waist: String { get }
 	var thighs: String { get }

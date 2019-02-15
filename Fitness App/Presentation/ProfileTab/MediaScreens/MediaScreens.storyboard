@@ -129,7 +129,7 @@
                             <constraint firstItem="me0-3S-GQD" firstAttribute="bottom" secondItem="K94-GY-PPw" secondAttribute="bottom" constant="8" id="Mob-rl-S92"/>
                             <constraint firstItem="me0-3S-GQD" firstAttribute="bottom" secondItem="wJK-wY-Qpk" secondAttribute="bottom" constant="8" id="Qj7-4S-zbV"/>
                             <constraint firstAttribute="trailing" secondItem="AYU-Om-3DG" secondAttribute="trailing" id="jwu-MP-5rE"/>
-                            <constraint firstAttribute="bottom" secondItem="AYU-Om-3DG" secondAttribute="bottom" constant="42" id="vEM-dj-t2Y"/>
+                            <constraint firstItem="me0-3S-GQD" firstAttribute="bottom" secondItem="AYU-Om-3DG" secondAttribute="bottom" constant="42" id="vEM-dj-t2Y"/>
                             <constraint firstItem="wJK-wY-Qpk" firstAttribute="top" secondItem="AYU-Om-3DG" secondAttribute="bottom" constant="8" id="vOT-qJ-oRr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="me0-3S-GQD"/>

@@ -6,6 +6,6 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-protocol StoreView: View, TableViewUpdatable, NetworkingView, ErrorShowable {
-	
+protocol StoreView: View, TableViewUpdatable, NetworkingView, PopupShowable {
+	func showDetailForProduct(_ product: Product, pass storeApi: FitnessApi.Store)
 }

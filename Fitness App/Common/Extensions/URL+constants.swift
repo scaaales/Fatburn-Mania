@@ -9,5 +9,5 @@
 import Foundation
 
 extension URL {
-	static var apiBaseURL: URL { return URL(string: "https://fitness-backend.ridex.tech")! }
+	static var apiBaseURL: URL { return URL(string: "https://fitness-backend.ridex.tech/api")! }
 }

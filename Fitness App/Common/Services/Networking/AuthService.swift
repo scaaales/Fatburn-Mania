@@ -18,7 +18,7 @@ extension AuthService: TargetType {
 	var baseURL: URL { return .apiBaseURL }
 	
 	var path: String {
-		let path = "/api/auth/"
+		let path = "/auth/"
 		switch self {
 		case .register:
 			return path + "register"

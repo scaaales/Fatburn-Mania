@@ -14,20 +14,22 @@ class StorePresenter<V: StoreView>: Presenter {
 	
 	weak var view: View!
 	private var viewModel: StoreProductsTableViewModel!
-	private let storeApi = FitnessApi.Store()
+	private let storeApi: FitnessApi.Store
 	
 	required init(view: View) {
 		self.view = view
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else {
+			fatalError("no token found!")
+		}
+		storeApi = .init(token: token)
 	}
 	
 	func getProducts() {
-		let keychain = KeychainSwift()
-		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
-		
 		view.disableUserInteraction()
 		view.showLoader()
 		
-		storeApi.getStoreItems(token: token, onComplete: { [weak self] in
+		storeApi.getStoreItems(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
 		}, onSuccess: { [weak self] products in
@@ -40,7 +42,9 @@ class StorePresenter<V: StoreView>: Presenter {
 		}
 	}
 	
-	func getProduct(with id: Int) -> Product {
-		return viewModel.getProduct(with: id)
+	func readMore(for id: Int) {
+		let product = viewModel.getProduct(with: id)
+		view.showDetailForProduct(product, pass: storeApi)
 	}
+	
 }

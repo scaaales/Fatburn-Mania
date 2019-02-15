@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SignInView: View, NetworkingView, ErrorShowable {
+protocol SignInView: View, NetworkingView, PopupShowable {
 	var name: String { get }
 	var email: String { get }
 	var phone: String { get }

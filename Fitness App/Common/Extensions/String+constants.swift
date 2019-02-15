@@ -31,6 +31,7 @@ extension String {
 	static var presentMainTabBarSegueIdentifier: String { return "presentMainTabBar"}
 	static var presentCoinsAddedSegueIdentifier: String { return "presentCoinsAdded" }
 	static var presentPhotoPreviewSegueIdentifier: String { return "presentPhotoPreview" }
+	static var showProductDetailsSegueIdentifier: String { return "showProductDetails" }
 }
 
 // MARK: - Text Constants
@@ -40,6 +41,7 @@ extension String {
 	static var forgotPasswordConstant: String { return "Forgot your password?" }
 	static var emailWasSentConstant: String { return "E-mail with instructions on how to reset your password was sent" }
 	static var closeConstant: String { return "Close" }
+	static func successBoughtTextConst(name: String) -> String { return "You successfully bought \(name). We will contact you soon" }
 	
 	static var timerStartTime: String { return "00:00:00" }
 	

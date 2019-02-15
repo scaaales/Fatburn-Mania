@@ -6,6 +6,6 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-protocol ProductDetailView: View {
+protocol ProductDetailView: View, NetworkingView, PopupShowable {
 	func showProduct(_ product: Product)
 }

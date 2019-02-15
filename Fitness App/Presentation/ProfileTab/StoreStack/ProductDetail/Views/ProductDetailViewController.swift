@@ -16,6 +16,13 @@ class ProductDetailViewController: UIViewController {
 	@IBOutlet private weak var descriptionLabel: UILabel!
 	@IBOutlet private weak var priceLabel: UILabel!
 	
+	lazy private var loader: BlurredLoader = {
+		let loader = BlurredLoader()
+		view.addSubview(loader)
+		loader.centerInto(view: view)
+		return loader
+	}()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		presenter.getProduct()
@@ -36,6 +43,22 @@ class ProductDetailViewController: UIViewController {
 }
 
 extension ProductDetailViewController: ProductDetailView {
+	func disableUserInteraction() {
+		view.isUserInteractionEnabled = false
+	}
+	
+	func enableUserInteraction() {
+		view.isUserInteractionEnabled = true
+	}
+	
+	func showLoader() {
+		loader.startAnimating()
+	}
+	
+	func hideLoader() {
+		loader.stopAnimating()
+	}
+	
 	func showProduct(_ product: Product) {
 		productImageView.setImageFrom(urlString: product.photoUrlString)
 		titleLabel.text = product.title
