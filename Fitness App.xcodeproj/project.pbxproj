@@ -138,6 +138,8 @@
 		B37CBA2321DE680900834A98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CBA2221DE680900834A98 /* LoginViewController.swift */; };
 		B3839C5F21F0827600BD27E0 /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */; };
 		B3839C6121F0DA6D00BD27E0 /* ImageCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3839C6021F0DA6D00BD27E0 /* ImageCreator.swift */; };
+		B38B75FA22170F1E00B48E19 /* PhotoLevelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B75F622170F1E00B48E19 /* PhotoLevelPresenter.swift */; };
+		B38B75FD22170F1E00B48E19 /* PhotoLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B75F922170F1E00B48E19 /* PhotoLevelView.swift */; };
 		B38F17A121F87BEC00B70DBE /* WorkoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F179D21F87BEC00B70DBE /* WorkoutPresenter.swift */; };
 		B38F17A221F87BEC00B70DBE /* WorkoutInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F179E21F87BEC00B70DBE /* WorkoutInitializer.swift */; };
 		B38F17A321F87BEC00B70DBE /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F179F21F87BEC00B70DBE /* WorkoutViewController.swift */; };
@@ -390,6 +392,8 @@
 		B37CBA2221DE680900834A98 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Fitness App/Presentation/LoginStack/Login/Views/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
 		B3839C6021F0DA6D00BD27E0 /* ImageCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCreator.swift; sourceTree = "<group>"; };
+		B38B75F622170F1E00B48E19 /* PhotoLevelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLevelPresenter.swift; sourceTree = "<group>"; };
+		B38B75F922170F1E00B48E19 /* PhotoLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLevelView.swift; sourceTree = "<group>"; };
 		B38F179D21F87BEC00B70DBE /* WorkoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPresenter.swift; sourceTree = "<group>"; };
 		B38F179E21F87BEC00B70DBE /* WorkoutInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInitializer.swift; sourceTree = "<group>"; };
 		B38F179F21F87BEC00B70DBE /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
@@ -1237,6 +1241,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B38B75F522170EEE00B48E19 /* PhotoLevel */ = {
+			isa = PBXGroup;
+			children = (
+				B38B75F622170F1E00B48E19 /* PhotoLevelPresenter.swift */,
+				B38B75F922170F1E00B48E19 /* PhotoLevelView.swift */,
+			);
+			path = PhotoLevel;
+			sourceTree = "<group>";
+		};
 		B38F179C21F87B7A00B70DBE /* Workout */ = {
 			isa = PBXGroup;
 			children = (
@@ -1849,6 +1862,7 @@
 			children = (
 				B3FBA15D21EF33F600B88AA3 /* MediaScreens.storyboard */,
 				B3FBA15F21EF340D00B88AA3 /* Photo */,
+				B38B75F522170EEE00B48E19 /* PhotoLevel */,
 				B31954A022156E80005205D3 /* PhotoPreview */,
 				B3D737CF21EF765400DDF602 /* Collage */,
 				B3D737D021EF766B00DDF602 /* Timer */,
@@ -2156,6 +2170,7 @@
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
 				B369573721D4E40500735555 /* HealthKitService.swift in Sources */,
 				B3E7578B21F77950002B5AC7 /* MeasureHistoryCell.swift in Sources */,
+				B38B75FD22170F1E00B48E19 /* PhotoLevelView.swift in Sources */,
 				B31954A822156EC1005205D3 /* PhotoPreviewView.swift in Sources */,
 				B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */,
 				B39D477821E6288D00D5C050 /* ProfileHeaderCell.swift in Sources */,
@@ -2190,6 +2205,7 @@
 				B39D477E21E62A5C00D5C050 /* ProgressCell.swift in Sources */,
 				B30A181921F8B68E00A39131 /* SeasonsPresenter.swift in Sources */,
 				B36CD81421F5E6E0007D4BE6 /* UIButton+enabled.swift in Sources */,
+				B38B75FA22170F1E00B48E19 /* PhotoLevelPresenter.swift in Sources */,
 				B3DC1B6821EDDACD00883C0F /* EditProfileDataCell.swift in Sources */,
 				B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
