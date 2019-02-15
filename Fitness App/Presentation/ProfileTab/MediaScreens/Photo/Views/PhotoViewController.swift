@@ -14,6 +14,7 @@ class PhotoViewController: UIViewController {
 	
 	@IBOutlet private weak var cameraView: CameraView!
 	@IBOutlet private weak var takePhotoButton: UIButton!
+	@IBOutlet private weak var timerLabel: UILabel!
 	
 	private var statusBarShouldBeHidden = false
 	
@@ -34,10 +35,15 @@ class PhotoViewController: UIViewController {
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 		presenter.stopCamera()
+		presenter.stopTimer()
 	}
 	
-	@IBAction private func takePhotoTapped(_ sender: Any) {
+	@IBAction private func takePhotoTapped() {
 		presenter.takePhoto()
+	}
+	
+	@IBAction private func timerTapped() {
+		presenter.takePhotoWithTimer()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,6 +56,18 @@ class PhotoViewController: UIViewController {
 }
 
 extension PhotoViewController: PhotoView {
+	func showTimer() {
+		timerLabel.isHidden = false
+	}
+	
+	func hideTimer() {
+		timerLabel.isHidden = true
+	}
+	
+	func setTimerRemainingTime(_ time: Int) {
+		timerLabel.text = "\(time)"
+	}
+	
 	func disableUserInteraction() {
 		view.isUserInteractionEnabled = false
 	}
