@@ -9,11 +9,11 @@
 import UIKit
 
 class BalanceCell: CellWithSeperator, ConfigurableCell {
-	typealias DataType = UInt
+	typealias DataType = Int
 	
 	@IBOutlet private weak var coinsLabel: UILabel!
 	
-	func configure(data: UInt) {
+	func configure(data: Int) {
 		coinsLabel.text = "\(data)"
 	}
 

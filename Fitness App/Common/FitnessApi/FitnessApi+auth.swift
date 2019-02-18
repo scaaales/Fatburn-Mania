@@ -11,10 +11,8 @@ import KeychainSwift
 import Result
 
 extension FitnessApi {
-	class Auth {
+	class Auth: BaseApi {
 		private let provider = MoyaProvider<AuthService>(plugins: [NetworkActivityPlugin.default])
-		
-		private var request: Cancellable?
 		
 		// register
 		typealias OnSuccessRegisterCompletion = (_ message: String) -> Void
@@ -29,19 +27,21 @@ extension FitnessApi {
 			request = provider.request(.register(name: name,
 												 phone: phone,
 												 email: email,
-												 password: password)) { result in
-													onComplete()
-													handleResult(result,
-																	  onSuccess: { json in
-																		self.handleRegisterJSON(json, onSuccess: onSuccess, onError: onError)
-													}, onError: onError)
+												 password: password))
+			{ result in
+				onComplete()
+				BaseApi.handleResult(result,
+									 onSuccess:
+					{ json in
+						self.handleRegisterJSON(json, onSuccess: onSuccess, onError: onError)
+				}, onError: onError)
 			}
 			
 		}
 		
 		private func handleRegisterJSON(_ json: JSON,
-								onSuccess: @escaping OnSuccessRegisterCompletion,
-								onError: @escaping OnErrorCompletion) {
+										onSuccess: @escaping OnSuccessRegisterCompletion,
+										onError: @escaping OnErrorCompletion) {
 			if let success = json["success"] as? Bool {
 				if success {
 					if let successText = json["message"] as? String {
@@ -66,14 +66,15 @@ extension FitnessApi {
 				   onError: @escaping OnErrorCompletion) {
 			request = provider.request(.login(email: email, password: password)) { result in
 				onComplete()
-				handleResult(result,
-								  onSuccess: { json in
-									if let errorText = json["error"] as? String {
-										onError(errorText)
-									} else if let token = json["access_token"] as? String,
-										let expiresIn = json["expires_in"] as? Int {
-										onSuccess(token, expiresIn)
-									}
+				BaseApi.handleResult(result,
+									 onSuccess:
+					{ json in
+						if let errorText = json["error"] as? String {
+							onError(errorText)
+						} else if let token = json["access_token"] as? String,
+							let expiresIn = json["expires_in"] as? Int {
+							onSuccess(token, expiresIn)
+						}
 				}, onError: onError)
 			}
 		}
@@ -85,14 +86,11 @@ extension FitnessApi {
 					onError: @escaping OnErrorCompletion) {
 			request = provider.request(.logout(token: token)) { result in
 				onComplete()
-				handleResult(result, onSuccess: { _ in
+				BaseApi.handleResult(result, onSuccess: { _ in
 					onSuccess()
 				}, onError: onError)
 			}
 		}
 		
-		deinit {
-			request?.cancel()
-		}
 	}
 }

@@ -10,11 +10,11 @@ import UIKit
 
 class ProfileTableViewModel: NSObject {
 	
-	private typealias ProfileHeaderCellConfigurator = CellsConfigurator<ProfileHeaderCell, (image: UIImage, name: String)>
+	private typealias ProfileHeaderCellConfigurator = CellsConfigurator<ProfileHeaderCell, (imageURLString: String?, name: String)>
 	private typealias ProfileButtonsCellConfigurator = CellsConfigurator<ProfileButtonsCell, Void>
-	private typealias BalanceCellConfigurator = CellsConfigurator<BalanceCell, UInt>
+	private typealias BalanceCellConfigurator = CellsConfigurator<BalanceCell, Int>
 	private typealias ProgressCellConfigurator = CellsConfigurator<ProgressCell, [UIImage]>
-	private typealias UserDataCellConfigurator = CellsConfigurator<UserDataCell, (icon: UIImage, text: String)>
+	private typealias UserDataCellConfigurator = CellsConfigurator<UserDataCell, (icon: UIImage, text: String?)>
 	private typealias UserButtonArrowConfigurator = CellsConfigurator<UserButtonArrowCell, (icon: UIImage, text: String)>
 	
 	private var rows: [CellConfigurator]
@@ -39,7 +39,7 @@ class ProfileTableViewModel: NSObject {
 	}
 	
 	private func getBalanceRow(from user: User) -> CellConfigurator {
-		return BalanceCellConfigurator(item: user.balance)
+		return BalanceCellConfigurator(item: user.coins)
 	}
 	
 	private func getProgressRow() -> CellConfigurator {
@@ -48,9 +48,9 @@ class ProfileTableViewModel: NSObject {
 	
 	private func getUserDataRows(from user: User) -> [CellConfigurator] {
 		return [
-			UserDataCellConfigurator(item: (#imageLiteral(resourceName: "smartphone"), user.phoneNumber)),
+			UserDataCellConfigurator(item: (#imageLiteral(resourceName: "smartphone"), user.phone)),
 			UserDataCellConfigurator(item: (#imageLiteral(resourceName: "mail"), user.email)),
-			UserDataCellConfigurator(item: (#imageLiteral(resourceName: "instagram"), user.instagramName)),
+			UserDataCellConfigurator(item: (#imageLiteral(resourceName: "instagram"), user.instagram)),
 			UserDataCellConfigurator(item: (#imageLiteral(resourceName: "location"), user.location))
 		]
 	}

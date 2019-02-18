@@ -10,5 +10,6 @@ import UIKit
 
 protocol EditProfileView: View, TableViewUpdatable {
 	var textFieldDelegate: UITextFieldDelegate { get }
-	func getViewForDateInput() -> UIDatePicker
+	var helperView: UIView { get }
+	var viewForDateInput: UIDatePicker { get }
 }

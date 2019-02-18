@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol MakeFirstResponderDelegate: class {
+	func makeFirstResponder(with tag: Int)
+}
+
 class TextFieldAssistant: NSObject {
 	private let view: UIView
 	private let firstResponderTag: Int
 	private let lastResponderTag: Int
+	
+	weak var makeFirstResponderDelegate: MakeFirstResponderDelegate?
+	
 	var currentResponderTag: Int {
 		didSet {
 			if oldValue != currentResponderTag {
@@ -31,7 +38,7 @@ class TextFieldAssistant: NSObject {
 		}
 	}
 	
-	private let textViewHelperView: TextViewHelperView
+	let textViewHelperView: TextViewHelperView
 	
 	init(view: UIView, firstResponderTag: Int, lastResponderTag: Int, handleTextFieldDelegate: Bool = false) {
 		self.view = view
@@ -66,6 +73,7 @@ class TextFieldAssistant: NSObject {
 	private func makeFirstResponderView(with tag: Int) {
 		let nextResponderView = self.view.viewWithTag(tag)
 		nextResponderView?.becomeFirstResponder()
+		makeFirstResponderDelegate?.makeFirstResponder(with: tag)
 	}
 }
 

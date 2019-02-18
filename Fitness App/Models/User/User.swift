@@ -8,45 +8,106 @@
 
 import UIKit
 
-struct User {
+struct User: Decodable {
+	var firstName: String
+	var lastName: String?
+	
+	var nickname: String?
+	private let _gender: Int?
+	
+	private var _dateOfBirth: String?
+	
+	var email: String
+	var phone: String
+	var instagram: String?
+	
+	var avatar: String?
+	
+	var country: String?
+	var city: String?
+	
+	let coins: Int
+	
+	enum CodingKeys: String, CodingKey {
+		case firstName = "first_name"
+		case lastName = "last_name"
+		case _gender = "gender"
+		case _dateOfBirth = "date_of_birth"
+		
+		case nickname, email, phone, instagram, avatar, country, city, coins
+	}
+}
+
+extension User {
 	enum Gender: String {
 		case male = "Male"
 		case femele = "Female"
+		
+		init(int: Int) {
+			if int == 0 {
+				self = .male
+			} else {
+				self = .femele
+			}
+		}
 	}
 	
-	var firstName: String
-	var lastName: String
 	var fullName: String {
-		return "\(firstName) \(lastName)"
+		if let lastName = lastName {
+			return "\(firstName) \(lastName)"
+		} else {
+			return firstName
+		}
 	}
 	
-	var nickname: String
-	var gender: Gender
+	var dateOfBirth: Date? {
+		guard let dateOfBirth = _dateOfBirth else { return nil }
+		
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd"
+		
+		return formatter.date(from: dateOfBirth)
+	}
 	
-	var dateOfBirth: Date
-	var age: Int {
+	var age: Int? {
+		guard let dateOfBirth = dateOfBirth else { return nil }
+		
 		let nowDate = Date()
 		let calendar = Calendar.current
 		
 		let ageComponents = calendar.dateComponents([.year], from: dateOfBirth, to: nowDate)
 		return ageComponents.year!
 	}
-	var dateOfBirthFormatted: String {
+	var dateOfBirthFormatted: String? {
+		guard let dateOfBirth = dateOfBirth else { return nil }
+		
 		let formatter = DateFormatter()
 		formatter.dateFormat = "dd MMMM yyyy"
 		
 		return formatter.string(from: dateOfBirth)
 	}
 	
-	var email: String
-	var phoneNumber: String
-	var avatar: UIImage
-	var instagramName: String
-	
-	var country: String
-	var city: String
-	var location: String {
-		return "\(city), \(country)"
+	var gender: Gender? {
+		if let genderInt = _gender {
+			return .init(int: genderInt)
+		}
+		return nil
 	}
-	let balance: UInt
+	
+	var location: String? {
+		var result: String?
+		if let city = city {
+			result = city
+		}
+		
+		if let country = country {
+			if result == nil {
+				result = country
+			} else {
+				result = "\(result!), \(country)"
+			}
+		}
+		return result
+	}
+	
 }

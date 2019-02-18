@@ -16,8 +16,12 @@ class CoinsHistoryCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var numberLabel: UILabel!
 	
 	func configure(data: CoinsHistory) {
-		nameLabel.text = data.reasonAdded
-		numberLabel.text = "+\(data.numberOfCoinsAdded)"
+		nameLabel.text = data.type
+		if data.numberOfCoins >= 0 {
+			numberLabel.text = "+\(data.numberOfCoins)"
+		} else {
+			numberLabel.text = "\(data.numberOfCoins)"
+		}
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd MMMM"
 		let dateString = dateFormatter.string(from: data.date).lowercased()
