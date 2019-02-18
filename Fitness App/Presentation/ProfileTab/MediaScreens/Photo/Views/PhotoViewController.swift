@@ -15,6 +15,7 @@ class PhotoViewController: UIViewController {
 	@IBOutlet private weak var cameraView: CameraView!
 	@IBOutlet private weak var takePhotoButton: UIButton!
 	@IBOutlet private weak var timerLabel: UILabel!
+	@IBOutlet private weak var photoLevelView: PhotoLevelView!
 	
 	private var statusBarShouldBeHidden = false
 	
@@ -30,12 +31,16 @@ class PhotoViewController: UIViewController {
 		UIView.animate(withDuration: 0.25) {
 			self.setNeedsStatusBarAppearanceUpdate()
 		}
+		
+		photoLevelView.startUpdate()
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 		presenter.stopCamera()
 		presenter.stopTimer()
+		
+		photoLevelView.stopUpdate()
 	}
 	
 	@IBAction private func takePhotoTapped() {

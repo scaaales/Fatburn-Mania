@@ -30,4 +30,8 @@ extension UIColor {
 		return .init(with: "E86FA7")
 	}
 	
+	static var normalBlueColor: UIColor {
+		return .init(with: "468FCC")
+	}
+	
 }
