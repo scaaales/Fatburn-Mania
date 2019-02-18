@@ -61,11 +61,11 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cte-Ab-Ufy" userLabel="Moving left line">
                                                 <rect key="frame" x="0.0" y="297.5" width="94" height="1"/>
-                                                <color key="backgroundColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCd-OJ-I90" userLabel="Moving right line">
                                                 <rect key="frame" x="281.5" y="297.5" width="93.5" height="1"/>
-                                                <color key="backgroundColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,6 +93,9 @@
                                         <connections>
                                             <outlet property="movingViewsOffsetPositionConstraint" destination="l9K-G2-Ng3" id="HbH-Bw-dgA"/>
                                             <outlet property="rotatingCenterView" destination="fdd-7z-gz3" id="wbc-bA-HWa"/>
+                                            <outlet property="staticCenterCircleView" destination="bXa-PH-pFm" id="17V-f4-Hvj"/>
+                                            <outletCollection property="movingViews" destination="Cte-Ab-Ufy" collectionClass="NSMutableArray" id="Jd4-6o-Pmh"/>
+                                            <outletCollection property="movingViews" destination="OCd-OJ-I90" collectionClass="NSMutableArray" id="bg0-S0-w9k"/>
                                         </connections>
                                     </view>
                                 </subviews>
