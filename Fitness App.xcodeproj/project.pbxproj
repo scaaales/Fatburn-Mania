@@ -140,6 +140,8 @@
 		B3839C6121F0DA6D00BD27E0 /* ImageCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3839C6021F0DA6D00BD27E0 /* ImageCreator.swift */; };
 		B38B75FA22170F1E00B48E19 /* PhotoLevelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B75F622170F1E00B48E19 /* PhotoLevelPresenter.swift */; };
 		B38B75FD22170F1E00B48E19 /* PhotoLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B75F922170F1E00B48E19 /* PhotoLevelView.swift */; };
+		B38DD8CA221AE2FC00C65E8E /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38DD8C9221AE2FC00C65E8E /* ProfileService.swift */; };
+		B38DD8CC221AE52E00C65E8E /* FitnessApi+profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38DD8CB221AE52E00C65E8E /* FitnessApi+profile.swift */; };
 		B38F17A121F87BEC00B70DBE /* WorkoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F179D21F87BEC00B70DBE /* WorkoutPresenter.swift */; };
 		B38F17A221F87BEC00B70DBE /* WorkoutInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F179E21F87BEC00B70DBE /* WorkoutInitializer.swift */; };
 		B38F17A321F87BEC00B70DBE /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F179F21F87BEC00B70DBE /* WorkoutViewController.swift */; };
@@ -394,6 +396,8 @@
 		B3839C6021F0DA6D00BD27E0 /* ImageCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCreator.swift; sourceTree = "<group>"; };
 		B38B75F622170F1E00B48E19 /* PhotoLevelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLevelPresenter.swift; sourceTree = "<group>"; };
 		B38B75F922170F1E00B48E19 /* PhotoLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLevelView.swift; sourceTree = "<group>"; };
+		B38DD8C9221AE2FC00C65E8E /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		B38DD8CB221AE52E00C65E8E /* FitnessApi+profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+profile.swift"; sourceTree = "<group>"; };
 		B38F179D21F87BEC00B70DBE /* WorkoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPresenter.swift; sourceTree = "<group>"; };
 		B38F179E21F87BEC00B70DBE /* WorkoutInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInitializer.swift; sourceTree = "<group>"; };
 		B38F179F21F87BEC00B70DBE /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
@@ -1398,6 +1402,7 @@
 				B3728925220AF7580061822E /* FitnessApi.swift */,
 				B39B71BA2215A1B2002F1747 /* FitnessApi+auth.swift */,
 				B39B71BC2215A1EA002F1747 /* FitnessApi+store.swift */,
+				B38DD8CB221AE52E00C65E8E /* FitnessApi+profile.swift */,
 			);
 			path = FitnessApi;
 			sourceTree = "<group>";
@@ -1459,6 +1464,7 @@
 			children = (
 				B3B361D72209C6BD002E006F /* AuthService.swift */,
 				B39B71B72215A121002F1747 /* StoreService.swift */,
+				B38DD8C9221AE2FC00C65E8E /* ProfileService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -2065,6 +2071,7 @@
 				B319154B22146CF300F019ED /* AddNewMeasurementsPresenter.swift in Sources */,
 				B30E9FA521ECE290006F33CE /* CoinsHistoryTableViewModel.swift in Sources */,
 				B39D477521E6258900D5C050 /* ProfileTableViewModel.swift in Sources */,
+				B38DD8CC221AE52E00C65E8E /* FitnessApi+profile.swift in Sources */,
 				B3E55C752200B6C60042F237 /* PushNotification.swift in Sources */,
 				B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */,
 				B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */,
@@ -2223,6 +2230,7 @@
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B38F17AD21F8A09E00B70DBE /* Lesson.swift in Sources */,
 				B319155222146EE400F019ED /* Measurements.swift in Sources */,
+				B38DD8CA221AE2FC00C65E8E /* ProfileService.swift in Sources */,
 				B30F287A21F2342D000954DB /* TimerService.swift in Sources */,
 				B3DD925321FA01560017E723 /* WorkoutOfTheDayViewController.swift in Sources */,
 				B3254F4021D3E7CE00F99F91 /* DiaryTableViewModel.swift in Sources */,

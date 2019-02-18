@@ -9,13 +9,13 @@
 import UIKit
 
 class UserDataCell: CellWithSeperator, ConfigurableCell {
-	typealias DataType = (icon: UIImage, text: String)
+	typealias DataType = (icon: UIImage, text: String?)
 	
 	@IBOutlet private weak var icon: UIImageView!
 	@IBOutlet private weak var titleLabel: UILabel!
 	
 	func configure(data: DataType) {
 		icon.image = data.icon
-		titleLabel.text = data.text
+		titleLabel.text = data.text ?? "-"
 	}
 }

@@ -10,9 +10,10 @@ import UIKit
 
 struct EditProfileCellType {
 	let fieldName: String
-	let value: String
+	let value: String?
 	let textType: UITextContentType?
-	weak var delegate: UITextFieldDelegate?
+	var delegate: UITextFieldDelegate?
 	let tag: Int
 	let dateInputView: UIDatePicker?
+	let helperView: UIView?
 }

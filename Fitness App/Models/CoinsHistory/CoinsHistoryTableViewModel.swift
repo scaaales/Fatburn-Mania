@@ -11,28 +11,8 @@ import Foundation
 class CoinsHistoryTableViewModel {
 	let dataSource: BasicTableViewDataSource<CoinsHistoryCell, CoinsHistory>
 	
-	init(items: [CoinsHistory]? = nil) {
-		var resultCoinsHistory: [CoinsHistory]
-		if let items = items {
-			resultCoinsHistory = items
-		} else {
-			let octobersTestHistory = Array(repeating: CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .init(day: 18, month: 10, year: 2018)), count: 4)
-			let novembersTestHistory = Array(repeating: CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .init(day: 18, month: 11, year: 2018)), count: 4)
-			let desemberTestHistory = Array(repeating:  CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .init(day: 18, month: 12, year: 2018)), count: 4)
-			let januaryTestHistory = Array(repeating:  CoinsHistory(reasonAdded: "Steps", numberOfCoinsAdded: 7, date: .init(day: 10, month: 1, year: 2019)), count: 2)
-			
-			let birthdayTestHistory = CoinsHistory(reasonAdded: "Birthday", numberOfCoinsAdded: 10, date: .init(day: 22, month: 10, year: 2018))
-			let anotherTestHistory = CoinsHistory(reasonAdded: "Test", numberOfCoinsAdded: 15, date: .init(day: 1, month: 10, year: 2018))
-			
-			resultCoinsHistory = [anotherTestHistory]
-			resultCoinsHistory.append(contentsOf: octobersTestHistory)
-			resultCoinsHistory.append(contentsOf: novembersTestHistory)
-			resultCoinsHistory.append(contentsOf: desemberTestHistory)
-			resultCoinsHistory.append(contentsOf: januaryTestHistory)
-			resultCoinsHistory.append(birthdayTestHistory)
-		}
-		
-		let sections = CoinsHistoryTableViewModel.getSectionsFrom(coinsHistory: resultCoinsHistory)
+	init(items: [CoinsHistory]) {
+		let sections = CoinsHistoryTableViewModel.getSectionsFrom(coinsHistory: items)
 		
 		dataSource = .init(sections: sections)
 	}
