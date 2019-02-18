@@ -9,15 +9,19 @@
 import UIKit
 
 class EditGenderCell: UITableViewCell, ConfigurableCell {
-	typealias DataType = User.Gender
+	typealias DataType = User.Gender?
 	
 	@IBOutlet private weak var segmentedControl: UISegmentedControl!
 	
-	func configure(data: User.Gender) {
-		if data == .male {
-			segmentedControl.selectedSegmentIndex = 1
+	func configure(data: User.Gender?) {
+		if let gender = data {
+			if gender == .male {
+				segmentedControl.selectedSegmentIndex = 1
+			} else {
+				segmentedControl.selectedSegmentIndex = 0
+			}
 		} else {
-			segmentedControl.selectedSegmentIndex = 0
+			segmentedControl.selectedSegmentIndex = -1
 		}
 		
 		let normalTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13, weight: .bold),

@@ -21,6 +21,7 @@ class EditProfileDataCell: CellWithSeperator, ConfigurableCell {
 		valueTextField.delegate = data.delegate
 		valueTextField.tag = data.tag
 		valueTextField.inputView = data.dateInputView
+		valueTextField.inputAccessoryView = data.helperView
 		if let datePicker = data.dateInputView {
 			datePicker.addTarget(self, action: #selector(dateSelected(datePicker:)), for: .valueChanged)
 		}
@@ -31,6 +32,11 @@ class EditProfileDataCell: CellWithSeperator, ConfigurableCell {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "dd MMMM yyyy"
 		valueTextField.text = formatter.string(from: date)
+	}
+	
+	override func becomeFirstResponder() -> Bool {
+		valueTextField.becomeFirstResponder()
+		return super.becomeFirstResponder()
 	}
 
 }

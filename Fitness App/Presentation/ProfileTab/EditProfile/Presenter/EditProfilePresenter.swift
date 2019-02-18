@@ -23,12 +23,13 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 	func getUser() {
 		viewModel = .init(user: user,
 						  textFieldDelegate: view.textFieldDelegate,
-						  datePickerView: view.getViewForDateInput())
+						  datePickerView: view.viewForDateInput,
+						  helperView: view.helperView)
 		view.setTableViewDataSource(viewModel)
 		view.update()
 	}
 	
 	func getBirthdayDate() -> Date {
-		return user.dateOfBirth
+		return user.dateOfBirth ?? .init()
 	}
 }

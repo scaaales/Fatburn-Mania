@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		IQKeyboardManager.shared.enabledDistanceHandlingClasses.append(SignInViewController.self)
+		IQKeyboardManager.shared.enableAutoToolbar = false
 		
 		pushNotificationService = .init()
 		return true

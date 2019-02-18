@@ -9,13 +9,17 @@
 import UIKit
 
 class ProfileHeaderCell: CellWithSeperator, ConfigurableCell {
-	typealias DataType = (image: UIImage, name: String)
+	typealias DataType = (imageURLString: String?, name: String)
 	
 	@IBOutlet private weak var avatarImageView: UIImageView!
 	@IBOutlet private weak var nameLabel: UILabel!
 	
 	func configure(data: DataType) {
-		avatarImageView.image = data.image
+		if let imageUrlString = data.imageURLString {
+			avatarImageView.setImageFrom(urlString: imageUrlString)
+		} else {
+			avatarImageView.image = #imageLiteral(resourceName: "user_test")
+		}
 		avatarImageView.makeCornerRadius(avatarImageView.bounds.height / 2)
 		
 		nameLabel.text = data.name

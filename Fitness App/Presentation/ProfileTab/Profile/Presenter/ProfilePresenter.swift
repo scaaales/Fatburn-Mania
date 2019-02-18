@@ -15,33 +15,33 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	weak var view: View!
 	private var viewModel: ProfileTableViewModel!
 	private let authAPI = FitnessApi.Auth()
+	private var profileAPI: FitnessApi.Profile!
 	
-	var user: User {
-		didSet {
-			viewModel = .init(user: user)
-		}
-	}
+	private(set) var user: User!
 	
 	required init(view: View) {
 		self.view = view
-		user = User(firstName: "Sergey",
-					lastName: "Kletsov",
-					nickname: "scales",
-					gender: .male,
-					dateOfBirth: .init(day: 22, month: 10, year: 1995),
-					email: "sergey.kletsov@outlook.com",
-					phoneNumber: "+3 (8097) 419-64-16",
-					avatar: #imageLiteral(resourceName: "user_test"),
-					instagramName: "scaaales",
-					country: "Ukraine",
-					city: "Kiev",
-					balance: 2310)
 	}
 	
 	func getUser() {
-		viewModel = .init(user: user)
-		view.setTableViewDataSource(viewModel)
-		view.update()
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		profileAPI = .init(token: token)
+		profileAPI.getUserInfo(token: token, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: { [weak self] user in
+			guard let self = self else { return }
+			self.user = user
+			self.viewModel = .init(user: user)
+			self.view.setTableViewDataSource(self.viewModel)
+			self.view.update()
+		}) { [weak self] errorString in
+			self?.view.showErrorPopup(with: errorString)
+		}
 	}
 	
 	func logout() {
