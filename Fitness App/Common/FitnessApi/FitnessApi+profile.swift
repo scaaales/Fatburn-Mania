@@ -12,7 +12,7 @@ extension FitnessApi {
 	class Profile: BaseTokenApi {
 		private let provider = MoyaProvider<ProfileService>(plugins: [NetworkActivityPlugin.default])
 		
-		private class UserResponse: Decodable {
+		private struct UserResponse: Decodable {
 			let user: User
 			let success: Bool
 		}
@@ -31,16 +31,26 @@ extension FitnessApi {
 			})
 		}
 		
+		private struct CoinsHistoryResponse: Decodable {
+			let coinsHistory: [CoinsHistory]
+			let success: Bool
+			
+			enum CodingKeys: String, CodingKey {
+				case coinsHistory = "coins_items"
+				case success
+			}
+		}
+		
 		func getCoinsHistory(token: String,
 							 onComplete: @escaping () -> Void,
-							 onSuccess: @escaping () -> Void,
+							 onSuccess: @escaping ([CoinsHistory]) -> Void,
 							 onError: @escaping OnErrorCompletion) {
 			request = provider.request(.getCoinsHistory(token: token), completion: { result in
 				onComplete()
-				BaseApi.handleResult(result,
-									 onSuccess:
-					{ json in
-					print(json)
+				BaseApi.mapResult(result,
+								  intoItemOfType: CoinsHistoryResponse.self,
+								  onSuccess: { coinsHistoryResponse in
+									onSuccess(coinsHistoryResponse.coinsHistory)
 				}, onError: onError)
 			})
 		}

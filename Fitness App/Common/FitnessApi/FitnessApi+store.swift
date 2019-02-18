@@ -10,7 +10,7 @@ import Moya
 
 extension FitnessApi {
 	class Store: BaseTokenApi {
-		private class ProductsResponse: Decodable {
+		private struct ProductsResponse: Decodable {
 			let products: [Product]
 			let success: Bool
 			

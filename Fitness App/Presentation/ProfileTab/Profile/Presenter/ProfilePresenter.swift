@@ -39,8 +39,8 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 			self.viewModel = .init(user: user)
 			self.view.setTableViewDataSource(self.viewModel)
 			self.view.update()
-		}) { [weak self] errorString in
-			self?.view.showErrorPopup(with: errorString)
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
 		}
 	}
 	
