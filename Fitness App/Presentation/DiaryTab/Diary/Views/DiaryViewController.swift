@@ -50,7 +50,6 @@ extension DiaryViewController: DiaryView {
 		tableView.layoutIfNeeded()
 		tableView.layer.removeAllAnimations()
 		tableView.setContentOffset(contentOffset, animated: false)
-		
 	}
 	
 	func showLoader() {

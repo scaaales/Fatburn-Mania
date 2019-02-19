@@ -13,6 +13,13 @@ class MeasureHistoryViewController: UIViewController {
 	
 	@IBOutlet private weak var tableView: UITableView!
 	
+	lazy private var blurredLoader: BlurredLoader = {
+		let loader = BlurredLoader()
+		view.addSubview(loader)
+		loader.centerInto(view: view)
+		return loader
+	}()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -28,6 +35,22 @@ class MeasureHistoryViewController: UIViewController {
 }
 
 extension MeasureHistoryViewController: MeasureHistoryView {
+	func disableUserInteraction() {
+		view.isUserInteractionEnabled = false
+	}
+	
+	func enableUserInteraction() {
+		view.isUserInteractionEnabled = true
+	}
+	
+	func showLoader() {
+		blurredLoader.startAnimating()
+	}
+	
+	func hideLoader() {
+		blurredLoader.stopAnimating()
+	}
+	
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
 		tableView.dataSource = dataSource
 	}
@@ -45,6 +68,12 @@ extension MeasureHistoryViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return .leastNormalMagnitude
+	}
+	
+	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+		if indexPath.row == presenter.currentNumberOfItems - 1 {
+			presenter.getHistory()
+		}
 	}
 }
 

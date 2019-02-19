@@ -14,20 +14,22 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	
 	weak var view: View!
 	private var viewModel: DiaryTableViewModel!
-	private var diaryApi: FitnessApi.Diary!
+	private let diaryApi: FitnessApi.Diary
 	private let dispatchGroup = DispatchGroup()
 	private var measurementsCache = [Date: Measurements?]()
 	
 	required init(view: View) {
 		self.view = view
+		
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else {
+			fatalError("cannot find access token")
+		}
+		
+		diaryApi = .init(token: token)
 	}
 	
 	func getInitialHealthInfo() {
-		let keychain = KeychainSwift()
-		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
-		
-		diaryApi = .init(token: token)
-		
 		viewModel = DiaryTableViewModel(leftBodyMeasurements: nil,
 											 rightBodyMeasurements: nil,
 											 leftDateString: Date().formattedStringWithTime,
@@ -88,7 +90,7 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	
 	private func handleNewMeasurements(_ measurements: Measurements?) {
 		viewModel.leftBodyMeasurements = measurements
-		if let leftDateString = measurements?.dateString {
+		if let leftDateString = measurements?.date?.formattedStringWithTime {
 			viewModel.leftDateString = leftDateString
 		}
 	}

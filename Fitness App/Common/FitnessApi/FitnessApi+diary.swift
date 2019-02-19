@@ -22,7 +22,7 @@ extension FitnessApi {
 			}
 		}
 		
-		func getMeasurements(at date: Date?, limit: Int?,
+		func getMeasurements(at date: Date?, limit: Int?, offset: Int? = nil,
 							 onComplete: @escaping () -> Void,
 							 onSuccess: @escaping ([Measurements]) -> Void,
 							 onError: @escaping OnErrorCompletion) {
@@ -32,7 +32,8 @@ extension FitnessApi {
 				dateFormatter.dateFormat = "yyyy-MM-dd"
 				dateString = dateFormatter.string(from: date)
 			}
-			request = provider.request(.getMeasurements(token: token, date: dateString, limit: limit),
+			request = provider.request(.getMeasurements(token: token, date: dateString,
+														limit: limit, offset: offset),
 									   completion: { result in
 										onComplete()
 										BaseApi.mapResult(result, intoItemOfType: MeasurementsResponse.self, onSuccess: { measurementsResponse in

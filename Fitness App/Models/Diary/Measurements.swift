@@ -15,15 +15,13 @@ struct Measurements: Codable {
 	let hip: Int
 	let weight: Int
 	private let _dateString: String?
-	var dateString: String? {
+	var date: Date? {
 		guard let dateString = _dateString else { return nil }
 		let dateFormatter = DateFormatter()
 		
 		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 		
-		let date = dateFormatter.date(from: dateString)!
-		
-		return date.formattedStringWithTime
+		return dateFormatter.date(from: dateString)!
 	}
 	
 	enum CodingKeys: String, CodingKey {

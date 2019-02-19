@@ -225,7 +225,6 @@
 		B3E55C752200B6C60042F237 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E55C742200B6C60042F237 /* PushNotification.swift */; };
 		B3E55C772200BC020042F237 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E55C762200BC020042F237 /* NotificationCell.swift */; };
 		B3E7578B21F77950002B5AC7 /* MeasureHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7578A21F77950002B5AC7 /* MeasureHistoryCell.swift */; };
-		B3E7578D21F779E1002B5AC7 /* MeasureHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */; };
 		B3EFDF4821F76E7D00A8F61F /* MeasureHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4421F76E7D00A8F61F /* MeasureHistoryPresenter.swift */; };
 		B3EFDF4921F76E7D00A8F61F /* MeasureHistoryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */; };
 		B3EFDF4A21F76E7D00A8F61F /* MeasureHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */; };
@@ -483,7 +482,6 @@
 		B3E55C742200B6C60042F237 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		B3E55C762200BC020042F237 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		B3E7578A21F77950002B5AC7 /* MeasureHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryCell.swift; sourceTree = "<group>"; };
-		B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistory.swift; sourceTree = "<group>"; };
 		B3EFDF4421F76E7D00A8F61F /* MeasureHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryPresenter.swift; sourceTree = "<group>"; };
 		B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryInitializer.swift; sourceTree = "<group>"; };
 		B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryViewController.swift; sourceTree = "<group>"; };
@@ -899,7 +897,6 @@
 				B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */,
 				B3254F1C21D3E7CD00F99F91 /* DiaryTableViewModel.swift */,
 				B319155122146EE400F019ED /* Measurements.swift */,
-				B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -2116,7 +2113,6 @@
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B39B71C42215C066002F1747 /* PopupShowable.swift in Sources */,
 				B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */,
-				B3E7578D21F779E1002B5AC7 /* MeasureHistory.swift in Sources */,
 				B3B8D3B421E8B56000397AAB /* BasicTableViewDataSource.swift in Sources */,
 				B3DC1B6221EDD6FF00883C0F /* EditProfilePresenter.swift in Sources */,
 				B30A182221F8B8AF00A39131 /* Season.swift in Sources */,

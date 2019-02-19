@@ -9,7 +9,7 @@
 import Moya
 
 enum DiaryService {
-	case getMeasurements(token: String, date: String?, limit: Int?)
+	case getMeasurements(token: String, date: String?, limit: Int?, offset: Int?)
 	case addMeasurements(token: String, measurements: Measurements)
 }
 
@@ -31,10 +31,11 @@ extension DiaryService: TargetType {
 	
 	var task: Task {
 		switch self {
-		case let .getMeasurements(_, date, limit):
+		case let .getMeasurements(_, date, limit, offset):
 			var params: [String: Any] = [:]
 			params["date"] = date
 			params["limit"] = limit
+			params["offset"] = offset
 			return .requestParameters(parameters: params, encoding: URLEncoding.default)
 		case let .addMeasurements(_, measurements):
 			return .requestJSONEncodable(measurements)
@@ -45,7 +46,7 @@ extension DiaryService: TargetType {
 		var headers = ["Content-type": "application/json",
 					   "Accept": "application/json"]
 		switch self {
-		case .getMeasurements(let token, _, _),
+		case .getMeasurements(let token, _, _, _),
 			 .addMeasurements(let token, _):
 			headers["Authorization"] = "Bearer \(token)"
 		}

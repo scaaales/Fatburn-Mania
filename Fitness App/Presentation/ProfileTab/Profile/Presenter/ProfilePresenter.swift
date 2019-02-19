@@ -15,21 +15,25 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	weak var view: View!
 	private var viewModel: ProfileTableViewModel!
 	private let authAPI = FitnessApi.Auth()
-	private var profileAPI: FitnessApi.Profile!
+	private let profileAPI: FitnessApi.Profile
 	
 	private(set) var user: User!
 	
 	required init(view: View) {
 		self.view = view
+		
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else {
+			fatalError("cannot find access token")
+		}
+		
+		profileAPI = .init(token: token)
 	}
 	
 	func getUser() {
-		let keychain = KeychainSwift()
-		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
 		view.disableUserInteraction()
 		view.showLoader()
 		
-		profileAPI = .init(token: token)
 		profileAPI.getUserInfo(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()

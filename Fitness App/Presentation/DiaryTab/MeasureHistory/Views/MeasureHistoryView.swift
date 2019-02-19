@@ -6,6 +6,6 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-protocol MeasureHistoryView: View, TableViewUpdatable {
+protocol MeasureHistoryView: View, TableViewUpdatable, NetworkingView, PopupShowable {
 	
 }
