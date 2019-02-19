@@ -14,10 +14,11 @@ class WaterCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var progressView: ProgressView!
 	
 	func configure(data: Measurement) {
-		guard let secondValue = data.secondValue,
+		guard let firstValue = data.firstValue,
+			let secondValue = data.secondValue,
 			let progress = data.progress else { return }
 		
-		let startString = "\(data.firstValue)"
+		let startString = "\(firstValue) \(data.unit)"
 		let endString = "\(secondValue) \(data.unit)"
 		
 		progressView.setProgress(startValue: startString, endValue: endString, progress: progress)

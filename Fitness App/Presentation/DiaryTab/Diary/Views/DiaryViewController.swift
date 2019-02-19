@@ -32,6 +32,14 @@ class DiaryViewController: UIViewController {
 }
 
 extension DiaryViewController: DiaryView {
+	func disableUserInteraction() {
+		view.isUserInteractionEnabled = false
+	}
+	
+	func enableUserInteraction() {
+		view.isUserInteractionEnabled = true
+	}
+	
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
 		tableView.dataSource = dataSource
 	}

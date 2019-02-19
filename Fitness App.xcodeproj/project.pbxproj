@@ -200,6 +200,8 @@
 		B3D737E521EF772E00DDF602 /* TimerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737E121EF772E00DDF602 /* TimerInitializer.swift */; };
 		B3D737E621EF772E00DDF602 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737E221EF772E00DDF602 /* TimerViewController.swift */; };
 		B3D737E721EF772E00DDF602 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737E321EF772E00DDF602 /* TimerView.swift */; };
+		B3DC18AE221BF2F600221F1D /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC18AD221BF2F600221F1D /* DiaryService.swift */; };
+		B3DC18B0221BF8AB00221F1D /* FitnessApi+diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC18AF221BF8AB00221F1D /* FitnessApi+diary.swift */; };
 		B3DC1B6221EDD6FF00883C0F /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B5E21EDD6FF00883C0F /* EditProfilePresenter.swift */; };
 		B3DC1B6321EDD6FF00883C0F /* EditProfileInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B5F21EDD6FF00883C0F /* EditProfileInitializer.swift */; };
 		B3DC1B6421EDD6FF00883C0F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B6021EDD6FF00883C0F /* EditProfileViewController.swift */; };
@@ -456,6 +458,8 @@
 		B3D737E121EF772E00DDF602 /* TimerInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInitializer.swift; sourceTree = "<group>"; };
 		B3D737E221EF772E00DDF602 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B3D737E321EF772E00DDF602 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B3DC18AD221BF2F600221F1D /* DiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryService.swift; sourceTree = "<group>"; };
+		B3DC18AF221BF8AB00221F1D /* FitnessApi+diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+diary.swift"; sourceTree = "<group>"; };
 		B3DC1B5E21EDD6FF00883C0F /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
 		B3DC1B5F21EDD6FF00883C0F /* EditProfileInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInitializer.swift; sourceTree = "<group>"; };
 		B3DC1B6021EDD6FF00883C0F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -1403,6 +1407,7 @@
 				B39B71BA2215A1B2002F1747 /* FitnessApi+auth.swift */,
 				B39B71BC2215A1EA002F1747 /* FitnessApi+store.swift */,
 				B38DD8CB221AE52E00C65E8E /* FitnessApi+profile.swift */,
+				B3DC18AF221BF8AB00221F1D /* FitnessApi+diary.swift */,
 			);
 			path = FitnessApi;
 			sourceTree = "<group>";
@@ -1465,6 +1470,7 @@
 				B3B361D72209C6BD002E006F /* AuthService.swift */,
 				B39B71B72215A121002F1747 /* StoreService.swift */,
 				B38DD8C9221AE2FC00C65E8E /* ProfileService.swift */,
+				B3DC18AD221BF2F600221F1D /* DiaryService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -2193,6 +2199,7 @@
 				B36CD81921F5F96B007D4BE6 /* Song.swift in Sources */,
 				B30A181B21F8B68E00A39131 /* SeasonsViewController.swift in Sources */,
 				B30E9F7721EC934C006F33CE /* StoreItemCell.swift in Sources */,
+				B3DC18AE221BF2F600221F1D /* DiaryService.swift in Sources */,
 				B3D737DE21EF76FE00DDF602 /* CollageViewController.swift in Sources */,
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
 				B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */,
@@ -2290,6 +2297,7 @@
 				B3033D3221E8DF5B0058626D /* VideoDetailsInitializer.swift in Sources */,
 				B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
+				B3DC18B0221BF8AB00221F1D /* FitnessApi+diary.swift in Sources */,
 				B39B71BD2215A1EA002F1747 /* FitnessApi+store.swift in Sources */,
 				B3028AD721EF78FC00515CD8 /* MusicPlayerPresenter.swift in Sources */,
 				B3D3F59822008CFC0052976D /* NotificationsView.swift in Sources */,
@@ -2453,7 +2461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96533UDF7H;
 				INFOPLIST_FILE = "$(SRCROOT)/Fitness App/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2474,7 +2482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96533UDF7H;
 				INFOPLIST_FILE = "$(SRCROOT)/Fitness App/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

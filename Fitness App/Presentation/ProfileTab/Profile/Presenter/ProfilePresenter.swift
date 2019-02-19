@@ -30,7 +30,7 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 		view.showLoader()
 		
 		profileAPI = .init(token: token)
-		profileAPI.getUserInfo(token: token, onComplete: { [weak self] in
+		profileAPI.getUserInfo(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
 		}, onSuccess: { [weak self] user in

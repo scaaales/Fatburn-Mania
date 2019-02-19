@@ -37,6 +37,10 @@ class DiaryTableViewModel: NSObject {
 	var proteins: Measurement?
 	var fats: Measurement?
 	var carbohydrates: Measurement?
+	var leftBodyMeasurements: Measurements?
+	var rightBodyMeasurements: Measurements?
+	var leftDateString: String?
+	var rightDateString: String
 	
 	private var sections: [Section] {
 		let trainingDaySection = getTrainingDaySection()
@@ -54,7 +58,11 @@ class DiaryTableViewModel: NSObject {
 		 calories: Measurement? = nil,
 		 proteins: Measurement? = nil,
 		 fats: Measurement? = nil,
-		 carbohydrates: Measurement? = nil) {
+		 carbohydrates: Measurement? = nil,
+		 leftBodyMeasurements: Measurements?,
+		 rightBodyMeasurements: Measurements?,
+		 leftDateString: String,
+		 rightDateString: String) {
 		self.trainingDay = trainingDay
 		self.steps = steps
 		self.water = water
@@ -62,6 +70,10 @@ class DiaryTableViewModel: NSObject {
 		self.proteins = proteins
 		self.fats = fats
 		self.carbohydrates = carbohydrates
+		self.leftBodyMeasurements = leftBodyMeasurements
+		self.rightBodyMeasurements = rightBodyMeasurements
+		self.leftDateString = leftDateString
+		self.rightDateString = rightDateString
 	}
 	
 	private func getTrainingDaySection() -> Section {
@@ -134,26 +146,28 @@ class DiaryTableViewModel: NSObject {
 	
 	private func getBodyMeasurementsSection() -> Section {
 		let result = Section(items: [
-			BodyMeasurementHeaderConfigurator(item: MeasurementPeriod(startDate: "12.10.2018 17:35", endDate: Date.todayWithCurrentTime)),
+			
+			BodyMeasurementHeaderConfigurator(item: MeasurementPeriod(startDate: leftDateString ?? rightDateString,
+																	  endDate: rightDateString)),
 			BodyMeasurementCellConfigurator(item: Measurement(name: "Chest",
-															  firstValue: 100,
-															  secondValue: nil,
+															  firstValue: leftBodyMeasurements?.chest,
+															  secondValue: rightBodyMeasurements?.chest,
 															  unit: "см")),
 			BodyMeasurementCellConfigurator(item: Measurement(name: "Waist",
-															  firstValue: 60,
-															  secondValue: nil,
+															  firstValue: leftBodyMeasurements?.waist,
+															  secondValue: rightBodyMeasurements?.waist,
 															  unit: "см")),
 			BodyMeasurementCellConfigurator(item: Measurement(name: "Thighs",
-															  firstValue: 90,
-															  secondValue: nil,
+															  firstValue: leftBodyMeasurements?.thighs,
+															  secondValue: rightBodyMeasurements?.thighs,
 															  unit: "см")),
 			BodyMeasurementCellConfigurator(item: Measurement(name: "Hip",
-															  firstValue: 25,
-															  secondValue: nil,
+															  firstValue: leftBodyMeasurements?.hip,
+															  secondValue: rightBodyMeasurements?.hip,
 															  unit: "см")),
 			BodyMeasurementCellConfigurator(item: Measurement(name: "Weight",
-															  firstValue: 60,
-															  secondValue: nil,
+															  firstValue: leftBodyMeasurements?.weight,
+															  secondValue: rightBodyMeasurements?.weight,
 															  unit: "кг")),
 			BodyMeasurementFooterConfigurator()
 			])

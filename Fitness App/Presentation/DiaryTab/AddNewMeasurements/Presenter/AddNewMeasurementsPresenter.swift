@@ -18,13 +18,13 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 	}
 	
 	func getDefaultMeasurements() {
-		if Bool.random() {
-			view.setDefaultMeasurements(.init(chest: 100,
-											  waist: 60,
-											  thighs: 90,
-											  hip: 25,
-											  weight: 60))
-		}
+//		if Bool.random() {
+//			view.setDefaultMeasurements(.init(chest: 100,
+//											  waist: 60,
+//											  thighs: 90,
+//											  hip: 25,
+//											  weight: 60))
+//		}
 	}
 	
 	func addNewMeasurements() {

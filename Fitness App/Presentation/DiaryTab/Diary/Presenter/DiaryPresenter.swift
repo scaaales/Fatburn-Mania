@@ -7,27 +7,50 @@
 //
 
 import Foundation
+import KeychainSwift
 
 class DiaryPresenter<V: DiaryView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
-	private var viewModel: DiaryTableViewModel
+	private var viewModel: DiaryTableViewModel!
+	private var diaryApi: FitnessApi.Diary!
+	private let dispatchGroup = DispatchGroup()
+	private var measurementsCache = [Date: Measurements?]()
 	
 	required init(view: View) {
 		self.view = view
-		viewModel = .init()
 	}
 	
 	func getInitialHealthInfo() {
-		view.setTableViewDataSource(viewModel)
-		view.hideTableView()
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
+		
+		diaryApi = .init(token: token)
+		
+		viewModel = DiaryTableViewModel(leftBodyMeasurements: nil,
+											 rightBodyMeasurements: nil,
+											 leftDateString: Date().formattedStringWithTime,
+											 rightDateString: Date().formattedStringWithTime)
+		view.setTableViewDataSource(self.viewModel)
+		
 		getHealthInfo(on: .init())
 	}
 	
 	func getHealthInfo(on date: Date) {
-		view.showLoader()
+		viewModel.leftDateString = date.formattedStringWithBlankTime
+		viewModel.rightDateString = Date().formattedStringWithTime
 		
+		if let cachedMeasurements = measurementsCache[date] { // load measurements from cache
+			handleNewMeasurements(cachedMeasurements)
+		} else { // load measurements from API
+			view.disableUserInteraction()
+			view.hideTableView()
+			view.showLoader()
+			getMeasurements(on: date)
+		}
+		
+		// get from healthkit
 		HealthKitService.authorizeHealthKit { [weak self] (authorized, error) in
 			if !authorized {
 				let baseMessage = "HealthKit Authorization Failed"
@@ -37,19 +60,40 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 					print(baseMessage)
 				}
 			} else {
-				self?.getAllFields(on: date) {
-					self?.view.showTableView()
-					self?.view.hideLoader()
-					self?.view.update()
-				}
+				self?.getAllFields(on: date)
 			}
+		}
+		
+		dispatchGroup.notify(queue: .main) { [weak self] in
+			self?.view.showTableView()
+			self?.view.update()
 		}
 		
 	}
 	
-	private func getAllFields(on date: Date, completion: @escaping () -> Void) {
-		let dispatchGroup = DispatchGroup()
-		
+	private func getMeasurements(on date: Date) {
+		dispatchGroup.enter()
+		diaryApi.getMeasurements(at: date, limit: 1, onComplete: { [weak self] in
+			self?.view.hideLoader()
+			self?.view.enableUserInteraction()
+			}, onSuccess: { [weak self] measurements in
+				guard let self = self else { return }
+				self.handleNewMeasurements(measurements.last)
+				self.measurementsCache[date] = measurements.last
+				self.dispatchGroup.leave()
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
+	}
+	
+	private func handleNewMeasurements(_ measurements: Measurements?) {
+		viewModel.leftBodyMeasurements = measurements
+		if let leftDateString = measurements?.dateString {
+			viewModel.leftDateString = leftDateString
+		}
+	}
+	
+	private func getAllFields(on date: Date) {
 		addTo(dispatchGroup: dispatchGroup,
 			  execute: HealthKitService.getSteps, date: date) { [weak self] steps in
 				self?.viewModel.steps = steps
@@ -79,8 +123,6 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 			  execute: HealthKitService.getWater, date: date) { [weak self] water in
 				self?.viewModel.water = water
 		}
-		
-		dispatchGroup.notify(queue: .main, execute: completion)
 	}
 	
 	private func addTo<T>(dispatchGroup: DispatchGroup,

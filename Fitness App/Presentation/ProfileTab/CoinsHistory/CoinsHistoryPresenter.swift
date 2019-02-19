@@ -28,7 +28,7 @@ class CoinsHistoryPresenter<V: CoinsHistoryView>: Presenter {
 		view.showLoader()
 		
 		profileAPI = .init(token: token)
-		profileAPI.getCoinsHistory(token: token, onComplete: { [weak self] in
+		profileAPI.getCoinsHistory(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
 		}, onSuccess: { [weak self] coinsHistory in
