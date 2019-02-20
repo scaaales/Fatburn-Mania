@@ -29,6 +29,31 @@ class DiaryViewController: UIViewController {
 		
 		tableView.backgroundColor = .white
 	}
+	
+	@IBAction private func addOzTapped(_ sender: UIButton) {
+		guard let title = sender.titleLabel?.text else { return }
+		let waterAmount: Double
+		
+		switch title {
+		case "+1/3 oz":
+			waterAmount = 1/3
+		case "+1/2 oz":
+			waterAmount = 1/2
+		case "+1 oz":
+			waterAmount = 1
+		default:
+			return
+		}
+		presenter.addWaterInOz(amount: waterAmount)
+	}
+	
+	@IBAction private func addPtTapped() {
+		presenter.addWaterInPt(amount: 1)
+	}
+	
+	@IBAction private func deleteWaterTapped() {
+		presenter.deleteWater()
+	}
 }
 
 extension DiaryViewController: DiaryView {
@@ -66,6 +91,12 @@ extension DiaryViewController: DiaryView {
 	
 	func hideTableView() {
 		tableView.isHidden = true
+	}
+	
+	func setWaterProgressAnimated(currentValue: String, goalValue: String, progress: Float) {
+		guard let waterCell = tableView.visibleCells.first(where: { $0 is WaterCell }) as? WaterCell else { return }
+		waterCell.progressView.setProgress(startValue: currentValue, endValue: goalValue,
+										   progress: progress, animated: true)
 	}
 	
 }

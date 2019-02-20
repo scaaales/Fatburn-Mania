@@ -14,6 +14,7 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 	
 	weak var view: View!
 	private let diaryApi: FitnessApi.Diary
+	private let savingDate = Date()
 	
 	required init(view: View) {
 		self.view = view
@@ -54,7 +55,10 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 		diaryApi.addMeasureemts(measurements, onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
-		}, onSuccess: {
+		}, onSuccess: { [weak self] in
+			guard let self = self else { return }
+			HealthKitService.saveWaistValue(measurements.waist.doubleValue, on: self.savingDate)
+			HealthKitService.saveWeightValue(measurements.weight, on: self.savingDate)
 			// TODO: Handler result later
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
@@ -80,7 +84,7 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 	}
 	
 	func getDate() {
-		view.setDate(.init())
+		view.setDate(savingDate)
 	}
 	
 }

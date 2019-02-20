@@ -17,6 +17,8 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	private let diaryApi: FitnessApi.Diary
 	private let dispatchGroup = DispatchGroup()
 	private var measurementsCache = [Date: Measurements?]()
+	private var selectedDate = Date()
+	private var waterService = HealthKitWaterService()
 	
 	required init(view: View) {
 		self.view = view
@@ -41,6 +43,7 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	
 	func getHealthInfo(on date: Date) {
 		viewModel.leftDateString = date.formattedStringWithBlankTime
+		selectedDate = date
 		
 		let calendar = Calendar.current
 		let setToday = calendar.isDateInToday(date)
@@ -146,6 +149,45 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 			completion(t)
 			dispatchGroup.leave()
 		}
+	}
+	
+	func addWaterInOz(amount: Double) {
+		let pt = amount/19.2152
+		waterService.addWaterInPints(pt, on: selectedDate, successCompletion: { [weak self] in
+			self?.waterAdded(amount: pt)
+		})
+	}
+	
+	func addWaterInPt(amount: Double) {
+		waterService.addWaterInPints(amount, on: selectedDate, successCompletion: { [weak self] in
+			self?.waterAdded(amount: amount)
+		})
+	}
+	
+	private func waterAdded(amount: Double) {
+		guard var oldWaterMeasurement = viewModel.water,
+			let oldFirstValue = oldWaterMeasurement.firstValue else { return }
+		oldWaterMeasurement.firstValue = oldFirstValue + amount
+		viewModel.water = oldWaterMeasurement
+		
+		guard let firstValue = oldWaterMeasurement.firstValue,
+			let progress = oldWaterMeasurement.progress else { return }
+		let firstValueRounded = (firstValue * 100).rounded() / 100
+		
+		let currentValueString = String(format: "%g", firstValueRounded) + " pt"
+		let goalString = "2 pt"
+		
+		view.setWaterProgressAnimated(currentValue: currentValueString, goalValue: goalString, progress: progress)
+	}
+	
+	func deleteWater() {
+		waterService.deleteWaterOn(date: selectedDate, successCompletion: { [weak self] in
+			guard var oldWaterMeasurement = self?.viewModel.water else { return }
+			oldWaterMeasurement.firstValue = 0
+			self?.viewModel.water = oldWaterMeasurement
+			
+			self?.view.setWaterProgressAnimated(currentValue: "0 pt", goalValue: "2 pt", progress: 0)
+		})
 	}
 	
 }

@@ -184,6 +184,7 @@
 		B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */; };
 		B3A2E1C0221D524800C1DF93 /* Character+isNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E1BF221D524800C1DF93 /* Character+isNumber.swift */; };
 		B3A2E1C2221D5D6800C1DF93 /* Int+doubleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E1C1221D5D6800C1DF93 /* Int+doubleValue.swift */; };
+		B3A2E1C4221DAB2300C1DF93 /* HealthKitWaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E1C3221DAB2300C1DF93 /* HealthKitWaterService.swift */; };
 		B3B361D82209C6BD002E006F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B361D72209C6BD002E006F /* AuthService.swift */; };
 		B3B361DA220A0007002E006F /* NetworkActivityPlugin+default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */; };
 		B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */; };
@@ -443,6 +444,7 @@
 		B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithSeperator.swift; sourceTree = "<group>"; };
 		B3A2E1BF221D524800C1DF93 /* Character+isNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+isNumber.swift"; sourceTree = "<group>"; };
 		B3A2E1C1221D5D6800C1DF93 /* Int+doubleValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+doubleValue.swift"; sourceTree = "<group>"; };
+		B3A2E1C3221DAB2300C1DF93 /* HealthKitWaterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitWaterService.swift; sourceTree = "<group>"; };
 		B3B361D72209C6BD002E006F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkActivityPlugin+default.swift"; sourceTree = "<group>"; };
 		B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideoCell.swift; sourceTree = "<group>"; };
@@ -627,6 +629,7 @@
 				B30F287921F2342D000954DB /* TimerService.swift */,
 				B323C04A220215C90059AFB9 /* TextFieldAssistant.swift */,
 				B319153D22142C0200F019ED /* PushNotificationsService.swift */,
+				B3A2E1C3221DAB2300C1DF93 /* HealthKitWaterService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -2104,6 +2107,7 @@
 				B3DD925921FA0EB40017E723 /* WorkoutOfTheDay.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
 				B3033D3421E8DF5B0058626D /* VideoDetailsView.swift in Sources */,
+				B3A2E1C4221DAB2300C1DF93 /* HealthKitWaterService.swift in Sources */,
 				B3F732B621E7A8B30038ACB9 /* CourseVideosInitializer.swift in Sources */,
 				B31D2151220DC92C00DEEE76 /* NetworkingView.swift in Sources */,
 				B37CBA1921DE64C000834A98 /* LoginView.swift in Sources */,

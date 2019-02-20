@@ -46,10 +46,10 @@ class ProgressView: UIView {
 		return nib.instantiate(withOwner: self, options: nil).first as? UIView
 	}
 	
-	func setProgress(startValue: String, endValue: String, progress: Float) {
+	func setProgress(startValue: String, endValue: String, progress: Float, animated: Bool = false) {
 		startValueLabel.text = startValue
 		endValueLabel.text = endValue
-		progressView.setProgress(progress, animated: false)
+		progressView.setProgress(progress, animated: animated)
 	}
 	
 	func setBottomLabels(hidden: Bool) {
