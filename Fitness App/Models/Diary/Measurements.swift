@@ -8,16 +8,30 @@
 
 import Foundation
 
-struct Measurements: Codable {
+struct Measurements {
 	let chest: Int
 	let waist: Int
 	let thighs: Int
 	let hip: Int
-	let weight: Int
+	let weight: Double
 	private let _dateString: String?
+	
+	init(chest: Int, waist: Int, thighs: Int, hip: Int, weight: Double) {
+		self.chest = chest
+		self.waist = waist
+		self.thighs = thighs
+		self.hip = hip
+		self.weight = weight
+		self._dateString = nil
+	}
+}
+
+
+extension Measurements: Codable {
 	var date: Date? {
 		guard let dateString = _dateString else { return nil }
 		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
 		
 		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 		

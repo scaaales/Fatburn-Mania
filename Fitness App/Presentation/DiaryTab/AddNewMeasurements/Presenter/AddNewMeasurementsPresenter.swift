@@ -7,32 +7,75 @@
 //
 
 import Foundation
+import KeychainSwift
 
 class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
+	private let diaryApi: FitnessApi.Diary
 	
 	required init(view: View) {
 		self.view = view
+		
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else {
+			fatalError("cannot find access token")
+		}
+		
+		diaryApi = .init(token: token)
 	}
 	
 	func getDefaultMeasurements() {
-//		if Bool.random() {
-//			view.setDefaultMeasurements(.init(chest: 100,
-//											  waist: 60,
-//											  thighs: 90,
-//											  hip: 25,
-//											  weight: 60))
-//		}
+
 	}
 	
 	func addNewMeasurements() {
-		if isFieldsValid() {
-			view.showCoinsAddedScreen(with: 10)
+		let intFields = [view.chest, view.waist, view.thighs, view.hip].compactMap({ Int($0) })
+		let weightString = view.weight
+		if intFields.count == 4,
+			let weightDouble = Double(weightString), isWeightValid(weightString) {
+			let measurements = Measurements(chest: intFields[0],
+											waist: intFields[1],
+											thighs: intFields[2],
+											hip: intFields[3],
+											weight: weightDouble)
+			makeAddMeasurementsRequest(measurements)
 		} else {
 			let errorText = "Please ensure all measurements are filled"
 			view.showErrorPopup(with: errorText)
+		}
+	}
+	
+	private func makeAddMeasurementsRequest(_ measurements: Measurements) {
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		diaryApi.addMeasureemts(measurements, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: {
+			// TODO: Handler result later
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
+	}
+	
+	private func isWeightValid(_ weightString: String) -> Bool {
+		if weightString.contains(".") {
+			let weightSubstrings = weightString.split(separator: ".")
+			if weightSubstrings.count != 2 {
+				return false
+			}
+			let weightLeftPart = weightSubstrings[0]
+			let weightRightPart = weightSubstrings[1]
+			if weightRightPart.isEmpty {
+				return weightLeftPart.count <= 3
+			} else {
+				return weightRightPart.count <= 2 && weightLeftPart.count <= 3
+			}
+		} else {
+			return weightString.count <= 3
 		}
 	}
 	
@@ -40,8 +83,4 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 		view.setDate(.init())
 	}
 	
-	private func isFieldsValid() -> Bool {
-		let fields = [view.chest, view.hip, view.thighs, view.waist, view.weight]
-		return !fields.contains(where: { $0.isEmpty })
-	}
 }

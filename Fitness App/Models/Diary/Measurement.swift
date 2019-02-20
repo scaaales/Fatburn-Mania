@@ -10,8 +10,8 @@ import Foundation
 
 struct Measurement {
 	var name: String
-	var firstValue: Int?
-	var secondValue: Int?
+	var firstValue: Double?
+	var secondValue: Double?
 	var unit: String
 	
 	var progress: Float? {

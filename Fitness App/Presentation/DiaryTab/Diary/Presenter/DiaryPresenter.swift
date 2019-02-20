@@ -41,15 +41,17 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	
 	func getHealthInfo(on date: Date) {
 		viewModel.leftDateString = date.formattedStringWithBlankTime
-		viewModel.rightDateString = Date().formattedStringWithTime
+		
+		let calendar = Calendar.current
+		let setToday = calendar.isDateInToday(date)
 		
 		if let cachedMeasurements = measurementsCache[date] { // load measurements from cache
-			handleNewMeasurements(cachedMeasurements)
+			handleNewMeasurements(cachedMeasurements, setToday: setToday)
 		} else { // load measurements from API
 			view.disableUserInteraction()
 			view.hideTableView()
 			view.showLoader()
-			getMeasurements(on: date)
+			getMeasurements(on: date, setToday: setToday)
 		}
 		
 		// get from healthkit
@@ -73,14 +75,14 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		
 	}
 	
-	private func getMeasurements(on date: Date) {
+	private func getMeasurements(on date: Date, setToday: Bool) {
 		dispatchGroup.enter()
 		diaryApi.getMeasurements(at: date, limit: 1, onComplete: { [weak self] in
 			self?.view.hideLoader()
 			self?.view.enableUserInteraction()
 			}, onSuccess: { [weak self] measurements in
 				guard let self = self else { return }
-				self.handleNewMeasurements(measurements.last)
+				self.handleNewMeasurements(measurements.last, setToday: setToday)
 				self.measurementsCache[date] = measurements.last
 				self.dispatchGroup.leave()
 		}) { [weak self] errorText in
@@ -88,10 +90,18 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		}
 	}
 	
-	private func handleNewMeasurements(_ measurements: Measurements?) {
+	private func handleNewMeasurements(_ measurements: Measurements?, setToday: Bool) {
 		viewModel.leftBodyMeasurements = measurements
 		if let leftDateString = measurements?.date?.formattedStringWithTime {
 			viewModel.leftDateString = leftDateString
+			if setToday {
+				viewModel.rightDateString = leftDateString
+				viewModel.rightBodyMeasurements = measurements
+			}
+		} else {
+			if setToday {
+				viewModel.rightDateString = Date().formattedStringWithTime
+			}
 		}
 	}
 	

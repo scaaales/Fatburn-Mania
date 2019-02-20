@@ -17,7 +17,7 @@ class NutritionCell: UITableViewCell, ConfigurableCell {
 		guard let firstValue = data.firstValue,
 			let secondValue = data.secondValue,
 			let progress = data.progress else { return }
-		let endValue = "\(firstValue)/\(secondValue) \(data.unit)"
+		let endValue = "\(Int(firstValue))/\(Int(secondValue)) \(data.unit)"
 			
 		progressView.setProgress(startValue: data.name, endValue: endValue, progress: progress)
 		progressView.setBottomLabels(hidden: true)

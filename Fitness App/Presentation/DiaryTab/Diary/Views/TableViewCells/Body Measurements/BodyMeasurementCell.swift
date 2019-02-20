@@ -17,7 +17,7 @@ class BodyMeasurementCell: UITableViewCell, ConfigurableCell {
 	
 	func configure(data: Measurement) {
 		if let oldValue = data.firstValue {
-			oldValueLabel.text = "\(oldValue) \(data.unit)"
+			oldValueLabel.text = String(format: "%g", oldValue) + " \(data.unit)"
 		} else {
 			oldValueLabel.text = "--"
 		}
@@ -25,7 +25,7 @@ class BodyMeasurementCell: UITableViewCell, ConfigurableCell {
 		nameLabel.text = data.name
 		
 		if let newValue = data.secondValue {
-			newValueLabel.text = "\(newValue) \(data.unit)"
+			newValueLabel.text = String(format: "%g", newValue) + " \(data.unit)"
 		} else {
 			newValueLabel.text = "--"
 		}

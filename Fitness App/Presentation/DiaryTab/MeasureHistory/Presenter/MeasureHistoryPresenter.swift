@@ -41,7 +41,7 @@ class MeasureHistoryPresenter<V: MeasureHistoryView>: Presenter {
 		view.setTableViewDataSource(dataSource)
 		
 		loadingMore = true
-		diaryApi.getMeasurements(at: nil, limit: 20, offset: offset, onComplete: { [weak self] in
+		diaryApi.getMeasurements(at: nil, limit: 20, offset: offset*20, onComplete: { [weak self] in
 			self?.view.hideLoader()
 			self?.loadingMore = false
 			}, onSuccess: { [weak self] measurements in

@@ -20,7 +20,7 @@ class MeasureHistoryCell: UITableViewCell, ConfigurableCell {
 
 	func configure(data: Measurements) {
 		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "dd MMMM yyyy hh:mm"
+		dateFormatter.dateFormat = "dd MMMM yyyy HH:mm"
 		
 		if let date = data.date {
 			dateLabel.text = dateFormatter.string(from: date).lowercased()
@@ -31,7 +31,7 @@ class MeasureHistoryCell: UITableViewCell, ConfigurableCell {
 		waistValueLabel.text = "\(data.waist)"
 		thighsValueLabel.text = "\(data.thighs)"
 		hipValueLabel.text = "\(data.hip)"
-		weightValueLabel.text = "\(data.weight)"
+		weightValueLabel.text = String(format: "%g", data.weight)
 	}
 	
 }

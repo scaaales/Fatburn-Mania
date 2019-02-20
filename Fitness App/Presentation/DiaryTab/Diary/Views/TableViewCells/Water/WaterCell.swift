@@ -18,8 +18,8 @@ class WaterCell: UITableViewCell, ConfigurableCell {
 			let secondValue = data.secondValue,
 			let progress = data.progress else { return }
 		
-		let startString = "\(firstValue) \(data.unit)"
-		let endString = "\(secondValue) \(data.unit)"
+		let startString = "\(Int(firstValue)) \(data.unit)"
+		let endString = "\(Int(secondValue)) \(data.unit)"
 		
 		progressView.setProgress(startValue: startString, endValue: endString, progress: progress)
 		progressView.setBottomLabels(hidden: false)

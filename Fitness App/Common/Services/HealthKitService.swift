@@ -68,7 +68,7 @@ class HealthKitService {
 							unit: HKUnit.pintUS()) { result in
 								if let result = result {
 									let firstValue = Int(result)
-									let water = Measurement(name: "", firstValue: firstValue, secondValue: 2, unit: "pt")
+									let water = Measurement(name: "", firstValue: firstValue.doubleValue, secondValue: 2, unit: "pt")
 									completion(water)
 								} else {
 									completion(nil)
@@ -82,7 +82,7 @@ class HealthKitService {
 							unit: .kilocalorie()) { result in
 								if let result = result {
 									let currentValue = Int(result)
-									let calories = Measurement(name: "Calories", firstValue: currentValue, secondValue: 1980, unit: "kcal")
+									let calories = Measurement(name: "Calories", firstValue: currentValue.doubleValue, secondValue: 1980, unit: "kcal")
 									completion(calories)
 								} else {
 									completion(nil)
@@ -96,7 +96,7 @@ class HealthKitService {
 							unit: .gram()) { result in
 								if let result = result {
 									let currentValue = Int(result)
-									let proteins = Measurement(name: "Proteins", firstValue: currentValue, secondValue: 500, unit: "oz")
+									let proteins = Measurement(name: "Proteins", firstValue: currentValue.doubleValue, secondValue: 500, unit: "oz")
 									completion(proteins)
 								} else {
 									completion(nil)
@@ -110,7 +110,7 @@ class HealthKitService {
 							unit: .gram()) { result in
 								if let result = result {
 									let currentValue = Int(result)
-									let fats = Measurement(name: "Fats", firstValue: currentValue, secondValue: 500, unit: "oz")
+									let fats = Measurement(name: "Fats", firstValue: currentValue.doubleValue, secondValue: 500, unit: "oz")
 									completion(fats)
 								} else {
 									completion(nil)
@@ -124,7 +124,7 @@ class HealthKitService {
 							unit: .gram()) { result in
 								if let result = result {
 									let currentValue = Int(result)
-									let carbohydrates = Measurement(name: "Carbohydrates", firstValue: currentValue, secondValue: 500, unit: "oz")
+									let carbohydrates = Measurement(name: "Carbohydrates", firstValue: currentValue.doubleValue, secondValue: 500, unit: "oz")
 									completion(carbohydrates)
 								} else {
 									completion(nil)

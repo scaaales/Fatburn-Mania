@@ -41,5 +41,18 @@ extension FitnessApi {
 										}, onError: onError)
 			})
 		}
+		
+		func addMeasureemts(_ measurements: Measurements,
+							onComplete: @escaping () -> Void,
+							onSuccess: @escaping () -> Void,
+							onError: @escaping OnErrorCompletion) {
+			request = provider.request(.addMeasurements(token: token, measurements: measurements),
+									   completion: { result in
+										onComplete()
+										BaseApi.handleResult(result, onSuccess: { json in
+											print(json)
+										}, onError: onError)
+			})
+		}
 	}
 }

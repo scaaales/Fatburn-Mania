@@ -36,6 +36,27 @@ class AddNewMeasurementsViewController: UIViewController {
 		hideKeyboardWhenTappedAround()
 		presenter.getDefaultMeasurements()
 		presenter.getDate()
+		setupTextFields()
+	}
+	
+	private func setupTextFields() {
+		[chestTextField, waistTextField, thighsTextField, hipTextField, weightTextField].forEach {
+			$0.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+		}
+	}
+	
+	@objc private func textFieldDidChange(_ textField: UITextField) {
+		guard let text = textField.text else { return }
+		
+		if textField === weightTextField {
+			if text.count > 6 {
+				textField.text = String(text.prefix(6))
+			}
+		} else {
+			if text.count > 3 {
+				textField.text = String(text.prefix(3))
+			}
+		}
 	}
 	
 	@IBAction private func addTapped() {

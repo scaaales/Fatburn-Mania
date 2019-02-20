@@ -182,6 +182,8 @@
 		B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D477F21E62AB000D5C050 /* UserDataCell.swift */; };
 		B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */; };
 		B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */; };
+		B3A2E1C0221D524800C1DF93 /* Character+isNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E1BF221D524800C1DF93 /* Character+isNumber.swift */; };
+		B3A2E1C2221D5D6800C1DF93 /* Int+doubleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E1C1221D5D6800C1DF93 /* Int+doubleValue.swift */; };
 		B3B361D82209C6BD002E006F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B361D72209C6BD002E006F /* AuthService.swift */; };
 		B3B361DA220A0007002E006F /* NetworkActivityPlugin+default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */; };
 		B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */; };
@@ -439,6 +441,8 @@
 		B39D477F21E62AB000D5C050 /* UserDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCell.swift; sourceTree = "<group>"; };
 		B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButtonArrowCell.swift; sourceTree = "<group>"; };
 		B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithSeperator.swift; sourceTree = "<group>"; };
+		B3A2E1BF221D524800C1DF93 /* Character+isNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+isNumber.swift"; sourceTree = "<group>"; };
+		B3A2E1C1221D5D6800C1DF93 /* Int+doubleValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+doubleValue.swift"; sourceTree = "<group>"; };
 		B3B361D72209C6BD002E006F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkActivityPlugin+default.swift"; sourceTree = "<group>"; };
 		B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideoCell.swift; sourceTree = "<group>"; };
@@ -1043,9 +1047,11 @@
 				B369573B21D514DF00735555 /* Date+extension.swift */,
 				B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */,
 				B39A6D2121FB64B000C5A06F /* Array+extension.swift */,
+				B3A2E1BF221D524800C1DF93 /* Character+isNumber.swift */,
 				B30F287B21F237DF000954DB /* TimeInterval+extension.swift */,
 				B3191544221442AB00F019ED /* Notification+names.swift */,
 				B39B71BF2215A2A2002F1747 /* URL+constants.swift */,
+				B3A2E1C1221D5D6800C1DF93 /* Int+doubleValue.swift */,
 				B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */,
 				B36B2F7321DE148600C5D07B /* String+constants.swift */,
 				B3728923220AF6BF0061822E /* String+validation.swift */,
@@ -2162,6 +2168,7 @@
 				B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
 				B3DC1B6C21EDF29A00883C0F /* RoundImageViewWithShadow.swift in Sources */,
+				B3A2E1C0221D524800C1DF93 /* Character+isNumber.swift in Sources */,
 				B38F17AA21F8A06000B70DBE /* WorkoutCell.swift in Sources */,
 				B30E9F9921ECD6D6006F33CE /* CoinsHistoryView.swift in Sources */,
 				B3FBA16D21EF493400B88AA3 /* PhotoCapturingService.swift in Sources */,
@@ -2216,6 +2223,7 @@
 				B30A181921F8B68E00A39131 /* SeasonsPresenter.swift in Sources */,
 				B36CD81421F5E6E0007D4BE6 /* UIButton+enabled.swift in Sources */,
 				B38B75FA22170F1E00B48E19 /* PhotoLevelPresenter.swift in Sources */,
+				B3A2E1C2221D5D6800C1DF93 /* Int+doubleValue.swift in Sources */,
 				B3DC1B6821EDDACD00883C0F /* EditProfileDataCell.swift in Sources */,
 				B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
