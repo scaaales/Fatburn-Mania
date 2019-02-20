@@ -71,9 +71,13 @@ class HealthKitService {
 								if let result = result {
 									let firstValue = result
 									let water = Measurement(name: "", firstValue: firstValue, secondValue: 2, unit: "pt")
-									completion(water)
+									DispatchQueue.main.async {
+										completion(water)
+									}
 								} else {
-									completion(nil)
+									DispatchQueue.main.async {
+										completion(nil)
+									}
 								}
 		}
 	}

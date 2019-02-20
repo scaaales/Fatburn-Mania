@@ -152,32 +152,31 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	}
 	
 	func addWaterInOz(amount: Double) {
-		let pt = amount/19.2152
-		waterService.addWaterInPints(pt, on: selectedDate, successCompletion: { [weak self] in
-			self?.waterAdded(amount: pt)
+		waterService.addWaterInOunces(amount, on: selectedDate, successCompletion: { [weak self] in
+			self?.updateWater()
 		})
 	}
 	
 	func addWaterInPt(amount: Double) {
 		waterService.addWaterInPints(amount, on: selectedDate, successCompletion: { [weak self] in
-			self?.waterAdded(amount: amount)
+			self?.updateWater()
 		})
 	}
 	
-	private func waterAdded(amount: Double) {
-		guard var oldWaterMeasurement = viewModel.water,
-			let oldFirstValue = oldWaterMeasurement.firstValue else { return }
-		oldWaterMeasurement.firstValue = oldFirstValue + amount
-		viewModel.water = oldWaterMeasurement
-		
-		guard let firstValue = oldWaterMeasurement.firstValue,
-			let progress = oldWaterMeasurement.progress else { return }
-		let firstValueRounded = (firstValue * 100).rounded() / 100
-		
-		let currentValueString = String(format: "%g", firstValueRounded) + " pt"
-		let goalString = "2 pt"
-		
-		view.setWaterProgressAnimated(currentValue: currentValueString, goalValue: goalString, progress: progress)
+	private func updateWater() {
+		HealthKitService.getWater(on: selectedDate) { [weak self] water in
+			self?.viewModel.water = water
+			
+			guard let water = water,
+				let firstValue = water.firstValue,
+				let progress = water.progress else { return }
+			let firstValueRounded = (firstValue * 100).rounded() / 100
+			
+			let currentValueString = String(format: "%g", firstValueRounded) + " \(water.unit)"
+			let goalString = "2 \(water.unit)"
+			
+			self?.view.setWaterProgressAnimated(currentValue: currentValueString, goalValue: goalString, progress: progress)
+		}
 	}
 	
 	func deleteWater() {

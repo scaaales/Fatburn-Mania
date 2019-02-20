@@ -11,6 +11,10 @@ import HealthKit
 class HealthKitWaterService {
 	private var savedWater: [Date: [HKQuantitySample]] = [:]
 	
+	func addWaterInOunces(_ value: Double, on date: Date, successCompletion: @escaping () -> Void) {
+		addWater(value, in: .fluidOunceUS(), on: date, successCompletion: successCompletion)
+	}
+	
 	func addWaterInPints(_ value: Double, on date: Date, successCompletion: @escaping () -> Void) {
 		addWater(value, in: .pintUS(), on: date, successCompletion: successCompletion)
 	}
@@ -29,7 +33,6 @@ class HealthKitWaterService {
 		
 		HealthKitService.healthStore.save(waterCorrelationForWaterAmount) { [weak self] success, error in
 			guard let self = self else { return }
-			print("success = ", success)
 			if success {
 				if self.savedWater.keys.contains(date) {
 					self.savedWater[date]?.append(waterSample)
@@ -49,7 +52,6 @@ class HealthKitWaterService {
 	func deleteWaterOn(date: Date, successCompletion: @escaping () -> Void) {
 		if let savedWaterOnDate = savedWater[date] {
 			HealthKitService.healthStore.delete(savedWaterOnDate) { [weak self] success, error in
-				print("success = ", success)
 				if success {
 					self?.savedWater[date] = nil
 					DispatchQueue.main.async {
