@@ -71,6 +71,14 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	func getCellTitleFor(indexPath: IndexPath) -> String? {
 		return viewModel.getCellTitleFor(at: indexPath.row)
 	}
+	
+	func updateUser(with newUser: User) {
+		print("got new user with \(newUser.fullName), \(newUser.lastName).")
+		self.user = newUser
+		viewModel = .init(user: user)
+		view.setTableViewDataSource(viewModel)
+		view.update()
+	}
 
 }
 

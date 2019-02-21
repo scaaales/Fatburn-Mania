@@ -15,8 +15,13 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 	weak var view: View!
 	private var viewModel: EditProfileTableViewModel!
 	private let profileAPI: FitnessApi.Profile
+	private var oldEmail: String!
 	
-	var user: User!
+	var user: User! {
+		didSet {
+			oldEmail = user.email ?? ""
+		}
+	}
 	
 	required init(view: View) {
 		self.view = view
@@ -39,44 +44,33 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 	}
 	
 	func saveChanges() {
-//		let avatar = view.avatar
-//		let firstName = view.firstName
-//		let lastName = view.lastName ?? ""
-//		let nickname = view.nickname ?? ""
-//		let gender = view.gender
-//		let dateOfBirth = view.dateOfBirth
-//		let email = view.email
-//		let phone = view.phone
-//		let instagram = view.instagram ?? ""
-//		let country = view.country ?? ""
-//		let city = view.city ?? ""
-//
-//		let emailToSend: String?
-//
-//		if email == user.email {
-//			emailToSend = nil
-//		} else {
-//			emailToSend = email
-//		}
-//
-//		let newUser = User(firstName: firstName, lastName: lastName,
-//						   nickname: nickname, gender: gender,
-//						   dateOfBirth: dateOfBirth, email: emailToSend,
-//						   phone: phone, instagram: instagram,
-//						   country: country, city: city)
-//		uploadNewUserInfo(newUser)
+		var newUser = viewModel.user
+	
+		if newUser.email == oldEmail {
+			 newUser.email = nil
+		}
+		
+		newUser.avatar = nil
+
+		uploadNewUserInfo(newUser)
 //		if let avatar = avatar {
 //			uploadImage(avatar)
 //		}
 	}
 	
 	private func uploadNewUserInfo(_ user: User) {
-		profileAPI.updateUser(user, onComplete: {
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		profileAPI.updateUser(user, onComplete: { [weak self] in
 			print("updateUser completed")
-		}, onSuccess: {
-			
-		}) { errorText in
-			print(errorText)
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: { [weak self] user in
+			self?.user = user
+			self?.view.closeItself()
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
 		}
 	}
 	
