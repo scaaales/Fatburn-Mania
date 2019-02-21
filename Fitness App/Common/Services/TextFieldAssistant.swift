@@ -17,8 +17,6 @@ class TextFieldAssistant: NSObject {
 	private let firstResponderTag: Int
 	private let lastResponderTag: Int
 	
-//	private var validationChecking: [UITextField: (String) -> String]?
-	
 	weak var makeFirstResponderDelegate: MakeFirstResponderDelegate?
 	
 	var currentResponderTag: Int {
@@ -72,10 +70,6 @@ class TextFieldAssistant: NSObject {
 		}
 	}
 	
-//	func setValidationChecking(blocks: [UITextField: (String) -> String]) {
-//		self.validationChecking = blocks
-//	}
-	
 	private func makeFirstResponderView(with tag: Int) {
 		let nextResponderView = self.view.viewWithTag(tag)
 		nextResponderView?.becomeFirstResponder()
@@ -99,7 +93,4 @@ extension TextFieldAssistant: UITextFieldDelegate {
 		currentResponderTag = textField.tag
 	}
 	
-//	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//		<#code#>
-//	}
 }

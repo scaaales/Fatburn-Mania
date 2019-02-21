@@ -8,16 +8,16 @@
 
 import UIKit
 
-struct User: Decodable {
+struct User: Codable {
 	var firstName: String
 	var lastName: String?
 	
 	var nickname: String?
-	private let _gender: Int?
+	private var _gender: Int?
 	
 	private var _dateOfBirth: String?
 	
-	var email: String
+	var email: String?
 	var phone: String
 	var instagram: String?
 	
@@ -26,7 +26,7 @@ struct User: Decodable {
 	var country: String?
 	var city: String?
 	
-	let coins: Int
+	let coins: Int?
 	
 	enum CodingKeys: String, CodingKey {
 		case firstName = "first_name"
@@ -36,18 +36,42 @@ struct User: Decodable {
 		
 		case nickname, email, phone, instagram, avatar, country, city, coins
 	}
+	
+	mutating func setDateOfBirth(from date: Date?) {
+		if let dateOfBirth = date {
+			let dateFormatter = DateFormatter()
+			dateFormatter.dateFormat = "yyyy-MM-dd"
+			self._dateOfBirth = dateFormatter.string(from: dateOfBirth)
+		} else {
+			self._dateOfBirth = nil
+		}
+	}
+	
+	mutating func setGender(_ gender: Gender) {
+		_gender = gender.intValue
+	}
 }
 
 extension User {
 	enum Gender: String {
 		case male = "Male"
-		case femele = "Female"
+		case female = "Female"
 		
-		init(int: Int) {
+		init?(int: Int) {
 			if int == 0 {
 				self = .male
+			} else if int == 1 {
+				self = .female
 			} else {
-				self = .femele
+				return nil
+			}
+		}
+		
+		var intValue: Int {
+			if self == .male {
+				return 0
+			} else {
+				return 1
 			}
 		}
 	}
@@ -89,7 +113,7 @@ extension User {
 	
 	var gender: Gender? {
 		if let genderInt = _gender {
-			return .init(int: genderInt)
+			return Gender.init(int: genderInt)
 		}
 		return nil
 	}

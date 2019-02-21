@@ -12,4 +12,6 @@ protocol EditProfileView: View, TableViewUpdatable {
 	var textFieldDelegate: UITextFieldDelegate { get }
 	var helperView: UIView { get }
 	var viewForDateInput: UIDatePicker { get }
+	
+	var avatar: UIImage? { get }
 }

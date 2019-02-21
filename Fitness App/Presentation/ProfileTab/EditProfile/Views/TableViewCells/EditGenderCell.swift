@@ -9,12 +9,13 @@
 import UIKit
 
 class EditGenderCell: UITableViewCell, ConfigurableCell {
-	typealias DataType = User.Gender?
+	typealias DataType = (gender: User.Gender?, updateHandler: (User.Gender) -> Void)
 	
 	@IBOutlet private weak var segmentedControl: UISegmentedControl!
+	private var updateHandler: ((User.Gender) -> Void)!
 	
-	func configure(data: User.Gender?) {
-		if let gender = data {
+	func configure(data: DataType) {
+		if let gender = data.gender {
 			if gender == .male {
 				segmentedControl.selectedSegmentIndex = 1
 			} else {
@@ -31,6 +32,30 @@ class EditGenderCell: UITableViewCell, ConfigurableCell {
 		
 		segmentedControl.setTitleTextAttributes(normalTextAttributes, for: .normal)
 		segmentedControl.setTitleTextAttributes(selectedTextAttirbutes, for: .selected)
+		
+		self.updateHandler = data.updateHandler
+		guard let actions = segmentedControl.actions(forTarget: self, forControlEvent: .valueChanged) else {
+			addAction()
+			return
+		}
+		if actions.isEmpty {
+			addAction()
+		}
+	}
+	
+	private func addAction() {
+		segmentedControl.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+	}
+	
+	@objc private func valueChanged() {
+		let index = segmentedControl.selectedSegmentIndex
+		let gender: User.Gender
+		if index == 0 {
+			gender = .female
+		} else {
+			gender = .male
+		}
+		updateHandler(gender)
 	}
 	
 }

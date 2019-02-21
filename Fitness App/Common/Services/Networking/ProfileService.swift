@@ -11,6 +11,8 @@ import Moya
 enum ProfileService {
 	case getUserInfo(token: String)
 	case getCoinsHistory(token: String)
+	case editUserInfo(token: String, newUser: User)
+	case editAvatar(token: String, data: Data)
 }
 
 extension ProfileService: TargetType {
@@ -23,21 +25,42 @@ extension ProfileService: TargetType {
 			return path + "info"
 		case .getCoinsHistory:
 			return path + "coins_history"
+		case .editUserInfo, .editAvatar:
+			return path + "edit"
 		}
 	}
 	
-	var method: Method { return .get }
+	var method: Method {
+		switch self {
+		case .getUserInfo, .getCoinsHistory:
+			return .get
+		case .editUserInfo, .editAvatar:
+			return .post
+		}
+	}
 	
 	var sampleData: Data { return .init() }
 	
-	var task: Task { return .requestPlain }
+	var task: Task {
+		switch self {
+		case .getUserInfo, .getCoinsHistory:
+			return .requestPlain
+		case .editUserInfo(_, let user):
+			return .requestJSONEncodable(user)
+		case .editAvatar(_, let data):
+			let avatarData = MultipartFormData(provider: .data(data), name: "avatar", fileName: "avatar.png", mimeType: "image/png")
+			return .uploadMultipart([avatarData])
+		}
+	}
 	
 	var headers: [String : String]? {
 		var headers = ["Content-type": "application/json",
 					   "Accept": "application/json"]
 		switch self {
 		case .getUserInfo(let token),
-			 .getCoinsHistory(let token):
+			 .getCoinsHistory(let token),
+			 .editUserInfo(let token, _),
+			 .editAvatar(let token, _):
 			headers["Authorization"] = "Bearer \(token)"
 		}
 		return headers

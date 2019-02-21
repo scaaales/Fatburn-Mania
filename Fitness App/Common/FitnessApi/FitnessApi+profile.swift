@@ -53,5 +53,33 @@ extension FitnessApi {
 			})
 		}
 		
+		func updateUser(_ user: User,
+						onComplete: @escaping () -> Void,
+						onSuccess: @escaping () -> Void,
+						onError: @escaping OnErrorCompletion) {
+			request = provider.request(.editUserInfo(token: token, newUser: user),
+									   completion: { result in
+										onComplete()
+										BaseApi.handleResult(result, onSuccess: { json in
+											print(json)
+											onSuccess()
+										}, onError: onError)
+			})
+		}
+		
+		func updateAvatar(_ data: Data,
+						  onComplete: @escaping () -> Void,
+						  onSuccess: @escaping () -> Void,
+						  onError: @escaping OnErrorCompletion) {
+			request = provider.request(.editAvatar(token: token, data: data),
+									   completion: { result in
+										onComplete()
+										BaseApi.handleResult(result, onSuccess: { json in
+											print(json)
+											onSuccess()
+										}, onError: onError)
+			})
+		}
+		
 	}
 }
