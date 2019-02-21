@@ -17,10 +17,8 @@ extension FitnessApi {
 		// register
 		typealias OnSuccessRegisterCompletion = (_ message: String) -> Void
 		
-		func registerUserWith(name: String,
-							  phone: String,
-							  email: String,
-							  password: String,
+		func registerUserWith(name: String, phone: String,
+							  email: String, password: String,
 							  onComplete: @escaping () -> Void,
 							  onSuccess: @escaping OnSuccessRegisterCompletion,
 							  onError: @escaping OnErrorCompletion) {
@@ -59,8 +57,7 @@ extension FitnessApi {
 		// login
 		typealias OnSuccessLoginCompletion = (_ accessToker: String, _ expiresIn: Int) -> Void
 		
-		func login(email: String,
-				   password: String,
+		func login(email: String, password: String,
 				   onComplete: @escaping () -> Void,
 				   onSuccess: @escaping OnSuccessLoginCompletion,
 				   onError: @escaping OnErrorCompletion) {

@@ -14,21 +14,24 @@ class CoinsHistoryPresenter<V: CoinsHistoryView>: Presenter {
 	
 	weak var view: View!
 	private var viewModel: CoinsHistoryTableViewModel!
-	private var profileAPI: FitnessApi.Profile!
+	private let profileAPI: FitnessApi.Profile
 	
 	required init(view: View) {
 		self.view = view
+		
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else {
+			fatalError("cannot find access token")
+		}
+		
+		profileAPI = .init(token: token)
 	}
 	
-	func getHistory() {		
-		let keychain = KeychainSwift()
-		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
-		
+	func getHistory() {
 		view.disableUserInteraction()
 		view.showLoader()
 		
-		profileAPI = .init(token: token)
-		profileAPI.getCoinsHistory(token: token, onComplete: { [weak self] in
+		profileAPI.getCoinsHistory(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
 		}, onSuccess: { [weak self] coinsHistory in

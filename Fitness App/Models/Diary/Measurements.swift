@@ -13,5 +13,24 @@ struct Measurements {
 	let waist: Int
 	let thighs: Int
 	let hip: Int
-	let weight: Int
+	let weight: Double
+	let dateString: String?
+}
+
+extension Measurements: Codable {
+	var date: Date? {
+		guard let dateString = dateString else { return nil }
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+		
+		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+		
+		return dateFormatter.date(from: dateString)!
+	}
+	
+	enum CodingKeys: String, CodingKey {
+		case chest, waist, thighs, weight
+		case dateString = "created_at"
+		case hip = "hips"
+	}
 }

@@ -16,10 +16,16 @@ class BodyMeasurementCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var newValueLabel: UILabel!
 	
 	func configure(data: Measurement) {
-		oldValueLabel.text = "\(data.firstValue) \(data.unit)"
+		if let oldValue = data.firstValue {
+			oldValueLabel.text = String(format: "%g", oldValue) + " \(data.unit)"
+		} else {
+			oldValueLabel.text = "--"
+		}
+		
 		nameLabel.text = data.name
+		
 		if let newValue = data.secondValue {
-			newValueLabel.text = "\(newValue) \(data.unit)"
+			newValueLabel.text = String(format: "%g", newValue) + " \(data.unit)"
 		} else {
 			newValueLabel.text = "--"
 		}

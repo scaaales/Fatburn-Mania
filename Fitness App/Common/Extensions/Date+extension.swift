@@ -44,12 +44,20 @@ extension Date {
 		return "\(diff) weeks ago"
 	}
 	
-	static var todayWithCurrentTime: String {
+	var formattedStringWithTime: String {
 		let dateFormattet = DateFormatter()
 		
 		dateFormattet.dateFormat = "dd.MM.yyyy HH:mm"
 		
-		return dateFormattet.string(from: Date())
+		return dateFormattet.string(from: self)
+	}
+	
+	var formattedStringWithBlankTime: String {
+		let dateFormattet = DateFormatter()
+		
+		dateFormattet.dateFormat = "dd.MM.yyyy --:--"
+		
+		return dateFormattet.string(from: self)
 	}
 	
 	var month: Int {

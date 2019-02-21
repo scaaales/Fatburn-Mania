@@ -18,10 +18,12 @@ class StorePresenter<V: StoreView>: Presenter {
 	
 	required init(view: View) {
 		self.view = view
+		
 		let keychain = KeychainSwift()
 		guard let token = keychain.get(.keychainKeyAccessToken) else {
-			fatalError("no token found!")
+			fatalError("cannot find access token")
 		}
+		
 		storeApi = .init(token: token)
 	}
 	

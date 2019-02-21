@@ -17,8 +17,7 @@ extension FitnessApi {
 			let success: Bool
 		}
 		
-		func getUserInfo(token: String,
-						 onComplete: @escaping () -> Void,
+		func getUserInfo(onComplete: @escaping () -> Void,
 						 onSuccess: @escaping (User) -> Void,
 						 onError: @escaping OnErrorCompletion) {
 			request = provider.request(.getUserInfo(token: token), completion: { result in
@@ -41,8 +40,7 @@ extension FitnessApi {
 			}
 		}
 		
-		func getCoinsHistory(token: String,
-							 onComplete: @escaping () -> Void,
+		func getCoinsHistory(onComplete: @escaping () -> Void,
 							 onSuccess: @escaping ([CoinsHistory]) -> Void,
 							 onError: @escaping OnErrorCompletion) {
 			request = provider.request(.getCoinsHistory(token: token), completion: { result in

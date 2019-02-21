@@ -9,7 +9,7 @@
 import UIKit
 
 class MeasureHistoryCell: UITableViewCell, ConfigurableCell {
-	typealias DataType = MeasureHistory
+	typealias DataType = Measurements
 	
 	@IBOutlet private weak var dateLabel: UILabel!
 	@IBOutlet private weak var chestValueLabel: UILabel!
@@ -18,16 +18,20 @@ class MeasureHistoryCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var hipValueLabel: UILabel!
 	@IBOutlet private weak var weightValueLabel: UILabel!
 
-	func configure(data: MeasureHistory) {
+	func configure(data: Measurements) {
 		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "dd MMMM yyyy"
+		dateFormatter.dateFormat = "dd MMMM yyyy HH:mm"
 		
-		dateLabel.text = dateFormatter.string(from: data.date).lowercased()
-		chestValueLabel.text = "\(data.measurements.chest)"
-		waistValueLabel.text = "\(data.measurements.waist)"
-		thighsValueLabel.text = "\(data.measurements.thighs)"
-		hipValueLabel.text = "\(data.measurements.hip)"
-		weightValueLabel.text = "\(data.measurements.weight)"
+		if let date = data.date {
+			dateLabel.text = dateFormatter.string(from: date).lowercased()
+		} else {
+			dateLabel.text = "Unknown date"
+		}
+		chestValueLabel.text = "\(data.chest)"
+		waistValueLabel.text = "\(data.waist)"
+		thighsValueLabel.text = "\(data.thighs)"
+		hipValueLabel.text = "\(data.hip)"
+		weightValueLabel.text = String(format: "%g", data.weight)
 	}
 	
 }

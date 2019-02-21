@@ -182,6 +182,9 @@
 		B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D477F21E62AB000D5C050 /* UserDataCell.swift */; };
 		B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */; };
 		B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */; };
+		B3A2E1C0221D524800C1DF93 /* Character+isNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E1BF221D524800C1DF93 /* Character+isNumber.swift */; };
+		B3A2E1C2221D5D6800C1DF93 /* Int+doubleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E1C1221D5D6800C1DF93 /* Int+doubleValue.swift */; };
+		B3A2E1C4221DAB2300C1DF93 /* HealthKitWaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2E1C3221DAB2300C1DF93 /* HealthKitWaterService.swift */; };
 		B3B361D82209C6BD002E006F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B361D72209C6BD002E006F /* AuthService.swift */; };
 		B3B361DA220A0007002E006F /* NetworkActivityPlugin+default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */; };
 		B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */; };
@@ -200,6 +203,8 @@
 		B3D737E521EF772E00DDF602 /* TimerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737E121EF772E00DDF602 /* TimerInitializer.swift */; };
 		B3D737E621EF772E00DDF602 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737E221EF772E00DDF602 /* TimerViewController.swift */; };
 		B3D737E721EF772E00DDF602 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737E321EF772E00DDF602 /* TimerView.swift */; };
+		B3DC18AE221BF2F600221F1D /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC18AD221BF2F600221F1D /* DiaryService.swift */; };
+		B3DC18B0221BF8AB00221F1D /* FitnessApi+diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC18AF221BF8AB00221F1D /* FitnessApi+diary.swift */; };
 		B3DC1B6221EDD6FF00883C0F /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B5E21EDD6FF00883C0F /* EditProfilePresenter.swift */; };
 		B3DC1B6321EDD6FF00883C0F /* EditProfileInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B5F21EDD6FF00883C0F /* EditProfileInitializer.swift */; };
 		B3DC1B6421EDD6FF00883C0F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC1B6021EDD6FF00883C0F /* EditProfileViewController.swift */; };
@@ -223,7 +228,6 @@
 		B3E55C752200B6C60042F237 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E55C742200B6C60042F237 /* PushNotification.swift */; };
 		B3E55C772200BC020042F237 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E55C762200BC020042F237 /* NotificationCell.swift */; };
 		B3E7578B21F77950002B5AC7 /* MeasureHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7578A21F77950002B5AC7 /* MeasureHistoryCell.swift */; };
-		B3E7578D21F779E1002B5AC7 /* MeasureHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */; };
 		B3EFDF4821F76E7D00A8F61F /* MeasureHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4421F76E7D00A8F61F /* MeasureHistoryPresenter.swift */; };
 		B3EFDF4921F76E7D00A8F61F /* MeasureHistoryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */; };
 		B3EFDF4A21F76E7D00A8F61F /* MeasureHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */; };
@@ -438,6 +442,9 @@
 		B39D477F21E62AB000D5C050 /* UserDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCell.swift; sourceTree = "<group>"; };
 		B39D478121E62B3300D5C050 /* UserButtonArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButtonArrowCell.swift; sourceTree = "<group>"; };
 		B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithSeperator.swift; sourceTree = "<group>"; };
+		B3A2E1BF221D524800C1DF93 /* Character+isNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+isNumber.swift"; sourceTree = "<group>"; };
+		B3A2E1C1221D5D6800C1DF93 /* Int+doubleValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+doubleValue.swift"; sourceTree = "<group>"; };
+		B3A2E1C3221DAB2300C1DF93 /* HealthKitWaterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitWaterService.swift; sourceTree = "<group>"; };
 		B3B361D72209C6BD002E006F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkActivityPlugin+default.swift"; sourceTree = "<group>"; };
 		B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideoCell.swift; sourceTree = "<group>"; };
@@ -456,6 +463,8 @@
 		B3D737E121EF772E00DDF602 /* TimerInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInitializer.swift; sourceTree = "<group>"; };
 		B3D737E221EF772E00DDF602 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B3D737E321EF772E00DDF602 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B3DC18AD221BF2F600221F1D /* DiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryService.swift; sourceTree = "<group>"; };
+		B3DC18AF221BF8AB00221F1D /* FitnessApi+diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+diary.swift"; sourceTree = "<group>"; };
 		B3DC1B5E21EDD6FF00883C0F /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
 		B3DC1B5F21EDD6FF00883C0F /* EditProfileInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInitializer.swift; sourceTree = "<group>"; };
 		B3DC1B6021EDD6FF00883C0F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -479,7 +488,6 @@
 		B3E55C742200B6C60042F237 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		B3E55C762200BC020042F237 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		B3E7578A21F77950002B5AC7 /* MeasureHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryCell.swift; sourceTree = "<group>"; };
-		B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistory.swift; sourceTree = "<group>"; };
 		B3EFDF4421F76E7D00A8F61F /* MeasureHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryPresenter.swift; sourceTree = "<group>"; };
 		B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryInitializer.swift; sourceTree = "<group>"; };
 		B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryViewController.swift; sourceTree = "<group>"; };
@@ -621,6 +629,7 @@
 				B30F287921F2342D000954DB /* TimerService.swift */,
 				B323C04A220215C90059AFB9 /* TextFieldAssistant.swift */,
 				B319153D22142C0200F019ED /* PushNotificationsService.swift */,
+				B3A2E1C3221DAB2300C1DF93 /* HealthKitWaterService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -895,7 +904,6 @@
 				B3254F1A21D3E7CD00F99F91 /* MeasurementPeriod.swift */,
 				B3254F1C21D3E7CD00F99F91 /* DiaryTableViewModel.swift */,
 				B319155122146EE400F019ED /* Measurements.swift */,
-				B3E7578C21F779E1002B5AC7 /* MeasureHistory.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -1042,9 +1050,11 @@
 				B369573B21D514DF00735555 /* Date+extension.swift */,
 				B3B361D9220A0007002E006F /* NetworkActivityPlugin+default.swift */,
 				B39A6D2121FB64B000C5A06F /* Array+extension.swift */,
+				B3A2E1BF221D524800C1DF93 /* Character+isNumber.swift */,
 				B30F287B21F237DF000954DB /* TimeInterval+extension.swift */,
 				B3191544221442AB00F019ED /* Notification+names.swift */,
 				B39B71BF2215A2A2002F1747 /* URL+constants.swift */,
+				B3A2E1C1221D5D6800C1DF93 /* Int+doubleValue.swift */,
 				B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */,
 				B36B2F7321DE148600C5D07B /* String+constants.swift */,
 				B3728923220AF6BF0061822E /* String+validation.swift */,
@@ -1403,6 +1413,7 @@
 				B39B71BA2215A1B2002F1747 /* FitnessApi+auth.swift */,
 				B39B71BC2215A1EA002F1747 /* FitnessApi+store.swift */,
 				B38DD8CB221AE52E00C65E8E /* FitnessApi+profile.swift */,
+				B3DC18AF221BF8AB00221F1D /* FitnessApi+diary.swift */,
 			);
 			path = FitnessApi;
 			sourceTree = "<group>";
@@ -1465,6 +1476,7 @@
 				B3B361D72209C6BD002E006F /* AuthService.swift */,
 				B39B71B72215A121002F1747 /* StoreService.swift */,
 				B38DD8C9221AE2FC00C65E8E /* ProfileService.swift */,
+				B3DC18AD221BF2F600221F1D /* DiaryService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -2095,6 +2107,7 @@
 				B3DD925921FA0EB40017E723 /* WorkoutOfTheDay.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
 				B3033D3421E8DF5B0058626D /* VideoDetailsView.swift in Sources */,
+				B3A2E1C4221DAB2300C1DF93 /* HealthKitWaterService.swift in Sources */,
 				B3F732B621E7A8B30038ACB9 /* CourseVideosInitializer.swift in Sources */,
 				B31D2151220DC92C00DEEE76 /* NetworkingView.swift in Sources */,
 				B37CBA1921DE64C000834A98 /* LoginView.swift in Sources */,
@@ -2110,7 +2123,6 @@
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B39B71C42215C066002F1747 /* PopupShowable.swift in Sources */,
 				B39D478521E64E2B00D5C050 /* CellWithSeperator.swift in Sources */,
-				B3E7578D21F779E1002B5AC7 /* MeasureHistory.swift in Sources */,
 				B3B8D3B421E8B56000397AAB /* BasicTableViewDataSource.swift in Sources */,
 				B3DC1B6221EDD6FF00883C0F /* EditProfilePresenter.swift in Sources */,
 				B30A182221F8B8AF00A39131 /* Season.swift in Sources */,
@@ -2160,6 +2172,7 @@
 				B39D475C21E5FC9200D5C050 /* ProfileViewController.swift in Sources */,
 				B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */,
 				B3DC1B6C21EDF29A00883C0F /* RoundImageViewWithShadow.swift in Sources */,
+				B3A2E1C0221D524800C1DF93 /* Character+isNumber.swift in Sources */,
 				B38F17AA21F8A06000B70DBE /* WorkoutCell.swift in Sources */,
 				B30E9F9921ECD6D6006F33CE /* CoinsHistoryView.swift in Sources */,
 				B3FBA16D21EF493400B88AA3 /* PhotoCapturingService.swift in Sources */,
@@ -2193,6 +2206,7 @@
 				B36CD81921F5F96B007D4BE6 /* Song.swift in Sources */,
 				B30A181B21F8B68E00A39131 /* SeasonsViewController.swift in Sources */,
 				B30E9F7721EC934C006F33CE /* StoreItemCell.swift in Sources */,
+				B3DC18AE221BF2F600221F1D /* DiaryService.swift in Sources */,
 				B3D737DE21EF76FE00DDF602 /* CollageViewController.swift in Sources */,
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
 				B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */,
@@ -2213,6 +2227,7 @@
 				B30A181921F8B68E00A39131 /* SeasonsPresenter.swift in Sources */,
 				B36CD81421F5E6E0007D4BE6 /* UIButton+enabled.swift in Sources */,
 				B38B75FA22170F1E00B48E19 /* PhotoLevelPresenter.swift in Sources */,
+				B3A2E1C2221D5D6800C1DF93 /* Int+doubleValue.swift in Sources */,
 				B3DC1B6821EDDACD00883C0F /* EditProfileDataCell.swift in Sources */,
 				B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */,
 				B3254F4C21D3E7CE00F99F91 /* ConfigurableCell.swift in Sources */,
@@ -2290,6 +2305,7 @@
 				B3033D3221E8DF5B0058626D /* VideoDetailsInitializer.swift in Sources */,
 				B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
+				B3DC18B0221BF8AB00221F1D /* FitnessApi+diary.swift in Sources */,
 				B39B71BD2215A1EA002F1747 /* FitnessApi+store.swift in Sources */,
 				B3028AD721EF78FC00515CD8 /* MusicPlayerPresenter.swift in Sources */,
 				B3D3F59822008CFC0052976D /* NotificationsView.swift in Sources */,
@@ -2453,7 +2469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96533UDF7H;
 				INFOPLIST_FILE = "$(SRCROOT)/Fitness App/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2474,7 +2490,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96533UDF7H;
 				INFOPLIST_FILE = "$(SRCROOT)/Fitness App/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

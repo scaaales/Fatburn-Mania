@@ -101,23 +101,14 @@ class PhotoCapturingService: NSObject {
 }
 
 extension PhotoCapturingService: AVCapturePhotoCaptureDelegate {
-	func photoOutput(_ captureOutput: AVCapturePhotoOutput,
-					 didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
-					 previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
-					 resolvedSettings: AVCaptureResolvedPhotoSettings,
-					 bracketSettings: AVCaptureBracketedStillImageSettings?,
-					 error: Error?) {
+	func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
 		if let error = error {
 			print("Capture failed: \(error.localizedDescription)")
+			return
 		}
 		
-		if let sampleBuffer = photoSampleBuffer,
-			let previewBuffer = previewPhotoSampleBuffer,
-			let dataImage =  AVCapturePhotoOutput
-				.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer),
-			let dataProvider = CGDataProvider(data: dataImage as CFData),
-			let cgImageRef = CGImage(jpegDataProviderSource: dataProvider, decode: nil, shouldInterpolate: true, intent: .defaultIntent) {
-			let image = UIImage(cgImage: cgImageRef, scale: 1, orientation: .right)
+		if let imageData = photo.fileDataRepresentation(),
+			let image = UIImage(data: imageData) {
 			takePhotoCompletion?(image)
 		}
 	}

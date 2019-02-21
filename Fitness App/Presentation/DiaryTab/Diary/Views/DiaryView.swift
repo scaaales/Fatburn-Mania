@@ -8,9 +8,8 @@
 
 import UIKit
 
-protocol DiaryView: View, TableViewUpdatable {
-	func showLoader()
-	func hideLoader()
+protocol DiaryView: View, TableViewUpdatable, NetworkingView, PopupShowable {
 	func showTableView()
 	func hideTableView()
+	func setWaterProgressAnimated(currentValue: String, goalValue: String, progress: Float)
 }

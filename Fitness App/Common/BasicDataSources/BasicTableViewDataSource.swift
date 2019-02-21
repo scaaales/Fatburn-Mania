@@ -55,4 +55,12 @@ class BasicTableViewDataSource<CellType: UITableViewCell, DataType>: NSObject, U
 		sections = [newItems]
 	}
 	
+	func append(contentsOf newItems: [DataType]) {
+		sections[0].append(contentsOf: newItems)
+	}
+	
+	func numberOfItems() -> Int {
+		return sections[0].count
+	}
+	
 }

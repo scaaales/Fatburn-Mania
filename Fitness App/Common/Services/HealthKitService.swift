@@ -15,7 +15,7 @@ class HealthKitService {
 		case dataTypeNotAvailable
 	}
 	
-	private static let healthStore = HKHealthStore()
+	static let healthStore = HKHealthStore()
 	
 	// MARK: - Authorization
 	class func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Void) {
@@ -30,12 +30,14 @@ class HealthKitService {
 			let calories = HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed),
 			let proteins = HKObjectType.quantityType(forIdentifier: .dietaryProtein),
 			let fats = HKObjectType.quantityType(forIdentifier: .dietaryFatTotal),
-			let carbonites = HKObjectType.quantityType(forIdentifier: .dietaryCarbohydrates) else {
+			let carbonites = HKObjectType.quantityType(forIdentifier: .dietaryCarbohydrates),
+			let waist = HKObjectType.quantityType(forIdentifier: .waistCircumference),
+			let waight = HKObjectType.quantityType(forIdentifier: .bodyMass) else {
 				completion(false, HealthkitSetupError.dataTypeNotAvailable)
 				return
 		}
 		
-		let healthKitTypesToWrite: Set<HKSampleType> = [water]
+		let healthKitTypesToWrite: Set<HKSampleType> = [water, waist, waight]
 		
 		let healthKitTypesToRead: Set<HKObjectType> = [steps,
 													   water,
@@ -65,13 +67,17 @@ class HealthKitService {
 	class func getWater(on date: Date, completion: @escaping (Measurement?) -> Void) {
 		getPropertyValueFor(quantityIdentifier: .dietaryWater,
 							date: date,
-							unit: HKUnit.pintUS()) { result in
+							unit: .pintUS()) { result in
 								if let result = result {
-									let firstValue = Int(result)
+									let firstValue = result
 									let water = Measurement(name: "", firstValue: firstValue, secondValue: 2, unit: "pt")
-									completion(water)
+									DispatchQueue.main.async {
+										completion(water)
+									}
 								} else {
-									completion(nil)
+									DispatchQueue.main.async {
+										completion(nil)
+									}
 								}
 		}
 	}
@@ -82,7 +88,7 @@ class HealthKitService {
 							unit: .kilocalorie()) { result in
 								if let result = result {
 									let currentValue = Int(result)
-									let calories = Measurement(name: "Calories", firstValue: currentValue, secondValue: 1980, unit: "kcal")
+									let calories = Measurement(name: "Calories", firstValue: currentValue.doubleValue, secondValue: 1980, unit: "kcal")
 									completion(calories)
 								} else {
 									completion(nil)
@@ -96,7 +102,7 @@ class HealthKitService {
 							unit: .gram()) { result in
 								if let result = result {
 									let currentValue = Int(result)
-									let proteins = Measurement(name: "Proteins", firstValue: currentValue, secondValue: 500, unit: "oz")
+									let proteins = Measurement(name: "Proteins", firstValue: currentValue.doubleValue, secondValue: 500, unit: "oz")
 									completion(proteins)
 								} else {
 									completion(nil)
@@ -110,7 +116,7 @@ class HealthKitService {
 							unit: .gram()) { result in
 								if let result = result {
 									let currentValue = Int(result)
-									let fats = Measurement(name: "Fats", firstValue: currentValue, secondValue: 500, unit: "oz")
+									let fats = Measurement(name: "Fats", firstValue: currentValue.doubleValue, secondValue: 500, unit: "oz")
 									completion(fats)
 								} else {
 									completion(nil)
@@ -124,13 +130,30 @@ class HealthKitService {
 							unit: .gram()) { result in
 								if let result = result {
 									let currentValue = Int(result)
-									let carbohydrates = Measurement(name: "Carbohydrates", firstValue: currentValue, secondValue: 500, unit: "oz")
+									let carbohydrates = Measurement(name: "Carbohydrates", firstValue: currentValue.doubleValue, secondValue: 500, unit: "oz")
 									completion(carbohydrates)
 								} else {
 									completion(nil)
 								}
 		}
 	}
+	
+	class func saveWaistValue(_ value: Double, on date: Date) {
+		savePropertyValueFor(quantityIdentifier: .waistCircumference,
+							 date: date, value: value,
+							 unit: .inch()) {
+								
+		}
+	}
+	
+	class func saveWeightValue(_ value: Double, on date: Date) {
+		savePropertyValueFor(quantityIdentifier: .bodyMass,
+							 date: date, value: value,
+							 unit: .pound()) {
+								
+		}
+	}
+	
 }
 
 private extension HealthKitService {
@@ -161,5 +184,26 @@ private extension HealthKitService {
 		}
 		
 		healthStore.execute(query)
+	}
+	
+	class func savePropertyValueFor(quantityIdentifier: HKQuantityTypeIdentifier,
+									date: Date,
+									value: Double,
+									unit: HKUnit,
+									completion: @escaping () -> Void) {
+		guard let quantityType = HKQuantityType.quantityType(forIdentifier: quantityIdentifier) else {
+			fatalError("\(quantityIdentifier) Type is no longer available in HealthKit")
+		}
+		
+		let quantity = HKQuantity(unit: unit, doubleValue: value)
+		
+		let object = HKQuantitySample(type: quantityType, quantity: quantity,
+									  start: date, end: date)
+		healthStore.save(object) { success, error in
+			print("success =", success)
+			if let error = error {
+				print("error =", error)
+			}
+		}
 	}
 }
