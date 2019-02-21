@@ -101,6 +101,7 @@
 		B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394CE21DF827F00D6013F /* TutorialViewController.swift */; };
 		B33394D121DF915F00D6013F /* LoginStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33394D021DF915F00D6013F /* LoginStack.storyboard */; };
 		B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394D221DFA9D300D6013F /* TutorialCell.swift */; };
+		B3415587221F1BA700236B91 /* UIImage+fixOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3415586221F1BA700236B91 /* UIImage+fixOrientation.swift */; };
 		B35E620F21F1F651001CB678 /* UIImageView+rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */; };
 		B35E621121F21298001CB678 /* BottomRoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */; };
 		B35E621321F2231C001CB678 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E621221F2231C001CB678 /* TimerCell.swift */; };
@@ -360,6 +361,7 @@
 		B33394CE21DF827F00D6013F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		B33394D021DF915F00D6013F /* LoginStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStack.storyboard; sourceTree = "<group>"; };
 		B33394D221DFA9D300D6013F /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
+		B3415586221F1BA700236B91 /* UIImage+fixOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+fixOrientation.swift"; sourceTree = "<group>"; };
 		B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+rotate.swift"; sourceTree = "<group>"; };
 		B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRoundedShadowView.swift; sourceTree = "<group>"; };
 		B35E621221F2231C001CB678 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
@@ -1065,6 +1067,7 @@
 				B30E9F7F21EC9701006F33CE /* UIView+cornerRadius.swift */,
 				B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */,
 				B39B71C12215AA4A002F1747 /* UIImageView+imageFromURL.swift */,
+				B3415586221F1BA700236B91 /* UIImage+fixOrientation.swift */,
 				B30E9F7C21EC95BD006F33CE /* Integer+formatted.swift */,
 			);
 			path = Extensions;
@@ -2306,6 +2309,7 @@
 				B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
 				B3DC18B0221BF8AB00221F1D /* FitnessApi+diary.swift in Sources */,
+				B3415587221F1BA700236B91 /* UIImage+fixOrientation.swift in Sources */,
 				B39B71BD2215A1EA002F1747 /* FitnessApi+store.swift in Sources */,
 				B3028AD721EF78FC00515CD8 /* MusicPlayerPresenter.swift in Sources */,
 				B3D3F59822008CFC0052976D /* NotificationsView.swift in Sources */,

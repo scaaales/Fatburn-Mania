@@ -59,7 +59,9 @@ class PhotoLibraryService: NSObject {
 
 extension PhotoLibraryService: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 	@objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-		getImageCompletion?(info[.originalImage] as? UIImage)
+		let image = info[.originalImage] as? UIImage
+		let fixedImage = image?.fixOrientation()
+		getImageCompletion?(fixedImage)
 		viewControllerToPresentPicker.dismiss(animated: true)
 	}
 }
