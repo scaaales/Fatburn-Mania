@@ -13,7 +13,8 @@ protocol EditProfileView: View, TableViewUpdatable, NetworkingView, PopupShowabl
 	var helperView: UIView { get }
 	var viewForDateInput: UIDatePicker { get }
 	
-	var avatar: UIImage? { get }
+	var viewControllerToPresentPicker: UIViewController { get }
+	func setPhoto(_ image: UIImage) 
 	
-	func closeItself() 
+	func closeItself()
 }

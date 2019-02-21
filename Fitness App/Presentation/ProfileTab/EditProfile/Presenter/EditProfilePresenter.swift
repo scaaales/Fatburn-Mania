@@ -16,6 +16,10 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 	private var viewModel: EditProfileTableViewModel!
 	private let profileAPI: FitnessApi.Profile
 	private var oldEmail: String!
+	private var photoLibraryService: PhotoLibraryService!
+	private var avatarPhoto: UIImage?
+	private var requestsDispatchGroup: DispatchGroup?
+	private var successCompletionsDispatchGroup: DispatchGroup?
 	
 	var user: User! {
 		didSet {
@@ -51,11 +55,28 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 		}
 		
 		newUser.avatar = nil
-
+		
+		requestsDispatchGroup = .init()
+		successCompletionsDispatchGroup = .init()
+		
+		if let avatar = avatarPhoto {
+			successCompletionsDispatchGroup?.enter()
+			requestsDispatchGroup?.enter()
+			uploadImage(avatar)
+		}
+		
+		successCompletionsDispatchGroup?.enter()
+		requestsDispatchGroup?.enter()
 		uploadNewUserInfo(newUser)
-//		if let avatar = avatar {
-//			uploadImage(avatar)
-//		}
+		
+		successCompletionsDispatchGroup?.notify(queue: .main, execute: { [weak self] in
+			self?.view.closeItself()
+		})
+		
+		requestsDispatchGroup?.notify(queue: .main, execute: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		})
 	}
 	
 	private func uploadNewUserInfo(_ user: User) {
@@ -64,11 +85,10 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 		
 		profileAPI.updateUser(user, onComplete: { [weak self] in
 			print("updateUser completed")
-			self?.view.enableUserInteraction()
-			self?.view.hideLoader()
+			self?.requestsDispatchGroup?.leave()
 		}, onSuccess: { [weak self] user in
 			self?.user = user
-			self?.view.closeItself()
+			self?.successCompletionsDispatchGroup?.leave()
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
 		}
@@ -76,10 +96,12 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 	
 	private func uploadImage(_ image: UIImage) {
 		guard let avatarData = image.pngData() else { return }
-		profileAPI.updateAvatar(avatarData, onComplete: {
+		profileAPI.updateAvatar(avatarData, onComplete: { [weak self] in
 			print("updateAvatar completed")
-		}, onSuccess: {
-			
+			self?.requestsDispatchGroup?.leave()
+		}, onSuccess: { [weak self] user in
+			self?.user = user
+			self?.successCompletionsDispatchGroup?.leave()
 		}) { errorText in
 			print(errorText)
 		}
@@ -87,5 +109,29 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 	
 	func getBirthdayDate() -> Date {
 		return user.dateOfBirth ?? .init()
+	}
+	
+	func addPhoto() {
+		photoLibraryService = PhotoLibraryService(viewControllerToPresentPicker: view.viewControllerToPresentPicker)
+		authorizeIfNeeded { [weak self] in
+			self?.photoLibraryService.getImage { image in
+				if let image = image {
+					self?.avatarPhoto = image
+					self?.view.setPhoto(image)
+				}
+			}
+		}
+	}
+	
+	private func authorizeIfNeeded(successCompletion: @escaping () -> Void) {
+		if photoLibraryService.authorized {
+			successCompletion()
+		} else {
+			photoLibraryService.authorize { success in
+				if success {
+					successCompletion()
+				}
+			}
+		}
 	}
 }

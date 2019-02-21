@@ -89,15 +89,15 @@ extension FitnessApi {
 		
 		func updateAvatar(_ data: Data,
 						  onComplete: @escaping () -> Void,
-						  onSuccess: @escaping () -> Void,
+						  onSuccess: @escaping (User) -> Void,
 						  onError: @escaping OnErrorCompletion) {
 			request = provider.request(.editAvatar(token: token, data: data),
 									   completion: { result in
 										onComplete()
-										BaseApi.handleResult(result, onSuccess: { json in
-											print(json)
-											onSuccess()
-										}, onError: onError)
+										FitnessApi.Profile.handleUpdateUserResult(result,
+																				  onComplete: onComplete,
+																				  onSuccess: onSuccess,
+																				  onError: onError)
 			})
 		}
 		

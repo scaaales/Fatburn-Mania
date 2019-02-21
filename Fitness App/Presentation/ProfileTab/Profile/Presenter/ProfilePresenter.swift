@@ -73,7 +73,6 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	}
 	
 	func updateUser(with newUser: User) {
-		print("got new user with \(newUser.fullName), \(newUser.lastName).")
 		self.user = newUser
 		viewModel = .init(user: user)
 		view.setTableViewDataSource(viewModel)

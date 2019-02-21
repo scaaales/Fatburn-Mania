@@ -41,9 +41,23 @@ class EditProfileViewController: UITableViewController {
 		presenter.saveChanges()
 	}
 	
+	@IBAction private func addAvatarTapped() {
+		presenter.addPhoto()
+	}
+	
 }
 
 extension EditProfileViewController: EditProfileView {
+	func setPhoto(_ image: UIImage) {
+		let header = tableView.tableHeaderView
+		guard let imageView = header?.subviews.first(where: { $0 is UIImageView }) as? UIImageView,
+			let button = header?.subviews.first(where: { $0 is UIButton }) as? UIButton else { return }
+		imageView.image = image
+		button.setImage(.init(), for: .normal)
+	}
+	
+	var viewControllerToPresentPicker: UIViewController { return self }
+	
 	func disableUserInteraction() {
 		view.isUserInteractionEnabled = false
 	}
@@ -58,12 +72,6 @@ extension EditProfileViewController: EditProfileView {
 	
 	func hideLoader() {
 		loader.stopAnimating()
-	}
-	
-	var avatar: UIImage? {
-		let header = tableView.tableHeaderView
-		guard let imageView = header?.subviews.first(where: { $0 is UIImageView }) as? UIImageView else { return nil }
-		return imageView.image
 	}
 
 	var helperView: UIView {
