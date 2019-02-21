@@ -18,7 +18,6 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	private let dispatchGroup = DispatchGroup()
 	private var measurementsCache = [Date: Measurements?]()
 	private var selectedDate = Date()
-	private var waterService = HealthKitWaterService()
 	
 	required init(view: View) {
 		self.view = view
@@ -43,18 +42,19 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	
 	func getHealthInfo(on date: Date) {
 		viewModel.leftDateString = date.formattedStringWithBlankTime
-		selectedDate = date
 		
 		let calendar = Calendar.current
 		let setToday = calendar.isDateInToday(date)
 		
-		if let cachedMeasurements = measurementsCache[date] { // load measurements from cache
+		selectedDate = date
+		
+		if let cachedMeasurements = measurementsCache[date.startOfDay] { // load measurements from cache
 			handleNewMeasurements(cachedMeasurements, setToday: setToday)
 		} else { // load measurements from API
 			view.disableUserInteraction()
 			view.hideTableView()
 			view.showLoader()
-			getMeasurements(on: date, setToday: setToday)
+			getMeasurements(on: selectedDate, setToday: setToday)
 		}
 		
 		// get from healthkit
@@ -71,11 +71,16 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 			}
 		}
 		
-		dispatchGroup.notify(queue: .main) { [weak self] in
-			self?.view.showTableView()
-			self?.view.update()
-		}
+	}
+	
+	func updateCurrentDay(with newMeasurements: Measurements) {
+		measurementsCache[Date().startOfDay] = newMeasurements
 		
+		viewModel.rightBodyMeasurements = newMeasurements
+		if let dateString = newMeasurements.date?.formattedStringWithTime {
+			viewModel.rightDateString = dateString
+		}
+		view.update()
 	}
 	
 	private func getMeasurements(on date: Date, setToday: Bool) {
@@ -86,7 +91,7 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 			}, onSuccess: { [weak self] measurements in
 				guard let self = self else { return }
 				self.handleNewMeasurements(measurements.last, setToday: setToday)
-				self.measurementsCache[date] = measurements.last
+				self.measurementsCache[date.startOfDay] = measurements.last
 				self.dispatchGroup.leave()
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
@@ -138,6 +143,11 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 			  execute: HealthKitService.getWater, date: date) { [weak self] water in
 				self?.viewModel.water = water
 		}
+		
+		dispatchGroup.notify(queue: .main) { [weak self] in
+			self?.view.showTableView()
+			self?.view.update()
+		}
 	}
 	
 	private func addTo<T>(dispatchGroup: DispatchGroup,
@@ -152,13 +162,27 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	}
 	
 	func addWaterInOz(amount: Double) {
-		waterService.addWaterInOunces(amount, on: selectedDate, successCompletion: { [weak self] in
+		let calendar = Calendar.current
+		var date = selectedDate
+		
+		if calendar.isDateInToday(selectedDate) {
+			date = .init()
+		}
+		
+		HealthKitWaterService.addWaterInOunces(amount, on: date, successCompletion: { [weak self] in
 			self?.updateWater()
 		})
 	}
 	
 	func addWaterInPt(amount: Double) {
-		waterService.addWaterInPints(amount, on: selectedDate, successCompletion: { [weak self] in
+		let calendar = Calendar.current
+		var date = selectedDate
+		
+		if calendar.isDateInToday(selectedDate) {
+			date = .init()
+		}
+		
+		HealthKitWaterService.addWaterInPints(amount, on: date, successCompletion: { [weak self] in
 			self?.updateWater()
 		})
 	}
@@ -180,13 +204,13 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	}
 	
 	func deleteWater() {
-		waterService.deleteWaterOn(date: selectedDate, successCompletion: { [weak self] in
-			guard var oldWaterMeasurement = self?.viewModel.water else { return }
-			oldWaterMeasurement.firstValue = 0
-			self?.viewModel.water = oldWaterMeasurement
-			
-			self?.view.setWaterProgressAnimated(currentValue: "0 pt", goalValue: "2 pt", progress: 0)
-		})
+		HealthKitWaterService.deleteWaterOn(date: selectedDate) { [weak self] in
+			self?.updateWater()
+		}
+	}
+	
+	func todayMeasurementsChanged() {
+		measurementsCache[Date().startOfDay] = nil
 	}
 	
 }

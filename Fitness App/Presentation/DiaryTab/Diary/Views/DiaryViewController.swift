@@ -14,6 +14,7 @@ class DiaryViewController: UIViewController {
 	@IBOutlet private weak var calendarView: CalendarView!
 	@IBOutlet private weak var tableView: UITableView!
 	@IBOutlet private weak var blurredLoader: BlurredLoader!
+	private var isFirstSelection = true
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -53,6 +54,12 @@ class DiaryViewController: UIViewController {
 	
 	@IBAction private func deleteWaterTapped() {
 		presenter.deleteWater()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let addNewMeasurementsVC = segue.destination as? AddNewMeasurementsViewController {
+			addNewMeasurementsVC.diaryViewController = self
+		}
 	}
 }
 
@@ -125,6 +132,10 @@ extension DiaryViewController {
 
 extension DiaryViewController: CalendarViewDateDelegate {
 	func didSelectDate(_ date: Date) {
-		presenter.getHealthInfo(on: date)
+		if isFirstSelection {
+			isFirstSelection = false
+		} else {
+			presenter.getHealthInfo(on: date)
+		}
 	}
 }

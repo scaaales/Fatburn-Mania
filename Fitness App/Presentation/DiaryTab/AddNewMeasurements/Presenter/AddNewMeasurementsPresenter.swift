@@ -15,6 +15,7 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 	weak var view: View!
 	private let diaryApi: FitnessApi.Diary
 	private let savingDate = Date()
+	private(set) var addedMeasurements: Measurements?
 	
 	required init(view: View) {
 		self.view = view
@@ -36,11 +37,19 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 		let weightString = view.weight
 		if intFields.count == 4,
 			let weightDouble = Double(weightString), isWeightValid(weightString) {
+			let dateFormatter = DateFormatter()
+			dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+			
+			dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+			
+			let dateString = dateFormatter.string(from: savingDate)
+			
 			let measurements = Measurements(chest: intFields[0],
 											waist: intFields[1],
 											thighs: intFields[2],
 											hip: intFields[3],
-											weight: weightDouble)
+											weight: weightDouble,
+											dateString: dateString)
 			makeAddMeasurementsRequest(measurements)
 		} else {
 			let errorText = "Please ensure all measurements are filled"
@@ -57,8 +66,10 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 			self?.view.hideLoader()
 		}, onSuccess: { [weak self] in
 			guard let self = self else { return }
+			self.addedMeasurements = measurements
 			HealthKitService.saveWaistValue(measurements.waist.doubleValue, on: self.savingDate)
 			HealthKitService.saveWeightValue(measurements.weight, on: self.savingDate)
+			self.view.closeItself()
 			// TODO: Handler result later
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)

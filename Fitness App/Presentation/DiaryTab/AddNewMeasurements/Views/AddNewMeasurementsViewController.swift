@@ -19,6 +19,7 @@ class AddNewMeasurementsViewController: UIViewController {
 	@IBOutlet private weak var weightTextField: UITextField!
 	
 	private var textFieldAssistant: TextFieldAssistant!
+	var diaryViewController: DiaryViewController!
 	
 	lazy private var loader: BlurredLoader = {
 		let loader = BlurredLoader()
@@ -64,7 +65,13 @@ class AddNewMeasurementsViewController: UIViewController {
 	}
 	
 	@IBAction func closeItself() {
-		dismiss(animated: true)
+		dismiss(animated: true) { [weak self] in
+			guard let self = self else { return }
+			if let newMeasurements = self.presenter.addedMeasurements {
+				self.diaryViewController.presenter.todayMeasurementsChanged()
+				self.diaryViewController.presenter.updateCurrentDay(with: newMeasurements)
+			}
+		}
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

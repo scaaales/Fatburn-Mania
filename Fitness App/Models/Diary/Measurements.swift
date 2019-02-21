@@ -14,22 +14,12 @@ struct Measurements {
 	let thighs: Int
 	let hip: Int
 	let weight: Double
-	private let _dateString: String?
-	
-	init(chest: Int, waist: Int, thighs: Int, hip: Int, weight: Double) {
-		self.chest = chest
-		self.waist = waist
-		self.thighs = thighs
-		self.hip = hip
-		self.weight = weight
-		self._dateString = nil
-	}
+	let dateString: String?
 }
-
 
 extension Measurements: Codable {
 	var date: Date? {
-		guard let dateString = _dateString else { return nil }
+		guard let dateString = dateString else { return nil }
 		let dateFormatter = DateFormatter()
 		dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
 		
@@ -40,7 +30,7 @@ extension Measurements: Codable {
 	
 	enum CodingKeys: String, CodingKey {
 		case chest, waist, thighs, weight
-		case _dateString = "created_at"
+		case dateString = "created_at"
 		case hip = "hips"
 	}
 }

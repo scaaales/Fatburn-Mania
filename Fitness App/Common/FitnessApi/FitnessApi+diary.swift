@@ -50,7 +50,9 @@ extension FitnessApi {
 									   completion: { result in
 										onComplete()
 										BaseApi.handleResult(result, onSuccess: { json in
-											print(json)
+											if let success = json["success"] as? Bool, success {
+												onSuccess()
+											}
 										}, onError: onError)
 			})
 		}
