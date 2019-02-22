@@ -22,6 +22,7 @@ enum FitnessApi {
 								 onError: OnErrorCompletion) {
 			switch result {
 			case let .success(moyaResponse):
+//				print(try? moyaResponse.mapJSON())
 				do {
 					_ = try moyaResponse.filterSuccessfulStatusCodes()
 					let jsonAny = try moyaResponse.mapJSON()

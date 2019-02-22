@@ -14,8 +14,11 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	
 	weak var view: View!
 	private var viewModel: ProfileTableViewModel!
-	private let authAPI = FitnessApi.Auth()
+	private lazy var authAPI: FitnessApi.Auth = {
+		return .init()
+	}()
 	private let profileAPI: FitnessApi.Profile
+	private var notificationsAPI: FitnessApi.Notifications!
 	
 	private(set) var user: User!
 	
@@ -52,17 +55,36 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 		view.disableUserInteraction()
 		view.showLoader()
 		
+		if let deviceToken = AppDelegate.shared.pushNotificationService?.deviceToken {
+			removeNotificationsToken(accessToken: profileAPI.token, deviceToken: deviceToken)
+		} else {
+			sendLogoutRequest()
+		}
+	}
+	
+	private func sendLogoutRequest() {
 		let keychain = KeychainSwift()
 		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
 		
-		authAPI.logout(token: token,
-							   onComplete: { [weak self] in
-								self?.view.enableUserInteraction()
-								self?.view.hideLoader()
+		authAPI.logout(token: token, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
 		}, onSuccess: { [weak self] in
 			keychain.delete(.keychainKeyAccessToken)
 			UserDefaults.standard.removeObject(forKey: .userDefaultsKeyAccessTokenExpirationDate)
 			self?.view.showLoginScreen()
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
+	}
+	
+	private func removeNotificationsToken(accessToken: String, deviceToken: String) {
+		notificationsAPI = .init(token: accessToken)
+		
+		notificationsAPI.removeNotifictionsToken(deviceToken: deviceToken, onComplete: {
+			
+		}, onSuccess: { [weak self] in
+			self?.sendLogoutRequest()
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
 		}

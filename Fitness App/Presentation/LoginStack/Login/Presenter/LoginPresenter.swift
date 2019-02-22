@@ -19,6 +19,7 @@ class LoginPresenter<V: LoginView>: Presenter {
 	
 	weak var view: View!
 	private let authAPI = FitnessApi.Auth()
+	private var notificationsAPI: FitnessApi.Notifications!
 	
 	required init(view: View) {
 		self.view = view
@@ -30,17 +31,15 @@ class LoginPresenter<V: LoginView>: Presenter {
 		} else {
 			view.disableUserInteraction()
 			view.showLoader()
-			authAPI.login(email: view.email, password: view.password, onComplete: { [weak self] in
-				self?.view.enableUserInteraction()
-				self?.view.hideLoader()
+			authAPI.login(email: view.email, password: view.password, onComplete: { 
+				
 			}, onSuccess: { [weak self] token, expiresIn in
 				let keychain = KeychainSwift()
 				let tokenExpirationDate = Date().addingTimeInterval(Double(expiresIn))
 				
 				keychain.set(token, forKey: .keychainKeyAccessToken)
 				UserDefaults.standard.set(tokenExpirationDate, forKey: .userDefaultsKeyAccessTokenExpirationDate)
-				
-				self?.view.showTutorialScreen()
+				self?.sendDeviceToken(with: token)
 			}) { [weak self] errorText in
 				self?.view.showWrongPassword()
 				self?.view.showErrorPopup(with: errorText)
@@ -56,7 +55,7 @@ class LoginPresenter<V: LoginView>: Presenter {
 		}
 	}
 	
-	func getValidationErrors() -> [LoginError]? {
+	private func getValidationErrors() -> [LoginError]? {
 		var errors = [LoginError]()
 		if !view.email.isValidEmail() {
 			errors.append(.invalidEmail)
@@ -68,6 +67,26 @@ class LoginPresenter<V: LoginView>: Presenter {
 			return nil
 		} else {
 			return errors
+		}
+	}
+	
+	// APNS
+	private func sendDeviceToken(with accessToken: String) {
+		guard let deviceToken = AppDelegate.shared.pushNotificationService?.deviceToken else {
+			view.enableUserInteraction()
+			view.hideLoader()
+			view.showTutorialScreen()
+			return
+		}
+		notificationsAPI = .init(token: accessToken)
+		
+		notificationsAPI.registerNotifications(deviceToken: deviceToken, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: { [weak self] in
+			self?.view.showTutorialScreen()
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
 		}
 	}
 }
