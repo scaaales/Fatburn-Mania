@@ -21,6 +21,12 @@ class PushNotificationService {
 		}
 	}
 	
+	var deviceToken: String
+	
+	init(deviceToken: String) {
+		self.deviceToken = deviceToken
+	}
+	
 	func updateUnreadNotifications() {
 		DispatchQueue.main.asyncAfter(deadline: .now() + 15) { [weak self] in
 			self?.unreadNotificationsCount = Int.random(in: 0...10)

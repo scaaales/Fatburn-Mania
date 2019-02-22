@@ -16,7 +16,7 @@ class NotificationCell: UITableViewCell, ConfigurableCell {
 	
 	func configure(data: PushNotification) {
 		notificationTextLabel.text = data.text
-		timeAgoLabel.text = data.date?.timeAgoDisplay ?? "29 минут назад"
+		timeAgoLabel.text = data.date.timeAgoDisplay
 	}
 
 }

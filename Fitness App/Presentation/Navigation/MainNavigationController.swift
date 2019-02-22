@@ -56,7 +56,7 @@ class MainNavigationController: LoginNavigationController {
 	private func addRightButtons(to viewController: UIViewController) {
 		let shopButton = UIBarButtonItem(customView: storeButton)
 		let notificationsButton = UIBarButtonItem(customView: notificationButton)
-		if let count = AppDelegate.shared.pushNotificationService.unreadNotificationsCount {
+		if let count = AppDelegate.shared.pushNotificationService?.unreadNotificationsCount {
 			notificationLabel.text = "\(count)"
 		}
 		

@@ -197,6 +197,8 @@
 		B3D3F59722008CFC0052976D /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3F59322008CFC0052976D /* NotificationsViewController.swift */; };
 		B3D3F59822008CFC0052976D /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3F59422008CFC0052976D /* NotificationsView.swift */; };
 		B3D3F59A22008D210052976D /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D3F59922008D210052976D /* Notifications.storyboard */; };
+		B3D5665122200320001163FD /* NotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5665022200320001163FD /* NotificationsService.swift */; };
+		B3D56653222006AB001163FD /* FitnessApi+notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D56652222006AB001163FD /* FitnessApi+notifications.swift */; };
 		B3D737DC21EF76FE00DDF602 /* CollagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737D821EF76FE00DDF602 /* CollagePresenter.swift */; };
 		B3D737DD21EF76FE00DDF602 /* CollageInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737D921EF76FE00DDF602 /* CollageInitializer.swift */; };
 		B3D737DE21EF76FE00DDF602 /* CollageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737DA21EF76FE00DDF602 /* CollageViewController.swift */; };
@@ -459,6 +461,8 @@
 		B3D3F59322008CFC0052976D /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		B3D3F59422008CFC0052976D /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		B3D3F59922008D210052976D /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		B3D5665022200320001163FD /* NotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsService.swift; sourceTree = "<group>"; };
+		B3D56652222006AB001163FD /* FitnessApi+notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+notifications.swift"; sourceTree = "<group>"; };
 		B3D737D821EF76FE00DDF602 /* CollagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollagePresenter.swift; sourceTree = "<group>"; };
 		B3D737D921EF76FE00DDF602 /* CollageInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageInitializer.swift; sourceTree = "<group>"; };
 		B3D737DA21EF76FE00DDF602 /* CollageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageViewController.swift; sourceTree = "<group>"; };
@@ -1420,6 +1424,7 @@
 				B39B71BC2215A1EA002F1747 /* FitnessApi+store.swift */,
 				B38DD8CB221AE52E00C65E8E /* FitnessApi+profile.swift */,
 				B3DC18AF221BF8AB00221F1D /* FitnessApi+diary.swift */,
+				B3D56652222006AB001163FD /* FitnessApi+notifications.swift */,
 			);
 			path = FitnessApi;
 			sourceTree = "<group>";
@@ -1483,6 +1488,7 @@
 				B39B71B72215A121002F1747 /* StoreService.swift */,
 				B38DD8C9221AE2FC00C65E8E /* ProfileService.swift */,
 				B3DC18AD221BF2F600221F1D /* DiaryService.swift */,
+				B3D5665022200320001163FD /* NotificationsService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -2255,6 +2261,7 @@
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
 				B38F17AD21F8A09E00B70DBE /* Lesson.swift in Sources */,
 				B319155222146EE400F019ED /* Measurements.swift in Sources */,
+				B3D56653222006AB001163FD /* FitnessApi+notifications.swift in Sources */,
 				B38DD8CA221AE2FC00C65E8E /* ProfileService.swift in Sources */,
 				B30F287A21F2342D000954DB /* TimerService.swift in Sources */,
 				B3DD925321FA01560017E723 /* WorkoutOfTheDayViewController.swift in Sources */,
@@ -2281,6 +2288,7 @@
 				B3FBA16521EF343800B88AA3 /* PhotoInitializer.swift in Sources */,
 				B30E9F7D21EC95BD006F33CE /* Integer+formatted.swift in Sources */,
 				B3FBA16721EF343800B88AA3 /* PhotoView.swift in Sources */,
+				B3D5665122200320001163FD /* NotificationsService.swift in Sources */,
 				B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */,
 				B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */,
 				B3EFDF4821F76E7D00A8F61F /* MeasureHistoryPresenter.swift in Sources */,
