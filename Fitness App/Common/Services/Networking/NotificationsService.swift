@@ -9,8 +9,8 @@
 import Moya
 
 enum NotificationsService {
-	case registerNotifications(accessToken: String)
-	case removeNotifictionsToken(accessToken: String)
+	case registerNotifications(accessToken: String, deviceToken: String)
+	case removeNotificationsToken(accessToken: String, deviceToken: String)
 	case getNotifications(accessToken: String)
 }
 
@@ -22,7 +22,7 @@ extension NotificationsService: TargetType {
 		switch self {
 		case .registerNotifications:
 			path += "register_notifications"
-		case .removeNotifictionsToken:
+		case .removeNotificationsToken:
 			path += "remove_notifications"
 		case .getNotifications:
 			path += "notifications"
@@ -33,7 +33,7 @@ extension NotificationsService: TargetType {
 	var method: Method {
 		switch self {
 		case .registerNotifications,
-			 .removeNotifictionsToken:
+			 .removeNotificationsToken:
 			return .post
 		case .getNotifications:
 			return .get
@@ -42,14 +42,24 @@ extension NotificationsService: TargetType {
 	
 	var sampleData: Data { return .init() }
 	
-	var task: Task { return .requestPlain }
+	var task: Task {
+		switch self {
+		case .registerNotifications(_, let deviceToken),
+			 .removeNotificationsToken(_, let deviceToken):
+			return .requestParameters(parameters: [
+				"token": deviceToken
+				], encoding: JSONEncoding.default)
+		default:
+			return .requestPlain
+		}
+	 }
 	
 	var headers: [String : String]? {
 		var headers = ["Content-type": "application/json",
 					   "Accept": "application/json"]
 		switch self {
-		case .registerNotifications(let token),
-			 .removeNotifictionsToken(let token),
+		case .registerNotifications(let token, _),
+			 .removeNotificationsToken(let token, _),
 			 .getNotifications(let token):
 			headers["Authorization"] = "Bearer \(token)"
 		}

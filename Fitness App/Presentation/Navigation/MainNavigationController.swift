@@ -10,19 +10,16 @@ import UIKit
 
 class MainNavigationController: LoginNavigationController {
 	
-	private lazy var notificationLabel: UILabel! = {
-		let label = UILabel(frame: .init(x: 10, y: 0, width: 8, height: 8))
-		label.layer.borderColor = UIColor.clear.cgColor
-		label.layer.cornerRadius = label.bounds.size.height / 2
-		label.textAlignment = .center
-		label.layer.masksToBounds = true
-		label.font = UIFont.systemFont(ofSize: 6)
-		label.textColor = .white
-		label.backgroundColor = .redErrorColor
+	private lazy var notificationView: UIView! = {
+		let view = UIView(frame: .init(x: 10, y: 0, width: 8, height: 8))
+		view.layer.borderColor = UIColor.clear.cgColor
+		view.layer.cornerRadius = view.bounds.size.height / 2
+		view.layer.masksToBounds = true
+		view.backgroundColor = .redErrorColor
 		
-		notificationButton.addSubview(label)
+		notificationButton.addSubview(view)
 		
-		return label
+		return view
 	}()
 	
 	private lazy var notificationButton: UIButton = {
@@ -57,7 +54,9 @@ class MainNavigationController: LoginNavigationController {
 		let shopButton = UIBarButtonItem(customView: storeButton)
 		let notificationsButton = UIBarButtonItem(customView: notificationButton)
 		if let count = AppDelegate.shared.pushNotificationService?.unreadNotificationsCount {
-			notificationLabel.text = "\(count)"
+			if count > 0 {
+				notificationView.isHidden = false
+			}
 		}
 		
 		viewController.navigationItem.setRightBarButtonItems([notificationsButton, shopButton], animated: false)
@@ -78,7 +77,9 @@ class MainNavigationController: LoginNavigationController {
 	@objc private func handleNotificationsCountChange(_ notification: Notification) {
 		if let userInfo = notification.userInfo as? [String: Int],
 			let value = userInfo["value"] {
-			notificationLabel.text = "\(value)"
+			if value > 0 {
+				notificationView.isHidden = false
+			}
 		}
 	}
 	

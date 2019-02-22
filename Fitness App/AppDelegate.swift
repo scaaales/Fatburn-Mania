@@ -34,9 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			return String(format: "%02.2hhx", data)
 		}
 		let token = tokenParts.joined()
-		// 2. Print device token to use for PNs payloads
-		print("Device Token: \(token)")
+		
 		pushNotificationService = .init(deviceToken: token)
+		pushNotificationService?.unreadNotificationsCount = UIApplication.shared.applicationIconBadgeNumber
 	}
 	
 	func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -44,11 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		print("Failed to register for remote notifications with error: \(error)")
 	}
 	
+	func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+					 fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+		
+	}
+	
 	private func registerForPushNotifications() {
 		UNUserNotificationCenter.current().delegate = self
 		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
 			(granted, error) in
-			print("Permission granted: \(granted)")
 			// 1. Check if permission granted
 			guard granted else { return }
 			// 2. Attempt registration for remote notifications on the main thread
@@ -61,6 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-	
+	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+		completionHandler([.alert, .badge, .sound])
+	}
 }
 
