@@ -9,13 +9,13 @@
 import UIKit
 
 class WorkoutCell: UITableViewCell, ConfigurableCell {
-	typealias DataType = Workout
+	typealias DataType = Lesson
 	
 	@IBOutlet private weak var lessonTitleLabel: UILabel!
 	@IBOutlet private weak var lessonDateLabel: UILabel!
 	@IBOutlet private weak var lessonImage: UIImageView!
 	
-	func configure(data: Workout) {
+	func configure(data: Lesson) {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd MMMM"
 		

@@ -149,7 +149,7 @@
 		B38F17A421F87BEC00B70DBE /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17A021F87BEC00B70DBE /* WorkoutView.swift */; };
 		B38F17A821F8848700B70DBE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17A721F8848700B70DBE /* CustomSegmentedControl.swift */; };
 		B38F17AA21F8A06000B70DBE /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17A921F8A06000B70DBE /* WorkoutCell.swift */; };
-		B38F17AD21F8A09E00B70DBE /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17AC21F8A09E00B70DBE /* Workout.swift */; };
+		B38F17AD21F8A09E00B70DBE /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17AC21F8A09E00B70DBE /* Lesson.swift */; };
 		B39301CE21E4BD5A0071994A /* ResetPassrodInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301CD21E4BD5A0071994A /* ResetPassrodInitializer.swift */; };
 		B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */; };
 		B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D221E4BE9F0071994A /* ResetPasswordView.swift */; };
@@ -417,7 +417,7 @@
 		B38F17A021F87BEC00B70DBE /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		B38F17A721F8848700B70DBE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B38F17A921F8A06000B70DBE /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
-		B38F17AC21F8A09E00B70DBE /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		B38F17AC21F8A09E00B70DBE /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		B39301CD21E4BD5A0071994A /* ResetPassrodInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResetPassrodInitializer.swift; path = ../ResetPassword/ResetPassrodInitializer.swift; sourceTree = "<group>"; };
 		B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		B39301D221E4BE9F0071994A /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -1314,7 +1314,7 @@
 		B38F17AB21F8A08700B70DBE /* Workout */ = {
 			isa = PBXGroup;
 			children = (
-				B38F17AC21F8A09E00B70DBE /* Workout.swift */,
+				B38F17AC21F8A09E00B70DBE /* Lesson.swift */,
 				B306398A21F8A7F50089A5D4 /* WorkoutTableViewModel.swift */,
 				B30A182121F8B8AF00A39131 /* Season.swift */,
 				B3DD924621F9EF780017E723 /* Exercise.swift */,
@@ -2274,7 +2274,7 @@
 				B36CD81621F5F7FD007D4BE6 /* MusicPlayerCell.swift in Sources */,
 				B30A182B21F8BC3000A39131 /* LessonView.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
-				B38F17AD21F8A09E00B70DBE /* Workout.swift in Sources */,
+				B38F17AD21F8A09E00B70DBE /* Lesson.swift in Sources */,
 				B319155222146EE400F019ED /* Measurements.swift in Sources */,
 				B3D56653222006AB001163FD /* FitnessApi+notifications.swift in Sources */,
 				B38DD8CA221AE2FC00C65E8E /* ProfileService.swift in Sources */,

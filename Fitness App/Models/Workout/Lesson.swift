@@ -1,5 +1,5 @@
 //
-//  Workout.swift
+//  Lesson.swift
 //  Fitness App
 //
 //  Created by scales on 1/23/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Workout {
+struct Lesson {
 	let title: String
 	let date: Date
 	let image: UIImage; #warning("change to type or something later")

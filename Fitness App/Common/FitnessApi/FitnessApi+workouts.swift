@@ -25,7 +25,7 @@ extension FitnessApi {
 		
 		func getWorkoutsFor(seasonId: Int,
 							onComplete: @escaping () -> Void,
-							onSuccess: @escaping ([Workout]) -> Void,
+							onSuccess: @escaping ([Lesson]) -> Void,
 							onError: @escaping OnErrorCompletion) {
 			request = provider.request(.getWorkoutsFor(seasonId: seasonId, token: token),
 									   completion: { result in

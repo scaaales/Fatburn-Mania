@@ -10,17 +10,17 @@ import Foundation
 
 class WorkoutTableViewModel {
 	
-	let dataSource: BasicTableViewDataSource<WorkoutCell, Workout>
+	let dataSource: BasicTableViewDataSource<WorkoutCell, Lesson>
 	
-	init(workouts: [Workout]) {
-		dataSource = .init(items: workouts)
+	init(lessons: [Lesson]) {
+		dataSource = .init(items: lessons)
 	}
 	
-	func replaceWorkouts(with newWorkouts: [Workout]) {
-		dataSource.replaceItems(with: newWorkouts)
+	func replaceLessons(with newLessons: [Lesson]) {
+		dataSource.replaceItems(with: newLessons)
 	}
 	
-	func getWorkoutAtIndex(_ index: Int) -> Workout {
+	func getLessonAtIndex(_ index: Int) -> Lesson {
 		return dataSource.getItemAtIndex(index)
 	}
 }
