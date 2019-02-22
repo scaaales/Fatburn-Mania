@@ -59,10 +59,11 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 		requestsDispatchGroup = .init()
 		successCompletionsDispatchGroup = .init()
 		
-		if let avatar = avatarPhoto {
+		if let avatar = avatarPhoto,
+			let resizedImage = avatar.resized(toMaxSide: 300) {
 			successCompletionsDispatchGroup?.enter()
 			requestsDispatchGroup?.enter()
-			uploadImage(avatar)
+			uploadImage(resizedImage)
 		}
 		
 		successCompletionsDispatchGroup?.enter()
@@ -84,7 +85,6 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 		view.showLoader()
 		
 		profileAPI.updateUser(user, onComplete: { [weak self] in
-			print("updateUser completed")
 			self?.requestsDispatchGroup?.leave()
 		}, onSuccess: { [weak self] user in
 			self?.user = user
@@ -95,15 +95,14 @@ class EditProfilePresenter<V: EditProfileView>: Presenter {
 	}
 	
 	private func uploadImage(_ image: UIImage) {
-		guard let avatarData = image.pngData() else { return }
+		guard let avatarData = image.jpegData(compressionQuality: 80) else { return }
 		profileAPI.updateAvatar(avatarData, onComplete: { [weak self] in
-			print("updateAvatar completed")
 			self?.requestsDispatchGroup?.leave()
 		}, onSuccess: { [weak self] user in
 			self?.user = user
 			self?.successCompletionsDispatchGroup?.leave()
-		}) { errorText in
-			print(errorText)
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
 		}
 	}
 	

@@ -48,7 +48,7 @@ extension ProfileService: TargetType {
 		case .editUserInfo(_, let user):
 			return .requestJSONEncodable(user)
 		case .editAvatar(_, let data):
-			let avatarData = MultipartFormData(provider: .data(data), name: "avatar", fileName: "avatar.png", mimeType: "image/png")
+			let avatarData = MultipartFormData(provider: .data(data), name: "avatar", fileName: "avatar.jpeg", mimeType: "image/jpeg")
 			return .uploadMultipart([avatarData])
 		}
 	}

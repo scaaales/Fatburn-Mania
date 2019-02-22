@@ -48,7 +48,6 @@ enum FitnessApi {
 					_ = try moyaResponse.filterSuccessfulStatusCodes()
 					let data = moyaResponse.data
 					
-					//				print(try moyaResponse.mapJSON())
 					let jsonDecoder = JSONDecoder()
 					
 					let result = try jsonDecoder.decode(T.self, from: data)

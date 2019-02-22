@@ -74,7 +74,6 @@ extension FitnessApi {
 											onError: @escaping OnErrorCompletion) {
 			BaseApi.handleResult(result, onSuccess: { json in
 				if let success = json["success"] as? Bool, success {
-					print(json)
 					BaseApi.mapResult(result, intoItemOfType: UserResponse.self,
 									  onSuccess: { userResponse in
 										onSuccess(userResponse.user)

@@ -191,6 +191,7 @@
 		B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */; };
 		B3B8D3B421E8B56000397AAB /* BasicTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B321E8B56000397AAB /* BasicTableViewDataSource.swift */; };
 		B3B8D3B621E8B62800397AAB /* CourseVideosTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8D3B521E8B62800397AAB /* CourseVideosTableViewModel.swift */; };
+		B3C5F104221FFE7F00A9E3A1 /* UIImage+resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5F103221FFE7F00A9E3A1 /* UIImage+resized.swift */; };
 		B3D3F59522008CFC0052976D /* NotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3F59122008CFC0052976D /* NotificationsPresenter.swift */; };
 		B3D3F59622008CFC0052976D /* NotificationsInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3F59222008CFC0052976D /* NotificationsInitializer.swift */; };
 		B3D3F59722008CFC0052976D /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3F59322008CFC0052976D /* NotificationsViewController.swift */; };
@@ -452,6 +453,7 @@
 		B3B8D3B121E8B27B00397AAB /* CourseVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideoCell.swift; sourceTree = "<group>"; };
 		B3B8D3B321E8B56000397AAB /* BasicTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewDataSource.swift; sourceTree = "<group>"; };
 		B3B8D3B521E8B62800397AAB /* CourseVideosTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseVideosTableViewModel.swift; sourceTree = "<group>"; };
+		B3C5F103221FFE7F00A9E3A1 /* UIImage+resized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resized.swift"; sourceTree = "<group>"; };
 		B3D3F59122008CFC0052976D /* NotificationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPresenter.swift; sourceTree = "<group>"; };
 		B3D3F59222008CFC0052976D /* NotificationsInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsInitializer.swift; sourceTree = "<group>"; };
 		B3D3F59322008CFC0052976D /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -1068,6 +1070,7 @@
 				B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */,
 				B39B71C12215AA4A002F1747 /* UIImageView+imageFromURL.swift */,
 				B3415586221F1BA700236B91 /* UIImage+fixOrientation.swift */,
+				B3C5F103221FFE7F00A9E3A1 /* UIImage+resized.swift */,
 				B30E9F7C21EC95BD006F33CE /* Integer+formatted.swift */,
 			);
 			path = Extensions;
@@ -1974,6 +1977,9 @@
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -2151,6 +2157,7 @@
 				B39A6D1D21FB226600C5A06F /* ExerciseViewController.swift in Sources */,
 				B3DD925221FA01560017E723 /* WorkoutOfTheDayInitializer.swift in Sources */,
 				B39D475A21E5FC6E00D5C050 /* ProfileInitializer.swift in Sources */,
+				B3C5F104221FFE7F00A9E3A1 /* UIImage+resized.swift in Sources */,
 				B319154D22146CF300F019ED /* AddNewMeasurementsViewController.swift in Sources */,
 				B3254F4821D3E7CE00F99F91 /* BodyMeasurementHeader.swift in Sources */,
 				B3F7329E21E7851F0038ACB9 /* VideoLibraryCell.swift in Sources */,
