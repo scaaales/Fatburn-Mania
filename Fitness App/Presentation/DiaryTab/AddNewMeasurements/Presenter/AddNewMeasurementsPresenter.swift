@@ -72,7 +72,6 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 			HealthKitService.saveWaistValue(measurements.waist.doubleValue, on: self.savingDate)
 			HealthKitService.saveWeightValue(measurements.weight, on: self.savingDate)
 			self.makeGetRewardRequest()
-			// TODO: Handler result later
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
 		}
@@ -87,6 +86,9 @@ class AddNewMeasurementsPresenter<V: AddNewMeasurementsView>: Presenter {
 			self?.view.hideLoader()
 		}, onSuccess: { [weak self] amount in
 			if let amount = amount {
+				NotificationCenter.default.post(name: .coinsAdded,
+												object: self,
+												userInfo: ["value": amount])
 				self?.view.showCoinsAddedScreen(with: amount)
 			} else {
 				self?.view.closeItself()

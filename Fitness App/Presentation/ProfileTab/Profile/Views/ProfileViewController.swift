@@ -53,6 +53,11 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: ProfileView {
+	func reloadCellsWitoutAnimation(at row: Int) {
+		let indexPath = IndexPath(row: row, section: 0)
+		tableView.reloadRows(at: [indexPath], with: .none)
+	}
+	
 	func disableUserInteraction() {
 		view.isUserInteractionEnabled = false
 		navigationController?.navigationBar.isUserInteractionEnabled = false

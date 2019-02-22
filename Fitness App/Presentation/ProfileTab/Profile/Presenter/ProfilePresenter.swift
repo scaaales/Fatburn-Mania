@@ -9,7 +9,7 @@
 import Foundation
 import KeychainSwift
 
-class ProfilePresenter<V: ProfileView>: Presenter { 
+class ProfilePresenter<V: ProfileView>: Presenter, UserCoinsUpdateDelegate {
 	typealias View = V
 	
 	weak var view: View!
@@ -44,6 +44,7 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 			guard let self = self else { return }
 			self.user = user
 			self.viewModel = .init(user: user)
+			self.viewModel.delegate = self
 			self.view.setTableViewDataSource(self.viewModel)
 			self.view.update()
 		}) { [weak self] errorText in
@@ -103,6 +104,10 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 		viewModel = .init(user: user)
 		view.setTableViewDataSource(viewModel)
 		view.update()
+	}
+	
+	func userCoinsDidUpdate(coinsRow: Int) {
+		view.reloadCellsWitoutAnimation(at: coinsRow)
 	}
 
 }

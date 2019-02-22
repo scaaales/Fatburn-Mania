@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UserCoinsUpdateDelegate {
+	func userCoinsDidUpdate(coinsRow: Int)
+}
+
 class ProfileTableViewModel: NSObject {
 	
 	private typealias ProfileHeaderCellConfigurator = CellsConfigurator<ProfileHeaderCell, (imageURLString: String?, name: String)>
@@ -17,17 +21,28 @@ class ProfileTableViewModel: NSObject {
 	private typealias UserDataCellConfigurator = CellsConfigurator<UserDataCell, (icon: UIImage, text: String?)>
 	private typealias UserButtonArrowConfigurator = CellsConfigurator<UserButtonArrowCell, (icon: UIImage, text: String)>
 	
-	private var rows: [CellConfigurator]
-	
-	init(user: User) {
-		rows = []
-		super.init()
+	private var rows: [CellConfigurator] {
+		var rows = [CellConfigurator]()
 		rows.append(getHeaderRow(from: user))
 		rows.append(getProfileButonsRow())
 		rows.append(getBalanceRow(from: user))
 		rows.append(getProgressRow())
 		rows.append(contentsOf: getUserDataRows(from: user))
 		rows.append(contentsOf: getUserButtonArrowRows())
+		
+		return rows
+	}
+	private var user: User
+	var delegate: UserCoinsUpdateDelegate?
+	
+	init(user: User) {
+		self.user = user
+		super.init()
+		
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(handleCoinsAdded(_:)),
+											   name: .coinsAdded,
+											   object: nil)
 	}
 	
 	private func getHeaderRow(from user: User) -> CellConfigurator {
@@ -70,6 +85,18 @@ class ProfileTableViewModel: NSObject {
 			return buttonArrowConfigurator.item?.text
 		}
 		return nil
+	}
+	
+	@objc private func handleCoinsAdded(_ notification: Notification) {
+		if let userInfo = notification.userInfo as? [String: Int],
+			let value = userInfo["value"] {
+			if let oldCoins = user.coins {
+				user.coins = oldCoins + value
+			} else {
+				user.coins = value
+			}
+			delegate?.userCoinsDidUpdate(coinsRow: 2)
+		}
 	}
 	
 }
