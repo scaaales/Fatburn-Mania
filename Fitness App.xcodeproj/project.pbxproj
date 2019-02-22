@@ -149,7 +149,7 @@
 		B38F17A421F87BEC00B70DBE /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17A021F87BEC00B70DBE /* WorkoutView.swift */; };
 		B38F17A821F8848700B70DBE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17A721F8848700B70DBE /* CustomSegmentedControl.swift */; };
 		B38F17AA21F8A06000B70DBE /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17A921F8A06000B70DBE /* WorkoutCell.swift */; };
-		B38F17AD21F8A09E00B70DBE /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17AC21F8A09E00B70DBE /* Lesson.swift */; };
+		B38F17AD21F8A09E00B70DBE /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F17AC21F8A09E00B70DBE /* Workout.swift */; };
 		B39301CE21E4BD5A0071994A /* ResetPassrodInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301CD21E4BD5A0071994A /* ResetPassrodInitializer.swift */; };
 		B39301D121E4BE6E0071994A /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */; };
 		B39301D321E4BE9F0071994A /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39301D221E4BE9F0071994A /* ResetPasswordView.swift */; };
@@ -201,6 +201,8 @@
 		B3D56653222006AB001163FD /* FitnessApi+notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D56652222006AB001163FD /* FitnessApi+notifications.swift */; };
 		B3D56655222031DD001163FD /* RewardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D56654222031DD001163FD /* RewardService.swift */; };
 		B3D56658222033EB001163FD /* FitnessApi+reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D56657222033EB001163FD /* FitnessApi+reward.swift */; };
+		B3D5665A22204B5A001163FD /* WorkoutsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5665922204B5A001163FD /* WorkoutsService.swift */; };
+		B3D5665C222051A1001163FD /* FitnessApi+workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5665B222051A1001163FD /* FitnessApi+workouts.swift */; };
 		B3D737DC21EF76FE00DDF602 /* CollagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737D821EF76FE00DDF602 /* CollagePresenter.swift */; };
 		B3D737DD21EF76FE00DDF602 /* CollageInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737D921EF76FE00DDF602 /* CollageInitializer.swift */; };
 		B3D737DE21EF76FE00DDF602 /* CollageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737DA21EF76FE00DDF602 /* CollageViewController.swift */; };
@@ -415,7 +417,7 @@
 		B38F17A021F87BEC00B70DBE /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		B38F17A721F8848700B70DBE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B38F17A921F8A06000B70DBE /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
-		B38F17AC21F8A09E00B70DBE /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		B38F17AC21F8A09E00B70DBE /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		B39301CD21E4BD5A0071994A /* ResetPassrodInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResetPassrodInitializer.swift; path = ../ResetPassword/ResetPassrodInitializer.swift; sourceTree = "<group>"; };
 		B39301D021E4BE6E0071994A /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		B39301D221E4BE9F0071994A /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -467,6 +469,8 @@
 		B3D56652222006AB001163FD /* FitnessApi+notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+notifications.swift"; sourceTree = "<group>"; };
 		B3D56654222031DD001163FD /* RewardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardService.swift; sourceTree = "<group>"; };
 		B3D56657222033EB001163FD /* FitnessApi+reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+reward.swift"; sourceTree = "<group>"; };
+		B3D5665922204B5A001163FD /* WorkoutsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsService.swift; sourceTree = "<group>"; };
+		B3D5665B222051A1001163FD /* FitnessApi+workouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+workouts.swift"; sourceTree = "<group>"; };
 		B3D737D821EF76FE00DDF602 /* CollagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollagePresenter.swift; sourceTree = "<group>"; };
 		B3D737D921EF76FE00DDF602 /* CollageInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageInitializer.swift; sourceTree = "<group>"; };
 		B3D737DA21EF76FE00DDF602 /* CollageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageViewController.swift; sourceTree = "<group>"; };
@@ -1310,7 +1314,7 @@
 		B38F17AB21F8A08700B70DBE /* Workout */ = {
 			isa = PBXGroup;
 			children = (
-				B38F17AC21F8A09E00B70DBE /* Lesson.swift */,
+				B38F17AC21F8A09E00B70DBE /* Workout.swift */,
 				B306398A21F8A7F50089A5D4 /* WorkoutTableViewModel.swift */,
 				B30A182121F8B8AF00A39131 /* Season.swift */,
 				B3DD924621F9EF780017E723 /* Exercise.swift */,
@@ -1430,6 +1434,7 @@
 				B3DC18AF221BF8AB00221F1D /* FitnessApi+diary.swift */,
 				B3D56652222006AB001163FD /* FitnessApi+notifications.swift */,
 				B3D56657222033EB001163FD /* FitnessApi+reward.swift */,
+				B3D5665B222051A1001163FD /* FitnessApi+workouts.swift */,
 			);
 			path = FitnessApi;
 			sourceTree = "<group>";
@@ -1495,6 +1500,7 @@
 				B3DC18AD221BF2F600221F1D /* DiaryService.swift */,
 				B3D5665022200320001163FD /* NotificationsService.swift */,
 				B3D56654222031DD001163FD /* RewardService.swift */,
+				B3D5665922204B5A001163FD /* WorkoutsService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -2164,6 +2170,7 @@
 				B3753C1B21D7A2C0008A5D5A /* Configurator.swift in Sources */,
 				B3028ADA21EF78FC00515CD8 /* MusicPlayerView.swift in Sources */,
 				B39A6D1C21FB226600C5A06F /* ExerciseInitializer.swift in Sources */,
+				B3D5665A22204B5A001163FD /* WorkoutsService.swift in Sources */,
 				B37CBA2321DE680900834A98 /* LoginViewController.swift in Sources */,
 				B3254F3E21D3E7CE00F99F91 /* MeasurementPeriod.swift in Sources */,
 				B3EFDF4921F76E7D00A8F61F /* MeasureHistoryInitializer.swift in Sources */,
@@ -2211,6 +2218,7 @@
 				B30E9F8021EC9701006F33CE /* UIView+cornerRadius.swift in Sources */,
 				B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */,
 				B3254F4D21D3E7CE00F99F91 /* NutritionCell.swift in Sources */,
+				B3D5665C222051A1001163FD /* FitnessApi+workouts.swift in Sources */,
 				B369573721D4E40500735555 /* HealthKitService.swift in Sources */,
 				B3E7578B21F77950002B5AC7 /* MeasureHistoryCell.swift in Sources */,
 				B38B75FD22170F1E00B48E19 /* PhotoLevelView.swift in Sources */,
@@ -2266,7 +2274,7 @@
 				B36CD81621F5F7FD007D4BE6 /* MusicPlayerCell.swift in Sources */,
 				B30A182B21F8BC3000A39131 /* LessonView.swift in Sources */,
 				B3753C2821D7C3E3008A5D5A /* BlurredLoader.swift in Sources */,
-				B38F17AD21F8A09E00B70DBE /* Lesson.swift in Sources */,
+				B38F17AD21F8A09E00B70DBE /* Workout.swift in Sources */,
 				B319155222146EE400F019ED /* Measurements.swift in Sources */,
 				B3D56653222006AB001163FD /* FitnessApi+notifications.swift in Sources */,
 				B38DD8CA221AE2FC00C65E8E /* ProfileService.swift in Sources */,
