@@ -7,6 +7,7 @@
 //
 
 import Moya
+import Result
 
 extension FitnessApi {
 	class Profile: BaseTokenApi {
@@ -50,6 +51,52 @@ extension FitnessApi {
 								  onSuccess: { coinsHistoryResponse in
 									onSuccess(coinsHistoryResponse.coinsHistory)
 				}, onError: onError)
+			})
+		}
+		
+		func updateUser(_ user: User,
+						onComplete: @escaping () -> Void,
+						onSuccess: @escaping (User) -> Void,
+						onError: @escaping OnErrorCompletion) {
+			request = provider.request(.editUserInfo(token: token, newUser: user),
+									   completion: { result in
+										onComplete()
+										FitnessApi.Profile.handleUpdateUserResult(result,
+																				  onComplete: onComplete,
+																				  onSuccess: onSuccess,
+																				  onError: onError)
+			})
+		}
+		
+		private static func handleUpdateUserResult(_ result: Result<Response, MoyaError>,
+											onComplete: @escaping () -> Void,
+											onSuccess: @escaping (User) -> Void,
+											onError: @escaping OnErrorCompletion) {
+			BaseApi.handleResult(result, onSuccess: { json in
+				if let success = json["success"] as? Bool, success {
+					BaseApi.mapResult(result, intoItemOfType: UserResponse.self,
+									  onSuccess: { userResponse in
+										onSuccess(userResponse.user)
+					}, onError: onError)
+				} else if let error = json["error"] as? [String: [String]],
+					let errorMessages = error["email"] {
+					onError(errorMessages[0])
+				}
+				
+			}, onError: onError)
+		}
+		
+		func updateAvatar(_ data: Data,
+						  onComplete: @escaping () -> Void,
+						  onSuccess: @escaping (User) -> Void,
+						  onError: @escaping OnErrorCompletion) {
+			request = provider.request(.editAvatar(token: token, data: data),
+									   completion: { result in
+										onComplete()
+										FitnessApi.Profile.handleUpdateUserResult(result,
+																				  onComplete: onComplete,
+																				  onSuccess: onSuccess,
+																				  onError: onError)
 			})
 		}
 		

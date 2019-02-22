@@ -16,4 +16,5 @@ struct EditProfileCellType {
 	let tag: Int
 	let dateInputView: UIDatePicker?
 	let helperView: UIView?
+	let updateHandler: (String?) -> Void
 }

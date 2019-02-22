@@ -13,6 +13,7 @@ class EditProfileDataCell: CellWithSeperator, ConfigurableCell {
 	
 	@IBOutlet private weak var titleLabel: UILabel!
 	@IBOutlet private weak var valueTextField: UITextField!
+	private var updateHandler: ((String?) -> Void)!
 	
 	func configure(data: EditProfileCellType) {
 		titleLabel.text = data.fieldName
@@ -25,13 +26,31 @@ class EditProfileDataCell: CellWithSeperator, ConfigurableCell {
 		if let datePicker = data.dateInputView {
 			datePicker.addTarget(self, action: #selector(dateSelected(datePicker:)), for: .valueChanged)
 		}
+		
+		self.updateHandler = data.updateHandler
+		guard let actions = valueTextField.actions(forTarget: self, forControlEvent: .editingChanged) else {
+			addAction()
+			return
+		}
+		if actions.isEmpty {
+			addAction()
+		}
 	}
 	
-	@objc func dateSelected(datePicker: UIDatePicker) {
+	@objc private func dateSelected(datePicker: UIDatePicker) {
 		let date = datePicker.date
 		let formatter = DateFormatter()
 		formatter.dateFormat = "dd MMMM yyyy"
 		valueTextField.text = formatter.string(from: date)
+		updateHandler(valueTextField.text)
+	}
+	
+	private func addAction() {
+		valueTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+	}
+	
+	@objc private func editingChanged() {
+		updateHandler(valueTextField.text)
 	}
 	
 	override func becomeFirstResponder() -> Bool {

@@ -200,7 +200,6 @@ private extension HealthKitService {
 		let object = HKQuantitySample(type: quantityType, quantity: quantity,
 									  start: date, end: date)
 		healthStore.save(object) { success, error in
-			print("success =", success)
 			if let error = error {
 				print("error =", error)
 			}

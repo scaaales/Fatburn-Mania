@@ -34,8 +34,12 @@ class RoundImageViewWithShadow: UIImageView {
 		layer.cornerRadius = cornerRadius
 		clipsToBounds = true
 		
+		let preveusSubviews = superview?.subviews
+		
 		superview?.addSubview(shadowView)
 		superview?.bringSubviewToFront(self)
+		
+		preveusSubviews?.forEach { self.superview?.bringSubviewToFront($0) }
 		
 		shadowView.translatesAutoresizingMaskIntoConstraints = false
 		shadowView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

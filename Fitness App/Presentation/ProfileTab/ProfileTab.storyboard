@@ -62,7 +62,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tg-bc-e0p">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tg-bc-e0p">
                                                     <rect key="frame" x="20" y="8" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="Glz-a1-mSm"/>
@@ -466,7 +466,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudComputing" translatesAutoresizingMaskIntoConstraints="NO" id="xrf-WE-pAD" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrf-WE-pAD" customClass="RoundImageViewWithShadow" customModule="Fitness_App" customModuleProvider="target">
                                     <rect key="frame" x="121.5" y="20" width="132" height="132"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="xrf-WE-pAD" secondAttribute="height" multiplier="1:1" id="caA-7f-L97"/>
@@ -477,12 +477,23 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkq-5l-xW6">
+                                    <rect key="frame" x="121.5" y="20" width="132" height="132"/>
+                                    <state key="normal" image="cloudComputing"/>
+                                    <connections>
+                                        <action selector="addAvatarTapped" destination="Azy-2C-2wp" eventType="touchUpInside" id="ZWx-ac-OVb"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="zkq-5l-xW6" firstAttribute="width" secondItem="xrf-WE-pAD" secondAttribute="width" id="3Zh-YO-0hd"/>
+                                <constraint firstItem="zkq-5l-xW6" firstAttribute="height" secondItem="xrf-WE-pAD" secondAttribute="height" id="XZn-dX-4x7"/>
                                 <constraint firstItem="xrf-WE-pAD" firstAttribute="centerX" secondItem="pga-Lh-isJ" secondAttribute="centerX" id="fvT-x9-wuO"/>
+                                <constraint firstItem="zkq-5l-xW6" firstAttribute="centerX" secondItem="xrf-WE-pAD" secondAttribute="centerX" id="jm8-U0-aF9"/>
                                 <constraint firstAttribute="bottom" secondItem="xrf-WE-pAD" secondAttribute="bottom" constant="12" id="kG6-ht-KRO"/>
                                 <constraint firstItem="xrf-WE-pAD" firstAttribute="top" secondItem="pga-Lh-isJ" secondAttribute="top" constant="20" id="kfZ-0e-awL"/>
+                                <constraint firstItem="zkq-5l-xW6" firstAttribute="centerY" secondItem="xrf-WE-pAD" secondAttribute="centerY" id="oU5-Rh-gnp"/>
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="rb8-h2-hdc">
@@ -504,6 +515,9 @@
                                             <real key="value" value="12"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="saveTapped" destination="Azy-2C-2wp" eventType="touchUpInside" id="ImL-d6-HVr"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

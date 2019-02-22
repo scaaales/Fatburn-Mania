@@ -8,8 +8,13 @@
 
 import UIKit
 
-protocol EditProfileView: View, TableViewUpdatable {
+protocol EditProfileView: View, TableViewUpdatable, NetworkingView, PopupShowable {
 	var textFieldDelegate: UITextFieldDelegate { get }
 	var helperView: UIView { get }
 	var viewForDateInput: UIDatePicker { get }
+	
+	var viewControllerToPresentPicker: UIViewController { get }
+	func setPhoto(_ image: UIImage) 
+	
+	func closeItself()
 }
