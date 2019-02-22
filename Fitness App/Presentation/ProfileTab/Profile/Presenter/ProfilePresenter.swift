@@ -52,9 +52,6 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	}
 	
 	func logout() {
-		view.disableUserInteraction()
-		view.showLoader()
-		
 		if let deviceToken = AppDelegate.shared.pushNotificationService?.deviceToken {
 			removeNotificationsToken(accessToken: profileAPI.token, deviceToken: deviceToken)
 		} else {
@@ -65,6 +62,9 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	private func sendLogoutRequest() {
 		let keychain = KeychainSwift()
 		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
+		
+		view.disableUserInteraction()
+		view.showLoader()
 		
 		authAPI.logout(token: token, onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
@@ -81,8 +81,12 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	private func removeNotificationsToken(accessToken: String, deviceToken: String) {
 		notificationsAPI = .init(token: accessToken)
 		
-		notificationsAPI.removeNotifictionsToken(deviceToken: deviceToken, onComplete: {
-			
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		notificationsAPI.removeNotifictionsToken(deviceToken: deviceToken, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
 		}, onSuccess: { [weak self] in
 			self?.sendLogoutRequest()
 		}) { [weak self] errorText in

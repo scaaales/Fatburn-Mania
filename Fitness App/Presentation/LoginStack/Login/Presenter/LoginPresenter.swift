@@ -31,7 +31,9 @@ class LoginPresenter<V: LoginView>: Presenter {
 		} else {
 			view.disableUserInteraction()
 			view.showLoader()
-			authAPI.login(email: view.email, password: view.password, onComplete: { 
+			authAPI.login(email: view.email, password: view.password, onComplete: { [weak self] in
+				self?.view.enableUserInteraction()
+				self?.view.hideLoader()
 				
 			}, onSuccess: { [weak self] token, expiresIn in
 				let keychain = KeychainSwift()
@@ -73,12 +75,13 @@ class LoginPresenter<V: LoginView>: Presenter {
 	// APNS
 	private func sendDeviceToken(with accessToken: String) {
 		guard let deviceToken = AppDelegate.shared.pushNotificationService?.deviceToken else {
-			view.enableUserInteraction()
-			view.hideLoader()
 			view.showTutorialScreen()
 			return
 		}
 		notificationsAPI = .init(token: accessToken)
+		
+		view.disableUserInteraction()
+		view.showLoader()
 		
 		notificationsAPI.registerNotifications(deviceToken: deviceToken, onComplete: { [weak self] in
 			self?.view.enableUserInteraction()

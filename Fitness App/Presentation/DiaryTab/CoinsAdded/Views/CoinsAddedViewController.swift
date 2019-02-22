@@ -11,7 +11,7 @@ import UIKit
 class CoinsAddedViewController: UIViewController {
 	
 	var coinsAmount: Int!
-	var prevVC: UIViewController!
+	var prevVC: AddNewMeasurementsViewController!
 	
 	@IBOutlet private weak var coinsLabel: UILabel!
 	
@@ -22,7 +22,7 @@ class CoinsAddedViewController: UIViewController {
 	
 	@IBAction private func close() {
 		dismiss(animated: true) { [weak self] in
-			self?.prevVC.dismiss(animated: true)
+			self?.prevVC.closeItself()
 		}
 	}
 }

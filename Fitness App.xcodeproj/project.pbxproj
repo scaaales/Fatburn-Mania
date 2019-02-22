@@ -199,6 +199,8 @@
 		B3D3F59A22008D210052976D /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D3F59922008D210052976D /* Notifications.storyboard */; };
 		B3D5665122200320001163FD /* NotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5665022200320001163FD /* NotificationsService.swift */; };
 		B3D56653222006AB001163FD /* FitnessApi+notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D56652222006AB001163FD /* FitnessApi+notifications.swift */; };
+		B3D56655222031DD001163FD /* RewardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D56654222031DD001163FD /* RewardService.swift */; };
+		B3D56658222033EB001163FD /* FitnessApi+reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D56657222033EB001163FD /* FitnessApi+reward.swift */; };
 		B3D737DC21EF76FE00DDF602 /* CollagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737D821EF76FE00DDF602 /* CollagePresenter.swift */; };
 		B3D737DD21EF76FE00DDF602 /* CollageInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737D921EF76FE00DDF602 /* CollageInitializer.swift */; };
 		B3D737DE21EF76FE00DDF602 /* CollageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D737DA21EF76FE00DDF602 /* CollageViewController.swift */; };
@@ -463,6 +465,8 @@
 		B3D3F59922008D210052976D /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
 		B3D5665022200320001163FD /* NotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsService.swift; sourceTree = "<group>"; };
 		B3D56652222006AB001163FD /* FitnessApi+notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+notifications.swift"; sourceTree = "<group>"; };
+		B3D56654222031DD001163FD /* RewardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardService.swift; sourceTree = "<group>"; };
+		B3D56657222033EB001163FD /* FitnessApi+reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+reward.swift"; sourceTree = "<group>"; };
 		B3D737D821EF76FE00DDF602 /* CollagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollagePresenter.swift; sourceTree = "<group>"; };
 		B3D737D921EF76FE00DDF602 /* CollageInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageInitializer.swift; sourceTree = "<group>"; };
 		B3D737DA21EF76FE00DDF602 /* CollageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageViewController.swift; sourceTree = "<group>"; };
@@ -1425,6 +1429,7 @@
 				B38DD8CB221AE52E00C65E8E /* FitnessApi+profile.swift */,
 				B3DC18AF221BF8AB00221F1D /* FitnessApi+diary.swift */,
 				B3D56652222006AB001163FD /* FitnessApi+notifications.swift */,
+				B3D56657222033EB001163FD /* FitnessApi+reward.swift */,
 			);
 			path = FitnessApi;
 			sourceTree = "<group>";
@@ -1489,6 +1494,7 @@
 				B38DD8C9221AE2FC00C65E8E /* ProfileService.swift */,
 				B3DC18AD221BF2F600221F1D /* DiaryService.swift */,
 				B3D5665022200320001163FD /* NotificationsService.swift */,
+				B3D56654222031DD001163FD /* RewardService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -2153,6 +2159,7 @@
 				B3254F4E21D3E7CE00F99F91 /* RoundButton.swift in Sources */,
 				B3F732B821E7A8B30038ACB9 /* CourseVideosView.swift in Sources */,
 				B39D477C21E6296F00D5C050 /* BalanceCell.swift in Sources */,
+				B3D56658222033EB001163FD /* FitnessApi+reward.swift in Sources */,
 				B36B2F7121DE126000C5D07B /* LoginSplashView.swift in Sources */,
 				B3753C1B21D7A2C0008A5D5A /* Configurator.swift in Sources */,
 				B3028ADA21EF78FC00515CD8 /* MusicPlayerView.swift in Sources */,
@@ -2313,6 +2320,7 @@
 				B3254DCF21D3DD5C00F99F91 /* AppDelegate.swift in Sources */,
 				B30E9F6D21EC8D23006F33CE /* StorePresenter.swift in Sources */,
 				B3254F3C21D3E7CE00F99F91 /* Measurement.swift in Sources */,
+				B3D56655222031DD001163FD /* RewardService.swift in Sources */,
 				B36B2F7F21DE251E00C5D07B /* SignInViewController.swift in Sources */,
 				B3DC1B6321EDD6FF00883C0F /* EditProfileInitializer.swift in Sources */,
 				B3033D3321E8DF5B0058626D /* VideoDetailsViewController.swift in Sources */,
