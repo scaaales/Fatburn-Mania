@@ -16,9 +16,9 @@ class ExerciseCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var durationLabel: UILabel!
 	
 	func configure(data: Exercise) {
-		exerciseImageView.image = data.image
-		nameLabel.text = data.name
-		durationLabel.text = data.duration.stringFromTimeInterval
+//		exerciseImageView.image = data.image
+//		nameLabel.text = data.name
+//		durationLabel.text = data.duration.stringFromTimeInterval
 	}
 
 }

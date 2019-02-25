@@ -32,16 +32,16 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 	}
 	
 	func getInitialExercise() {
-		let exercises = Exercise.testExercises
-		workoutOfTheDay = .init(name: "Сахарная вата",
-								rewardCoins: 7,
-								desritpion: .loremIpsumConstant,
-								previewImage: #imageLiteral(resourceName: "workoutImage"),
-								sponsorImage: #imageLiteral(resourceName: "fatburnManiaLogo"),
-								exercises: exercises)
-		setupTimer()
-		currentExerciseIndex = 0
-		view.state = .initialCountdown
+//		let exercises = Exercise.testExercises
+//		workoutOfTheDay = .init(name: "Сахарная вата",
+//								rewardCoins: 7,
+//								desritpion: .loremIpsumConstant,
+//								previewImage: #imageLiteral(resourceName: "workoutImage"),
+//								sponsorImage: #imageLiteral(resourceName: "fatburnManiaLogo"),
+//								exercises: exercises)
+//		setupTimer()
+//		currentExerciseIndex = 0
+//		view.state = .initialCountdown
 	}
 	
 	private func setupTimer() {

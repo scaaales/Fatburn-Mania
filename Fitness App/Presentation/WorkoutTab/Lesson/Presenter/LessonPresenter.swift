@@ -24,16 +24,16 @@ class LessonPresenter<V: LessonView>: Presenter {
 	}
 	
 	func getLesson() {
-		view.setTitle("Week 1 day 5",
-					  lessonName: lesson.title,
-					  description: lesson.description)
-		
-		let url = URL(string: "https://www.youtube.com/embed/\(lesson.videoID)?playsinline=1")!
-		let urlRequest = URLRequest(url: url)
-		view.loadVideoRequest(urlRequest)
-		
-		viewModel = .init(exercises: lesson.exercises)
-		view.setTableViewDataSource(viewModel.dataSource)
-		view.update()
+//		view.setTitle("Week 1 day 5",
+//					  lessonName: lesson.title,
+//					  description: lesson.description)
+//
+//		let url = URL(string: "https://www.youtube.com/embed/\(lesson.videoID)?playsinline=1")!
+//		let urlRequest = URLRequest(url: url)
+//		view.loadVideoRequest(urlRequest)
+//
+//		viewModel = .init(exercises: lesson.exercises)
+//		view.setTableViewDataSource(viewModel.dataSource)
+//		view.update()
 	}
 }

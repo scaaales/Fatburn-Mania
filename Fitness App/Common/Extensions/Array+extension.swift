@@ -19,3 +19,8 @@ extension Array where Element == Exercise {
 		return self.reduce(0, { $0 + $1.duration })
 	}
 }
+extension Array where Element: Hashable {
+	var unique: [Element] {
+		return Array(Set(self))
+	}
+}

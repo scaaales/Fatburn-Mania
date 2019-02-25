@@ -119,6 +119,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="seasonsButton" destination="Jfj-ZS-eG2" id="Cc0-zJ-pQO"/>
                         <outlet property="tableView" destination="Rsj-uu-Gnf" id="eVR-8K-Q8B"/>
                         <outlet property="workoutSeasonsSegments" destination="adH-20-5J5" id="tFO-Gk-QpN"/>
                     </connections>

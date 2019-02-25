@@ -26,7 +26,7 @@ class ProfileTableViewModel: NSObject {
 		rows.append(getHeaderRow(from: user))
 		rows.append(getProfileButonsRow())
 		rows.append(getBalanceRow(from: user))
-		rows.append(getProgressRow())
+//		rows.append(getProgressRow())
 		rows.append(contentsOf: getUserDataRows(from: user))
 		rows.append(contentsOf: getUserButtonArrowRows())
 		

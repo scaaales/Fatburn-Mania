@@ -20,20 +20,20 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 	
 	func getWorkoutOfTheDay() {
 		// api call to get workout of the day
-		let exercises = Exercise.testExercises
-		let workoutOfTheDay = WorkoutOfTheDay(name: "Сахарная вата",
-											  rewardCoins: 7,
-											  desritpion: .loremIpsumConstant,
-											  previewImage: #imageLiteral(resourceName: "workoutImage"),
-											  sponsorImage: #imageLiteral(resourceName: "fatburnManiaLogo"),
-											  exercises: exercises)
-		
-		viewModel = .init(exercises: exercises)
-		
-		view.setTableViewDataSource(viewModel.dataSource)
-		view.setLessonName(workoutOfTheDay.name,
-						   reward: workoutOfTheDay.rewardCoins,
-						   duration: workoutOfTheDay.duration,
-						   description: workoutOfTheDay.desritpion)
+//		let exercises = Exercise.testExercises
+//		let workoutOfTheDay = WorkoutOfTheDay(name: "Сахарная вата",
+//											  rewardCoins: 7,
+//											  desritpion: .loremIpsumConstant,
+//											  previewImage: #imageLiteral(resourceName: "workoutImage"),
+//											  sponsorImage: #imageLiteral(resourceName: "fatburnManiaLogo"),
+//											  exercises: exercises)
+//		
+//		viewModel = .init(exercises: exercises)
+//		
+//		view.setTableViewDataSource(viewModel.dataSource)
+//		view.setLessonName(workoutOfTheDay.name,
+//						   reward: workoutOfTheDay.rewardCoins,
+//						   duration: workoutOfTheDay.duration,
+//						   description: workoutOfTheDay.desritpion)
 	}
 }

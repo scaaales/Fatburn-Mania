@@ -12,6 +12,7 @@ struct PushNotification: Decodable {
 	let text: String
 	var date: Date {
 		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
 		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 		
 		return dateFormatter.date(from: _date)!

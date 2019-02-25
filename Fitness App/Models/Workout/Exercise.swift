@@ -8,24 +8,8 @@
 
 import UIKit
 
-struct Exercise {
-	let image: UIImage
+struct Exercise: Decodable {
+	let image: String
 	let name: String
 	let duration: TimeInterval
-	
-	static var testExercises: [Exercise] {
-		return [
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: #imageLiteral(resourceName: "break"), name: "Break", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: #imageLiteral(resourceName: "break"), name: "Break", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30)
-		]
-	}
 }

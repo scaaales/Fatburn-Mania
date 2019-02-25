@@ -7,59 +7,79 @@
 //
 
 import Foundation
+import KeychainSwift
 
 class WorkoutPresenter<V: WorkoutView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
 	private var viewModel: WorkoutTableViewModel!
+	private let workoutsApi: FitnessApi.Workouts
 	private var lessons = [Lesson]()
+	private(set) var seasons: [Season]!
+	
+	var selectedSeasonID: Int! {
+		didSet {
+			loadSelectedSeason()
+		}
+	}
 	
 	required init(view: View) {
 		self.view = view
-	}
-	
-	func getSeasons() {
-		let testSeasons = ["0", "1", "2", "3", "4", "5", "6"]
-		view.setSegments(titles: testSeasons)
 		
-		lessons.removeAll()
-		
-		let exrecises = Exercise.testExercises
-		
-		for season in testSeasons {
-			let testLessonYellow = Lesson(title: "Продолжаем готовиться к сезону",
-										  date: .init(day: 18, month: 10, year: 2018),
-										  image: #imageLiteral(resourceName: "yellowFier"),
-										  season: Int(season)!,
-										  description: .loremIpsumConstant,
-										  exercises: exrecises,
-										  videoID: "HfeervqhY9Y")
-			
-			let testLessonGreen = Lesson(title: "Week 1 day 5",
-										 date: .init(day: 18, month: 10, year: 2018),
-										 image: #imageLiteral(resourceName: "greenNewspapper"),
-										 season: Int(season)!,
-										 description: .loremIpsumConstant,
-										 exercises: exrecises,
-										 videoID: "HfeervqhY9Y")
-			
-			let numberOfRepeating = Int.random(in: 2...5)
-			for _ in 0...numberOfRepeating {
-				lessons.append(testLessonYellow)
-				lessons.append(testLessonGreen)
-			}
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else {
+			fatalError("cannot find access token")
 		}
 		
-		getLessonsForSeason(at: 0)
+		workoutsApi = .init(token: token)
 	}
 	
-	func getLessonsForSeason(at index: Int) {
-		let currentSeasonLessons = lessons.filter{ $0.season == index }
+	func getCurrentSeason() {
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		workoutsApi.getSeasons(onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: { [weak self] seasons in
+			self?.seasons = seasons
+			self?.selectedSeasonID = seasons.last?.id
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
+	}
+	
+	private func loadSelectedSeason() {
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		workoutsApi.getWorkoutsFor(seasonId: selectedSeasonID, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: { [weak self] lessons in
+			self?.handleLessons(lessons)
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
+		
+	}
+	
+	private func handleLessons(_ lessons: [Lesson]) {
+		self.lessons = lessons
+		
+		let weeks = lessons.map { $0.week }.unique.sorted().map { "\($0)" }
+		view.setSegments(titles: weeks)
+		
+		getLessonsForWeek(at: 0)
+	}
+	
+	func getLessonsForWeek(at index: Int) {
+		let currentWeekLessons = lessons.filter{ $0.week == index }
 		if let viewModel = self.viewModel {
-			viewModel.replaceLessons(with: currentSeasonLessons)
+			viewModel.replaceLessons(with: currentWeekLessons)
 		} else {
-			viewModel = .init(lessons: currentSeasonLessons)
+			viewModel = .init(lessons: currentWeekLessons)
 			view.setTableViewDataSource(viewModel.dataSource)
 		}
 		

@@ -13,19 +13,16 @@ class SeasonsPresenter<V: SeasonsView>: Presenter {
 	
 	weak var view: View!
 	private var dataSource: BasicTableViewDataSource<SeasonCell, Season>!
+	var seasons: [Season]!
 	
 	required init(view: View) {
 		self.view = view
 	}
 	
 	func getSeasons() {
-		let testSeasons = [
-			Season(title: "Season 1", image: #imageLiteral(resourceName: "season1Test")),
-			Season(title: "Season 2", image: #imageLiteral(resourceName: "season2Test")),
-			Season(title: "Season 3", image: #imageLiteral(resourceName: "season3Test"))
-		]
-		dataSource = .init(items: testSeasons)
+		dataSource = .init(items: seasons)
 		view.setTableViewDataSource(dataSource)
 		view.update()
 	}
+	
 }
