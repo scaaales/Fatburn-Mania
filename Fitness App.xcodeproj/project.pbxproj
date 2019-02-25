@@ -102,6 +102,8 @@
 		B33394D121DF915F00D6013F /* LoginStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33394D021DF915F00D6013F /* LoginStack.storyboard */; };
 		B33394D321DFA9D300D6013F /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33394D221DFA9D300D6013F /* TutorialCell.swift */; };
 		B3415587221F1BA700236B91 /* UIImage+fixOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3415586221F1BA700236B91 /* UIImage+fixOrientation.swift */; };
+		B34AA0102224009B00C57CFE /* FaqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AA00F2224009B00C57CFE /* FaqService.swift */; };
+		B34AA0132224019700C57CFE /* FitnessApi+Faq.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AA0122224019700C57CFE /* FitnessApi+Faq.swift */; };
 		B35E620F21F1F651001CB678 /* UIImageView+rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */; };
 		B35E621121F21298001CB678 /* BottomRoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */; };
 		B35E621321F2231C001CB678 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E621221F2231C001CB678 /* TimerCell.swift */; };
@@ -369,6 +371,8 @@
 		B33394D021DF915F00D6013F /* LoginStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStack.storyboard; sourceTree = "<group>"; };
 		B33394D221DFA9D300D6013F /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
 		B3415586221F1BA700236B91 /* UIImage+fixOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+fixOrientation.swift"; sourceTree = "<group>"; };
+		B34AA00F2224009B00C57CFE /* FaqService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqService.swift; sourceTree = "<group>"; };
+		B34AA0122224019700C57CFE /* FitnessApi+Faq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FitnessApi+Faq.swift"; sourceTree = "<group>"; };
 		B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+rotate.swift"; sourceTree = "<group>"; };
 		B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRoundedShadowView.swift; sourceTree = "<group>"; };
 		B35E621221F2231C001CB678 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
@@ -1435,6 +1439,7 @@
 				B3D56652222006AB001163FD /* FitnessApi+notifications.swift */,
 				B3D56657222033EB001163FD /* FitnessApi+reward.swift */,
 				B3D5665B222051A1001163FD /* FitnessApi+workouts.swift */,
+				B34AA0122224019700C57CFE /* FitnessApi+Faq.swift */,
 			);
 			path = FitnessApi;
 			sourceTree = "<group>";
@@ -1501,6 +1506,7 @@
 				B3D5665022200320001163FD /* NotificationsService.swift */,
 				B3D56654222031DD001163FD /* RewardService.swift */,
 				B3D5665922204B5A001163FD /* WorkoutsService.swift */,
+				B34AA00F2224009B00C57CFE /* FaqService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -2112,6 +2118,7 @@
 				B39D477521E6258900D5C050 /* ProfileTableViewModel.swift in Sources */,
 				B38DD8CC221AE52E00C65E8E /* FitnessApi+profile.swift in Sources */,
 				B3E55C752200B6C60042F237 /* PushNotification.swift in Sources */,
+				B34AA0132224019700C57CFE /* FitnessApi+Faq.swift in Sources */,
 				B3753C1C21D7A2C0008A5D5A /* ViewProtocol.swift in Sources */,
 				B3F732B721E7A8B30038ACB9 /* CourseVideosViewController.swift in Sources */,
 				B30A182021F8B88A00A39131 /* SeasonCell.swift in Sources */,
@@ -2335,6 +2342,7 @@
 				B36B2F8121DE252B00C5D07B /* SignInPresenter.swift in Sources */,
 				B30E9F8D21ECBEF5006F33CE /* ProductDetailView.swift in Sources */,
 				B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */,
+				B34AA0102224009B00C57CFE /* FaqService.swift in Sources */,
 				B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */,
 				B3033D3221E8DF5B0058626D /* VideoDetailsInitializer.swift in Sources */,
 				B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */,
