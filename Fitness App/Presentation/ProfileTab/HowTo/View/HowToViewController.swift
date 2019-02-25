@@ -10,62 +10,69 @@ import UIKit
 
 class HowToViewController: UIViewController {
 
-	private typealias HowToImageCellConfigurator = CellsConfigurator<HowToImageCell, UIImage>
-	private typealias HowToTextCellConfigurator = CellsConfigurator<HowToTextCell, String>
-	
-	@IBOutlet private weak var tableView: UITableView!
-	
-	private let tableViewContent: [CellConfigurator] = [
-		HowToImageCellConfigurator(item: #imageLiteral(resourceName: "tutorialPlaceholder")),
-		HowToTextCellConfigurator(item: String.loremIpsumConstant),
-		HowToImageCellConfigurator(item: #imageLiteral(resourceName: "tutorialPlaceholder")),
-		HowToTextCellConfigurator(item: String.loremIpsumConstant),
-		HowToImageCellConfigurator(item: #imageLiteral(resourceName: "tutorialPlaceholder")),
-		HowToTextCellConfigurator(item: String.loremIpsumConstant),
-		HowToImageCellConfigurator(item: #imageLiteral(resourceName: "tutorialPlaceholder")),
-		HowToTextCellConfigurator(item: String.loremIpsumConstant)
-	]
+	@IBOutlet private weak var textView: UITextView!
+	private var faqApi: FitnessApi.FAQ!
+	private var attributedText: NSMutableAttributedString?
 	
 	override func viewDidLoad() {
-        super.viewDidLoad()
-		setupTableView()
-    }
+		super.viewDidLoad()
+		textView.textContainerInset = .init(top: 20, left: 20, bottom: 20, right: 20)
+		textView.isScrollEnabled = false
+		textView.text = ""
+		
+		faqApi = .init()
+		faqApi.getHowToHtmlString(onComplete: {
+			
+		}, onSuccess: { [weak self] howToHtmlString in
+			self?.updateTextView(with: howToHtmlString)
+		}) { errorText in
+			print(errorText)
+		}
+	}
 	
-	private func setupTableView() {
-		tableView.dataSource = self
-		tableView.delegate = self
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		prepareTextImages()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		textView.isScrollEnabled = true
+	}
+	
+	private func updateTextView(with newString: String) {
+		DispatchQueue.main.async {
+			self.attributedText = try! NSMutableAttributedString(
+				data: (newString.data(using: String.Encoding.unicode, allowLossyConversion: true)!),
+				options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html],
+				documentAttributes: nil)
+			
+			self.textView.attributedText = self.attributedText
+			self.textView.textAlignment = .justified
+			self.textView.contentMode = .scaleToFill
+		}
+	}
+	
+	private func prepareTextImages() {
+		guard let text = self.attributedText else { return }
+		let width = self.view.frame.width - 40
 		
-		tableView.makeResizable()
-		
-		tableView.backgroundColor = .white
+		text.enumerateAttribute(NSAttributedString.Key.attachment, in: NSRange(location: 0, length: text.length), options: [], using: { [width] (object, range, pointer) in
+			if let attachment = object as? NSTextAttachment, let img = attachment.image(forBounds: self.textView.bounds, textContainer: nil, characterIndex: range.location) {
+				if attachment.fileType == "public.png" ||
+					attachment.fileType == "public.jpeg" ||
+					attachment.fileType == "public.image" {
+					let aspect = img.size.width / img.size.height
+					if img.size.width <= width {
+						attachment.bounds = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
+						return
+					}
+					let height = width / aspect
+					attachment.bounds = CGRect(x: 0, y: 0, width: width, height: height)
+				}
+			}
+		})
 	}
 
-}
 
-extension HowToViewController: UITableViewDataSource {
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return tableViewContent.count
-	}
-	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let item = tableViewContent[indexPath.row]
-		
-		let cell = tableView.dequeueReusableCell(withIdentifier: item.reuseId, for: indexPath)
-		
-		item.configure(cell: cell)
-		
-		return cell
-	}
-	
-	
-}
-
-extension HowToViewController: UITableViewDelegate {
-	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 20
-	}
-	
-	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		return .leastNormalMagnitude
-	}
 }

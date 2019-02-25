@@ -249,8 +249,6 @@
 		B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7327F21E754840038ACB9 /* MainNavigationController.swift */; };
 		B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */; };
 		B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328821E765070038ACB9 /* HowToViewController.swift */; };
-		B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328B21E765BC0038ACB9 /* HowToImageCell.swift */; };
-		B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328D21E766540038ACB9 /* HowToTextCell.swift */; };
 		B3F7329121E77E7C0038ACB9 /* VideoLibraryStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F7329021E77E7C0038ACB9 /* VideoLibraryStack.storyboard */; };
 		B3F7329721E781190038ACB9 /* VideoLibraryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329321E781190038ACB9 /* VideoLibraryPresenter.swift */; };
 		B3F7329821E781190038ACB9 /* VideoLibraryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7329421E781190038ACB9 /* VideoLibraryInitializer.swift */; };
@@ -519,8 +517,6 @@
 		B3F7327F21E754840038ACB9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		B3F7328821E765070038ACB9 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
-		B3F7328B21E765BC0038ACB9 /* HowToImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToImageCell.swift; sourceTree = "<group>"; };
-		B3F7328D21E766540038ACB9 /* HowToTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToTextCell.swift; sourceTree = "<group>"; };
 		B3F7329021E77E7C0038ACB9 /* VideoLibraryStack.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoLibraryStack.storyboard; sourceTree = "<group>"; };
 		B3F7329321E781190038ACB9 /* VideoLibraryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryPresenter.swift; sourceTree = "<group>"; };
 		B3F7329421E781190038ACB9 /* VideoLibraryInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryInitializer.swift; sourceTree = "<group>"; };
@@ -1794,15 +1790,6 @@
 			path = HowTo;
 			sourceTree = "<group>";
 		};
-		B3F7328A21E765280038ACB9 /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				B3F7328B21E765BC0038ACB9 /* HowToImageCell.swift */,
-				B3F7328D21E766540038ACB9 /* HowToTextCell.swift */,
-			);
-			path = TableViewCells;
-			sourceTree = "<group>";
-		};
 		B3F7328F21E77E560038ACB9 /* VideoLibraryStack */ = {
 			isa = PBXGroup;
 			children = (
@@ -1853,7 +1840,6 @@
 		B3F732A121E786A00038ACB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B3F7328A21E765280038ACB9 /* TableViewCells */,
 				B3F7328821E765070038ACB9 /* HowToViewController.swift */,
 			);
 			path = View;
@@ -2152,7 +2138,6 @@
 				B30E9F8C21ECBEF5006F33CE /* ProductDetailViewController.swift in Sources */,
 				B3D3F59722008CFC0052976D /* NotificationsViewController.swift in Sources */,
 				B33394C721DF721900D6013F /* UIColor+hextInit.swift in Sources */,
-				B3F7328E21E766540038ACB9 /* HowToTextCell.swift in Sources */,
 				B30A181C21F8B68E00A39131 /* SeasonsView.swift in Sources */,
 				B3753C1A21D7A2C0008A5D5A /* PresenterProtocol.swift in Sources */,
 				B39B71C42215C066002F1747 /* PopupShowable.swift in Sources */,
@@ -2292,7 +2277,6 @@
 				B3191545221442AB00F019ED /* Notification+names.swift in Sources */,
 				B3DC1B6A21EDECD700883C0F /* EditProfileTableViewModel.swift in Sources */,
 				B32BF21521D67C040019489A /* PlaceholderCell.swift in Sources */,
-				B3F7328C21E765BC0038ACB9 /* HowToImageCell.swift in Sources */,
 				B38F17A821F8848700B70DBE /* CustomSegmentedControl.swift in Sources */,
 				B3F27A4A220C3F2600E932DE /* LoadingSplashInitializer.swift in Sources */,
 				B3254F4721D3E7CE00F99F91 /* DefaultSectionHeader.swift in Sources */,
