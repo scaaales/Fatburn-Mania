@@ -16,8 +16,18 @@ struct Exercise: Decodable {
 	let isBreak: Bool
 	
 	var duration: TimeInterval {
-		// TODO: some formatting shit to get timeinterval from string
-		return 20
+		guard !_duration.isEmpty else {
+			return 0
+		}
+		
+		var interval:Double = 0
+		
+		let parts = _duration.components(separatedBy: ":")
+		for (index, part) in parts.reversed().enumerated() {
+			interval += (Double(part) ?? 0) * pow(Double(60), Double(index))
+		}
+		
+		return interval
 	}
 	
 	enum CodingKeys: String, CodingKey {

@@ -12,10 +12,6 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
-	private var workoutOfTheDay: WorkoutOfTheDay!
-	private var exercises: [Exercise] {
-		return workoutOfTheDay.exercises
-	}
 	private var timer: Timer!
 	
 	private var currentExerciseIndex: Int!
@@ -26,22 +22,16 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 			view.setCountdownTime(currentCountdown)
 		}
 	}
+	var exercises: [Exercise]!
 	
 	required init(view: View) {
 		self.view = view
 	}
 	
 	func getInitialExercise() {
-//		let exercises = Exercise.testExercises
-//		workoutOfTheDay = .init(name: "Сахарная вата",
-//								rewardCoins: 7,
-//								desritpion: .loremIpsumConstant,
-//								previewImage: #imageLiteral(resourceName: "workoutImage"),
-//								sponsorImage: #imageLiteral(resourceName: "fatburnManiaLogo"),
-//								exercises: exercises)
-//		setupTimer()
-//		currentExerciseIndex = 0
-//		view.state = .initialCountdown
+		setupTimer()
+		currentExerciseIndex = 0
+		view.state = .initialCountdown
 	}
 	
 	private func setupTimer() {
@@ -92,7 +82,7 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 	}
 	
 	private func loadCurrentExercise() {
-		if totalTimePassed == workoutOfTheDay.duration {
+		if totalTimePassed == exercises.totalDuration {
 			print("workout complete")
 			return
 		}
@@ -106,9 +96,9 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		}
 		
 		view.setExerciseName(currentExercise.title)
-		view.setTotalTime(workoutOfTheDay.duration)
+		view.setTotalTime(exercises.totalDuration)
 		view.setCurrentTime(totalTimePassed)
-		let percentage = Float(totalTimePassed/workoutOfTheDay.duration)
+		let percentage = Float(totalTimePassed/exercises.totalDuration)
 		view.setPercentageProgress(percentage)
 		view.setExerciseTime(currentExercise.duration)
 		
@@ -129,7 +119,7 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		totalTimePassed += 1
 		
 		view.setCurrentTime(totalTimePassed)
-		let percentage = Float(totalTimePassed/workoutOfTheDay.duration)
+		let percentage = Float(totalTimePassed/exercises.totalDuration)
 		view.setPercentageProgress(percentage)
 		
 		view.setExerciseTime(currentExercise.duration - currentExerciseTimePassed)

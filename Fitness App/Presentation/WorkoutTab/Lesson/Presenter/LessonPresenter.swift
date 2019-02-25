@@ -16,6 +16,7 @@ class LessonPresenter<V: LessonView>: Presenter {
 	private var lesson: Lesson!
 	private let workoutsApi: FitnessApi.Workouts
 	private var viewModel: LessonsTableViewModel!
+	private(set) var exercises: [Exercise]!
 	
 	required init(view: View) {
 		self.view = view
@@ -56,6 +57,7 @@ class LessonPresenter<V: LessonView>: Presenter {
 				self?.view.hideLoader()
 				}, onSuccess: { [weak self] exercises in
 					guard let self = self else { return }
+					self.exercises = exercises
 					self.viewModel = .init(exercises: exercises)
 					self.view.setTableViewDataSource(self.viewModel.dataSource)
 					self.view.update()
@@ -64,5 +66,13 @@ class LessonPresenter<V: LessonView>: Presenter {
 				self?.view.showErrorPopup(with: errorText)
 			}
 		}
+	}
+	
+	func getVideoUrl(at index: Int) -> URL? {
+		guard !exercises[index].isBreak,
+			let videoUrlString = exercises[index].video,
+			let fixedVideoUrlString = videoUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
+		
+		return URL(string: fixedVideoUrlString)
 	}
 }

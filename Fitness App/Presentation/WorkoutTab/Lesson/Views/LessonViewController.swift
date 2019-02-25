@@ -40,6 +40,12 @@ class LessonViewController: UIViewController {
 		photoVideoViewContainer.makeCornerRadius(15)
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let exerciseVC = segue.destination as? ExerciseViewController {
+			exerciseVC.presenter.exercises = presenter.exercises
+		}
+	}
+	
 }
 
 extension LessonViewController: LessonView {
@@ -119,6 +125,16 @@ extension LessonViewController: LessonView {
 }
 
 extension LessonViewController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		if let url = presenter.getVideoUrl(at: indexPath.row) {
+			let playerViewController = AVPlayerViewController()
+			playerViewController.player = AVPlayer(url: url)
+			present(playerViewController, animated: true)
+		}
+	}
+	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return .leastNormalMagnitude
 	}
