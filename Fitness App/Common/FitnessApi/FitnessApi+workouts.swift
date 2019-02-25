@@ -35,7 +35,7 @@ extension FitnessApi {
 		}
 		
 		private struct WorkoutsResponse: Decodable {
-			fileprivate struct SeasonInWorkouts: Decodable {
+			fileprivate struct SeasonInWorkout: Decodable {
 				let workouts: [Lesson]
 				
 				enum CodingKeys: String, CodingKey {
@@ -44,10 +44,10 @@ extension FitnessApi {
 			}
 			
 			let success: Bool
-			let seasonInWorkouts: [SeasonInWorkouts]
+			let seasonInWorkout: SeasonInWorkout
 			
 			enum CodingKeys: String, CodingKey {
-				case seasonInWorkouts = "workout_season"
+				case seasonInWorkout = "workout_season"
 				case success
 			}
 		}
@@ -61,9 +61,26 @@ extension FitnessApi {
 				{ result in
 					onComplete()
 					BaseApi.mapResult(result, intoItemOfType: WorkoutsResponse.self, onSuccess: { workoutsResponse in
-						onSuccess(workoutsResponse.seasonInWorkouts[0].workouts)
+						onSuccess(workoutsResponse.seasonInWorkout.workouts)
 					}, onError: onError)
 			})
+		}
+		
+		private struct ExercisesResponse: Decodable {
+			fileprivate struct WorkoutItem: Decodable {
+				let exercises: [Exercise]
+				
+				enum CodingKeys: String, CodingKey {
+					case exercises = "training_items"
+				}
+			}
+			let workoutItem: WorkoutItem
+			let success: Bool
+			
+			enum CodingKeys: String, CodingKey {
+				case workoutItem = "workout_item"
+				case success
+			}
 		}
 		
 		func getExerciseFor(workoutId: Int,
@@ -71,11 +88,15 @@ extension FitnessApi {
 							onSuccess: @escaping ([Exercise]) -> Void,
 							onError: @escaping OnErrorCompletion) {
 			request = provider.request(.getExercisesFor(workoutId: workoutId, token: token),
-									   completion: { result in
-										onComplete()
-										BaseApi.handleResult(result, onSuccess: { json in
-											print(json)
-										}, onError: onError)
+									   completion:
+				{ result in
+					onComplete()
+					BaseApi.handleResult(result, onSuccess: { json in
+						print(json)
+					}, onError: onError)
+					BaseApi.mapResult(result, intoItemOfType: ExercisesResponse.self, onSuccess: { exercisesResponse in
+						onSuccess(exercisesResponse.workoutItem.exercises)
+					}, onError: onError)
 			})
 		}
 		

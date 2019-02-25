@@ -40,6 +40,8 @@ struct User: Codable {
 	mutating func setDateOfBirth(from date: Date?) {
 		if let dateOfBirth = date {
 			let dateFormatter = DateFormatter()
+			dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+			
 			dateFormatter.dateFormat = "yyyy-MM-dd"
 			self._dateOfBirth = dateFormatter.string(from: dateOfBirth)
 		} else {

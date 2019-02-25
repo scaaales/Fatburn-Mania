@@ -9,7 +9,20 @@
 import UIKit
 
 struct Exercise: Decodable {
-	let image: String
-	let name: String
-	let duration: TimeInterval
+	let photo: String?
+	let title: String
+	private let _duration: String
+	let video: String?
+	let isBreak: Bool
+	
+	var duration: TimeInterval {
+		// TODO: some formatting shit to get timeinterval from string
+		return 20
+	}
+	
+	enum CodingKeys: String, CodingKey {
+		case photo, title, video
+		case isBreak = "is_break"
+		case _duration = "duration"
+	}
 }

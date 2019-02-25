@@ -56,5 +56,10 @@ class RoundButton: UIButton {
 		shadowView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
 		shadowView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
 	}
+	
+	override func removeFromSuperview() {
+		super.removeFromSuperview()
+		shadowView?.removeFromSuperview()
+	}
 
 }

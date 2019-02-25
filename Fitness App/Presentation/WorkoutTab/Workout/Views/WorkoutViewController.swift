@@ -11,6 +11,7 @@ import UIKit
 class WorkoutViewController: UIViewController {
 	var presenter: WorkoutPresenter<WorkoutViewController>!
 	
+	@IBOutlet private weak var roundedShadowView: BottomRoundedShadowView!
 	@IBOutlet private weak var workoutSeasonsSegments: CustomSegmentedControl!
 	@IBOutlet private weak var tableView: UITableView!
 	@IBOutlet private weak var seasonsButton: UIBarButtonItem!
@@ -53,6 +54,22 @@ class WorkoutViewController: UIViewController {
 }
 
 extension WorkoutViewController: WorkoutView {
+	func hideTableView() {
+		tableView.isHidden = true
+	}
+	
+	func showTableView() {
+		tableView.isHidden = false
+	}
+	
+	func hideSegments() {
+		roundedShadowView.isHidden = true
+	}
+	
+	func showSegments() {
+		roundedShadowView.isHidden = false
+	}
+	
 	func disableUserInteraction() {
 		view.isUserInteractionEnabled = false
 		seasonsButton.isEnabled = false

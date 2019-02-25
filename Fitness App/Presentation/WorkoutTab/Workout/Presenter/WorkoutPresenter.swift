@@ -38,6 +38,8 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 	func getCurrentSeason() {
 		view.disableUserInteraction()
 		view.showLoader()
+		view.hideSegments()
+		view.hideTableView()
 		
 		workoutsApi.getSeasons(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
@@ -53,6 +55,8 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 	private func loadSelectedSeason() {
 		view.disableUserInteraction()
 		view.showLoader()
+		view.hideSegments()
+		view.hideTableView()
 		
 		workoutsApi.getWorkoutsFor(seasonId: selectedSeasonID, onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
@@ -83,6 +87,8 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 			view.setTableViewDataSource(viewModel.dataSource)
 		}
 		
+		view.showSegments()
+		view.showTableView()
 		view.update()
 	}
 	

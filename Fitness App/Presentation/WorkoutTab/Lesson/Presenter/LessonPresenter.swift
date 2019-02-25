@@ -7,16 +7,25 @@
 //
 
 import Foundation
+import KeychainSwift
 
 class LessonPresenter<V: LessonView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
 	private var lesson: Lesson!
+	private let workoutsApi: FitnessApi.Workouts
 	private var viewModel: LessonsTableViewModel!
 	
 	required init(view: View) {
 		self.view = view
+		
+		let keychain = KeychainSwift()
+		guard let token = keychain.get(.keychainKeyAccessToken) else {
+			fatalError("cannot find access token")
+		}
+		
+		workoutsApi = .init(token: token)
 	}
 	
 	func setLesson(_ lesson: Lesson) {
@@ -24,16 +33,36 @@ class LessonPresenter<V: LessonView>: Presenter {
 	}
 	
 	func getLesson() {
-//		view.setTitle("Week 1 day 5",
-//					  lessonName: lesson.title,
-//					  description: lesson.description)
-//
-//		let url = URL(string: "https://www.youtube.com/embed/\(lesson.videoID)?playsinline=1")!
-//		let urlRequest = URLRequest(url: url)
-//		view.loadVideoRequest(urlRequest)
-//
-//		viewModel = .init(exercises: lesson.exercises)
-//		view.setTableViewDataSource(viewModel.dataSource)
-//		view.update()
+		view.setTitle(lesson.title,
+					  lessonName: lesson.title,
+					  description: lesson.text)
+		
+		if let videoUrlString = lesson.video,
+			let fixedUrlString = videoUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+			view.setVideo(from: fixedUrlString)
+		} else if let photoUrlString = lesson.photo {
+			view.setPhoto(from: photoUrlString)
+		}
+		
+		if lesson.isNews {
+			view.setupForNewsState()
+		} else {
+			view.hideAllViews()
+			view.disableUserInteraction()
+			view.showLoader()
+			
+			workoutsApi.getExerciseFor(workoutId: lesson.id, onComplete: { [weak self] in
+				self?.view.enableUserInteraction()
+				self?.view.hideLoader()
+				}, onSuccess: { [weak self] exercises in
+					guard let self = self else { return }
+					self.viewModel = .init(exercises: exercises)
+					self.view.setTableViewDataSource(self.viewModel.dataSource)
+					self.view.update()
+					self.view.showAllViews()
+			}) { [weak self] errorText in
+				self?.view.showErrorPopup(with: errorText)
+			}
+		}
 	}
 }

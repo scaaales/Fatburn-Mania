@@ -83,8 +83,8 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		
 		currentCountdown = 3
 		view.state = .nextExerciseCountdown
-		let nextExercise = exercises[safe: currentExerciseIndex]
-		if nextExercise?.name == "Break" {
+		guard let nextExercise = exercises[safe: currentExerciseIndex] else { return }
+		if nextExercise.isBreak {
 			view.setBreakPicture()
 		} else {
 			view.setVideo()
@@ -99,13 +99,13 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		
 		let currentExercise = exercises[currentExerciseIndex]
 		
-		if currentExercise.name == "Break" {
+		if currentExercise.isBreak {
 			view.setBreakPicture()
 		} else {
 			view.setVideo()
 		}
 		
-		view.setExerciseName(currentExercise.name)
+		view.setExerciseName(currentExercise.title)
 		view.setTotalTime(workoutOfTheDay.duration)
 		view.setCurrentTime(totalTimePassed)
 		let percentage = Float(totalTimePassed/workoutOfTheDay.duration)
@@ -113,7 +113,7 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		view.setExerciseTime(currentExercise.duration)
 		
 		let nextExercise = exercises[safe: currentExerciseIndex + 1]
-		view.setNextExerciseName(nextExercise?.name)
+		view.setNextExerciseName(nextExercise?.title)
 	}
 	
 	private func workoutSecondPassed() {
