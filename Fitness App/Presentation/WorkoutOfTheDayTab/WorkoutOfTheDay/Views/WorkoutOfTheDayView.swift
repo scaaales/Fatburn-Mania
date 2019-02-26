@@ -8,11 +8,14 @@
 
 import UIKit
 
-protocol WorkoutOfTheDayView: View, TableViewUpdatable {
+protocol WorkoutOfTheDayView: View, TableViewUpdatable, NetworkingView, PopupShowable {
 	func setLessonName(_ name: String,
 					   reward: Int,
 					   duration: TimeInterval,
 					   description: String)
-	func setLessonSponsorImage(_ sponsorImage: UIImage,
-							   previewImage: UIImage)
+	func setLessonSponsorImage(_ sponsorImage: UIImage)
+	func setPreviewImage(from urlString: String)
+	
+	func hideAllViews()
+	func showAllViews()
 }

@@ -97,13 +97,23 @@ extension FitnessApi {
 			})
 		}
 		
+		private struct WorkoutOfTheDayResponse: Decodable {
+			let workoutOfTheDay: WorkoutOfTheDay
+			let success: Bool
+			
+			enum CodingKeys: String, CodingKey {
+				case workoutOfTheDay = "workout_day_item"
+				case success
+			}
+		}
+		
 		func getWorkoutOfTheDay(onComplete: @escaping () -> Void,
 								onSuccess: @escaping (WorkoutOfTheDay) -> Void,
 								onError: @escaping OnErrorCompletion) {
 			request = provider.request(.getWorkoutOfTheDay(token: token), completion: { result in
 				onComplete()
-				BaseApi.handleResult(result, onSuccess: { json in
-					print(json)
+				BaseApi.mapResult(result, intoItemOfType: WorkoutOfTheDayResponse.self, onSuccess: {
+					onSuccess($0.workoutOfTheDay)
 				}, onError: onError)
 			})
 		}
