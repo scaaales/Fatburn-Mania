@@ -11,6 +11,7 @@ import Moya
 enum AuthService {
 	case register(name: String, phone: String, email: String, password: String)
 	case login(email: String, password: String)
+	case resetPassword(email: String)
 	case logout(token: String)
 }
 
@@ -24,6 +25,8 @@ extension AuthService: TargetType {
 			return path + "register"
 		case .login:
 			return path + "login"
+		case .resetPassword:
+			return path + "forgot_password"
 		case .logout:
 			return path + "logout"
 		}
@@ -46,6 +49,10 @@ extension AuthService: TargetType {
 			return .requestParameters(parameters: [
 				"email": email,
 				"password": password
+				], encoding: JSONEncoding.default)
+		case .resetPassword(let email):
+			return .requestParameters(parameters: [
+				"email": email
 				], encoding: JSONEncoding.default)
 		case .logout:
 			return .requestPlain

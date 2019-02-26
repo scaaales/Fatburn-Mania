@@ -39,6 +39,8 @@ class NotificationsPresenter<V: NotificationsView>: Presenter {
 			self.dataSource = .init(items: notifications)
 			self.view.setTableViewDataSource(self.dataSource)
 			self.view.update()
+			AppDelegate.shared.pushNotificationService?.unreadNotificationsCount = 0
+			UIApplication.shared.applicationIconBadgeNumber = 0
 		}) { [weak self] (errorText) in
 			self?.view.showErrorPopup(with: errorText)
 		}

@@ -56,6 +56,8 @@ class MainNavigationController: LoginNavigationController {
 		if let count = AppDelegate.shared.pushNotificationService?.unreadNotificationsCount {
 			if count > 0 {
 				notificationView.isHidden = false
+			} else {
+				notificationView.isHidden = true
 			}
 		}
 		
@@ -79,6 +81,8 @@ class MainNavigationController: LoginNavigationController {
 			let value = userInfo["value"] {
 			if value > 0 {
 				notificationView.isHidden = false
+			} else {
+				notificationView.isHidden = true
 			}
 		}
 	}

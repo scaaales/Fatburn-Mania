@@ -55,7 +55,7 @@ extension FitnessApi {
 		}
 		
 		// login
-		typealias OnSuccessLoginCompletion = (_ accessToker: String, _ expiresIn: Int) -> Void
+		typealias OnSuccessLoginCompletion = (_ accessToken: String, _ expiresIn: Int) -> Void
 		
 		func login(email: String, password: String,
 				   onComplete: @escaping () -> Void,
@@ -63,15 +63,55 @@ extension FitnessApi {
 				   onError: @escaping OnErrorCompletion) {
 			request = provider.request(.login(email: email, password: password)) { result in
 				onComplete()
-				BaseApi.handleResult(result,
-									 onSuccess:
-					{ json in
+				Auth.handleLoginResult(result, onSuccess: onSuccess, onError: onError)
+			}
+		}
+		
+		private static func handleLoginResult(_ result: Result<Response, MoyaError>,
+									   onSuccess: OnSuccessLoginCompletion,
+									   onError: OnErrorCompletion) {
+			switch result {
+			case let .success(moyaResponse):
+				do {
+					let jsonAny = try moyaResponse.mapJSON()
+					
+					if moyaResponse.statusCode == 401,
+						let json = jsonAny as? JSON,
+						let errorText = json["error"] as? String {
+						onError(errorText)
+						return
+					}
+					
+					if let json = jsonAny as? JSON {
 						if let errorText = json["error"] as? String {
 							onError(errorText)
 						} else if let token = json["access_token"] as? String,
 							let expiresIn = json["expires_in"] as? Int {
 							onSuccess(token, expiresIn)
 						}
+					}
+				} catch {
+					onError(error.localizedDescription)
+				}
+			case let .failure(error):
+				print(error)
+				onError(error.localizedDescription)
+			}
+		}
+		
+		// resetPassword
+		func resetPassword(email: String,
+						   onComplete: @escaping () -> Void,
+						   onSuccess: @escaping () -> Void,
+						   onError: @escaping OnErrorCompletion) {
+			request = provider.request(.resetPassword(email: email)) { result in
+				onComplete()
+				BaseApi.handleResult(result, onSuccess: { json in
+					if let error = json["errors"] as? String {
+						onError(error)
+					} else {
+						onSuccess()
+					}
 				}, onError: onError)
 			}
 		}
