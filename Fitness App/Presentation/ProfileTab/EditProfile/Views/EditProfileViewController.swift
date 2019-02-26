@@ -13,7 +13,7 @@ class EditProfileViewController: UITableViewController {
 	
 	private var textFieldAssistant: TextFieldAssistant!
 	private let firstResponderTag = 100
-	private let lastResponderTag = 109
+	private let lastResponderTag = 108
 	var profileViewController: ProfileViewController!
 	
 	lazy private var loader: BlurredLoader = {

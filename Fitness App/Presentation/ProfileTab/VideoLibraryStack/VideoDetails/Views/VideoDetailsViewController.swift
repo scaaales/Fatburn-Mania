@@ -14,7 +14,7 @@ class VideoDetailsViewController: UIViewController {
 	
 	@IBOutlet private weak var videoContainter: UIView!
 	@IBOutlet private weak var playButton: UIButton!
-	@IBOutlet private weak var descriptionTextView: UITextView!
+	@IBOutlet private weak var descriptionLabel: UILabel!
 	
 	private var player: AVPlayer!
 	
@@ -25,13 +25,11 @@ class VideoDetailsViewController: UIViewController {
 		super.viewDidLoad()
 		let url = URL(string: "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8")!
 		player = AVPlayer(url: url)
-		descriptionTextView.isScrollEnabled = false
-		descriptionTextView.text = .loremIpsumConstant
+		descriptionLabel.text = .loremIpsumConstant
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		descriptionTextView.isScrollEnabled = true
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		if !playerLayerCreated {
 			setupPlayerLayer()
 		}
