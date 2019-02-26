@@ -8,24 +8,31 @@
 
 import UIKit
 
-struct Exercise {
-	let image: UIImage
-	let name: String
-	let duration: TimeInterval
+struct Exercise: Decodable {
+	let photo: String?
+	let title: String
+	private let _duration: String
+	let video: String?
+	let isBreak: Bool
 	
-	static var testExercises: [Exercise] {
-		return [
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: #imageLiteral(resourceName: "break"), name: "Break", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: #imageLiteral(resourceName: "break"), name: "Break", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30),
-			.init(image: .init(), name: "Джампинг джек", duration: 30)
-		]
+	var duration: TimeInterval {
+		guard !_duration.isEmpty else {
+			return 0
+		}
+		
+		var interval:Double = 0
+		
+		let parts = _duration.components(separatedBy: ":")
+		for (index, part) in parts.reversed().enumerated() {
+			interval += (Double(part) ?? 0) * pow(Double(60), Double(index))
+		}
+		
+		return interval
+	}
+	
+	enum CodingKeys: String, CodingKey {
+		case photo, title, video
+		case isBreak = "is_break"
+		case _duration = "duration"
 	}
 }

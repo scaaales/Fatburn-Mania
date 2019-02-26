@@ -21,6 +21,10 @@ class WorkoutCell: UITableViewCell, ConfigurableCell {
 		
 		lessonTitleLabel.text = data.title
 		lessonDateLabel.text = dateFormatter.string(from: data.date).lowercased()
-		lessonImage.image = data.image
+		if data.isNews {
+			lessonImage.image = #imageLiteral(resourceName: "greenNewspapper")
+		} else {
+			lessonImage.image = #imageLiteral(resourceName: "yellowFier")
+		}
 	}
 }

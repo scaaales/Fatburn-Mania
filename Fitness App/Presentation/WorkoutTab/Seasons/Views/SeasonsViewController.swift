@@ -12,6 +12,7 @@ class SeasonsViewController: UIViewController {
 	var presenter: SeasonsPresenter<SeasonsViewController>!
 	
 	@IBOutlet private weak var tableView: UITableView!
+	var workoutViewController: WorkoutViewController!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -48,7 +49,7 @@ extension SeasonsViewController: UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		// pass selected season back to workout screen somehow
+		workoutViewController.presenter.selectedSeasonID = presenter.seasons[indexPath.row].id
 		navigationController?.popViewController(animated: true)
 	}
 }

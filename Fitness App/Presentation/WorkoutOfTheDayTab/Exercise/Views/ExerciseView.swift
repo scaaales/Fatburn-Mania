@@ -23,6 +23,8 @@ protocol ExerciseView: View {
 	func setNextExerciseName(_ nextExerciseName: String?)
 	func setCountdownTime(_ countdownTime: TimeInterval)
 	
-	func setVideo()
-	func setBreakPicture() 
+	func setVideo(from url: URL)
+	func setBreakPicture()
+	
+	func closeItself()
 }

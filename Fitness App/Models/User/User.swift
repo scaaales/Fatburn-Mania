@@ -26,7 +26,7 @@ struct User: Codable {
 	var country: String?
 	var city: String?
 	
-	let coins: Int?
+	var coins: Int?
 	
 	enum CodingKeys: String, CodingKey {
 		case firstName = "first_name"
@@ -40,6 +40,8 @@ struct User: Codable {
 	mutating func setDateOfBirth(from date: Date?) {
 		if let dateOfBirth = date {
 			let dateFormatter = DateFormatter()
+			dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+			
 			dateFormatter.dateFormat = "yyyy-MM-dd"
 			self._dateOfBirth = dateFormatter.string(from: dateOfBirth)
 		} else {

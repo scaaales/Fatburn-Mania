@@ -1048,7 +1048,7 @@
         <!--Coins Added View Controller-->
         <scene sceneID="bTC-T9-fRw">
             <objects>
-                <viewController id="BEP-tI-kax" customClass="CoinsAddedViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CoinsAddedViewController" id="BEP-tI-kax" customClass="CoinsAddedViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FBn-C1-0at">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1118,6 +1118,7 @@ and for this you get</string>
                     </view>
                     <connections>
                         <outlet property="coinsLabel" destination="DGn-1m-LWb" id="0NF-Wo-28B"/>
+                        <outlet property="topLabel" destination="qWT-4C-oOb" id="e8n-iQ-PVj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7R-5Z-FNg" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,16 +11,25 @@ import UIKit
 class WorkoutViewController: UIViewController {
 	var presenter: WorkoutPresenter<WorkoutViewController>!
 	
+	@IBOutlet private weak var roundedShadowView: BottomRoundedShadowView!
 	@IBOutlet private weak var workoutSeasonsSegments: CustomSegmentedControl!
 	@IBOutlet private weak var tableView: UITableView!
+	@IBOutlet private weak var seasonsButton: UIBarButtonItem!
+	
+	lazy private var loader: BlurredLoader = {
+		let loader = BlurredLoader()
+		view.addSubview(loader)
+		loader.centerInto(view: view)
+		return loader
+	}()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		workoutSeasonsSegments.setOnSelectAction { [weak self] index in
-			self?.presenter.getLessonsForSeason(at: index)
+			self?.presenter.getLessonsForWeek(at: index)
 		}
 		setupTableView()
-		presenter.getSeasons()
+		presenter.getCurrentSeason()
 	}
 	
 	private func setupTableView() {
@@ -36,12 +45,49 @@ class WorkoutViewController: UIViewController {
 			
 			let lesson = presenter.getLessonAt(index: selectedIndex.row)
 			lessonVC.presenter.setLesson(lesson)
+		} else if let seasonsVC = segue.destination as? SeasonsViewController {
+			seasonsVC.workoutViewController = self
+			seasonsVC.presenter.seasons = presenter.seasons
 		}
 	}
 	
 }
 
 extension WorkoutViewController: WorkoutView {
+	func hideTableView() {
+		tableView.isHidden = true
+	}
+	
+	func showTableView() {
+		tableView.isHidden = false
+	}
+	
+	func hideSegments() {
+		roundedShadowView.isHidden = true
+	}
+	
+	func showSegments() {
+		roundedShadowView.isHidden = false
+	}
+	
+	func disableUserInteraction() {
+		view.isUserInteractionEnabled = false
+		seasonsButton.isEnabled = false
+	}
+	
+	func enableUserInteraction() {
+		view.isUserInteractionEnabled = true
+		seasonsButton.isEnabled = true
+	}
+	
+	func showLoader() {
+		loader.startAnimating()
+	}
+	
+	func hideLoader() {
+		loader.stopAnimating()
+	}
+	
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
 		tableView.dataSource = dataSource
 	}

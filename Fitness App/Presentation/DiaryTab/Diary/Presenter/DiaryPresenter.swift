@@ -76,9 +76,11 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	func updateCurrentDay(with newMeasurements: Measurements) {
 		measurementsCache[Date().startOfDay] = newMeasurements
 		
+		viewModel.leftBodyMeasurements = newMeasurements
 		viewModel.rightBodyMeasurements = newMeasurements
 		if let dateString = newMeasurements.date?.formattedStringWithTime {
 			viewModel.rightDateString = dateString
+			viewModel.leftDateString = dateString
 		}
 		view.update()
 	}
@@ -109,6 +111,7 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		} else {
 			if setToday {
 				viewModel.rightDateString = Date().formattedStringWithTime
+				viewModel.leftDateString = Date().formattedStringWithTime
 			}
 		}
 	}

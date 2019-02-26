@@ -8,4 +8,5 @@
 
 protocol ProfileView: View, TableViewUpdatable, NetworkingView, PopupShowable {	
 	func showLoginScreen()
+	func reloadCellsWitoutAnimation(at row: Int)
 }

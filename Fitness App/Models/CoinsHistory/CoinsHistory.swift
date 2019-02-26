@@ -23,6 +23,8 @@ struct CoinsHistory: Decodable {
 extension CoinsHistory {
 	var date: Date {
 		let formatter = DateFormatter()
+		formatter.timeZone = TimeZone(abbreviation: "UTC")
+		
 		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 		
 		return formatter.date(from: _date)!

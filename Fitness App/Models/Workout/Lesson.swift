@@ -8,12 +8,32 @@
 
 import UIKit
 
-struct Lesson {
+struct Lesson: Decodable {
+	let id: Int
 	let title: String
-	let date: Date
-	let image: UIImage; #warning("change to type or something later")
-	let season: Int
-	let description: String
-	let exercises: [Exercise]
-	let videoID: String
+	private let _date: String
+	let photo: String?
+	let video: String?
+	let week: Int
+	let text: String
+	private let _exercisesCount: Int
+	
+	var isNews: Bool {
+		return _exercisesCount == 0
+	}
+	
+	var date: Date {
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+		
+		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+		
+		return dateFormatter.date(from: _date)!
+	}
+	
+	enum CodingKeys: String, CodingKey {
+		case title, photo, video, week, text, id
+		case _date = "created_at"
+		case _exercisesCount = "training_items_count"
+	}
 }

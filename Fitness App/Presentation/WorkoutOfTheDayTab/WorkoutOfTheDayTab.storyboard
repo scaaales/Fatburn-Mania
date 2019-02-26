@@ -60,7 +60,7 @@
                                                     <segue destination="VRp-C4-fkX" kind="show" id="S6V-Ct-AUq"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workoutImage" translatesAutoresizingMaskIntoConstraints="NO" id="Ghq-Nr-vY6">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ghq-Nr-vY6">
                                                 <rect key="frame" x="0.0" y="60.5" width="375" height="162"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ghq-Nr-vY6" secondAttribute="height" multiplier="125:54" id="4dq-5W-5BH"/>
@@ -104,7 +104,7 @@
                                                 <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="68" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="B4b-C2-onv">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="68" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="B4b-C2-onv">
                                                 <rect key="frame" x="0.0" y="450.5" width="375" height="200"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
@@ -118,22 +118,21 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-rW-6xS">
-                                                                    <rect key="frame" x="20" y="0.0" width="50" height="50"/>
-                                                                    <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-rW-6xS">
+                                                                    <rect key="frame" x="20" y="9" width="50" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="YuL-fY-h0J"/>
                                                                         <constraint firstAttribute="width" constant="50" id="tUf-Cz-XG2"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4r-f9-lPF">
-                                                                    <rect key="frame" x="80" y="2" width="43.5" height="21"/>
+                                                                    <rect key="frame" x="80" y="9" width="43.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yv5-VB-zta">
-                                                                    <rect key="frame" x="329" y="4.5" width="33" height="16"/>
+                                                                    <rect key="frame" x="329" y="11.5" width="33" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -150,9 +149,9 @@
                                                                 <constraint firstItem="Yv5-VB-zta" firstAttribute="centerY" secondItem="T4r-f9-lPF" secondAttribute="centerY" id="1w6-N1-7is"/>
                                                                 <constraint firstAttribute="bottom" secondItem="9Ea-8q-gWt" secondAttribute="bottom" constant="10" id="6Rl-Ma-8Q5"/>
                                                                 <constraint firstItem="9Ea-8q-gWt" firstAttribute="leading" secondItem="T4r-f9-lPF" secondAttribute="leading" id="Dzm-c0-P8K"/>
-                                                                <constraint firstItem="4dc-rW-6xS" firstAttribute="top" secondItem="gJf-Wo-om3" secondAttribute="top" id="Zuk-Qg-Cdf"/>
+                                                                <constraint firstItem="T4r-f9-lPF" firstAttribute="top" secondItem="4dc-rW-6xS" secondAttribute="top" id="GXJ-z4-rcj"/>
+                                                                <constraint firstItem="4dc-rW-6xS" firstAttribute="top" secondItem="gJf-Wo-om3" secondAttribute="top" constant="9" id="Zuk-Qg-Cdf"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Yv5-VB-zta" secondAttribute="trailing" constant="13" id="dOv-Oh-RM4"/>
-                                                                <constraint firstItem="T4r-f9-lPF" firstAttribute="top" secondItem="gJf-Wo-om3" secondAttribute="top" constant="2" id="htk-kh-uzm"/>
                                                                 <constraint firstAttribute="trailing" secondItem="9Ea-8q-gWt" secondAttribute="trailing" constant="20" id="prT-yB-wUK"/>
                                                                 <constraint firstItem="T4r-f9-lPF" firstAttribute="leading" secondItem="4dc-rW-6xS" secondAttribute="trailing" constant="10" id="tHy-mp-w7P"/>
                                                                 <constraint firstItem="4dc-rW-6xS" firstAttribute="leading" secondItem="gJf-Wo-om3" secondAttribute="leading" constant="20" id="yTd-08-ElO"/>
@@ -224,6 +223,7 @@
                         <outlet property="sponsorImageView" destination="Lwu-9R-IY2" id="2GM-yC-kxw"/>
                         <outlet property="tableView" destination="B4b-C2-onv" id="k6H-NO-MWE"/>
                         <outlet property="tableViewHeight" destination="tn5-vd-c3j" id="yEy-rF-c44"/>
+                        <segue destination="CKL-rF-hi8" kind="presentation" identifier="presentCoinsAdded" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Osx-i9-ZkG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihY-Pg-0Ml" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -234,6 +234,14 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="1352.8" y="-254.57271364317842"/>
+        </scene>
+        <!--CoinsAddedViewController-->
+        <scene sceneID="H22-mI-2H1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DiaryTab" referencedIdentifier="CoinsAddedViewController" id="CKL-rF-hi8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FER-8d-Nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2182" y="-624"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ff2-2n-h3Y">
@@ -475,7 +483,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2328.8000000000002" y="-254.12293853073464"/>
+            <point key="canvasLocation" x="2326" y="-172"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="14a-I8-eGu">
@@ -506,7 +514,6 @@
         <image name="pauseButton" width="25" height="25"/>
         <image name="skipping_rope" width="18.5" height="23"/>
         <image name="skipping_rope_selected" width="18.5" height="23"/>
-        <image name="workoutImage" width="436" height="162"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="S6V-Ct-AUq"/>

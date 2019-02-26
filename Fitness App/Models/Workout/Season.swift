@@ -8,7 +8,8 @@
 
 import UIKit
 
-struct Season {
+struct Season: Decodable {
+	let id: Int
 	let title: String
-	let image: UIImage
+	let photo: String
 }

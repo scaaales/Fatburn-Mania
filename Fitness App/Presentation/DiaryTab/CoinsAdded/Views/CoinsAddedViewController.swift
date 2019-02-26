@@ -10,19 +10,25 @@ import UIKit
 
 class CoinsAddedViewController: UIViewController {
 	
+	@IBOutlet private weak var topLabel: UILabel!
 	var coinsAmount: Int!
-	var prevVC: UIViewController!
+	var prevVC: AddNewMeasurementsViewController?
+	
+	var reasonAddedTextReplacement: String?
 	
 	@IBOutlet private weak var coinsLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		coinsLabel.text = "\(coinsAmount!)"
+		if let newText = reasonAddedTextReplacement {
+			topLabel.text = newText
+		}
 	}
 	
 	@IBAction private func close() {
 		dismiss(animated: true) { [weak self] in
-			self?.prevVC.dismiss(animated: true)
+			self?.prevVC?.closeItself()
 		}
 	}
 }

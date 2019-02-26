@@ -16,7 +16,7 @@ class SeasonCell: UITableViewCell, ConfigurableCell {
 	
 	func configure(data: Season) {
 		seasonImage.makeCornerRadius(15)
-		seasonImage.image = data.image
+		seasonImage.setImageFrom(urlString: data.photo)
 		seasonNameLabel.text = data.title
 	}
 

@@ -8,12 +8,16 @@
 
 import UIKit
 
-struct WorkoutOfTheDay {
-	let name: String
+struct WorkoutOfTheDay: Decodable {
+	let title: String
 	var duration: TimeInterval { return exercises.totalDuration }
-	let rewardCoins: Int
-	let desritpion: String
-	let previewImage: UIImage
-	let sponsorImage: UIImage
+	let reward: Int
+	let text: String
+	let photo: String
 	let exercises: [Exercise]
+	
+	enum CodingKeys: String, CodingKey {
+		case exercises = "training_items"
+		case title, reward, text, photo
+	}
 }

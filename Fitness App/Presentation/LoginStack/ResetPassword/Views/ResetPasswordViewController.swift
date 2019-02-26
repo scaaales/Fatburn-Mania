@@ -72,13 +72,18 @@ extension ResetPasswordViewController: ResetPasswordView {
 	}
 	
 	func showError() {
-		print("error")
+		emailTextField.setErrorState(errorTitle: .wrongEmailConstant)
+		emailTextField.clearOnNextEditing(true)
 	}
 	
 	
 }
 
 extension ResetPasswordViewController: UITextFieldDelegate {
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		emailTextField.setNormalState()
+	}
+	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 		presenter.resetPassword(email: emailTextField.text)

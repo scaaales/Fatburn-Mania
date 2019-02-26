@@ -16,9 +16,17 @@ class ExerciseCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var durationLabel: UILabel!
 	
 	func configure(data: Exercise) {
-		exerciseImageView.image = data.image
-		nameLabel.text = data.name
+		nameLabel.text = data.title
 		durationLabel.text = data.duration.stringFromTimeInterval
+		if data.isBreak {
+			exerciseImageView.image = #imageLiteral(resourceName: "break")
+			selectionStyle = .none
+		} else {
+			selectionStyle = .default
+			if let imageUrlString = data.photo {
+				exerciseImageView.setImageFrom(urlString: imageUrlString)
+			}
+		}
 	}
 
 }

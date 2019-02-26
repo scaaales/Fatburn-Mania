@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class ExerciseViewController: UIViewController {
 	var presenter: ExercisePresenter<ExerciseViewController>!
@@ -50,11 +51,29 @@ class ExerciseViewController: UIViewController {
 	
 	@IBOutlet private weak var topNextExerciseStackViewConstraing: NSLayoutConstraint!
 	
+	private var playerViewController: AVPlayerViewController!
+	var workoutOfTheDayViewController: WorkoutOfTheDayViewController?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		progressView.subviews.forEach { $0.makeCornerRadius($0.bounds.height / 2) }
 		videoContainer.makeCornerRadius(15)
+		setupVideoPlayer()
 		presenter.getInitialExercise()
+	}
+	
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
+		progressView.subviews.forEach { $0.makeCornerRadius($0.bounds.height / 2) }
+	}
+	
+	private func setupVideoPlayer() {
+		playerViewController = AVPlayerViewController()
+		
+		videoContainer.addSubview(playerViewController.view)
+		
+		playerViewController.view.frame = videoContainer.bounds
+		playerViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+		playerViewController.showsPlaybackControls = false
 	}
 	
 	@IBAction private func playPauseTapped() {
@@ -94,8 +113,7 @@ class ExerciseViewController: UIViewController {
 		playPauseButton.setImage(#imageLiteral(resourceName: "pauseButton"), for: .normal)
 		playPauseButton.imageEdgeInsets.left = 0
 		
-		pausedLabel.text = "Imagine there is a video playing here"
-		pausedLabel.backgroundColor = .gray
+		playerViewController.player?.play()
 		
 		exerciseNameLabel.alpha = 1
 		exerciseTimeLabel.alpha = 1
@@ -123,7 +141,7 @@ class ExerciseViewController: UIViewController {
 		playPauseButton.imageEdgeInsets.left = 5
 		
 		pausedLabel.text = "Paused"
-		pausedLabel.backgroundColor = .white
+		playerViewController.player?.pause()
 		
 		exerciseNameLabel.alpha = 0
 		exerciseTimeLabel.alpha = 0
@@ -145,6 +163,8 @@ class ExerciseViewController: UIViewController {
 		
 		playPauseButton.isHidden = true
 		topNextExerciseStackViewConstraing.isActive = true
+		
+		playerViewController.player = nil
 	}
 		
 }
@@ -180,10 +200,12 @@ extension ExerciseViewController: ExerciseView {
 		nextExerciseHelperNameLabel.text = nextExerciseName ?? "-"
 	}
 	
-	func setVideo() {
-		pausedLabel.text = "Imagine there is a video playing here"
-		pausedLabel.isHidden = false
-		pausedLabel.backgroundColor = .gray
+	func setVideo(from url: URL) {
+		playerViewController.view.isHidden = false
+		if playerViewController.player == nil {
+			playerViewController.player = AVPlayer(url: url)
+			playerViewController.player?.play()
+		}
 		
 		breakImageView.isHidden = true
 	}
@@ -191,6 +213,12 @@ extension ExerciseViewController: ExerciseView {
 	func setBreakPicture() {
 		pausedLabel.isHidden = true
 		breakImageView.isHidden = false
+		playerViewController.view.isHidden = true
+	}
+	
+	func closeItself() {
+		workoutOfTheDayViewController?.presenter.workoutFinished()
+		navigationController?.popViewController(animated: true)
 	}
 	
 }

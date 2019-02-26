@@ -29,16 +29,19 @@ extension TimeInterval {
 		return String(format: "%0.2d:%0.2d", minutes, seconds)
 	}
 	
-	var stringMinutesOnly: String {
-		let minutes = (Int(self) / 60) % 60
-		
-		return String(minutes)
-	}
-	
 	var stringSecondsOnly: String {
 		let seconds = Int(self) % 60
 		
 		return String(seconds)
 	}
 
+	var formattedWithFullText: String {
+		let formatter = DateComponentsFormatter()
+		
+		formatter.unitsStyle = .full
+		formatter.allowedUnits = [.minute, .second]
+		
+		return formatter.string(from: self)!
+	}
+	
 }

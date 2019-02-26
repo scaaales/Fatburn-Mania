@@ -8,9 +8,13 @@
 
 import Foundation
 
-protocol LessonView: View, TableViewUpdatable {
+protocol LessonView: View, TableViewUpdatable, NetworkingView, PopupShowable {
 	func setTitle(_ title: String,
 				  lessonName: String,
 				  description: String)
-	func loadVideoRequest(_ urlRequest: URLRequest)
+	func hideAllViews()
+	func showAllViews()
+	func setupForNewsState()
+	func setPhoto(from urlString: String)
+	func setVideo(from urlString: String)
 }

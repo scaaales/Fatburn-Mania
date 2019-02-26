@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
 	static let notificationsCountChanged = Notification.Name("notificationsCountChanged")
+	static let coinsAdded = Notification.Name("coinsAdded")
 }

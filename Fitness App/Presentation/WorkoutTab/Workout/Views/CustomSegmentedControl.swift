@@ -27,6 +27,7 @@ class CustomSegmentedControl: UIControl {
 	}
 	
 	func setItemsTitles(_ titles: [String]) {
+		buttons.removeAll()
 		for buttonTitle in titles {
 			let button = UIButton(type: .system)
 			button.backgroundColor = .clear

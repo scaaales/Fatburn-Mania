@@ -9,7 +9,7 @@
 import Foundation
 import KeychainSwift
 
-class ProfilePresenter<V: ProfileView>: Presenter { 
+class ProfilePresenter<V: ProfileView>: Presenter, UserCoinsUpdateDelegate {
 	typealias View = V
 	
 	weak var view: View!
@@ -44,6 +44,7 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 			guard let self = self else { return }
 			self.user = user
 			self.viewModel = .init(user: user)
+			self.viewModel.delegate = self
 			self.view.setTableViewDataSource(self.viewModel)
 			self.view.update()
 		}) { [weak self] errorText in
@@ -52,9 +53,6 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	}
 	
 	func logout() {
-		view.disableUserInteraction()
-		view.showLoader()
-		
 		if let deviceToken = AppDelegate.shared.pushNotificationService?.deviceToken {
 			removeNotificationsToken(accessToken: profileAPI.token, deviceToken: deviceToken)
 		} else {
@@ -65,6 +63,9 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	private func sendLogoutRequest() {
 		let keychain = KeychainSwift()
 		guard let token = keychain.get(.keychainKeyAccessToken) else { return }
+		
+		view.disableUserInteraction()
+		view.showLoader()
 		
 		authAPI.logout(token: token, onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
@@ -81,8 +82,12 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 	private func removeNotificationsToken(accessToken: String, deviceToken: String) {
 		notificationsAPI = .init(token: accessToken)
 		
-		notificationsAPI.removeNotifictionsToken(deviceToken: deviceToken, onComplete: {
-			
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		notificationsAPI.removeNotifictionsToken(deviceToken: deviceToken, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
 		}, onSuccess: { [weak self] in
 			self?.sendLogoutRequest()
 		}) { [weak self] errorText in
@@ -99,6 +104,10 @@ class ProfilePresenter<V: ProfileView>: Presenter {
 		viewModel = .init(user: user)
 		view.setTableViewDataSource(viewModel)
 		view.update()
+	}
+	
+	func userCoinsDidUpdate(coinsRow: Int) {
+		view.reloadCellsWitoutAnimation(at: coinsRow)
 	}
 
 }

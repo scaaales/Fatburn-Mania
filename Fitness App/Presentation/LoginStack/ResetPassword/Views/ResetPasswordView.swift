@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ResetPasswordView: View, NetworkingView {
+protocol ResetPasswordView: View, NetworkingView, PopupShowable {
 	func showSuccessSend()
 	func showError()
 }
