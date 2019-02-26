@@ -13,5 +13,11 @@ protocol WorkoutView: View, TableViewUpdatable, NetworkingView, PopupShowable {
 	
 	func hideTableView()
 	func showTableView()
+	
+	func disableSeasonsButton()
+	func enableSeasonsButton()
+	
+	func showTryAgainButton()
+	func hideTryAgainButton()
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutViewController: UIViewController {
+class WorkoutViewController: RootViewController {
 	var presenter: WorkoutPresenter<WorkoutViewController>!
 	
 	@IBOutlet private weak var roundedShadowView: BottomRoundedShadowView!
@@ -36,6 +36,10 @@ class WorkoutViewController: UIViewController {
 		tableView.backgroundColor = .clear
 		tableView.makeResizable(cell: true)
 		tableView.delegate = self
+	}
+	
+	override func tryAgainTapped() {
+		presenter.getCurrentSeason()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,11 +76,17 @@ extension WorkoutViewController: WorkoutView {
 	
 	func disableUserInteraction() {
 		view.isUserInteractionEnabled = false
-		seasonsButton.isEnabled = false
 	}
 	
 	func enableUserInteraction() {
 		view.isUserInteractionEnabled = true
+	}
+	
+	func disableSeasonsButton() {
+		seasonsButton.isEnabled = false
+	}
+	
+	func enableSeasonsButton() {
 		seasonsButton.isEnabled = true
 	}
 	

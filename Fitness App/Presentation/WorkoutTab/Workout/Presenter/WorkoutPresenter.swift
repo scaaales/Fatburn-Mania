@@ -40,15 +40,19 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 		view.showLoader()
 		view.hideSegments()
 		view.hideTableView()
+		view.hideTryAgainButton()
+		view.disableSeasonsButton()
 		
 		workoutsApi.getSeasons(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
 		}, onSuccess: { [weak self] seasons in
 			self?.seasons = seasons
+			self?.view.enableSeasonsButton()
 			self?.selectedSeasonID = seasons.last?.id
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
+			self?.view.showTryAgainButton()
 		}
 	}
 	
@@ -57,14 +61,18 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 		view.showLoader()
 		view.hideSegments()
 		view.hideTableView()
+		view.hideTryAgainButton()
+		view.disableSeasonsButton()
 		
 		workoutsApi.getWorkoutsFor(seasonId: selectedSeasonID, onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
 		}, onSuccess: { [weak self] lessons in
+			self?.view.enableSeasonsButton()
 			self?.handleLessons(lessons)
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
+			self?.view.showTryAgainButton()
 		}
 		
 	}

@@ -268,6 +268,7 @@
 		B3FBA16721EF343800B88AA3 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16321EF343800B88AA3 /* PhotoView.swift */; };
 		B3FBA16B21EF3B4200B88AA3 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16A21EF3B4200B88AA3 /* CameraView.swift */; };
 		B3FBA16D21EF493400B88AA3 /* PhotoCapturingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */; };
+		B3FDF82222258C300056E7DC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDF82122258C300056E7DC /* RootViewController.swift */; };
 		B3FF223B2200660900D936A6 /* CoinsAddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF22372200660900D936A6 /* CoinsAddedViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -536,6 +537,7 @@
 		B3FBA16321EF343800B88AA3 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		B3FBA16A21EF3B4200B88AA3 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCapturingService.swift; sourceTree = "<group>"; };
+		B3FDF82122258C300056E7DC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		B3FF22372200660900D936A6 /* CoinsAddedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsAddedViewController.swift; sourceTree = "<group>"; };
 		E08C2A836A8A849894EAAB56 /* Pods-Fitness App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness App.release.xcconfig"; path = "Target Support Files/Pods-Fitness App/Pods-Fitness App.release.xcconfig"; sourceTree = "<group>"; };
 		F262C209E979BF3F1B0FB096 /* Pods_Fitness_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1242,6 +1244,7 @@
 				B3254F3221D3E7CE00F99F91 /* RoundButton.swift */,
 				B39D478421E64E2B00D5C050 /* CellWithSeperator.swift */,
 				B3DC1B6B21EDF29A00883C0F /* RoundImageViewWithShadow.swift */,
+				B3FDF82122258C300056E7DC /* RootViewController.swift */,
 				B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */,
 			);
 			path = Views;
@@ -2233,6 +2236,7 @@
 				B3D737DE21EF76FE00DDF602 /* CollageViewController.swift in Sources */,
 				B3254F4121D3E7CE00F99F91 /* DiaryViewController.swift in Sources */,
 				B39D478021E62AB000D5C050 /* UserDataCell.swift in Sources */,
+				B3FDF82222258C300056E7DC /* RootViewController.swift in Sources */,
 				B3D737E621EF772E00DDF602 /* TimerViewController.swift in Sources */,
 				B3254F5121D3E7CE00F99F91 /* CellConfigurator.swift in Sources */,
 				B3728924220AF6BF0061822E /* String+validation.swift in Sources */,

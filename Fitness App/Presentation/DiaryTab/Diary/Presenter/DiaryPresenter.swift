@@ -90,13 +90,14 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		diaryApi.getMeasurements(at: date, limit: 1, onComplete: { [weak self] in
 			self?.view.hideLoader()
 			self?.view.enableUserInteraction()
-			}, onSuccess: { [weak self] measurements in
-				guard let self = self else { return }
-				self.handleNewMeasurements(measurements.last, setToday: setToday)
-				self.measurementsCache[date.startOfDay] = measurements.last
-				self.dispatchGroup.leave()
+		}, onSuccess: { [weak self] measurements in
+			guard let self = self else { return }
+			self.handleNewMeasurements(measurements.last, setToday: setToday)
+			self.measurementsCache[date.startOfDay] = measurements.last
+			self.dispatchGroup.leave()
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
+			self?.dispatchGroup.leave()
 		}
 	}
 	

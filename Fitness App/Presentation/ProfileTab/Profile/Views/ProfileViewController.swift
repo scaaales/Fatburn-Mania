@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: RootViewController {
 	var presenter: ProfilePresenter<ProfileViewController>!
 	
 	@IBOutlet private weak var tableView: UITableView!
@@ -44,6 +44,10 @@ class ProfileViewController: UIViewController {
 			editProfileVC.presenter.user = presenter.user
 			editProfileVC.profileViewController = self
 		}
+	}
+	
+	override func tryAgainTapped() {
+		presenter.getUser()
 	}
 	
 	@objc private func logoutTapped() {

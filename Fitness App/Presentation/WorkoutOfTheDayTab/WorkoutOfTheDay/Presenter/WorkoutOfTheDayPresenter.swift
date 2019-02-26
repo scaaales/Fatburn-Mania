@@ -34,6 +34,7 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 		view.disableUserInteraction()
 		view.hideAllViews()
 		view.showLoader()
+		view.hideTryAgainButton()
 		
 		workoutsApi.getWorkoutOfTheDay(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
@@ -53,6 +54,7 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 			self.view.showAllViews()
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
+			self?.view.showTryAgainButton()
 		}
 	}
 	

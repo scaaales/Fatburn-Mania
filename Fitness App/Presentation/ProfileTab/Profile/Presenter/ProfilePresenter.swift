@@ -36,6 +36,7 @@ class ProfilePresenter<V: ProfileView>: Presenter, UserCoinsUpdateDelegate {
 	func getUser() {
 		view.disableUserInteraction()
 		view.showLoader()
+		view.hideTryAgainButton()
 		
 		profileAPI.getUserInfo(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
@@ -48,6 +49,7 @@ class ProfilePresenter<V: ProfileView>: Presenter, UserCoinsUpdateDelegate {
 			self.view.setTableViewDataSource(self.viewModel)
 			self.view.update()
 		}) { [weak self] errorText in
+			self?.view.showTryAgainButton()
 			self?.view.showErrorPopup(with: errorText)
 		}
 	}

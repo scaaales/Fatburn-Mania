@@ -9,7 +9,7 @@
 import UIKit
 import AVKit
 
-class WorkoutOfTheDayViewController: UIViewController {
+class WorkoutOfTheDayViewController: RootViewController {
 	var presenter: WorkoutOfTheDayPresenter<WorkoutOfTheDayViewController>!
 	
 	@IBOutlet private weak var sponsorImageView: UIImageView!
@@ -38,6 +38,10 @@ class WorkoutOfTheDayViewController: UIViewController {
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		tableViewHeight.constant = tableView.contentSize.height
+	}
+	
+	override func tryAgainTapped() {
+		presenter.getWorkoutOfTheDay()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -92,7 +96,7 @@ extension WorkoutOfTheDayViewController: WorkoutOfTheDayView {
 	
 	func showAllViews() {
 		view.subviews.forEach {
-			if $0 != self.loader {
+			if !($0 == self.loader || $0 == self.tryAgainButton) {
 				$0.isHidden = false
 			}
 		}
