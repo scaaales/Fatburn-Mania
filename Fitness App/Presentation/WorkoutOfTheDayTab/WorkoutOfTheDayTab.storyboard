@@ -223,6 +223,7 @@
                         <outlet property="sponsorImageView" destination="Lwu-9R-IY2" id="2GM-yC-kxw"/>
                         <outlet property="tableView" destination="B4b-C2-onv" id="k6H-NO-MWE"/>
                         <outlet property="tableViewHeight" destination="tn5-vd-c3j" id="yEy-rF-c44"/>
+                        <segue destination="CKL-rF-hi8" kind="presentation" identifier="presentCoinsAdded" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Osx-i9-ZkG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihY-Pg-0Ml" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,6 +234,14 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="1352.8" y="-254.57271364317842"/>
+        </scene>
+        <!--CoinsAddedViewController-->
+        <scene sceneID="H22-mI-2H1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DiaryTab" referencedIdentifier="CoinsAddedViewController" id="CKL-rF-hi8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FER-8d-Nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2182" y="-624"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ff2-2n-h3Y">
@@ -474,7 +483,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2328.8000000000002" y="-254.12293853073464"/>
+            <point key="canvasLocation" x="2326" y="-172"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="14a-I8-eGu">

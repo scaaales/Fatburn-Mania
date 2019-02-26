@@ -15,6 +15,7 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 	weak var view: View!
 	private var viewModel: LessonsTableViewModel!
 	private let workoutsApi: FitnessApi.Workouts
+	private let rewardApi: FitnessApi.Reward
 	private(set) var exercises: [Exercise]!
 	
 	required init(view: View) {
@@ -26,6 +27,7 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 		}
 		
 		workoutsApi = .init(token: token)
+		rewardApi = .init(token: token)
 	}
 	
 	func getWorkoutOfTheDay() {
@@ -60,5 +62,24 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 			let fixedVideoUrlString = videoUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
 		
 		return URL(string: fixedVideoUrlString)
+	}
+	
+	func workoutFinished() {
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		rewardApi.getWorkoutReward(onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: { [weak self] amount in
+			if let amount = amount {
+				NotificationCenter.default.post(name: .coinsAdded,
+												object: self,
+												userInfo: ["value": amount])
+				self?.view.showCoinsAddedScreen(with: amount)
+			}
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
 	}
 }

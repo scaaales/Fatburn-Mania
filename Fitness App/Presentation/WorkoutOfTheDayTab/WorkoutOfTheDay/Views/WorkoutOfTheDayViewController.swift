@@ -40,9 +40,24 @@ class WorkoutOfTheDayViewController: UIViewController {
 		tableViewHeight.constant = tableView.contentSize.height
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let exerciseVC = segue.destination as? ExerciseViewController {
+			exerciseVC.presenter.exercises = presenter.exercises
+			exerciseVC.workoutOfTheDayViewController = self
+		} else if let coinsAddedVC = segue.destination as? CoinsAddedViewController,
+			let coinsAmount = sender as? Int {
+			coinsAddedVC.coinsAmount = coinsAmount
+			coinsAddedVC.reasonAddedTextReplacement = "You finished wokout of the day and for this you get"
+		}
+	}
+	
 }
 
 extension WorkoutOfTheDayViewController: WorkoutOfTheDayView {
+	func showCoinsAddedScreen(with coinsNumber: Int) {
+		performSegue(withIdentifier: .presentCoinsAddedSegueIdentifier, sender: coinsNumber)
+	}
+	
 	func setLessonSponsorImage(_ sponsorImage: UIImage) {
 		sponsorImageView.image = sponsorImage
 	}

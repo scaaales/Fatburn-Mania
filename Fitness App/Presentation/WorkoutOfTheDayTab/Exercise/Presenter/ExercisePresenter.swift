@@ -69,21 +69,25 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		currentExerciseIndex += 1
 		
 		timer.invalidate()
+		guard let nextExercise = exercises[safe: currentExerciseIndex] else {
+			view.closeItself()
+			return
+		}
 		setupTimer()
 		
 		currentCountdown = 3
 		view.state = .nextExerciseCountdown
-		guard let nextExercise = exercises[safe: currentExerciseIndex] else { return }
 		if nextExercise.isBreak {
 			view.setBreakPicture()
 		} else {
-			view.setVideo()
+			guard let videoUrlString = nextExercise.video?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+				let videoURL = URL(string: videoUrlString) else { return }
+			view.setVideo(from: videoURL)
 		}
 	}
 	
 	private func loadCurrentExercise() {
 		if totalTimePassed == exercises.totalDuration {
-			print("workout complete")
 			return
 		}
 		
@@ -92,7 +96,9 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 		if currentExercise.isBreak {
 			view.setBreakPicture()
 		} else {
-			view.setVideo()
+			guard let videoUrlString = currentExercise.video?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+				let videoURL = URL(string: videoUrlString) else { return }
+			view.setVideo(from: videoURL)
 		}
 		
 		view.setExerciseName(currentExercise.title)

@@ -18,4 +18,6 @@ protocol WorkoutOfTheDayView: View, TableViewUpdatable, NetworkingView, PopupSho
 	
 	func hideAllViews()
 	func showAllViews()
+	
+	func showCoinsAddedScreen(with coinsNumber: Int)
 }
