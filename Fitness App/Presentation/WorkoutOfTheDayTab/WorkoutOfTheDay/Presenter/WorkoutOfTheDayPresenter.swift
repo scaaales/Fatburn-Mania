@@ -69,9 +69,11 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 		view.disableUserInteraction()
 		view.showLoader()
 		
-		rewardApi.getWorkoutReward(onComplete: { [weak self] in
-			self?.view.enableUserInteraction()
-			self?.view.hideLoader()
+		let dispatchGroup = DispatchGroup()
+		
+		dispatchGroup.enter()
+		rewardApi.getWorkoutReward(onComplete: {
+			dispatchGroup.leave()
 		}, onSuccess: { [weak self] amount in
 			if let amount = amount {
 				NotificationCenter.default.post(name: .coinsAdded,
@@ -81,6 +83,20 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 			}
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
+		}
+		
+		dispatchGroup.enter()
+		workoutsApi.workoutOfTheDayCompleted(onComplete: {
+			dispatchGroup.leave()
+		}, onSuccess: {
+			
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
+		
+		dispatchGroup.notify(queue: .main) { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
 		}
 	}
 }

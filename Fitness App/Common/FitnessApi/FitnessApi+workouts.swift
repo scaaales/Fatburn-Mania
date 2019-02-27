@@ -146,5 +146,16 @@ extension FitnessApi {
 				}, onError: onError)
 			})
 		}
+		
+		func workoutOfTheDayCompleted(onComplete: @escaping () -> Void,
+									  onSuccess: @escaping () -> Void,
+									  onError: @escaping OnErrorCompletion) {
+			request = provider.request(.workoutOfTheDayComplete(token: token), completion: { result in
+				onComplete()
+				BaseApi.handleResult(result, onSuccess: { _ in
+					onSuccess()
+				}, onError: onError)
+			})
+		}
 	}
 }

@@ -16,6 +16,7 @@ enum WorkoutsService {
 	case trainingComplete(workoutId: Int, token: String)
 	
 	case getWorkoutOfTheDay(token: String)
+	case workoutOfTheDayComplete(token: String)
 }
 
 extension WorkoutsService: TargetType {
@@ -36,6 +37,8 @@ extension WorkoutsService: TargetType {
 			path += "workout_items/\(workoutId)/upload_photo"
 		case .getWorkoutOfTheDay:
 			path += "workout_day"
+		case .workoutOfTheDayComplete:
+			path += "workout_day/training_complete"
 		}
 		return path
 	}
@@ -44,7 +47,7 @@ extension WorkoutsService: TargetType {
 		switch self {
 			case .getSeasons, .getWorkoutsFor, .getExercisesFor, .getWorkoutOfTheDay:
 			return .get
-		case .uploadPhoto, .trainingComplete:
+		case .uploadPhoto, .trainingComplete, .workoutOfTheDayComplete:
 			return .post
 		}
 	}
@@ -53,7 +56,8 @@ extension WorkoutsService: TargetType {
 	
 	var task: Task {
 		switch self {
-		case .getSeasons, .getWorkoutsFor, .getExercisesFor, .getWorkoutOfTheDay, .trainingComplete:
+		case .getSeasons, .getWorkoutsFor, .getExercisesFor,
+			 .getWorkoutOfTheDay, .trainingComplete, .workoutOfTheDayComplete:
 			return .requestPlain
 		case .uploadPhoto(let data, _, _):
 			let photoData = MultipartFormData(provider: .data(data), name: "photo", fileName: "photo.jpeg", mimeType: "image/jpeg")
@@ -70,7 +74,8 @@ extension WorkoutsService: TargetType {
 			 .getExercisesFor(_, let token),
 			 .uploadPhoto(_, let token,_),
 			 .trainingComplete(_, let token),
-			 .getWorkoutOfTheDay(let token):
+			 .getWorkoutOfTheDay(let token),
+			 .workoutOfTheDayComplete(let token):
 			headers["Authorization"] = "Bearer \(token)"
 		}
 		return headers
