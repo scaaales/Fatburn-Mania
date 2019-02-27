@@ -13,7 +13,6 @@ protocol WorkoutOfTheDayView: View, TableViewUpdatable, NetworkingView, PopupSho
 					   reward: Int,
 					   duration: TimeInterval,
 					   description: String)
-	func setLessonSponsorImage(_ sponsorImage: UIImage)
 	func setPreviewImage(from urlString: String)
 	
 	func hideAllViews()

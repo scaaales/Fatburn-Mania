@@ -12,7 +12,6 @@ import AVKit
 class WorkoutOfTheDayViewController: RootViewController {
 	var presenter: WorkoutOfTheDayPresenter<WorkoutOfTheDayViewController>!
 	
-	@IBOutlet private weak var sponsorImageView: UIImageView!
 	@IBOutlet private weak var previewImageView: UIImageView!
 	
 	@IBOutlet private weak var nameLabel: UILabel!
@@ -44,6 +43,11 @@ class WorkoutOfTheDayViewController: RootViewController {
 		presenter.getWorkoutOfTheDay()
 	}
 	
+	@IBAction private func openURL() {
+		guard let url = URL(string: "https://www.google.com") else { return }
+		UIApplication.shared.open(url, options: [:], completionHandler: nil)
+	}
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let exerciseVC = segue.destination as? ExerciseViewController {
 			exerciseVC.presenter.exercises = presenter.exercises
@@ -60,10 +64,6 @@ class WorkoutOfTheDayViewController: RootViewController {
 extension WorkoutOfTheDayViewController: WorkoutOfTheDayView {
 	func showCoinsAddedScreen(with coinsNumber: Int) {
 		performSegue(withIdentifier: .presentCoinsAddedSegueIdentifier, sender: coinsNumber)
-	}
-	
-	func setLessonSponsorImage(_ sponsorImage: UIImage) {
-		sponsorImageView.image = sponsorImage
 	}
 	
 	func setPreviewImage(from urlString: String) {

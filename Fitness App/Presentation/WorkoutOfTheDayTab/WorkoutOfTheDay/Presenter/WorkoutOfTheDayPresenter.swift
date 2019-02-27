@@ -49,7 +49,6 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 									duration: workoutOfTheDay.duration,
 									description: workoutOfTheDay.text)
 			self.view.setPreviewImage(from: workoutOfTheDay.photo)
-			self.view.setLessonSponsorImage(#imageLiteral(resourceName: "fatburnManiaLogo")); #warning("temp")
 			self.view.update()
 			self.view.showAllViews()
 		}) { [weak self] errorText in
