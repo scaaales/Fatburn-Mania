@@ -36,7 +36,8 @@ class LessonPresenter<V: LessonView>: Presenter {
 	func getLesson() {
 		view.setTitle(lesson.title,
 					  lessonName: lesson.title,
-					  description: lesson.text)
+					  description: lesson.text,
+					  digitOfTheDay: "Digit of the day: " + lesson.digit)
 		
 		if let videoUrlString = lesson.video,
 			let fixedUrlString = videoUrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {

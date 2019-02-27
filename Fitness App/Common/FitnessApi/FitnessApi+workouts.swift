@@ -91,6 +91,11 @@ extension FitnessApi {
 									   completion:
 				{ result in
 					onComplete()
+//					BaseApi.handleResult(result, onSuccess: { json in
+//						print(json)
+//					}, onError: { _ in
+//						
+//					})
 					BaseApi.mapResult(result, intoItemOfType: ExercisesResponse.self, onSuccess: { exercisesResponse in
 						onSuccess(exercisesResponse.workoutItem.exercises)
 					}, onError: onError)

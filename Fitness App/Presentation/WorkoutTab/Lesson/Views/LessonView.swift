@@ -11,7 +11,8 @@ import Foundation
 protocol LessonView: View, TableViewUpdatable, NetworkingView, PopupShowable {
 	func setTitle(_ title: String,
 				  lessonName: String,
-				  description: String)
+				  description: String,
+				  digitOfTheDay: String)
 	func hideAllViews()
 	func showAllViews()
 	func setupForNewsState()

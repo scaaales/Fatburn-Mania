@@ -105,10 +105,11 @@ extension LessonViewController: LessonView {
 		photoButton.removeFromSuperview()
 	}
 	
-	func setTitle(_ title: String, lessonName: String, description: String) {
+	func setTitle(_ title: String, lessonName: String, description: String, digitOfTheDay: String) {
 		self.title = title
 		lessonNameLabel.text = lessonName
 		lessonDescriptionLabel.text = description
+		digitLabel.text = digitOfTheDay
 	}
 	
 	func update() {

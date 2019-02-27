@@ -16,6 +16,7 @@ struct Lesson: Decodable {
 	let video: String?
 	let week: Int
 	let text: String
+	let digit: String
 	private let _exercisesCount: Int
 	
 	var isNews: Bool {
@@ -33,6 +34,7 @@ struct Lesson: Decodable {
 	
 	enum CodingKeys: String, CodingKey {
 		case title, photo, video, week, text, id
+		case digit = "unique_digit"
 		case _date = "created_at"
 		case _exercisesCount = "training_items_count"
 	}
