@@ -16,8 +16,18 @@ class TrainingDayCell: UITableViewCell, ConfigurableCell {
 	@IBOutlet private weak var coinsLabel: UILabel!
 	
 	func configure(data: TrainingDay) {
-		timeLabel.text = data.time
-		caloriesLabel.text = data.calories
-		coinsLabel.text = data.coins
+		timeLabel.text = data.duration?.replacingOccurrences(of: ":", with: " ") ?? "-- --"
+		
+		if let calories = data.calories {
+			caloriesLabel.text = "\(calories)"
+		} else {
+			caloriesLabel.text = "--"
+		}
+		
+		if let coins = data.coins {
+			coinsLabel.text = "\(coins)"
+		} else {
+			coinsLabel.text = "--"
+		}
 	}
 }

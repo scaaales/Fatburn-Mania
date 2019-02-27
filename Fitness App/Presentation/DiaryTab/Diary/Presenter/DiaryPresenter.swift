@@ -17,6 +17,7 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	private let diaryApi: FitnessApi.Diary
 	private let dispatchGroup = DispatchGroup()
 	private var measurementsCache = [Date: Measurements?]()
+	private var trainingDayCache = [Date: TrainingDay]()
 	private var selectedDate = Date()
 	
 	required init(view: View) {
@@ -49,12 +50,16 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		selectedDate = date
 		
 		if let cachedMeasurements = measurementsCache[date.startOfDay] { // load measurements from cache
+			if let trainingDay = trainingDayCache[date.startOfDay] {
+				viewModel.trainingDay = trainingDay
+			}
 			handleNewMeasurements(cachedMeasurements, setToday: setToday)
 		} else { // load measurements from API
 			view.disableUserInteraction()
 			view.hideTableView()
 			view.showLoader()
 			getMeasurements(on: selectedDate, setToday: setToday)
+			getTrainingDay(on: selectedDate)
 		}
 		
 		// get from healthkit
@@ -87,17 +92,28 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	
 	private func getMeasurements(on date: Date, setToday: Bool) {
 		dispatchGroup.enter()
-		diaryApi.getMeasurements(at: date, limit: 1, onComplete: { [weak self] in
-			self?.view.hideLoader()
-			self?.view.enableUserInteraction()
+		diaryApi.getMeasurements(at: date, limit: 1, onComplete: {
+			
 		}, onSuccess: { [weak self] measurements in
-			guard let self = self else { return }
-			self.handleNewMeasurements(measurements.last, setToday: setToday)
-			self.measurementsCache[date.startOfDay] = measurements.last
-			self.dispatchGroup.leave()
+			self?.handleNewMeasurements(measurements.last, setToday: setToday)
+			self?.measurementsCache[date.startOfDay] = measurements.last
+			self?.dispatchGroup.leave()
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
 			self?.dispatchGroup.leave()
+		}
+	}
+	
+	private func getTrainingDay(on date: Date) {
+		dispatchGroup.enter()
+		diaryApi.getTrainingDay(at: date, onComplete: {
+		
+		}, onSuccess: { [weak self] trainingDay in
+			self?.trainingDayCache[date.startOfDay] = trainingDay
+			self?.viewModel.trainingDay = trainingDay
+			self?.dispatchGroup.leave()
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
 		}
 	}
 	
@@ -149,6 +165,8 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		}
 		
 		dispatchGroup.notify(queue: .main) { [weak self] in
+			self?.view.hideLoader()
+			self?.view.enableUserInteraction()
 			self?.view.showTableView()
 			self?.view.update()
 		}

@@ -8,8 +8,14 @@
 
 import Foundation
 
-struct TrainingDay {
-	let time: String
-	let calories: String
-	let coins: String
+struct TrainingDay: Decodable {
+	let duration: String?
+	let calories: Int?
+	let coins: Int?
+	
+	init() {
+		self.duration = nil
+		self.calories = nil
+		self.coins = nil
+	}
 }

@@ -52,24 +52,10 @@ class DiaryTableViewModel: NSObject {
 		return [trainingDaySection, stepsSection, waterSection, nutritionSection, bodyMeasurementsSection]
 	}
 	
-	init(trainingDay: TrainingDay? = nil,
-		 steps: Steps? = nil,
-		 water: Measurement? = nil,
-		 calories: Measurement? = nil,
-		 proteins: Measurement? = nil,
-		 fats: Measurement? = nil,
-		 carbohydrates: Measurement? = nil,
-		 leftBodyMeasurements: Measurements?,
+	init(leftBodyMeasurements: Measurements?,
 		 rightBodyMeasurements: Measurements?,
 		 leftDateString: String,
 		 rightDateString: String) {
-		self.trainingDay = trainingDay
-		self.steps = steps
-		self.water = water
-		self.calories = calories
-		self.proteins = proteins
-		self.fats = fats
-		self.carbohydrates = carbohydrates
 		self.leftBodyMeasurements = leftBodyMeasurements
 		self.rightBodyMeasurements = rightBodyMeasurements
 		self.leftDateString = leftDateString
@@ -77,9 +63,7 @@ class DiaryTableViewModel: NSObject {
 	}
 	
 	private func getTrainingDaySection() -> Section {
-		let trainingDay = self.trainingDay ?? TrainingDay(time: "-- --",
-														  calories: "-- --",
-														  coins: "-- --")
+		let trainingDay = self.trainingDay ?? .init()
 		
 		let result = Section(items: [
 			PlaceholderCellConfigurator(),

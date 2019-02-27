@@ -56,5 +56,21 @@ extension FitnessApi {
 										}, onError: onError)
 			})
 		}
+		
+		func getTrainingDay(at date: Date,
+							onComplete: @escaping () -> Void,
+							onSuccess: @escaping (TrainingDay) -> Void,
+							onError: @escaping OnErrorCompletion) {
+			let dateFormatter = DateFormatter()
+			dateFormatter.dateFormat = "yyyy-MM-dd"
+			let dateString = dateFormatter.string(from: date)
+			
+			request = provider.request(.getTrainingDay(token: token, date: dateString), completion: { result in
+				onComplete()
+				BaseApi.mapResult(result, intoItemOfType: TrainingDay.self,
+								  onSuccess: onSuccess,
+								  onError: onError)
+			})
+		}
 	}
 }
