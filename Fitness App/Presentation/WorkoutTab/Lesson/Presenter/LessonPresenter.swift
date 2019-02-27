@@ -93,4 +93,18 @@ class LessonPresenter<V: LessonView>: Presenter {
 			self?.view.showErrorPopup(with: errorText)
 		}
 	}
+	
+	func workoutFinished() {
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		workoutsApi.trainingComplete(workoutId: lesson.id, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: {
+			
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
+	}
 }

@@ -107,23 +107,12 @@ extension FitnessApi {
 			}
 		}
 		
-		func getWorkoutOfTheDay(onComplete: @escaping () -> Void,
-								onSuccess: @escaping (WorkoutOfTheDay) -> Void,
-								onError: @escaping OnErrorCompletion) {
-			request = provider.request(.getWorkoutOfTheDay(token: token), completion: { result in
-				onComplete()
-				BaseApi.mapResult(result, intoItemOfType: WorkoutOfTheDayResponse.self, onSuccess: {
-					onSuccess($0.workoutOfTheDay)
-				}, onError: onError)
-			})
-		}
-		
 		func uploadPhoto(_ data: Data,
 						 workoutId: Int,
 						 onComplete: @escaping () -> Void,
 						 onSuccess: @escaping () -> Void,
 						 onError: @escaping OnErrorCompletion) {
-			request = provider.request(.uploadPhoto(data, token: token, workoutId: workoutId), completion: { result in
+			request = provider.request(.uploadPhoto(photoData: data, token: token, workoutId: workoutId), completion: { result in
 				onComplete()
 				BaseApi.handleResult(result, onSuccess: { json in
 					if let success = json["success"] as? Bool, success {
@@ -131,6 +120,29 @@ extension FitnessApi {
 					} else {
 						onError("Something went wrong during photo sending. Please try again")
 					}
+				}, onError: onError)
+			})
+		}
+		
+		func trainingComplete(workoutId: Int,
+							  onComplete: @escaping () -> Void,
+							  onSuccess: @escaping () -> Void,
+							  onError: @escaping OnErrorCompletion) {
+			request = provider.request(.trainingComplete(workoutId: workoutId, token: token), completion: { result in
+				onComplete()
+				BaseApi.handleResult(result, onSuccess: { _ in
+					onSuccess()
+				}, onError: onError)
+			})
+		}
+		
+		func getWorkoutOfTheDay(onComplete: @escaping () -> Void,
+								onSuccess: @escaping (WorkoutOfTheDay) -> Void,
+								onError: @escaping OnErrorCompletion) {
+			request = provider.request(.getWorkoutOfTheDay(token: token), completion: { result in
+				onComplete()
+				BaseApi.mapResult(result, intoItemOfType: WorkoutOfTheDayResponse.self, onSuccess: {
+					onSuccess($0.workoutOfTheDay)
 				}, onError: onError)
 			})
 		}

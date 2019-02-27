@@ -43,6 +43,8 @@ class LessonViewController: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let exerciseVC = segue.destination as? ExerciseViewController {
 			exerciseVC.presenter.exercises = presenter.exercises
+			exerciseVC.lessonViewController = self
+			exerciseVC.title = "Workout"
 		} else if let photoVC = segue.destination as? PhotoViewController {
 			photoVC.lessonViewController = self
 			photoVC.presenter.shouldCloseItselfOnConfirm = true

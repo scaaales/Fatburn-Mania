@@ -53,6 +53,7 @@ class ExerciseViewController: UIViewController {
 	
 	private var playerViewController: AVPlayerViewController!
 	var workoutOfTheDayViewController: WorkoutOfTheDayViewController?
+	var lessonViewController: LessonViewController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -218,6 +219,7 @@ extension ExerciseViewController: ExerciseView {
 	
 	func closeItself() {
 		workoutOfTheDayViewController?.presenter.workoutFinished()
+		lessonViewController?.presenter.workoutFinished()
 		navigationController?.popViewController(animated: true)
 	}
 	
