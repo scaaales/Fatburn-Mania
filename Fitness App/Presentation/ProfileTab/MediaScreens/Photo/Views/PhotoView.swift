@@ -15,6 +15,9 @@ protocol PhotoView: View {
 	func disableUserInteraction()
 	func enableUserInteraction()
 	
+	func closeItself()
+//	func closeItself(completion: @escaping () -> Void)
+	
 	func showTimer()
 	func hideTimer()
 	func setTimerRemainingTime(_ time: Int)

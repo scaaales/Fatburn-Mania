@@ -91,11 +91,6 @@ extension FitnessApi {
 									   completion:
 				{ result in
 					onComplete()
-//					BaseApi.handleResult(result, onSuccess: { json in
-//						print(json)
-//					}, onError: { _ in
-//						
-//					})
 					BaseApi.mapResult(result, intoItemOfType: ExercisesResponse.self, onSuccess: { exercisesResponse in
 						onSuccess(exercisesResponse.workoutItem.exercises)
 					}, onError: onError)
@@ -119,6 +114,23 @@ extension FitnessApi {
 				onComplete()
 				BaseApi.mapResult(result, intoItemOfType: WorkoutOfTheDayResponse.self, onSuccess: {
 					onSuccess($0.workoutOfTheDay)
+				}, onError: onError)
+			})
+		}
+		
+		func uploadPhoto(_ data: Data,
+						 workoutId: Int,
+						 onComplete: @escaping () -> Void,
+						 onSuccess: @escaping () -> Void,
+						 onError: @escaping OnErrorCompletion) {
+			request = provider.request(.uploadPhoto(data, token: token, workoutId: workoutId), completion: { result in
+				onComplete()
+				BaseApi.handleResult(result, onSuccess: { json in
+					if let success = json["success"] as? Bool, success {
+						onSuccess()
+					} else {
+						onError("Something went wrong during photo sending. Please try again")
+					}
 				}, onError: onError)
 			})
 		}

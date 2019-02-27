@@ -34,6 +34,9 @@ class PhotoPreviewViewController: UIViewController {
 }
 
 extension PhotoPreviewViewController: PhotoPreviewView {
+	func closeItself(completion: @escaping () -> Void) {
+		dismiss(animated: true, completion: completion)
+	}
 	
 }
 

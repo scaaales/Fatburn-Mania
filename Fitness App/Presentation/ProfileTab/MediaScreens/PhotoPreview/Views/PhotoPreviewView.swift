@@ -10,5 +10,5 @@ import UIKit
 
 protocol PhotoPreviewView: View {
 	var photo: UIImage! { set get }
-	func closeItself()
+	func closeItself(completion: @escaping () -> Void)
 }

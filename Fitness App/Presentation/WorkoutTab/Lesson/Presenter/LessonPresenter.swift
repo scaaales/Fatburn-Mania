@@ -76,4 +76,21 @@ class LessonPresenter<V: LessonView>: Presenter {
 		
 		return URL(string: fixedVideoUrlString)
 	}
+	
+	func uploadPhoto(_ photo: UIImage) {
+		guard let fixedResizedPhoto = photo.fixOrientation()?.resized(toMaxSide: 1000),
+			let photoData = fixedResizedPhoto.jpegData(compressionQuality: 80) else { return }
+		
+		view.disableUserInteraction()
+		view.showLoader()
+		
+		workoutsApi.uploadPhoto(photoData, workoutId: lesson.id, onComplete: { [weak self] in
+			self?.view.enableUserInteraction()
+			self?.view.hideLoader()
+		}, onSuccess: { [weak self] in
+			self?.view.showPopup(with: nil, text: "Your photo was uploaded successfully!")
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
+		}
+	}
 }

@@ -6,28 +6,26 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-import Foundation
-import Photos
+import UIKit
+
+protocol PhotoConfirmedDelegate: class {
+	func photoConfirmed()
+}
 
 class PhotoPreviewPresenter<V: PhotoPreviewView>: Presenter {
 	typealias View = V
 	
 	weak var view: View!
 	
+	weak var delegate: PhotoConfirmedDelegate?
+	
 	required init(view: View) {
 		self.view = view
 	}
 	
 	func savePhoto() {
-		PHPhotoLibrary.shared().performChanges({ [weak self] in
-			guard let image = self?.view.photo else { return }
-			PHAssetChangeRequest.creationRequestForAsset(from: image)
-		}) { [weak self] success, error in
-			if success {
-				self?.view.closeItself()
-			} else if let error = error {
-				print(error)
-			}
+		view.closeItself { [weak self] in
+			self?.delegate?.photoConfirmed()
 		}
 	}
 }

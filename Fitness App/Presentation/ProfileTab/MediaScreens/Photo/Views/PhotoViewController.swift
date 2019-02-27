@@ -17,6 +17,8 @@ class PhotoViewController: UIViewController {
 	@IBOutlet private weak var timerLabel: UILabel!
 	@IBOutlet private weak var photoLevelView: PhotoLevelView!
 	
+	var lessonViewController: LessonViewController?
+	
 	private var statusBarShouldBeHidden = false
 	
 	override var prefersStatusBarHidden: Bool {
@@ -55,12 +57,20 @@ class PhotoViewController: UIViewController {
 		if let photoPreviewVC = segue.destination as? PhotoPreviewViewController,
 			let image = sender as? UIImage {
 			photoPreviewVC.photo = image
+			photoPreviewVC.presenter.delegate = presenter
 		}
 	}
 	
 }
 
 extension PhotoViewController: PhotoView {
+	func closeItself() {
+		navigationController?.popViewController(animated: true)
+		if let photo = presenter.image {
+			lessonViewController?.presenter.uploadPhoto(photo)
+		}
+	}
+	
 	func showTimer() {
 		timerLabel.isHidden = false
 	}

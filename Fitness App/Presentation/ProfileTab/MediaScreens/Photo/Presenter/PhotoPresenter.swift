@@ -8,8 +8,9 @@
 
 import Foundation
 import AVKit
+import Photos
 
-class PhotoPresenter<V: PhotoView>: Presenter {
+class PhotoPresenter<V: PhotoView>: Presenter, PhotoConfirmedDelegate {
 	typealias View = V
 	
 	weak var view: View!
@@ -17,6 +18,9 @@ class PhotoPresenter<V: PhotoView>: Presenter {
 	
 	private var timer: Timer!
 	private var timeRemaining = 5
+	private(set) var image: UIImage?
+	var shouldCloseItselfOnConfirm = false
+	var shouldSavePhotoToLibrary = true
 	
 	required init(view: View) {
 		self.view = view
@@ -54,6 +58,7 @@ class PhotoPresenter<V: PhotoView>: Presenter {
 		stopTimer()
 		view.disableUserInteraction()
 		photoCapturingService.takePhoto(previewSize: view.imageSize) { [weak self] image in
+			self?.image = image
 			self?.view.enableUserInteraction()
 			self?.view.showPreviewImage(image)
 		}
@@ -88,5 +93,21 @@ class PhotoPresenter<V: PhotoView>: Presenter {
 	func stopTimer() {
 		view.hideTimer()
 		timer?.invalidate()
+	}
+	
+	func photoConfirmed() {
+		guard let image = image else { return }
+		if shouldSavePhotoToLibrary {
+			PHPhotoLibrary.shared().performChanges({
+				PHAssetChangeRequest.creationRequestForAsset(from: image)
+			}) { _, error in
+				if let error = error {
+					print(error)
+				}
+			}
+		}
+		if shouldCloseItselfOnConfirm {
+			view.closeItself()
+		}
 	}
 }

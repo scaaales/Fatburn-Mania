@@ -44,8 +44,7 @@ class WorkoutOfTheDayViewController: RootViewController {
 	}
 	
 	@IBAction private func openURL() {
-		guard let url = URL(string: "https://www.google.com") else { return }
-		UIApplication.shared.open(url, options: [:], completionHandler: nil)
+		UIApplication.shared.open(.sponsorURL, options: [:], completionHandler: nil)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
