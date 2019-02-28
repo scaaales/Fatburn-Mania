@@ -18,7 +18,7 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 	private var lessons = [Lesson]()
 	private(set) var seasons: [Season]!
 	
-	var selectedSeasonID: Int! {
+	var selectedSeasonID: Int? {
 		didSet {
 			loadSelectedSeason()
 		}
@@ -47,16 +47,23 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
 		}, onSuccess: { [weak self] seasons in
-			self?.seasons = seasons
-			self?.view.enableSeasonsButton()
-			self?.selectedSeasonID = seasons.last?.id
+			self?.handleSeasons(seasons)
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
 			self?.view.showTryAgainButton()
 		}
 	}
 	
+	private func handleSeasons(_ seasons: [Season]) {
+		guard !seasons.isEmpty else { return }
+		view.addSeasonsButton()
+		
+		self.seasons = seasons
+		selectedSeasonID = seasons.last?.id
+	}
+	
 	private func loadSelectedSeason() {
+		guard let seasonId = selectedSeasonID else { return }
 		view.disableUserInteraction()
 		view.showLoader()
 		view.hideSegments()
@@ -64,11 +71,11 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 		view.hideTryAgainButton()
 		view.disableSeasonsButton()
 		
-		workoutsApi.getWorkoutsFor(seasonId: selectedSeasonID, onComplete: { [weak self] in
+		workoutsApi.getWorkoutsFor(seasonId: seasonId, onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
-		}, onSuccess: { [weak self] lessons in
 			self?.view.enableSeasonsButton()
+		}, onSuccess: { [weak self] lessons in
 			self?.handleLessons(lessons)
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)

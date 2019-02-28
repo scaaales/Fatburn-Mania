@@ -110,19 +110,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="drx-mH-I6J"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Workout" id="ID5-Od-6Ho">
-                        <barButtonItem key="leftBarButtonItem" title="Seasons" id="Jfj-ZS-eG2">
-                            <color key="tintColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="Ebr-fU-Kdx" kind="show" id="fml-eG-CAL"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Workout" id="ID5-Od-6Ho"/>
                     <connections>
                         <outlet property="roundedShadowView" destination="Ohy-bC-2gT" id="Smb-1j-87O"/>
-                        <outlet property="seasonsButton" destination="Jfj-ZS-eG2" id="Cc0-zJ-pQO"/>
                         <outlet property="tableView" destination="Rsj-uu-Gnf" id="eVR-8K-Q8B"/>
                         <outlet property="workoutSeasonsSegments" destination="adH-20-5J5" id="tFO-Gk-QpN"/>
+                        <segue destination="Ebr-fU-Kdx" kind="show" identifier="showSeasons" id="X0j-KY-c0F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XwV-XY-mtz" userLabel="First Responder" sceneMemberID="firstResponder"/>

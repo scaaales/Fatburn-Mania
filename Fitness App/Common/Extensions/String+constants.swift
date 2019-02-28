@@ -32,6 +32,7 @@ extension String {
 	static var presentCoinsAddedSegueIdentifier: String { return "presentCoinsAdded" }
 	static var presentPhotoPreviewSegueIdentifier: String { return "presentPhotoPreview" }
 	static var showProductDetailsSegueIdentifier: String { return "showProductDetails" }
+	static var showSeasonsSegueIdentifier: String { return "showSeasons" }
 }
 
 // MARK: - Text Constants

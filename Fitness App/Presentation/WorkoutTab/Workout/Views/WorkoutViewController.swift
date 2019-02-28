@@ -14,7 +14,7 @@ class WorkoutViewController: RootViewController {
 	@IBOutlet private weak var roundedShadowView: BottomRoundedShadowView!
 	@IBOutlet private weak var workoutSeasonsSegments: CustomSegmentedControl!
 	@IBOutlet private weak var tableView: UITableView!
-	@IBOutlet private weak var seasonsButton: UIBarButtonItem!
+	private var seasonsButton: UIBarButtonItem?
 	
 	lazy private var loader: BlurredLoader = {
 		let loader = BlurredLoader()
@@ -25,6 +25,7 @@ class WorkoutViewController: RootViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		workoutSeasonsSegments.setOnSelectAction { [weak self] index in
 			self?.presenter.getLessonsForWeek(at: index)
 		}
@@ -55,9 +56,18 @@ class WorkoutViewController: RootViewController {
 		}
 	}
 	
+	@objc private func showSeasons() {
+		performSegue(withIdentifier: .showSeasonsSegueIdentifier, sender: nil)
+	}
+	
 }
 
 extension WorkoutViewController: WorkoutView {
+	func addSeasonsButton() {
+		seasonsButton = UIBarButtonItem(title: "Seasons", style: .plain,
+										target: self, action: #selector(showSeasons))
+	}
+	
 	func hideTableView() {
 		tableView.isHidden = true
 	}
@@ -83,11 +93,11 @@ extension WorkoutViewController: WorkoutView {
 	}
 	
 	func disableSeasonsButton() {
-		seasonsButton.isEnabled = false
+		seasonsButton?.isEnabled = false
 	}
 	
 	func enableSeasonsButton() {
-		seasonsButton.isEnabled = true
+		seasonsButton?.isEnabled = true
 	}
 	
 	func showLoader() {
