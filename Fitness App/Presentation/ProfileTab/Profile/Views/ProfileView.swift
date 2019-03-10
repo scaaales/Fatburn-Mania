@@ -12,4 +12,6 @@ protocol ProfileView: View, TableViewUpdatable, NetworkingView, PopupShowable {
 	
 	func showTryAgainButton()
 	func hideTryAgainButton()
+	
+	func showCoinsAddedScreen(with coinsNumber: Int)
 }

@@ -100,5 +100,17 @@ extension FitnessApi {
 			})
 		}
 		
+		func updateSteps(_ steps: Int,
+						 onComplete: @escaping () -> Void,
+						 onSuccess: @escaping (Int?) -> Void,
+						 onError: @escaping OnErrorCompletion) {
+			request = provider.request(.updateSteps(token: token, steps: steps), completion: { result in
+				onComplete()
+				BaseApi.handleResult(result, onSuccess: { json in
+					onSuccess(json["coins"] as? Int)
+				}, onError: onError)
+			})
+		}
+		
 	}
 }

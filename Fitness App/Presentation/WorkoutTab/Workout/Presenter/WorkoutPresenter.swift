@@ -87,10 +87,11 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 	private func handleLessons(_ lessons: [Lesson]) {
 		self.lessons = lessons
 		
-		let weeks = lessons.map { $0.week }.unique.sorted().map { "\($0)" }
-		view.setSegments(titles: weeks)
+		let weeks = lessons.map { $0.week }.unique.sorted()
+		view.setSegments(titles: weeks.map { "\($0)" })
 		
-		getLessonsForWeek(at: 0)
+		guard let lastWeek = weeks.last else { return }
+		getLessonsForWeek(at: lastWeek)
 	}
 	
 	func getLessonsForWeek(at index: Int) {

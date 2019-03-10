@@ -55,12 +55,14 @@ class HealthKitService {
 	class func getSteps(on date: Date, completion: @escaping (Steps?) -> Void) {
 		getPropertyValueFor(quantityIdentifier: .stepCount,
 							date: date) { result in
-			if let result = result {
-				let steps = Steps(current: Int(result), goal: 8000)
-				completion(steps)
-			} else {
-				completion(nil)
-			}
+								DispatchQueue.main.async {
+									if let result = result {
+										let steps = Steps(current: Int(result), goal: 8000)
+										completion(steps)
+									} else {
+										completion(nil)
+									}
+								}
 		}
 	}
 	

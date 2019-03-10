@@ -43,6 +43,10 @@ class ProfileViewController: RootViewController {
 		if let editProfileVC = segue.destination as? EditProfileViewController {
 			editProfileVC.presenter.user = presenter.user
 			editProfileVC.profileViewController = self
+		} else if let coinsAddedVC = segue.destination as? CoinsAddedViewController,
+			let coinsAmount = sender as? Int {
+			coinsAddedVC.coinsAmount = coinsAmount
+			coinsAddedVC.reasonAddedTextReplacement = "You finished wokout of the day and for this you get"
 		}
 	}
 	
@@ -94,6 +98,10 @@ extension ProfileViewController: ProfileView {
 	
 	func setTableViewDataSource(_ dataSource: UITableViewDataSource) {
 		tableView.dataSource = dataSource
+	}
+	
+	func showCoinsAddedScreen(with coinsNumber: Int) {
+		performSegue(withIdentifier: .presentCoinsAddedSegueIdentifier, sender: coinsNumber)
 	}
 	
 }

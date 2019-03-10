@@ -443,6 +443,7 @@
                         <segue destination="6FQ-g8-poW" kind="show" identifier="showVideoLibrary" id="yDr-Yo-tKY"/>
                         <segue destination="uA9-Dx-i8A" kind="show" identifier="showStore" id="HuG-P8-2Py"/>
                         <segue destination="Tim-oJ-iNx" kind="show" identifier="showCoinsHistory" id="diz-Si-LS4"/>
+                        <segue destination="SNK-nb-HGV" kind="presentation" identifier="presentCoinsAdded" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="cH7-uF-42b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qc4-49-9kj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -758,6 +759,14 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                 </customObject>
             </objects>
             <point key="canvasLocation" x="2724" y="361"/>
+        </scene>
+        <!--CoinsAddedViewController-->
+        <scene sceneID="HsI-fM-dsc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DiaryTab" referencedIdentifier="CoinsAddedViewController" id="SNK-nb-HGV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIJ-wY-V1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957" y="73"/>
         </scene>
         <!--StoreStack-->
         <scene sceneID="HrC-gR-Tav">

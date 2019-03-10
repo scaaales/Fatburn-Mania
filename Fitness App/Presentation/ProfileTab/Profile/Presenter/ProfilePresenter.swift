@@ -48,6 +48,7 @@ class ProfilePresenter<V: ProfileView>: Presenter, UserCoinsUpdateDelegate {
 			self.viewModel.delegate = self
 			self.view.setTableViewDataSource(self.viewModel)
 			self.view.update()
+			self.updateSteps()
 		}) { [weak self] errorText in
 			self?.view.showTryAgainButton()
 			self?.view.showErrorPopup(with: errorText)
@@ -59,6 +60,25 @@ class ProfilePresenter<V: ProfileView>: Presenter, UserCoinsUpdateDelegate {
 			removeNotificationsToken(accessToken: profileAPI.token, deviceToken: deviceToken)
 		} else {
 			sendLogoutRequest()
+		}
+	}
+	
+	private func updateSteps() {
+		HealthKitService.getSteps(on: .init()) { [weak self] steps in
+			guard let steps = steps else { return }
+			self?.view.disableUserInteraction()
+			self?.view.showLoader()
+			
+			self?.profileAPI.updateSteps(steps.current, onComplete: {
+				self?.view.enableUserInteraction()
+				self?.view.hideLoader()
+			}, onSuccess: { [weak self] coinsAmount in
+				if let coinsAmount = coinsAmount {
+					self?.view.showCoinsAddedScreen(with: coinsAmount)
+				}
+			}, onError: { [weak self] errorText in
+				self?.view.showErrorPopup(with: errorText)
+			})
 		}
 	}
 	

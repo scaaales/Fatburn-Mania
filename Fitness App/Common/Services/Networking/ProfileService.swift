@@ -13,6 +13,7 @@ enum ProfileService {
 	case getCoinsHistory(token: String)
 	case editUserInfo(token: String, newUser: User)
 	case editAvatar(token: String, data: Data)
+	case updateSteps(token: String, steps: Int)
 }
 
 extension ProfileService: TargetType {
@@ -27,6 +28,8 @@ extension ProfileService: TargetType {
 			return path + "coins_history"
 		case .editUserInfo, .editAvatar:
 			return path + "edit"
+		case .updateSteps:
+			return path + "update_steps"
 		}
 	}
 	
@@ -34,7 +37,7 @@ extension ProfileService: TargetType {
 		switch self {
 		case .getUserInfo, .getCoinsHistory:
 			return .get
-		case .editUserInfo, .editAvatar:
+		case .editUserInfo, .editAvatar, .updateSteps:
 			return .post
 		}
 	}
@@ -50,6 +53,9 @@ extension ProfileService: TargetType {
 		case .editAvatar(_, let data):
 			let avatarData = MultipartFormData(provider: .data(data), name: "avatar", fileName: "avatar.jpeg", mimeType: "image/jpeg")
 			return .uploadMultipart([avatarData])
+		case .updateSteps(_, let steps):
+			return .requestParameters(parameters: ["steps": steps],
+									  encoding: JSONEncoding.default)
 		}
 	}
 	
@@ -60,7 +66,8 @@ extension ProfileService: TargetType {
 		case .getUserInfo(let token),
 			 .getCoinsHistory(let token),
 			 .editUserInfo(let token, _),
-			 .editAvatar(let token, _):
+			 .editAvatar(let token, _),
+			 .updateSteps(let token, _):
 			headers["Authorization"] = "Bearer \(token)"
 		}
 		return headers

@@ -12,19 +12,8 @@ class CustomSegmentedControl: UIControl {
 	
 	private var buttons = [UIButton]()
 	private var selector: UIView!
-	private var selectedSegmentIndex = 0
 	
 	private var onSelectAction: ((_ index: Int) -> Void)?
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		updateView()
-	}
-	
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		updateView()
-	}
 	
 	func setItemsTitles(_ titles: [String]) {
 		buttons.removeAll()
@@ -50,17 +39,7 @@ class CustomSegmentedControl: UIControl {
 	}
 	
 	private func updateView() {
-		if selector == nil {
-			selector = UIView(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
-			selector.layer.cornerRadius = selector.frame.height/2
-			selector.layer.borderWidth = 0.5
-			selector.layer.borderColor = UIColor.pinkColor.cgColor
-			addSubview(selector)
-		}
-		
-		// Create a StackView
-		
-		let stackView = UIStackView.init(arrangedSubviews: buttons)
+		let stackView = UIStackView(arrangedSubviews: buttons)
 		stackView.axis = .horizontal
 		stackView.alignment = .fill
 		stackView.distribution = .equalCentering
@@ -73,14 +52,22 @@ class CustomSegmentedControl: UIControl {
 		stackView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
 		stackView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
 		
+		stackView.layoutIfNeeded()
 		
+		if selector == nil,
+			let lastButtonX = buttons.last?.frame.origin.x {
+			selector = UIView(frame: CGRect.init(x: lastButtonX, y: 0,
+												 width: 40, height: 40))
+			selector.layer.cornerRadius = selector.frame.height/2
+			selector.layer.borderWidth = 0.5
+			selector.layer.borderColor = UIColor.pinkColor.cgColor
+			addSubview(selector)
+		}
 	}
 
 	@objc private func buttonTapped(button: UIButton) {
 		for (buttonIndex, btn) in buttons.enumerated() {
 			if btn == button {
-				selectedSegmentIndex = buttonIndex
-				
 				onSelectAction?(buttonIndex)
 				
 				let selectorStartXPosition = btn.frame.origin.x
