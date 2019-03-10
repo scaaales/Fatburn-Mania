@@ -31,7 +31,7 @@ class CoinsHistoryTableViewModel {
 	}
 	
 	func getMonthWithEaryForSection(_ section: Int) -> String {
-		let item = dataSource.getItemAtIndex(0, in: section)
+		guard let item = dataSource.getItemAtIndex(0, in: section) else { return "" }
 		let formatter = DateFormatter()
 		formatter.dateFormat = "MMMM yyyy"
 		return formatter.string(from: item.date)

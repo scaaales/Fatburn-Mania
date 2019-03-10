@@ -39,8 +39,8 @@ class BasicTableViewDataSource<CellType: UITableViewCell, DataType>: NSObject, U
 		return cell
 	}
 	
-	func getItemAtIndex(_ index: Int, in section: Int = 0) -> DataType {
-		return sections[section][index]
+	func getItemAtIndex(_ index: Int, in section: Int = 0) -> DataType? {
+		return sections[section][safe: index]
 	}
 	
 	func getItem(where condition: (DataType) -> Bool) -> DataType? {

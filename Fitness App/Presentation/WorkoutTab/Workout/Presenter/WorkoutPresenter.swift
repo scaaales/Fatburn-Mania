@@ -108,7 +108,7 @@ class WorkoutPresenter<V: WorkoutView>: Presenter {
 		view.update()
 	}
 	
-	func getLessonAt(index: Int) -> Lesson {
+	func getLessonAt(index: Int) -> Lesson? {
 		return viewModel.getLessonAtIndex(index)
 	}
 	

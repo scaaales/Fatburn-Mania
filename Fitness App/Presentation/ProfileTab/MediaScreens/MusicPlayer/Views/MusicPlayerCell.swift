@@ -17,8 +17,8 @@ class MusicPlayerCell: CellWithSeperator, ConfigurableCell {
 	@IBOutlet private weak var playPauseButton: UIButton!
 	
 	func configure(data: DataType) {
-		nameLabel.text = data.song.name
-		artistLabel.text = data.song.artist
+		nameLabel.text = data.song.title
+		artistLabel.text = data.song.subtitle
 		durationLabel.text = data.song.duration
 		playPauseButton.tag = data.row
 	}

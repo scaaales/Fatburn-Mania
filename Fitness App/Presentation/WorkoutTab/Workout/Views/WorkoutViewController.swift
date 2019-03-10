@@ -48,7 +48,7 @@ class WorkoutViewController: RootViewController {
 			let selectedIndex = tableView.indexPathForSelectedRow {
 			tableView.deselectRow(at: selectedIndex, animated: true)
 			
-			let lesson = presenter.getLessonAt(index: selectedIndex.row)
+			guard let lesson = presenter.getLessonAt(index: selectedIndex.row) else { return }
 			lessonVC.presenter.setLesson(lesson)
 		} else if let seasonsVC = segue.destination as? SeasonsViewController {
 			seasonsVC.workoutViewController = self

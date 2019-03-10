@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Song {
-	let name: String
-	let artist: String
+struct Song: Decodable {
+	let title: String
+	let subtitle: String
 	let duration: String
-	let url: URL? // later
+	let audio: String
 }

@@ -7,8 +7,10 @@
 //
 
 
-protocol MusicPlayerView: View, TableViewUpdatable {	
+protocol MusicPlayerView: View, TableViewUpdatable, NetworkingView, PopupShowable {	
 	func setCurrentSong(_ song: Song)
 	func setPauseImage()
 	func setPlayImage()
+	
+	func setVolume(value: Float)
 }

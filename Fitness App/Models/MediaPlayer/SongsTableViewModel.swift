@@ -13,19 +13,13 @@ class SongsTableViewModel {
 	
 	let dataSource: BasicTableViewDataSource<MusicPlayerCell, DataType>
 	
-	init(items: [Song]? = nil) {
-		var resultItems: [DataType]
-		if let items = items {
-			resultItems = items.enumerated().map { (song: $1, row: $0) }
-		} else {
-			resultItems = (0...20).map{ (song: Song(name: "VOL. \($0)", artist: "Radio", duration: "61:42", url: nil), row: $0) }
-		}
-		
+	init(items: [Song]) {
+		let resultItems = items.enumerated().map { (song: $1, row: $0) }
 		dataSource = .init(items: resultItems)
 	}
 	
-	func getSongAt(index: Int) -> Song {
-		return dataSource.getItemAtIndex(index).song
+	func getSongAt(index: Int) -> Song? {
+		return dataSource.getItemAtIndex(index)?.song
 	}
 
 }

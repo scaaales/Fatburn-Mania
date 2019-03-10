@@ -15,6 +15,14 @@ class MusicPlayerViewController: UIViewController {
 	@IBOutlet private weak var volumeSlider: UISlider!
 	@IBOutlet private weak var currentSongLabel: UILabel!
 	@IBOutlet private weak var playPauseButton: UIButton!
+	@IBOutlet private weak var currentSongView: UIView!
+	
+	lazy private var loader: BlurredLoader = {
+		let loader = BlurredLoader()
+		view.addSubview(loader)
+		loader.centerInto(view: view)
+		return loader
+	}()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,7 +39,7 @@ class MusicPlayerViewController: UIViewController {
 	}
 	
 	@IBAction private func prevTapped() {
-		
+		presenter.playPrevSong()
 	}
 	
 	@IBAction private func currentSongPlayPauseTapped() {
@@ -39,11 +47,11 @@ class MusicPlayerViewController: UIViewController {
 	}
 	
 	@IBAction private func nextTapped() {
-		
+		presenter.playNextSong()
 	}
 	
 	@IBAction private func volumeSliderValueChanged() {
-		
+		presenter.changeVolumeTo(value: volumeSlider.value)
 	}
 	
 	@IBAction private func playPauseTappedOnSong(_ sender: UIButton) {
@@ -54,6 +62,22 @@ class MusicPlayerViewController: UIViewController {
 }
 
 extension MusicPlayerViewController: MusicPlayerView {
+	func disableUserInteraction() {
+		view.isUserInteractionEnabled = false
+	}
+	
+	func enableUserInteraction() {
+		view.isUserInteractionEnabled = true
+	}
+	
+	func showLoader() {
+		loader.startAnimating()
+	}
+	
+	func hideLoader() {
+		loader.stopAnimating()
+	}
+	
 	func setPauseImage() {
 		playPauseButton.setImage(#imageLiteral(resourceName: "pauseSongImageBlack"), for: .normal)
 	}
@@ -71,7 +95,12 @@ extension MusicPlayerViewController: MusicPlayerView {
 	}
 	
 	func setCurrentSong(_ song: Song) {
-		currentSongLabel.text = "\(song.name) - \(song.artist)"
+		currentSongView.isHidden = false
+		currentSongLabel.text = "\(song.title) - \(song.subtitle)"
+	}
+	
+	func setVolume(value: Float) {
+		volumeSlider.setValue(value, animated: false)
 	}
 }
 

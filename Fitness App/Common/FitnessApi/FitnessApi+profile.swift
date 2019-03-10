@@ -112,5 +112,26 @@ extension FitnessApi {
 			})
 		}
 		
+		private struct SongsResponse: Decodable {
+			let songs: [Song]
+			let success: Bool
+			
+			enum CodingKeys: String, CodingKey {
+				case songs = "audio_items"
+				case success
+			}
+		}
+		
+		func getSongs(onComplete: @escaping () -> Void,
+					  onSuccess: @escaping ([Song]) -> Void,
+					  onError: @escaping OnErrorCompletion) {
+			request = provider.request(.getSongs(token: token), completion: { result in
+				onComplete()
+				BaseApi.mapResult(result, intoItemOfType: SongsResponse.self, onSuccess: {
+					onSuccess($0.songs)
+				}, onError: onError)
+			})
+		}
+		
 	}
 }

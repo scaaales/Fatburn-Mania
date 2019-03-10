@@ -24,7 +24,7 @@ class CourseVideosTableViewModel {
 	}
 	
 	func getTitleAtIndex(_ index: Int) -> String {
-		return dataSource.getItemAtIndex(index).title
+		return dataSource.getItemAtIndex(index)?.title ?? ""
 	}
 }
 
