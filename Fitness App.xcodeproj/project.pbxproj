@@ -12,10 +12,7 @@
 		B3028AD821EF78FC00515CD8 /* MusicPlayerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3028AD421EF78FC00515CD8 /* MusicPlayerInitializer.swift */; };
 		B3028AD921EF78FC00515CD8 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3028AD521EF78FC00515CD8 /* MusicPlayerViewController.swift */; };
 		B3028ADA21EF78FC00515CD8 /* MusicPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3028AD621EF78FC00515CD8 /* MusicPlayerView.swift */; };
-		B3033D3121E8DF5B0058626D /* VideoDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D2D21E8DF5B0058626D /* VideoDetailsPresenter.swift */; };
-		B3033D3221E8DF5B0058626D /* VideoDetailsInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D2E21E8DF5B0058626D /* VideoDetailsInitializer.swift */; };
 		B3033D3321E8DF5B0058626D /* VideoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D2F21E8DF5B0058626D /* VideoDetailsViewController.swift */; };
-		B3033D3421E8DF5B0058626D /* VideoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3033D3021E8DF5B0058626D /* VideoDetailsView.swift */; };
 		B306398B21F8A7F50089A5D4 /* WorkoutTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B306398A21F8A7F50089A5D4 /* WorkoutTableViewModel.swift */; };
 		B3090D6821F62E9C0021703B /* CenteredThumbSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3090D6721F62E9B0021703B /* CenteredThumbSlider.swift */; };
 		B30A0DFF21D78DD50075D871 /* NSLayoutConstraint+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */; };
@@ -107,6 +104,7 @@
 		B35E620F21F1F651001CB678 /* UIImageView+rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */; };
 		B35E621121F21298001CB678 /* BottomRoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */; };
 		B35E621321F2231C001CB678 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E621221F2231C001CB678 /* TimerCell.swift */; };
+		B35ED0392236F76D005FC289 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35ED0382236F76D005FC289 /* Video.swift */; };
 		B369573521D4E30C00735555 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B369573421D4E30C00735555 /* HealthKit.framework */; };
 		B369573721D4E40500735555 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573621D4E40500735555 /* HealthKitService.swift */; };
 		B369573C21D514DF00735555 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369573B21D514DF00735555 /* Date+extension.swift */; };
@@ -278,10 +276,7 @@
 		B3028AD421EF78FC00515CD8 /* MusicPlayerInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerInitializer.swift; sourceTree = "<group>"; };
 		B3028AD521EF78FC00515CD8 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		B3028AD621EF78FC00515CD8 /* MusicPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerView.swift; sourceTree = "<group>"; };
-		B3033D2D21E8DF5B0058626D /* VideoDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsPresenter.swift; sourceTree = "<group>"; };
-		B3033D2E21E8DF5B0058626D /* VideoDetailsInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsInitializer.swift; sourceTree = "<group>"; };
 		B3033D2F21E8DF5B0058626D /* VideoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsViewController.swift; sourceTree = "<group>"; };
-		B3033D3021E8DF5B0058626D /* VideoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsView.swift; sourceTree = "<group>"; };
 		B306398A21F8A7F50089A5D4 /* WorkoutTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewModel.swift; sourceTree = "<group>"; };
 		B3090D6721F62E9B0021703B /* CenteredThumbSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredThumbSlider.swift; sourceTree = "<group>"; };
 		B30A0DFE21D78DD50075D871 /* NSLayoutConstraint+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+extension.swift"; sourceTree = "<group>"; };
@@ -375,6 +370,7 @@
 		B35E620E21F1F651001CB678 /* UIImageView+rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+rotate.swift"; sourceTree = "<group>"; };
 		B35E621021F21298001CB678 /* BottomRoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRoundedShadowView.swift; sourceTree = "<group>"; };
 		B35E621221F2231C001CB678 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
+		B35ED0382236F76D005FC289 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		B369573321D4E30C00735555 /* Fitness App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fitness App.entitlements"; sourceTree = "<group>"; };
 		B369573421D4E30C00735555 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B369573621D4E40500735555 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
@@ -577,9 +573,7 @@
 		B3033D2C21E8DF3A0058626D /* VideoDetails */ = {
 			isa = PBXGroup;
 			children = (
-				B3033D3621E9059A0058626D /* Presenter */,
 				B3033D3521E905840058626D /* Views */,
-				B3033D2E21E8DF5B0058626D /* VideoDetailsInitializer.swift */,
 			);
 			path = VideoDetails;
 			sourceTree = "<group>";
@@ -587,18 +581,9 @@
 		B3033D3521E905840058626D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3033D3021E8DF5B0058626D /* VideoDetailsView.swift */,
 				B3033D2F21E8DF5B0058626D /* VideoDetailsViewController.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		B3033D3621E9059A0058626D /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				B3033D2D21E8DF5B0058626D /* VideoDetailsPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		B30A0DFA21D78C910075D871 /* Presenter */ = {
@@ -1862,6 +1847,7 @@
 			children = (
 				B3F732AE21E7A23D0038ACB9 /* VideoLibraryCollectionViewModel.swift */,
 				B3B8D3B521E8B62800397AAB /* CourseVideosTableViewModel.swift */,
+				B35ED0382236F76D005FC289 /* Video.swift */,
 			);
 			path = VideoLibrary;
 			sourceTree = "<group>";
@@ -2132,7 +2118,6 @@
 				B319153E22142C0200F019ED /* PushNotificationsService.swift in Sources */,
 				B3DD925921FA0EB40017E723 /* WorkoutOfTheDay.swift in Sources */,
 				B3254F4921D3E7CE00F99F91 /* BodyMeasurementCell.swift in Sources */,
-				B3033D3421E8DF5B0058626D /* VideoDetailsView.swift in Sources */,
 				B3A2E1C4221DAB2300C1DF93 /* HealthKitWaterService.swift in Sources */,
 				B3F732B621E7A8B30038ACB9 /* CourseVideosInitializer.swift in Sources */,
 				B31D2151220DC92C00DEEE76 /* NetworkingView.swift in Sources */,
@@ -2192,7 +2177,6 @@
 				B369573C21D514DF00735555 /* Date+extension.swift in Sources */,
 				B39D478221E62B3300D5C050 /* UserButtonArrowCell.swift in Sources */,
 				B3FBA16421EF343800B88AA3 /* PhotoPresenter.swift in Sources */,
-				B3033D3121E8DF5B0058626D /* VideoDetailsPresenter.swift in Sources */,
 				B30E9F8B21ECBEF5006F33CE /* ProductDetailInitializer.swift in Sources */,
 				B36CD81B21F601F9007D4BE6 /* SongsTableViewModel.swift in Sources */,
 				B3DD925121FA01560017E723 /* WorkoutOfTheDayPresenter.swift in Sources */,
@@ -2335,7 +2319,6 @@
 				B3B8D3B221E8B27B00397AAB /* CourseVideoCell.swift in Sources */,
 				B34AA0102224009B00C57CFE /* FaqService.swift in Sources */,
 				B3254F3B21D3E7CE00F99F91 /* TrainingDay.swift in Sources */,
-				B3033D3221E8DF5B0058626D /* VideoDetailsInitializer.swift in Sources */,
 				B39D476021E5FCC300D5C050 /* ProfilePresenter.swift in Sources */,
 				B3254F4F21D3E7CE00F99F91 /* ProgressView.swift in Sources */,
 				B3DC18B0221BF8AB00221F1D /* FitnessApi+diary.swift in Sources */,
@@ -2348,6 +2331,7 @@
 				B30E9F9621ECD6D6006F33CE /* CoinsHistoryPresenter.swift in Sources */,
 				B30E9FA221ECDB1B006F33CE /* CoinsHistory.swift in Sources */,
 				B30E9F6E21EC8D23006F33CE /* StoreInitializer.swift in Sources */,
+				B35ED0392236F76D005FC289 /* Video.swift in Sources */,
 				B3028AD821EF78FC00515CD8 /* MusicPlayerInitializer.swift in Sources */,
 				B3254F4221D3E7CE00F99F91 /* CalendarView.swift in Sources */,
 				B3FBA16621EF343800B88AA3 /* PhotoViewController.swift in Sources */,

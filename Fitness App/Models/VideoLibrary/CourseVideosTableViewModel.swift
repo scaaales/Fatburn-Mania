@@ -9,22 +9,14 @@
 import UIKit
 
 class CourseVideosTableViewModel {
-	typealias DataType = (image: UIImage, title: String, subtitle: String)
-	let dataSource: BasicTableViewDataSource<CourseVideoCell, DataType>
+	let dataSource: BasicTableViewDataSource<CourseVideoCell, Video>
 	
-	init(items: [DataType]? = nil) {
-		var resultItems: [DataType]
-		if let items = items {
-			resultItems = items
-		} else {
-			resultItems = Array(repeating: (image: #imageLiteral(resourceName: "courseVideoExample"), title: "Спасатели жирабу", subtitle: "Прощай сладкое"), count: 10)
-		}
-		
-		dataSource = .init(items: resultItems)
+	init(videos: [Video]) {
+		dataSource = .init(items: videos)
 	}
 	
-	func getTitleAtIndex(_ index: Int) -> String {
-		return dataSource.getItemAtIndex(index)?.title ?? ""
+	func getVideoAtIndex(_ index: Int) -> Video? {
+		return dataSource.getItemAtIndex(index)
 	}
 }
 

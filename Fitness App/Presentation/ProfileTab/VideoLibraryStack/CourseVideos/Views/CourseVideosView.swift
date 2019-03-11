@@ -6,6 +6,6 @@
 //  Copyright © 2019 Ridex. All rights reserved.
 //
 
-protocol CourseVideosView: View, TableViewUpdatable {
-	
+protocol CourseVideosView: View, TableViewUpdatable, NetworkingView, PopupShowable {
+	func showVideoDetails(_ video: Video)
 }

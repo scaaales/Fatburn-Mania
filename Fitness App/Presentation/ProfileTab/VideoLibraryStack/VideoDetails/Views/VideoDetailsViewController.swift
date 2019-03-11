@@ -10,8 +10,6 @@ import UIKit
 import AVKit
 
 class VideoDetailsViewController: UIViewController {
-	var presenter: VideoDetailsPresenter<VideoDetailsViewController>!
-	
 	@IBOutlet private weak var videoContainter: UIView!
 	@IBOutlet private weak var playButton: UIButton!
 	@IBOutlet private weak var descriptionLabel: UILabel!
@@ -20,12 +18,15 @@ class VideoDetailsViewController: UIViewController {
 	
 	private var isPlaying = false
 	private var playerLayerCreated = false
+	var video: Video!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let url = URL(string: "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8")!
-		player = AVPlayer(url: url)
-		descriptionLabel.text = .loremIpsumConstant
+		guard let videoUrlFixed = video.video.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+			let videoURL = URL(string: videoUrlFixed) else { return }
+		player = AVPlayer(url: videoURL)
+		descriptionLabel.text = video.text
+		title = video.title
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -60,9 +61,4 @@ class VideoDetailsViewController: UIViewController {
 	}
 	
 }
-
-extension VideoDetailsViewController: VideoDetailsView {
-	
-}
-
 

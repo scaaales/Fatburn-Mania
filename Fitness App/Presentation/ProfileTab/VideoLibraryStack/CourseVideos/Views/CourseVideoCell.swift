@@ -9,14 +9,14 @@
 import UIKit
 
 class CourseVideoCell: UITableViewCell, ConfigurableCell {
-	typealias DataType = (image: UIImage, title: String, subtitle: String)
+	typealias DataType = Video
 	
 	@IBOutlet private weak var courseImageView: UIImageView!
 	@IBOutlet private weak var courseTitleSubtitleLabel: UILabel!
 	
-	func configure(data: DataType) {
-		courseImageView.image = data.image
-		courseTitleSubtitleLabel.text = data.title + "\n" + data.subtitle
+	func configure(data: Video) {
+		courseImageView.setImageFrom(urlString: data.photo)
+		courseTitleSubtitleLabel.text = data.title
 		courseImageView.makeCornerRadius(16)
 	}
 

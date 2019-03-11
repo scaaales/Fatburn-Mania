@@ -133,5 +133,26 @@ extension FitnessApi {
 			})
 		}
 		
+		private struct VideosResponse: Decodable {
+			let videos: [Video]
+			let success: Bool
+			
+			enum CodingKeys: String, CodingKey {
+				case videos = "video_library_items"
+				case success
+			}
+		}
+		
+		func getVideos(onComplete: @escaping () -> Void,
+					   onSuccess: @escaping ([Video]) -> Void,
+					   onError: @escaping OnErrorCompletion) {
+			request = provider.request(.getVideos(token: token), completion: { result in
+				onComplete()
+				BaseApi.mapResult(result, intoItemOfType: VideosResponse.self, onSuccess: {
+					onSuccess($0.videos)
+				}, onError: onError)
+			})
+		}
+		
 	}
 }

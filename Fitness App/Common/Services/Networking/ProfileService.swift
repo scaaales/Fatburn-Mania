@@ -15,6 +15,7 @@ enum ProfileService {
 	case editAvatar(token: String, data: Data)
 	case updateSteps(token: String, steps: Int)
 	case getSongs(token: String)
+	case getVideos(token: String)
 }
 
 extension ProfileService: TargetType {
@@ -33,12 +34,14 @@ extension ProfileService: TargetType {
 			return path + "update_steps"
 		case .getSongs:
 			return "/audio_items"
+		case .getVideos:
+			return "/video_library_items"
 		}
 	}
 	
 	var method: Method {
 		switch self {
-		case .getUserInfo, .getCoinsHistory, .getSongs:
+		case .getUserInfo, .getCoinsHistory, .getSongs, .getVideos:
 			return .get
 		case .editUserInfo, .editAvatar, .updateSteps:
 			return .post
@@ -49,7 +52,7 @@ extension ProfileService: TargetType {
 	
 	var task: Task {
 		switch self {
-		case .getUserInfo, .getCoinsHistory, .getSongs:
+		case .getUserInfo, .getCoinsHistory, .getSongs, .getVideos:
 			return .requestPlain
 		case .editUserInfo(_, let user):
 			return .requestJSONEncodable(user)
@@ -71,7 +74,8 @@ extension ProfileService: TargetType {
 			 .editUserInfo(let token, _),
 			 .editAvatar(let token, _),
 			 .updateSteps(let token, _),
-			 .getSongs(let token):
+			 .getSongs(let token),
+			 .getVideos(let token):
 			headers["Authorization"] = "Bearer \(token)"
 		}
 		return headers

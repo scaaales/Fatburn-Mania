@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="elA-a4-c4R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X73-vi-yPk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="wne-yz-8Y4">
             <objects>
-                <viewController title="Video library" id="elA-a4-c4R" customClass="VideoLibraryViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoLibraryViewController" title="Video library" id="elA-a4-c4R" customClass="VideoLibraryViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ASq-ja-MON">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,6 @@
                                         <connections>
                                             <outlet property="imageView" destination="dc6-fs-gLE" id="NbB-pT-d8f"/>
                                             <outlet property="title" destination="aR8-kH-0rP" id="oKN-1p-neg"/>
-                                            <segue destination="X73-vi-yPk" kind="show" id="S7x-CE-SPv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -97,7 +96,7 @@
         <!--View Controller-->
         <scene sceneID="RUr-Fr-6Zs">
             <objects>
-                <viewController id="X73-vi-yPk" customClass="CourseVideosViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Video library" id="X73-vi-yPk" customClass="CourseVideosViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4i8-PL-ttL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +126,7 @@
                                                         <constraint firstAttribute="height" constant="25" id="xDi-LV-aVx"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yML-pB-D6D">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yML-pB-D6D">
                                                     <rect key="frame" x="183" y="10" width="172" height="41"/>
                                                     <string key="text">Label
 123</string>
@@ -150,7 +149,6 @@
                                         <connections>
                                             <outlet property="courseImageView" destination="7zR-6W-uP3" id="tyZ-cV-ckc"/>
                                             <outlet property="courseTitleSubtitleLabel" destination="yML-pB-D6D" id="NAD-ZV-bs8"/>
-                                            <segue destination="ccO-uT-AvF" kind="show" id="kgY-VV-75Z"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -165,8 +163,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hg0-Qf-ets"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="dFJ-6W-guO" id="47Q-pQ-1yf"/>
+                        <segue destination="ccO-uT-AvF" kind="show" identifier="showVideoDetails" id="OPC-1X-pxF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4r-CM-Wvp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="1205.5999999999999" y="-287.40629685157421"/>
         </scene>
-        <!--View Controller-->
+        <!--Video Details View Controller-->
         <scene sceneID="nTT-8h-MLe">
             <objects>
                 <viewController id="ccO-uT-AvF" customClass="VideoDetailsViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,11 +263,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEo-su-FvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="Qc6-Pp-LcI" customClass="VideoDetailsInitializer" customModule="Fitness_App" customModuleProvider="target">
-                    <connections>
-                        <outlet property="viewController" destination="ccO-uT-AvF" id="UeK-6v-kIc"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="2048.8000000000002" y="-287.40629685157421"/>
         </scene>

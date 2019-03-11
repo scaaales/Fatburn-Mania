@@ -85,7 +85,6 @@ class MusicPlayerPresenter<V: MusicPlayerView>: Presenter {
 		let audioSession = AVAudioSession.sharedInstance()
 		
 		do {
-			try audioSession.setCategory(.playback, mode: .default)
 			try audioSession.setActive(true)
 		} catch {
 			print(error)
