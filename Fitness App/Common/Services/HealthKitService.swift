@@ -175,7 +175,8 @@ private extension HealthKitService {
 		
 		let query = HKStatisticsQuery(quantityType: quantityType, quantitySamplePredicate: predicate, options: options) { _, result, error in
 			if let error = error {
-				fatalError(error.localizedDescription)
+				print(error)
+				completion(nil)
 			}
 			guard let result = result, let sum = result.sumQuantity() else {
 				completion(nil)

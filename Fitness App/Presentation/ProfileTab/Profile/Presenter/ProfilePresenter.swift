@@ -64,6 +64,21 @@ class ProfilePresenter<V: ProfileView>: Presenter, UserCoinsUpdateDelegate {
 	}
 	
 	private func updateSteps() {
+		HealthKitService.authorizeHealthKit { [weak self] (authorized, error) in
+			if !authorized {
+				let baseMessage = "HealthKit Authorization Failed"
+				if let error = error {
+					print("\(baseMessage). Reason: \(error.localizedDescription)")
+				} else {
+					print(baseMessage)
+				}
+			} else {
+				self?.makeUpdateStepsRequest()
+			}
+		}
+	}
+	
+	private func makeUpdateStepsRequest() {
 		HealthKitService.getSteps(on: .init()) { [weak self] steps in
 			guard let steps = steps else { return }
 			self?.view.disableUserInteraction()
