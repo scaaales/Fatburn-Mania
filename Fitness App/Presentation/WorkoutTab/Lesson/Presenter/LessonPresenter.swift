@@ -102,7 +102,7 @@ class LessonPresenter<V: LessonView>: Presenter {
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
 		}, onSuccess: {
-			
+			NotificationCenter.default.post(name: .workoutSubmitted, object: nil)
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
 		}

@@ -69,34 +69,29 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 		view.disableUserInteraction()
 		view.showLoader()
 		
-		let dispatchGroup = DispatchGroup()
-		
-		dispatchGroup.enter()
-		rewardApi.getWorkoutReward(onComplete: {
-			dispatchGroup.leave()
-		}, onSuccess: { [weak self] amount in
-			if let amount = amount {
-				NotificationCenter.default.post(name: .coinsAdded,
-												object: self,
-												userInfo: ["value": amount])
-				self?.view.showCoinsAddedScreen(with: amount)
-			}
-		}) { [weak self] errorText in
-			self?.view.showErrorPopup(with: errorText)
-		}
-		
-		dispatchGroup.enter()
-		workoutsApi.workoutOfTheDayCompleted(onComplete: {
-			dispatchGroup.leave()
-		}, onSuccess: {
-			
-		}) { [weak self] errorText in
-			self?.view.showErrorPopup(with: errorText)
-		}
-		
-		dispatchGroup.notify(queue: .main) { [weak self] in
+		workoutsApi.workoutOfTheDayCompleted(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
+			}, onSuccess: { [weak self] in
+				NotificationCenter.default.post(name: .workoutSubmitted, object: nil)
+				
+				self?.view.disableUserInteraction()
+				self?.view.showLoader()
+				self?.rewardApi.getWorkoutReward(onComplete: { [weak self] in
+					self?.view.enableUserInteraction()
+					self?.view.hideLoader()
+					}, onSuccess: { [weak self] amount in
+						if let amount = amount {
+							NotificationCenter.default.post(name: .coinsAdded,
+															object: self,
+															userInfo: ["value": amount])
+							self?.view.showCoinsAddedScreen(with: amount)
+						}
+				}) { [weak self] errorText in
+					self?.view.showErrorPopup(with: errorText)
+				}
+		}) { [weak self] errorText in
+			self?.view.showErrorPopup(with: errorText)
 		}
 	}
 }

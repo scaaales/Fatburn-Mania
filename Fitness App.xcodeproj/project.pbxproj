@@ -244,6 +244,7 @@
 		B3F27A4A220C3F2600E932DE /* LoadingSplashInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A46220C3F2600E932DE /* LoadingSplashInitializer.swift */; };
 		B3F27A4B220C3F2600E932DE /* LoadingSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A47220C3F2600E932DE /* LoadingSplashViewController.swift */; };
 		B3F27A4C220C3F2600E932DE /* LoadingSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A48220C3F2600E932DE /* LoadingSplashView.swift */; };
+		B3F6CC79223AFE16005C76EA /* MeasurementsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F6CC78223AFE16005C76EA /* MeasurementsTextField.swift */; };
 		B3F7328021E754840038ACB9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7327F21E754840038ACB9 /* MainNavigationController.swift */; };
 		B3F7328621E75EBB0038ACB9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */; };
 		B3F7328921E765070038ACB9 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7328821E765070038ACB9 /* HowToViewController.swift */; };
@@ -511,6 +512,7 @@
 		B3F27A46220C3F2600E932DE /* LoadingSplashInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashInitializer.swift; sourceTree = "<group>"; };
 		B3F27A47220C3F2600E932DE /* LoadingSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashViewController.swift; sourceTree = "<group>"; };
 		B3F27A48220C3F2600E932DE /* LoadingSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashView.swift; sourceTree = "<group>"; };
+		B3F6CC78223AFE16005C76EA /* MeasurementsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsTextField.swift; sourceTree = "<group>"; };
 		B3F7327F21E754840038ACB9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		B3F7328521E75EBB0038ACB9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		B3F7328821E765070038ACB9 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
@@ -828,6 +830,7 @@
 			children = (
 				B319154A22146CF300F019ED /* AddNewMeasurementsView.swift */,
 				B319154922146CF300F019ED /* AddNewMeasurementsViewController.swift */,
+				B3F6CC78223AFE16005C76EA /* MeasurementsTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2171,6 +2174,7 @@
 				B38F17A221F87BEC00B70DBE /* WorkoutInitializer.swift in Sources */,
 				B3254F4321D3E7CE00F99F91 /* CalendarDateCell.swift in Sources */,
 				B3EFDF4B21F76E7D00A8F61F /* MeasureHistoryView.swift in Sources */,
+				B3F6CC79223AFE16005C76EA /* MeasurementsTextField.swift in Sources */,
 				B30E9F7021EC8D23006F33CE /* StoreView.swift in Sources */,
 				B39B71BB2215A1B2002F1747 /* FitnessApi+auth.swift in Sources */,
 				B39B71B82215A121002F1747 /* StoreService.swift in Sources */,

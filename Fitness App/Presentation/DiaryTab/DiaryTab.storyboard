@@ -721,9 +721,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Diary" id="kKT-jS-5bl">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="calendar" id="FEx-ST-gmw"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Diary" id="kKT-jS-5bl"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="blurredLoader" destination="hbG-nw-gsZ" id="RdR-SF-A6M"/>
@@ -798,10 +796,11 @@
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzm-vn-59d">
-                                                                <rect key="frame" x="304.5" y="20" width="15.5" height="18"/>
+                                                            <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzm-vn-59d" customClass="MeasurementsTextField" customModule="Fitness_App" customModuleProvider="target">
+                                                                <rect key="frame" x="289" y="20" width="50" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="OmJ-Fp-41e"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="xet-71-aXj"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -814,10 +813,10 @@
                                                             <constraint firstItem="4SS-gN-RoU" firstAttribute="top" secondItem="dIr-1n-qF8" secondAttribute="top" constant="20" id="Kfs-Vq-IH0"/>
                                                             <constraint firstItem="YwK-Aj-FHH" firstAttribute="firstBaseline" secondItem="fzm-vn-59d" secondAttribute="firstBaseline" id="VD9-BG-jR3"/>
                                                             <constraint firstAttribute="bottom" secondItem="fzm-vn-59d" secondAttribute="bottom" id="ZPv-z1-ok4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="fzm-vn-59d" secondAttribute="trailing" id="cCy-cr-Xif"/>
                                                             <constraint firstAttribute="trailing" secondItem="YwK-Aj-FHH" secondAttribute="trailing" id="f5n-3X-64O"/>
                                                             <constraint firstItem="4SS-gN-RoU" firstAttribute="leading" secondItem="dIr-1n-qF8" secondAttribute="leading" id="rTD-81-1JB"/>
                                                             <constraint firstItem="fzm-vn-59d" firstAttribute="top" secondItem="dIr-1n-qF8" secondAttribute="top" constant="20" id="rx3-fB-gyM"/>
-                                                            <constraint firstItem="YwK-Aj-FHH" firstAttribute="leading" secondItem="fzm-vn-59d" secondAttribute="trailing" id="wL8-D8-hWC"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6I-Bx-VD2">
@@ -835,9 +834,10 @@
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9b3-5h-WmM">
-                                                                <rect key="frame" x="304.5" y="20" width="15.5" height="18"/>
+                                                            <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9b3-5h-WmM" customClass="MeasurementsTextField" customModule="Fitness_App" customModuleProvider="target">
+                                                                <rect key="frame" x="289" y="20" width="50" height="18"/>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="3cS-7K-j4z"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="veI-n0-d34"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -854,7 +854,7 @@
                                                             <constraint firstItem="wcG-eo-jPZ" firstAttribute="leading" secondItem="j6I-Bx-VD2" secondAttribute="leading" id="W6c-sx-hUO"/>
                                                             <constraint firstAttribute="bottom" secondItem="9b3-5h-WmM" secondAttribute="bottom" id="dLr-08-QMe"/>
                                                             <constraint firstItem="wcG-eo-jPZ" firstAttribute="top" secondItem="j6I-Bx-VD2" secondAttribute="top" constant="20" id="kof-uw-Xhk"/>
-                                                            <constraint firstItem="g2R-Vg-NdX" firstAttribute="leading" secondItem="9b3-5h-WmM" secondAttribute="trailing" id="pGu-3w-4EF"/>
+                                                            <constraint firstAttribute="trailing" secondItem="9b3-5h-WmM" secondAttribute="trailing" id="ufG-nJ-9dx"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7q-7H-V8b">
@@ -872,10 +872,11 @@
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzw-rs-7no">
-                                                                <rect key="frame" x="304.5" y="20" width="15.5" height="18"/>
+                                                            <textField opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzw-rs-7no" customClass="MeasurementsTextField" customModule="Fitness_App" customModuleProvider="target">
+                                                                <rect key="frame" x="289" y="20" width="50" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="qgd-fS-LVV"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="yMk-vw-k3C"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -886,10 +887,10 @@
                                                         <constraints>
                                                             <constraint firstItem="yzw-rs-7no" firstAttribute="top" secondItem="r7q-7H-V8b" secondAttribute="top" constant="20" id="9CS-1j-OaO"/>
                                                             <constraint firstAttribute="bottom" secondItem="gOB-g2-778" secondAttribute="bottom" id="OyC-gp-RYS"/>
-                                                            <constraint firstItem="a38-dc-cyL" firstAttribute="leading" secondItem="yzw-rs-7no" secondAttribute="trailing" id="Uno-xX-FRE"/>
                                                             <constraint firstItem="gOB-g2-778" firstAttribute="leading" secondItem="r7q-7H-V8b" secondAttribute="leading" id="Xt4-K0-S81"/>
                                                             <constraint firstItem="a38-dc-cyL" firstAttribute="firstBaseline" secondItem="yzw-rs-7no" secondAttribute="firstBaseline" id="Yk5-sC-7fK"/>
                                                             <constraint firstAttribute="trailing" secondItem="a38-dc-cyL" secondAttribute="trailing" id="cki-It-wtT"/>
+                                                            <constraint firstAttribute="trailing" secondItem="yzw-rs-7no" secondAttribute="trailing" id="gC9-aq-0X1"/>
                                                             <constraint firstAttribute="bottom" secondItem="yzw-rs-7no" secondAttribute="bottom" id="jhf-OD-oOs"/>
                                                             <constraint firstItem="gOB-g2-778" firstAttribute="top" secondItem="r7q-7H-V8b" secondAttribute="top" constant="20" id="kga-1C-ReD"/>
                                                         </constraints>
@@ -909,10 +910,11 @@
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y63-Zj-DwJ">
-                                                                <rect key="frame" x="304.5" y="20" width="15.5" height="18"/>
+                                                            <textField opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y63-Zj-DwJ" customClass="MeasurementsTextField" customModule="Fitness_App" customModuleProvider="target">
+                                                                <rect key="frame" x="289" y="20" width="50" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="aW0-by-tCK"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="lAa-Jq-BW5"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -928,7 +930,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="y63-Zj-DwJ" secondAttribute="bottom" id="OhS-rH-3BS"/>
                                                             <constraint firstItem="y63-Zj-DwJ" firstAttribute="top" secondItem="LVO-Qq-AVE" secondAttribute="top" constant="20" id="g6v-Ij-yJQ"/>
                                                             <constraint firstAttribute="trailing" secondItem="m0L-O7-HNy" secondAttribute="trailing" id="kZb-4W-RBQ"/>
-                                                            <constraint firstItem="m0L-O7-HNy" firstAttribute="leading" secondItem="y63-Zj-DwJ" secondAttribute="trailing" id="qb8-LC-9XZ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="y63-Zj-DwJ" secondAttribute="trailing" id="qb8-LC-9XZ"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWw-eF-nEH">
@@ -946,9 +948,10 @@
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KTd-VG-PIA">
-                                                                <rect key="frame" x="289" y="20" width="30.5" height="18"/>
+                                                            <textField opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KTd-VG-PIA" customClass="MeasurementsTextField" customModule="Fitness_App" customModuleProvider="target">
+                                                                <rect key="frame" x="289" y="20" width="50" height="18"/>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="LEZ-2D-9Cl"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="Mhx-Gl-Vne"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.27450980390000002" green="0.56078431370000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -962,7 +965,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="KTd-VG-PIA" secondAttribute="bottom" id="5qQ-tu-naq"/>
                                                             <constraint firstAttribute="bottom" secondItem="Vtr-dK-Gfo" secondAttribute="bottom" id="IFv-qS-NRy"/>
                                                             <constraint firstAttribute="trailing" secondItem="i4k-Ep-w5s" secondAttribute="trailing" id="Qnc-Vl-EK6"/>
-                                                            <constraint firstItem="i4k-Ep-w5s" firstAttribute="leading" secondItem="KTd-VG-PIA" secondAttribute="trailing" id="Qzi-Mv-pJ5"/>
+                                                            <constraint firstAttribute="trailing" secondItem="KTd-VG-PIA" secondAttribute="trailing" id="Qzi-Mv-pJ5"/>
                                                             <constraint firstItem="Vtr-dK-Gfo" firstAttribute="leading" secondItem="VWw-eF-nEH" secondAttribute="leading" id="el0-hl-Uh2"/>
                                                             <constraint firstItem="KTd-VG-PIA" firstAttribute="top" secondItem="VWw-eF-nEH" secondAttribute="top" constant="20" id="gdR-sa-ebx"/>
                                                             <constraint firstItem="Vtr-dK-Gfo" firstAttribute="top" secondItem="VWw-eF-nEH" secondAttribute="top" constant="20" id="wLa-zj-rUc"/>
@@ -1376,7 +1379,6 @@ and for this you get</string>
         <image name="bodyImage" width="226" height="371"/>
         <image name="bullets" width="20" height="22.5"/>
         <image name="bullets_selected" width="20" height="22.5"/>
-        <image name="calendar" width="19" height="21"/>
         <image name="clock" width="36.5" height="36.5"/>
         <image name="closeButton" width="18" height="18"/>
         <image name="closeIcon" width="12.5" height="12.5"/>

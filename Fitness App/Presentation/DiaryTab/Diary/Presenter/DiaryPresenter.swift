@@ -29,6 +29,11 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		}
 		
 		diaryApi = .init(token: token)
+		
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(handleTrainingDayUpdate),
+											   name: .workoutSubmitted,
+											   object: nil)
 	}
 	
 	func getInitialHealthInfo() {
@@ -233,6 +238,25 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	
 	func todayMeasurementsChanged() {
 		measurementsCache[Date().startOfDay] = nil
+	}
+	
+	@objc private func handleTrainingDayUpdate() {
+		trainingDayCache[Date().startOfDay] = nil
+		if Calendar.current.isDateInToday(selectedDate) {
+			view.disableUserInteraction()
+			view.showLoader()
+			diaryApi.getTrainingDay(at: selectedDate, onComplete: { [weak self] in
+				self?.view.enableUserInteraction()
+				self?.view.hideLoader()
+			}, onSuccess: { [weak self] trainingDay in
+				guard let self = self else { return }
+				self.trainingDayCache[self.selectedDate.startOfDay] = trainingDay
+				self.viewModel.trainingDay = trainingDay
+				self.view.update()
+			}) { [weak self] errorText in
+				self?.view.showErrorPopup(with: errorText)
+			}
+		}
 	}
 	
 }

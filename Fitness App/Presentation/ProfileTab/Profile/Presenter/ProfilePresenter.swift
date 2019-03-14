@@ -89,6 +89,9 @@ class ProfilePresenter<V: ProfileView>: Presenter, UserCoinsUpdateDelegate {
 				self?.view.hideLoader()
 			}, onSuccess: { [weak self] coinsAmount in
 				if let coinsAmount = coinsAmount {
+					NotificationCenter.default.post(name: .coinsAdded,
+													object: self,
+													userInfo: ["value": coinsAmount])
 					self?.view.showCoinsAddedScreen(with: coinsAmount)
 				}
 			}, onError: { [weak self] errorText in
