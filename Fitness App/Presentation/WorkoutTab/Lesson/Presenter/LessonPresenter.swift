@@ -101,8 +101,14 @@ class LessonPresenter<V: LessonView>: Presenter {
 		workoutsApi.trainingComplete(workoutId: lesson.id, onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
-		}, onSuccess: {
+		}, onSuccess: { [weak self] coins in
 			NotificationCenter.default.post(name: .workoutSubmitted, object: nil)
+			if let coins = coins {
+				NotificationCenter.default.post(name: .coinsAdded,
+												object: self,
+												userInfo: ["value": coins])
+				self?.view.showCoinsAddedScreen(with: coins)
+			}
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
 		}

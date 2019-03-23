@@ -54,7 +54,7 @@ class WorkoutOfTheDayViewController: RootViewController {
 		} else if let coinsAddedVC = segue.destination as? CoinsAddedViewController,
 			let coinsAmount = sender as? Int {
 			coinsAddedVC.coinsAmount = coinsAmount
-			coinsAddedVC.reasonAddedTextReplacement = "You finished wokout of the day and for this you get"
+			coinsAddedVC.reasonAddedTextReplacement = "You finished workout of the day and for this you get"
 		}
 	}
 	

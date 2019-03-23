@@ -72,24 +72,14 @@ class WorkoutOfTheDayPresenter<V: WorkoutOfTheDayView>: Presenter {
 		workoutsApi.workoutOfTheDayCompleted(onComplete: { [weak self] in
 			self?.view.enableUserInteraction()
 			self?.view.hideLoader()
-			}, onSuccess: { [weak self] in
-				NotificationCenter.default.post(name: .workoutSubmitted, object: nil)
-				
-				self?.view.disableUserInteraction()
-				self?.view.showLoader()
-				self?.rewardApi.getWorkoutReward(onComplete: { [weak self] in
-					self?.view.enableUserInteraction()
-					self?.view.hideLoader()
-					}, onSuccess: { [weak self] amount in
-						if let amount = amount {
-							NotificationCenter.default.post(name: .coinsAdded,
-															object: self,
-															userInfo: ["value": amount])
-							self?.view.showCoinsAddedScreen(with: amount)
-						}
-				}) { [weak self] errorText in
-					self?.view.showErrorPopup(with: errorText)
-				}
+		}, onSuccess: { [weak self] coins in
+			NotificationCenter.default.post(name: .workoutSubmitted, object: nil)
+			if let coins = coins {
+				NotificationCenter.default.post(name: .coinsAdded,
+												object: self,
+												userInfo: ["value": coins])
+				self?.view.showCoinsAddedScreen(with: coins)
+			}
 		}) { [weak self] errorText in
 			self?.view.showErrorPopup(with: errorText)
 		}

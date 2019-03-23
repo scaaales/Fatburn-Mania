@@ -126,12 +126,12 @@ extension FitnessApi {
 		
 		func trainingComplete(workoutId: Int,
 							  onComplete: @escaping () -> Void,
-							  onSuccess: @escaping () -> Void,
+							  onSuccess: @escaping (Int?) -> Void,
 							  onError: @escaping OnErrorCompletion) {
 			request = provider.request(.trainingComplete(workoutId: workoutId, token: token), completion: { result in
 				onComplete()
-				BaseApi.handleResult(result, onSuccess: { _ in
-					onSuccess()
+				BaseApi.handleResult(result, onSuccess: { json in
+					onSuccess(json["coins"] as? Int)
 				}, onError: onError)
 			})
 		}
@@ -148,12 +148,12 @@ extension FitnessApi {
 		}
 		
 		func workoutOfTheDayCompleted(onComplete: @escaping () -> Void,
-									  onSuccess: @escaping () -> Void,
+									  onSuccess: @escaping (Int?) -> Void,
 									  onError: @escaping OnErrorCompletion) {
 			request = provider.request(.workoutOfTheDayComplete(token: token), completion: { result in
 				onComplete()
-				BaseApi.handleResult(result, onSuccess: { _ in
-					onSuccess()
+				BaseApi.handleResult(result, onSuccess: { json in
+					onSuccess(json["coins"] as? Int)
 				}, onError: onError)
 			})
 		}

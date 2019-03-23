@@ -333,6 +333,7 @@
                         <outlet property="startButton" destination="wdP-nk-dDT" id="S84-3k-Yez"/>
                         <outlet property="tableView" destination="Qko-lE-e9S" id="rcg-zV-v7R"/>
                         <outlet property="tableViewHeight" destination="TTQ-AY-12O" id="evW-NS-xh7"/>
+                        <segue destination="dCW-So-TMS" kind="presentation" identifier="presentCoinsAdded" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="beC-5b-XJu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRw-M6-cyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -359,6 +360,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxB-QR-KdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3143" y="-102"/>
+        </scene>
+        <!--CoinsAddedViewController-->
+        <scene sceneID="W74-Of-qZK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DiaryTab" referencedIdentifier="CoinsAddedViewController" id="dCW-So-TMS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cie-xr-B2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3173" y="44"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SFG-xr-VGc">

@@ -49,12 +49,20 @@ class LessonViewController: UIViewController {
 			photoVC.lessonViewController = self
 			photoVC.presenter.shouldCloseItselfOnConfirm = true
 			photoVC.presenter.shouldSavePhotoToLibrary = false
+		} else if let coinsAddedVC = segue.destination as? CoinsAddedViewController,
+			let coinsAmount = sender as? Int {
+			coinsAddedVC.coinsAmount = coinsAmount
+			coinsAddedVC.reasonAddedTextReplacement = "You finished workout and for this you get"
 		}
 	}
 	
 }
 
 extension LessonViewController: LessonView {
+	func showCoinsAddedScreen(with coinsNumber: Int) {
+		performSegue(withIdentifier: .presentCoinsAddedSegueIdentifier, sender: coinsNumber)
+	}
+	
 	func setPhoto(from urlString: String) {
 		imageView.setImageFrom(urlString: urlString)
 	}

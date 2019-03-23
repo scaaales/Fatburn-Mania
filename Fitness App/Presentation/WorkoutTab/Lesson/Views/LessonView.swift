@@ -18,4 +18,5 @@ protocol LessonView: View, TableViewUpdatable, NetworkingView, PopupShowable {
 	func setupForNewsState()
 	func setPhoto(from urlString: String)
 	func setVideo(from urlString: String)
+	func showCoinsAddedScreen(with coinsNumber: Int)
 }
