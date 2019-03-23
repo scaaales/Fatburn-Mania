@@ -16,6 +16,7 @@ enum ProfileService {
 	case updateSteps(token: String, steps: Int)
 	case getSongs(token: String)
 	case getVideos(token: String)
+	case postGmtOffset(token: String, offset: Int)
 }
 
 extension ProfileService: TargetType {
@@ -36,6 +37,8 @@ extension ProfileService: TargetType {
 			return "/audio_items"
 		case .getVideos:
 			return "/video_library_items"
+		case .postGmtOffset:
+			return path + "gmt_offset"
 		}
 	}
 	
@@ -43,7 +46,7 @@ extension ProfileService: TargetType {
 		switch self {
 		case .getUserInfo, .getCoinsHistory, .getSongs, .getVideos:
 			return .get
-		case .editUserInfo, .editAvatar, .updateSteps:
+		case .editUserInfo, .editAvatar, .updateSteps, .postGmtOffset:
 			return .post
 		}
 	}
@@ -62,6 +65,9 @@ extension ProfileService: TargetType {
 		case .updateSteps(_, let steps):
 			return .requestParameters(parameters: ["steps": steps],
 									  encoding: JSONEncoding.default)
+		case .postGmtOffset(_, let offset):
+			return .requestParameters(parameters: ["value": offset],
+									  encoding: JSONEncoding.default)
 		}
 	}
 	
@@ -75,7 +81,8 @@ extension ProfileService: TargetType {
 			 .editAvatar(let token, _),
 			 .updateSteps(let token, _),
 			 .getSongs(let token),
-			 .getVideos(let token):
+			 .getVideos(let token),
+			 .postGmtOffset(let token, _):
 			headers["Authorization"] = "Bearer \(token)"
 		}
 		return headers

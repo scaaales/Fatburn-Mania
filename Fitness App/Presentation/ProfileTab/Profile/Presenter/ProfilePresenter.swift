@@ -31,6 +31,9 @@ class ProfilePresenter<V: ProfileView>: Presenter, UserCoinsUpdateDelegate {
 		}
 		
 		profileAPI = .init(token: token)
+		
+		let offsetInHours = TimeZone.current.secondsFromGMT()/3600
+		profileAPI.postGmtOffset(offsetInHours)
 	}
 	
 	func getUser() {

@@ -154,5 +154,9 @@ extension FitnessApi {
 			})
 		}
 		
+		func postGmtOffset(_ gmtOffset: Int) {
+			provider.request(.postGmtOffset(token: token, offset: gmtOffset)) { _ in }
+		}
+		
 	}
 }
