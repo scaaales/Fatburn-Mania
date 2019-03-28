@@ -240,6 +240,11 @@
 		B3EFDF4921F76E7D00A8F61F /* MeasureHistoryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */; };
 		B3EFDF4A21F76E7D00A8F61F /* MeasureHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */; };
 		B3EFDF4B21F76E7D00A8F61F /* MeasureHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EFDF4721F76E7D00A8F61F /* MeasureHistoryView.swift */; };
+		B3F1BB2F224D5BE000A4B4A9 /* coins.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B3F1BB2B224D5BD900A4B4A9 /* coins.mp3 */; };
+		B3F1BB30224D5BE000A4B4A9 /* waterAdded.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B3F1BB2C224D5BDB00A4B4A9 /* waterAdded.mp3 */; };
+		B3F1BB31224D5BE000A4B4A9 /* waterRemoved.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B3F1BB2D224D5BDF00A4B4A9 /* waterRemoved.mp3 */; };
+		B3F1BB32224D5BE000A4B4A9 /* timer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B3F1BB2E224D5BE000A4B4A9 /* timer.mp3 */; };
+		B3F1BB34224D5C1500A4B4A9 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1BB33224D5C1500A4B4A9 /* SoundService.swift */; };
 		B3F27A49220C3F2600E932DE /* LoadingSplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A45220C3F2600E932DE /* LoadingSplashPresenter.swift */; };
 		B3F27A4A220C3F2600E932DE /* LoadingSplashInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A46220C3F2600E932DE /* LoadingSplashInitializer.swift */; };
 		B3F27A4B220C3F2600E932DE /* LoadingSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F27A47220C3F2600E932DE /* LoadingSplashViewController.swift */; };
@@ -508,6 +513,11 @@
 		B3EFDF4521F76E7D00A8F61F /* MeasureHistoryInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryInitializer.swift; sourceTree = "<group>"; };
 		B3EFDF4621F76E7D00A8F61F /* MeasureHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryViewController.swift; sourceTree = "<group>"; };
 		B3EFDF4721F76E7D00A8F61F /* MeasureHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureHistoryView.swift; sourceTree = "<group>"; };
+		B3F1BB2B224D5BD900A4B4A9 /* coins.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = coins.mp3; path = "Fitness App/Resources/Sounds/coins.mp3"; sourceTree = SOURCE_ROOT; };
+		B3F1BB2C224D5BDB00A4B4A9 /* waterAdded.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = waterAdded.mp3; sourceTree = "<group>"; };
+		B3F1BB2D224D5BDF00A4B4A9 /* waterRemoved.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = waterRemoved.mp3; sourceTree = "<group>"; };
+		B3F1BB2E224D5BE000A4B4A9 /* timer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timer.mp3; sourceTree = "<group>"; };
+		B3F1BB33224D5C1500A4B4A9 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
 		B3F27A45220C3F2600E932DE /* LoadingSplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashPresenter.swift; sourceTree = "<group>"; };
 		B3F27A46220C3F2600E932DE /* LoadingSplashInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashInitializer.swift; sourceTree = "<group>"; };
 		B3F27A47220C3F2600E932DE /* LoadingSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashViewController.swift; sourceTree = "<group>"; };
@@ -629,6 +639,7 @@
 				B3B361D62209C616002E006F /* Networking */,
 				B369573621D4E40500735555 /* HealthKitService.swift */,
 				B3FBA16C21EF493400B88AA3 /* PhotoCapturingService.swift */,
+				B3F1BB33224D5C1500A4B4A9 /* SoundService.swift */,
 				B3839C5E21F0827500BD27E0 /* PhotoLibraryService.swift */,
 				B3839C6021F0DA6D00BD27E0 /* ImageCreator.swift */,
 				B30F287921F2342D000954DB /* TimerService.swift */,
@@ -1031,6 +1042,7 @@
 		B34306B421D7932C0033EA69 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B3F1BB2A224D5BC800A4B4A9 /* Sounds */,
 				B319154222143AEE00F019ED /* Assets.xcassets */,
 				B3254DDA21D3DD6800F99F91 /* Info.plist */,
 			);
@@ -1737,6 +1749,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B3F1BB2A224D5BC800A4B4A9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B3F1BB2B224D5BD900A4B4A9 /* coins.mp3 */,
+				B3F1BB2E224D5BE000A4B4A9 /* timer.mp3 */,
+				B3F1BB2C224D5BDB00A4B4A9 /* waterAdded.mp3 */,
+				B3F1BB2D224D5BDF00A4B4A9 /* waterRemoved.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		B3F27A44220C3EE700E932DE /* LoadingSplash */ = {
 			isa = PBXGroup;
 			children = (
@@ -2015,10 +2038,14 @@
 				B3F7329121E77E7C0038ACB9 /* VideoLibraryStack.storyboard in Resources */,
 				B3254F3721D3E7CE00F99F91 /* LaunchScreen.storyboard in Resources */,
 				B3753C2B21D7C473008A5D5A /* BlurredLoader.xib in Resources */,
+				B3F1BB32224D5BE000A4B4A9 /* timer.mp3 in Resources */,
+				B3F1BB2F224D5BE000A4B4A9 /* coins.mp3 in Resources */,
 				B3DC1B7321EE291000883C0F /* TextViewHelperView.xib in Resources */,
 				B319154322143AEF00F019ED /* Assets.xcassets in Resources */,
+				B3F1BB30224D5BE000A4B4A9 /* waterAdded.mp3 in Resources */,
 				B30E9F7521EC8DA5006F33CE /* StoreStack.storyboard in Resources */,
 				B3D3F59A22008D210052976D /* Notifications.storyboard in Resources */,
+				B3F1BB31224D5BE000A4B4A9 /* waterRemoved.mp3 in Resources */,
 				B3254F5021D3E7CE00F99F91 /* ProgressView.xib in Resources */,
 				B3FBA15E21EF33F600B88AA3 /* MediaScreens.storyboard in Resources */,
 				B39301D921E4DE770071994A /* LoadingSplash.storyboard in Resources */,
@@ -2293,6 +2320,7 @@
 				B33394CF21DF827F00D6013F /* TutorialViewController.swift in Sources */,
 				B37CBA1B21DE64DC00834A98 /* LoginPresenter.swift in Sources */,
 				B3EFDF4821F76E7D00A8F61F /* MeasureHistoryPresenter.swift in Sources */,
+				B3F1BB34224D5C1500A4B4A9 /* SoundService.swift in Sources */,
 				B3EFDF4A21F76E7D00A8F61F /* MeasureHistoryViewController.swift in Sources */,
 				B35E621321F2231C001CB678 /* TimerCell.swift in Sources */,
 				B3728926220AF7580061822E /* FitnessApi.swift in Sources */,

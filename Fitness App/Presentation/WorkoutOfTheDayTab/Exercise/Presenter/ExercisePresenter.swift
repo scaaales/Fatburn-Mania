@@ -133,6 +133,7 @@ class ExercisePresenter<V: ExerciseView>: Presenter {
 	
 	private func countdownSecondPassed() {
 		currentCountdown -= 1
+		SoundService.play(sound: .timer)
 		if currentCountdown < 0 {
 			view.state = .playing
 			loadCurrentExercise()

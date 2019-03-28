@@ -26,6 +26,11 @@ class CoinsAddedViewController: UIViewController {
 		}
 	}
 	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		SoundService.play(sound: .coins)
+	}
+	
 	@IBAction private func close() {
 		dismiss(animated: true) { [weak self] in
 			self?.prevVC?.closeItself()

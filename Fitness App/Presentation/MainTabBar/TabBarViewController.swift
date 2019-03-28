@@ -16,7 +16,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 		tabBar.layer.borderWidth = 0
 		tabBar.layer.borderColor = UIColor.clear.cgColor
-		
+		selectedIndex = 3
 		setupShadow()
     }
 	
