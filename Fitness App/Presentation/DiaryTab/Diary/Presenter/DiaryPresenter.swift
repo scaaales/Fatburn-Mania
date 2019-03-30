@@ -195,8 +195,9 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		if calendar.isDateInToday(selectedDate) {
 			date = .init()
 		}
-		SoundService.play(sound: .waterAdded)
+		
 		HealthKitWaterService.addWaterInOunces(amount, on: date, successCompletion: { [weak self] in
+			SoundService.play(sound: .waterAdded)
 			self?.updateWater()
 		})
 	}
@@ -208,8 +209,9 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 		if calendar.isDateInToday(selectedDate) {
 			date = .init()
 		}
-		SoundService.play(sound: .waterAdded)
+		
 		HealthKitWaterService.addWaterInPints(amount, on: date, successCompletion: { [weak self] in
+			SoundService.play(sound: .waterAdded)
 			self?.updateWater()
 		})
 	}
@@ -231,8 +233,8 @@ class DiaryPresenter<V: DiaryView>: Presenter {
 	}
 	
 	func deleteWater() {
-		SoundService.play(sound: .waterRemoved)
 		HealthKitWaterService.deleteWaterOn(date: selectedDate) { [weak self] in
+			SoundService.play(sound: .waterRemoved)
 			self?.updateWater()
 		}
 	}

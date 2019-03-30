@@ -24,19 +24,24 @@ class LoadingSplashPresenter<V: LoadingSplashView>: Presenter {
 	func decideRouting() {
 		let keychain = KeychainSwift()
 		if let token = keychain.get(.keychainKeyAccessToken) {
-			if isTokenValid(token) {
-				view.showMainScreen()
+			let tokenState = isTokenValid(token)
+			if let isTokenValid = tokenState {
+				if isTokenValid {
+					view.showMainScreen()
+				} else {
+					keychain.delete(.keychainKeyAccessToken)
+					UserDefaults.standard.removeObject(forKey: .userDefaultsKeyAccessTokenExpirationDate)
+					logout(with: token)
+				}
 			} else {
-				keychain.delete(.keychainKeyAccessToken)
-				UserDefaults.standard.removeObject(forKey: .userDefaultsKeyAccessTokenExpirationDate)
-				logout(with: token)
+				view.showLoginScreen()
 			}
 		} else {
 			view.showLoginScreen()
 		}
 	}
 	
-	private func isTokenValid(_ token: String) -> Bool {
+	private func isTokenValid(_ token: String) -> Bool? {
 		if let expireDate = UserDefaults.standard.value(forKey: .userDefaultsKeyAccessTokenExpirationDate) as? Date {
 			let calendar = Calendar.current
 			
@@ -46,7 +51,7 @@ class LoadingSplashPresenter<V: LoadingSplashView>: Presenter {
 			}
 			return beginingOfTheDayBeforeExpire > Date()
 		} else {
-			return false
+			return nil
 		}
 	}
 	

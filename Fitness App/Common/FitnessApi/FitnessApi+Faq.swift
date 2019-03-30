@@ -30,7 +30,7 @@ extension FitnessApi {
 		func getHowToHtmlString(onComplete: @escaping () -> Void,
 								onSuccess: @escaping (String) -> Void,
 								onError: @escaping OnErrorCompletion) {
-			request = provider.request(.getFAQ, completion: { result in
+			request = provider.request(.getHowTo, completion: { result in
 				BaseApi.handleResult(result, onSuccess: { json in
 					onComplete()
 					if let faqHtmlString = json["content"] as? String {
