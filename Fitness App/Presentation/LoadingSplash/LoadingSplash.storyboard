@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mm7-pZ-pNh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="bUn-Kh-RGF">
+            <objects>
+                <viewController id="Usp-Re-xZd" customClass="LoadingSplashViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rid-gC-KBp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="fbm_logo" translatesAutoresizingMaskIntoConstraints="NO" id="99I-n4-BMA">
+                                <rect key="frame" x="50" y="323" width="275" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="99I-n4-BMA" secondAttribute="height" multiplier="55:17" id="hs8-Kp-9xP"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Y2A-Cu-fKp">
+                                <rect key="frame" x="177.5" y="458" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27450980392156865" green="0.5607843137254902" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y2A-Cu-fKp" firstAttribute="centerX" secondItem="0Pa-ao-96b" secondAttribute="centerX" id="3X2-5d-wvJ"/>
+                            <constraint firstItem="99I-n4-BMA" firstAttribute="centerY" secondItem="0Pa-ao-96b" secondAttribute="centerY" id="8Lm-Dl-zNA"/>
+                            <constraint firstItem="99I-n4-BMA" firstAttribute="leading" secondItem="0Pa-ao-96b" secondAttribute="leading" constant="50" id="9CR-y3-PYw"/>
+                            <constraint firstItem="Y2A-Cu-fKp" firstAttribute="top" secondItem="99I-n4-BMA" secondAttribute="bottom" constant="50" id="NvY-hr-hI6"/>
+                            <constraint firstItem="99I-n4-BMA" firstAttribute="centerX" secondItem="0Pa-ao-96b" secondAttribute="centerX" id="vwm-V3-kjQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Pa-ao-96b"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ddE-oF-nry"/>
+                    <connections>
+                        <outlet property="loader" destination="Y2A-Cu-fKp" id="8Mx-n0-EhO"/>
+                        <segue destination="ymS-w3-5uf" kind="presentation" identifier="presentMainTabBar" id="6Tm-CK-kjC"/>
+                        <segue destination="WYX-bo-9kX" kind="show" identifier="showLogin" id="bHR-9x-Jsw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pR4-on-fcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="KhZ-8e-Ua0" customClass="LoadingSplashInitializer" customModule="Fitness_App" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Usp-Re-xZd" id="EgK-7P-cP9"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-1300" y="-177.66116941529236"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="coV-XX-7Wx">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarViewController" id="ymS-w3-5uf" customClass="TabBarViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="V4x-82-jUs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.99207013845443726" green="0.99221223592758179" blue="0.99203914403915405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="h8h-Zj-t2u" kind="relationship" relationship="viewControllers" id="IAR-HN-Kjj"/>
+                        <segue destination="3uO-Dc-yWc" kind="relationship" relationship="viewControllers" id="sXu-Xb-8nk"/>
+                        <segue destination="Run-uR-56w" kind="relationship" relationship="viewControllers" id="Pju-G4-x0N"/>
+                        <segue destination="fFP-6Y-mfT" kind="relationship" relationship="viewControllers" id="0af-Tb-rae"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3D-e5-Bro" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-508" y="88.605697151424295"/>
+        </scene>
+        <!--LoginStack-->
+        <scene sceneID="ALq-Cu-eLq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginStack" id="WYX-bo-9kX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HzZ-hF-t1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-508.80000000000001" y="-465.06746626686657"/>
+        </scene>
+        <!--DiaryTab-->
+        <scene sceneID="RWO-Jp-qhw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DiaryTab" id="3uO-Dc-yWc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="bullets" selectedImage="bullets_selected" id="Mo4-T5-7MP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C93-Vp-5aw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-669" y="542"/>
+        </scene>
+        <!--ProfileTab-->
+        <scene sceneID="7j6-kk-lUO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileTab" id="h8h-Zj-t2u" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="user" selectedImage="user_selected" id="s51-24-jqI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3U-ui-Uiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-937" y="542"/>
+        </scene>
+        <!--WorkoutTab-->
+        <scene sceneID="bA6-q0-efK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WorkoutTab" id="Run-uR-56w" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="dumbbell" selectedImage="dumbbell_selected" id="LNk-9i-gIL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXB-C0-S2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-409" y="542"/>
+        </scene>
+        <!--WorkoutOfTheDayTab-->
+        <scene sceneID="X9H-iF-Bcq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WorkoutOfTheDayTab" id="fFP-6Y-mfT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="skipping_rope" selectedImage="skipping_rope_selected" id="cPY-pq-YfO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kWA-f8-zGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-137" y="542"/>
+        </scene>
+        <!--Login Navigation Controller-->
+        <scene sceneID="8dB-l5-S1s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mm7-pZ-pNh" customClass="LoginNavigationController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wb3-Kd-iyd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Usp-Re-xZd" kind="relationship" relationship="rootViewController" id="F2I-YR-mxt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFX-rp-Oeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2239.1999999999998" y="-177.66116941529236"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bullets" width="20" height="22.5"/>
+        <image name="bullets_selected" width="20" height="22.5"/>
+        <image name="dumbbell" width="23.5" height="23.5"/>
+        <image name="dumbbell_selected" width="23.5" height="23.5"/>
+        <image name="fbm_logo" width="275" height="84.5"/>
+        <image name="skipping_rope" width="18.5" height="23"/>
+        <image name="skipping_rope_selected" width="18.5" height="23"/>
+        <image name="user" width="22.5" height="22.5"/>
+        <image name="user_selected" width="22.5" height="22.5"/>
+    </resources>
+</document>
